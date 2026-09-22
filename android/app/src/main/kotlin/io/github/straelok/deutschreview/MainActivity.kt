@@ -1,4 +1,4 @@
-package com.example.deutsch_review
+package io.github.straelok.deutschreview
 
 import io.flutter.embedding.android.FlutterActivity
 
