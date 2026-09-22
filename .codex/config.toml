@@ -1,0 +1,15 @@
+# Настройки только для этого доверенного проекта.
+model = "gpt-5.6-sol"
+model_reasoning_effort = "medium"
+personality = "pragmatic"
+
+# Разрешает обычную работу внутри проекта и спрашивает перед выходом за его границы.
+sandbox_mode = "workspace-write"
+approval_policy = "on-request"
+
+# Для актуальных условий библиотек Codex сможет при необходимости запросить живой поиск.
+web_search = "cached"
+
+# Для этого персонального проекта один агент обычно экономнее.
+[agents]
+enabled = false

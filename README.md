@@ -1,0 +1,35 @@
+# Deutsch Review
+
+Персональное offline-first приложение для повторения уже изученного немецкого материала на Android и Windows.
+
+## Состояние
+
+Создан минимальный Flutter-каркас для Android и Windows с адаптивной
+навигацией `Heute`, `Lernen`, `Material`. Текущие решения и следующий шаг
+находятся в `PROJECT_STATE.md`; порядок этапов — в `ROADMAP.md`.
+
+## Документы
+
+- `AGENTS.md` — короткие постоянные инструкции для Codex.
+- `PRODUCT_SPEC.md` — требования к продукту.
+- `CONTENT_FORMAT.md` — версия и структура импортируемого материала.
+- `PROJECT_STATE.md` — текущее состояние и следующий шаг.
+- `ROADMAP.md` — последовательность этапов.
+
+## Запуск после установки Flutter
+
+```powershell
+flutter pub get
+flutter run -d windows
+```
+
+Для Android сначала запустите эмулятор или подключите устройство, затем
+выполните `flutter run`. Проверки проекта:
+
+```powershell
+dart format --output=none --set-exit-if-changed lib test
+flutter analyze
+flutter test
+```
+
+Требуемые инструменты и их текущее состояние описаны в `PROJECT_STATE.md`.
