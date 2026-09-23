@@ -13,12 +13,14 @@ class DictionaryMaterialPage extends StatefulWidget {
     required this.repository,
     required this.practice,
     required this.strings,
+    required this.refreshToken,
     super.key,
   });
 
   final LearningItemRepository repository;
   final PracticeRepository practice;
   final UiStrings strings;
+  final int refreshToken;
 
   @override
   State<DictionaryMaterialPage> createState() => _MaterialPageState();
@@ -49,6 +51,12 @@ class _MaterialPageState extends State<DictionaryMaterialPage> {
     super.initState();
     _reload();
     _searchController.addListener(_searchChanged);
+  }
+
+  @override
+  void didUpdateWidget(covariant DictionaryMaterialPage oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (widget.refreshToken != oldWidget.refreshToken) _reload();
   }
 
   @override

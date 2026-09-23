@@ -8,8 +8,11 @@ import 'domain/repositories/settings_repository.dart';
 import 'features/material/material_page.dart';
 import 'features/practice/practice_page.dart';
 import 'features/statistics/statistics_page.dart';
+import 'features/sync/sync_dialog.dart';
 import 'features/today/today_page.dart';
 import 'l10n/ui_strings.dart';
+import 'sync/sync_controller.dart';
+import 'sync/sync_models.dart';
 
 class DeutschReviewApp extends StatefulWidget {
   const DeutschReviewApp({
@@ -17,6 +20,7 @@ class DeutschReviewApp extends StatefulWidget {
     required this.sessions,
     required this.settings,
     required this.practice,
+    this.syncController,
     this.onDispose,
     super.key,
   });
@@ -25,6 +29,7 @@ class DeutschReviewApp extends StatefulWidget {
   final DailySessionRepository sessions;
   final SettingsRepository settings;
   final PracticeRepository practice;
+  final SyncController? syncController;
   final VoidCallback? onDispose;
 
   @override
@@ -60,6 +65,7 @@ class _DeutschReviewAppState extends State<DeutschReviewApp> {
         learningItems: widget.learningItems,
         sessions: widget.sessions,
         practice: widget.practice,
+        syncController: widget.syncController,
         language: _language,
         onLanguageChanged: _changeLanguage,
       ),
@@ -123,6 +129,7 @@ class HomeScreen extends StatefulWidget {
     required this.learningItems,
     required this.sessions,
     required this.practice,
+    this.syncController,
     required this.language,
     required this.onLanguageChanged,
     super.key,
@@ -131,6 +138,7 @@ class HomeScreen extends StatefulWidget {
   final LearningItemRepository learningItems;
   final DailySessionRepository sessions;
   final PracticeRepository practice;
+  final SyncController? syncController;
   final AppLanguage language;
   final ValueChanged<AppLanguage> onLanguageChanged;
 
@@ -141,8 +149,29 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
   int _statisticsRevision = 0;
+  int _lastSyncRevision = 0;
   String? _requestedSessionId;
   int _sessionRequestRevision = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    final sync = widget.syncController;
+    if (sync == null) return;
+    _lastSyncRevision = sync.dataRevision;
+    sync.addListener(_syncChanged);
+    if (sync.isConfigured && sync.nickname == null) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted) _openSyncDialog();
+      });
+    }
+  }
+
+  @override
+  void dispose() {
+    widget.syncController?.removeListener(_syncChanged);
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -175,12 +204,14 @@ class _HomeScreenState extends State<HomeScreen> {
         strings: s,
         requestedSessionId: _requestedSessionId,
         requestRevision: _sessionRequestRevision,
+        refreshToken: _statisticsRevision,
         onAttemptSaved: () => setState(() => _statisticsRevision++),
       ),
       DictionaryMaterialPage(
         repository: widget.learningItems,
         practice: widget.practice,
         strings: s,
+        refreshToken: _statisticsRevision,
       ),
       StatisticsPage(
         repository: widget.practice,
@@ -223,6 +254,16 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ],
               ),
+              if (widget.syncController case final sync?)
+                AnimatedBuilder(
+                  animation: sync,
+                  builder: (context, _) => IconButton(
+                    key: const Key('sync-settings'),
+                    tooltip: s.syncTitle,
+                    onPressed: _openSyncDialog,
+                    icon: Icon(_syncIcon(sync.phase)),
+                  ),
+                ),
               const SizedBox(width: 8),
             ],
           ),
@@ -271,4 +312,28 @@ class _HomeScreenState extends State<HomeScreen> {
       _selectedIndex = 1;
     });
   }
+
+  void _syncChanged() {
+    final sync = widget.syncController;
+    if (sync == null || sync.dataRevision == _lastSyncRevision) return;
+    _lastSyncRevision = sync.dataRevision;
+    if (mounted) setState(() => _statisticsRevision++);
+  }
+
+  Future<void> _openSyncDialog() async {
+    final sync = widget.syncController;
+    if (sync == null) return;
+    await showSyncDialog(
+      context: context,
+      controller: sync,
+      strings: UiStrings(widget.language),
+    );
+  }
+
+  static IconData _syncIcon(SyncPhase phase) => switch (phase) {
+        SyncPhase.syncing => Icons.sync,
+        SyncPhase.synced => Icons.cloud_done_outlined,
+        SyncPhase.error || SyncPhase.unavailable => Icons.cloud_off_outlined,
+        SyncPhase.disconnected || SyncPhase.idle => Icons.cloud_queue_outlined,
+      };
 }

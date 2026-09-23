@@ -22,6 +22,7 @@ class PracticePage extends StatefulWidget {
     required this.strings,
     required this.requestedSessionId,
     required this.requestRevision,
+    required this.refreshToken,
     required this.onAttemptSaved,
     super.key,
   });
@@ -32,6 +33,7 @@ class PracticePage extends StatefulWidget {
   final UiStrings strings;
   final String? requestedSessionId;
   final int requestRevision;
+  final int refreshToken;
   final VoidCallback onAttemptSaved;
 
   @override
@@ -66,6 +68,9 @@ class _PracticePageState extends State<PracticePage> {
     if (widget.requestRevision != oldWidget.requestRevision &&
         widget.requestedSessionId != null) {
       _openSession(widget.requestedSessionId!);
+    } else if (widget.refreshToken != oldWidget.refreshToken &&
+        _session == null) {
+      _load();
     }
   }
 

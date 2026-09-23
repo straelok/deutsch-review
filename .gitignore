@@ -13,3 +13,7 @@ android/local.properties
 windows/flutter/ephemeral/
 *.iml
 *.log
+.env
+.env.*
+supabase/.temp/
+tool/supabase_defines.json

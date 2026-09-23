@@ -144,4 +144,48 @@ final class UiStrings {
       choose('Statistik für dieses Wort', 'Статистика по этому слову');
   String errorCount(int count) => choose('$count Fehler', 'Ошибок: $count');
   String get loading => choose('Wird geladen…', 'Загрузка…');
+  String get syncTitle => choose('Synchronisierung', 'Синхронизация');
+  String get nickname => choose('Nickname', 'Ник');
+  String get nicknameHint => choose(
+        '3–24 Zeichen: a–z, 0–9, _ oder -',
+        '3–24 символа: a–z, 0–9, _ или -',
+      );
+  String get nicknameError => choose(
+        'Bitte einen gültigen Nickname eingeben.',
+        'Введите допустимый ник.',
+      );
+  String get syncRiskHint => choose(
+        'Wer deinen Nickname kennt, hat vollen Zugriff auf dieses Profil.',
+        'Любой, кто знает ник, получает полный доступ к этому профилю.',
+      );
+  String get connectSync => choose('Verbinden', 'Подключить');
+  String get changeNickname => choose('Nickname wechseln', 'Сменить ник');
+  String get disconnectSync => choose('Trennen', 'Отключить');
+  String get syncNow => choose('Jetzt synchronisieren', 'Синхронизировать');
+  String get close => choose('Schließen', 'Закрыть');
+  String get syncDisconnected =>
+      choose('Nicht verbunden', 'Синхронизация не подключена');
+  String get syncReady => choose('Bereit', 'Готово к синхронизации');
+  String get syncing => choose('Synchronisierung…', 'Синхронизация…');
+  String get syncComplete => choose('Synchronisiert', 'Синхронизировано');
+  String get syncError => choose(
+        'Keine Verbindung. Lokale Daten sind sicher.',
+        'Нет соединения. Локальные данные сохранены.',
+      );
+  String get syncUnavailable => choose(
+        'Supabase ist in diesem Build nicht konfiguriert.',
+        'Supabase не настроен в этой сборке.',
+      );
+  String lastSync(DateTime value) {
+    final local = value.toLocal();
+    final day = local.day.toString().padLeft(2, '0');
+    final month = local.month.toString().padLeft(2, '0');
+    final hour = local.hour.toString().padLeft(2, '0');
+    final minute = local.minute.toString().padLeft(2, '0');
+    final formatted = '$day.$month.${local.year}, $hour:$minute';
+    return choose(
+      'Letzte Synchronisierung: $formatted',
+      'Последняя синхронизация: $formatted',
+    );
+  }
 }

@@ -5,6 +5,10 @@ import 'package:deutsch_review/data/repositories/sqlite_daily_session_repository
 import 'package:deutsch_review/data/repositories/sqlite_practice_repository.dart';
 import 'package:deutsch_review/data/repositories/sqlite_settings_repository.dart';
 import 'package:deutsch_review/domain/learning_item.dart';
+import 'package:deutsch_review/sync/sqlite_sync_store.dart';
+import 'package:deutsch_review/sync/sync_controller.dart';
+import 'package:deutsch_review/sync/sync_gateway.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -193,15 +197,54 @@ void main() {
     expect(find.text('lernen'), findsOneWidget);
     expect(find.text('1'), findsWidgets);
   });
+
+  testWidgets('fragt nach einem Nickname und zeigt den Sync-Status', (
+    tester,
+  ) async {
+    final database = AppDatabase.inMemory();
+    addTearDown(database.close);
+    final controller = SyncController(
+      localStore: SqliteSyncStore(database),
+      gateway: _EchoSyncGateway(),
+      connectivityChanges: const Stream<List<ConnectivityResult>>.empty(),
+    );
+    addTearDown(controller.dispose);
+    await controller.initialize();
+
+    await tester.pumpWidget(_app(database, syncController: controller));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Synchronisierung'), findsOneWidget);
+    await tester.enterText(find.byKey(const Key('sync-nickname')), 'Test_User');
+    await tester.tap(find.byKey(const Key('connect-sync')));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Synchronisiert'), findsOneWidget);
+    expect(controller.nickname, 'test_user');
+  });
 }
 
-DeutschReviewApp _app(AppDatabase database) {
+DeutschReviewApp _app(
+  AppDatabase database, {
+  SyncController? syncController,
+}) {
   return DeutschReviewApp(
     learningItems: SqliteLearningItemRepository(database),
     sessions: SqliteDailySessionRepository(database),
     settings: SqliteSettingsRepository(database),
     practice: SqlitePracticeRepository(database),
+    syncController: syncController,
   );
+}
+
+final class _EchoSyncGateway implements SyncGateway {
+  @override
+  Future<Map<String, Object?>> synchronize({
+    required String nickname,
+    required Map<String, Object?> localPayload,
+  }) async {
+    return localPayload;
+  }
 }
 
 LearningItem _word() {
