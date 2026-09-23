@@ -53,6 +53,12 @@ void main() {
     expect(summary.correct, 1);
     expect(summary.errors, 1);
     expect(summary.accuracy, 0.5);
+    final itemSummary = await practice.summaryForItem('item-1');
+    expect(itemSummary.attempts, 2);
+    expect(itemSummary.correct, 1);
+    expect(itemSummary.errors, 1);
+    expect(itemSummary.accuracy, 0.5);
+    expect((await practice.summaryForItem('unknown')).attempts, 0);
     final problem = (await practice.problemItems()).single;
     expect(problem.item.id, 'item-1');
     expect(problem.errors, 1);

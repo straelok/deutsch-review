@@ -1,4 +1,4 @@
-# Deutsch Review
+# Worttrieb
 
 Персональное offline-first приложение для повторения уже изученного немецкого материала на Android и Windows.
 
@@ -41,6 +41,6 @@ flutter test
 
 ## Тестовая Windows-сборка
 
-Архив `dist/DeutschReview-Windows-Debug.zip` создаётся локально и не хранится в
+Архив `dist/Worttrieb-Windows-Debug.zip` создаётся локально и не хранится в
 Git. Распакуйте его целиком и запускайте `deutsch_review.exe` внутри
 распакованной папки. Один `.exe` без соседних DLL и папки `data` не запускается.

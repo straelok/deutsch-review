@@ -11,7 +11,7 @@ final class UiStrings {
 
   String get today => choose('Heute', 'Сегодня');
   String get learn => choose('Lernen', 'Повторение');
-  String get material => choose('Material', 'Материал');
+  String get material => choose('Wörter', 'Слова');
   String get statistics => choose('Statistik', 'Статистика');
   String get switchLanguage => choose('Sprache wechseln', 'Сменить язык');
   String get noReviewsToday => choose(
@@ -19,13 +19,13 @@ final class UiStrings {
         'На сегодня повторения пока не запланированы.',
       );
   String entries(int count) => choose(
-        '$count Einträge aus deinem DAA-Kurs',
-        '$count записей из курса DAA',
+        '$count Wörter',
+        '$count слов',
       );
   String get add => choose('Hinzufügen', 'Добавить');
   String get loadError => choose(
-        'Das Material konnte nicht geladen werden.',
-        'Не удалось загрузить материал.',
+        'Die Wörter konnten nicht geladen werden.',
+        'Не удалось загрузить слова.',
       );
   String get retry => choose('Erneut laden', 'Повторить');
   String get noWords => choose('Noch keine Wörter', 'Слов пока нет');
@@ -33,14 +33,14 @@ final class UiStrings {
         'Füge den bereits gelernten Stoff aus deinem Kurs hinzu.',
         'Добавьте уже изученный материал из курса.',
       );
-  String get search => choose('Material durchsuchen', 'Поиск по материалу');
+  String get search => choose('Wörter durchsuchen', 'Поиск по словам');
   String get noSearchResults => choose('Nichts gefunden', 'Ничего не найдено');
   String get edit => choose('Bearbeiten', 'Редактировать');
   String get delete => choose('Löschen', 'Удалить');
   String get deleteTitle => choose('Eintrag löschen?', 'Удалить запись?');
   String deleteMessage(String word) => choose(
-        '„$word“ wird aus Material und Wiederholungen entfernt.',
-        '«$word» будет удалено из материала и повторений.',
+        '„$word“ wird aus Wörtern und Wiederholungen entfernt.',
+        '«$word» будет удалено из словаря и повторений.',
       );
   String get cancel => choose('Abbrechen', 'Отмена');
   String get undo => choose('Rückgängig', 'Отменить');
@@ -57,8 +57,8 @@ final class UiStrings {
         'Похожая запись уже существует. Всё равно сохранить?',
       );
   String get saveAnyway => choose('Trotzdem speichern', 'Сохранить');
-  String get addMaterial => choose('Material hinzufügen', 'Добавить материал');
-  String get editMaterial => choose('Material bearbeiten', 'Редактировать');
+  String get addMaterial => choose('Wort hinzufügen', 'Добавить слово');
+  String get editMaterial => choose('Wort bearbeiten', 'Редактировать слово');
   String get type => choose('Typ', 'Тип');
   String get word => choose('Wort', 'Слово');
   String get noun => choose('Nomen', 'Существительное');
@@ -124,6 +124,8 @@ final class UiStrings {
   String get errors => choose('Fehler', 'Ошибки');
   String get accuracy => choose('Genauigkeit', 'Точность');
   String get problemWords => choose('Problemwörter', 'Проблемные слова');
+  String get wordStatistics =>
+      choose('Statistik für dieses Wort', 'Статистика по этому слову');
   String errorCount(int count) => choose('$count Fehler', 'Ошибок: $count');
   String get loading => choose('Wird geladen…', 'Загрузка…');
 }

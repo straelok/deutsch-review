@@ -5,5 +5,7 @@ abstract interface class PracticeRepository {
 
   Future<PracticeSummary> summary();
 
+  Future<PracticeSummary> summaryForItem(String itemId);
+
   Future<List<ItemPracticeSummary>> problemItems({int limit = 20});
 }

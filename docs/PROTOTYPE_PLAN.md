@@ -62,7 +62,7 @@ and advanced linguistic correction.
   and Windows UI; backend-only completion is not accepted.
 - The language switch changes all visible application labels immediately and
   survives restart; learning content is not translated or modified.
-- Search matches German text and Russian meaning. Material cards show the
+- Search matches German text and Russian meaning. Word cards show the
   original addition date, which editing does not change. Optional notes and
   examples are searchable and shown after an answer, never as a pre-answer hint.
 - Deletion asks for confirmation, uses the existing soft-delete mechanism and

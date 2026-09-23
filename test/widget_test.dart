@@ -20,11 +20,11 @@ void main() {
       findsOneWidget,
     );
 
-    await tester.tap(find.text('Material'));
+    await tester.tap(find.text('Wörter'));
     await tester.pumpAndSettle();
 
     expect(find.text('Noch keine Wörter'), findsOneWidget);
-    expect(find.text('0 Einträge aus deinem DAA-Kurs'), findsOneWidget);
+    expect(find.text('0 Wörter'), findsOneWidget);
   });
 
   testWidgets('fügt ein Wort hinzu und bearbeitet es', (tester) async {
@@ -33,7 +33,7 @@ void main() {
 
     await tester.pumpWidget(_app(database));
     await tester.pumpAndSettle();
-    await tester.tap(find.text('Material'));
+    await tester.tap(find.text('Wörter'));
     await tester.pumpAndSettle();
     await tester.tap(find.byKey(const Key('add-material')));
     await tester.pumpAndSettle();
@@ -57,13 +57,15 @@ void main() {
     expect(find.text('lernen'), findsOneWidget);
     expect(find.text('Beispiel: Ich lerne Deutsch.'), findsOneWidget);
     expect(find.text('Notiz: Неправильный глагол'), findsOneWidget);
-    expect(find.text('1 Einträge aus deinem DAA-Kurs'), findsOneWidget);
+    expect(find.text('1 Wörter'), findsOneWidget);
     expect(find.textContaining('Hinzugefügt:'), findsOneWidget);
 
     await tester.tap(find.byIcon(Icons.more_vert));
     await tester.pumpAndSettle();
     await tester.tap(find.text('Bearbeiten'));
     await tester.pumpAndSettle();
+    expect(find.text('Statistik für dieses Wort'), findsOneWidget);
+    expect(find.byKey(const Key('word-stat-attempts')), findsOneWidget);
     await tester.enterText(find.byKey(const Key('german')), 'wiederholen');
     await tester.enterText(find.byKey(const Key('note')), 'Повторять материал');
     await tester.tap(find.byKey(const Key('save-material')));
@@ -80,7 +82,7 @@ void main() {
 
     await tester.pumpWidget(_app(database));
     await tester.pumpAndSettle();
-    await tester.tap(find.text('Material'));
+    await tester.tap(find.text('Wörter'));
     await tester.pumpAndSettle();
     await tester.tap(find.byKey(const Key('add-material')));
     await tester.pumpAndSettle();
@@ -129,7 +131,7 @@ void main() {
 
     await tester.pumpWidget(_app(database));
     await tester.pumpAndSettle();
-    await tester.tap(find.text('Material'));
+    await tester.tap(find.text('Wörter'));
     await tester.pumpAndSettle();
     await tester.enterText(
       find.byKey(const Key('material-search')),

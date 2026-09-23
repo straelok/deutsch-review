@@ -40,7 +40,7 @@ class _DeutschReviewAppState extends State<DeutschReviewApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Deutsch Review',
+      title: 'Worttrieb',
       theme: ThemeData(
         brightness: Brightness.dark,
         colorScheme: ColorScheme.fromSeed(
@@ -164,7 +164,11 @@ class _HomeScreenState extends State<HomeScreen> {
         strings: s,
         onAttemptSaved: () => setState(() => _statisticsRevision++),
       ),
-      DictionaryMaterialPage(repository: widget.learningItems, strings: s),
+      DictionaryMaterialPage(
+        repository: widget.learningItems,
+        practice: widget.practice,
+        strings: s,
+      ),
       StatisticsPage(
         repository: widget.practice,
         strings: s,
@@ -179,7 +183,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
         return Scaffold(
           appBar: AppBar(
-            title: const Text('Deutsch Review'),
+            title: const Text('Worttrieb'),
             actions: [
               PopupMenuButton<AppLanguage>(
                 key: const Key('language-switch'),

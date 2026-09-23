@@ -3,17 +3,21 @@ import 'package:flutter/material.dart';
 import '../../domain/id_generator.dart';
 import '../../domain/learning_item.dart';
 import '../../domain/learning_item_display.dart';
+import '../../domain/practice.dart';
 import '../../domain/repositories/learning_item_repository.dart';
+import '../../domain/repositories/practice_repository.dart';
 import '../../l10n/ui_strings.dart';
 
 class DictionaryMaterialPage extends StatefulWidget {
   const DictionaryMaterialPage({
     required this.repository,
+    required this.practice,
     required this.strings,
     super.key,
   });
 
   final LearningItemRepository repository;
+  final PracticeRepository practice;
   final UiStrings strings;
 
   @override
@@ -202,10 +206,16 @@ class _MaterialPageState extends State<DictionaryMaterialPage> {
   }
 
   Future<void> _openEditor([LearningItem? item]) async {
+    final summary =
+        item == null ? null : await widget.practice.summaryForItem(item.id);
+    if (!mounted) return;
     final saved = await showDialog<LearningItem>(
       context: context,
-      builder: (context) =>
-          _LearningItemEditor(item: item, strings: widget.strings),
+      builder: (context) => _LearningItemEditor(
+        item: item,
+        statistics: summary,
+        strings: widget.strings,
+      ),
     );
     if (saved == null) return;
     final duplicate = _items.any(
@@ -326,10 +336,15 @@ class _EmptyMaterial extends StatelessWidget {
 }
 
 class _LearningItemEditor extends StatefulWidget {
-  const _LearningItemEditor({required this.strings, this.item});
+  const _LearningItemEditor({
+    required this.strings,
+    this.item,
+    this.statistics,
+  });
 
   final UiStrings strings;
   final LearningItem? item;
+  final PracticeSummary? statistics;
 
   @override
   State<_LearningItemEditor> createState() => _LearningItemEditorState();
@@ -454,6 +469,10 @@ class _LearningItemEditorState extends State<_LearningItemEditor> {
                   required: false,
                   maxLines: 3,
                 ),
+                if (widget.statistics case final statistics?) ...[
+                  const SizedBox(height: 20),
+                  _WordStatistics(summary: statistics, strings: s),
+                ],
                 if (widget.item != null) ...[
                   const SizedBox(height: 16),
                   Align(
@@ -530,6 +549,57 @@ class _LearningItemEditorState extends State<_LearningItemEditor> {
           if (_note.text.trim().isNotEmpty) 'note': _note.text.trim(),
         },
       ),
+    );
+  }
+}
+
+class _WordStatistics extends StatelessWidget {
+  const _WordStatistics({required this.summary, required this.strings});
+
+  final PracticeSummary summary;
+  final UiStrings strings;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          strings.wordStatistics,
+          style: Theme.of(context).textTheme.titleMedium,
+        ),
+        const SizedBox(height: 8),
+        Wrap(
+          spacing: 16,
+          runSpacing: 8,
+          children: [
+            _value('word-stat-attempts', strings.attempts, summary.attempts),
+            _value(
+                'word-stat-correct', strings.correctAnswers, summary.correct),
+            _value('word-stat-errors', strings.errors, summary.errors),
+            _value(
+              'word-stat-accuracy',
+              strings.accuracy,
+              '${(summary.accuracy * 100).round()} %',
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+
+  Widget _value(String key, String label, Object value) {
+    return Text.rich(
+      TextSpan(
+        children: [
+          TextSpan(text: '$label: '),
+          TextSpan(
+            text: '$value',
+            style: const TextStyle(fontWeight: FontWeight.bold),
+          ),
+        ],
+      ),
+      key: Key(key),
     );
   }
 }

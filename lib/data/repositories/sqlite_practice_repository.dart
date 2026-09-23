@@ -44,6 +44,22 @@ final class SqlitePracticeRepository implements PracticeRepository {
   }
 
   @override
+  Future<PracticeSummary> summaryForItem(String itemId) async {
+    final row = database.connection.select(
+      '''
+      SELECT COUNT(*) AS attempts, COALESCE(SUM(correct), 0) AS correct
+      FROM practice_attempts
+      WHERE item_id = ?
+      ''',
+      <Object?>[itemId],
+    ).single;
+    return PracticeSummary(
+      attempts: row['attempts'] as int,
+      correct: row['correct'] as int,
+    );
+  }
+
+  @override
   Future<List<ItemPracticeSummary>> problemItems({int limit = 20}) async {
     final rows = database.connection.select(
       '''
