@@ -40,13 +40,17 @@ void main() {
 
     await tester.enterText(find.byKey(const Key('german')), 'lernen');
     await tester.enterText(find.byKey(const Key('translation')), 'учить');
-    await tester.enterText(find.byKey(const Key('lesson')), '2');
-    await tester.enterText(find.byKey(const Key('topic')), 'Schule');
+    expect(find.text('Niveau'), findsNothing);
+    expect(find.text('Lektion'), findsNothing);
+    expect(find.text('Thema'), findsNothing);
+    expect(find.text('Quelle'), findsNothing);
+    expect(find.text('Im Kurs gelernt'), findsNothing);
     await tester.tap(find.byKey(const Key('save-material')));
     await tester.pumpAndSettle();
 
     expect(find.text('lernen'), findsOneWidget);
     expect(find.text('1 Einträge aus deinem DAA-Kurs'), findsOneWidget);
+    expect(find.textContaining('Hinzugefügt:'), findsOneWidget);
 
     await tester.tap(find.byIcon(Icons.more_vert));
     await tester.pumpAndSettle();
@@ -78,8 +82,6 @@ void main() {
     await tester.enterText(find.byKey(const Key('german')), 'Tisch');
     await tester.enterText(find.byKey(const Key('plural')), 'Tische');
     await tester.enterText(find.byKey(const Key('translation')), 'стол');
-    await tester.enterText(find.byKey(const Key('lesson')), '2');
-    await tester.enterText(find.byKey(const Key('topic')), 'Gegenstände');
     await tester.tap(find.byKey(const Key('save-material')));
     await tester.pumpAndSettle();
 

@@ -33,9 +33,6 @@ class _MaterialPageState extends State<DictionaryMaterialPage> {
       final values = <String>[
         learningItemGerman(item),
         learningItemMeaning(item),
-        item.topic,
-        item.level,
-        item.lesson,
       ];
       return values.any((value) => value.toLowerCase().contains(query));
     }).toList(growable: false);
@@ -151,9 +148,9 @@ class _MaterialPageState extends State<DictionaryMaterialPage> {
             ),
             title: Text(learningItemGerman(item)),
             subtitle: Text(
-              '${learningItemMeaning(item)}  •  '
-              '${item.level} · ${s.lesson} ${item.lesson} · ${item.topic}',
+              '${learningItemMeaning(item)}\n${s.addedAt(item.createdAt)}',
             ),
+            isThreeLine: true,
             trailing: PopupMenuButton<String>(
               key: Key('item-menu-${item.id}'),
               onSelected: (action) {
@@ -333,13 +330,8 @@ class _LearningItemEditorState extends State<_LearningItemEditor> {
   late final TextEditingController _german;
   late final TextEditingController _translation;
   late final TextEditingController _plural;
-  late final TextEditingController _level;
-  late final TextEditingController _lesson;
-  late final TextEditingController _topic;
-  late final TextEditingController _source;
   late LearningItemType _type;
   late String _article;
-  late bool _learned;
 
   bool get _isNoun => _type == LearningItemType.noun;
 
@@ -351,16 +343,10 @@ class _LearningItemEditorState extends State<_LearningItemEditor> {
         ? LearningItemType.noun
         : LearningItemType.word;
     _article = item?.content['article'] as String? ?? 'der';
-    _learned = item?.learned ?? true;
     _german = TextEditingController(text: item?.content['german'] as String?);
     _translation =
         TextEditingController(text: item?.content['translation_ru'] as String?);
     _plural = TextEditingController(text: item?.content['plural'] as String?);
-    _level = TextEditingController(text: item?.level ?? 'A1.1');
-    _lesson = TextEditingController(text: item?.lesson);
-    _topic = TextEditingController(text: item?.topic);
-    _source = TextEditingController(
-        text: item?.sourceRef ?? 'DAA / Schritte plus Neu');
   }
 
   @override
@@ -368,10 +354,6 @@ class _LearningItemEditorState extends State<_LearningItemEditor> {
     _german.dispose();
     _translation.dispose();
     _plural.dispose();
-    _level.dispose();
-    _lesson.dispose();
-    _topic.dispose();
-    _source.dispose();
     super.dispose();
   }
 
@@ -440,39 +422,16 @@ class _LearningItemEditorState extends State<_LearningItemEditor> {
                   controller: _translation,
                   label: s.meaning,
                 ),
-                const SizedBox(height: 12),
-                Row(
-                  children: [
-                    Expanded(
-                        child: _field(
-                            key: const Key('level'),
-                            controller: _level,
-                            label: s.level)),
-                    const SizedBox(width: 12),
-                    Expanded(
-                        child: _field(
-                            key: const Key('lesson'),
-                            controller: _lesson,
-                            label: s.lesson)),
-                  ],
-                ),
-                const SizedBox(height: 12),
-                _field(
-                    key: const Key('topic'),
-                    controller: _topic,
-                    label: s.topic),
-                const SizedBox(height: 12),
-                _field(
-                    key: const Key('source'),
-                    controller: _source,
-                    label: s.source),
-                SwitchListTile(
-                  contentPadding: EdgeInsets.zero,
-                  title: Text(s.learned),
-                  subtitle: Text(s.learnedHint),
-                  value: _learned,
-                  onChanged: (value) => setState(() => _learned = value),
-                ),
+                if (widget.item != null) ...[
+                  const SizedBox(height: 16),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      s.addedAt(widget.item!.createdAt),
+                      style: Theme.of(context).textTheme.bodySmall,
+                    ),
+                  ),
+                ],
               ],
             ),
           ),
@@ -520,13 +479,13 @@ class _LearningItemEditorState extends State<_LearningItemEditor> {
       LearningItem(
         id: previous?.id ?? newUuidV4(),
         type: _type,
-        level: _level.text.trim(),
-        lesson: _lesson.text.trim(),
-        topic: _topic.text.trim(),
-        learned: _learned,
+        level: previous?.level ?? '',
+        lesson: previous?.lesson ?? '',
+        topic: previous?.topic ?? '',
+        learned: true,
         createdAt: previous?.createdAt ?? now,
         updatedAt: now,
-        sourceRef: _source.text.trim(),
+        sourceRef: previous?.sourceRef ?? 'manual',
         content: <String, Object?>{
           'german': _german.text.trim(),
           'translation_ru': _translation.text.trim(),

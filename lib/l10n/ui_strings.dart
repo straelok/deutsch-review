@@ -66,21 +66,22 @@ final class UiStrings {
   String get germanWord => choose('Deutsches Wort', 'Немецкое слово');
   String get plural => choose('Plural', 'Множественное число');
   String get meaning => choose('Bedeutung', 'Перевод');
-  String get level => choose('Niveau', 'Уровень');
-  String get lesson => choose('Lektion', 'Урок');
-  String get topic => choose('Thema', 'Тема');
-  String get source => choose('Quelle', 'Источник');
-  String get learned => choose('Im Kurs gelernt', 'Изучено на курсе');
-  String get learnedHint => choose(
-        'Nur gelernter Stoff wird wiederholt.',
-        'Повторяется только изученный материал.',
-      );
+  String addedAt(DateTime value) {
+    final local = value.toLocal();
+    final day = local.day.toString().padLeft(2, '0');
+    final month = local.month.toString().padLeft(2, '0');
+    final hour = local.hour.toString().padLeft(2, '0');
+    final minute = local.minute.toString().padLeft(2, '0');
+    final date = '$day.$month.${local.year}, $hour:$minute';
+    return choose('Hinzugefügt: $date', 'Добавлено: $date');
+  }
+
   String get requiredField => choose('Pflichtfeld', 'Обязательное поле');
   String get save => choose('Speichern', 'Сохранить');
   String get startReview => choose('Wiederholung starten', 'Начать повторение');
   String get reviewEmpty => choose(
-        'Markiere zuerst Material als gelernt.',
-        'Сначала отметьте материал как изученный.',
+        'Füge zuerst ein Wort oder Nomen hinzu.',
+        'Сначала добавьте слово или существительное.',
       );
   String get reviewIntro => choose(
         'Schreibe die deutsche Übersetzung. Fehler kommen später erneut.',

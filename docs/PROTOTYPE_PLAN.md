@@ -37,7 +37,8 @@
   and Windows UI; backend-only completion is not accepted.
 - The language switch changes all visible application labels immediately and
   survives restart; learning content is not translated or modified.
-- Search matches German text, Russian meaning, topic, level and lesson.
+- Search matches German text and Russian meaning. Material cards show the
+  original addition date, which editing does not change.
 - Deletion asks for confirmation, uses the existing soft-delete mechanism and
   offers undo. Deleted material no longer appears in review.
 - Creating a likely duplicate produces a warning before data is saved.

@@ -20,7 +20,7 @@ void main() {
     );
   });
 
-  test('only learned and active items are available for review', () {
+  test('all active items are available for review', () {
     final timestamp = DateTime.utc(2026, 9, 23);
     final activeItem = LearningItem(
       id: 'item-1',
@@ -61,7 +61,7 @@ void main() {
     );
 
     expect(activeItem.isAvailableForReview, isTrue);
-    expect(unlearnedItem.isAvailableForReview, isFalse);
+    expect(unlearnedItem.isAvailableForReview, isTrue);
     expect(deletedItem.isAvailableForReview, isFalse);
   });
 }

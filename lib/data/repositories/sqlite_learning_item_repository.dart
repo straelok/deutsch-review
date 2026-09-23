@@ -72,7 +72,7 @@ final class SqliteLearningItemRepository implements LearningItemRepository {
       SELECT *
       FROM learning_items
       WHERE deleted_at IS NULL
-      ORDER BY updated_at DESC, id ASC
+      ORDER BY created_at DESC, id ASC
     ''');
     return rows.map(_mapRow).toList(growable: false);
   }

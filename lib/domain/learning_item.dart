@@ -49,5 +49,5 @@ final class LearningItem {
   final String sourceRef;
   final Map<String, Object?> content;
 
-  bool get isAvailableForReview => learned && deletedAt == null;
+  bool get isAvailableForReview => deletedAt == null;
 }

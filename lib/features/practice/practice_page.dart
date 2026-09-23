@@ -175,9 +175,8 @@ class _PracticePageState extends State<PracticePage> {
       _queue = items
           .where(
             (item) =>
-                item.learned &&
-                (item.type == LearningItemType.word ||
-                    item.type == LearningItemType.noun),
+                item.type == LearningItemType.word ||
+                item.type == LearningItemType.noun,
           )
           .toList(growable: true);
       _queue.shuffle(Random());
