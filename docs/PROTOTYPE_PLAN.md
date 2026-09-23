@@ -16,7 +16,7 @@
 1. Local dictionary core: SQLite, migration, repository and persistence tests.
 2. Dictionary interface: list, add and edit words and nouns; runnable Windows
    build for user testing.
-2.1. First hands-on prototype: persistent German/Russian interface switch,
+2.1. First hands-on prototype (complete): persistent German/Russian interface switch,
    search, safe delete with undo, duplicate warning, basic typed review without
    manual rating, attempt history and simple problem-word statistics. This
    stage does not schedule reviews by time.

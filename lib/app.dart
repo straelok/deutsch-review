@@ -1,16 +1,26 @@
 import 'package:flutter/material.dart';
 
+import 'domain/app_language.dart';
 import 'domain/repositories/learning_item_repository.dart';
+import 'domain/repositories/practice_repository.dart';
+import 'domain/repositories/settings_repository.dart';
 import 'features/material/material_page.dart';
+import 'features/practice/practice_page.dart';
+import 'features/statistics/statistics_page.dart';
+import 'l10n/ui_strings.dart';
 
 class DeutschReviewApp extends StatefulWidget {
   const DeutschReviewApp({
-    required this.repository,
+    required this.learningItems,
+    required this.settings,
+    required this.practice,
     this.onDispose,
     super.key,
   });
 
-  final LearningItemRepository repository;
+  final LearningItemRepository learningItems;
+  final SettingsRepository settings;
+  final PracticeRepository practice;
   final VoidCallback? onDispose;
 
   @override
@@ -18,6 +28,14 @@ class DeutschReviewApp extends StatefulWidget {
 }
 
 class _DeutschReviewAppState extends State<DeutschReviewApp> {
+  AppLanguage _language = AppLanguage.german;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadLanguage();
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -34,8 +52,23 @@ class _DeutschReviewAppState extends State<DeutschReviewApp> {
         ),
         useMaterial3: true,
       ),
-      home: HomeScreen(repository: widget.repository),
+      home: HomeScreen(
+        learningItems: widget.learningItems,
+        practice: widget.practice,
+        language: _language,
+        onLanguageChanged: _changeLanguage,
+      ),
     );
+  }
+
+  Future<void> _loadLanguage() async {
+    final language = await widget.settings.readLanguage();
+    if (mounted) setState(() => _language = language);
+  }
+
+  Future<void> _changeLanguage(AppLanguage language) async {
+    setState(() => _language = language);
+    await widget.settings.saveLanguage(language);
   }
 
   @override
@@ -65,7 +98,9 @@ class DatabaseErrorApp extends StatelessWidget {
                 const Icon(Icons.storage_outlined, size: 56),
                 const SizedBox(height: 16),
                 const Text(
-                  'Die lokale Datenbank konnte nicht geöffnet werden.',
+                  'Die lokale Datenbank konnte nicht geöffnet werden.\n'
+                  'Не удалось открыть локальную базу данных.',
+                  textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 8),
                 SelectableText(message, textAlign: TextAlign.center),
@@ -79,9 +114,18 @@ class DatabaseErrorApp extends StatelessWidget {
 }
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({required this.repository, super.key});
+  const HomeScreen({
+    required this.learningItems,
+    required this.practice,
+    required this.language,
+    required this.onLanguageChanged,
+    super.key,
+  });
 
-  final LearningItemRepository repository;
+  final LearningItemRepository learningItems;
+  final PracticeRepository practice;
+  final AppLanguage language;
+  final ValueChanged<AppLanguage> onLanguageChanged;
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -89,30 +133,43 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
-
-  static const _destinations = <NavigationDestination>[
-    NavigationDestination(icon: Icon(Icons.today_outlined), label: 'Heute'),
-    NavigationDestination(icon: Icon(Icons.school_outlined), label: 'Lernen'),
-    NavigationDestination(
-      icon: Icon(Icons.inventory_2_outlined),
-      label: 'Material',
-    ),
-  ];
+  int _statisticsRevision = 0;
 
   @override
   Widget build(BuildContext context) {
+    final s = UiStrings(widget.language);
+    final destinations = <NavigationDestination>[
+      NavigationDestination(
+          icon: const Icon(Icons.today_outlined), label: s.today),
+      NavigationDestination(
+          icon: const Icon(Icons.school_outlined), label: s.learn),
+      NavigationDestination(
+        icon: const Icon(Icons.inventory_2_outlined),
+        label: s.material,
+      ),
+      NavigationDestination(
+        icon: const Icon(Icons.insights_outlined),
+        label: s.statistics,
+      ),
+    ];
     final pages = <Widget>[
-      const _EmptyPage(
+      _EmptyPage(
         icon: Icons.today_outlined,
-        title: 'Heute',
-        message: 'Für heute sind noch keine Wiederholungen geplant.',
+        title: s.today,
+        message: s.noReviewsToday,
       ),
-      const _EmptyPage(
-        icon: Icons.school_outlined,
-        title: 'Lernen',
-        message: 'Deine nächste Lerneinheit erscheint hier.',
+      PracticePage(
+        learningItems: widget.learningItems,
+        practice: widget.practice,
+        strings: s,
+        onAttemptSaved: () => setState(() => _statisticsRevision++),
       ),
-      DictionaryMaterialPage(repository: widget.repository),
+      DictionaryMaterialPage(repository: widget.learningItems, strings: s),
+      StatisticsPage(
+        repository: widget.practice,
+        strings: s,
+        refreshToken: _statisticsRevision,
+      ),
     ];
 
     return LayoutBuilder(
@@ -121,7 +178,36 @@ class _HomeScreenState extends State<HomeScreen> {
         final content = IndexedStack(index: _selectedIndex, children: pages);
 
         return Scaffold(
-          appBar: AppBar(title: const Text('Deutsch Review')),
+          appBar: AppBar(
+            title: const Text('Deutsch Review'),
+            actions: [
+              PopupMenuButton<AppLanguage>(
+                key: const Key('language-switch'),
+                tooltip: s.switchLanguage,
+                initialValue: widget.language,
+                onSelected: widget.onLanguageChanged,
+                icon: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    const Icon(Icons.language),
+                    const SizedBox(width: 4),
+                    Text(widget.language.code.toUpperCase()),
+                  ],
+                ),
+                itemBuilder: (context) => const [
+                  PopupMenuItem(
+                    value: AppLanguage.german,
+                    child: Text('Deutsch'),
+                  ),
+                  PopupMenuItem(
+                    value: AppLanguage.russian,
+                    child: Text('Русский'),
+                  ),
+                ],
+              ),
+              const SizedBox(width: 8),
+            ],
+          ),
           body: useRail
               ? Row(
                   children: [
@@ -129,7 +215,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       selectedIndex: _selectedIndex,
                       onDestinationSelected: _selectDestination,
                       labelType: NavigationRailLabelType.all,
-                      destinations: _destinations
+                      destinations: destinations
                           .map(
                             (destination) => NavigationRailDestination(
                               icon: destination.icon,
@@ -149,7 +235,7 @@ class _HomeScreenState extends State<HomeScreen> {
               : NavigationBar(
                   selectedIndex: _selectedIndex,
                   onDestinationSelected: _selectDestination,
-                  destinations: _destinations,
+                  destinations: destinations,
                 ),
         );
       },

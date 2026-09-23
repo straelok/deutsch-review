@@ -42,6 +42,14 @@ void main() {
       await repository.softDelete(id: item.id, deletedAt: deletedAt),
       isFalse,
     );
+    expect(
+      await repository.restore(
+        id: item.id,
+        restoredAt: deletedAt.add(const Duration(minutes: 1)),
+      ),
+      isTrue,
+    );
+    expect((await repository.findActive()).single.id, item.id);
   });
 
   test('persists items after reopening a file database', () async {

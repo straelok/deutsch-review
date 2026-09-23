@@ -94,6 +94,22 @@ final class SqliteLearningItemRepository implements LearningItemRepository {
     return database.connection.updatedRows > 0;
   }
 
+  @override
+  Future<bool> restore({
+    required String id,
+    required DateTime restoredAt,
+  }) async {
+    database.connection.execute(
+      '''
+      UPDATE learning_items
+      SET deleted_at = NULL, updated_at = ?
+      WHERE id = ? AND deleted_at IS NOT NULL
+      ''',
+      <Object?>[_encodeDateTime(restoredAt), id],
+    );
+    return database.connection.updatedRows > 0;
+  }
+
   static LearningItem _mapRow(Row row) {
     final decodedContent = jsonDecode(row['content_json'] as String);
     if (decodedContent is! Map<String, Object?>) {

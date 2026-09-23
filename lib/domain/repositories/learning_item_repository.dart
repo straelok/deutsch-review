@@ -11,4 +11,9 @@ abstract interface class LearningItemRepository {
     required String id,
     required DateTime deletedAt,
   });
+
+  Future<bool> restore({
+    required String id,
+    required DateTime restoredAt,
+  });
 }

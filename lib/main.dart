@@ -4,6 +4,8 @@ import 'app.dart';
 import 'data/database/app_database.dart';
 import 'data/database/app_database_path.dart';
 import 'data/repositories/sqlite_learning_item_repository.dart';
+import 'data/repositories/sqlite_practice_repository.dart';
+import 'data/repositories/sqlite_settings_repository.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -12,7 +14,9 @@ Future<void> main() async {
     final database = AppDatabase.open(await applicationDatabasePath());
     runApp(
       DeutschReviewApp(
-        repository: SqliteLearningItemRepository(database),
+        learningItems: SqliteLearningItemRepository(database),
+        settings: SqliteSettingsRepository(database),
+        practice: SqlitePracticeRepository(database),
         onDispose: database.close,
       ),
     );

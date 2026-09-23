@@ -1,4 +1,4 @@
-const currentSchemaVersion = 1;
+const currentSchemaVersion = 2;
 
 const migrationFrom0To1 = '''
 CREATE TABLE learning_items (
@@ -77,5 +77,40 @@ CREATE TRIGGER review_events_prevent_delete
 BEFORE DELETE ON review_events
 BEGIN
   SELECT RAISE(ABORT, 'review events are immutable');
+END;
+''';
+
+const migrationFrom1To2 = '''
+CREATE TABLE app_settings (
+  key TEXT PRIMARY KEY NOT NULL,
+  value TEXT NOT NULL
+);
+
+CREATE TABLE practice_attempts (
+  id TEXT PRIMARY KEY NOT NULL,
+  item_id TEXT NOT NULL,
+  session_id TEXT NOT NULL,
+  answer_text TEXT NOT NULL,
+  correct INTEGER NOT NULL CHECK (correct IN (0, 1)),
+  attempted_at TEXT NOT NULL,
+  FOREIGN KEY (item_id) REFERENCES learning_items (id) ON DELETE RESTRICT
+);
+
+CREATE INDEX practice_attempts_item_time_idx
+  ON practice_attempts (item_id, attempted_at);
+
+CREATE INDEX practice_attempts_session_time_idx
+  ON practice_attempts (session_id, attempted_at);
+
+CREATE TRIGGER practice_attempts_prevent_update
+BEFORE UPDATE ON practice_attempts
+BEGIN
+  SELECT RAISE(ABORT, 'practice attempts are immutable');
+END;
+
+CREATE TRIGGER practice_attempts_prevent_delete
+BEFORE DELETE ON practice_attempts
+BEGIN
+  SELECT RAISE(ABORT, 'practice attempts are immutable');
 END;
 ''';

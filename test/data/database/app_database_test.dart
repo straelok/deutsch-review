@@ -6,7 +6,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:sqlite3/sqlite3.dart';
 
 void main() {
-  test('migrates an empty database to schema version 1', () {
+  test('migrates an empty database to the current schema', () {
     final database = AppDatabase.inMemory();
     addTearDown(database.close);
 
@@ -24,9 +24,53 @@ void main() {
       tables,
       containsAll(<String>[
         'learning_items',
+        'app_settings',
+        'practice_attempts',
         'review_events',
         'review_schedules',
       ]),
+    );
+  });
+
+  test('backs up version 1 before migrating it to version 2', () {
+    final directory = Directory.systemTemp.createTempSync('deutsch_review_');
+    addTearDown(() => directory.deleteSync(recursive: true));
+    final path = '${directory.path}${Platform.pathSeparator}existing.sqlite';
+    final oldDatabase = sqlite3.open(path);
+    oldDatabase.execute(migrationFrom0To1);
+    oldDatabase.execute('PRAGMA user_version = 1');
+    oldDatabase.execute('''
+      INSERT INTO learning_items (
+        id, type, level, lesson, topic, learned, source_ref, content_json,
+        created_at, updated_at, deleted_at
+      ) VALUES (
+        'old-item', 'word', 'A1.1', '1', 'Test', 1, 'DAA',
+        '{"german":"lernen","translation_ru":"учить"}',
+        '2026-09-23T10:00:00.000Z', '2026-09-23T10:00:00.000Z', NULL
+      )
+    ''');
+    oldDatabase.close();
+
+    final migrated = AppDatabase.open(path);
+    addTearDown(migrated.close);
+
+    expect(migrated.schemaVersion, 2);
+    expect(
+      migrated.connection.select('SELECT id FROM learning_items').single['id'],
+      'old-item',
+    );
+    final backups = directory
+        .listSync()
+        .whereType<File>()
+        .where((file) => file.path.contains('existing.sqlite.backup-v1-'))
+        .toList();
+    expect(backups, hasLength(1));
+    final backup = sqlite3.open(backups.single.path);
+    addTearDown(backup.close);
+    expect(backup.select('PRAGMA user_version').single.values.single, 1);
+    expect(
+      backup.select('SELECT id FROM learning_items').single['id'],
+      'old-item',
     );
   });
 

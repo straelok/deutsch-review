@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:sqlite3/sqlite3.dart';
 
 import 'schema.dart';
@@ -21,19 +23,23 @@ final class AppDatabase {
   final Database connection;
 
   static AppDatabase open(String path) {
-    return _initialize(sqlite3.open(path));
+    return _initialize(sqlite3.open(path), path: path);
   }
 
   static AppDatabase inMemory() {
     return _initialize(sqlite3.openInMemory());
   }
 
-  static AppDatabase _initialize(Database connection) {
+  static AppDatabase _initialize(Database connection, {String? path}) {
     try {
       connection
         ..execute('PRAGMA foreign_keys = ON')
         ..execute('PRAGMA busy_timeout = 5000')
         ..execute('PRAGMA journal_mode = WAL');
+      final version = _readSchemaVersion(connection);
+      if (path != null && version > 0 && version < currentSchemaVersion) {
+        _createBackup(connection, path, version);
+      }
       _migrate(connection);
       return AppDatabase._(connection);
     } catch (_) {
@@ -64,27 +70,48 @@ final class AppDatabase {
   void close() => connection.close();
 
   static void _migrate(Database connection) {
-    final row = connection.select('PRAGMA user_version').single;
-    final version = row.values.single as int;
+    var version = _readSchemaVersion(connection);
 
     if (version > currentSchemaVersion) {
       throw UnsupportedSchemaVersion(version, currentSchemaVersion);
     }
-    if (version == currentSchemaVersion) {
-      return;
+    while (version < currentSchemaVersion) {
+      final migration = switch (version) {
+        0 => migrationFrom0To1,
+        1 => migrationFrom1To2,
+        _ => throw UnsupportedSchemaVersion(version, currentSchemaVersion),
+      };
+      _runMigration(connection, migration, version + 1);
+      version += 1;
     }
-    if (version != 0) {
-      throw UnsupportedSchemaVersion(version, currentSchemaVersion);
-    }
+  }
 
+  static void _runMigration(
+    Database connection,
+    String migration,
+    int targetVersion,
+  ) {
     connection.execute('BEGIN IMMEDIATE');
     try {
-      connection.execute(migrationFrom0To1);
-      connection.execute('PRAGMA user_version = $currentSchemaVersion');
+      connection.execute(migration);
+      connection.execute('PRAGMA user_version = $targetVersion');
       connection.execute('COMMIT');
     } catch (_) {
       connection.execute('ROLLBACK');
       rethrow;
     }
+  }
+
+  static int _readSchemaVersion(Database connection) {
+    final row = connection.select('PRAGMA user_version').single;
+    return row.values.single as int;
+  }
+
+  static void _createBackup(Database connection, String path, int version) {
+    if (!File(path).existsSync()) return;
+    connection.execute('PRAGMA wal_checkpoint(FULL)');
+    final stamp = DateTime.now().toUtc().microsecondsSinceEpoch;
+    final backupPath = '$path.backup-v$version-$stamp';
+    connection.execute('VACUUM INTO ?', <Object?>[backupPath]);
   }
 }
