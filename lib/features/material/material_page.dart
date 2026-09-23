@@ -33,6 +33,8 @@ class _MaterialPageState extends State<DictionaryMaterialPage> {
       final values = <String>[
         learningItemGerman(item),
         learningItemMeaning(item),
+        learningItemNote(item) ?? '',
+        learningItemExample(item) ?? '',
       ];
       return values.any((value) => value.toLowerCase().contains(query));
     }).toList(growable: false);
@@ -135,6 +137,8 @@ class _MaterialPageState extends State<DictionaryMaterialPage> {
       separatorBuilder: (context, index) => const SizedBox(height: 8),
       itemBuilder: (context, index) {
         final item = filtered[index];
+        final note = learningItemNote(item);
+        final example = learningItemExample(item);
         return Card(
           child: ListTile(
             contentPadding:
@@ -147,10 +151,16 @@ class _MaterialPageState extends State<DictionaryMaterialPage> {
               ),
             ),
             title: Text(learningItemGerman(item)),
-            subtitle: Text(
-              '${learningItemMeaning(item)}\n${s.addedAt(item.createdAt)}',
+            subtitle: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(learningItemMeaning(item)),
+                if (example != null) Text(s.exampleValue(example)),
+                if (note != null) Text(s.noteValue(note)),
+                Text(s.addedAt(item.createdAt)),
+              ],
             ),
-            isThreeLine: true,
             trailing: PopupMenuButton<String>(
               key: Key('item-menu-${item.id}'),
               onSelected: (action) {
@@ -330,6 +340,8 @@ class _LearningItemEditorState extends State<_LearningItemEditor> {
   late final TextEditingController _german;
   late final TextEditingController _translation;
   late final TextEditingController _plural;
+  late final TextEditingController _note;
+  late final TextEditingController _example;
   late LearningItemType _type;
   late String _article;
 
@@ -347,6 +359,8 @@ class _LearningItemEditorState extends State<_LearningItemEditor> {
     _translation =
         TextEditingController(text: item?.content['translation_ru'] as String?);
     _plural = TextEditingController(text: item?.content['plural'] as String?);
+    _note = TextEditingController(text: item?.content['note'] as String?);
+    _example = TextEditingController(text: item?.content['example'] as String?);
   }
 
   @override
@@ -354,6 +368,8 @@ class _LearningItemEditorState extends State<_LearningItemEditor> {
     _german.dispose();
     _translation.dispose();
     _plural.dispose();
+    _note.dispose();
+    _example.dispose();
     super.dispose();
   }
 
@@ -422,6 +438,22 @@ class _LearningItemEditorState extends State<_LearningItemEditor> {
                   controller: _translation,
                   label: s.meaning,
                 ),
+                const SizedBox(height: 12),
+                _field(
+                  key: const Key('usage-example'),
+                  controller: _example,
+                  label: s.usageExample,
+                  required: false,
+                  maxLines: 2,
+                ),
+                const SizedBox(height: 12),
+                _field(
+                  key: const Key('note'),
+                  controller: _note,
+                  label: s.note,
+                  required: false,
+                  maxLines: 3,
+                ),
                 if (widget.item != null) ...[
                   const SizedBox(height: 16),
                   Align(
@@ -454,13 +486,16 @@ class _LearningItemEditorState extends State<_LearningItemEditor> {
     required TextEditingController controller,
     required String label,
     TextCapitalization capitalization = TextCapitalization.sentences,
+    bool required = true,
+    int maxLines = 1,
   }) {
     return TextFormField(
       key: key,
       controller: controller,
       decoration: InputDecoration(labelText: label),
-      validator: _required,
+      validator: required ? _required : null,
       textCapitalization: capitalization,
+      maxLines: maxLines,
     );
   }
 
@@ -491,6 +526,8 @@ class _LearningItemEditorState extends State<_LearningItemEditor> {
           'translation_ru': _translation.text.trim(),
           if (_isNoun) 'article': _article,
           if (_isNoun) 'plural': _plural.text.trim(),
+          if (_example.text.trim().isNotEmpty) 'example': _example.text.trim(),
+          if (_note.text.trim().isNotEmpty) 'note': _note.text.trim(),
         },
       ),
     );

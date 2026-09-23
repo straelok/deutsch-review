@@ -66,6 +66,12 @@ final class UiStrings {
   String get germanWord => choose('Deutsches Wort', 'Немецкое слово');
   String get plural => choose('Plural', 'Множественное число');
   String get meaning => choose('Bedeutung', 'Перевод');
+  String get note => choose('Notiz (optional)', 'Заметка (необязательно)');
+  String get usageExample =>
+      choose('Beispiel (optional)', 'Пример использования (необязательно)');
+  String noteValue(String value) => choose('Notiz: $value', 'Заметка: $value');
+  String exampleValue(String value) =>
+      choose('Beispiel: $value', 'Пример: $value');
   String addedAt(DateTime value) {
     final local = value.toLocal();
     final day = local.day.toString().padLeft(2, '0');

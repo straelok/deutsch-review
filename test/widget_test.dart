@@ -40,6 +40,12 @@ void main() {
 
     await tester.enterText(find.byKey(const Key('german')), 'lernen');
     await tester.enterText(find.byKey(const Key('translation')), 'учить');
+    await tester.enterText(
+      find.byKey(const Key('usage-example')),
+      'Ich lerne Deutsch.',
+    );
+    await tester.enterText(
+        find.byKey(const Key('note')), 'Неправильный глагол');
     expect(find.text('Niveau'), findsNothing);
     expect(find.text('Lektion'), findsNothing);
     expect(find.text('Thema'), findsNothing);
@@ -49,6 +55,8 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.text('lernen'), findsOneWidget);
+    expect(find.text('Beispiel: Ich lerne Deutsch.'), findsOneWidget);
+    expect(find.text('Notiz: Неправильный глагол'), findsOneWidget);
     expect(find.text('1 Einträge aus deinem DAA-Kurs'), findsOneWidget);
     expect(find.textContaining('Hinzugefügt:'), findsOneWidget);
 
@@ -57,10 +65,12 @@ void main() {
     await tester.tap(find.text('Bearbeiten'));
     await tester.pumpAndSettle();
     await tester.enterText(find.byKey(const Key('german')), 'wiederholen');
+    await tester.enterText(find.byKey(const Key('note')), 'Повторять материал');
     await tester.tap(find.byKey(const Key('save-material')));
     await tester.pumpAndSettle();
 
     expect(find.text('wiederholen'), findsOneWidget);
+    expect(find.text('Notiz: Повторять материал'), findsOneWidget);
     expect(find.text('lernen'), findsNothing);
   });
 
@@ -123,7 +133,7 @@ void main() {
     await tester.pumpAndSettle();
     await tester.enterText(
       find.byKey(const Key('material-search')),
-      'учить',
+      'Deutsch',
     );
     expect(find.text('lernen'), findsOneWidget);
 
@@ -154,12 +164,15 @@ void main() {
     await tester.tap(find.byKey(const Key('start-review')));
     await tester.pumpAndSettle();
     expect(find.text('учить'), findsOneWidget);
+    expect(find.textContaining('Beispiel:'), findsNothing);
 
     await tester.enterText(find.byKey(const Key('practice-answer')), 'leren');
     await tester.tap(find.byKey(const Key('check-answer')));
     await tester.pumpAndSettle();
     expect(find.text('Noch nicht richtig'), findsOneWidget);
     expect(find.text('Richtige Antwort: lernen'), findsOneWidget);
+    expect(find.text('Beispiel: Ich lerne Deutsch.'), findsOneWidget);
+    expect(find.text('Notiz: Wort aus Lektion 1'), findsOneWidget);
     await tester.tap(find.byKey(const Key('next-answer')));
     await tester.pumpAndSettle();
 
@@ -199,6 +212,11 @@ LearningItem _word() {
     createdAt: now,
     updatedAt: now,
     sourceRef: 'DAA',
-    content: const {'german': 'lernen', 'translation_ru': 'учить'},
+    content: const {
+      'german': 'lernen',
+      'translation_ru': 'учить',
+      'example': 'Ich lerne Deutsch.',
+      'note': 'Wort aus Lektion 1',
+    },
   );
 }

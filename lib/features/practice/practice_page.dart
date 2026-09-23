@@ -91,6 +91,8 @@ class _PracticePageState extends State<PracticePage> {
 
     final item = _current!;
     final expected = learningItemGerman(item);
+    final note = learningItemNote(item);
+    final example = learningItemExample(item);
     return Center(
       child: SingleChildScrollView(
         padding: const EdgeInsets.all(24),
@@ -146,6 +148,14 @@ class _PracticePageState extends State<PracticePage> {
                             if (!_lastCorrect) ...[
                               const SizedBox(height: 6),
                               Text(s.correctAnswer(expected)),
+                            ],
+                            if (example != null) ...[
+                              const SizedBox(height: 6),
+                              Text(s.exampleValue(example)),
+                            ],
+                            if (note != null) ...[
+                              const SizedBox(height: 6),
+                              Text(s.noteValue(note)),
                             ],
                           ],
                         ),
