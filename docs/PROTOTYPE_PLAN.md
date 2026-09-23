@@ -16,10 +16,11 @@
 1. Local dictionary core: SQLite, migration, repository and persistence tests.
 2. Dictionary interface: list, add and edit words and nouns; runnable Windows
    build for user testing.
-3. Intensive scheduler: isolated FSRS integration with automatic outcomes and
-   no new-word limit.
-4. Review session: typed German answer, concrete correction and problem-word
-   statistics.
+3. Intensive scheduler and deferred prototype behavior: isolated FSRS
+   integration, automatic outcomes without manual rating, unlimited new words,
+   problem-word priority and error statistics. Other sections remain available
+   regardless of the review queue.
+4. Review session: typed German answer and concrete correction.
 5. Reminders: configurable local notifications and snooze, without blocking
    other features.
 6. Prototype hardening: JSON backup, Android/Windows verification and focused
