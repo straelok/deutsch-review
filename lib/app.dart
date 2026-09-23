@@ -11,6 +11,7 @@ import 'features/statistics/statistics_page.dart';
 import 'features/sync/sync_dialog.dart';
 import 'features/today/today_page.dart';
 import 'l10n/ui_strings.dart';
+import 'reminders/reminder_controller.dart';
 import 'sync/sync_controller.dart';
 import 'sync/sync_models.dart';
 
@@ -21,6 +22,7 @@ class DeutschReviewApp extends StatefulWidget {
     required this.settings,
     required this.practice,
     this.syncController,
+    this.reminders,
     this.onDispose,
     super.key,
   });
@@ -30,6 +32,7 @@ class DeutschReviewApp extends StatefulWidget {
   final SettingsRepository settings;
   final PracticeRepository practice;
   final SyncController? syncController;
+  final ReminderController? reminders;
   final VoidCallback? onDispose;
 
   @override
@@ -42,6 +45,7 @@ class _DeutschReviewAppState extends State<DeutschReviewApp> {
   @override
   void initState() {
     super.initState();
+    widget.reminders?.setLanguage(_language);
     _loadLanguage();
   }
 
@@ -66,6 +70,7 @@ class _DeutschReviewAppState extends State<DeutschReviewApp> {
         sessions: widget.sessions,
         practice: widget.practice,
         syncController: widget.syncController,
+        reminders: widget.reminders,
         language: _language,
         onLanguageChanged: _changeLanguage,
       ),
@@ -74,11 +79,13 @@ class _DeutschReviewAppState extends State<DeutschReviewApp> {
 
   Future<void> _loadLanguage() async {
     final language = await widget.settings.readLanguage();
+    widget.reminders?.setLanguage(language);
     if (mounted) setState(() => _language = language);
   }
 
   Future<void> _changeLanguage(AppLanguage language) async {
     setState(() => _language = language);
+    widget.reminders?.setLanguage(language);
     await widget.settings.saveLanguage(language);
   }
 
@@ -130,6 +137,7 @@ class HomeScreen extends StatefulWidget {
     required this.sessions,
     required this.practice,
     this.syncController,
+    this.reminders,
     required this.language,
     required this.onLanguageChanged,
     super.key,
@@ -139,6 +147,7 @@ class HomeScreen extends StatefulWidget {
   final DailySessionRepository sessions;
   final PracticeRepository practice;
   final SyncController? syncController;
+  final ReminderController? reminders;
   final AppLanguage language;
   final ValueChanged<AppLanguage> onLanguageChanged;
 
@@ -150,6 +159,7 @@ class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
   int _statisticsRevision = 0;
   int _lastSyncRevision = 0;
+  int _lastReminderRevision = 0;
   String? _requestedSessionId;
   int _sessionRequestRevision = 0;
 
@@ -157,10 +167,16 @@ class _HomeScreenState extends State<HomeScreen> {
   void initState() {
     super.initState();
     final sync = widget.syncController;
-    if (sync == null) return;
-    _lastSyncRevision = sync.dataRevision;
-    sync.addListener(_syncChanged);
-    if (sync.isConfigured && sync.nickname == null) {
+    if (sync != null) {
+      _lastSyncRevision = sync.dataRevision;
+      sync.addListener(_syncChanged);
+    }
+    final reminders = widget.reminders;
+    if (reminders != null) {
+      _lastReminderRevision = reminders.openTodayRevision;
+      reminders.addListener(_remindersChanged);
+    }
+    if (sync != null && sync.isConfigured && sync.nickname == null) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
         if (mounted) _openSyncDialog();
       });
@@ -170,6 +186,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void dispose() {
     widget.syncController?.removeListener(_syncChanged);
+    widget.reminders?.removeListener(_remindersChanged);
     super.dispose();
   }
 
@@ -196,6 +213,7 @@ class _HomeScreenState extends State<HomeScreen> {
         strings: s,
         refreshToken: _statisticsRevision,
         onOpenSession: _openSession,
+        reminders: widget.reminders,
       ),
       PracticePage(
         learningItems: widget.learningItems,
@@ -317,7 +335,18 @@ class _HomeScreenState extends State<HomeScreen> {
     final sync = widget.syncController;
     if (sync == null || sync.dataRevision == _lastSyncRevision) return;
     _lastSyncRevision = sync.dataRevision;
+    widget.reminders?.refresh(force: true);
     if (mounted) setState(() => _statisticsRevision++);
+  }
+
+  void _remindersChanged() {
+    final reminders = widget.reminders;
+    if (reminders == null ||
+        reminders.openTodayRevision == _lastReminderRevision) {
+      return;
+    }
+    _lastReminderRevision = reminders.openTodayRevision;
+    if (mounted) setState(() => _selectedIndex = 0);
   }
 
   Future<void> _openSyncDialog() async {

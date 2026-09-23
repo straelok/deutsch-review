@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 
 import 'app.dart';
@@ -7,6 +9,8 @@ import 'data/repositories/sqlite_learning_item_repository.dart';
 import 'data/repositories/sqlite_daily_session_repository.dart';
 import 'data/repositories/sqlite_practice_repository.dart';
 import 'data/repositories/sqlite_settings_repository.dart';
+import 'reminders/android_reminder_gateway.dart';
+import 'reminders/reminder_controller.dart';
 import 'sync/sqlite_sync_store.dart';
 import 'sync/supabase_sync_gateway.dart';
 import 'sync/sync_controller.dart';
@@ -33,10 +37,18 @@ Future<void> main() async {
       SqliteLearningItemRepository(database),
       syncController.scheduleSync,
     );
-    final sessions = SyncingDailySessionRepository(
-      SqliteDailySessionRepository(database),
-      syncController.scheduleSync,
-    );
+    final localSessions = SqliteDailySessionRepository(database);
+    final reminders = Platform.isAndroid
+        ? ReminderController(
+            sessions: localSessions,
+            gateway: AndroidReminderGateway(),
+          )
+        : null;
+    await reminders?.initialize();
+    final sessions = SyncingDailySessionRepository(localSessions, () {
+      syncController.scheduleSync();
+      reminders?.refresh();
+    });
     final practice = SyncingPracticeRepository(
       SqlitePracticeRepository(database),
       syncController.scheduleSync,
@@ -48,7 +60,9 @@ Future<void> main() async {
         settings: SqliteSettingsRepository(database),
         practice: practice,
         syncController: syncController,
+        reminders: reminders,
         onDispose: () {
+          reminders?.dispose();
           syncController.dispose();
           database.close();
         },

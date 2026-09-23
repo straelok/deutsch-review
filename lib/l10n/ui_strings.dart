@@ -15,6 +15,16 @@ final class UiStrings {
   String get statistics => choose('Statistik', 'Статистика');
   String get switchLanguage => choose('Sprache wechseln', 'Сменить язык');
   String get dailyPlan => choose('Tagesplan', 'План на сегодня');
+  String get remindersTitle => choose('Erinnerungen', 'Напоминания');
+  String get remindersEnabled => choose(
+        'Aktiv: 13:30, 16:30 und 19:30',
+        'Включены: 13:30, 16:30 и 19:30',
+      );
+  String get remindersDisabled => choose(
+        'Aktiviere Erinnerungen für offene Sitzungen.',
+        'Включите напоминания о незавершённых занятиях.',
+      );
+  String get enableReminders => choose('Aktivieren', 'Включить');
   String dailyProgress(int completed) => choose(
         '$completed von 5 Sitzungen abgeschlossen',
         'Выполнено занятий: $completed из 5',

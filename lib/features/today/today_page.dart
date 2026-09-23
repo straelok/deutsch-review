@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../domain/daily_session.dart';
 import '../../domain/repositories/daily_session_repository.dart';
 import '../../l10n/ui_strings.dart';
+import '../../reminders/reminder_controller.dart';
 
 class TodayPage extends StatefulWidget {
   const TodayPage({
@@ -10,6 +11,7 @@ class TodayPage extends StatefulWidget {
     required this.strings,
     required this.refreshToken,
     required this.onOpenSession,
+    this.reminders,
     super.key,
   });
 
@@ -17,6 +19,7 @@ class TodayPage extends StatefulWidget {
   final UiStrings strings;
   final int refreshToken;
   final ValueChanged<String> onOpenSession;
+  final ReminderController? reminders;
 
   @override
   State<TodayPage> createState() => _TodayPageState();
@@ -58,6 +61,10 @@ class _TodayPageState extends State<TodayPage> {
         Text(s.dailyPlan, style: Theme.of(context).textTheme.headlineMedium),
         const SizedBox(height: 8),
         Text(s.dailyProgress(completed)),
+        if (widget.reminders case final reminders?) ...[
+          const SizedBox(height: 16),
+          _reminderCard(reminders),
+        ],
         const SizedBox(height: 16),
         ...requiredSessions.map(_sessionCard),
         if (extras.isNotEmpty) ...[
@@ -67,6 +74,39 @@ class _TodayPageState extends State<TodayPage> {
           ...extras.map(_sessionCard),
         ],
       ],
+    );
+  }
+
+  Widget _reminderCard(ReminderController reminders) {
+    final s = widget.strings;
+    return AnimatedBuilder(
+      animation: reminders,
+      builder: (context, _) => Card(
+        child: ListTile(
+          leading: Icon(
+            reminders.isEnabled
+                ? Icons.notifications_active_outlined
+                : Icons.notifications_off_outlined,
+          ),
+          title: Text(s.remindersTitle),
+          subtitle: Text(
+            reminders.isEnabled ? s.remindersEnabled : s.remindersDisabled,
+          ),
+          trailing: reminders.isEnabled
+              ? const Icon(Icons.check)
+              : FilledButton(
+                  key: const Key('enable-reminders'),
+                  onPressed:
+                      reminders.isBusy ? null : reminders.requestPermission,
+                  child: reminders.isBusy
+                      ? const SizedBox.square(
+                          dimension: 18,
+                          child: CircularProgressIndicator(strokeWidth: 2),
+                        )
+                      : Text(s.enableReminders),
+                ),
+        ),
+      ),
     );
   }
 
