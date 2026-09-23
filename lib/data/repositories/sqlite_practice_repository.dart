@@ -60,6 +60,26 @@ final class SqlitePracticeRepository implements PracticeRepository {
   }
 
   @override
+  Future<Map<String, List<bool>>> recentOutcomes({
+    int limitPerItem = 10,
+  }) async {
+    final rows = database.connection.select('''
+      SELECT item_id, correct
+      FROM practice_attempts
+      ORDER BY attempted_at DESC, id DESC
+    ''');
+    final outcomes = <String, List<bool>>{};
+    for (final row in rows) {
+      final itemId = row['item_id'] as String;
+      final values = outcomes.putIfAbsent(itemId, () => <bool>[]);
+      if (values.length < limitPerItem) {
+        values.add((row['correct'] as int) == 1);
+      }
+    }
+    return outcomes;
+  }
+
+  @override
   Future<List<ItemPracticeSummary>> problemItems({int limit = 20}) async {
     final rows = database.connection.select(
       '''

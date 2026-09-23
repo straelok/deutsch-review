@@ -1,4 +1,4 @@
-const currentSchemaVersion = 2;
+const currentSchemaVersion = 3;
 
 const migrationFrom0To1 = '''
 CREATE TABLE learning_items (
@@ -113,4 +113,39 @@ BEFORE DELETE ON practice_attempts
 BEGIN
   SELECT RAISE(ABORT, 'practice attempts are immutable');
 END;
+''';
+
+const migrationFrom2To3 = '''
+DROP TABLE review_events;
+DROP TABLE review_schedules;
+
+CREATE TABLE daily_sessions (
+  id TEXT PRIMARY KEY NOT NULL,
+  local_date TEXT NOT NULL,
+  slot INTEGER CHECK (slot IS NULL OR slot BETWEEN 1 AND 5),
+  status TEXT NOT NULL CHECK (status IN ('planned', 'in_progress', 'completed')),
+  target_answers INTEGER NOT NULL CHECK (target_answers > 0),
+  answered_count INTEGER NOT NULL DEFAULT 0
+    CHECK (answered_count >= 0 AND answered_count <= target_answers),
+  queue_json TEXT NOT NULL CHECK (
+    json_valid(queue_json) AND json_type(queue_json) = 'array'
+  ),
+  last_item_id TEXT,
+  created_at TEXT NOT NULL,
+  updated_at TEXT NOT NULL,
+  completed_at TEXT,
+  CHECK (
+    (status = 'completed' AND answered_count = target_answers AND completed_at IS NOT NULL)
+    OR
+    (status != 'completed' AND answered_count < target_answers AND completed_at IS NULL)
+  ),
+  FOREIGN KEY (last_item_id) REFERENCES learning_items (id) ON DELETE RESTRICT
+);
+
+CREATE UNIQUE INDEX daily_sessions_required_slot_idx
+  ON daily_sessions (local_date, slot)
+  WHERE slot IS NOT NULL;
+
+CREATE INDEX daily_sessions_date_status_idx
+  ON daily_sessions (local_date, status);
 ''';

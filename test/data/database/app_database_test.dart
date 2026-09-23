@@ -25,14 +25,15 @@ void main() {
       containsAll(<String>[
         'learning_items',
         'app_settings',
+        'daily_sessions',
         'practice_attempts',
-        'review_events',
-        'review_schedules',
       ]),
     );
+    expect(tables, isNot(contains('review_events')));
+    expect(tables, isNot(contains('review_schedules')));
   });
 
-  test('backs up version 1 before migrating it to version 2', () {
+  test('backs up version 1 before migrating it to the current version', () {
     final directory = Directory.systemTemp.createTempSync('deutsch_review_');
     addTearDown(() => directory.deleteSync(recursive: true));
     final path = '${directory.path}${Platform.pathSeparator}existing.sqlite';
@@ -54,7 +55,7 @@ void main() {
     final migrated = AppDatabase.open(path);
     addTearDown(migrated.close);
 
-    expect(migrated.schemaVersion, 2);
+    expect(migrated.schemaVersion, currentSchemaVersion);
     expect(
       migrated.connection.select('SELECT id FROM learning_items').single['id'],
       'old-item',
@@ -71,6 +72,37 @@ void main() {
     expect(
       backup.select('SELECT id FROM learning_items').single['id'],
       'old-item',
+    );
+  });
+
+  test('backs up version 2 before adding daily sessions', () {
+    final directory = Directory.systemTemp.createTempSync('deutsch_review_');
+    addTearDown(() => directory.deleteSync(recursive: true));
+    final path = '${directory.path}${Platform.pathSeparator}version2.sqlite';
+    final oldDatabase = sqlite3.open(path);
+    oldDatabase.execute(migrationFrom0To1);
+    oldDatabase.execute(migrationFrom1To2);
+    oldDatabase.execute('PRAGMA user_version = 2');
+    oldDatabase.close();
+
+    final migrated = AppDatabase.open(path);
+    addTearDown(migrated.close);
+
+    expect(migrated.schemaVersion, 3);
+    final backups = directory
+        .listSync()
+        .whereType<File>()
+        .where((file) => file.path.contains('version2.sqlite.backup-v2-'))
+        .toList();
+    expect(backups, hasLength(1));
+    final backup = sqlite3.open(backups.single.path);
+    addTearDown(backup.close);
+    expect(backup.select('PRAGMA user_version').single.values.single, 2);
+    expect(
+      backup.select(
+        "SELECT name FROM sqlite_master WHERE name = 'review_events'",
+      ),
+      isNotEmpty,
     );
   });
 

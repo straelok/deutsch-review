@@ -3,26 +3,35 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 import '../../domain/answer_checker.dart';
+import '../../domain/daily_session.dart';
 import '../../domain/id_generator.dart';
 import '../../domain/learning_item.dart';
 import '../../domain/learning_item_display.dart';
 import '../../domain/practice.dart';
+import '../../domain/repositories/daily_session_repository.dart';
 import '../../domain/repositories/learning_item_repository.dart';
 import '../../domain/repositories/practice_repository.dart';
+import '../../domain/word_priority.dart';
 import '../../l10n/ui_strings.dart';
 
 class PracticePage extends StatefulWidget {
   const PracticePage({
     required this.learningItems,
     required this.practice,
+    required this.sessions,
     required this.strings,
+    required this.requestedSessionId,
+    required this.requestRevision,
     required this.onAttemptSaved,
     super.key,
   });
 
   final LearningItemRepository learningItems;
   final PracticeRepository practice;
+  final DailySessionRepository sessions;
   final UiStrings strings;
+  final String? requestedSessionId;
+  final int requestRevision;
   final VoidCallback onAttemptSaved;
 
   @override
@@ -32,10 +41,13 @@ class PracticePage extends StatefulWidget {
 class _PracticePageState extends State<PracticePage> {
   final _answerController = TextEditingController();
   final _answerFocus = FocusNode();
+  final _random = Random();
+  List<LearningItem> _activeItems = const [];
   List<LearningItem> _queue = const [];
-  String? _sessionId;
+  List<DailySession> _daySessions = const [];
+  DailySession? _session;
+  List<LearningItem> _nextQueue = const [];
   bool _loading = true;
-  bool _started = false;
   bool _answered = false;
   bool _lastCorrect = false;
   bool _complete = false;
@@ -45,7 +57,16 @@ class _PracticePageState extends State<PracticePage> {
   @override
   void initState() {
     super.initState();
-    _loadAvailability();
+    _load();
+  }
+
+  @override
+  void didUpdateWidget(covariant PracticePage oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (widget.requestRevision != oldWidget.requestRevision &&
+        widget.requestedSessionId != null) {
+      _openSession(widget.requestedSessionId!);
+    }
   }
 
   @override
@@ -58,38 +79,29 @@ class _PracticePageState extends State<PracticePage> {
   @override
   Widget build(BuildContext context) {
     final s = widget.strings;
-    if (_loading) {
-      return const Center(child: CircularProgressIndicator());
-    }
-    if (!_started) {
-      return _CenteredPanel(
-        icon: Icons.school_outlined,
-        title: s.learn,
-        message: _queue.isEmpty ? s.reviewEmpty : s.reviewIntro,
-        action: _queue.isEmpty
-            ? null
-            : FilledButton.icon(
-                key: const Key('start-review'),
-                onPressed: _start,
-                icon: const Icon(Icons.play_arrow),
-                label: Text(s.startReview),
-              ),
-      );
-    }
+    if (_loading) return const Center(child: CircularProgressIndicator());
+    if (_session == null) return _sessionSelection();
     if (_complete) {
       return _CenteredPanel(
         icon: Icons.celebration_outlined,
         title: s.sessionComplete,
         message: s.sessionCompleteHint,
         action: FilledButton.icon(
-          onPressed: _loadAvailability,
-          icon: const Icon(Icons.replay),
-          label: Text(s.again),
+          onPressed: _load,
+          icon: const Icon(Icons.today_outlined),
+          label: Text(s.dailyPlan),
         ),
       );
     }
 
-    final item = _current!;
+    final item = _current;
+    if (item == null) {
+      return _CenteredPanel(
+        icon: Icons.school_outlined,
+        title: s.learn,
+        message: s.reviewEmpty,
+      );
+    }
     final expected = learningItemGerman(item);
     final note = learningItemNote(item);
     final example = learningItemExample(item);
@@ -105,7 +117,10 @@ class _PracticePageState extends State<PracticePage> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Text(
-                    s.progress(_queue.length),
+                    s.progress(
+                      _session!.answeredCount,
+                      _session!.targetAnswers,
+                    ),
                     style: Theme.of(context).textTheme.labelLarge,
                   ),
                   const SizedBox(height: 24),
@@ -177,32 +192,165 @@ class _PracticePageState extends State<PracticePage> {
     );
   }
 
-  Future<void> _loadAvailability() async {
+  Widget _sessionSelection() {
+    final s = widget.strings;
+    if (_activeItems.isEmpty) {
+      return _CenteredPanel(
+        icon: Icons.school_outlined,
+        title: s.learn,
+        message: s.reviewEmpty,
+      );
+    }
+    return ListView(
+      padding: const EdgeInsets.all(24),
+      children: [
+        Text(s.learn, style: Theme.of(context).textTheme.headlineMedium),
+        const SizedBox(height: 8),
+        Text(s.chooseSession),
+        const SizedBox(height: 16),
+        ..._daySessions.where((session) => session.isRequired).map(
+              (session) => Card(
+                child: ListTile(
+                  title: Text(s.sessionNumber(session.slot!)),
+                  subtitle: Text(
+                    s.sessionAnswers(
+                      session.answeredCount,
+                      session.targetAnswers,
+                    ),
+                  ),
+                  trailing: FilledButton(
+                    key: session.slot == 1
+                        ? const Key('start-review')
+                        : Key('start-review-${session.slot}'),
+                    onPressed: () => _selectSession(session),
+                    child: Text(
+                      session.isComplete
+                          ? s.repeatSession
+                          : session.status == DailySessionStatus.inProgress
+                              ? s.continueSession
+                              : s.start,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+      ],
+    );
+  }
+
+  Future<void> _load() async {
     setState(() => _loading = true);
-    final items = await widget.learningItems.findActive();
+    final now = DateTime.now();
+    final results = await Future.wait<Object>([
+      widget.learningItems.findActive(),
+      widget.sessions.ensureDay(
+        localDate: localDayKey(now),
+        now: now.toUtc(),
+      ),
+    ]);
     if (!mounted) return;
     setState(() {
-      _queue = items
+      _activeItems = (results[0] as List<LearningItem>)
           .where(
             (item) =>
                 item.type == LearningItemType.word ||
                 item.type == LearningItemType.noun,
           )
-          .toList(growable: true);
-      _queue.shuffle(Random());
-      _started = false;
-      _complete = false;
+          .toList(growable: false);
+      _daySessions = results[1] as List<DailySession>;
+      _session = null;
+      _queue = const [];
       _answered = false;
+      _complete = false;
       _loading = false;
     });
   }
 
-  void _start() {
+  Future<void> _selectSession(DailySession session) async {
+    if (session.isComplete) {
+      final extra = await widget.sessions.createExtra(
+        localDate: localDayKey(DateTime.now()),
+        now: DateTime.now().toUtc(),
+      );
+      await _openSession(extra.id);
+    } else {
+      await _openSession(session.id);
+    }
+  }
+
+  Future<void> _openSession(String id) async {
+    setState(() => _loading = true);
+    final activeItems = await widget.learningItems.findActive();
+    _activeItems = activeItems
+        .where(
+          (item) =>
+              item.type == LearningItemType.word ||
+              item.type == LearningItemType.noun,
+        )
+        .toList(growable: false);
+    var session = await widget.sessions.findById(id);
+    if (session == null) {
+      await _load();
+      return;
+    }
+    if (session.isComplete) {
+      session = await widget.sessions.createExtra(
+        localDate: localDayKey(DateTime.now()),
+        now: DateTime.now().toUtc(),
+      );
+    }
+    var queue = _itemsForIds(session.queueItemIds);
+    if (session.status == DailySessionStatus.planned ||
+        queue.length != session.remaining) {
+      queue = await _buildQueue(
+        length: session.remaining,
+        previousItemId: session.lastItemId,
+      );
+      session = await widget.sessions.start(
+        id: session.id,
+        queueItemIds: queue.map((item) => item.id).toList(),
+        now: DateTime.now().toUtc(),
+      );
+    }
+    if (!mounted) return;
+    final resolvedSession = session;
     setState(() {
-      _sessionId = newUuidV4();
-      _started = true;
+      _session = resolvedSession;
+      _queue = queue;
+      _answered = false;
+      _complete = resolvedSession.isComplete;
+      _loading = false;
     });
-    _answerFocus.requestFocus();
+    if (_queue.isNotEmpty) _answerFocus.requestFocus();
+  }
+
+  List<LearningItem> _itemsForIds(List<String> ids) {
+    final byId = {for (final item in _activeItems) item.id: item};
+    return ids.map((id) => byId[id]).whereType<LearningItem>().toList();
+  }
+
+  Future<List<LearningItem>> _buildQueue({
+    required int length,
+    String? previousItemId,
+    String? answeredItemId,
+    bool? answerCorrect,
+  }) async {
+    final outcomes = await widget.practice.recentOutcomes();
+    if (answeredItemId != null && answerCorrect != null) {
+      final projected = <bool>[
+        answerCorrect,
+        ...outcomes[answeredItemId] ?? const <bool>[],
+      ];
+      outcomes[answeredItemId] = projected.take(10).toList(growable: false);
+    }
+    final ids = buildWeightedQueue(
+      itemIds: _activeItems.map((item) => item.id).toList(growable: false),
+      recentOutcomes: outcomes,
+      length: length,
+      random: _random,
+      previousItemId: previousItemId,
+    );
+    return _itemsForIds(ids);
   }
 
   Future<void> _checkAnswer() async {
@@ -212,33 +360,42 @@ class _PracticePageState extends State<PracticePage> {
       answer: _answerController.text,
       expected: learningItemGerman(item),
     );
-    await widget.practice.saveAttempt(
-      PracticeAttempt(
+    final nextQueue = await _buildQueue(
+      length: _session!.remaining - 1,
+      previousItemId: item.id,
+      answeredItemId: item.id,
+      answerCorrect: correct,
+    );
+    final updatedSession = await widget.sessions.recordAnswer(
+      attempt: PracticeAttempt(
         id: newUuidV4(),
         itemId: item.id,
-        sessionId: _sessionId!,
+        sessionId: _session!.id,
         answerText: _answerController.text.trim(),
         correct: correct,
         attemptedAt: DateTime.now().toUtc(),
       ),
+      remainingQueueItemIds:
+          nextQueue.map((nextItem) => nextItem.id).toList(growable: false),
+      now: DateTime.now().toUtc(),
     );
     widget.onAttemptSaved();
     if (!mounted) return;
     setState(() {
+      _session = updatedSession;
+      _nextQueue = nextQueue;
       _answered = true;
       _lastCorrect = correct;
     });
   }
 
   void _next() {
-    final item = _queue.removeAt(0);
-    if (!_lastCorrect) {
-      _queue.insert(min(2, _queue.length), item);
-    }
     setState(() {
       _answerController.clear();
+      _queue = _nextQueue;
+      _nextQueue = const [];
       _answered = false;
-      _complete = _queue.isEmpty;
+      _complete = _session!.isComplete;
     });
     if (!_complete) _answerFocus.requestFocus();
   }

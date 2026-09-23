@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
 
 import 'domain/app_language.dart';
+import 'domain/repositories/daily_session_repository.dart';
 import 'domain/repositories/learning_item_repository.dart';
 import 'domain/repositories/practice_repository.dart';
 import 'domain/repositories/settings_repository.dart';
 import 'features/material/material_page.dart';
 import 'features/practice/practice_page.dart';
 import 'features/statistics/statistics_page.dart';
+import 'features/today/today_page.dart';
 import 'l10n/ui_strings.dart';
 
 class DeutschReviewApp extends StatefulWidget {
   const DeutschReviewApp({
     required this.learningItems,
+    required this.sessions,
     required this.settings,
     required this.practice,
     this.onDispose,
@@ -19,6 +22,7 @@ class DeutschReviewApp extends StatefulWidget {
   });
 
   final LearningItemRepository learningItems;
+  final DailySessionRepository sessions;
   final SettingsRepository settings;
   final PracticeRepository practice;
   final VoidCallback? onDispose;
@@ -54,6 +58,7 @@ class _DeutschReviewAppState extends State<DeutschReviewApp> {
       ),
       home: HomeScreen(
         learningItems: widget.learningItems,
+        sessions: widget.sessions,
         practice: widget.practice,
         language: _language,
         onLanguageChanged: _changeLanguage,
@@ -116,6 +121,7 @@ class DatabaseErrorApp extends StatelessWidget {
 class HomeScreen extends StatefulWidget {
   const HomeScreen({
     required this.learningItems,
+    required this.sessions,
     required this.practice,
     required this.language,
     required this.onLanguageChanged,
@@ -123,6 +129,7 @@ class HomeScreen extends StatefulWidget {
   });
 
   final LearningItemRepository learningItems;
+  final DailySessionRepository sessions;
   final PracticeRepository practice;
   final AppLanguage language;
   final ValueChanged<AppLanguage> onLanguageChanged;
@@ -134,6 +141,8 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
   int _statisticsRevision = 0;
+  String? _requestedSessionId;
+  int _sessionRequestRevision = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -153,15 +162,19 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     ];
     final pages = <Widget>[
-      _EmptyPage(
-        icon: Icons.today_outlined,
-        title: s.today,
-        message: s.noReviewsToday,
+      TodayPage(
+        sessions: widget.sessions,
+        strings: s,
+        refreshToken: _statisticsRevision,
+        onOpenSession: _openSession,
       ),
       PracticePage(
         learningItems: widget.learningItems,
         practice: widget.practice,
+        sessions: widget.sessions,
         strings: s,
+        requestedSessionId: _requestedSessionId,
+        requestRevision: _sessionRequestRevision,
         onAttemptSaved: () => setState(() => _statisticsRevision++),
       ),
       DictionaryMaterialPage(
@@ -171,6 +184,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       StatisticsPage(
         repository: widget.practice,
+        sessions: widget.sessions,
         strings: s,
         refreshToken: _statisticsRevision,
       ),
@@ -249,35 +263,12 @@ class _HomeScreenState extends State<HomeScreen> {
   void _selectDestination(int index) {
     setState(() => _selectedIndex = index);
   }
-}
 
-class _EmptyPage extends StatelessWidget {
-  const _EmptyPage({
-    required this.icon,
-    required this.title,
-    required this.message,
-  });
-
-  final IconData icon;
-  final String title;
-  final String message;
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Padding(
-        padding: const EdgeInsets.all(24),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Icon(icon, size: 56, color: Theme.of(context).colorScheme.primary),
-            const SizedBox(height: 16),
-            Text(title, style: Theme.of(context).textTheme.headlineMedium),
-            const SizedBox(height: 8),
-            Text(message, textAlign: TextAlign.center),
-          ],
-        ),
-      ),
-    );
+  void _openSession(String id) {
+    setState(() {
+      _requestedSessionId = id;
+      _sessionRequestRevision++;
+      _selectedIndex = 1;
+    });
   }
 }

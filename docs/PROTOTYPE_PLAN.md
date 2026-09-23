@@ -30,7 +30,7 @@
 
 ## Stage 3 implementation plan
 
-1. Add five local daily sessions with 20 answers each. Persist an unfinished
+1. Complete: add five local daily sessions with 20 answers each. Persist an unfinished
    queue and restore it exactly after restart.
 2. Select words by the last ten results. Unseen words have 0% success; use
    weight `1 + round((1 - successRate) * 9)` and avoid immediate repetition.

@@ -59,6 +59,8 @@ void main() {
     expect(itemSummary.errors, 1);
     expect(itemSummary.accuracy, 0.5);
     expect((await practice.summaryForItem('unknown')).attempts, 0);
+    final recent = await practice.recentOutcomes();
+    expect(recent['item-1'], <bool>[true, false]);
     final problem = (await practice.problemItems()).single;
     expect(problem.item.id, 'item-1');
     expect(problem.errors, 1);

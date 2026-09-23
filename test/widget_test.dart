@@ -1,6 +1,7 @@
 import 'package:deutsch_review/app.dart';
 import 'package:deutsch_review/data/database/app_database.dart';
 import 'package:deutsch_review/data/repositories/sqlite_learning_item_repository.dart';
+import 'package:deutsch_review/data/repositories/sqlite_daily_session_repository.dart';
 import 'package:deutsch_review/data/repositories/sqlite_practice_repository.dart';
 import 'package:deutsch_review/data/repositories/sqlite_settings_repository.dart';
 import 'package:deutsch_review/domain/learning_item.dart';
@@ -15,10 +16,8 @@ void main() {
     await tester.pumpWidget(_app(database));
     await tester.pumpAndSettle();
 
-    expect(
-      find.text('Für heute sind noch keine Wiederholungen geplant.'),
-      findsOneWidget,
-    );
+    expect(find.text('0 von 5 Sitzungen abgeschlossen'), findsOneWidget);
+    expect(find.text('Sitzung 1'), findsOneWidget);
 
     await tester.tap(find.text('Wörter'));
     await tester.pumpAndSettle();
@@ -152,7 +151,7 @@ void main() {
     expect(find.text('lernen'), findsOneWidget);
   });
 
-  testWidgets('prüft Antworten automatisch und zeigt Statistik', (
+  testWidgets('speichert den Fortschritt und zeigt Statistik', (
     tester,
   ) async {
     final database = AppDatabase.inMemory();
@@ -178,25 +177,28 @@ void main() {
     await tester.tap(find.byKey(const Key('next-answer')));
     await tester.pumpAndSettle();
 
-    await tester.enterText(find.byKey(const Key('practice-answer')), 'lernen');
-    await tester.tap(find.byKey(const Key('check-answer')));
+    await tester.tap(find.text('Heute'));
     await tester.pumpAndSettle();
-    expect(find.text('Richtig'), findsOneWidget);
-    await tester.tap(find.byKey(const Key('next-answer')));
+    expect(find.textContaining('1 von 20 Antworten'), findsOneWidget);
+    expect(find.text('Fortsetzen'), findsOneWidget);
+
+    await tester.pumpWidget(const SizedBox.shrink());
+    await tester.pumpWidget(_app(database));
     await tester.pumpAndSettle();
-    expect(find.text('Sitzung abgeschlossen'), findsOneWidget);
+    expect(find.textContaining('1 von 20 Antworten'), findsOneWidget);
 
     await tester.tap(find.text('Statistik'));
     await tester.pumpAndSettle();
     expect(find.text('Problemwörter'), findsOneWidget);
     expect(find.text('lernen'), findsOneWidget);
-    expect(find.text('2'), findsOneWidget);
+    expect(find.text('1'), findsWidgets);
   });
 }
 
 DeutschReviewApp _app(AppDatabase database) {
   return DeutschReviewApp(
     learningItems: SqliteLearningItemRepository(database),
+    sessions: SqliteDailySessionRepository(database),
     settings: SqliteSettingsRepository(database),
     practice: SqlitePracticeRepository(database),
   );

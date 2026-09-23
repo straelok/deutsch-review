@@ -14,9 +14,25 @@ final class UiStrings {
   String get material => choose('Wörter', 'Слова');
   String get statistics => choose('Statistik', 'Статистика');
   String get switchLanguage => choose('Sprache wechseln', 'Сменить язык');
-  String get noReviewsToday => choose(
-        'Für heute sind noch keine Wiederholungen geplant.',
-        'На сегодня повторения пока не запланированы.',
+  String get dailyPlan => choose('Tagesplan', 'План на сегодня');
+  String dailyProgress(int completed) => choose(
+        '$completed von 5 Sitzungen abgeschlossen',
+        'Выполнено занятий: $completed из 5',
+      );
+  String sessionNumber(int number) =>
+      choose('Sitzung $number', 'Занятие $number');
+  String get extraSession => choose('Zusatzsitzung', 'Дополнительное занятие');
+  String sessionAnswers(int answered, int target) =>
+      choose('$answered von $target Antworten', '$answered из $target ответов');
+  String get planned => choose('Geplant', 'Запланировано');
+  String get inProgress => choose('In Bearbeitung', 'В процессе');
+  String get completed => choose('Abgeschlossen', 'Завершено');
+  String get start => choose('Starten', 'Начать');
+  String get continueSession => choose('Fortsetzen', 'Продолжить');
+  String get repeatSession => choose('Wiederholen', 'Повторить');
+  String get chooseSession => choose(
+        'Wähle eine Sitzung aus deinem Tagesplan.',
+        'Выберите занятие из плана на сегодня.',
       );
   String entries(int count) => choose(
         '$count Wörter',
@@ -102,17 +118,17 @@ final class UiStrings {
         'Правильный ответ: $answer',
       );
   String get next => choose('Weiter', 'Далее');
-  String progress(int remaining) => choose(
-        '$remaining Wörter verbleiben',
-        'Осталось слов: $remaining',
+  String progress(int answered, int target) => choose(
+        'Antwort ${answered + 1} von $target',
+        'Ответ ${answered + 1} из $target',
       );
   String get sessionComplete => choose(
         'Sitzung abgeschlossen',
         'Повторение завершено',
       );
   String get sessionCompleteHint => choose(
-        'Alle Wörter wurden richtig beantwortet.',
-        'Все слова отвечены правильно.',
+        '20 Antworten sind geschafft.',
+        'Вы завершили 20 ответов.',
       );
   String get again => choose('Noch einmal', 'Повторить ещё раз');
   String get statsEmpty => choose(
