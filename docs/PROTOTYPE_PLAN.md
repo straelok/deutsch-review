@@ -33,6 +33,8 @@
 
 ## Stage 2.1 acceptance criteria
 
+- Every feature in this stage must be reachable and usable through the Android
+  and Windows UI; backend-only completion is not accepted.
 - The language switch changes all visible application labels immediately and
   survives restart; learning content is not translated or modified.
 - Search matches German text, Russian meaning, topic, level and lesson.
