@@ -45,6 +45,14 @@ flutter test
 
 ## Тестовая Windows-сборка
 
-Архив `dist/Worttrieb-Windows-Debug.zip` создаётся локально и не хранится в
-Git. Распакуйте его целиком и запускайте `deutsch_review.exe` внутри
-распакованной папки. Один `.exe` без соседних DLL и папки `data` не запускается.
+Полный комплект создаётся одной командой:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File tool/package_windows.ps1
+```
+
+Скрипт собирает приложение, находит полный результат Flutter, проверяет DLL и
+ресурсы и создаёт `dist/Worttrieb-Windows-Debug.zip`. Архив не хранится в Git.
+Распакуйте его целиком и запускайте `deutsch_review.exe` внутри папки
+`Worttrieb-Windows-Debug`. Файл из `build/windows/x64/runner/Debug` может не
+содержать рядом нужные библиотеки и не предназначен для передачи пользователю.
