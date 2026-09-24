@@ -23,10 +23,9 @@
 3. Five daily word sessions, Android reminders and nickname-only Supabase sync.
    Each session contains 20 answers and problematic words appear more often
    based on the last ten results. Other sections remain available.
-4. Expanded review: additional material types and more detailed linguistic
-   correction beyond the word and noun prototype.
-5. Prototype hardening: JSON backup, Android/Windows verification and focused
-   tests.
+4. Prototype hardening: Android/Windows verification, interface quality and
+   focused tests. File import, export and user-managed backups are deliberately
+   excluded to keep the application small.
 
 ## Stage 3 implementation plan
 
