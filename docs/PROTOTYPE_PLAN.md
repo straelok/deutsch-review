@@ -26,8 +26,9 @@
 4. Small JSON word exchange: validated import and export on Android and
    Windows. CSV, clipboard import and a separate backup subsystem remain out of
    scope.
-5. Prototype hardening: Android/Windows verification, interface quality and
-   focused tests.
+5. Grammar in small iterations: a fourth section, verb material, learned-topic
+   activation and two daily grammar sessions. The first iteration covers
+   regular Präsens, `sein` and `haben`; later topics require separate approval.
 
 ## Stage 3 implementation plan
 

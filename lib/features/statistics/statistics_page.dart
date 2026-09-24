@@ -29,6 +29,7 @@ class _StatisticsPageState extends State<StatisticsPage> {
   PracticeSummary? _summary;
   List<ItemPracticeSummary> _problems = const [];
   int? _completedToday;
+  int? _requiredToday;
 
   @override
   void initState() {
@@ -46,7 +47,7 @@ class _StatisticsPageState extends State<StatisticsPage> {
   Widget build(BuildContext context) {
     final summary = _summary;
     final s = widget.strings;
-    if (summary == null || _completedToday == null) {
+    if (summary == null || _completedToday == null || _requiredToday == null) {
       return const Center(child: CircularProgressIndicator());
     }
 
@@ -55,7 +56,10 @@ class _StatisticsPageState extends State<StatisticsPage> {
       children: [
         Text(s.statistics, style: Theme.of(context).textTheme.headlineMedium),
         const SizedBox(height: 16),
-        _Metric(label: s.dailyPlan, value: '${_completedToday!}/5'),
+        _Metric(
+          label: s.dailyPlan,
+          value: '${_completedToday!}/${_requiredToday!}',
+        ),
         if (summary.attempts == 0) ...[
           const SizedBox(height: 20),
           Text(s.statsEmpty),
@@ -112,6 +116,8 @@ class _StatisticsPageState extends State<StatisticsPage> {
       _completedToday = daySessions
           .where((session) => session.isRequired && session.isComplete)
           .length;
+      _requiredToday =
+          daySessions.where((session) => session.isRequired).length;
     });
   }
 }

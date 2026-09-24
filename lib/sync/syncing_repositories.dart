@@ -1,9 +1,38 @@
 import '../domain/daily_session.dart';
+import '../domain/grammar.dart';
 import '../domain/learning_item.dart';
 import '../domain/practice.dart';
 import '../domain/repositories/daily_session_repository.dart';
+import '../domain/repositories/grammar_repository.dart';
 import '../domain/repositories/learning_item_repository.dart';
 import '../domain/repositories/practice_repository.dart';
+
+final class SyncingGrammarRepository implements GrammarRepository {
+  const SyncingGrammarRepository(this._delegate, this._onChanged);
+
+  final GrammarRepository _delegate;
+  final void Function() _onChanged;
+
+  @override
+  Future<Map<String, GrammarTopicProgress>> progress() => _delegate.progress();
+
+  @override
+  Future<Map<String, List<bool>>> recentOutcomes({int limitPerTopic = 10}) =>
+      _delegate.recentOutcomes(limitPerTopic: limitPerTopic);
+
+  @override
+  Future<void> setLearned({
+    required String topicId,
+    required bool learned,
+    required DateTime now,
+  }) async {
+    await _delegate.setLearned(topicId: topicId, learned: learned, now: now);
+    _onChanged();
+  }
+
+  @override
+  Future<GrammarSummary> summary(String topicId) => _delegate.summary(topicId);
+}
 
 final class SyncingLearningItemRepository implements LearningItemRepository {
   const SyncingLearningItemRepository(this._delegate, this._onChanged);
@@ -51,15 +80,25 @@ final class SyncingDailySessionRepository implements DailySessionRepository {
 
   final DailySessionRepository _delegate;
   final void Function() _onChanged;
-  final Set<String> _ensuredDates = <String>{};
+  final Map<String, int> _requiredCountByDate = <String, int>{};
 
   @override
   Future<List<DailySession>> ensureDay({
     required String localDate,
     required DateTime now,
+    bool includeGrammar = false,
   }) async {
-    final sessions = await _delegate.ensureDay(localDate: localDate, now: now);
-    if (_ensuredDates.add(localDate)) _onChanged();
+    final sessions = await _delegate.ensureDay(
+      localDate: localDate,
+      now: now,
+      includeGrammar: includeGrammar,
+    );
+    final requiredCount =
+        sessions.where((session) => session.isRequired).length;
+    if (_requiredCountByDate[localDate] != requiredCount) {
+      _requiredCountByDate[localDate] = requiredCount;
+      _onChanged();
+    }
     return sessions;
   }
 
@@ -100,6 +139,25 @@ final class SyncingDailySessionRepository implements DailySessionRepository {
     final session = await _delegate.recordAnswer(
       attempt: attempt,
       remainingQueueItemIds: remainingQueueItemIds,
+      now: now,
+    );
+    _onChanged();
+    return session;
+  }
+
+  @override
+  Future<DailySession> recordGrammarTask({
+    required String sessionId,
+    required List<GrammarAttempt> attempts,
+    required List<String> remainingQueueItemIds,
+    required String lastExerciseId,
+    required DateTime now,
+  }) async {
+    final session = await _delegate.recordGrammarTask(
+      sessionId: sessionId,
+      attempts: attempts,
+      remainingQueueItemIds: remainingQueueItemIds,
+      lastExerciseId: lastExerciseId,
       now: now,
     );
     _onChanged();

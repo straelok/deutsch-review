@@ -12,7 +12,23 @@ final class UiStrings {
   String get today => choose('Heute', 'Сегодня');
   String get learn => choose('Lernen', 'Повторение');
   String get material => choose('Wörter', 'Слова');
+  String get grammar => choose('Grammatik', 'Грамматика');
   String get statistics => choose('Statistik', 'Статистика');
+  String get grammarIntro => choose(
+        'Lies eine bereits gelernte Regel und markiere sie danach als gelernt.',
+        'Откройте уже пройденное правило и отметьте его изученным.',
+      );
+  String get grammarLearned => choose('Gelernt', 'Изучено');
+  String get grammarReady =>
+      choose('Bereit zum Aktivieren', 'Можно отметить изученным');
+  String get grammarReference => choose('Grundlage', 'Справочный раздел');
+  String grammarNeedsVerb(String lemma) => choose(
+        'Füge zuerst „$lemma“ als Verb zu Wörter hinzu.',
+        'Сначала добавьте «$lemma» в словарь с типом «Глагол».',
+      );
+  String get markLearned =>
+      choose('Als gelernt markieren', 'Отметить изученным');
+  String get markNotLearned => choose('Nicht mehr gelernt', 'Снять отметку');
   String get switchLanguage => choose('Sprache wechseln', 'Сменить язык');
   String get dailyPlan => choose('Tagesplan', 'План на сегодня');
   String get remindersTitle => choose('Erinnerungen', 'Напоминания');
@@ -25,9 +41,9 @@ final class UiStrings {
         'Включите напоминания о незавершённых занятиях.',
       );
   String get enableReminders => choose('Aktivieren', 'Включить');
-  String dailyProgress(int completed) => choose(
-        '$completed von 5 Sitzungen abgeschlossen',
-        'Выполнено занятий: $completed из 5',
+  String dailyProgress(int completed, [int total = 5]) => choose(
+        '$completed von $total Sitzungen abgeschlossen',
+        'Выполнено занятий: $completed из $total',
       );
   String sessionNumber(int number) =>
       choose('Sitzung $number', 'Занятие $number');
@@ -114,8 +130,10 @@ final class UiStrings {
   String get type => choose('Typ', 'Тип');
   String get word => choose('Wort', 'Слово');
   String get noun => choose('Nomen', 'Существительное');
+  String get verb => choose('Verb', 'Глагол');
   String get article => choose('Artikel', 'Артикль');
   String get germanWord => choose('Deutsches Wort', 'Немецкое слово');
+  String get infinitive => choose('Infinitiv', 'Инфинитив');
   String get plural => choose('Plural', 'Множественное число');
   String get meaning => choose('Bedeutung', 'Перевод');
   String get note => choose('Notiz (optional)', 'Заметка (необязательно)');
@@ -163,9 +181,14 @@ final class UiStrings {
         'Повторение завершено',
       );
   String get sessionCompleteHint => choose(
-        '20 Antworten sind geschafft.',
-        'Вы завершили 20 ответов.',
+        'Die Sitzung ist geschafft.',
+        'Занятие завершено.',
       );
+  String get grammarSessionUnavailable => choose(
+        'Für diese Grammatik-Sitzung fehlen gelernte Themen oder passende Verben.',
+        'Для занятия не хватает изученных тем или подходящих глаголов.',
+      );
+  String get grammarEnding => choose('Fehlender Teil', 'Пропущенная часть');
   String get again => choose('Noch einmal', 'Повторить ещё раз');
   String get statsEmpty => choose(
         'Noch keine Wiederholungen. Starte eine Sitzung unter „Heute“.',

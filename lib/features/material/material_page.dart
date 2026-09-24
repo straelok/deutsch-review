@@ -182,9 +182,11 @@ class _MaterialPageState extends State<DictionaryMaterialPage> {
                 const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
             leading: CircleAvatar(
               child: Icon(
-                item.type == LearningItemType.noun
-                    ? Icons.text_fields
-                    : Icons.translate,
+                switch (item.type) {
+                  LearningItemType.noun => Icons.text_fields,
+                  LearningItemType.verb => Icons.directions_run_outlined,
+                  _ => Icons.translate,
+                },
               ),
             ),
             title: Text(learningItemGerman(item)),
@@ -509,14 +511,17 @@ class _LearningItemEditorState extends State<_LearningItemEditor> {
   late String _article;
 
   bool get _isNoun => _type == LearningItemType.noun;
+  bool get _isVerb => _type == LearningItemType.verb;
 
   @override
   void initState() {
     super.initState();
     final item = widget.item;
-    _type = item?.type == LearningItemType.noun
-        ? LearningItemType.noun
-        : LearningItemType.word;
+    _type = switch (item?.type) {
+      LearningItemType.noun => LearningItemType.noun,
+      LearningItemType.verb => LearningItemType.verb,
+      _ => LearningItemType.word,
+    };
     _article = item?.content['article'] as String? ?? 'der';
     _german = TextEditingController(text: item?.content['german'] as String?);
     _translation =
@@ -558,6 +563,8 @@ class _LearningItemEditorState extends State<_LearningItemEditor> {
                         value: LearningItemType.word, child: Text(s.word)),
                     DropdownMenuItem(
                         value: LearningItemType.noun, child: Text(s.noun)),
+                    DropdownMenuItem(
+                        value: LearningItemType.verb, child: Text(s.verb)),
                   ],
                   onChanged: (value) {
                     if (value != null) setState(() => _type = value);
@@ -583,7 +590,11 @@ class _LearningItemEditorState extends State<_LearningItemEditor> {
                 _field(
                   key: const Key('german'),
                   controller: _german,
-                  label: _isNoun ? s.noun : s.germanWord,
+                  label: _isNoun
+                      ? s.noun
+                      : _isVerb
+                          ? s.infinitive
+                          : s.germanWord,
                   capitalization: _isNoun
                       ? TextCapitalization.words
                       : TextCapitalization.sentences,

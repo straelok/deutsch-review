@@ -1,4 +1,5 @@
 import 'package:deutsch_review/domain/daily_session.dart';
+import 'package:deutsch_review/domain/grammar.dart';
 import 'package:deutsch_review/domain/practice.dart';
 import 'package:deutsch_review/domain/repositories/daily_session_repository.dart';
 import 'package:deutsch_review/reminders/reminder_controller.dart';
@@ -77,6 +78,7 @@ final class _FakeSessions implements DailySessionRepository {
   Future<List<DailySession>> ensureDay({
     required String localDate,
     required DateTime now,
+    bool includeGrammar = false,
   }) async {
     return List.generate(
       5,
@@ -84,6 +86,7 @@ final class _FakeSessions implements DailySessionRepository {
         id: '$localDate-${index + 1}',
         localDate: localDate,
         slot: index + 1,
+        kind: DailySessionKind.vocabulary,
         status: index < completed
             ? DailySessionStatus.completed
             : DailySessionStatus.planned,
@@ -110,6 +113,16 @@ final class _FakeSessions implements DailySessionRepository {
   Future<DailySession> recordAnswer({
     required PracticeAttempt attempt,
     required List<String> remainingQueueItemIds,
+    required DateTime now,
+  }) =>
+      throw UnimplementedError();
+
+  @override
+  Future<DailySession> recordGrammarTask({
+    required String sessionId,
+    required List<GrammarAttempt> attempts,
+    required List<String> remainingQueueItemIds,
+    required String lastExerciseId,
     required DateTime now,
   }) =>
       throw UnimplementedError();

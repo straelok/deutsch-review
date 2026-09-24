@@ -25,3 +25,6 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/grammar/topics.json
+    - assets/grammar/exercises.json

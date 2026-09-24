@@ -1,0 +1,130 @@
+{
+  "version": 1,
+  "topics": [
+    {
+      "id": "verb_basics",
+      "order": 1,
+      "title_de": "Was ist ein Verb?",
+      "title_ru": "Что такое глагол",
+      "summary_de": "Verben beschreiben Handlungen, Vorgänge oder Zustände.",
+      "summary_ru": "Глаголы обозначают действия, процессы или состояния.",
+      "explanation_de": [
+        "Ein Verb sagt, was jemand tut oder was geschieht: lernen, wohnen, sein.",
+        "Im Wörterbuch steht das Verb im Infinitiv. Im Satz verändert es seine Form."
+      ],
+      "explanation_ru": [
+        "Глагол сообщает, что кто-то делает или что происходит: lernen, wohnen, sein.",
+        "В словаре глагол записан в инфинитиве. В предложении его форма изменяется."
+      ],
+      "table": [["lernen", "учить"], ["wohnen", "жить"], ["sein", "быть"]],
+      "trainable": false
+    },
+    {
+      "id": "infinitive_stem",
+      "order": 2,
+      "title_de": "Infinitiv, Stamm und Endung",
+      "title_ru": "Инфинитив, основа и окончание",
+      "summary_de": "Der Infinitiv wird in Stamm und Endung zerlegt.",
+      "summary_ru": "Инфинитив разделяется на основу и окончание.",
+      "explanation_de": [
+        "Viele deutsche Infinitive enden auf -en: lern-en, wohn-en, mach-en.",
+        "An den Stamm kommt die Endung der Person."
+      ],
+      "explanation_ru": [
+        "Многие немецкие инфинитивы заканчиваются на -en: lern-en, wohn-en, mach-en.",
+        "К основе добавляется личное окончание."
+      ],
+      "table": [["lernen", "lern", "-en"], ["wohnen", "wohn", "-en"], ["machen", "mach", "-en"]],
+      "trainable": false
+    },
+    {
+      "id": "personal_pronouns",
+      "order": 3,
+      "title_de": "Personalpronomen",
+      "title_ru": "Личные местоимения",
+      "summary_de": "Das Pronomen zeigt, wer handelt.",
+      "summary_ru": "Местоимение показывает, кто выполняет действие.",
+      "explanation_de": [
+        "Singular: ich, du, er, sie, es. Plural: wir, ihr, sie.",
+        "Sie ist die höfliche Anrede und wird großgeschrieben."
+      ],
+      "explanation_ru": [
+        "Единственное число: ich, du, er, sie, es. Множественное: wir, ihr, sie.",
+        "Sie — вежливое обращение, оно пишется с заглавной буквы."
+      ],
+      "table": [["ich", "я"], ["du", "ты"], ["er/sie/es", "он/она/оно"], ["wir", "мы"], ["ihr", "вы"], ["sie/Sie", "они/Вы"]],
+      "trainable": false
+    },
+    {
+      "id": "regular_present",
+      "order": 4,
+      "title_de": "Regelmäßige Verben im Präsens",
+      "title_ru": "Регулярные глаголы в Präsens",
+      "summary_de": "Der Stamm bleibt gleich, die Personenendung ändert sich.",
+      "summary_ru": "Основа остаётся неизменной, меняется личное окончание.",
+      "explanation_de": [
+        "Entferne -en vom Infinitiv und ergänze die passende Endung.",
+        "Diese erste Regel enthält noch keine Sonderfälle wie arbeiten oder heißen."
+      ],
+      "explanation_ru": [
+        "Уберите -en из инфинива и добавьте подходящее личное окончание.",
+        "В это первое правило пока не входят особые случаи вроде arbeiten или heißen."
+      ],
+      "table": [["ich", "-e"], ["du", "-st"], ["er/sie/es", "-t"], ["wir", "-en"], ["ihr", "-t"], ["sie/Sie", "-en"]],
+      "trainable": true
+    },
+    {
+      "id": "sein",
+      "order": 5,
+      "title_de": "Das Verb sein",
+      "title_ru": "Глагол sein",
+      "summary_de": "sein ist unregelmäßig und wird als ganze Form gelernt.",
+      "summary_ru": "sein — неправильный глагол, его формы учатся целиком.",
+      "explanation_de": ["Lerne jede Form vollständig. Eine regelmäßige Endung reicht hier nicht."],
+      "explanation_ru": ["Учите каждую форму целиком: обычного окончания здесь недостаточно."],
+      "table": [["ich", "bin"], ["du", "bist"], ["er/sie/es", "ist"], ["wir", "sind"], ["ihr", "seid"], ["sie/Sie", "sind"]],
+      "trainable": true
+    },
+    {
+      "id": "haben",
+      "order": 6,
+      "title_de": "Das Verb haben",
+      "title_ru": "Глагол haben",
+      "summary_de": "Bei du und er/sie/es fällt der Buchstabe b weg.",
+      "summary_ru": "В формах du и er/sie/es буква b исчезает.",
+      "explanation_de": ["Achte besonders auf du hast und er/sie/es hat."],
+      "explanation_ru": ["Обратите особое внимание на du hast и er/sie/es hat."],
+      "table": [["ich", "habe"], ["du", "hast"], ["er/sie/es", "hat"], ["wir", "haben"], ["ihr", "habt"], ["sie/Sie", "haben"]],
+      "trainable": true
+    }
+  ],
+  "verbs": [
+    {"lemma":"lernen","topic_id":"regular_present","stem":"lern","forms":{"ich":"lerne","du":"lernst","er/sie/es":"lernt","wir":"lernen","ihr":"lernt","sie/Sie":"lernen"}},
+    {"lemma":"machen","topic_id":"regular_present","stem":"mach","forms":{"ich":"mache","du":"machst","er/sie/es":"macht","wir":"machen","ihr":"macht","sie/Sie":"machen"}},
+    {"lemma":"wohnen","topic_id":"regular_present","stem":"wohn","forms":{"ich":"wohne","du":"wohnst","er/sie/es":"wohnt","wir":"wohnen","ihr":"wohnt","sie/Sie":"wohnen"}},
+    {"lemma":"kommen","topic_id":"regular_present","stem":"komm","forms":{"ich":"komme","du":"kommst","er/sie/es":"kommt","wir":"kommen","ihr":"kommt","sie/Sie":"kommen"}},
+    {"lemma":"leben","topic_id":"regular_present","stem":"leb","forms":{"ich":"lebe","du":"lebst","er/sie/es":"lebt","wir":"leben","ihr":"lebt","sie/Sie":"leben"}},
+    {"lemma":"kaufen","topic_id":"regular_present","stem":"kauf","forms":{"ich":"kaufe","du":"kaufst","er/sie/es":"kauft","wir":"kaufen","ihr":"kauft","sie/Sie":"kaufen"}},
+    {"lemma":"spielen","topic_id":"regular_present","stem":"spiel","forms":{"ich":"spiele","du":"spielst","er/sie/es":"spielt","wir":"spielen","ihr":"spielt","sie/Sie":"spielen"}},
+    {"lemma":"hören","topic_id":"regular_present","stem":"hör","forms":{"ich":"höre","du":"hörst","er/sie/es":"hört","wir":"hören","ihr":"hört","sie/Sie":"hören"}},
+    {"lemma":"fragen","topic_id":"regular_present","stem":"frag","forms":{"ich":"frage","du":"fragst","er/sie/es":"fragt","wir":"fragen","ihr":"fragt","sie/Sie":"fragen"}},
+    {"lemma":"sagen","topic_id":"regular_present","stem":"sag","forms":{"ich":"sage","du":"sagst","er/sie/es":"sagt","wir":"sagen","ihr":"sagt","sie/Sie":"sagen"}},
+    {"lemma":"glauben","topic_id":"regular_present","stem":"glaub","forms":{"ich":"glaube","du":"glaubst","er/sie/es":"glaubt","wir":"glauben","ihr":"glaubt","sie/Sie":"glauben"}},
+    {"lemma":"brauchen","topic_id":"regular_present","stem":"brauch","forms":{"ich":"brauche","du":"brauchst","er/sie/es":"braucht","wir":"brauchen","ihr":"braucht","sie/Sie":"brauchen"}},
+    {"lemma":"kochen","topic_id":"regular_present","stem":"koch","forms":{"ich":"koche","du":"kochst","er/sie/es":"kocht","wir":"kochen","ihr":"kocht","sie/Sie":"kochen"}},
+    {"lemma":"grillen","topic_id":"regular_present","stem":"grill","forms":{"ich":"grille","du":"grillst","er/sie/es":"grillt","wir":"grillen","ihr":"grillt","sie/Sie":"grillen"}},
+    {"lemma":"frühstücken","topic_id":"regular_present","stem":"frühstück","forms":{"ich":"frühstücke","du":"frühstückst","er/sie/es":"frühstückt","wir":"frühstücken","ihr":"frühstückt","sie/Sie":"frühstücken"}},
+    {"lemma":"fotografieren","topic_id":"regular_present","stem":"fotografier","forms":{"ich":"fotografiere","du":"fotografierst","er/sie/es":"fotografiert","wir":"fotografieren","ihr":"fotografiert","sie/Sie":"fotografieren"}},
+    {"lemma":"telefonieren","topic_id":"regular_present","stem":"telefonier","forms":{"ich":"telefoniere","du":"telefonierst","er/sie/es":"telefoniert","wir":"telefonieren","ihr":"telefoniert","sie/Sie":"telefonieren"}},
+    {"lemma":"studieren","topic_id":"regular_present","stem":"studier","forms":{"ich":"studiere","du":"studierst","er/sie/es":"studiert","wir":"studieren","ihr":"studiert","sie/Sie":"studieren"}},
+    {"lemma":"suchen","topic_id":"regular_present","stem":"such","forms":{"ich":"suche","du":"suchst","er/sie/es":"sucht","wir":"suchen","ihr":"sucht","sie/Sie":"suchen"}},
+    {"lemma":"besuchen","topic_id":"regular_present","stem":"besuch","forms":{"ich":"besuche","du":"besuchst","er/sie/es":"besucht","wir":"besuchen","ihr":"besucht","sie/Sie":"besuchen"}},
+    {"lemma":"lieben","topic_id":"regular_present","stem":"lieb","forms":{"ich":"liebe","du":"liebst","er/sie/es":"liebt","wir":"lieben","ihr":"liebt","sie/Sie":"lieben"}},
+    {"lemma":"zeigen","topic_id":"regular_present","stem":"zeig","forms":{"ich":"zeige","du":"zeigst","er/sie/es":"zeigt","wir":"zeigen","ihr":"zeigt","sie/Sie":"zeigen"}},
+    {"lemma":"erklären","topic_id":"regular_present","stem":"erklär","forms":{"ich":"erkläre","du":"erklärst","er/sie/es":"erklärt","wir":"erklären","ihr":"erklärt","sie/Sie":"erklären"}},
+    {"lemma":"üben","topic_id":"regular_present","stem":"üb","forms":{"ich":"übe","du":"übst","er/sie/es":"übt","wir":"üben","ihr":"übt","sie/Sie":"üben"}},
+    {"lemma":"bezahlen","topic_id":"regular_present","stem":"bezahl","forms":{"ich":"bezahle","du":"bezahlst","er/sie/es":"bezahlt","wir":"bezahlen","ihr":"bezahlt","sie/Sie":"bezahlen"}},
+    {"lemma":"sein","topic_id":"sein","stem":"","forms":{"ich":"bin","du":"bist","er/sie/es":"ist","wir":"sind","ihr":"seid","sie/Sie":"sind"}},
+    {"lemma":"haben","topic_id":"haben","stem":"","forms":{"ich":"habe","du":"hast","er/sie/es":"hat","wir":"haben","ihr":"habt","sie/Sie":"haben"}}
+  ]
+}

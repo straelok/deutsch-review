@@ -1,4 +1,4 @@
-const currentSchemaVersion = 3;
+const currentSchemaVersion = 4;
 
 const migrationFrom0To1 = '''
 CREATE TABLE learning_items (
@@ -146,6 +146,84 @@ CREATE UNIQUE INDEX daily_sessions_required_slot_idx
   ON daily_sessions (local_date, slot)
   WHERE slot IS NOT NULL;
 
+CREATE INDEX daily_sessions_date_status_idx
+  ON daily_sessions (local_date, status);
+''';
+
+const migrationFrom3To4 = '''
+CREATE TABLE grammar_topic_progress (
+  topic_id TEXT PRIMARY KEY NOT NULL,
+  learned INTEGER NOT NULL CHECK (learned IN (0, 1)),
+  updated_at TEXT NOT NULL
+);
+
+CREATE TABLE grammar_attempts (
+  id TEXT PRIMARY KEY NOT NULL,
+  topic_id TEXT NOT NULL,
+  exercise_id TEXT NOT NULL,
+  session_id TEXT NOT NULL,
+  answer_text TEXT NOT NULL,
+  correct INTEGER NOT NULL CHECK (correct IN (0, 1)),
+  attempted_at TEXT NOT NULL
+);
+
+CREATE INDEX grammar_attempts_topic_time_idx
+  ON grammar_attempts (topic_id, attempted_at);
+CREATE INDEX grammar_attempts_session_time_idx
+  ON grammar_attempts (session_id, attempted_at);
+
+CREATE TRIGGER grammar_attempts_prevent_update
+BEFORE UPDATE ON grammar_attempts
+BEGIN
+  SELECT RAISE(ABORT, 'grammar attempts are immutable');
+END;
+
+CREATE TRIGGER grammar_attempts_prevent_delete
+BEFORE DELETE ON grammar_attempts
+BEGIN
+  SELECT RAISE(ABORT, 'grammar attempts are immutable');
+END;
+
+ALTER TABLE daily_sessions RENAME TO daily_sessions_v3;
+
+CREATE TABLE daily_sessions (
+  id TEXT PRIMARY KEY NOT NULL,
+  local_date TEXT NOT NULL,
+  slot INTEGER CHECK (slot IS NULL OR slot BETWEEN 1 AND 7),
+  kind TEXT NOT NULL DEFAULT 'vocabulary'
+    CHECK (kind IN ('vocabulary', 'grammar')),
+  status TEXT NOT NULL CHECK (status IN ('planned', 'in_progress', 'completed')),
+  target_answers INTEGER NOT NULL CHECK (target_answers > 0),
+  answered_count INTEGER NOT NULL DEFAULT 0
+    CHECK (answered_count >= 0 AND answered_count <= target_answers),
+  queue_json TEXT NOT NULL CHECK (
+    json_valid(queue_json) AND json_type(queue_json) = 'array'
+  ),
+  last_item_id TEXT,
+  created_at TEXT NOT NULL,
+  updated_at TEXT NOT NULL,
+  completed_at TEXT,
+  CHECK (
+    (status = 'completed' AND answered_count = target_answers AND completed_at IS NOT NULL)
+    OR
+    (status != 'completed' AND answered_count < target_answers AND completed_at IS NULL)
+  )
+);
+
+INSERT INTO daily_sessions (
+  id, local_date, slot, kind, status, target_answers, answered_count,
+  queue_json, last_item_id, created_at, updated_at, completed_at
+)
+SELECT
+  id, local_date, slot, 'vocabulary', status, target_answers, answered_count,
+  queue_json, last_item_id, created_at, updated_at, completed_at
+FROM daily_sessions_v3;
+
+DROP TABLE daily_sessions_v3;
+
+CREATE UNIQUE INDEX daily_sessions_required_slot_idx
+  ON daily_sessions (local_date, slot)
+  WHERE slot IS NOT NULL;
 CREATE INDEX daily_sessions_date_status_idx
   ON daily_sessions (local_date, status);
 ''';

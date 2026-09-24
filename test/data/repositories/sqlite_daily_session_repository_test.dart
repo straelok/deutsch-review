@@ -2,6 +2,7 @@ import 'package:deutsch_review/data/database/app_database.dart';
 import 'package:deutsch_review/data/repositories/sqlite_daily_session_repository.dart';
 import 'package:deutsch_review/data/repositories/sqlite_learning_item_repository.dart';
 import 'package:deutsch_review/domain/daily_session.dart';
+import 'package:deutsch_review/domain/grammar.dart';
 import 'package:deutsch_review/domain/learning_item.dart';
 import 'package:deutsch_review/domain/practice.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -78,6 +79,82 @@ void main() {
     expect(current.answeredCount, 20);
     expect(current.queueItemIds, isEmpty);
     expect(current.completedAt, isNotNull);
+  });
+
+  test('adds two grammar sessions only when grammar is available', () async {
+    final database = AppDatabase.inMemory();
+    addTearDown(database.close);
+    final repository = SqliteDailySessionRepository(database);
+    final now = DateTime.utc(2026, 9, 24, 10);
+
+    final sessions = await repository.ensureDay(
+      localDate: '2026-09-24',
+      now: now,
+      includeGrammar: true,
+    );
+
+    expect(sessions.where((session) => session.isRequired), hasLength(7));
+    expect(
+        sessions.where((session) => session.kind == DailySessionKind.grammar),
+        hasLength(2));
+    expect(
+        sessions.firstWhere((session) => session.slot == 6).targetAnswers, 10);
+  });
+
+  test('records a grammar task atomically with all field attempts', () async {
+    final database = AppDatabase.inMemory();
+    addTearDown(database.close);
+    final repository = SqliteDailySessionRepository(database);
+    final now = DateTime.utc(2026, 9, 24, 10);
+    final planned = (await repository.ensureDay(
+      localDate: '2026-09-24',
+      now: now,
+      includeGrammar: true,
+    ))
+        .firstWhere((session) => session.slot == 6);
+    await repository.start(
+      id: planned.id,
+      queueItemIds: List.generate(10, (index) => 'grammar-$index'),
+      now: now,
+    );
+
+    final updated = await repository.recordGrammarTask(
+      sessionId: planned.id,
+      attempts: [
+        GrammarAttempt(
+          id: 'grammar-attempt-1',
+          topicId: 'regular_present',
+          exerciseId: 'grammar-0:ich',
+          sessionId: planned.id,
+          answerText: 'e',
+          correct: true,
+          attemptedAt: now,
+        ),
+        GrammarAttempt(
+          id: 'grammar-attempt-2',
+          topicId: 'regular_present',
+          exerciseId: 'grammar-0:du',
+          sessionId: planned.id,
+          answerText: 'st',
+          correct: true,
+          attemptedAt: now,
+        ),
+      ],
+      remainingQueueItemIds:
+          List.generate(9, (index) => 'grammar-${index + 1}'),
+      lastExerciseId: 'grammar-0',
+      now: now,
+    );
+
+    expect(updated.answeredCount, 1);
+    expect(updated.queueItemIds, hasLength(9));
+    expect(
+      database.connection
+          .select('SELECT * FROM grammar_attempts WHERE session_id = ?', [
+        planned.id,
+      ]),
+      hasLength(2),
+    );
   });
 }
 

@@ -6,7 +6,7 @@ import '../domain/learning_item.dart';
 final class WordJsonCodec {
   const WordJsonCodec();
 
-  static const formatVersion = 1;
+  static const formatVersion = 2;
 
   String encode(List<LearningItem> items, {required DateTime exportedAt}) {
     final package = <String, Object?>{
@@ -22,8 +22,11 @@ final class WordJsonCodec {
     if (decoded is! Map<String, Object?>) {
       throw const FormatException('Корень JSON должен быть объектом.');
     }
-    if (decoded['format_version'] != formatVersion) {
-      throw const FormatException('Поддерживается только format_version 1.');
+    final version = decoded['format_version'];
+    if (version != 1 && version != formatVersion) {
+      throw const FormatException(
+        'Поддерживаются только format_version 1 и 2.',
+      );
     }
     final words = decoded['words'];
     if (words is! List) {
@@ -31,7 +34,7 @@ final class WordJsonCodec {
     }
     return <LearningItem>[
       for (var index = 0; index < words.length; index++)
-        _decodeItem(words[index], index, importedAt.toUtc()),
+        _decodeItem(words[index], index, importedAt.toUtc(), version as int),
     ];
   }
 
@@ -51,7 +54,12 @@ final class WordJsonCodec {
     };
   }
 
-  static LearningItem _decodeItem(Object? value, int index, DateTime now) {
+  static LearningItem _decodeItem(
+    Object? value,
+    int index,
+    DateTime now,
+    int version,
+  ) {
     if (value is! Map<String, Object?>) {
       throw FormatException('words[$index] должен быть объектом.');
     }
@@ -59,8 +67,9 @@ final class WordJsonCodec {
     final type = switch (typeName) {
       'word' => LearningItemType.word,
       'noun' => LearningItemType.noun,
+      'verb' when version >= 2 => LearningItemType.verb,
       _ => throw FormatException(
-          'words[$index].type должен быть word или noun.',
+          'words[$index].type не поддерживается этой версией формата.',
         ),
     };
     final german = _requiredString(value, 'german', index);

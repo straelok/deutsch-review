@@ -26,6 +26,8 @@ void main() {
         'learning_items',
         'app_settings',
         'daily_sessions',
+        'grammar_attempts',
+        'grammar_topic_progress',
         'practice_attempts',
       ]),
     );
@@ -88,7 +90,7 @@ void main() {
     final migrated = AppDatabase.open(path);
     addTearDown(migrated.close);
 
-    expect(migrated.schemaVersion, 3);
+    expect(migrated.schemaVersion, currentSchemaVersion);
     final backups = directory
         .listSync()
         .whereType<File>()
@@ -103,6 +105,45 @@ void main() {
         "SELECT name FROM sqlite_master WHERE name = 'review_events'",
       ),
       isNotEmpty,
+    );
+  });
+
+  test('migrates version 3 sessions to grammar-aware version 4', () {
+    final directory = Directory.systemTemp.createTempSync('deutsch_review_');
+    addTearDown(() => directory.deleteSync(recursive: true));
+    final path = '${directory.path}${Platform.pathSeparator}version3.sqlite';
+    final oldDatabase = sqlite3.open(path);
+    oldDatabase.execute(migrationFrom0To1);
+    oldDatabase.execute(migrationFrom1To2);
+    oldDatabase.execute(migrationFrom2To3);
+    oldDatabase.execute('PRAGMA user_version = 3');
+    oldDatabase.execute('''
+      INSERT INTO daily_sessions (
+        id, local_date, slot, status, target_answers, answered_count,
+        queue_json, last_item_id, created_at, updated_at, completed_at
+      ) VALUES (
+        'session-1', '2026-09-24', 1, 'planned', 20, 0, '[]', NULL,
+        '2026-09-24T10:00:00.000Z', '2026-09-24T10:00:00.000Z', NULL
+      )
+    ''');
+    oldDatabase.close();
+
+    final migrated = AppDatabase.open(path);
+    addTearDown(migrated.close);
+
+    expect(migrated.schemaVersion, 4);
+    final session = migrated.connection
+        .select("SELECT * FROM daily_sessions WHERE id = 'session-1'")
+        .single;
+    expect(session['kind'], 'vocabulary');
+    expect(migrated.integrityCheck(), ['ok']);
+    expect(migrated.foreignKeyCheck(), isEmpty);
+    expect(
+      directory
+          .listSync()
+          .whereType<File>()
+          .where((file) => file.path.contains('version3.sqlite.backup-v3-')),
+      hasLength(1),
     );
   });
 

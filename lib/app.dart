@@ -2,14 +2,17 @@ import 'package:flutter/material.dart';
 
 import 'domain/app_language.dart';
 import 'domain/repositories/daily_session_repository.dart';
+import 'domain/repositories/grammar_repository.dart';
 import 'domain/repositories/learning_item_repository.dart';
 import 'domain/repositories/practice_repository.dart';
 import 'domain/repositories/settings_repository.dart';
 import 'features/material/material_page.dart';
+import 'features/grammar/grammar_page.dart';
 import 'features/practice/practice_page.dart';
 import 'features/statistics/statistics_page.dart';
 import 'features/sync/sync_dialog.dart';
 import 'l10n/ui_strings.dart';
+import 'grammar/grammar_catalog.dart';
 import 'reminders/reminder_controller.dart';
 import 'sync/sync_controller.dart';
 import 'sync/sync_models.dart';
@@ -20,6 +23,8 @@ class DeutschReviewApp extends StatefulWidget {
     required this.sessions,
     required this.settings,
     required this.practice,
+    required this.grammar,
+    required this.grammarCatalog,
     this.syncController,
     this.reminders,
     this.onDispose,
@@ -30,6 +35,8 @@ class DeutschReviewApp extends StatefulWidget {
   final DailySessionRepository sessions;
   final SettingsRepository settings;
   final PracticeRepository practice;
+  final GrammarRepository grammar;
+  final GrammarCatalog grammarCatalog;
   final SyncController? syncController;
   final ReminderController? reminders;
   final VoidCallback? onDispose;
@@ -68,6 +75,8 @@ class _DeutschReviewAppState extends State<DeutschReviewApp> {
         learningItems: widget.learningItems,
         sessions: widget.sessions,
         practice: widget.practice,
+        grammar: widget.grammar,
+        grammarCatalog: widget.grammarCatalog,
         syncController: widget.syncController,
         reminders: widget.reminders,
         language: _language,
@@ -135,6 +144,8 @@ class HomeScreen extends StatefulWidget {
     required this.learningItems,
     required this.sessions,
     required this.practice,
+    required this.grammar,
+    required this.grammarCatalog,
     this.syncController,
     this.reminders,
     required this.language,
@@ -145,6 +156,8 @@ class HomeScreen extends StatefulWidget {
   final LearningItemRepository learningItems;
   final DailySessionRepository sessions;
   final PracticeRepository practice;
+  final GrammarRepository grammar;
+  final GrammarCatalog grammarCatalog;
   final SyncController? syncController;
   final ReminderController? reminders;
   final AppLanguage language;
@@ -198,6 +211,10 @@ class _HomeScreenState extends State<HomeScreen> {
         label: s.material,
       ),
       NavigationDestination(
+        icon: const Icon(Icons.school_outlined),
+        label: s.grammar,
+      ),
+      NavigationDestination(
         icon: const Icon(Icons.insights_outlined),
         label: s.statistics,
       ),
@@ -211,12 +228,25 @@ class _HomeScreenState extends State<HomeScreen> {
         refreshToken: _statisticsRevision,
         onAttemptSaved: () => setState(() => _statisticsRevision++),
         reminders: widget.reminders,
+        grammar: widget.grammar,
+        grammarCatalog: widget.grammarCatalog,
       ),
       DictionaryMaterialPage(
         repository: widget.learningItems,
         practice: widget.practice,
         strings: s,
         refreshToken: _statisticsRevision,
+      ),
+      GrammarPage(
+        catalog: widget.grammarCatalog,
+        repository: widget.grammar,
+        learningItems: widget.learningItems,
+        strings: s,
+        refreshToken: _statisticsRevision,
+        onChanged: () {
+          setState(() => _statisticsRevision++);
+          widget.reminders?.refresh(force: true);
+        },
       ),
       StatisticsPage(
         repository: widget.practice,

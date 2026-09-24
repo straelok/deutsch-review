@@ -15,11 +15,28 @@ enum DailySessionStatus {
   }
 }
 
+enum DailySessionKind {
+  vocabulary('vocabulary'),
+  grammar('grammar');
+
+  const DailySessionKind(this.wireName);
+
+  final String wireName;
+
+  static DailySessionKind fromWireName(String value) {
+    return values.firstWhere(
+      (kind) => kind.wireName == value,
+      orElse: () => throw ArgumentError.value(value, 'value', 'Unknown kind'),
+    );
+  }
+}
+
 final class DailySession {
   const DailySession({
     required this.id,
     required this.localDate,
     required this.slot,
+    required this.kind,
     required this.status,
     required this.targetAnswers,
     required this.answeredCount,
@@ -33,6 +50,7 @@ final class DailySession {
   final String id;
   final String localDate;
   final int? slot;
+  final DailySessionKind kind;
   final DailySessionStatus status;
   final int targetAnswers;
   final int answeredCount;

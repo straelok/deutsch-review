@@ -4,6 +4,7 @@ import 'package:sqlite3/sqlite3.dart';
 
 import '../../domain/daily_session.dart';
 import '../../domain/id_generator.dart';
+import '../../domain/grammar.dart';
 import '../../domain/practice.dart';
 import '../../domain/repositories/daily_session_repository.dart';
 import '../database/app_database.dart';
@@ -17,6 +18,7 @@ final class SqliteDailySessionRepository implements DailySessionRepository {
   Future<List<DailySession>> ensureDay({
     required String localDate,
     required DateTime now,
+    bool includeGrammar = false,
   }) async {
     final timestamp = now.toUtc().toIso8601String();
     database.connection.execute('BEGIN IMMEDIATE');
@@ -25,12 +27,25 @@ final class SqliteDailySessionRepository implements DailySessionRepository {
         database.connection.execute(
           '''
           INSERT OR IGNORE INTO daily_sessions (
-            id, local_date, slot, status, target_answers, answered_count,
+            id, local_date, slot, kind, status, target_answers, answered_count,
             queue_json, last_item_id, created_at, updated_at, completed_at
-          ) VALUES (?, ?, ?, 'planned', 20, 0, '[]', NULL, ?, ?, NULL)
+          ) VALUES (?, ?, ?, 'vocabulary', 'planned', 20, 0, '[]', NULL, ?, ?, NULL)
           ''',
           <Object?>[newUuidV4(), localDate, slot, timestamp, timestamp],
         );
+      }
+      if (includeGrammar) {
+        for (var slot = 6; slot <= 7; slot++) {
+          database.connection.execute(
+            '''
+            INSERT OR IGNORE INTO daily_sessions (
+              id, local_date, slot, kind, status, target_answers, answered_count,
+              queue_json, last_item_id, created_at, updated_at, completed_at
+            ) VALUES (?, ?, ?, 'grammar', 'planned', 10, 0, '[]', NULL, ?, ?, NULL)
+            ''',
+            <Object?>[newUuidV4(), localDate, slot, timestamp, timestamp],
+          );
+        }
       }
       database.connection.execute('COMMIT');
     } catch (_) {
@@ -59,9 +74,9 @@ final class SqliteDailySessionRepository implements DailySessionRepository {
     database.connection.execute(
       '''
       INSERT INTO daily_sessions (
-        id, local_date, slot, status, target_answers, answered_count,
+        id, local_date, slot, kind, status, target_answers, answered_count,
         queue_json, last_item_id, created_at, updated_at, completed_at
-      ) VALUES (?, ?, NULL, 'planned', 20, 0, '[]', NULL, ?, ?, NULL)
+      ) VALUES (?, ?, NULL, 'vocabulary', 'planned', 20, 0, '[]', NULL, ?, ?, NULL)
       ''',
       <Object?>[id, localDate, timestamp, timestamp],
     );
@@ -145,6 +160,71 @@ final class SqliteDailySessionRepository implements DailySessionRepository {
     return (await findById(session.id))!;
   }
 
+  @override
+  Future<DailySession> recordGrammarTask({
+    required String sessionId,
+    required List<GrammarAttempt> attempts,
+    required List<String> remainingQueueItemIds,
+    required String lastExerciseId,
+    required DateTime now,
+  }) async {
+    final session = await findById(sessionId);
+    if (session == null ||
+        session.isComplete ||
+        session.kind != DailySessionKind.grammar ||
+        attempts.isEmpty) {
+      throw StateError('Cannot record a grammar task for this session.');
+    }
+    final answeredCount = session.answeredCount + 1;
+    final completed = answeredCount >= session.targetAnswers;
+    final timestamp = now.toUtc().toIso8601String();
+
+    database.connection.execute('BEGIN IMMEDIATE');
+    try {
+      for (final attempt in attempts) {
+        database.connection.execute(
+          '''
+          INSERT INTO grammar_attempts (
+            id, topic_id, exercise_id, session_id, answer_text, correct,
+            attempted_at
+          ) VALUES (?, ?, ?, ?, ?, ?, ?)
+          ''',
+          <Object?>[
+            attempt.id,
+            attempt.topicId,
+            attempt.exerciseId,
+            attempt.sessionId,
+            attempt.answerText,
+            attempt.correct ? 1 : 0,
+            attempt.attemptedAt.toUtc().toIso8601String(),
+          ],
+        );
+      }
+      database.connection.execute(
+        '''
+        UPDATE daily_sessions
+        SET status = ?, answered_count = ?, queue_json = ?, last_item_id = ?,
+            updated_at = ?, completed_at = ?
+        WHERE id = ?
+        ''',
+        <Object?>[
+          completed ? 'completed' : 'in_progress',
+          answeredCount,
+          jsonEncode(completed ? const <String>[] : remainingQueueItemIds),
+          lastExerciseId,
+          timestamp,
+          completed ? timestamp : null,
+          session.id,
+        ],
+      );
+      database.connection.execute('COMMIT');
+    } catch (_) {
+      database.connection.execute('ROLLBACK');
+      rethrow;
+    }
+    return (await findById(session.id))!;
+  }
+
   List<DailySession> _findForDate(String localDate) {
     final rows = database.connection.select(
       '''
@@ -166,6 +246,7 @@ final class SqliteDailySessionRepository implements DailySessionRepository {
       id: row['id'] as String,
       localDate: row['local_date'] as String,
       slot: row['slot'] as int?,
+      kind: DailySessionKind.fromWireName(row['kind'] as String),
       status: DailySessionStatus.fromWireName(row['status'] as String),
       targetAnswers: row['target_answers'] as int,
       answeredCount: row['answered_count'] as int,

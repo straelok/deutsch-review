@@ -10,11 +10,14 @@ final class ReminderController extends ChangeNotifier
   ReminderController({
     required DailySessionRepository sessions,
     required ReminderGateway gateway,
+    Future<bool> Function()? grammarAvailability,
   })  : _sessions = sessions,
-        _gateway = gateway;
+        _gateway = gateway,
+        _grammarAvailability = grammarAvailability;
 
   final DailySessionRepository _sessions;
   final ReminderGateway _gateway;
+  final Future<bool> Function()? _grammarAvailability;
 
   bool _enabled = false;
   bool _busy = false;
@@ -63,6 +66,7 @@ final class ReminderController extends ChangeNotifier
     final sessions = await _sessions.ensureDay(
       localDate: day,
       now: now.toUtc(),
+      includeGrammar: await _grammarAvailability?.call() ?? false,
     );
     final completed = sessions
         .where((session) => session.isRequired && session.isComplete)
@@ -73,7 +77,8 @@ final class ReminderController extends ChangeNotifier
     _lastCompleted = completed;
     await _gateway.replaceSchedule(
       now: now,
-      skipToday: completed >= 5,
+      skipToday:
+          completed >= sessions.where((session) => session.isRequired).length,
       copy: _language == AppLanguage.russian
           ? const ReminderCopy(
               title: 'Worttrieb: занятия на сегодня',

@@ -60,6 +60,31 @@ void main() {
     expect(restored.createdAt, now);
   });
 
+  test('exports verbs in version 2 and still imports version 1', () {
+    final verb = LearningItem(
+      id: 'verb-1',
+      type: LearningItemType.verb,
+      level: '',
+      lesson: '',
+      topic: '',
+      learned: true,
+      createdAt: now,
+      updatedAt: now,
+      sourceRef: 'manual',
+      content: const {
+        'german': 'lernen',
+        'translation_ru': 'учить',
+      },
+    );
+
+    final json = codec.encode([verb], exportedAt: now);
+    final restored = codec.decode(json, importedAt: now).single;
+
+    expect(json, contains('"format_version": 2'));
+    expect(restored.type, LearningItemType.verb);
+    expect(restored.content['german'], 'lernen');
+  });
+
   test('rejects the whole package when a required field is missing', () {
     expect(
       () => codec.decode(

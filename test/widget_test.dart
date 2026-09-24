@@ -1,11 +1,14 @@
 import 'package:deutsch_review/app.dart';
 import 'package:deutsch_review/data/database/app_database.dart';
 import 'package:deutsch_review/data/repositories/sqlite_learning_item_repository.dart';
+import 'package:deutsch_review/data/repositories/sqlite_grammar_repository.dart';
 import 'package:deutsch_review/data/repositories/sqlite_daily_session_repository.dart';
 import 'package:deutsch_review/data/repositories/sqlite_practice_repository.dart';
 import 'package:deutsch_review/data/repositories/sqlite_settings_repository.dart';
 import 'package:deutsch_review/domain/daily_session.dart';
+import 'package:deutsch_review/domain/grammar.dart';
 import 'package:deutsch_review/domain/learning_item.dart';
+import 'package:deutsch_review/grammar/grammar_catalog.dart';
 import 'package:deutsch_review/sync/sqlite_sync_store.dart';
 import 'package:deutsch_review/sync/sync_controller.dart';
 import 'package:deutsch_review/sync/sync_gateway.dart';
@@ -256,17 +259,59 @@ void main() {
     expect(find.text('Synchronisiert'), findsOneWidget);
     expect(controller.nickname, 'test_user');
   });
+
+  testWidgets('activates grammar sessions for a learned verb topic', (
+    tester,
+  ) async {
+    final database = AppDatabase.inMemory();
+    addTearDown(database.close);
+    final catalog = _grammarCatalog();
+    await SqliteLearningItemRepository(database).save(_verb());
+
+    await tester.pumpWidget(_app(database, grammarCatalog: catalog));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Grammatik'));
+    await tester.pumpAndSettle();
+    await tester.tap(
+      find.byKey(const Key('grammar-topic-regular_present')),
+    );
+    await tester.pumpAndSettle();
+    await tester.tap(
+      find.byKey(const Key('toggle-topic-regular_present')),
+    );
+    await tester.pumpAndSettle();
+
+    await tester.tap(find.text('Heute'));
+    await tester.pumpAndSettle();
+    expect(find.text('0 von 7 Sitzungen abgeschlossen'), findsOneWidget);
+    await tester.scrollUntilVisible(find.text('Sitzung 6'), 300);
+    expect(find.text('Sitzung 6'), findsOneWidget);
+
+    await tester.tap(find.byKey(const Key('start-review-6')));
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 200));
+    expect(find.text('lernen'), findsOneWidget);
+    expect(find.byKey(const Key('grammar-form-ich')), findsOneWidget);
+  });
 }
 
 DeutschReviewApp _app(
   AppDatabase database, {
   SyncController? syncController,
+  GrammarCatalog? grammarCatalog,
 }) {
   return DeutschReviewApp(
     learningItems: SqliteLearningItemRepository(database),
     sessions: SqliteDailySessionRepository(database),
     settings: SqliteSettingsRepository(database),
     practice: SqlitePracticeRepository(database),
+    grammar: SqliteGrammarRepository(database),
+    grammarCatalog: grammarCatalog ??
+        GrammarCatalog(
+          topics: const [],
+          verbs: const [],
+          exercises: const [],
+        ),
     syncController: syncController,
   );
 }
@@ -299,5 +344,66 @@ LearningItem _word() {
       'example': 'Ich lerne Deutsch.',
       'note': 'Wort aus Lektion 1',
     },
+  );
+}
+
+LearningItem _verb() {
+  final now = DateTime.utc(2026, 9, 24, 10);
+  return LearningItem(
+    id: 'verb-lernen',
+    type: LearningItemType.verb,
+    level: '',
+    lesson: '',
+    topic: '',
+    learned: true,
+    createdAt: now,
+    updatedAt: now,
+    sourceRef: 'manual',
+    content: const {'german': 'lernen', 'translation_ru': 'учить'},
+  );
+}
+
+GrammarCatalog _grammarCatalog() {
+  const topic = GrammarTopic(
+    id: 'regular_present',
+    order: 1,
+    titleDe: 'Regelmäßige Verben im Präsens',
+    titleRu: 'Регулярные глаголы в Präsens',
+    summaryDe: 'Regelmäßige Endungen',
+    summaryRu: 'Регулярные окончания',
+    explanationDe: ['Erklärung'],
+    explanationRu: ['Объяснение'],
+    table: [
+      ['ich', '-e'],
+      ['du', '-st'],
+    ],
+    trainable: true,
+  );
+  const verb = GrammarVerb(
+    lemma: 'lernen',
+    topicId: 'regular_present',
+    stem: 'lern',
+    forms: {
+      'ich': 'lerne',
+      'du': 'lernst',
+      'er/sie/es': 'lernt',
+      'wir': 'lernen',
+      'ihr': 'lernt',
+      'sie/Sie': 'lernen',
+    },
+  );
+  return GrammarCatalog(
+    topics: const [topic],
+    verbs: const [verb],
+    exercises: List.generate(
+      12,
+      (index) => GrammarExercise(
+        id: 'exercise-$index',
+        topicId: 'regular_present',
+        lemma: 'lernen',
+        prompt: 'Ich lern_ Beispiel $index.',
+        answer: 'e',
+      ),
+    ),
   );
 }

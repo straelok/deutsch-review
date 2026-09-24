@@ -2,6 +2,7 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:deutsch_review/data/database/app_database.dart';
 import 'package:deutsch_review/data/repositories/sqlite_daily_session_repository.dart';
 import 'package:deutsch_review/data/repositories/sqlite_learning_item_repository.dart';
+import 'package:deutsch_review/data/repositories/sqlite_grammar_repository.dart';
 import 'package:deutsch_review/domain/learning_item.dart';
 import 'package:deutsch_review/sync/sqlite_sync_store.dart';
 import 'package:deutsch_review/sync/sync_controller.dart';
@@ -39,6 +40,11 @@ void main() {
     );
     await sourceSessions.ensureDay(localDate: '2026-09-23', now: now);
     await targetSessions.ensureDay(localDate: '2026-09-23', now: now);
+    await SqliteGrammarRepository(source).setLearned(
+      topicId: 'regular_present',
+      learned: true,
+      now: now,
+    );
 
     final payload = SqliteSyncStore(source).buildPayload();
     SqliteSyncStore(target).mergePayload(payload);
@@ -52,6 +58,11 @@ void main() {
     expect(sessions, hasLength(5));
     expect(target.integrityCheck(), <String>['ok']);
     expect(target.foreignKeyCheck(), isEmpty);
+    expect(
+      (await SqliteGrammarRepository(target).progress())['regular_present']
+          ?.learned,
+      isTrue,
+    );
   });
 
   test('controller persists nickname and completes synchronization', () async {

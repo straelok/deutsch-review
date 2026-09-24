@@ -80,6 +80,7 @@ final class AppDatabase {
         0 => migrationFrom0To1,
         1 => migrationFrom1To2,
         2 => migrationFrom2To3,
+        3 => migrationFrom3To4,
         _ => throw UnsupportedSchemaVersion(version, currentSchemaVersion),
       };
       _runMigration(connection, migration, version + 1);

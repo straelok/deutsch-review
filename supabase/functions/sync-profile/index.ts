@@ -39,10 +39,16 @@ function requestKey(request: Request): string | null {
 function validPayload(value: unknown): value is Record<string, unknown> {
   if (typeof value !== "object" || value === null) return false;
   const payload = value as Record<string, unknown>;
-  return payload.version === 1 &&
+  return (payload.version === 1 || payload.version === 2) &&
     Array.isArray(payload.items) && payload.items.length <= 10000 &&
     Array.isArray(payload.attempts) && payload.attempts.length <= 100000 &&
-    Array.isArray(payload.sessions) && payload.sessions.length <= 10000;
+    Array.isArray(payload.sessions) && payload.sessions.length <= 10000 &&
+    (payload.grammarProgress === undefined ||
+      (Array.isArray(payload.grammarProgress) &&
+        payload.grammarProgress.length <= 1000)) &&
+    (payload.grammarAttempts === undefined ||
+      (Array.isArray(payload.grammarAttempts) &&
+        payload.grammarAttempts.length <= 100000));
 }
 
 Deno.serve(async (request) => {
