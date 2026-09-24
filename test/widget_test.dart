@@ -4,6 +4,7 @@ import 'package:deutsch_review/data/repositories/sqlite_learning_item_repository
 import 'package:deutsch_review/data/repositories/sqlite_daily_session_repository.dart';
 import 'package:deutsch_review/data/repositories/sqlite_practice_repository.dart';
 import 'package:deutsch_review/data/repositories/sqlite_settings_repository.dart';
+import 'package:deutsch_review/domain/daily_session.dart';
 import 'package:deutsch_review/domain/learning_item.dart';
 import 'package:deutsch_review/sync/sqlite_sync_store.dart';
 import 'package:deutsch_review/sync/sync_controller.dart';
@@ -118,7 +119,7 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.text('Сегодня'), findsWidgets);
-    expect(find.text('Повторение'), findsOneWidget);
+    expect(find.text('Повторение'), findsNothing);
 
     await tester.pumpWidget(const SizedBox.shrink());
     await tester.pumpWidget(_app(database));
@@ -164,8 +165,6 @@ void main() {
 
     await tester.pumpWidget(_app(database));
     await tester.pumpAndSettle();
-    await tester.tap(find.text('Lernen'));
-    await tester.pumpAndSettle();
     await tester.tap(find.byKey(const Key('start-review')));
     await tester.pumpAndSettle();
     expect(find.text('учить'), findsOneWidget);
@@ -181,7 +180,7 @@ void main() {
     await tester.tap(find.byKey(const Key('next-answer')));
     await tester.pumpAndSettle();
 
-    await tester.tap(find.text('Heute'));
+    await tester.tap(find.byKey(const Key('back-to-plan')));
     await tester.pumpAndSettle();
     expect(find.textContaining('1 von 20 Antworten'), findsOneWidget);
     expect(find.text('Fortsetzen'), findsOneWidget);
@@ -196,6 +195,39 @@ void main() {
     expect(find.text('Problemwörter'), findsOneWidget);
     expect(find.text('lernen'), findsOneWidget);
     expect(find.text('1'), findsWidgets);
+  });
+
+  testWidgets('bietet nach fünf Sitzungen einen neuen Unterricht an', (
+    tester,
+  ) async {
+    final database = AppDatabase.inMemory();
+    addTearDown(database.close);
+    await SqliteLearningItemRepository(database).save(_word());
+    final now = DateTime.now();
+    await SqliteDailySessionRepository(database).ensureDay(
+      localDate: localDayKey(now),
+      now: now.toUtc(),
+    );
+    database.connection.execute(
+      "UPDATE daily_sessions SET status = 'completed', "
+      'answered_count = target_answers, completed_at = updated_at '
+      'WHERE local_date = ?',
+      [localDayKey(now)],
+    );
+
+    await tester.pumpWidget(_app(database));
+    await tester.pumpAndSettle();
+
+    expect(find.text('5 von 5 Sitzungen abgeschlossen'), findsOneWidget);
+    await tester.scrollUntilVisible(
+      find.byKey(const Key('create-extra-session')),
+      300,
+    );
+    expect(find.byKey(const Key('create-extra-session')), findsOneWidget);
+    await tester.tap(find.byKey(const Key('create-extra-session')));
+    await tester.pumpAndSettle();
+
+    expect(find.byKey(const Key('practice-answer')), findsOneWidget);
   });
 
   testWidgets('fragt nach einem Nickname und zeigt den Sync-Status', (

@@ -9,7 +9,6 @@ import 'features/material/material_page.dart';
 import 'features/practice/practice_page.dart';
 import 'features/statistics/statistics_page.dart';
 import 'features/sync/sync_dialog.dart';
-import 'features/today/today_page.dart';
 import 'l10n/ui_strings.dart';
 import 'reminders/reminder_controller.dart';
 import 'sync/sync_controller.dart';
@@ -160,8 +159,6 @@ class _HomeScreenState extends State<HomeScreen> {
   int _statisticsRevision = 0;
   int _lastSyncRevision = 0;
   int _lastReminderRevision = 0;
-  String? _requestedSessionId;
-  int _sessionRequestRevision = 0;
 
   @override
   void initState() {
@@ -197,8 +194,6 @@ class _HomeScreenState extends State<HomeScreen> {
       NavigationDestination(
           icon: const Icon(Icons.today_outlined), label: s.today),
       NavigationDestination(
-          icon: const Icon(Icons.school_outlined), label: s.learn),
-      NavigationDestination(
         icon: const Icon(Icons.inventory_2_outlined),
         label: s.material,
       ),
@@ -208,22 +203,14 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     ];
     final pages = <Widget>[
-      TodayPage(
-        sessions: widget.sessions,
-        strings: s,
-        refreshToken: _statisticsRevision,
-        onOpenSession: _openSession,
-        reminders: widget.reminders,
-      ),
       PracticePage(
         learningItems: widget.learningItems,
         practice: widget.practice,
         sessions: widget.sessions,
         strings: s,
-        requestedSessionId: _requestedSessionId,
-        requestRevision: _sessionRequestRevision,
         refreshToken: _statisticsRevision,
         onAttemptSaved: () => setState(() => _statisticsRevision++),
+        reminders: widget.reminders,
       ),
       DictionaryMaterialPage(
         repository: widget.learningItems,
@@ -321,14 +308,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
   void _selectDestination(int index) {
     setState(() => _selectedIndex = index);
-  }
-
-  void _openSession(String id) {
-    setState(() {
-      _requestedSessionId = id;
-      _sessionRequestRevision++;
-      _selectedIndex = 1;
-    });
   }
 
   void _syncChanged() {

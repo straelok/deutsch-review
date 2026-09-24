@@ -13,6 +13,7 @@ import '../../domain/repositories/learning_item_repository.dart';
 import '../../domain/repositories/practice_repository.dart';
 import '../../domain/word_priority.dart';
 import '../../l10n/ui_strings.dart';
+import '../../reminders/reminder_controller.dart';
 
 class PracticePage extends StatefulWidget {
   const PracticePage({
@@ -20,10 +21,9 @@ class PracticePage extends StatefulWidget {
     required this.practice,
     required this.sessions,
     required this.strings,
-    required this.requestedSessionId,
-    required this.requestRevision,
     required this.refreshToken,
     required this.onAttemptSaved,
+    this.reminders,
     super.key,
   });
 
@@ -31,10 +31,9 @@ class PracticePage extends StatefulWidget {
   final PracticeRepository practice;
   final DailySessionRepository sessions;
   final UiStrings strings;
-  final String? requestedSessionId;
-  final int requestRevision;
   final int refreshToken;
   final VoidCallback onAttemptSaved;
+  final ReminderController? reminders;
 
   @override
   State<PracticePage> createState() => _PracticePageState();
@@ -65,11 +64,7 @@ class _PracticePageState extends State<PracticePage> {
   @override
   void didUpdateWidget(covariant PracticePage oldWidget) {
     super.didUpdateWidget(oldWidget);
-    if (widget.requestRevision != oldWidget.requestRevision &&
-        widget.requestedSessionId != null) {
-      _openSession(widget.requestedSessionId!);
-    } else if (widget.refreshToken != oldWidget.refreshToken &&
-        _session == null) {
+    if (widget.refreshToken != oldWidget.refreshToken && _session == null) {
       _load();
     }
   }
@@ -121,6 +116,16 @@ class _PracticePageState extends State<PracticePage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: TextButton.icon(
+                      key: const Key('back-to-plan'),
+                      onPressed: _load,
+                      icon: const Icon(Icons.arrow_back),
+                      label: Text(s.dailyPlan),
+                    ),
+                  ),
+                  const SizedBox(height: 8),
                   Text(
                     s.progress(
                       _session!.answeredCount,
@@ -199,47 +204,127 @@ class _PracticePageState extends State<PracticePage> {
 
   Widget _sessionSelection() {
     final s = widget.strings;
-    if (_activeItems.isEmpty) {
-      return _CenteredPanel(
-        icon: Icons.school_outlined,
-        title: s.learn,
-        message: s.reviewEmpty,
-      );
-    }
+    final requiredSessions =
+        _daySessions.where((session) => session.isRequired).toList();
+    final extraSessions =
+        _daySessions.where((session) => !session.isRequired).toList();
+    final completed =
+        requiredSessions.where((session) => session.isComplete).length;
+    final dayComplete = completed == 5;
+
     return ListView(
       padding: const EdgeInsets.all(24),
       children: [
-        Text(s.learn, style: Theme.of(context).textTheme.headlineMedium),
+        Text(s.dailyPlan, style: Theme.of(context).textTheme.headlineMedium),
         const SizedBox(height: 8),
-        Text(s.chooseSession),
-        const SizedBox(height: 16),
-        ..._daySessions.where((session) => session.isRequired).map(
-              (session) => Card(
-                child: ListTile(
-                  title: Text(s.sessionNumber(session.slot!)),
-                  subtitle: Text(
-                    s.sessionAnswers(
-                      session.answeredCount,
-                      session.targetAnswers,
-                    ),
-                  ),
-                  trailing: FilledButton(
-                    key: session.slot == 1
-                        ? const Key('start-review')
-                        : Key('start-review-${session.slot}'),
-                    onPressed: () => _selectSession(session),
-                    child: Text(
-                      session.isComplete
-                          ? s.repeatSession
-                          : session.status == DailySessionStatus.inProgress
-                              ? s.continueSession
-                              : s.start,
-                    ),
-                  ),
-                ),
-              ),
+        Text(s.dailyProgress(completed)),
+        if (widget.reminders case final reminders?) ...[
+          const SizedBox(height: 16),
+          _reminderCard(reminders),
+        ],
+        if (_activeItems.isEmpty) ...[
+          const SizedBox(height: 16),
+          Card(
+            child: ListTile(
+              leading: const Icon(Icons.info_outline),
+              title: Text(s.reviewEmpty),
             ),
+          ),
+        ],
+        const SizedBox(height: 16),
+        Text(s.chooseSession),
+        const SizedBox(height: 8),
+        ...requiredSessions.map(_sessionCard),
+        if (dayComplete) ...[
+          const SizedBox(height: 12),
+          FilledButton.icon(
+            key: const Key('create-extra-session'),
+            onPressed: _createExtraSession,
+            icon: const Icon(Icons.add),
+            label: Text(s.getNewLesson),
+          ),
+        ],
+        if (extraSessions.isNotEmpty) ...[
+          const SizedBox(height: 24),
+          Text(s.extraSession, style: Theme.of(context).textTheme.titleLarge),
+          const SizedBox(height: 8),
+          ...extraSessions.map(_sessionCard),
+        ],
       ],
+    );
+  }
+
+  Widget _reminderCard(ReminderController reminders) {
+    final s = widget.strings;
+    return AnimatedBuilder(
+      animation: reminders,
+      builder: (context, _) => Card(
+        child: ListTile(
+          leading: Icon(
+            reminders.isEnabled
+                ? Icons.notifications_active_outlined
+                : Icons.notifications_off_outlined,
+          ),
+          title: Text(s.remindersTitle),
+          subtitle: Text(
+            reminders.isEnabled ? s.remindersEnabled : s.remindersDisabled,
+          ),
+          trailing: reminders.isEnabled
+              ? const Icon(Icons.check)
+              : FilledButton(
+                  key: const Key('enable-reminders'),
+                  onPressed:
+                      reminders.isBusy ? null : reminders.requestPermission,
+                  child: reminders.isBusy
+                      ? const SizedBox.square(
+                          dimension: 18,
+                          child: CircularProgressIndicator(strokeWidth: 2),
+                        )
+                      : Text(s.enableReminders),
+                ),
+        ),
+      ),
+    );
+  }
+
+  Widget _sessionCard(DailySession session) {
+    final s = widget.strings;
+    final status = switch (session.status) {
+      DailySessionStatus.planned => s.planned,
+      DailySessionStatus.inProgress => s.inProgress,
+      DailySessionStatus.completed => s.completed,
+    };
+    final action = session.isComplete
+        ? const Icon(Icons.check)
+        : FilledButton(
+            key: session.slot == 1
+                ? const Key('start-review')
+                : Key('start-review-${session.slot ?? session.id}'),
+            onPressed:
+                _activeItems.isEmpty ? null : () => _selectSession(session),
+            child: Text(
+              session.status == DailySessionStatus.inProgress
+                  ? s.continueSession
+                  : s.start,
+            ),
+          );
+    return Card(
+      child: ListTile(
+        leading: CircleAvatar(
+          child: session.isComplete
+              ? const Icon(Icons.check)
+              : Text('${session.slot ?? '+'}'),
+        ),
+        title: Text(
+          session.slot == null
+              ? s.extraSession
+              : s.sessionNumber(session.slot!),
+        ),
+        subtitle: Text(
+          '$status · ${s.sessionAnswers(session.answeredCount, session.targetAnswers)}',
+        ),
+        trailing: action,
+      ),
     );
   }
 
@@ -272,15 +357,15 @@ class _PracticePageState extends State<PracticePage> {
   }
 
   Future<void> _selectSession(DailySession session) async {
-    if (session.isComplete) {
-      final extra = await widget.sessions.createExtra(
-        localDate: localDayKey(DateTime.now()),
-        now: DateTime.now().toUtc(),
-      );
-      await _openSession(extra.id);
-    } else {
-      await _openSession(session.id);
-    }
+    if (!session.isComplete) await _openSession(session.id);
+  }
+
+  Future<void> _createExtraSession() async {
+    final extra = await widget.sessions.createExtra(
+      localDate: localDayKey(DateTime.now()),
+      now: DateTime.now().toUtc(),
+    );
+    await _openSession(extra.id);
   }
 
   Future<void> _openSession(String id) async {

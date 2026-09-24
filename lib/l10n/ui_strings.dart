@@ -32,6 +32,8 @@ final class UiStrings {
   String sessionNumber(int number) =>
       choose('Sitzung $number', 'Занятие $number');
   String get extraSession => choose('Zusatzsitzung', 'Дополнительное занятие');
+  String get getNewLesson =>
+      choose('Neue Sitzung starten', 'Получить новый урок');
   String sessionAnswers(int answered, int target) =>
       choose('$answered von $target Antworten', '$answered из $target ответов');
   String get planned => choose('Geplant', 'Запланировано');
@@ -142,8 +144,8 @@ final class UiStrings {
       );
   String get again => choose('Noch einmal', 'Повторить ещё раз');
   String get statsEmpty => choose(
-        'Noch keine Wiederholungen. Starte eine Sitzung unter „Lernen“.',
-        'Повторений пока нет. Начните занятие в разделе «Повторение».',
+        'Noch keine Wiederholungen. Starte eine Sitzung unter „Heute“.',
+        'Повторений пока нет. Начните занятие в разделе «Сегодня».',
       );
   String get attempts => choose('Versuche', 'Попытки');
   String get correctAnswers => choose('Richtig', 'Правильно');
