@@ -72,6 +72,20 @@ void main() {
 
     expect(restored?.content['german'], 'der Tisch');
   });
+
+  test('saves an imported list in one operation', () async {
+    final database = AppDatabase.inMemory();
+    addTearDown(database.close);
+    final repository = SqliteLearningItemRepository(database);
+    final createdAt = DateTime.utc(2026, 9, 24, 10);
+
+    await repository.saveAll([
+      _word(id: 'import-1', createdAt: createdAt),
+      _word(id: 'import-2', createdAt: createdAt),
+    ]);
+
+    expect(await repository.findActive(), hasLength(2));
+  });
 }
 
 LearningItem _word({

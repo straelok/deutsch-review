@@ -3,6 +3,8 @@ import '../learning_item.dart';
 abstract interface class LearningItemRepository {
   Future<void> save(LearningItem item);
 
+  Future<void> saveAll(List<LearningItem> items);
+
   Future<LearningItem?> findById(String id);
 
   Future<List<LearningItem>> findActive();

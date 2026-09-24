@@ -13,6 +13,24 @@ final class SqliteLearningItemRepository implements LearningItemRepository {
 
   @override
   Future<void> save(LearningItem item) async {
+    _save(item);
+  }
+
+  @override
+  Future<void> saveAll(List<LearningItem> items) async {
+    database.connection.execute('BEGIN IMMEDIATE');
+    try {
+      for (final item in items) {
+        _save(item);
+      }
+      database.connection.execute('COMMIT');
+    } catch (_) {
+      database.connection.execute('ROLLBACK');
+      rethrow;
+    }
+  }
+
+  void _save(LearningItem item) {
     final statement = database.connection.prepare('''
       INSERT INTO learning_items (
         id,

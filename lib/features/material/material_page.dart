@@ -1,3 +1,7 @@
+import 'dart:convert';
+import 'dart:typed_data';
+
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 
 import '../../domain/id_generator.dart';
@@ -6,6 +10,7 @@ import '../../domain/learning_item_display.dart';
 import '../../domain/practice.dart';
 import '../../domain/repositories/learning_item_repository.dart';
 import '../../domain/repositories/practice_repository.dart';
+import '../../import_export/word_json_codec.dart';
 import '../../l10n/ui_strings.dart';
 
 class DictionaryMaterialPage extends StatefulWidget {
@@ -31,6 +36,7 @@ class _MaterialPageState extends State<DictionaryMaterialPage> {
   List<LearningItem> _items = const [];
   Object? _loadError;
   bool _loading = true;
+  bool _fileBusy = false;
 
   List<LearningItem> get _filteredItems {
     final query = _searchController.text.trim().toLowerCase();
@@ -89,11 +95,30 @@ class _MaterialPageState extends State<DictionaryMaterialPage> {
                   Text(s.entries(_items.length)),
                 ],
               ),
-              FilledButton.icon(
-                key: const Key('add-material'),
-                onPressed: _loading ? null : () => _openEditor(),
-                icon: const Icon(Icons.add),
-                label: Text(s.add),
+              Wrap(
+                spacing: 8,
+                runSpacing: 8,
+                children: [
+                  OutlinedButton.icon(
+                    key: const Key('import-json'),
+                    onPressed: _loading || _fileBusy ? null : _importJson,
+                    icon: const Icon(Icons.file_download_outlined),
+                    label: Text(s.importJson),
+                  ),
+                  OutlinedButton.icon(
+                    key: const Key('export-json'),
+                    onPressed: _loading || _fileBusy ? null : _exportJson,
+                    icon: const Icon(Icons.file_upload_outlined),
+                    label: Text(s.exportJson),
+                  ),
+                  FilledButton.icon(
+                    key: const Key('add-material'),
+                    onPressed:
+                        _loading || _fileBusy ? null : () => _openEditor(),
+                    icon: const Icon(Icons.add),
+                    label: Text(s.add),
+                  ),
+                ],
               ),
             ],
           ),
@@ -212,6 +237,121 @@ class _MaterialPageState extends State<DictionaryMaterialPage> {
       });
     }
   }
+
+  Future<void> _importJson() async {
+    final s = widget.strings;
+    setState(() => _fileBusy = true);
+    try {
+      final file = await FilePicker.pickFile(
+        dialogTitle: s.importJson,
+        type: FileType.custom,
+        allowedExtensions: const ['json'],
+      );
+      if (file == null) return;
+      final bytes = await file.readAsBytes();
+      final decoded = const WordJsonCodec().decode(
+        utf8.decode(bytes),
+        importedAt: DateTime.now().toUtc(),
+      );
+      final existingIds = _items.map((item) => item.id).toSet();
+      final existingKeys = _items.map(_duplicateKey).toSet();
+      final seenIds = <String>{};
+      final seenKeys = <String>{};
+      final additions = <LearningItem>[];
+      var skipped = 0;
+      for (final item in decoded) {
+        final idExists = existingIds.contains(item.id) ||
+            await widget.repository.findById(item.id) != null ||
+            !seenIds.add(item.id);
+        final key = _duplicateKey(item);
+        final wordExists = existingKeys.contains(key) || !seenKeys.add(key);
+        if (idExists || wordExists) {
+          skipped++;
+        } else {
+          additions.add(item);
+        }
+      }
+      if (!mounted) return;
+      final confirmed = await _confirmImport(
+        additions: additions.length,
+        skipped: skipped,
+      );
+      if (!confirmed || additions.isEmpty) return;
+      await widget.repository.saveAll(additions);
+      await _reload();
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(s.importComplete(additions.length, skipped))),
+      );
+    } catch (error) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(s.importFailed(error.toString()))),
+      );
+    } finally {
+      if (mounted) setState(() => _fileBusy = false);
+    }
+  }
+
+  Future<void> _exportJson() async {
+    final s = widget.strings;
+    setState(() => _fileBusy = true);
+    try {
+      final now = DateTime.now();
+      final json = const WordJsonCodec().encode(_items, exportedAt: now);
+      final date = '${now.year}-${now.month.toString().padLeft(2, '0')}-'
+          '${now.day.toString().padLeft(2, '0')}';
+      final saved = await FilePicker.saveFile(
+        dialogTitle: s.exportJson,
+        fileName: 'worttrieb-words-$date.json',
+        bytes: Uint8List.fromList(utf8.encode(json)),
+        mimeType: 'application/json',
+        type: FileType.custom,
+        allowedExtensions: const ['json'],
+      );
+      if (saved == null || !mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(s.exportComplete(_items.length))),
+      );
+    } catch (error) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(s.exportFailed(error.toString()))),
+      );
+    } finally {
+      if (mounted) setState(() => _fileBusy = false);
+    }
+  }
+
+  Future<bool> _confirmImport({
+    required int additions,
+    required int skipped,
+  }) async {
+    final s = widget.strings;
+    return await showDialog<bool>(
+          context: context,
+          builder: (context) => AlertDialog(
+            title: Text(s.importPreviewTitle),
+            content: Text(s.importPreview(additions, skipped)),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.pop(context, false),
+                child: Text(additions == 0 ? s.close : s.cancel),
+              ),
+              if (additions > 0)
+                FilledButton(
+                  key: const Key('confirm-import'),
+                  onPressed: () => Navigator.pop(context, true),
+                  child: Text(s.importAction),
+                ),
+            ],
+          ),
+        ) ??
+        false;
+  }
+
+  static String _duplicateKey(LearningItem item) =>
+      '${item.type.wireName}:${learningItemGerman(item).trim().toLowerCase()}';
 
   Future<void> _openEditor([LearningItem? item]) async {
     final summary =

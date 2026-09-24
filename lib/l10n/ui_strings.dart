@@ -51,6 +51,30 @@ final class UiStrings {
         '$count слов',
       );
   String get add => choose('Hinzufügen', 'Добавить');
+  String get importJson => choose('JSON importieren', 'Импорт JSON');
+  String get exportJson => choose('JSON exportieren', 'Экспорт JSON');
+  String get importPreviewTitle => choose('Import prüfen', 'Проверка импорта');
+  String importPreview(int additions, int skipped) => choose(
+        'Neue Wörter: $additions\nÜbersprungen: $skipped',
+        'Новых слов: $additions\nПропущено: $skipped',
+      );
+  String get importAction => choose('Importieren', 'Импортировать');
+  String importComplete(int additions, int skipped) => choose(
+        '$additions Wörter importiert, $skipped übersprungen.',
+        'Импортировано: $additions, пропущено: $skipped.',
+      );
+  String importFailed(String error) => choose(
+        'Import fehlgeschlagen: $error',
+        'Ошибка импорта: $error',
+      );
+  String exportComplete(int count) => choose(
+        '$count Wörter exportiert.',
+        'Экспортировано слов: $count.',
+      );
+  String exportFailed(String error) => choose(
+        'Export fehlgeschlagen: $error',
+        'Ошибка экспорта: $error',
+      );
   String get loadError => choose(
         'Die Wörter konnten nicht geladen werden.',
         'Не удалось загрузить слова.',

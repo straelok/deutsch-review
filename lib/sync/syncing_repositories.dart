@@ -18,6 +18,12 @@ final class SyncingLearningItemRepository implements LearningItemRepository {
   }
 
   @override
+  Future<void> saveAll(List<LearningItem> items) async {
+    await _delegate.saveAll(items);
+    if (items.isNotEmpty) _onChanged();
+  }
+
+  @override
   Future<LearningItem?> findById(String id) => _delegate.findById(id);
 
   @override

@@ -29,6 +29,8 @@ void main() {
 
     expect(find.text('Noch keine Wörter'), findsOneWidget);
     expect(find.text('0 Wörter'), findsOneWidget);
+    expect(find.byKey(const Key('import-json')), findsOneWidget);
+    expect(find.byKey(const Key('export-json')), findsOneWidget);
   });
 
   testWidgets('fügt ein Wort hinzu und bearbeitet es', (tester) async {
