@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "exercises": [
     {
       "id": "regular-0001",
@@ -8120,6 +8120,6714 @@
       "lemma": "haben",
       "prompt": "Sie ___ viel Arbeit.",
       "answer": "haben"
+    },
+    {
+      "id": "verb-basics-lernen",
+      "topic_id": "verb_basics",
+      "lemma": "lernen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Welche Wortart ist „lernen“?",
+      "answer": "Verb",
+      "options": [
+        "Nomen",
+        "Verb",
+        "Adjektiv"
+      ],
+      "instruction_de": "Bestimme die Wortart.",
+      "instruction_ru": "Определите часть речи."
+    },
+    {
+      "id": "stem-lernen",
+      "topic_id": "infinitive_stem",
+      "lemma": "lernen",
+      "required_item_type": "verb",
+      "type": "text",
+      "prompt": "Welche Form ist der Stamm von „lernen“?",
+      "answer": "lern",
+      "instruction_de": "Schreibe nur den Stamm.",
+      "instruction_ru": "Напишите только основу."
+    },
+    {
+      "id": "pronoun-lernen-ich",
+      "topic_id": "personal_pronouns",
+      "lemma": "lernen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ lerne Deutsch.",
+      "answer": "Ich",
+      "options": [
+        "Ich",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "pronoun-lernen-du",
+      "topic_id": "personal_pronouns",
+      "lemma": "lernen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ lernst Deutsch.",
+      "answer": "Du",
+      "options": [
+        "Du",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "pronoun-lernen-er-sie-es",
+      "topic_id": "personal_pronouns",
+      "lemma": "lernen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ lernt Deutsch.",
+      "answer": "Er",
+      "options": [
+        "Er",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "part-verb-lernen",
+      "topic_id": "parts_of_speech",
+      "lemma": "lernen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "„lernen“ bezeichnet eine Handlung. Welche Wortart ist das?",
+      "answer": "Verb",
+      "options": [
+        "Verb",
+        "Nomen",
+        "Präposition"
+      ],
+      "instruction_de": "Ordne das markierte Wort zu.",
+      "instruction_ru": "Определите часть речи выделенного слова."
+    },
+    {
+      "id": "order-lernen-1",
+      "topic_id": "sentence_basics",
+      "lemma": "lernen",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "Ordne die Wörter zu einem Aussagesatz.",
+      "answer": "Ich lerne Deutsch.",
+      "options": [
+        "Deutsch.",
+        "lerne",
+        "Ich"
+      ],
+      "instruction_de": "Das konjugierte Verb steht an Position zwei.",
+      "instruction_ru": "Спрягаемый глагол должен стоять на втором месте."
+    },
+    {
+      "id": "yes-no-lernen-ja",
+      "topic_id": "yes_no_questions",
+      "lemma": "lernen",
+      "required_item_type": "verb",
+      "type": "yes_no",
+      "prompt": "Lara lernt heute. Lernt Lara heute?",
+      "answer": "Ja",
+      "options": [
+        "Ja",
+        "Nein"
+      ],
+      "instruction_de": "Stimmt die Frage mit der Information überein?",
+      "instruction_ru": "Совпадает ли вопрос с данной информацией?"
+    },
+    {
+      "id": "yes-no-lernen-nein",
+      "topic_id": "yes_no_questions",
+      "lemma": "lernen",
+      "required_item_type": "verb",
+      "type": "yes_no",
+      "prompt": "Lara lernt heute. Lernt Lara morgen?",
+      "answer": "Nein",
+      "options": [
+        "Ja",
+        "Nein"
+      ],
+      "instruction_de": "Stimmt die Frage mit der Information überein?",
+      "instruction_ru": "Совпадает ли вопрос с данной информацией?"
+    },
+    {
+      "id": "verb-basics-machen",
+      "topic_id": "verb_basics",
+      "lemma": "machen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Welche Wortart ist „machen“?",
+      "answer": "Verb",
+      "options": [
+        "Nomen",
+        "Verb",
+        "Adjektiv"
+      ],
+      "instruction_de": "Bestimme die Wortart.",
+      "instruction_ru": "Определите часть речи."
+    },
+    {
+      "id": "stem-machen",
+      "topic_id": "infinitive_stem",
+      "lemma": "machen",
+      "required_item_type": "verb",
+      "type": "text",
+      "prompt": "Welche Form ist der Stamm von „machen“?",
+      "answer": "mach",
+      "instruction_de": "Schreibe nur den Stamm.",
+      "instruction_ru": "Напишите только основу."
+    },
+    {
+      "id": "pronoun-machen-ich",
+      "topic_id": "personal_pronouns",
+      "lemma": "machen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ mache Deutsch.",
+      "answer": "Ich",
+      "options": [
+        "Ich",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "pronoun-machen-du",
+      "topic_id": "personal_pronouns",
+      "lemma": "machen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ machst Deutsch.",
+      "answer": "Du",
+      "options": [
+        "Du",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "pronoun-machen-er-sie-es",
+      "topic_id": "personal_pronouns",
+      "lemma": "machen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ macht Deutsch.",
+      "answer": "Er",
+      "options": [
+        "Er",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "part-verb-machen",
+      "topic_id": "parts_of_speech",
+      "lemma": "machen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "„machen“ bezeichnet eine Handlung. Welche Wortart ist das?",
+      "answer": "Verb",
+      "options": [
+        "Verb",
+        "Nomen",
+        "Präposition"
+      ],
+      "instruction_de": "Ordne das markierte Wort zu.",
+      "instruction_ru": "Определите часть речи выделенного слова."
+    },
+    {
+      "id": "order-machen-1",
+      "topic_id": "sentence_basics",
+      "lemma": "machen",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "Ordne die Wörter zu einem Aussagesatz.",
+      "answer": "Ich mache die Hausaufgaben.",
+      "options": [
+        "Hausaufgaben.",
+        "die",
+        "mache",
+        "Ich"
+      ],
+      "instruction_de": "Das konjugierte Verb steht an Position zwei.",
+      "instruction_ru": "Спрягаемый глагол должен стоять на втором месте."
+    },
+    {
+      "id": "yes-no-machen-ja",
+      "topic_id": "yes_no_questions",
+      "lemma": "machen",
+      "required_item_type": "verb",
+      "type": "yes_no",
+      "prompt": "Lara macht heute. Macht Lara heute?",
+      "answer": "Ja",
+      "options": [
+        "Ja",
+        "Nein"
+      ],
+      "instruction_de": "Stimmt die Frage mit der Information überein?",
+      "instruction_ru": "Совпадает ли вопрос с данной информацией?"
+    },
+    {
+      "id": "yes-no-machen-nein",
+      "topic_id": "yes_no_questions",
+      "lemma": "machen",
+      "required_item_type": "verb",
+      "type": "yes_no",
+      "prompt": "Lara macht heute. Macht Lara morgen?",
+      "answer": "Nein",
+      "options": [
+        "Ja",
+        "Nein"
+      ],
+      "instruction_de": "Stimmt die Frage mit der Information überein?",
+      "instruction_ru": "Совпадает ли вопрос с данной информацией?"
+    },
+    {
+      "id": "verb-basics-wohnen",
+      "topic_id": "verb_basics",
+      "lemma": "wohnen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Welche Wortart ist „wohnen“?",
+      "answer": "Verb",
+      "options": [
+        "Nomen",
+        "Verb",
+        "Adjektiv"
+      ],
+      "instruction_de": "Bestimme die Wortart.",
+      "instruction_ru": "Определите часть речи."
+    },
+    {
+      "id": "stem-wohnen",
+      "topic_id": "infinitive_stem",
+      "lemma": "wohnen",
+      "required_item_type": "verb",
+      "type": "text",
+      "prompt": "Welche Form ist der Stamm von „wohnen“?",
+      "answer": "wohn",
+      "instruction_de": "Schreibe nur den Stamm.",
+      "instruction_ru": "Напишите только основу."
+    },
+    {
+      "id": "pronoun-wohnen-ich",
+      "topic_id": "personal_pronouns",
+      "lemma": "wohnen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ wohne Deutsch.",
+      "answer": "Ich",
+      "options": [
+        "Ich",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "pronoun-wohnen-du",
+      "topic_id": "personal_pronouns",
+      "lemma": "wohnen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ wohnst Deutsch.",
+      "answer": "Du",
+      "options": [
+        "Du",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "pronoun-wohnen-er-sie-es",
+      "topic_id": "personal_pronouns",
+      "lemma": "wohnen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ wohnt Deutsch.",
+      "answer": "Er",
+      "options": [
+        "Er",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "part-verb-wohnen",
+      "topic_id": "parts_of_speech",
+      "lemma": "wohnen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "„wohnen“ bezeichnet eine Handlung. Welche Wortart ist das?",
+      "answer": "Verb",
+      "options": [
+        "Verb",
+        "Nomen",
+        "Präposition"
+      ],
+      "instruction_de": "Ordne das markierte Wort zu.",
+      "instruction_ru": "Определите часть речи выделенного слова."
+    },
+    {
+      "id": "order-wohnen-1",
+      "topic_id": "sentence_basics",
+      "lemma": "wohnen",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "Ordne die Wörter zu einem Aussagesatz.",
+      "answer": "Ich wohne in Berlin.",
+      "options": [
+        "Berlin.",
+        "in",
+        "wohne",
+        "Ich"
+      ],
+      "instruction_de": "Das konjugierte Verb steht an Position zwei.",
+      "instruction_ru": "Спрягаемый глагол должен стоять на втором месте."
+    },
+    {
+      "id": "yes-no-wohnen-ja",
+      "topic_id": "yes_no_questions",
+      "lemma": "wohnen",
+      "required_item_type": "verb",
+      "type": "yes_no",
+      "prompt": "Lara wohnt heute. Wohnt Lara heute?",
+      "answer": "Ja",
+      "options": [
+        "Ja",
+        "Nein"
+      ],
+      "instruction_de": "Stimmt die Frage mit der Information überein?",
+      "instruction_ru": "Совпадает ли вопрос с данной информацией?"
+    },
+    {
+      "id": "yes-no-wohnen-nein",
+      "topic_id": "yes_no_questions",
+      "lemma": "wohnen",
+      "required_item_type": "verb",
+      "type": "yes_no",
+      "prompt": "Lara wohnt heute. Wohnt Lara morgen?",
+      "answer": "Nein",
+      "options": [
+        "Ja",
+        "Nein"
+      ],
+      "instruction_de": "Stimmt die Frage mit der Information überein?",
+      "instruction_ru": "Совпадает ли вопрос с данной информацией?"
+    },
+    {
+      "id": "verb-basics-kommen",
+      "topic_id": "verb_basics",
+      "lemma": "kommen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Welche Wortart ist „kommen“?",
+      "answer": "Verb",
+      "options": [
+        "Nomen",
+        "Verb",
+        "Adjektiv"
+      ],
+      "instruction_de": "Bestimme die Wortart.",
+      "instruction_ru": "Определите часть речи."
+    },
+    {
+      "id": "stem-kommen",
+      "topic_id": "infinitive_stem",
+      "lemma": "kommen",
+      "required_item_type": "verb",
+      "type": "text",
+      "prompt": "Welche Form ist der Stamm von „kommen“?",
+      "answer": "komm",
+      "instruction_de": "Schreibe nur den Stamm.",
+      "instruction_ru": "Напишите только основу."
+    },
+    {
+      "id": "pronoun-kommen-ich",
+      "topic_id": "personal_pronouns",
+      "lemma": "kommen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ komme Deutsch.",
+      "answer": "Ich",
+      "options": [
+        "Ich",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "pronoun-kommen-du",
+      "topic_id": "personal_pronouns",
+      "lemma": "kommen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ kommst Deutsch.",
+      "answer": "Du",
+      "options": [
+        "Du",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "pronoun-kommen-er-sie-es",
+      "topic_id": "personal_pronouns",
+      "lemma": "kommen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ kommt Deutsch.",
+      "answer": "Er",
+      "options": [
+        "Er",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "part-verb-kommen",
+      "topic_id": "parts_of_speech",
+      "lemma": "kommen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "„kommen“ bezeichnet eine Handlung. Welche Wortart ist das?",
+      "answer": "Verb",
+      "options": [
+        "Verb",
+        "Nomen",
+        "Präposition"
+      ],
+      "instruction_de": "Ordne das markierte Wort zu.",
+      "instruction_ru": "Определите часть речи выделенного слова."
+    },
+    {
+      "id": "order-kommen-1",
+      "topic_id": "sentence_basics",
+      "lemma": "kommen",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "Ordne die Wörter zu einem Aussagesatz.",
+      "answer": "Ich komme aus Polen.",
+      "options": [
+        "Polen.",
+        "aus",
+        "komme",
+        "Ich"
+      ],
+      "instruction_de": "Das konjugierte Verb steht an Position zwei.",
+      "instruction_ru": "Спрягаемый глагол должен стоять на втором месте."
+    },
+    {
+      "id": "yes-no-kommen-ja",
+      "topic_id": "yes_no_questions",
+      "lemma": "kommen",
+      "required_item_type": "verb",
+      "type": "yes_no",
+      "prompt": "Lara kommt heute. Kommt Lara heute?",
+      "answer": "Ja",
+      "options": [
+        "Ja",
+        "Nein"
+      ],
+      "instruction_de": "Stimmt die Frage mit der Information überein?",
+      "instruction_ru": "Совпадает ли вопрос с данной информацией?"
+    },
+    {
+      "id": "yes-no-kommen-nein",
+      "topic_id": "yes_no_questions",
+      "lemma": "kommen",
+      "required_item_type": "verb",
+      "type": "yes_no",
+      "prompt": "Lara kommt heute. Kommt Lara morgen?",
+      "answer": "Nein",
+      "options": [
+        "Ja",
+        "Nein"
+      ],
+      "instruction_de": "Stimmt die Frage mit der Information überein?",
+      "instruction_ru": "Совпадает ли вопрос с данной информацией?"
+    },
+    {
+      "id": "verb-basics-leben",
+      "topic_id": "verb_basics",
+      "lemma": "leben",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Welche Wortart ist „leben“?",
+      "answer": "Verb",
+      "options": [
+        "Nomen",
+        "Verb",
+        "Adjektiv"
+      ],
+      "instruction_de": "Bestimme die Wortart.",
+      "instruction_ru": "Определите часть речи."
+    },
+    {
+      "id": "stem-leben",
+      "topic_id": "infinitive_stem",
+      "lemma": "leben",
+      "required_item_type": "verb",
+      "type": "text",
+      "prompt": "Welche Form ist der Stamm von „leben“?",
+      "answer": "leb",
+      "instruction_de": "Schreibe nur den Stamm.",
+      "instruction_ru": "Напишите только основу."
+    },
+    {
+      "id": "pronoun-leben-ich",
+      "topic_id": "personal_pronouns",
+      "lemma": "leben",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ lebe Deutsch.",
+      "answer": "Ich",
+      "options": [
+        "Ich",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "pronoun-leben-du",
+      "topic_id": "personal_pronouns",
+      "lemma": "leben",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ lebst Deutsch.",
+      "answer": "Du",
+      "options": [
+        "Du",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "pronoun-leben-er-sie-es",
+      "topic_id": "personal_pronouns",
+      "lemma": "leben",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ lebt Deutsch.",
+      "answer": "Er",
+      "options": [
+        "Er",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "part-verb-leben",
+      "topic_id": "parts_of_speech",
+      "lemma": "leben",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "„leben“ bezeichnet eine Handlung. Welche Wortart ist das?",
+      "answer": "Verb",
+      "options": [
+        "Verb",
+        "Nomen",
+        "Präposition"
+      ],
+      "instruction_de": "Ordne das markierte Wort zu.",
+      "instruction_ru": "Определите часть речи выделенного слова."
+    },
+    {
+      "id": "order-leben-1",
+      "topic_id": "sentence_basics",
+      "lemma": "leben",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "Ordne die Wörter zu einem Aussagesatz.",
+      "answer": "Ich lebe in Deutschland.",
+      "options": [
+        "Deutschland.",
+        "in",
+        "lebe",
+        "Ich"
+      ],
+      "instruction_de": "Das konjugierte Verb steht an Position zwei.",
+      "instruction_ru": "Спрягаемый глагол должен стоять на втором месте."
+    },
+    {
+      "id": "yes-no-leben-ja",
+      "topic_id": "yes_no_questions",
+      "lemma": "leben",
+      "required_item_type": "verb",
+      "type": "yes_no",
+      "prompt": "Lara lebt heute. Lebt Lara heute?",
+      "answer": "Ja",
+      "options": [
+        "Ja",
+        "Nein"
+      ],
+      "instruction_de": "Stimmt die Frage mit der Information überein?",
+      "instruction_ru": "Совпадает ли вопрос с данной информацией?"
+    },
+    {
+      "id": "yes-no-leben-nein",
+      "topic_id": "yes_no_questions",
+      "lemma": "leben",
+      "required_item_type": "verb",
+      "type": "yes_no",
+      "prompt": "Lara lebt heute. Lebt Lara morgen?",
+      "answer": "Nein",
+      "options": [
+        "Ja",
+        "Nein"
+      ],
+      "instruction_de": "Stimmt die Frage mit der Information überein?",
+      "instruction_ru": "Совпадает ли вопрос с данной информацией?"
+    },
+    {
+      "id": "verb-basics-kaufen",
+      "topic_id": "verb_basics",
+      "lemma": "kaufen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Welche Wortart ist „kaufen“?",
+      "answer": "Verb",
+      "options": [
+        "Nomen",
+        "Verb",
+        "Adjektiv"
+      ],
+      "instruction_de": "Bestimme die Wortart.",
+      "instruction_ru": "Определите часть речи."
+    },
+    {
+      "id": "stem-kaufen",
+      "topic_id": "infinitive_stem",
+      "lemma": "kaufen",
+      "required_item_type": "verb",
+      "type": "text",
+      "prompt": "Welche Form ist der Stamm von „kaufen“?",
+      "answer": "kauf",
+      "instruction_de": "Schreibe nur den Stamm.",
+      "instruction_ru": "Напишите только основу."
+    },
+    {
+      "id": "pronoun-kaufen-ich",
+      "topic_id": "personal_pronouns",
+      "lemma": "kaufen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ kaufe Deutsch.",
+      "answer": "Ich",
+      "options": [
+        "Ich",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "pronoun-kaufen-du",
+      "topic_id": "personal_pronouns",
+      "lemma": "kaufen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ kaufst Deutsch.",
+      "answer": "Du",
+      "options": [
+        "Du",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "pronoun-kaufen-er-sie-es",
+      "topic_id": "personal_pronouns",
+      "lemma": "kaufen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ kauft Deutsch.",
+      "answer": "Er",
+      "options": [
+        "Er",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "part-verb-kaufen",
+      "topic_id": "parts_of_speech",
+      "lemma": "kaufen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "„kaufen“ bezeichnet eine Handlung. Welche Wortart ist das?",
+      "answer": "Verb",
+      "options": [
+        "Verb",
+        "Nomen",
+        "Präposition"
+      ],
+      "instruction_de": "Ordne das markierte Wort zu.",
+      "instruction_ru": "Определите часть речи выделенного слова."
+    },
+    {
+      "id": "order-kaufen-1",
+      "topic_id": "sentence_basics",
+      "lemma": "kaufen",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "Ordne die Wörter zu einem Aussagesatz.",
+      "answer": "Ich kaufe frisches Brot.",
+      "options": [
+        "Brot.",
+        "frisches",
+        "kaufe",
+        "Ich"
+      ],
+      "instruction_de": "Das konjugierte Verb steht an Position zwei.",
+      "instruction_ru": "Спрягаемый глагол должен стоять на втором месте."
+    },
+    {
+      "id": "yes-no-kaufen-ja",
+      "topic_id": "yes_no_questions",
+      "lemma": "kaufen",
+      "required_item_type": "verb",
+      "type": "yes_no",
+      "prompt": "Lara kauft heute. Kauft Lara heute?",
+      "answer": "Ja",
+      "options": [
+        "Ja",
+        "Nein"
+      ],
+      "instruction_de": "Stimmt die Frage mit der Information überein?",
+      "instruction_ru": "Совпадает ли вопрос с данной информацией?"
+    },
+    {
+      "id": "yes-no-kaufen-nein",
+      "topic_id": "yes_no_questions",
+      "lemma": "kaufen",
+      "required_item_type": "verb",
+      "type": "yes_no",
+      "prompt": "Lara kauft heute. Kauft Lara morgen?",
+      "answer": "Nein",
+      "options": [
+        "Ja",
+        "Nein"
+      ],
+      "instruction_de": "Stimmt die Frage mit der Information überein?",
+      "instruction_ru": "Совпадает ли вопрос с данной информацией?"
+    },
+    {
+      "id": "verb-basics-spielen",
+      "topic_id": "verb_basics",
+      "lemma": "spielen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Welche Wortart ist „spielen“?",
+      "answer": "Verb",
+      "options": [
+        "Nomen",
+        "Verb",
+        "Adjektiv"
+      ],
+      "instruction_de": "Bestimme die Wortart.",
+      "instruction_ru": "Определите часть речи."
+    },
+    {
+      "id": "stem-spielen",
+      "topic_id": "infinitive_stem",
+      "lemma": "spielen",
+      "required_item_type": "verb",
+      "type": "text",
+      "prompt": "Welche Form ist der Stamm von „spielen“?",
+      "answer": "spiel",
+      "instruction_de": "Schreibe nur den Stamm.",
+      "instruction_ru": "Напишите только основу."
+    },
+    {
+      "id": "pronoun-spielen-ich",
+      "topic_id": "personal_pronouns",
+      "lemma": "spielen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ spiele Deutsch.",
+      "answer": "Ich",
+      "options": [
+        "Ich",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "pronoun-spielen-du",
+      "topic_id": "personal_pronouns",
+      "lemma": "spielen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ spielst Deutsch.",
+      "answer": "Du",
+      "options": [
+        "Du",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "pronoun-spielen-er-sie-es",
+      "topic_id": "personal_pronouns",
+      "lemma": "spielen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ spielt Deutsch.",
+      "answer": "Er",
+      "options": [
+        "Er",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "part-verb-spielen",
+      "topic_id": "parts_of_speech",
+      "lemma": "spielen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "„spielen“ bezeichnet eine Handlung. Welche Wortart ist das?",
+      "answer": "Verb",
+      "options": [
+        "Verb",
+        "Nomen",
+        "Präposition"
+      ],
+      "instruction_de": "Ordne das markierte Wort zu.",
+      "instruction_ru": "Определите часть речи выделенного слова."
+    },
+    {
+      "id": "order-spielen-1",
+      "topic_id": "sentence_basics",
+      "lemma": "spielen",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "Ordne die Wörter zu einem Aussagesatz.",
+      "answer": "Ich spiele gern Fußball.",
+      "options": [
+        "Fußball.",
+        "gern",
+        "spiele",
+        "Ich"
+      ],
+      "instruction_de": "Das konjugierte Verb steht an Position zwei.",
+      "instruction_ru": "Спрягаемый глагол должен стоять на втором месте."
+    },
+    {
+      "id": "yes-no-spielen-ja",
+      "topic_id": "yes_no_questions",
+      "lemma": "spielen",
+      "required_item_type": "verb",
+      "type": "yes_no",
+      "prompt": "Lara spielt heute. Spielt Lara heute?",
+      "answer": "Ja",
+      "options": [
+        "Ja",
+        "Nein"
+      ],
+      "instruction_de": "Stimmt die Frage mit der Information überein?",
+      "instruction_ru": "Совпадает ли вопрос с данной информацией?"
+    },
+    {
+      "id": "yes-no-spielen-nein",
+      "topic_id": "yes_no_questions",
+      "lemma": "spielen",
+      "required_item_type": "verb",
+      "type": "yes_no",
+      "prompt": "Lara spielt heute. Spielt Lara morgen?",
+      "answer": "Nein",
+      "options": [
+        "Ja",
+        "Nein"
+      ],
+      "instruction_de": "Stimmt die Frage mit der Information überein?",
+      "instruction_ru": "Совпадает ли вопрос с данной информацией?"
+    },
+    {
+      "id": "verb-basics-hören",
+      "topic_id": "verb_basics",
+      "lemma": "hören",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Welche Wortart ist „hören“?",
+      "answer": "Verb",
+      "options": [
+        "Nomen",
+        "Verb",
+        "Adjektiv"
+      ],
+      "instruction_de": "Bestimme die Wortart.",
+      "instruction_ru": "Определите часть речи."
+    },
+    {
+      "id": "stem-hören",
+      "topic_id": "infinitive_stem",
+      "lemma": "hören",
+      "required_item_type": "verb",
+      "type": "text",
+      "prompt": "Welche Form ist der Stamm von „hören“?",
+      "answer": "hör",
+      "instruction_de": "Schreibe nur den Stamm.",
+      "instruction_ru": "Напишите только основу."
+    },
+    {
+      "id": "pronoun-hören-ich",
+      "topic_id": "personal_pronouns",
+      "lemma": "hören",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ höre Deutsch.",
+      "answer": "Ich",
+      "options": [
+        "Ich",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "pronoun-hören-du",
+      "topic_id": "personal_pronouns",
+      "lemma": "hören",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ hörst Deutsch.",
+      "answer": "Du",
+      "options": [
+        "Du",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "pronoun-hören-er-sie-es",
+      "topic_id": "personal_pronouns",
+      "lemma": "hören",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ hört Deutsch.",
+      "answer": "Er",
+      "options": [
+        "Er",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "part-verb-hören",
+      "topic_id": "parts_of_speech",
+      "lemma": "hören",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "„hören“ bezeichnet eine Handlung. Welche Wortart ist das?",
+      "answer": "Verb",
+      "options": [
+        "Verb",
+        "Nomen",
+        "Präposition"
+      ],
+      "instruction_de": "Ordne das markierte Wort zu.",
+      "instruction_ru": "Определите часть речи выделенного слова."
+    },
+    {
+      "id": "order-hören-1",
+      "topic_id": "sentence_basics",
+      "lemma": "hören",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "Ordne die Wörter zu einem Aussagesatz.",
+      "answer": "Ich höre gern Musik.",
+      "options": [
+        "Musik.",
+        "gern",
+        "höre",
+        "Ich"
+      ],
+      "instruction_de": "Das konjugierte Verb steht an Position zwei.",
+      "instruction_ru": "Спрягаемый глагол должен стоять на втором месте."
+    },
+    {
+      "id": "yes-no-hören-ja",
+      "topic_id": "yes_no_questions",
+      "lemma": "hören",
+      "required_item_type": "verb",
+      "type": "yes_no",
+      "prompt": "Lara hört heute. Hört Lara heute?",
+      "answer": "Ja",
+      "options": [
+        "Ja",
+        "Nein"
+      ],
+      "instruction_de": "Stimmt die Frage mit der Information überein?",
+      "instruction_ru": "Совпадает ли вопрос с данной информацией?"
+    },
+    {
+      "id": "yes-no-hören-nein",
+      "topic_id": "yes_no_questions",
+      "lemma": "hören",
+      "required_item_type": "verb",
+      "type": "yes_no",
+      "prompt": "Lara hört heute. Hört Lara morgen?",
+      "answer": "Nein",
+      "options": [
+        "Ja",
+        "Nein"
+      ],
+      "instruction_de": "Stimmt die Frage mit der Information überein?",
+      "instruction_ru": "Совпадает ли вопрос с данной информацией?"
+    },
+    {
+      "id": "verb-basics-fragen",
+      "topic_id": "verb_basics",
+      "lemma": "fragen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Welche Wortart ist „fragen“?",
+      "answer": "Verb",
+      "options": [
+        "Nomen",
+        "Verb",
+        "Adjektiv"
+      ],
+      "instruction_de": "Bestimme die Wortart.",
+      "instruction_ru": "Определите часть речи."
+    },
+    {
+      "id": "stem-fragen",
+      "topic_id": "infinitive_stem",
+      "lemma": "fragen",
+      "required_item_type": "verb",
+      "type": "text",
+      "prompt": "Welche Form ist der Stamm von „fragen“?",
+      "answer": "frag",
+      "instruction_de": "Schreibe nur den Stamm.",
+      "instruction_ru": "Напишите только основу."
+    },
+    {
+      "id": "pronoun-fragen-ich",
+      "topic_id": "personal_pronouns",
+      "lemma": "fragen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ frage Deutsch.",
+      "answer": "Ich",
+      "options": [
+        "Ich",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "pronoun-fragen-du",
+      "topic_id": "personal_pronouns",
+      "lemma": "fragen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ fragst Deutsch.",
+      "answer": "Du",
+      "options": [
+        "Du",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "pronoun-fragen-er-sie-es",
+      "topic_id": "personal_pronouns",
+      "lemma": "fragen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ fragt Deutsch.",
+      "answer": "Er",
+      "options": [
+        "Er",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "part-verb-fragen",
+      "topic_id": "parts_of_speech",
+      "lemma": "fragen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "„fragen“ bezeichnet eine Handlung. Welche Wortart ist das?",
+      "answer": "Verb",
+      "options": [
+        "Verb",
+        "Nomen",
+        "Präposition"
+      ],
+      "instruction_de": "Ordne das markierte Wort zu.",
+      "instruction_ru": "Определите часть речи выделенного слова."
+    },
+    {
+      "id": "order-fragen-1",
+      "topic_id": "sentence_basics",
+      "lemma": "fragen",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "Ordne die Wörter zu einem Aussagesatz.",
+      "answer": "Ich frage den Lehrer.",
+      "options": [
+        "Lehrer.",
+        "den",
+        "frage",
+        "Ich"
+      ],
+      "instruction_de": "Das konjugierte Verb steht an Position zwei.",
+      "instruction_ru": "Спрягаемый глагол должен стоять на втором месте."
+    },
+    {
+      "id": "yes-no-fragen-ja",
+      "topic_id": "yes_no_questions",
+      "lemma": "fragen",
+      "required_item_type": "verb",
+      "type": "yes_no",
+      "prompt": "Lara fragt heute. Fragt Lara heute?",
+      "answer": "Ja",
+      "options": [
+        "Ja",
+        "Nein"
+      ],
+      "instruction_de": "Stimmt die Frage mit der Information überein?",
+      "instruction_ru": "Совпадает ли вопрос с данной информацией?"
+    },
+    {
+      "id": "yes-no-fragen-nein",
+      "topic_id": "yes_no_questions",
+      "lemma": "fragen",
+      "required_item_type": "verb",
+      "type": "yes_no",
+      "prompt": "Lara fragt heute. Fragt Lara morgen?",
+      "answer": "Nein",
+      "options": [
+        "Ja",
+        "Nein"
+      ],
+      "instruction_de": "Stimmt die Frage mit der Information überein?",
+      "instruction_ru": "Совпадает ли вопрос с данной информацией?"
+    },
+    {
+      "id": "verb-basics-sagen",
+      "topic_id": "verb_basics",
+      "lemma": "sagen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Welche Wortart ist „sagen“?",
+      "answer": "Verb",
+      "options": [
+        "Nomen",
+        "Verb",
+        "Adjektiv"
+      ],
+      "instruction_de": "Bestimme die Wortart.",
+      "instruction_ru": "Определите часть речи."
+    },
+    {
+      "id": "stem-sagen",
+      "topic_id": "infinitive_stem",
+      "lemma": "sagen",
+      "required_item_type": "verb",
+      "type": "text",
+      "prompt": "Welche Form ist der Stamm von „sagen“?",
+      "answer": "sag",
+      "instruction_de": "Schreibe nur den Stamm.",
+      "instruction_ru": "Напишите только основу."
+    },
+    {
+      "id": "pronoun-sagen-ich",
+      "topic_id": "personal_pronouns",
+      "lemma": "sagen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ sage Deutsch.",
+      "answer": "Ich",
+      "options": [
+        "Ich",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "pronoun-sagen-du",
+      "topic_id": "personal_pronouns",
+      "lemma": "sagen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ sagst Deutsch.",
+      "answer": "Du",
+      "options": [
+        "Du",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "pronoun-sagen-er-sie-es",
+      "topic_id": "personal_pronouns",
+      "lemma": "sagen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ sagt Deutsch.",
+      "answer": "Er",
+      "options": [
+        "Er",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "part-verb-sagen",
+      "topic_id": "parts_of_speech",
+      "lemma": "sagen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "„sagen“ bezeichnet eine Handlung. Welche Wortart ist das?",
+      "answer": "Verb",
+      "options": [
+        "Verb",
+        "Nomen",
+        "Präposition"
+      ],
+      "instruction_de": "Ordne das markierte Wort zu.",
+      "instruction_ru": "Определите часть речи выделенного слова."
+    },
+    {
+      "id": "order-sagen-1",
+      "topic_id": "sentence_basics",
+      "lemma": "sagen",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "Ordne die Wörter zu einem Aussagesatz.",
+      "answer": "Ich sage den Namen.",
+      "options": [
+        "Namen.",
+        "den",
+        "sage",
+        "Ich"
+      ],
+      "instruction_de": "Das konjugierte Verb steht an Position zwei.",
+      "instruction_ru": "Спрягаемый глагол должен стоять на втором месте."
+    },
+    {
+      "id": "yes-no-sagen-ja",
+      "topic_id": "yes_no_questions",
+      "lemma": "sagen",
+      "required_item_type": "verb",
+      "type": "yes_no",
+      "prompt": "Lara sagt heute. Sagt Lara heute?",
+      "answer": "Ja",
+      "options": [
+        "Ja",
+        "Nein"
+      ],
+      "instruction_de": "Stimmt die Frage mit der Information überein?",
+      "instruction_ru": "Совпадает ли вопрос с данной информацией?"
+    },
+    {
+      "id": "yes-no-sagen-nein",
+      "topic_id": "yes_no_questions",
+      "lemma": "sagen",
+      "required_item_type": "verb",
+      "type": "yes_no",
+      "prompt": "Lara sagt heute. Sagt Lara morgen?",
+      "answer": "Nein",
+      "options": [
+        "Ja",
+        "Nein"
+      ],
+      "instruction_de": "Stimmt die Frage mit der Information überein?",
+      "instruction_ru": "Совпадает ли вопрос с данной информацией?"
+    },
+    {
+      "id": "verb-basics-glauben",
+      "topic_id": "verb_basics",
+      "lemma": "glauben",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Welche Wortart ist „glauben“?",
+      "answer": "Verb",
+      "options": [
+        "Nomen",
+        "Verb",
+        "Adjektiv"
+      ],
+      "instruction_de": "Bestimme die Wortart.",
+      "instruction_ru": "Определите часть речи."
+    },
+    {
+      "id": "stem-glauben",
+      "topic_id": "infinitive_stem",
+      "lemma": "glauben",
+      "required_item_type": "verb",
+      "type": "text",
+      "prompt": "Welche Form ist der Stamm von „glauben“?",
+      "answer": "glaub",
+      "instruction_de": "Schreibe nur den Stamm.",
+      "instruction_ru": "Напишите только основу."
+    },
+    {
+      "id": "pronoun-glauben-ich",
+      "topic_id": "personal_pronouns",
+      "lemma": "glauben",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ glaube Deutsch.",
+      "answer": "Ich",
+      "options": [
+        "Ich",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "pronoun-glauben-du",
+      "topic_id": "personal_pronouns",
+      "lemma": "glauben",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ glaubst Deutsch.",
+      "answer": "Du",
+      "options": [
+        "Du",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "pronoun-glauben-er-sie-es",
+      "topic_id": "personal_pronouns",
+      "lemma": "glauben",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ glaubt Deutsch.",
+      "answer": "Er",
+      "options": [
+        "Er",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "part-verb-glauben",
+      "topic_id": "parts_of_speech",
+      "lemma": "glauben",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "„glauben“ bezeichnet eine Handlung. Welche Wortart ist das?",
+      "answer": "Verb",
+      "options": [
+        "Verb",
+        "Nomen",
+        "Präposition"
+      ],
+      "instruction_de": "Ordne das markierte Wort zu.",
+      "instruction_ru": "Определите часть речи выделенного слова."
+    },
+    {
+      "id": "order-glauben-1",
+      "topic_id": "sentence_basics",
+      "lemma": "glauben",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "Ordne die Wörter zu einem Aussagesatz.",
+      "answer": "Ich glaube an den Erfolg.",
+      "options": [
+        "Erfolg.",
+        "den",
+        "an",
+        "glaube",
+        "Ich"
+      ],
+      "instruction_de": "Das konjugierte Verb steht an Position zwei.",
+      "instruction_ru": "Спрягаемый глагол должен стоять на втором месте."
+    },
+    {
+      "id": "yes-no-glauben-ja",
+      "topic_id": "yes_no_questions",
+      "lemma": "glauben",
+      "required_item_type": "verb",
+      "type": "yes_no",
+      "prompt": "Lara glaubt heute. Glaubt Lara heute?",
+      "answer": "Ja",
+      "options": [
+        "Ja",
+        "Nein"
+      ],
+      "instruction_de": "Stimmt die Frage mit der Information überein?",
+      "instruction_ru": "Совпадает ли вопрос с данной информацией?"
+    },
+    {
+      "id": "yes-no-glauben-nein",
+      "topic_id": "yes_no_questions",
+      "lemma": "glauben",
+      "required_item_type": "verb",
+      "type": "yes_no",
+      "prompt": "Lara glaubt heute. Glaubt Lara morgen?",
+      "answer": "Nein",
+      "options": [
+        "Ja",
+        "Nein"
+      ],
+      "instruction_de": "Stimmt die Frage mit der Information überein?",
+      "instruction_ru": "Совпадает ли вопрос с данной информацией?"
+    },
+    {
+      "id": "verb-basics-brauchen",
+      "topic_id": "verb_basics",
+      "lemma": "brauchen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Welche Wortart ist „brauchen“?",
+      "answer": "Verb",
+      "options": [
+        "Nomen",
+        "Verb",
+        "Adjektiv"
+      ],
+      "instruction_de": "Bestimme die Wortart.",
+      "instruction_ru": "Определите часть речи."
+    },
+    {
+      "id": "stem-brauchen",
+      "topic_id": "infinitive_stem",
+      "lemma": "brauchen",
+      "required_item_type": "verb",
+      "type": "text",
+      "prompt": "Welche Form ist der Stamm von „brauchen“?",
+      "answer": "brauch",
+      "instruction_de": "Schreibe nur den Stamm.",
+      "instruction_ru": "Напишите только основу."
+    },
+    {
+      "id": "pronoun-brauchen-ich",
+      "topic_id": "personal_pronouns",
+      "lemma": "brauchen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ brauche Deutsch.",
+      "answer": "Ich",
+      "options": [
+        "Ich",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "pronoun-brauchen-du",
+      "topic_id": "personal_pronouns",
+      "lemma": "brauchen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ brauchst Deutsch.",
+      "answer": "Du",
+      "options": [
+        "Du",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "pronoun-brauchen-er-sie-es",
+      "topic_id": "personal_pronouns",
+      "lemma": "brauchen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ braucht Deutsch.",
+      "answer": "Er",
+      "options": [
+        "Er",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "part-verb-brauchen",
+      "topic_id": "parts_of_speech",
+      "lemma": "brauchen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "„brauchen“ bezeichnet eine Handlung. Welche Wortart ist das?",
+      "answer": "Verb",
+      "options": [
+        "Verb",
+        "Nomen",
+        "Präposition"
+      ],
+      "instruction_de": "Ordne das markierte Wort zu.",
+      "instruction_ru": "Определите часть речи выделенного слова."
+    },
+    {
+      "id": "order-brauchen-1",
+      "topic_id": "sentence_basics",
+      "lemma": "brauchen",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "Ordne die Wörter zu einem Aussagesatz.",
+      "answer": "Ich brauche mehr Zeit.",
+      "options": [
+        "Zeit.",
+        "mehr",
+        "brauche",
+        "Ich"
+      ],
+      "instruction_de": "Das konjugierte Verb steht an Position zwei.",
+      "instruction_ru": "Спрягаемый глагол должен стоять на втором месте."
+    },
+    {
+      "id": "yes-no-brauchen-ja",
+      "topic_id": "yes_no_questions",
+      "lemma": "brauchen",
+      "required_item_type": "verb",
+      "type": "yes_no",
+      "prompt": "Lara braucht heute. Braucht Lara heute?",
+      "answer": "Ja",
+      "options": [
+        "Ja",
+        "Nein"
+      ],
+      "instruction_de": "Stimmt die Frage mit der Information überein?",
+      "instruction_ru": "Совпадает ли вопрос с данной информацией?"
+    },
+    {
+      "id": "yes-no-brauchen-nein",
+      "topic_id": "yes_no_questions",
+      "lemma": "brauchen",
+      "required_item_type": "verb",
+      "type": "yes_no",
+      "prompt": "Lara braucht heute. Braucht Lara morgen?",
+      "answer": "Nein",
+      "options": [
+        "Ja",
+        "Nein"
+      ],
+      "instruction_de": "Stimmt die Frage mit der Information überein?",
+      "instruction_ru": "Совпадает ли вопрос с данной информацией?"
+    },
+    {
+      "id": "verb-basics-kochen",
+      "topic_id": "verb_basics",
+      "lemma": "kochen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Welche Wortart ist „kochen“?",
+      "answer": "Verb",
+      "options": [
+        "Nomen",
+        "Verb",
+        "Adjektiv"
+      ],
+      "instruction_de": "Bestimme die Wortart.",
+      "instruction_ru": "Определите часть речи."
+    },
+    {
+      "id": "stem-kochen",
+      "topic_id": "infinitive_stem",
+      "lemma": "kochen",
+      "required_item_type": "verb",
+      "type": "text",
+      "prompt": "Welche Form ist der Stamm von „kochen“?",
+      "answer": "koch",
+      "instruction_de": "Schreibe nur den Stamm.",
+      "instruction_ru": "Напишите только основу."
+    },
+    {
+      "id": "pronoun-kochen-ich",
+      "topic_id": "personal_pronouns",
+      "lemma": "kochen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ koche Deutsch.",
+      "answer": "Ich",
+      "options": [
+        "Ich",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "pronoun-kochen-du",
+      "topic_id": "personal_pronouns",
+      "lemma": "kochen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ kochst Deutsch.",
+      "answer": "Du",
+      "options": [
+        "Du",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "pronoun-kochen-er-sie-es",
+      "topic_id": "personal_pronouns",
+      "lemma": "kochen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ kocht Deutsch.",
+      "answer": "Er",
+      "options": [
+        "Er",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "part-verb-kochen",
+      "topic_id": "parts_of_speech",
+      "lemma": "kochen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "„kochen“ bezeichnet eine Handlung. Welche Wortart ist das?",
+      "answer": "Verb",
+      "options": [
+        "Verb",
+        "Nomen",
+        "Präposition"
+      ],
+      "instruction_de": "Ordne das markierte Wort zu.",
+      "instruction_ru": "Определите часть речи выделенного слова."
+    },
+    {
+      "id": "order-kochen-1",
+      "topic_id": "sentence_basics",
+      "lemma": "kochen",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "Ordne die Wörter zu einem Aussagesatz.",
+      "answer": "Ich koche heute Suppe.",
+      "options": [
+        "Suppe.",
+        "heute",
+        "koche",
+        "Ich"
+      ],
+      "instruction_de": "Das konjugierte Verb steht an Position zwei.",
+      "instruction_ru": "Спрягаемый глагол должен стоять на втором месте."
+    },
+    {
+      "id": "yes-no-kochen-ja",
+      "topic_id": "yes_no_questions",
+      "lemma": "kochen",
+      "required_item_type": "verb",
+      "type": "yes_no",
+      "prompt": "Lara kocht heute. Kocht Lara heute?",
+      "answer": "Ja",
+      "options": [
+        "Ja",
+        "Nein"
+      ],
+      "instruction_de": "Stimmt die Frage mit der Information überein?",
+      "instruction_ru": "Совпадает ли вопрос с данной информацией?"
+    },
+    {
+      "id": "yes-no-kochen-nein",
+      "topic_id": "yes_no_questions",
+      "lemma": "kochen",
+      "required_item_type": "verb",
+      "type": "yes_no",
+      "prompt": "Lara kocht heute. Kocht Lara morgen?",
+      "answer": "Nein",
+      "options": [
+        "Ja",
+        "Nein"
+      ],
+      "instruction_de": "Stimmt die Frage mit der Information überein?",
+      "instruction_ru": "Совпадает ли вопрос с данной информацией?"
+    },
+    {
+      "id": "verb-basics-grillen",
+      "topic_id": "verb_basics",
+      "lemma": "grillen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Welche Wortart ist „grillen“?",
+      "answer": "Verb",
+      "options": [
+        "Nomen",
+        "Verb",
+        "Adjektiv"
+      ],
+      "instruction_de": "Bestimme die Wortart.",
+      "instruction_ru": "Определите часть речи."
+    },
+    {
+      "id": "stem-grillen",
+      "topic_id": "infinitive_stem",
+      "lemma": "grillen",
+      "required_item_type": "verb",
+      "type": "text",
+      "prompt": "Welche Form ist der Stamm von „grillen“?",
+      "answer": "grill",
+      "instruction_de": "Schreibe nur den Stamm.",
+      "instruction_ru": "Напишите только основу."
+    },
+    {
+      "id": "pronoun-grillen-ich",
+      "topic_id": "personal_pronouns",
+      "lemma": "grillen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ grille Deutsch.",
+      "answer": "Ich",
+      "options": [
+        "Ich",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "pronoun-grillen-du",
+      "topic_id": "personal_pronouns",
+      "lemma": "grillen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ grillst Deutsch.",
+      "answer": "Du",
+      "options": [
+        "Du",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "pronoun-grillen-er-sie-es",
+      "topic_id": "personal_pronouns",
+      "lemma": "grillen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ grillt Deutsch.",
+      "answer": "Er",
+      "options": [
+        "Er",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "part-verb-grillen",
+      "topic_id": "parts_of_speech",
+      "lemma": "grillen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "„grillen“ bezeichnet eine Handlung. Welche Wortart ist das?",
+      "answer": "Verb",
+      "options": [
+        "Verb",
+        "Nomen",
+        "Präposition"
+      ],
+      "instruction_de": "Ordne das markierte Wort zu.",
+      "instruction_ru": "Определите часть речи выделенного слова."
+    },
+    {
+      "id": "order-grillen-1",
+      "topic_id": "sentence_basics",
+      "lemma": "grillen",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "Ordne die Wörter zu einem Aussagesatz.",
+      "answer": "Ich grille im Garten.",
+      "options": [
+        "Garten.",
+        "im",
+        "grille",
+        "Ich"
+      ],
+      "instruction_de": "Das konjugierte Verb steht an Position zwei.",
+      "instruction_ru": "Спрягаемый глагол должен стоять на втором месте."
+    },
+    {
+      "id": "yes-no-grillen-ja",
+      "topic_id": "yes_no_questions",
+      "lemma": "grillen",
+      "required_item_type": "verb",
+      "type": "yes_no",
+      "prompt": "Lara grillt heute. Grillt Lara heute?",
+      "answer": "Ja",
+      "options": [
+        "Ja",
+        "Nein"
+      ],
+      "instruction_de": "Stimmt die Frage mit der Information überein?",
+      "instruction_ru": "Совпадает ли вопрос с данной информацией?"
+    },
+    {
+      "id": "yes-no-grillen-nein",
+      "topic_id": "yes_no_questions",
+      "lemma": "grillen",
+      "required_item_type": "verb",
+      "type": "yes_no",
+      "prompt": "Lara grillt heute. Grillt Lara morgen?",
+      "answer": "Nein",
+      "options": [
+        "Ja",
+        "Nein"
+      ],
+      "instruction_de": "Stimmt die Frage mit der Information überein?",
+      "instruction_ru": "Совпадает ли вопрос с данной информацией?"
+    },
+    {
+      "id": "verb-basics-frühstücken",
+      "topic_id": "verb_basics",
+      "lemma": "frühstücken",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Welche Wortart ist „frühstücken“?",
+      "answer": "Verb",
+      "options": [
+        "Nomen",
+        "Verb",
+        "Adjektiv"
+      ],
+      "instruction_de": "Bestimme die Wortart.",
+      "instruction_ru": "Определите часть речи."
+    },
+    {
+      "id": "stem-frühstücken",
+      "topic_id": "infinitive_stem",
+      "lemma": "frühstücken",
+      "required_item_type": "verb",
+      "type": "text",
+      "prompt": "Welche Form ist der Stamm von „frühstücken“?",
+      "answer": "frühstück",
+      "instruction_de": "Schreibe nur den Stamm.",
+      "instruction_ru": "Напишите только основу."
+    },
+    {
+      "id": "pronoun-frühstücken-ich",
+      "topic_id": "personal_pronouns",
+      "lemma": "frühstücken",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ frühstücke Deutsch.",
+      "answer": "Ich",
+      "options": [
+        "Ich",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "pronoun-frühstücken-du",
+      "topic_id": "personal_pronouns",
+      "lemma": "frühstücken",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ frühstückst Deutsch.",
+      "answer": "Du",
+      "options": [
+        "Du",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "pronoun-frühstücken-er-sie-es",
+      "topic_id": "personal_pronouns",
+      "lemma": "frühstücken",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ frühstückt Deutsch.",
+      "answer": "Er",
+      "options": [
+        "Er",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "part-verb-frühstücken",
+      "topic_id": "parts_of_speech",
+      "lemma": "frühstücken",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "„frühstücken“ bezeichnet eine Handlung. Welche Wortart ist das?",
+      "answer": "Verb",
+      "options": [
+        "Verb",
+        "Nomen",
+        "Präposition"
+      ],
+      "instruction_de": "Ordne das markierte Wort zu.",
+      "instruction_ru": "Определите часть речи выделенного слова."
+    },
+    {
+      "id": "order-frühstücken-1",
+      "topic_id": "sentence_basics",
+      "lemma": "frühstücken",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "Ordne die Wörter zu einem Aussagesatz.",
+      "answer": "Ich frühstücke um sieben Uhr.",
+      "options": [
+        "Uhr.",
+        "sieben",
+        "um",
+        "frühstücke",
+        "Ich"
+      ],
+      "instruction_de": "Das konjugierte Verb steht an Position zwei.",
+      "instruction_ru": "Спрягаемый глагол должен стоять на втором месте."
+    },
+    {
+      "id": "yes-no-frühstücken-ja",
+      "topic_id": "yes_no_questions",
+      "lemma": "frühstücken",
+      "required_item_type": "verb",
+      "type": "yes_no",
+      "prompt": "Lara frühstückt heute. Frühstückt Lara heute?",
+      "answer": "Ja",
+      "options": [
+        "Ja",
+        "Nein"
+      ],
+      "instruction_de": "Stimmt die Frage mit der Information überein?",
+      "instruction_ru": "Совпадает ли вопрос с данной информацией?"
+    },
+    {
+      "id": "yes-no-frühstücken-nein",
+      "topic_id": "yes_no_questions",
+      "lemma": "frühstücken",
+      "required_item_type": "verb",
+      "type": "yes_no",
+      "prompt": "Lara frühstückt heute. Frühstückt Lara morgen?",
+      "answer": "Nein",
+      "options": [
+        "Ja",
+        "Nein"
+      ],
+      "instruction_de": "Stimmt die Frage mit der Information überein?",
+      "instruction_ru": "Совпадает ли вопрос с данной информацией?"
+    },
+    {
+      "id": "verb-basics-fotografieren",
+      "topic_id": "verb_basics",
+      "lemma": "fotografieren",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Welche Wortart ist „fotografieren“?",
+      "answer": "Verb",
+      "options": [
+        "Nomen",
+        "Verb",
+        "Adjektiv"
+      ],
+      "instruction_de": "Bestimme die Wortart.",
+      "instruction_ru": "Определите часть речи."
+    },
+    {
+      "id": "stem-fotografieren",
+      "topic_id": "infinitive_stem",
+      "lemma": "fotografieren",
+      "required_item_type": "verb",
+      "type": "text",
+      "prompt": "Welche Form ist der Stamm von „fotografieren“?",
+      "answer": "fotografier",
+      "instruction_de": "Schreibe nur den Stamm.",
+      "instruction_ru": "Напишите только основу."
+    },
+    {
+      "id": "pronoun-fotografieren-ich",
+      "topic_id": "personal_pronouns",
+      "lemma": "fotografieren",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ fotografiere Deutsch.",
+      "answer": "Ich",
+      "options": [
+        "Ich",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "pronoun-fotografieren-du",
+      "topic_id": "personal_pronouns",
+      "lemma": "fotografieren",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ fotografierst Deutsch.",
+      "answer": "Du",
+      "options": [
+        "Du",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "pronoun-fotografieren-er-sie-es",
+      "topic_id": "personal_pronouns",
+      "lemma": "fotografieren",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ fotografiert Deutsch.",
+      "answer": "Er",
+      "options": [
+        "Er",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "part-verb-fotografieren",
+      "topic_id": "parts_of_speech",
+      "lemma": "fotografieren",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "„fotografieren“ bezeichnet eine Handlung. Welche Wortart ist das?",
+      "answer": "Verb",
+      "options": [
+        "Verb",
+        "Nomen",
+        "Präposition"
+      ],
+      "instruction_de": "Ordne das markierte Wort zu.",
+      "instruction_ru": "Определите часть речи выделенного слова."
+    },
+    {
+      "id": "order-fotografieren-1",
+      "topic_id": "sentence_basics",
+      "lemma": "fotografieren",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "Ordne die Wörter zu einem Aussagesatz.",
+      "answer": "Ich fotografiere die Familie.",
+      "options": [
+        "Familie.",
+        "die",
+        "fotografiere",
+        "Ich"
+      ],
+      "instruction_de": "Das konjugierte Verb steht an Position zwei.",
+      "instruction_ru": "Спрягаемый глагол должен стоять на втором месте."
+    },
+    {
+      "id": "yes-no-fotografieren-ja",
+      "topic_id": "yes_no_questions",
+      "lemma": "fotografieren",
+      "required_item_type": "verb",
+      "type": "yes_no",
+      "prompt": "Lara fotografiert heute. Fotografiert Lara heute?",
+      "answer": "Ja",
+      "options": [
+        "Ja",
+        "Nein"
+      ],
+      "instruction_de": "Stimmt die Frage mit der Information überein?",
+      "instruction_ru": "Совпадает ли вопрос с данной информацией?"
+    },
+    {
+      "id": "yes-no-fotografieren-nein",
+      "topic_id": "yes_no_questions",
+      "lemma": "fotografieren",
+      "required_item_type": "verb",
+      "type": "yes_no",
+      "prompt": "Lara fotografiert heute. Fotografiert Lara morgen?",
+      "answer": "Nein",
+      "options": [
+        "Ja",
+        "Nein"
+      ],
+      "instruction_de": "Stimmt die Frage mit der Information überein?",
+      "instruction_ru": "Совпадает ли вопрос с данной информацией?"
+    },
+    {
+      "id": "verb-basics-telefonieren",
+      "topic_id": "verb_basics",
+      "lemma": "telefonieren",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Welche Wortart ist „telefonieren“?",
+      "answer": "Verb",
+      "options": [
+        "Nomen",
+        "Verb",
+        "Adjektiv"
+      ],
+      "instruction_de": "Bestimme die Wortart.",
+      "instruction_ru": "Определите часть речи."
+    },
+    {
+      "id": "stem-telefonieren",
+      "topic_id": "infinitive_stem",
+      "lemma": "telefonieren",
+      "required_item_type": "verb",
+      "type": "text",
+      "prompt": "Welche Form ist der Stamm von „telefonieren“?",
+      "answer": "telefonier",
+      "instruction_de": "Schreibe nur den Stamm.",
+      "instruction_ru": "Напишите только основу."
+    },
+    {
+      "id": "pronoun-telefonieren-ich",
+      "topic_id": "personal_pronouns",
+      "lemma": "telefonieren",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ telefoniere Deutsch.",
+      "answer": "Ich",
+      "options": [
+        "Ich",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "pronoun-telefonieren-du",
+      "topic_id": "personal_pronouns",
+      "lemma": "telefonieren",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ telefonierst Deutsch.",
+      "answer": "Du",
+      "options": [
+        "Du",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "pronoun-telefonieren-er-sie-es",
+      "topic_id": "personal_pronouns",
+      "lemma": "telefonieren",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ telefoniert Deutsch.",
+      "answer": "Er",
+      "options": [
+        "Er",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "part-verb-telefonieren",
+      "topic_id": "parts_of_speech",
+      "lemma": "telefonieren",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "„telefonieren“ bezeichnet eine Handlung. Welche Wortart ist das?",
+      "answer": "Verb",
+      "options": [
+        "Verb",
+        "Nomen",
+        "Präposition"
+      ],
+      "instruction_de": "Ordne das markierte Wort zu.",
+      "instruction_ru": "Определите часть речи выделенного слова."
+    },
+    {
+      "id": "order-telefonieren-1",
+      "topic_id": "sentence_basics",
+      "lemma": "telefonieren",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "Ordne die Wörter zu einem Aussagesatz.",
+      "answer": "Ich telefoniere mit der Familie.",
+      "options": [
+        "Familie.",
+        "der",
+        "mit",
+        "telefoniere",
+        "Ich"
+      ],
+      "instruction_de": "Das konjugierte Verb steht an Position zwei.",
+      "instruction_ru": "Спрягаемый глагол должен стоять на втором месте."
+    },
+    {
+      "id": "yes-no-telefonieren-ja",
+      "topic_id": "yes_no_questions",
+      "lemma": "telefonieren",
+      "required_item_type": "verb",
+      "type": "yes_no",
+      "prompt": "Lara telefoniert heute. Telefoniert Lara heute?",
+      "answer": "Ja",
+      "options": [
+        "Ja",
+        "Nein"
+      ],
+      "instruction_de": "Stimmt die Frage mit der Information überein?",
+      "instruction_ru": "Совпадает ли вопрос с данной информацией?"
+    },
+    {
+      "id": "yes-no-telefonieren-nein",
+      "topic_id": "yes_no_questions",
+      "lemma": "telefonieren",
+      "required_item_type": "verb",
+      "type": "yes_no",
+      "prompt": "Lara telefoniert heute. Telefoniert Lara morgen?",
+      "answer": "Nein",
+      "options": [
+        "Ja",
+        "Nein"
+      ],
+      "instruction_de": "Stimmt die Frage mit der Information überein?",
+      "instruction_ru": "Совпадает ли вопрос с данной информацией?"
+    },
+    {
+      "id": "verb-basics-studieren",
+      "topic_id": "verb_basics",
+      "lemma": "studieren",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Welche Wortart ist „studieren“?",
+      "answer": "Verb",
+      "options": [
+        "Nomen",
+        "Verb",
+        "Adjektiv"
+      ],
+      "instruction_de": "Bestimme die Wortart.",
+      "instruction_ru": "Определите часть речи."
+    },
+    {
+      "id": "stem-studieren",
+      "topic_id": "infinitive_stem",
+      "lemma": "studieren",
+      "required_item_type": "verb",
+      "type": "text",
+      "prompt": "Welche Form ist der Stamm von „studieren“?",
+      "answer": "studier",
+      "instruction_de": "Schreibe nur den Stamm.",
+      "instruction_ru": "Напишите только основу."
+    },
+    {
+      "id": "pronoun-studieren-ich",
+      "topic_id": "personal_pronouns",
+      "lemma": "studieren",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ studiere Deutsch.",
+      "answer": "Ich",
+      "options": [
+        "Ich",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "pronoun-studieren-du",
+      "topic_id": "personal_pronouns",
+      "lemma": "studieren",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ studierst Deutsch.",
+      "answer": "Du",
+      "options": [
+        "Du",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "pronoun-studieren-er-sie-es",
+      "topic_id": "personal_pronouns",
+      "lemma": "studieren",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ studiert Deutsch.",
+      "answer": "Er",
+      "options": [
+        "Er",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "part-verb-studieren",
+      "topic_id": "parts_of_speech",
+      "lemma": "studieren",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "„studieren“ bezeichnet eine Handlung. Welche Wortart ist das?",
+      "answer": "Verb",
+      "options": [
+        "Verb",
+        "Nomen",
+        "Präposition"
+      ],
+      "instruction_de": "Ordne das markierte Wort zu.",
+      "instruction_ru": "Определите часть речи выделенного слова."
+    },
+    {
+      "id": "order-studieren-1",
+      "topic_id": "sentence_basics",
+      "lemma": "studieren",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "Ordne die Wörter zu einem Aussagesatz.",
+      "answer": "Ich studiere in Berlin.",
+      "options": [
+        "Berlin.",
+        "in",
+        "studiere",
+        "Ich"
+      ],
+      "instruction_de": "Das konjugierte Verb steht an Position zwei.",
+      "instruction_ru": "Спрягаемый глагол должен стоять на втором месте."
+    },
+    {
+      "id": "yes-no-studieren-ja",
+      "topic_id": "yes_no_questions",
+      "lemma": "studieren",
+      "required_item_type": "verb",
+      "type": "yes_no",
+      "prompt": "Lara studiert heute. Studiert Lara heute?",
+      "answer": "Ja",
+      "options": [
+        "Ja",
+        "Nein"
+      ],
+      "instruction_de": "Stimmt die Frage mit der Information überein?",
+      "instruction_ru": "Совпадает ли вопрос с данной информацией?"
+    },
+    {
+      "id": "yes-no-studieren-nein",
+      "topic_id": "yes_no_questions",
+      "lemma": "studieren",
+      "required_item_type": "verb",
+      "type": "yes_no",
+      "prompt": "Lara studiert heute. Studiert Lara morgen?",
+      "answer": "Nein",
+      "options": [
+        "Ja",
+        "Nein"
+      ],
+      "instruction_de": "Stimmt die Frage mit der Information überein?",
+      "instruction_ru": "Совпадает ли вопрос с данной информацией?"
+    },
+    {
+      "id": "verb-basics-suchen",
+      "topic_id": "verb_basics",
+      "lemma": "suchen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Welche Wortart ist „suchen“?",
+      "answer": "Verb",
+      "options": [
+        "Nomen",
+        "Verb",
+        "Adjektiv"
+      ],
+      "instruction_de": "Bestimme die Wortart.",
+      "instruction_ru": "Определите часть речи."
+    },
+    {
+      "id": "stem-suchen",
+      "topic_id": "infinitive_stem",
+      "lemma": "suchen",
+      "required_item_type": "verb",
+      "type": "text",
+      "prompt": "Welche Form ist der Stamm von „suchen“?",
+      "answer": "such",
+      "instruction_de": "Schreibe nur den Stamm.",
+      "instruction_ru": "Напишите только основу."
+    },
+    {
+      "id": "pronoun-suchen-ich",
+      "topic_id": "personal_pronouns",
+      "lemma": "suchen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ suche Deutsch.",
+      "answer": "Ich",
+      "options": [
+        "Ich",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "pronoun-suchen-du",
+      "topic_id": "personal_pronouns",
+      "lemma": "suchen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ suchst Deutsch.",
+      "answer": "Du",
+      "options": [
+        "Du",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "pronoun-suchen-er-sie-es",
+      "topic_id": "personal_pronouns",
+      "lemma": "suchen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ sucht Deutsch.",
+      "answer": "Er",
+      "options": [
+        "Er",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "part-verb-suchen",
+      "topic_id": "parts_of_speech",
+      "lemma": "suchen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "„suchen“ bezeichnet eine Handlung. Welche Wortart ist das?",
+      "answer": "Verb",
+      "options": [
+        "Verb",
+        "Nomen",
+        "Präposition"
+      ],
+      "instruction_de": "Ordne das markierte Wort zu.",
+      "instruction_ru": "Определите часть речи выделенного слова."
+    },
+    {
+      "id": "order-suchen-1",
+      "topic_id": "sentence_basics",
+      "lemma": "suchen",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "Ordne die Wörter zu einem Aussagesatz.",
+      "answer": "Ich suche den Schlüssel.",
+      "options": [
+        "Schlüssel.",
+        "den",
+        "suche",
+        "Ich"
+      ],
+      "instruction_de": "Das konjugierte Verb steht an Position zwei.",
+      "instruction_ru": "Спрягаемый глагол должен стоять на втором месте."
+    },
+    {
+      "id": "yes-no-suchen-ja",
+      "topic_id": "yes_no_questions",
+      "lemma": "suchen",
+      "required_item_type": "verb",
+      "type": "yes_no",
+      "prompt": "Lara sucht heute. Sucht Lara heute?",
+      "answer": "Ja",
+      "options": [
+        "Ja",
+        "Nein"
+      ],
+      "instruction_de": "Stimmt die Frage mit der Information überein?",
+      "instruction_ru": "Совпадает ли вопрос с данной информацией?"
+    },
+    {
+      "id": "yes-no-suchen-nein",
+      "topic_id": "yes_no_questions",
+      "lemma": "suchen",
+      "required_item_type": "verb",
+      "type": "yes_no",
+      "prompt": "Lara sucht heute. Sucht Lara morgen?",
+      "answer": "Nein",
+      "options": [
+        "Ja",
+        "Nein"
+      ],
+      "instruction_de": "Stimmt die Frage mit der Information überein?",
+      "instruction_ru": "Совпадает ли вопрос с данной информацией?"
+    },
+    {
+      "id": "verb-basics-besuchen",
+      "topic_id": "verb_basics",
+      "lemma": "besuchen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Welche Wortart ist „besuchen“?",
+      "answer": "Verb",
+      "options": [
+        "Nomen",
+        "Verb",
+        "Adjektiv"
+      ],
+      "instruction_de": "Bestimme die Wortart.",
+      "instruction_ru": "Определите часть речи."
+    },
+    {
+      "id": "stem-besuchen",
+      "topic_id": "infinitive_stem",
+      "lemma": "besuchen",
+      "required_item_type": "verb",
+      "type": "text",
+      "prompt": "Welche Form ist der Stamm von „besuchen“?",
+      "answer": "besuch",
+      "instruction_de": "Schreibe nur den Stamm.",
+      "instruction_ru": "Напишите только основу."
+    },
+    {
+      "id": "pronoun-besuchen-ich",
+      "topic_id": "personal_pronouns",
+      "lemma": "besuchen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ besuche Deutsch.",
+      "answer": "Ich",
+      "options": [
+        "Ich",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "pronoun-besuchen-du",
+      "topic_id": "personal_pronouns",
+      "lemma": "besuchen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ besuchst Deutsch.",
+      "answer": "Du",
+      "options": [
+        "Du",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "pronoun-besuchen-er-sie-es",
+      "topic_id": "personal_pronouns",
+      "lemma": "besuchen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ besucht Deutsch.",
+      "answer": "Er",
+      "options": [
+        "Er",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "part-verb-besuchen",
+      "topic_id": "parts_of_speech",
+      "lemma": "besuchen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "„besuchen“ bezeichnet eine Handlung. Welche Wortart ist das?",
+      "answer": "Verb",
+      "options": [
+        "Verb",
+        "Nomen",
+        "Präposition"
+      ],
+      "instruction_de": "Ordne das markierte Wort zu.",
+      "instruction_ru": "Определите часть речи выделенного слова."
+    },
+    {
+      "id": "order-besuchen-1",
+      "topic_id": "sentence_basics",
+      "lemma": "besuchen",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "Ordne die Wörter zu einem Aussagesatz.",
+      "answer": "Ich besuche die Familie.",
+      "options": [
+        "Familie.",
+        "die",
+        "besuche",
+        "Ich"
+      ],
+      "instruction_de": "Das konjugierte Verb steht an Position zwei.",
+      "instruction_ru": "Спрягаемый глагол должен стоять на втором месте."
+    },
+    {
+      "id": "yes-no-besuchen-ja",
+      "topic_id": "yes_no_questions",
+      "lemma": "besuchen",
+      "required_item_type": "verb",
+      "type": "yes_no",
+      "prompt": "Lara besucht heute. Besucht Lara heute?",
+      "answer": "Ja",
+      "options": [
+        "Ja",
+        "Nein"
+      ],
+      "instruction_de": "Stimmt die Frage mit der Information überein?",
+      "instruction_ru": "Совпадает ли вопрос с данной информацией?"
+    },
+    {
+      "id": "yes-no-besuchen-nein",
+      "topic_id": "yes_no_questions",
+      "lemma": "besuchen",
+      "required_item_type": "verb",
+      "type": "yes_no",
+      "prompt": "Lara besucht heute. Besucht Lara morgen?",
+      "answer": "Nein",
+      "options": [
+        "Ja",
+        "Nein"
+      ],
+      "instruction_de": "Stimmt die Frage mit der Information überein?",
+      "instruction_ru": "Совпадает ли вопрос с данной информацией?"
+    },
+    {
+      "id": "verb-basics-lieben",
+      "topic_id": "verb_basics",
+      "lemma": "lieben",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Welche Wortart ist „lieben“?",
+      "answer": "Verb",
+      "options": [
+        "Nomen",
+        "Verb",
+        "Adjektiv"
+      ],
+      "instruction_de": "Bestimme die Wortart.",
+      "instruction_ru": "Определите часть речи."
+    },
+    {
+      "id": "stem-lieben",
+      "topic_id": "infinitive_stem",
+      "lemma": "lieben",
+      "required_item_type": "verb",
+      "type": "text",
+      "prompt": "Welche Form ist der Stamm von „lieben“?",
+      "answer": "lieb",
+      "instruction_de": "Schreibe nur den Stamm.",
+      "instruction_ru": "Напишите только основу."
+    },
+    {
+      "id": "pronoun-lieben-ich",
+      "topic_id": "personal_pronouns",
+      "lemma": "lieben",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ liebe Deutsch.",
+      "answer": "Ich",
+      "options": [
+        "Ich",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "pronoun-lieben-du",
+      "topic_id": "personal_pronouns",
+      "lemma": "lieben",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ liebst Deutsch.",
+      "answer": "Du",
+      "options": [
+        "Du",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "pronoun-lieben-er-sie-es",
+      "topic_id": "personal_pronouns",
+      "lemma": "lieben",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ liebt Deutsch.",
+      "answer": "Er",
+      "options": [
+        "Er",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "part-verb-lieben",
+      "topic_id": "parts_of_speech",
+      "lemma": "lieben",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "„lieben“ bezeichnet eine Handlung. Welche Wortart ist das?",
+      "answer": "Verb",
+      "options": [
+        "Verb",
+        "Nomen",
+        "Präposition"
+      ],
+      "instruction_de": "Ordne das markierte Wort zu.",
+      "instruction_ru": "Определите часть речи выделенного слова."
+    },
+    {
+      "id": "order-lieben-1",
+      "topic_id": "sentence_basics",
+      "lemma": "lieben",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "Ordne die Wörter zu einem Aussagesatz.",
+      "answer": "Ich liebe gute Musik.",
+      "options": [
+        "Musik.",
+        "gute",
+        "liebe",
+        "Ich"
+      ],
+      "instruction_de": "Das konjugierte Verb steht an Position zwei.",
+      "instruction_ru": "Спрягаемый глагол должен стоять на втором месте."
+    },
+    {
+      "id": "yes-no-lieben-ja",
+      "topic_id": "yes_no_questions",
+      "lemma": "lieben",
+      "required_item_type": "verb",
+      "type": "yes_no",
+      "prompt": "Lara liebt heute. Liebt Lara heute?",
+      "answer": "Ja",
+      "options": [
+        "Ja",
+        "Nein"
+      ],
+      "instruction_de": "Stimmt die Frage mit der Information überein?",
+      "instruction_ru": "Совпадает ли вопрос с данной информацией?"
+    },
+    {
+      "id": "yes-no-lieben-nein",
+      "topic_id": "yes_no_questions",
+      "lemma": "lieben",
+      "required_item_type": "verb",
+      "type": "yes_no",
+      "prompt": "Lara liebt heute. Liebt Lara morgen?",
+      "answer": "Nein",
+      "options": [
+        "Ja",
+        "Nein"
+      ],
+      "instruction_de": "Stimmt die Frage mit der Information überein?",
+      "instruction_ru": "Совпадает ли вопрос с данной информацией?"
+    },
+    {
+      "id": "verb-basics-zeigen",
+      "topic_id": "verb_basics",
+      "lemma": "zeigen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Welche Wortart ist „zeigen“?",
+      "answer": "Verb",
+      "options": [
+        "Nomen",
+        "Verb",
+        "Adjektiv"
+      ],
+      "instruction_de": "Bestimme die Wortart.",
+      "instruction_ru": "Определите часть речи."
+    },
+    {
+      "id": "stem-zeigen",
+      "topic_id": "infinitive_stem",
+      "lemma": "zeigen",
+      "required_item_type": "verb",
+      "type": "text",
+      "prompt": "Welche Form ist der Stamm von „zeigen“?",
+      "answer": "zeig",
+      "instruction_de": "Schreibe nur den Stamm.",
+      "instruction_ru": "Напишите только основу."
+    },
+    {
+      "id": "pronoun-zeigen-ich",
+      "topic_id": "personal_pronouns",
+      "lemma": "zeigen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ zeige Deutsch.",
+      "answer": "Ich",
+      "options": [
+        "Ich",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "pronoun-zeigen-du",
+      "topic_id": "personal_pronouns",
+      "lemma": "zeigen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ zeigst Deutsch.",
+      "answer": "Du",
+      "options": [
+        "Du",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "pronoun-zeigen-er-sie-es",
+      "topic_id": "personal_pronouns",
+      "lemma": "zeigen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ zeigt Deutsch.",
+      "answer": "Er",
+      "options": [
+        "Er",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "part-verb-zeigen",
+      "topic_id": "parts_of_speech",
+      "lemma": "zeigen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "„zeigen“ bezeichnet eine Handlung. Welche Wortart ist das?",
+      "answer": "Verb",
+      "options": [
+        "Verb",
+        "Nomen",
+        "Präposition"
+      ],
+      "instruction_de": "Ordne das markierte Wort zu.",
+      "instruction_ru": "Определите часть речи выделенного слова."
+    },
+    {
+      "id": "order-zeigen-1",
+      "topic_id": "sentence_basics",
+      "lemma": "zeigen",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "Ordne die Wörter zu einem Aussagesatz.",
+      "answer": "Ich zeige den Weg.",
+      "options": [
+        "Weg.",
+        "den",
+        "zeige",
+        "Ich"
+      ],
+      "instruction_de": "Das konjugierte Verb steht an Position zwei.",
+      "instruction_ru": "Спрягаемый глагол должен стоять на втором месте."
+    },
+    {
+      "id": "yes-no-zeigen-ja",
+      "topic_id": "yes_no_questions",
+      "lemma": "zeigen",
+      "required_item_type": "verb",
+      "type": "yes_no",
+      "prompt": "Lara zeigt heute. Zeigt Lara heute?",
+      "answer": "Ja",
+      "options": [
+        "Ja",
+        "Nein"
+      ],
+      "instruction_de": "Stimmt die Frage mit der Information überein?",
+      "instruction_ru": "Совпадает ли вопрос с данной информацией?"
+    },
+    {
+      "id": "yes-no-zeigen-nein",
+      "topic_id": "yes_no_questions",
+      "lemma": "zeigen",
+      "required_item_type": "verb",
+      "type": "yes_no",
+      "prompt": "Lara zeigt heute. Zeigt Lara morgen?",
+      "answer": "Nein",
+      "options": [
+        "Ja",
+        "Nein"
+      ],
+      "instruction_de": "Stimmt die Frage mit der Information überein?",
+      "instruction_ru": "Совпадает ли вопрос с данной информацией?"
+    },
+    {
+      "id": "verb-basics-erklären",
+      "topic_id": "verb_basics",
+      "lemma": "erklären",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Welche Wortart ist „erklären“?",
+      "answer": "Verb",
+      "options": [
+        "Nomen",
+        "Verb",
+        "Adjektiv"
+      ],
+      "instruction_de": "Bestimme die Wortart.",
+      "instruction_ru": "Определите часть речи."
+    },
+    {
+      "id": "stem-erklären",
+      "topic_id": "infinitive_stem",
+      "lemma": "erklären",
+      "required_item_type": "verb",
+      "type": "text",
+      "prompt": "Welche Form ist der Stamm von „erklären“?",
+      "answer": "erklär",
+      "instruction_de": "Schreibe nur den Stamm.",
+      "instruction_ru": "Напишите только основу."
+    },
+    {
+      "id": "pronoun-erklären-ich",
+      "topic_id": "personal_pronouns",
+      "lemma": "erklären",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ erkläre Deutsch.",
+      "answer": "Ich",
+      "options": [
+        "Ich",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "pronoun-erklären-du",
+      "topic_id": "personal_pronouns",
+      "lemma": "erklären",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ erklärst Deutsch.",
+      "answer": "Du",
+      "options": [
+        "Du",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "pronoun-erklären-er-sie-es",
+      "topic_id": "personal_pronouns",
+      "lemma": "erklären",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ erklärt Deutsch.",
+      "answer": "Er",
+      "options": [
+        "Er",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "part-verb-erklären",
+      "topic_id": "parts_of_speech",
+      "lemma": "erklären",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "„erklären“ bezeichnet eine Handlung. Welche Wortart ist das?",
+      "answer": "Verb",
+      "options": [
+        "Verb",
+        "Nomen",
+        "Präposition"
+      ],
+      "instruction_de": "Ordne das markierte Wort zu.",
+      "instruction_ru": "Определите часть речи выделенного слова."
+    },
+    {
+      "id": "order-erklären-1",
+      "topic_id": "sentence_basics",
+      "lemma": "erklären",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "Ordne die Wörter zu einem Aussagesatz.",
+      "answer": "Ich erkläre die Aufgabe.",
+      "options": [
+        "Aufgabe.",
+        "die",
+        "erkläre",
+        "Ich"
+      ],
+      "instruction_de": "Das konjugierte Verb steht an Position zwei.",
+      "instruction_ru": "Спрягаемый глагол должен стоять на втором месте."
+    },
+    {
+      "id": "yes-no-erklären-ja",
+      "topic_id": "yes_no_questions",
+      "lemma": "erklären",
+      "required_item_type": "verb",
+      "type": "yes_no",
+      "prompt": "Lara erklärt heute. Erklärt Lara heute?",
+      "answer": "Ja",
+      "options": [
+        "Ja",
+        "Nein"
+      ],
+      "instruction_de": "Stimmt die Frage mit der Information überein?",
+      "instruction_ru": "Совпадает ли вопрос с данной информацией?"
+    },
+    {
+      "id": "yes-no-erklären-nein",
+      "topic_id": "yes_no_questions",
+      "lemma": "erklären",
+      "required_item_type": "verb",
+      "type": "yes_no",
+      "prompt": "Lara erklärt heute. Erklärt Lara morgen?",
+      "answer": "Nein",
+      "options": [
+        "Ja",
+        "Nein"
+      ],
+      "instruction_de": "Stimmt die Frage mit der Information überein?",
+      "instruction_ru": "Совпадает ли вопрос с данной информацией?"
+    },
+    {
+      "id": "verb-basics-üben",
+      "topic_id": "verb_basics",
+      "lemma": "üben",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Welche Wortart ist „üben“?",
+      "answer": "Verb",
+      "options": [
+        "Nomen",
+        "Verb",
+        "Adjektiv"
+      ],
+      "instruction_de": "Bestimme die Wortart.",
+      "instruction_ru": "Определите часть речи."
+    },
+    {
+      "id": "stem-üben",
+      "topic_id": "infinitive_stem",
+      "lemma": "üben",
+      "required_item_type": "verb",
+      "type": "text",
+      "prompt": "Welche Form ist der Stamm von „üben“?",
+      "answer": "üb",
+      "instruction_de": "Schreibe nur den Stamm.",
+      "instruction_ru": "Напишите только основу."
+    },
+    {
+      "id": "pronoun-üben-ich",
+      "topic_id": "personal_pronouns",
+      "lemma": "üben",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ übe Deutsch.",
+      "answer": "Ich",
+      "options": [
+        "Ich",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "pronoun-üben-du",
+      "topic_id": "personal_pronouns",
+      "lemma": "üben",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ übst Deutsch.",
+      "answer": "Du",
+      "options": [
+        "Du",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "pronoun-üben-er-sie-es",
+      "topic_id": "personal_pronouns",
+      "lemma": "üben",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ übt Deutsch.",
+      "answer": "Er",
+      "options": [
+        "Er",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "part-verb-üben",
+      "topic_id": "parts_of_speech",
+      "lemma": "üben",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "„üben“ bezeichnet eine Handlung. Welche Wortart ist das?",
+      "answer": "Verb",
+      "options": [
+        "Verb",
+        "Nomen",
+        "Präposition"
+      ],
+      "instruction_de": "Ordne das markierte Wort zu.",
+      "instruction_ru": "Определите часть речи выделенного слова."
+    },
+    {
+      "id": "order-üben-1",
+      "topic_id": "sentence_basics",
+      "lemma": "üben",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "Ordne die Wörter zu einem Aussagesatz.",
+      "answer": "Ich übe jeden Tag Deutsch.",
+      "options": [
+        "Deutsch.",
+        "Tag",
+        "jeden",
+        "übe",
+        "Ich"
+      ],
+      "instruction_de": "Das konjugierte Verb steht an Position zwei.",
+      "instruction_ru": "Спрягаемый глагол должен стоять на втором месте."
+    },
+    {
+      "id": "yes-no-üben-ja",
+      "topic_id": "yes_no_questions",
+      "lemma": "üben",
+      "required_item_type": "verb",
+      "type": "yes_no",
+      "prompt": "Lara übt heute. Übt Lara heute?",
+      "answer": "Ja",
+      "options": [
+        "Ja",
+        "Nein"
+      ],
+      "instruction_de": "Stimmt die Frage mit der Information überein?",
+      "instruction_ru": "Совпадает ли вопрос с данной информацией?"
+    },
+    {
+      "id": "yes-no-üben-nein",
+      "topic_id": "yes_no_questions",
+      "lemma": "üben",
+      "required_item_type": "verb",
+      "type": "yes_no",
+      "prompt": "Lara übt heute. Übt Lara morgen?",
+      "answer": "Nein",
+      "options": [
+        "Ja",
+        "Nein"
+      ],
+      "instruction_de": "Stimmt die Frage mit der Information überein?",
+      "instruction_ru": "Совпадает ли вопрос с данной информацией?"
+    },
+    {
+      "id": "verb-basics-bezahlen",
+      "topic_id": "verb_basics",
+      "lemma": "bezahlen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Welche Wortart ist „bezahlen“?",
+      "answer": "Verb",
+      "options": [
+        "Nomen",
+        "Verb",
+        "Adjektiv"
+      ],
+      "instruction_de": "Bestimme die Wortart.",
+      "instruction_ru": "Определите часть речи."
+    },
+    {
+      "id": "stem-bezahlen",
+      "topic_id": "infinitive_stem",
+      "lemma": "bezahlen",
+      "required_item_type": "verb",
+      "type": "text",
+      "prompt": "Welche Form ist der Stamm von „bezahlen“?",
+      "answer": "bezahl",
+      "instruction_de": "Schreibe nur den Stamm.",
+      "instruction_ru": "Напишите только основу."
+    },
+    {
+      "id": "pronoun-bezahlen-ich",
+      "topic_id": "personal_pronouns",
+      "lemma": "bezahlen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ bezahle Deutsch.",
+      "answer": "Ich",
+      "options": [
+        "Ich",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "pronoun-bezahlen-du",
+      "topic_id": "personal_pronouns",
+      "lemma": "bezahlen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ bezahlst Deutsch.",
+      "answer": "Du",
+      "options": [
+        "Du",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "pronoun-bezahlen-er-sie-es",
+      "topic_id": "personal_pronouns",
+      "lemma": "bezahlen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ bezahlt Deutsch.",
+      "answer": "Er",
+      "options": [
+        "Er",
+        "Wir",
+        "Ihr"
+      ],
+      "instruction_de": "Wähle das passende Personalpronomen.",
+      "instruction_ru": "Выберите подходящее личное местоимение."
+    },
+    {
+      "id": "part-verb-bezahlen",
+      "topic_id": "parts_of_speech",
+      "lemma": "bezahlen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "„bezahlen“ bezeichnet eine Handlung. Welche Wortart ist das?",
+      "answer": "Verb",
+      "options": [
+        "Verb",
+        "Nomen",
+        "Präposition"
+      ],
+      "instruction_de": "Ordne das markierte Wort zu.",
+      "instruction_ru": "Определите часть речи выделенного слова."
+    },
+    {
+      "id": "order-bezahlen-1",
+      "topic_id": "sentence_basics",
+      "lemma": "bezahlen",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "Ordne die Wörter zu einem Aussagesatz.",
+      "answer": "Ich bezahle die Rechnung.",
+      "options": [
+        "Rechnung.",
+        "die",
+        "bezahle",
+        "Ich"
+      ],
+      "instruction_de": "Das konjugierte Verb steht an Position zwei.",
+      "instruction_ru": "Спрягаемый глагол должен стоять на втором месте."
+    },
+    {
+      "id": "yes-no-bezahlen-ja",
+      "topic_id": "yes_no_questions",
+      "lemma": "bezahlen",
+      "required_item_type": "verb",
+      "type": "yes_no",
+      "prompt": "Lara bezahlt heute. Bezahlt Lara heute?",
+      "answer": "Ja",
+      "options": [
+        "Ja",
+        "Nein"
+      ],
+      "instruction_de": "Stimmt die Frage mit der Information überein?",
+      "instruction_ru": "Совпадает ли вопрос с данной информацией?"
+    },
+    {
+      "id": "yes-no-bezahlen-nein",
+      "topic_id": "yes_no_questions",
+      "lemma": "bezahlen",
+      "required_item_type": "verb",
+      "type": "yes_no",
+      "prompt": "Lara bezahlt heute. Bezahlt Lara morgen?",
+      "answer": "Nein",
+      "options": [
+        "Ja",
+        "Nein"
+      ],
+      "instruction_de": "Stimmt die Frage mit der Information überein?",
+      "instruction_ru": "Совпадает ли вопрос с данной информацией?"
+    },
+    {
+      "id": "w-question-1",
+      "topic_id": "w_questions",
+      "lemma": "wohnen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ wohnst du? – In Berlin.",
+      "answer": "Wo",
+      "options": [
+        "Wer",
+        "Was",
+        "Wo",
+        "Woher",
+        "Wann",
+        "Wie",
+        "Wen",
+        "Mit wem"
+      ],
+      "instruction_de": "Wähle das passende Fragewort.",
+      "instruction_ru": "Выберите подходящее вопросительное слово."
+    },
+    {
+      "id": "w-question-2",
+      "topic_id": "w_questions",
+      "lemma": "kommen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ kommst du? – Aus Polen.",
+      "answer": "Woher",
+      "options": [
+        "Wer",
+        "Was",
+        "Wo",
+        "Woher",
+        "Wann",
+        "Wie",
+        "Wen",
+        "Mit wem"
+      ],
+      "instruction_de": "Wähle das passende Fragewort.",
+      "instruction_ru": "Выберите подходящее вопросительное слово."
+    },
+    {
+      "id": "w-question-3",
+      "topic_id": "w_questions",
+      "lemma": "lernen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ lernst du? – Deutsch.",
+      "answer": "Was",
+      "options": [
+        "Wer",
+        "Was",
+        "Wo",
+        "Woher",
+        "Wann",
+        "Wie",
+        "Wen",
+        "Mit wem"
+      ],
+      "instruction_de": "Wähle das passende Fragewort.",
+      "instruction_ru": "Выберите подходящее вопросительное слово."
+    },
+    {
+      "id": "w-question-4",
+      "topic_id": "w_questions",
+      "lemma": "machen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ machst du das? – Langsam.",
+      "answer": "Wie",
+      "options": [
+        "Wer",
+        "Was",
+        "Wo",
+        "Woher",
+        "Wann",
+        "Wie",
+        "Wen",
+        "Mit wem"
+      ],
+      "instruction_de": "Wähle das passende Fragewort.",
+      "instruction_ru": "Выберите подходящее вопросительное слово."
+    },
+    {
+      "id": "w-question-5",
+      "topic_id": "w_questions",
+      "lemma": "fragen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ fragst du? – Den Lehrer.",
+      "answer": "Wen",
+      "options": [
+        "Wer",
+        "Was",
+        "Wo",
+        "Woher",
+        "Wann",
+        "Wie",
+        "Wen",
+        "Mit wem"
+      ],
+      "instruction_de": "Wähle das passende Fragewort.",
+      "instruction_ru": "Выберите подходящее вопросительное слово."
+    },
+    {
+      "id": "w-question-6",
+      "topic_id": "w_questions",
+      "lemma": "lernen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ lernst du? – Am Abend.",
+      "answer": "Wann",
+      "options": [
+        "Wer",
+        "Was",
+        "Wo",
+        "Woher",
+        "Wann",
+        "Wie",
+        "Wen",
+        "Mit wem"
+      ],
+      "instruction_de": "Wähle das passende Fragewort.",
+      "instruction_ru": "Выберите подходящее вопросительное слово."
+    },
+    {
+      "id": "w-question-7",
+      "topic_id": "w_questions",
+      "lemma": "lernen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ lernst du? – Zusammen.",
+      "answer": "Wie",
+      "options": [
+        "Wer",
+        "Was",
+        "Wo",
+        "Woher",
+        "Wann",
+        "Wie",
+        "Wen",
+        "Mit wem"
+      ],
+      "instruction_de": "Wähle das passende Fragewort.",
+      "instruction_ru": "Выберите подходящее вопросительное слово."
+    },
+    {
+      "id": "w-question-8",
+      "topic_id": "w_questions",
+      "lemma": "machen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ machst du? – Sport.",
+      "answer": "Was",
+      "options": [
+        "Wer",
+        "Was",
+        "Wo",
+        "Woher",
+        "Wann",
+        "Wie",
+        "Wen",
+        "Mit wem"
+      ],
+      "instruction_de": "Wähle das passende Fragewort.",
+      "instruction_ru": "Выберите подходящее вопросительное слово."
+    },
+    {
+      "id": "w-question-9",
+      "topic_id": "w_questions",
+      "lemma": "machen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ machst du Sport? – Heute.",
+      "answer": "Wann",
+      "options": [
+        "Wer",
+        "Was",
+        "Wo",
+        "Woher",
+        "Wann",
+        "Wie",
+        "Wen",
+        "Mit wem"
+      ],
+      "instruction_de": "Wähle das passende Fragewort.",
+      "instruction_ru": "Выберите подходящее вопросительное слово."
+    },
+    {
+      "id": "w-question-10",
+      "topic_id": "w_questions",
+      "lemma": "kommen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ kommst du? – Um acht.",
+      "answer": "Wann",
+      "options": [
+        "Wer",
+        "Was",
+        "Wo",
+        "Woher",
+        "Wann",
+        "Wie",
+        "Wen",
+        "Mit wem"
+      ],
+      "instruction_de": "Wähle das passende Fragewort.",
+      "instruction_ru": "Выберите подходящее вопросительное слово."
+    },
+    {
+      "id": "w-question-11",
+      "topic_id": "w_questions",
+      "lemma": "kommen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ kommst du? – Mit dem Bus.",
+      "answer": "Wie",
+      "options": [
+        "Wer",
+        "Was",
+        "Wo",
+        "Woher",
+        "Wann",
+        "Wie",
+        "Wen",
+        "Mit wem"
+      ],
+      "instruction_de": "Wähle das passende Fragewort.",
+      "instruction_ru": "Выберите подходящее вопросительное слово."
+    },
+    {
+      "id": "w-question-12",
+      "topic_id": "w_questions",
+      "lemma": "leben",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ lebt Lara? – In Köln.",
+      "answer": "Wo",
+      "options": [
+        "Wer",
+        "Was",
+        "Wo",
+        "Woher",
+        "Wann",
+        "Wie",
+        "Wen",
+        "Mit wem"
+      ],
+      "instruction_de": "Wähle das passende Fragewort.",
+      "instruction_ru": "Выберите подходящее вопросительное слово."
+    },
+    {
+      "id": "w-question-13",
+      "topic_id": "w_questions",
+      "lemma": "leben",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ lebt Lara? – Ruhig.",
+      "answer": "Wie",
+      "options": [
+        "Wer",
+        "Was",
+        "Wo",
+        "Woher",
+        "Wann",
+        "Wie",
+        "Wen",
+        "Mit wem"
+      ],
+      "instruction_de": "Wähle das passende Fragewort.",
+      "instruction_ru": "Выберите подходящее вопросительное слово."
+    },
+    {
+      "id": "w-question-14",
+      "topic_id": "w_questions",
+      "lemma": "kaufen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ kaufst du? – Brot.",
+      "answer": "Was",
+      "options": [
+        "Wer",
+        "Was",
+        "Wo",
+        "Woher",
+        "Wann",
+        "Wie",
+        "Wen",
+        "Mit wem"
+      ],
+      "instruction_de": "Wähle das passende Fragewort.",
+      "instruction_ru": "Выберите подходящее вопросительное слово."
+    },
+    {
+      "id": "w-question-15",
+      "topic_id": "w_questions",
+      "lemma": "kaufen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ kaufst du ein? – Am Samstag.",
+      "answer": "Wann",
+      "options": [
+        "Wer",
+        "Was",
+        "Wo",
+        "Woher",
+        "Wann",
+        "Wie",
+        "Wen",
+        "Mit wem"
+      ],
+      "instruction_de": "Wähle das passende Fragewort.",
+      "instruction_ru": "Выберите подходящее вопросительное слово."
+    },
+    {
+      "id": "w-question-16",
+      "topic_id": "w_questions",
+      "lemma": "spielen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ spielt ihr? – Fußball.",
+      "answer": "Was",
+      "options": [
+        "Wer",
+        "Was",
+        "Wo",
+        "Woher",
+        "Wann",
+        "Wie",
+        "Wen",
+        "Mit wem"
+      ],
+      "instruction_de": "Wähle das passende Fragewort.",
+      "instruction_ru": "Выберите подходящее вопросительное слово."
+    },
+    {
+      "id": "w-question-17",
+      "topic_id": "w_questions",
+      "lemma": "spielen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ spielt ihr? – Im Garten.",
+      "answer": "Wo",
+      "options": [
+        "Wer",
+        "Was",
+        "Wo",
+        "Woher",
+        "Wann",
+        "Wie",
+        "Wen",
+        "Mit wem"
+      ],
+      "instruction_de": "Wähle das passende Fragewort.",
+      "instruction_ru": "Выберите подходящее вопросительное слово."
+    },
+    {
+      "id": "w-question-18",
+      "topic_id": "w_questions",
+      "lemma": "hören",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ hörst du? – Musik.",
+      "answer": "Was",
+      "options": [
+        "Wer",
+        "Was",
+        "Wo",
+        "Woher",
+        "Wann",
+        "Wie",
+        "Wen",
+        "Mit wem"
+      ],
+      "instruction_de": "Wähle das passende Fragewort.",
+      "instruction_ru": "Выберите подходящее вопросительное слово."
+    },
+    {
+      "id": "w-question-19",
+      "topic_id": "w_questions",
+      "lemma": "kochen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ kocht ihr? – Am Abend.",
+      "answer": "Wann",
+      "options": [
+        "Wer",
+        "Was",
+        "Wo",
+        "Woher",
+        "Wann",
+        "Wie",
+        "Wen",
+        "Mit wem"
+      ],
+      "instruction_de": "Wähle das passende Fragewort.",
+      "instruction_ru": "Выберите подходящее вопросительное слово."
+    },
+    {
+      "id": "w-question-20",
+      "topic_id": "w_questions",
+      "lemma": "telefonieren",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ telefonierst du? – Mit Anna.",
+      "answer": "Mit wem",
+      "options": [
+        "Wer",
+        "Was",
+        "Wo",
+        "Woher",
+        "Wann",
+        "Wie",
+        "Wen",
+        "Mit wem"
+      ],
+      "instruction_de": "Wähle das passende Fragewort.",
+      "instruction_ru": "Выберите подходящее вопросительное слово."
+    },
+    {
+      "id": "noun-capital-tisch",
+      "topic_id": "noun_basics",
+      "lemma": "tisch",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Welche Schreibweise ist richtig?",
+      "answer": "Tisch",
+      "options": [
+        "tisch",
+        "Tisch"
+      ],
+      "instruction_de": "Nomen beginnen mit einem Großbuchstaben.",
+      "instruction_ru": "Существительные начинаются с заглавной буквы."
+    },
+    {
+      "id": "noun-capital-check-tisch",
+      "topic_id": "noun_basics",
+      "lemma": "tisch",
+      "required_item_type": "noun",
+      "type": "yes_no",
+      "prompt": "Ist „tisch“ als Nomen richtig geschrieben?",
+      "answer": "Nein",
+      "options": [
+        "Ja",
+        "Nein"
+      ],
+      "instruction_de": "Prüfe den ersten Buchstaben.",
+      "instruction_ru": "Проверьте первую букву."
+    },
+    {
+      "id": "article-tisch",
+      "topic_id": "articles",
+      "lemma": "tisch",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "___ Tisch",
+      "answer": "der",
+      "options": [
+        "der",
+        "die",
+        "das"
+      ],
+      "instruction_de": "Wähle den bestimmten Artikel.",
+      "instruction_ru": "Выберите определённый артикль."
+    },
+    {
+      "id": "article-indefinite-tisch",
+      "topic_id": "articles",
+      "lemma": "tisch",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Das ist ___ Tisch.",
+      "answer": "ein",
+      "options": [
+        "ein",
+        "eine"
+      ],
+      "instruction_de": "Wähle den unbestimmten Artikel.",
+      "instruction_ru": "Выберите неопределённый артикль."
+    },
+    {
+      "id": "part-noun-tisch",
+      "topic_id": "parts_of_speech",
+      "lemma": "tisch",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Welche Wortart ist „Tisch“?",
+      "answer": "Nomen",
+      "options": [
+        "Verb",
+        "Nomen",
+        "Adjektiv"
+      ],
+      "instruction_de": "Ordne das markierte Wort zu.",
+      "instruction_ru": "Определите часть речи выделенного слова."
+    },
+    {
+      "id": "case-tisch-nominative",
+      "topic_id": "cases_intro",
+      "lemma": "tisch",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "der Tisch ist hier. Welche Rolle hat „der Tisch“?",
+      "answer": "Nominativ",
+      "options": [
+        "Nominativ",
+        "Akkusativ"
+      ],
+      "instruction_de": "Wer oder was ist hier?",
+      "instruction_ru": "Кто или что находится здесь?"
+    },
+    {
+      "id": "case-tisch-accusative",
+      "topic_id": "cases_intro",
+      "lemma": "tisch",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Ich sehe den Tisch. Welche Rolle hat „den Tisch“?",
+      "answer": "Akkusativ",
+      "options": [
+        "Nominativ",
+        "Akkusativ"
+      ],
+      "instruction_de": "Wen oder was sehe ich?",
+      "instruction_ru": "Кого или что я вижу?"
+    },
+    {
+      "id": "negation-noun-tisch",
+      "topic_id": "negation",
+      "lemma": "tisch",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Ich habe ___ Tisch.",
+      "answer": "kein",
+      "options": [
+        "nicht",
+        "kein",
+        "keine"
+      ],
+      "instruction_de": "Wähle die passende Negation.",
+      "instruction_ru": "Выберите подходящее отрицание."
+    },
+    {
+      "id": "noun-capital-stuhl",
+      "topic_id": "noun_basics",
+      "lemma": "stuhl",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Welche Schreibweise ist richtig?",
+      "answer": "Stuhl",
+      "options": [
+        "stuhl",
+        "Stuhl"
+      ],
+      "instruction_de": "Nomen beginnen mit einem Großbuchstaben.",
+      "instruction_ru": "Существительные начинаются с заглавной буквы."
+    },
+    {
+      "id": "noun-capital-check-stuhl",
+      "topic_id": "noun_basics",
+      "lemma": "stuhl",
+      "required_item_type": "noun",
+      "type": "yes_no",
+      "prompt": "Ist „stuhl“ als Nomen richtig geschrieben?",
+      "answer": "Nein",
+      "options": [
+        "Ja",
+        "Nein"
+      ],
+      "instruction_de": "Prüfe den ersten Buchstaben.",
+      "instruction_ru": "Проверьте первую букву."
+    },
+    {
+      "id": "article-stuhl",
+      "topic_id": "articles",
+      "lemma": "stuhl",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "___ Stuhl",
+      "answer": "der",
+      "options": [
+        "der",
+        "die",
+        "das"
+      ],
+      "instruction_de": "Wähle den bestimmten Artikel.",
+      "instruction_ru": "Выберите определённый артикль."
+    },
+    {
+      "id": "article-indefinite-stuhl",
+      "topic_id": "articles",
+      "lemma": "stuhl",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Das ist ___ Stuhl.",
+      "answer": "ein",
+      "options": [
+        "ein",
+        "eine"
+      ],
+      "instruction_de": "Wähle den unbestimmten Artikel.",
+      "instruction_ru": "Выберите неопределённый артикль."
+    },
+    {
+      "id": "part-noun-stuhl",
+      "topic_id": "parts_of_speech",
+      "lemma": "stuhl",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Welche Wortart ist „Stuhl“?",
+      "answer": "Nomen",
+      "options": [
+        "Verb",
+        "Nomen",
+        "Adjektiv"
+      ],
+      "instruction_de": "Ordne das markierte Wort zu.",
+      "instruction_ru": "Определите часть речи выделенного слова."
+    },
+    {
+      "id": "case-stuhl-nominative",
+      "topic_id": "cases_intro",
+      "lemma": "stuhl",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "der Stuhl ist hier. Welche Rolle hat „der Stuhl“?",
+      "answer": "Nominativ",
+      "options": [
+        "Nominativ",
+        "Akkusativ"
+      ],
+      "instruction_de": "Wer oder was ist hier?",
+      "instruction_ru": "Кто или что находится здесь?"
+    },
+    {
+      "id": "case-stuhl-accusative",
+      "topic_id": "cases_intro",
+      "lemma": "stuhl",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Ich sehe den Stuhl. Welche Rolle hat „den Stuhl“?",
+      "answer": "Akkusativ",
+      "options": [
+        "Nominativ",
+        "Akkusativ"
+      ],
+      "instruction_de": "Wen oder was sehe ich?",
+      "instruction_ru": "Кого или что я вижу?"
+    },
+    {
+      "id": "negation-noun-stuhl",
+      "topic_id": "negation",
+      "lemma": "stuhl",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Ich habe ___ Stuhl.",
+      "answer": "kein",
+      "options": [
+        "nicht",
+        "kein",
+        "keine"
+      ],
+      "instruction_de": "Wähle die passende Negation.",
+      "instruction_ru": "Выберите подходящее отрицание."
+    },
+    {
+      "id": "noun-capital-mann",
+      "topic_id": "noun_basics",
+      "lemma": "mann",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Welche Schreibweise ist richtig?",
+      "answer": "Mann",
+      "options": [
+        "mann",
+        "Mann"
+      ],
+      "instruction_de": "Nomen beginnen mit einem Großbuchstaben.",
+      "instruction_ru": "Существительные начинаются с заглавной буквы."
+    },
+    {
+      "id": "noun-capital-check-mann",
+      "topic_id": "noun_basics",
+      "lemma": "mann",
+      "required_item_type": "noun",
+      "type": "yes_no",
+      "prompt": "Ist „mann“ als Nomen richtig geschrieben?",
+      "answer": "Nein",
+      "options": [
+        "Ja",
+        "Nein"
+      ],
+      "instruction_de": "Prüfe den ersten Buchstaben.",
+      "instruction_ru": "Проверьте первую букву."
+    },
+    {
+      "id": "article-mann",
+      "topic_id": "articles",
+      "lemma": "mann",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "___ Mann",
+      "answer": "der",
+      "options": [
+        "der",
+        "die",
+        "das"
+      ],
+      "instruction_de": "Wähle den bestimmten Artikel.",
+      "instruction_ru": "Выберите определённый артикль."
+    },
+    {
+      "id": "article-indefinite-mann",
+      "topic_id": "articles",
+      "lemma": "mann",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Das ist ___ Mann.",
+      "answer": "ein",
+      "options": [
+        "ein",
+        "eine"
+      ],
+      "instruction_de": "Wähle den unbestimmten Artikel.",
+      "instruction_ru": "Выберите неопределённый артикль."
+    },
+    {
+      "id": "part-noun-mann",
+      "topic_id": "parts_of_speech",
+      "lemma": "mann",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Welche Wortart ist „Mann“?",
+      "answer": "Nomen",
+      "options": [
+        "Verb",
+        "Nomen",
+        "Adjektiv"
+      ],
+      "instruction_de": "Ordne das markierte Wort zu.",
+      "instruction_ru": "Определите часть речи выделенного слова."
+    },
+    {
+      "id": "case-mann-nominative",
+      "topic_id": "cases_intro",
+      "lemma": "mann",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "der Mann ist hier. Welche Rolle hat „der Mann“?",
+      "answer": "Nominativ",
+      "options": [
+        "Nominativ",
+        "Akkusativ"
+      ],
+      "instruction_de": "Wer oder was ist hier?",
+      "instruction_ru": "Кто или что находится здесь?"
+    },
+    {
+      "id": "case-mann-accusative",
+      "topic_id": "cases_intro",
+      "lemma": "mann",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Ich sehe den Mann. Welche Rolle hat „den Mann“?",
+      "answer": "Akkusativ",
+      "options": [
+        "Nominativ",
+        "Akkusativ"
+      ],
+      "instruction_de": "Wen oder was sehe ich?",
+      "instruction_ru": "Кого или что я вижу?"
+    },
+    {
+      "id": "negation-noun-mann",
+      "topic_id": "negation",
+      "lemma": "mann",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Ich habe ___ Mann.",
+      "answer": "kein",
+      "options": [
+        "nicht",
+        "kein",
+        "keine"
+      ],
+      "instruction_de": "Wähle die passende Negation.",
+      "instruction_ru": "Выберите подходящее отрицание."
+    },
+    {
+      "id": "noun-capital-apfel",
+      "topic_id": "noun_basics",
+      "lemma": "apfel",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Welche Schreibweise ist richtig?",
+      "answer": "Apfel",
+      "options": [
+        "apfel",
+        "Apfel"
+      ],
+      "instruction_de": "Nomen beginnen mit einem Großbuchstaben.",
+      "instruction_ru": "Существительные начинаются с заглавной буквы."
+    },
+    {
+      "id": "noun-capital-check-apfel",
+      "topic_id": "noun_basics",
+      "lemma": "apfel",
+      "required_item_type": "noun",
+      "type": "yes_no",
+      "prompt": "Ist „apfel“ als Nomen richtig geschrieben?",
+      "answer": "Nein",
+      "options": [
+        "Ja",
+        "Nein"
+      ],
+      "instruction_de": "Prüfe den ersten Buchstaben.",
+      "instruction_ru": "Проверьте первую букву."
+    },
+    {
+      "id": "article-apfel",
+      "topic_id": "articles",
+      "lemma": "apfel",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "___ Apfel",
+      "answer": "der",
+      "options": [
+        "der",
+        "die",
+        "das"
+      ],
+      "instruction_de": "Wähle den bestimmten Artikel.",
+      "instruction_ru": "Выберите определённый артикль."
+    },
+    {
+      "id": "article-indefinite-apfel",
+      "topic_id": "articles",
+      "lemma": "apfel",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Das ist ___ Apfel.",
+      "answer": "ein",
+      "options": [
+        "ein",
+        "eine"
+      ],
+      "instruction_de": "Wähle den unbestimmten Artikel.",
+      "instruction_ru": "Выберите неопределённый артикль."
+    },
+    {
+      "id": "part-noun-apfel",
+      "topic_id": "parts_of_speech",
+      "lemma": "apfel",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Welche Wortart ist „Apfel“?",
+      "answer": "Nomen",
+      "options": [
+        "Verb",
+        "Nomen",
+        "Adjektiv"
+      ],
+      "instruction_de": "Ordne das markierte Wort zu.",
+      "instruction_ru": "Определите часть речи выделенного слова."
+    },
+    {
+      "id": "case-apfel-nominative",
+      "topic_id": "cases_intro",
+      "lemma": "apfel",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "der Apfel ist hier. Welche Rolle hat „der Apfel“?",
+      "answer": "Nominativ",
+      "options": [
+        "Nominativ",
+        "Akkusativ"
+      ],
+      "instruction_de": "Wer oder was ist hier?",
+      "instruction_ru": "Кто или что находится здесь?"
+    },
+    {
+      "id": "case-apfel-accusative",
+      "topic_id": "cases_intro",
+      "lemma": "apfel",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Ich sehe den Apfel. Welche Rolle hat „den Apfel“?",
+      "answer": "Akkusativ",
+      "options": [
+        "Nominativ",
+        "Akkusativ"
+      ],
+      "instruction_de": "Wen oder was sehe ich?",
+      "instruction_ru": "Кого или что я вижу?"
+    },
+    {
+      "id": "negation-noun-apfel",
+      "topic_id": "negation",
+      "lemma": "apfel",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Ich habe ___ Apfel.",
+      "answer": "kein",
+      "options": [
+        "nicht",
+        "kein",
+        "keine"
+      ],
+      "instruction_de": "Wähle die passende Negation.",
+      "instruction_ru": "Выберите подходящее отрицание."
+    },
+    {
+      "id": "noun-capital-kaffee",
+      "topic_id": "noun_basics",
+      "lemma": "kaffee",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Welche Schreibweise ist richtig?",
+      "answer": "Kaffee",
+      "options": [
+        "kaffee",
+        "Kaffee"
+      ],
+      "instruction_de": "Nomen beginnen mit einem Großbuchstaben.",
+      "instruction_ru": "Существительные начинаются с заглавной буквы."
+    },
+    {
+      "id": "noun-capital-check-kaffee",
+      "topic_id": "noun_basics",
+      "lemma": "kaffee",
+      "required_item_type": "noun",
+      "type": "yes_no",
+      "prompt": "Ist „kaffee“ als Nomen richtig geschrieben?",
+      "answer": "Nein",
+      "options": [
+        "Ja",
+        "Nein"
+      ],
+      "instruction_de": "Prüfe den ersten Buchstaben.",
+      "instruction_ru": "Проверьте первую букву."
+    },
+    {
+      "id": "article-kaffee",
+      "topic_id": "articles",
+      "lemma": "kaffee",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "___ Kaffee",
+      "answer": "der",
+      "options": [
+        "der",
+        "die",
+        "das"
+      ],
+      "instruction_de": "Wähle den bestimmten Artikel.",
+      "instruction_ru": "Выберите определённый артикль."
+    },
+    {
+      "id": "article-indefinite-kaffee",
+      "topic_id": "articles",
+      "lemma": "kaffee",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Das ist ___ Kaffee.",
+      "answer": "ein",
+      "options": [
+        "ein",
+        "eine"
+      ],
+      "instruction_de": "Wähle den unbestimmten Artikel.",
+      "instruction_ru": "Выберите неопределённый артикль."
+    },
+    {
+      "id": "part-noun-kaffee",
+      "topic_id": "parts_of_speech",
+      "lemma": "kaffee",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Welche Wortart ist „Kaffee“?",
+      "answer": "Nomen",
+      "options": [
+        "Verb",
+        "Nomen",
+        "Adjektiv"
+      ],
+      "instruction_de": "Ordne das markierte Wort zu.",
+      "instruction_ru": "Определите часть речи выделенного слова."
+    },
+    {
+      "id": "case-kaffee-nominative",
+      "topic_id": "cases_intro",
+      "lemma": "kaffee",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "der Kaffee ist hier. Welche Rolle hat „der Kaffee“?",
+      "answer": "Nominativ",
+      "options": [
+        "Nominativ",
+        "Akkusativ"
+      ],
+      "instruction_de": "Wer oder was ist hier?",
+      "instruction_ru": "Кто или что находится здесь?"
+    },
+    {
+      "id": "case-kaffee-accusative",
+      "topic_id": "cases_intro",
+      "lemma": "kaffee",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Ich sehe den Kaffee. Welche Rolle hat „den Kaffee“?",
+      "answer": "Akkusativ",
+      "options": [
+        "Nominativ",
+        "Akkusativ"
+      ],
+      "instruction_de": "Wen oder was sehe ich?",
+      "instruction_ru": "Кого или что я вижу?"
+    },
+    {
+      "id": "negation-noun-kaffee",
+      "topic_id": "negation",
+      "lemma": "kaffee",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Ich habe ___ Kaffee.",
+      "answer": "kein",
+      "options": [
+        "nicht",
+        "kein",
+        "keine"
+      ],
+      "instruction_de": "Wähle die passende Negation.",
+      "instruction_ru": "Выберите подходящее отрицание."
+    },
+    {
+      "id": "noun-capital-frau",
+      "topic_id": "noun_basics",
+      "lemma": "frau",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Welche Schreibweise ist richtig?",
+      "answer": "Frau",
+      "options": [
+        "frau",
+        "Frau"
+      ],
+      "instruction_de": "Nomen beginnen mit einem Großbuchstaben.",
+      "instruction_ru": "Существительные начинаются с заглавной буквы."
+    },
+    {
+      "id": "noun-capital-check-frau",
+      "topic_id": "noun_basics",
+      "lemma": "frau",
+      "required_item_type": "noun",
+      "type": "yes_no",
+      "prompt": "Ist „frau“ als Nomen richtig geschrieben?",
+      "answer": "Nein",
+      "options": [
+        "Ja",
+        "Nein"
+      ],
+      "instruction_de": "Prüfe den ersten Buchstaben.",
+      "instruction_ru": "Проверьте первую букву."
+    },
+    {
+      "id": "article-frau",
+      "topic_id": "articles",
+      "lemma": "frau",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "___ Frau",
+      "answer": "die",
+      "options": [
+        "der",
+        "die",
+        "das"
+      ],
+      "instruction_de": "Wähle den bestimmten Artikel.",
+      "instruction_ru": "Выберите определённый артикль."
+    },
+    {
+      "id": "article-indefinite-frau",
+      "topic_id": "articles",
+      "lemma": "frau",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Das ist ___ Frau.",
+      "answer": "eine",
+      "options": [
+        "ein",
+        "eine"
+      ],
+      "instruction_de": "Wähle den unbestimmten Artikel.",
+      "instruction_ru": "Выберите неопределённый артикль."
+    },
+    {
+      "id": "part-noun-frau",
+      "topic_id": "parts_of_speech",
+      "lemma": "frau",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Welche Wortart ist „Frau“?",
+      "answer": "Nomen",
+      "options": [
+        "Verb",
+        "Nomen",
+        "Adjektiv"
+      ],
+      "instruction_de": "Ordne das markierte Wort zu.",
+      "instruction_ru": "Определите часть речи выделенного слова."
+    },
+    {
+      "id": "case-frau-nominative",
+      "topic_id": "cases_intro",
+      "lemma": "frau",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "die Frau ist hier. Welche Rolle hat „die Frau“?",
+      "answer": "Nominativ",
+      "options": [
+        "Nominativ",
+        "Akkusativ"
+      ],
+      "instruction_de": "Wer oder was ist hier?",
+      "instruction_ru": "Кто или что находится здесь?"
+    },
+    {
+      "id": "case-frau-accusative",
+      "topic_id": "cases_intro",
+      "lemma": "frau",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Ich sehe die Frau. Welche Rolle hat „die Frau“?",
+      "answer": "Akkusativ",
+      "options": [
+        "Nominativ",
+        "Akkusativ"
+      ],
+      "instruction_de": "Wen oder was sehe ich?",
+      "instruction_ru": "Кого или что я вижу?"
+    },
+    {
+      "id": "negation-noun-frau",
+      "topic_id": "negation",
+      "lemma": "frau",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Ich habe ___ Frau.",
+      "answer": "keine",
+      "options": [
+        "nicht",
+        "kein",
+        "keine"
+      ],
+      "instruction_de": "Wähle die passende Negation.",
+      "instruction_ru": "Выберите подходящее отрицание."
+    },
+    {
+      "id": "noun-capital-schule",
+      "topic_id": "noun_basics",
+      "lemma": "schule",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Welche Schreibweise ist richtig?",
+      "answer": "Schule",
+      "options": [
+        "schule",
+        "Schule"
+      ],
+      "instruction_de": "Nomen beginnen mit einem Großbuchstaben.",
+      "instruction_ru": "Существительные начинаются с заглавной буквы."
+    },
+    {
+      "id": "noun-capital-check-schule",
+      "topic_id": "noun_basics",
+      "lemma": "schule",
+      "required_item_type": "noun",
+      "type": "yes_no",
+      "prompt": "Ist „schule“ als Nomen richtig geschrieben?",
+      "answer": "Nein",
+      "options": [
+        "Ja",
+        "Nein"
+      ],
+      "instruction_de": "Prüfe den ersten Buchstaben.",
+      "instruction_ru": "Проверьте первую букву."
+    },
+    {
+      "id": "article-schule",
+      "topic_id": "articles",
+      "lemma": "schule",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "___ Schule",
+      "answer": "die",
+      "options": [
+        "der",
+        "die",
+        "das"
+      ],
+      "instruction_de": "Wähle den bestimmten Artikel.",
+      "instruction_ru": "Выберите определённый артикль."
+    },
+    {
+      "id": "article-indefinite-schule",
+      "topic_id": "articles",
+      "lemma": "schule",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Das ist ___ Schule.",
+      "answer": "eine",
+      "options": [
+        "ein",
+        "eine"
+      ],
+      "instruction_de": "Wähle den unbestimmten Artikel.",
+      "instruction_ru": "Выберите неопределённый артикль."
+    },
+    {
+      "id": "part-noun-schule",
+      "topic_id": "parts_of_speech",
+      "lemma": "schule",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Welche Wortart ist „Schule“?",
+      "answer": "Nomen",
+      "options": [
+        "Verb",
+        "Nomen",
+        "Adjektiv"
+      ],
+      "instruction_de": "Ordne das markierte Wort zu.",
+      "instruction_ru": "Определите часть речи выделенного слова."
+    },
+    {
+      "id": "case-schule-nominative",
+      "topic_id": "cases_intro",
+      "lemma": "schule",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "die Schule ist hier. Welche Rolle hat „die Schule“?",
+      "answer": "Nominativ",
+      "options": [
+        "Nominativ",
+        "Akkusativ"
+      ],
+      "instruction_de": "Wer oder was ist hier?",
+      "instruction_ru": "Кто или что находится здесь?"
+    },
+    {
+      "id": "case-schule-accusative",
+      "topic_id": "cases_intro",
+      "lemma": "schule",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Ich sehe die Schule. Welche Rolle hat „die Schule“?",
+      "answer": "Akkusativ",
+      "options": [
+        "Nominativ",
+        "Akkusativ"
+      ],
+      "instruction_de": "Wen oder was sehe ich?",
+      "instruction_ru": "Кого или что я вижу?"
+    },
+    {
+      "id": "negation-noun-schule",
+      "topic_id": "negation",
+      "lemma": "schule",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Ich habe ___ Schule.",
+      "answer": "keine",
+      "options": [
+        "nicht",
+        "kein",
+        "keine"
+      ],
+      "instruction_de": "Wähle die passende Negation.",
+      "instruction_ru": "Выберите подходящее отрицание."
+    },
+    {
+      "id": "noun-capital-lampe",
+      "topic_id": "noun_basics",
+      "lemma": "lampe",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Welche Schreibweise ist richtig?",
+      "answer": "Lampe",
+      "options": [
+        "lampe",
+        "Lampe"
+      ],
+      "instruction_de": "Nomen beginnen mit einem Großbuchstaben.",
+      "instruction_ru": "Существительные начинаются с заглавной буквы."
+    },
+    {
+      "id": "noun-capital-check-lampe",
+      "topic_id": "noun_basics",
+      "lemma": "lampe",
+      "required_item_type": "noun",
+      "type": "yes_no",
+      "prompt": "Ist „lampe“ als Nomen richtig geschrieben?",
+      "answer": "Nein",
+      "options": [
+        "Ja",
+        "Nein"
+      ],
+      "instruction_de": "Prüfe den ersten Buchstaben.",
+      "instruction_ru": "Проверьте первую букву."
+    },
+    {
+      "id": "article-lampe",
+      "topic_id": "articles",
+      "lemma": "lampe",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "___ Lampe",
+      "answer": "die",
+      "options": [
+        "der",
+        "die",
+        "das"
+      ],
+      "instruction_de": "Wähle den bestimmten Artikel.",
+      "instruction_ru": "Выберите определённый артикль."
+    },
+    {
+      "id": "article-indefinite-lampe",
+      "topic_id": "articles",
+      "lemma": "lampe",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Das ist ___ Lampe.",
+      "answer": "eine",
+      "options": [
+        "ein",
+        "eine"
+      ],
+      "instruction_de": "Wähle den unbestimmten Artikel.",
+      "instruction_ru": "Выберите неопределённый артикль."
+    },
+    {
+      "id": "part-noun-lampe",
+      "topic_id": "parts_of_speech",
+      "lemma": "lampe",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Welche Wortart ist „Lampe“?",
+      "answer": "Nomen",
+      "options": [
+        "Verb",
+        "Nomen",
+        "Adjektiv"
+      ],
+      "instruction_de": "Ordne das markierte Wort zu.",
+      "instruction_ru": "Определите часть речи выделенного слова."
+    },
+    {
+      "id": "case-lampe-nominative",
+      "topic_id": "cases_intro",
+      "lemma": "lampe",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "die Lampe ist hier. Welche Rolle hat „die Lampe“?",
+      "answer": "Nominativ",
+      "options": [
+        "Nominativ",
+        "Akkusativ"
+      ],
+      "instruction_de": "Wer oder was ist hier?",
+      "instruction_ru": "Кто или что находится здесь?"
+    },
+    {
+      "id": "case-lampe-accusative",
+      "topic_id": "cases_intro",
+      "lemma": "lampe",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Ich sehe die Lampe. Welche Rolle hat „die Lampe“?",
+      "answer": "Akkusativ",
+      "options": [
+        "Nominativ",
+        "Akkusativ"
+      ],
+      "instruction_de": "Wen oder was sehe ich?",
+      "instruction_ru": "Кого или что я вижу?"
+    },
+    {
+      "id": "negation-noun-lampe",
+      "topic_id": "negation",
+      "lemma": "lampe",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Ich habe ___ Lampe.",
+      "answer": "keine",
+      "options": [
+        "nicht",
+        "kein",
+        "keine"
+      ],
+      "instruction_de": "Wähle die passende Negation.",
+      "instruction_ru": "Выберите подходящее отрицание."
+    },
+    {
+      "id": "noun-capital-frage",
+      "topic_id": "noun_basics",
+      "lemma": "frage",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Welche Schreibweise ist richtig?",
+      "answer": "Frage",
+      "options": [
+        "frage",
+        "Frage"
+      ],
+      "instruction_de": "Nomen beginnen mit einem Großbuchstaben.",
+      "instruction_ru": "Существительные начинаются с заглавной буквы."
+    },
+    {
+      "id": "noun-capital-check-frage",
+      "topic_id": "noun_basics",
+      "lemma": "frage",
+      "required_item_type": "noun",
+      "type": "yes_no",
+      "prompt": "Ist „frage“ als Nomen richtig geschrieben?",
+      "answer": "Nein",
+      "options": [
+        "Ja",
+        "Nein"
+      ],
+      "instruction_de": "Prüfe den ersten Buchstaben.",
+      "instruction_ru": "Проверьте первую букву."
+    },
+    {
+      "id": "article-frage",
+      "topic_id": "articles",
+      "lemma": "frage",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "___ Frage",
+      "answer": "die",
+      "options": [
+        "der",
+        "die",
+        "das"
+      ],
+      "instruction_de": "Wähle den bestimmten Artikel.",
+      "instruction_ru": "Выберите определённый артикль."
+    },
+    {
+      "id": "article-indefinite-frage",
+      "topic_id": "articles",
+      "lemma": "frage",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Das ist ___ Frage.",
+      "answer": "eine",
+      "options": [
+        "ein",
+        "eine"
+      ],
+      "instruction_de": "Wähle den unbestimmten Artikel.",
+      "instruction_ru": "Выберите неопределённый артикль."
+    },
+    {
+      "id": "part-noun-frage",
+      "topic_id": "parts_of_speech",
+      "lemma": "frage",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Welche Wortart ist „Frage“?",
+      "answer": "Nomen",
+      "options": [
+        "Verb",
+        "Nomen",
+        "Adjektiv"
+      ],
+      "instruction_de": "Ordne das markierte Wort zu.",
+      "instruction_ru": "Определите часть речи выделенного слова."
+    },
+    {
+      "id": "case-frage-nominative",
+      "topic_id": "cases_intro",
+      "lemma": "frage",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "die Frage ist hier. Welche Rolle hat „die Frage“?",
+      "answer": "Nominativ",
+      "options": [
+        "Nominativ",
+        "Akkusativ"
+      ],
+      "instruction_de": "Wer oder was ist hier?",
+      "instruction_ru": "Кто или что находится здесь?"
+    },
+    {
+      "id": "case-frage-accusative",
+      "topic_id": "cases_intro",
+      "lemma": "frage",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Ich sehe die Frage. Welche Rolle hat „die Frage“?",
+      "answer": "Akkusativ",
+      "options": [
+        "Nominativ",
+        "Akkusativ"
+      ],
+      "instruction_de": "Wen oder was sehe ich?",
+      "instruction_ru": "Кого или что я вижу?"
+    },
+    {
+      "id": "negation-noun-frage",
+      "topic_id": "negation",
+      "lemma": "frage",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Ich habe ___ Frage.",
+      "answer": "keine",
+      "options": [
+        "nicht",
+        "kein",
+        "keine"
+      ],
+      "instruction_de": "Wähle die passende Negation.",
+      "instruction_ru": "Выберите подходящее отрицание."
+    },
+    {
+      "id": "noun-capital-wohnung",
+      "topic_id": "noun_basics",
+      "lemma": "wohnung",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Welche Schreibweise ist richtig?",
+      "answer": "Wohnung",
+      "options": [
+        "wohnung",
+        "Wohnung"
+      ],
+      "instruction_de": "Nomen beginnen mit einem Großbuchstaben.",
+      "instruction_ru": "Существительные начинаются с заглавной буквы."
+    },
+    {
+      "id": "noun-capital-check-wohnung",
+      "topic_id": "noun_basics",
+      "lemma": "wohnung",
+      "required_item_type": "noun",
+      "type": "yes_no",
+      "prompt": "Ist „wohnung“ als Nomen richtig geschrieben?",
+      "answer": "Nein",
+      "options": [
+        "Ja",
+        "Nein"
+      ],
+      "instruction_de": "Prüfe den ersten Buchstaben.",
+      "instruction_ru": "Проверьте первую букву."
+    },
+    {
+      "id": "article-wohnung",
+      "topic_id": "articles",
+      "lemma": "wohnung",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "___ Wohnung",
+      "answer": "die",
+      "options": [
+        "der",
+        "die",
+        "das"
+      ],
+      "instruction_de": "Wähle den bestimmten Artikel.",
+      "instruction_ru": "Выберите определённый артикль."
+    },
+    {
+      "id": "article-indefinite-wohnung",
+      "topic_id": "articles",
+      "lemma": "wohnung",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Das ist ___ Wohnung.",
+      "answer": "eine",
+      "options": [
+        "ein",
+        "eine"
+      ],
+      "instruction_de": "Wähle den unbestimmten Artikel.",
+      "instruction_ru": "Выберите неопределённый артикль."
+    },
+    {
+      "id": "part-noun-wohnung",
+      "topic_id": "parts_of_speech",
+      "lemma": "wohnung",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Welche Wortart ist „Wohnung“?",
+      "answer": "Nomen",
+      "options": [
+        "Verb",
+        "Nomen",
+        "Adjektiv"
+      ],
+      "instruction_de": "Ordne das markierte Wort zu.",
+      "instruction_ru": "Определите часть речи выделенного слова."
+    },
+    {
+      "id": "case-wohnung-nominative",
+      "topic_id": "cases_intro",
+      "lemma": "wohnung",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "die Wohnung ist hier. Welche Rolle hat „die Wohnung“?",
+      "answer": "Nominativ",
+      "options": [
+        "Nominativ",
+        "Akkusativ"
+      ],
+      "instruction_de": "Wer oder was ist hier?",
+      "instruction_ru": "Кто или что находится здесь?"
+    },
+    {
+      "id": "case-wohnung-accusative",
+      "topic_id": "cases_intro",
+      "lemma": "wohnung",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Ich sehe die Wohnung. Welche Rolle hat „die Wohnung“?",
+      "answer": "Akkusativ",
+      "options": [
+        "Nominativ",
+        "Akkusativ"
+      ],
+      "instruction_de": "Wen oder was sehe ich?",
+      "instruction_ru": "Кого или что я вижу?"
+    },
+    {
+      "id": "negation-noun-wohnung",
+      "topic_id": "negation",
+      "lemma": "wohnung",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Ich habe ___ Wohnung.",
+      "answer": "keine",
+      "options": [
+        "nicht",
+        "kein",
+        "keine"
+      ],
+      "instruction_de": "Wähle die passende Negation.",
+      "instruction_ru": "Выберите подходящее отрицание."
+    },
+    {
+      "id": "noun-capital-haus",
+      "topic_id": "noun_basics",
+      "lemma": "haus",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Welche Schreibweise ist richtig?",
+      "answer": "Haus",
+      "options": [
+        "haus",
+        "Haus"
+      ],
+      "instruction_de": "Nomen beginnen mit einem Großbuchstaben.",
+      "instruction_ru": "Существительные начинаются с заглавной буквы."
+    },
+    {
+      "id": "noun-capital-check-haus",
+      "topic_id": "noun_basics",
+      "lemma": "haus",
+      "required_item_type": "noun",
+      "type": "yes_no",
+      "prompt": "Ist „haus“ als Nomen richtig geschrieben?",
+      "answer": "Nein",
+      "options": [
+        "Ja",
+        "Nein"
+      ],
+      "instruction_de": "Prüfe den ersten Buchstaben.",
+      "instruction_ru": "Проверьте первую букву."
+    },
+    {
+      "id": "article-haus",
+      "topic_id": "articles",
+      "lemma": "haus",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "___ Haus",
+      "answer": "das",
+      "options": [
+        "der",
+        "die",
+        "das"
+      ],
+      "instruction_de": "Wähle den bestimmten Artikel.",
+      "instruction_ru": "Выберите определённый артикль."
+    },
+    {
+      "id": "article-indefinite-haus",
+      "topic_id": "articles",
+      "lemma": "haus",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Das ist ___ Haus.",
+      "answer": "ein",
+      "options": [
+        "ein",
+        "eine"
+      ],
+      "instruction_de": "Wähle den unbestimmten Artikel.",
+      "instruction_ru": "Выберите неопределённый артикль."
+    },
+    {
+      "id": "part-noun-haus",
+      "topic_id": "parts_of_speech",
+      "lemma": "haus",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Welche Wortart ist „Haus“?",
+      "answer": "Nomen",
+      "options": [
+        "Verb",
+        "Nomen",
+        "Adjektiv"
+      ],
+      "instruction_de": "Ordne das markierte Wort zu.",
+      "instruction_ru": "Определите часть речи выделенного слова."
+    },
+    {
+      "id": "case-haus-nominative",
+      "topic_id": "cases_intro",
+      "lemma": "haus",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "das Haus ist hier. Welche Rolle hat „das Haus“?",
+      "answer": "Nominativ",
+      "options": [
+        "Nominativ",
+        "Akkusativ"
+      ],
+      "instruction_de": "Wer oder was ist hier?",
+      "instruction_ru": "Кто или что находится здесь?"
+    },
+    {
+      "id": "case-haus-accusative",
+      "topic_id": "cases_intro",
+      "lemma": "haus",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Ich sehe das Haus. Welche Rolle hat „das Haus“?",
+      "answer": "Akkusativ",
+      "options": [
+        "Nominativ",
+        "Akkusativ"
+      ],
+      "instruction_de": "Wen oder was sehe ich?",
+      "instruction_ru": "Кого или что я вижу?"
+    },
+    {
+      "id": "negation-noun-haus",
+      "topic_id": "negation",
+      "lemma": "haus",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Ich habe ___ Haus.",
+      "answer": "kein",
+      "options": [
+        "nicht",
+        "kein",
+        "keine"
+      ],
+      "instruction_de": "Wähle die passende Negation.",
+      "instruction_ru": "Выберите подходящее отрицание."
+    },
+    {
+      "id": "noun-capital-buch",
+      "topic_id": "noun_basics",
+      "lemma": "buch",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Welche Schreibweise ist richtig?",
+      "answer": "Buch",
+      "options": [
+        "buch",
+        "Buch"
+      ],
+      "instruction_de": "Nomen beginnen mit einem Großbuchstaben.",
+      "instruction_ru": "Существительные начинаются с заглавной буквы."
+    },
+    {
+      "id": "noun-capital-check-buch",
+      "topic_id": "noun_basics",
+      "lemma": "buch",
+      "required_item_type": "noun",
+      "type": "yes_no",
+      "prompt": "Ist „buch“ als Nomen richtig geschrieben?",
+      "answer": "Nein",
+      "options": [
+        "Ja",
+        "Nein"
+      ],
+      "instruction_de": "Prüfe den ersten Buchstaben.",
+      "instruction_ru": "Проверьте первую букву."
+    },
+    {
+      "id": "article-buch",
+      "topic_id": "articles",
+      "lemma": "buch",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "___ Buch",
+      "answer": "das",
+      "options": [
+        "der",
+        "die",
+        "das"
+      ],
+      "instruction_de": "Wähle den bestimmten Artikel.",
+      "instruction_ru": "Выберите определённый артикль."
+    },
+    {
+      "id": "article-indefinite-buch",
+      "topic_id": "articles",
+      "lemma": "buch",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Das ist ___ Buch.",
+      "answer": "ein",
+      "options": [
+        "ein",
+        "eine"
+      ],
+      "instruction_de": "Wähle den unbestimmten Artikel.",
+      "instruction_ru": "Выберите неопределённый артикль."
+    },
+    {
+      "id": "part-noun-buch",
+      "topic_id": "parts_of_speech",
+      "lemma": "buch",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Welche Wortart ist „Buch“?",
+      "answer": "Nomen",
+      "options": [
+        "Verb",
+        "Nomen",
+        "Adjektiv"
+      ],
+      "instruction_de": "Ordne das markierte Wort zu.",
+      "instruction_ru": "Определите часть речи выделенного слова."
+    },
+    {
+      "id": "case-buch-nominative",
+      "topic_id": "cases_intro",
+      "lemma": "buch",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "das Buch ist hier. Welche Rolle hat „das Buch“?",
+      "answer": "Nominativ",
+      "options": [
+        "Nominativ",
+        "Akkusativ"
+      ],
+      "instruction_de": "Wer oder was ist hier?",
+      "instruction_ru": "Кто или что находится здесь?"
+    },
+    {
+      "id": "case-buch-accusative",
+      "topic_id": "cases_intro",
+      "lemma": "buch",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Ich sehe das Buch. Welche Rolle hat „das Buch“?",
+      "answer": "Akkusativ",
+      "options": [
+        "Nominativ",
+        "Akkusativ"
+      ],
+      "instruction_de": "Wen oder was sehe ich?",
+      "instruction_ru": "Кого или что я вижу?"
+    },
+    {
+      "id": "negation-noun-buch",
+      "topic_id": "negation",
+      "lemma": "buch",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Ich habe ___ Buch.",
+      "answer": "kein",
+      "options": [
+        "nicht",
+        "kein",
+        "keine"
+      ],
+      "instruction_de": "Wähle die passende Negation.",
+      "instruction_ru": "Выберите подходящее отрицание."
+    },
+    {
+      "id": "noun-capital-kind",
+      "topic_id": "noun_basics",
+      "lemma": "kind",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Welche Schreibweise ist richtig?",
+      "answer": "Kind",
+      "options": [
+        "kind",
+        "Kind"
+      ],
+      "instruction_de": "Nomen beginnen mit einem Großbuchstaben.",
+      "instruction_ru": "Существительные начинаются с заглавной буквы."
+    },
+    {
+      "id": "noun-capital-check-kind",
+      "topic_id": "noun_basics",
+      "lemma": "kind",
+      "required_item_type": "noun",
+      "type": "yes_no",
+      "prompt": "Ist „kind“ als Nomen richtig geschrieben?",
+      "answer": "Nein",
+      "options": [
+        "Ja",
+        "Nein"
+      ],
+      "instruction_de": "Prüfe den ersten Buchstaben.",
+      "instruction_ru": "Проверьте первую букву."
+    },
+    {
+      "id": "article-kind",
+      "topic_id": "articles",
+      "lemma": "kind",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "___ Kind",
+      "answer": "das",
+      "options": [
+        "der",
+        "die",
+        "das"
+      ],
+      "instruction_de": "Wähle den bestimmten Artikel.",
+      "instruction_ru": "Выберите определённый артикль."
+    },
+    {
+      "id": "article-indefinite-kind",
+      "topic_id": "articles",
+      "lemma": "kind",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Das ist ___ Kind.",
+      "answer": "ein",
+      "options": [
+        "ein",
+        "eine"
+      ],
+      "instruction_de": "Wähle den unbestimmten Artikel.",
+      "instruction_ru": "Выберите неопределённый артикль."
+    },
+    {
+      "id": "part-noun-kind",
+      "topic_id": "parts_of_speech",
+      "lemma": "kind",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Welche Wortart ist „Kind“?",
+      "answer": "Nomen",
+      "options": [
+        "Verb",
+        "Nomen",
+        "Adjektiv"
+      ],
+      "instruction_de": "Ordne das markierte Wort zu.",
+      "instruction_ru": "Определите часть речи выделенного слова."
+    },
+    {
+      "id": "case-kind-nominative",
+      "topic_id": "cases_intro",
+      "lemma": "kind",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "das Kind ist hier. Welche Rolle hat „das Kind“?",
+      "answer": "Nominativ",
+      "options": [
+        "Nominativ",
+        "Akkusativ"
+      ],
+      "instruction_de": "Wer oder was ist hier?",
+      "instruction_ru": "Кто или что находится здесь?"
+    },
+    {
+      "id": "case-kind-accusative",
+      "topic_id": "cases_intro",
+      "lemma": "kind",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Ich sehe das Kind. Welche Rolle hat „das Kind“?",
+      "answer": "Akkusativ",
+      "options": [
+        "Nominativ",
+        "Akkusativ"
+      ],
+      "instruction_de": "Wen oder was sehe ich?",
+      "instruction_ru": "Кого или что я вижу?"
+    },
+    {
+      "id": "negation-noun-kind",
+      "topic_id": "negation",
+      "lemma": "kind",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Ich habe ___ Kind.",
+      "answer": "kein",
+      "options": [
+        "nicht",
+        "kein",
+        "keine"
+      ],
+      "instruction_de": "Wähle die passende Negation.",
+      "instruction_ru": "Выберите подходящее отрицание."
+    },
+    {
+      "id": "noun-capital-auto",
+      "topic_id": "noun_basics",
+      "lemma": "auto",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Welche Schreibweise ist richtig?",
+      "answer": "Auto",
+      "options": [
+        "auto",
+        "Auto"
+      ],
+      "instruction_de": "Nomen beginnen mit einem Großbuchstaben.",
+      "instruction_ru": "Существительные начинаются с заглавной буквы."
+    },
+    {
+      "id": "noun-capital-check-auto",
+      "topic_id": "noun_basics",
+      "lemma": "auto",
+      "required_item_type": "noun",
+      "type": "yes_no",
+      "prompt": "Ist „auto“ als Nomen richtig geschrieben?",
+      "answer": "Nein",
+      "options": [
+        "Ja",
+        "Nein"
+      ],
+      "instruction_de": "Prüfe den ersten Buchstaben.",
+      "instruction_ru": "Проверьте первую букву."
+    },
+    {
+      "id": "article-auto",
+      "topic_id": "articles",
+      "lemma": "auto",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "___ Auto",
+      "answer": "das",
+      "options": [
+        "der",
+        "die",
+        "das"
+      ],
+      "instruction_de": "Wähle den bestimmten Artikel.",
+      "instruction_ru": "Выберите определённый артикль."
+    },
+    {
+      "id": "article-indefinite-auto",
+      "topic_id": "articles",
+      "lemma": "auto",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Das ist ___ Auto.",
+      "answer": "ein",
+      "options": [
+        "ein",
+        "eine"
+      ],
+      "instruction_de": "Wähle den unbestimmten Artikel.",
+      "instruction_ru": "Выберите неопределённый артикль."
+    },
+    {
+      "id": "part-noun-auto",
+      "topic_id": "parts_of_speech",
+      "lemma": "auto",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Welche Wortart ist „Auto“?",
+      "answer": "Nomen",
+      "options": [
+        "Verb",
+        "Nomen",
+        "Adjektiv"
+      ],
+      "instruction_de": "Ordne das markierte Wort zu.",
+      "instruction_ru": "Определите часть речи выделенного слова."
+    },
+    {
+      "id": "case-auto-nominative",
+      "topic_id": "cases_intro",
+      "lemma": "auto",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "das Auto ist hier. Welche Rolle hat „das Auto“?",
+      "answer": "Nominativ",
+      "options": [
+        "Nominativ",
+        "Akkusativ"
+      ],
+      "instruction_de": "Wer oder was ist hier?",
+      "instruction_ru": "Кто или что находится здесь?"
+    },
+    {
+      "id": "case-auto-accusative",
+      "topic_id": "cases_intro",
+      "lemma": "auto",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Ich sehe das Auto. Welche Rolle hat „das Auto“?",
+      "answer": "Akkusativ",
+      "options": [
+        "Nominativ",
+        "Akkusativ"
+      ],
+      "instruction_de": "Wen oder was sehe ich?",
+      "instruction_ru": "Кого или что я вижу?"
+    },
+    {
+      "id": "negation-noun-auto",
+      "topic_id": "negation",
+      "lemma": "auto",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Ich habe ___ Auto.",
+      "answer": "kein",
+      "options": [
+        "nicht",
+        "kein",
+        "keine"
+      ],
+      "instruction_de": "Wähle die passende Negation.",
+      "instruction_ru": "Выберите подходящее отрицание."
+    },
+    {
+      "id": "noun-capital-brot",
+      "topic_id": "noun_basics",
+      "lemma": "brot",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Welche Schreibweise ist richtig?",
+      "answer": "Brot",
+      "options": [
+        "brot",
+        "Brot"
+      ],
+      "instruction_de": "Nomen beginnen mit einem Großbuchstaben.",
+      "instruction_ru": "Существительные начинаются с заглавной буквы."
+    },
+    {
+      "id": "noun-capital-check-brot",
+      "topic_id": "noun_basics",
+      "lemma": "brot",
+      "required_item_type": "noun",
+      "type": "yes_no",
+      "prompt": "Ist „brot“ als Nomen richtig geschrieben?",
+      "answer": "Nein",
+      "options": [
+        "Ja",
+        "Nein"
+      ],
+      "instruction_de": "Prüfe den ersten Buchstaben.",
+      "instruction_ru": "Проверьте первую букву."
+    },
+    {
+      "id": "article-brot",
+      "topic_id": "articles",
+      "lemma": "brot",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "___ Brot",
+      "answer": "das",
+      "options": [
+        "der",
+        "die",
+        "das"
+      ],
+      "instruction_de": "Wähle den bestimmten Artikel.",
+      "instruction_ru": "Выберите определённый артикль."
+    },
+    {
+      "id": "article-indefinite-brot",
+      "topic_id": "articles",
+      "lemma": "brot",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Das ist ___ Brot.",
+      "answer": "ein",
+      "options": [
+        "ein",
+        "eine"
+      ],
+      "instruction_de": "Wähle den unbestimmten Artikel.",
+      "instruction_ru": "Выберите неопределённый артикль."
+    },
+    {
+      "id": "part-noun-brot",
+      "topic_id": "parts_of_speech",
+      "lemma": "brot",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Welche Wortart ist „Brot“?",
+      "answer": "Nomen",
+      "options": [
+        "Verb",
+        "Nomen",
+        "Adjektiv"
+      ],
+      "instruction_de": "Ordne das markierte Wort zu.",
+      "instruction_ru": "Определите часть речи выделенного слова."
+    },
+    {
+      "id": "case-brot-nominative",
+      "topic_id": "cases_intro",
+      "lemma": "brot",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "das Brot ist hier. Welche Rolle hat „das Brot“?",
+      "answer": "Nominativ",
+      "options": [
+        "Nominativ",
+        "Akkusativ"
+      ],
+      "instruction_de": "Wer oder was ist hier?",
+      "instruction_ru": "Кто или что находится здесь?"
+    },
+    {
+      "id": "case-brot-accusative",
+      "topic_id": "cases_intro",
+      "lemma": "brot",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Ich sehe das Brot. Welche Rolle hat „das Brot“?",
+      "answer": "Akkusativ",
+      "options": [
+        "Nominativ",
+        "Akkusativ"
+      ],
+      "instruction_de": "Wen oder was sehe ich?",
+      "instruction_ru": "Кого или что я вижу?"
+    },
+    {
+      "id": "negation-noun-brot",
+      "topic_id": "negation",
+      "lemma": "brot",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Ich habe ___ Brot.",
+      "answer": "kein",
+      "options": [
+        "nicht",
+        "kein",
+        "keine"
+      ],
+      "instruction_de": "Wähle die passende Negation.",
+      "instruction_ru": "Выберите подходящее отрицание."
+    },
+    {
+      "id": "description-klein",
+      "topic_id": "adjectives_adverbs",
+      "lemma": "klein",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "ein kleines Haus – Welche Wortart hat „klein“ hier?",
+      "answer": "Adjektiv",
+      "options": [
+        "Adjektiv",
+        "Adverb"
+      ],
+      "instruction_de": "Achte darauf, was das Wort beschreibt.",
+      "instruction_ru": "Обратите внимание, что именно описывает слово."
+    },
+    {
+      "id": "description-role-klein",
+      "topic_id": "adjectives_adverbs",
+      "lemma": "klein",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "ein kleines Haus – Was beschreibt „klein“?",
+      "answer": "ein Nomen",
+      "options": [
+        "ein Nomen",
+        "einen Umstand"
+      ],
+      "instruction_de": "Unterscheide Eigenschaft und Umstand.",
+      "instruction_ru": "Отличите признак предмета от обстоятельства."
+    },
+    {
+      "id": "part-word-klein",
+      "topic_id": "parts_of_speech",
+      "lemma": "klein",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Welche Wortart ist „klein“ im Beispiel: ein kleines Haus?",
+      "answer": "Adjektiv",
+      "options": [
+        "Verb",
+        "Nomen",
+        "Adjektiv",
+        "Adverb"
+      ],
+      "instruction_de": "Ordne das markierte Wort zu.",
+      "instruction_ru": "Определите часть речи выделенного слова."
+    },
+    {
+      "id": "description-groß",
+      "topic_id": "adjectives_adverbs",
+      "lemma": "groß",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "eine große Wohnung – Welche Wortart hat „groß“ hier?",
+      "answer": "Adjektiv",
+      "options": [
+        "Adjektiv",
+        "Adverb"
+      ],
+      "instruction_de": "Achte darauf, was das Wort beschreibt.",
+      "instruction_ru": "Обратите внимание, что именно описывает слово."
+    },
+    {
+      "id": "description-role-groß",
+      "topic_id": "adjectives_adverbs",
+      "lemma": "groß",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "eine große Wohnung – Was beschreibt „groß“?",
+      "answer": "ein Nomen",
+      "options": [
+        "ein Nomen",
+        "einen Umstand"
+      ],
+      "instruction_de": "Unterscheide Eigenschaft und Umstand.",
+      "instruction_ru": "Отличите признак предмета от обстоятельства."
+    },
+    {
+      "id": "part-word-groß",
+      "topic_id": "parts_of_speech",
+      "lemma": "groß",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Welche Wortart ist „groß“ im Beispiel: eine große Wohnung?",
+      "answer": "Adjektiv",
+      "options": [
+        "Verb",
+        "Nomen",
+        "Adjektiv",
+        "Adverb"
+      ],
+      "instruction_de": "Ordne das markierte Wort zu.",
+      "instruction_ru": "Определите часть речи выделенного слова."
+    },
+    {
+      "id": "description-gut",
+      "topic_id": "adjectives_adverbs",
+      "lemma": "gut",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "ein gutes Buch – Welche Wortart hat „gut“ hier?",
+      "answer": "Adjektiv",
+      "options": [
+        "Adjektiv",
+        "Adverb"
+      ],
+      "instruction_de": "Achte darauf, was das Wort beschreibt.",
+      "instruction_ru": "Обратите внимание, что именно описывает слово."
+    },
+    {
+      "id": "description-role-gut",
+      "topic_id": "adjectives_adverbs",
+      "lemma": "gut",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "ein gutes Buch – Was beschreibt „gut“?",
+      "answer": "ein Nomen",
+      "options": [
+        "ein Nomen",
+        "einen Umstand"
+      ],
+      "instruction_de": "Unterscheide Eigenschaft und Umstand.",
+      "instruction_ru": "Отличите признак предмета от обстоятельства."
+    },
+    {
+      "id": "part-word-gut",
+      "topic_id": "parts_of_speech",
+      "lemma": "gut",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Welche Wortart ist „gut“ im Beispiel: ein gutes Buch?",
+      "answer": "Adjektiv",
+      "options": [
+        "Verb",
+        "Nomen",
+        "Adjektiv",
+        "Adverb"
+      ],
+      "instruction_de": "Ordne das markierte Wort zu.",
+      "instruction_ru": "Определите часть речи выделенного слова."
+    },
+    {
+      "id": "description-neu",
+      "topic_id": "adjectives_adverbs",
+      "lemma": "neu",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "ein neues Auto – Welche Wortart hat „neu“ hier?",
+      "answer": "Adjektiv",
+      "options": [
+        "Adjektiv",
+        "Adverb"
+      ],
+      "instruction_de": "Achte darauf, was das Wort beschreibt.",
+      "instruction_ru": "Обратите внимание, что именно описывает слово."
+    },
+    {
+      "id": "description-role-neu",
+      "topic_id": "adjectives_adverbs",
+      "lemma": "neu",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "ein neues Auto – Was beschreibt „neu“?",
+      "answer": "ein Nomen",
+      "options": [
+        "ein Nomen",
+        "einen Umstand"
+      ],
+      "instruction_de": "Unterscheide Eigenschaft und Umstand.",
+      "instruction_ru": "Отличите признак предмета от обстоятельства."
+    },
+    {
+      "id": "part-word-neu",
+      "topic_id": "parts_of_speech",
+      "lemma": "neu",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Welche Wortart ist „neu“ im Beispiel: ein neues Auto?",
+      "answer": "Adjektiv",
+      "options": [
+        "Verb",
+        "Nomen",
+        "Adjektiv",
+        "Adverb"
+      ],
+      "instruction_de": "Ordne das markierte Wort zu.",
+      "instruction_ru": "Определите часть речи выделенного слова."
+    },
+    {
+      "id": "description-freundlich",
+      "topic_id": "adjectives_adverbs",
+      "lemma": "freundlich",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "eine freundliche Frau – Welche Wortart hat „freundlich“ hier?",
+      "answer": "Adjektiv",
+      "options": [
+        "Adjektiv",
+        "Adverb"
+      ],
+      "instruction_de": "Achte darauf, was das Wort beschreibt.",
+      "instruction_ru": "Обратите внимание, что именно описывает слово."
+    },
+    {
+      "id": "description-role-freundlich",
+      "topic_id": "adjectives_adverbs",
+      "lemma": "freundlich",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "eine freundliche Frau – Was beschreibt „freundlich“?",
+      "answer": "ein Nomen",
+      "options": [
+        "ein Nomen",
+        "einen Umstand"
+      ],
+      "instruction_de": "Unterscheide Eigenschaft und Umstand.",
+      "instruction_ru": "Отличите признак предмета от обстоятельства."
+    },
+    {
+      "id": "part-word-freundlich",
+      "topic_id": "parts_of_speech",
+      "lemma": "freundlich",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Welche Wortart ist „freundlich“ im Beispiel: eine freundliche Frau?",
+      "answer": "Adjektiv",
+      "options": [
+        "Verb",
+        "Nomen",
+        "Adjektiv",
+        "Adverb"
+      ],
+      "instruction_de": "Ordne das markierte Wort zu.",
+      "instruction_ru": "Определите часть речи выделенного слова."
+    },
+    {
+      "id": "description-heute",
+      "topic_id": "adjectives_adverbs",
+      "lemma": "heute",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Wir lernen heute. – Welche Wortart hat „heute“ hier?",
+      "answer": "Adverb",
+      "options": [
+        "Adjektiv",
+        "Adverb"
+      ],
+      "instruction_de": "Achte darauf, was das Wort beschreibt.",
+      "instruction_ru": "Обратите внимание, что именно описывает слово."
+    },
+    {
+      "id": "description-role-heute",
+      "topic_id": "adjectives_adverbs",
+      "lemma": "heute",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Wir lernen heute. – Was beschreibt „heute“?",
+      "answer": "einen Umstand",
+      "options": [
+        "ein Nomen",
+        "einen Umstand"
+      ],
+      "instruction_de": "Unterscheide Eigenschaft und Umstand.",
+      "instruction_ru": "Отличите признак предмета от обстоятельства."
+    },
+    {
+      "id": "part-word-heute",
+      "topic_id": "parts_of_speech",
+      "lemma": "heute",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Welche Wortart ist „heute“ im Beispiel: Wir lernen heute.?",
+      "answer": "Adverb",
+      "options": [
+        "Verb",
+        "Nomen",
+        "Adjektiv",
+        "Adverb"
+      ],
+      "instruction_de": "Ordne das markierte Wort zu.",
+      "instruction_ru": "Определите часть речи выделенного слова."
+    },
+    {
+      "id": "description-gern",
+      "topic_id": "adjectives_adverbs",
+      "lemma": "gern",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Ich lerne gern. – Welche Wortart hat „gern“ hier?",
+      "answer": "Adverb",
+      "options": [
+        "Adjektiv",
+        "Adverb"
+      ],
+      "instruction_de": "Achte darauf, was das Wort beschreibt.",
+      "instruction_ru": "Обратите внимание, что именно описывает слово."
+    },
+    {
+      "id": "description-role-gern",
+      "topic_id": "adjectives_adverbs",
+      "lemma": "gern",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Ich lerne gern. – Was beschreibt „gern“?",
+      "answer": "einen Umstand",
+      "options": [
+        "ein Nomen",
+        "einen Umstand"
+      ],
+      "instruction_de": "Unterscheide Eigenschaft und Umstand.",
+      "instruction_ru": "Отличите признак предмета от обстоятельства."
+    },
+    {
+      "id": "part-word-gern",
+      "topic_id": "parts_of_speech",
+      "lemma": "gern",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Welche Wortart ist „gern“ im Beispiel: Ich lerne gern.?",
+      "answer": "Adverb",
+      "options": [
+        "Verb",
+        "Nomen",
+        "Adjektiv",
+        "Adverb"
+      ],
+      "instruction_de": "Ordne das markierte Wort zu.",
+      "instruction_ru": "Определите часть речи выделенного слова."
+    },
+    {
+      "id": "description-schnell",
+      "topic_id": "adjectives_adverbs",
+      "lemma": "schnell",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Er spricht schnell. – Welche Wortart hat „schnell“ hier?",
+      "answer": "Adverb",
+      "options": [
+        "Adjektiv",
+        "Adverb"
+      ],
+      "instruction_de": "Achte darauf, was das Wort beschreibt.",
+      "instruction_ru": "Обратите внимание, что именно описывает слово."
+    },
+    {
+      "id": "description-role-schnell",
+      "topic_id": "adjectives_adverbs",
+      "lemma": "schnell",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Er spricht schnell. – Was beschreibt „schnell“?",
+      "answer": "einen Umstand",
+      "options": [
+        "ein Nomen",
+        "einen Umstand"
+      ],
+      "instruction_de": "Unterscheide Eigenschaft und Umstand.",
+      "instruction_ru": "Отличите признак предмета от обстоятельства."
+    },
+    {
+      "id": "part-word-schnell",
+      "topic_id": "parts_of_speech",
+      "lemma": "schnell",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Welche Wortart ist „schnell“ im Beispiel: Er spricht schnell.?",
+      "answer": "Adverb",
+      "options": [
+        "Verb",
+        "Nomen",
+        "Adjektiv",
+        "Adverb"
+      ],
+      "instruction_de": "Ordne das markierte Wort zu.",
+      "instruction_ru": "Определите часть речи выделенного слова."
+    },
+    {
+      "id": "description-langsam",
+      "topic_id": "adjectives_adverbs",
+      "lemma": "langsam",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Sie spricht langsam. – Welche Wortart hat „langsam“ hier?",
+      "answer": "Adverb",
+      "options": [
+        "Adjektiv",
+        "Adverb"
+      ],
+      "instruction_de": "Achte darauf, was das Wort beschreibt.",
+      "instruction_ru": "Обратите внимание, что именно описывает слово."
+    },
+    {
+      "id": "description-role-langsam",
+      "topic_id": "adjectives_adverbs",
+      "lemma": "langsam",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Sie spricht langsam. – Was beschreibt „langsam“?",
+      "answer": "einen Umstand",
+      "options": [
+        "ein Nomen",
+        "einen Umstand"
+      ],
+      "instruction_de": "Unterscheide Eigenschaft und Umstand.",
+      "instruction_ru": "Отличите признак предмета от обстоятельства."
+    },
+    {
+      "id": "part-word-langsam",
+      "topic_id": "parts_of_speech",
+      "lemma": "langsam",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Welche Wortart ist „langsam“ im Beispiel: Sie spricht langsam.?",
+      "answer": "Adverb",
+      "options": [
+        "Verb",
+        "Nomen",
+        "Adjektiv",
+        "Adverb"
+      ],
+      "instruction_de": "Ordne das markierte Wort zu.",
+      "instruction_ru": "Определите часть речи выделенного слова."
+    },
+    {
+      "id": "description-hier",
+      "topic_id": "adjectives_adverbs",
+      "lemma": "hier",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Wir wohnen hier. – Welche Wortart hat „hier“ hier?",
+      "answer": "Adverb",
+      "options": [
+        "Adjektiv",
+        "Adverb"
+      ],
+      "instruction_de": "Achte darauf, was das Wort beschreibt.",
+      "instruction_ru": "Обратите внимание, что именно описывает слово."
+    },
+    {
+      "id": "description-role-hier",
+      "topic_id": "adjectives_adverbs",
+      "lemma": "hier",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Wir wohnen hier. – Was beschreibt „hier“?",
+      "answer": "einen Umstand",
+      "options": [
+        "ein Nomen",
+        "einen Umstand"
+      ],
+      "instruction_de": "Unterscheide Eigenschaft und Umstand.",
+      "instruction_ru": "Отличите признак предмета от обстоятельства."
+    },
+    {
+      "id": "part-word-hier",
+      "topic_id": "parts_of_speech",
+      "lemma": "hier",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Welche Wortart ist „hier“ im Beispiel: Wir wohnen hier.?",
+      "answer": "Adverb",
+      "options": [
+        "Verb",
+        "Nomen",
+        "Adjektiv",
+        "Adverb"
+      ],
+      "instruction_de": "Ordne das markierte Wort zu.",
+      "instruction_ru": "Определите часть речи выделенного слова."
+    },
+    {
+      "id": "preposition-in-1",
+      "topic_id": "prepositions",
+      "lemma": "in",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Wir wohnen ___ Berlin.",
+      "answer": "in",
+      "options": [
+        "in",
+        "aus",
+        "mit",
+        "für",
+        "bei"
+      ],
+      "instruction_de": "Wähle die Präposition mit der passenden Bedeutung.",
+      "instruction_ru": "Выберите предлог с подходящим значением."
+    },
+    {
+      "id": "preposition-in-2",
+      "topic_id": "prepositions",
+      "lemma": "in",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Der Kurs ist ___ der Schule.",
+      "answer": "in",
+      "options": [
+        "in",
+        "aus",
+        "mit",
+        "für",
+        "bei"
+      ],
+      "instruction_de": "Wähle die Präposition mit der passenden Bedeutung.",
+      "instruction_ru": "Выберите предлог с подходящим значением."
+    },
+    {
+      "id": "preposition-in-3",
+      "topic_id": "prepositions",
+      "lemma": "in",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Lara lebt ___ Deutschland.",
+      "answer": "in",
+      "options": [
+        "in",
+        "aus",
+        "mit",
+        "für",
+        "bei"
+      ],
+      "instruction_de": "Wähle die Präposition mit der passenden Bedeutung.",
+      "instruction_ru": "Выберите предлог с подходящим значением."
+    },
+    {
+      "id": "preposition-in-4",
+      "topic_id": "prepositions",
+      "lemma": "in",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Die K___der spielen in dem Garten.",
+      "answer": "in",
+      "options": [
+        "in",
+        "aus",
+        "mit",
+        "für",
+        "bei"
+      ],
+      "instruction_de": "Wähle die Präposition mit der passenden Bedeutung.",
+      "instruction_ru": "Выберите предлог с подходящим значением."
+    },
+    {
+      "id": "preposition-aus-1",
+      "topic_id": "prepositions",
+      "lemma": "aus",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Ich komme ___ Polen.",
+      "answer": "aus",
+      "options": [
+        "in",
+        "aus",
+        "mit",
+        "für",
+        "bei"
+      ],
+      "instruction_de": "Wähle die Präposition mit der passenden Bedeutung.",
+      "instruction_ru": "Выберите предлог с подходящим значением."
+    },
+    {
+      "id": "preposition-aus-2",
+      "topic_id": "prepositions",
+      "lemma": "aus",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Anna kommt ___ Berlin.",
+      "answer": "aus",
+      "options": [
+        "in",
+        "aus",
+        "mit",
+        "für",
+        "bei"
+      ],
+      "instruction_de": "Wähle die Präposition mit der passenden Bedeutung.",
+      "instruction_ru": "Выберите предлог с подходящим значением."
+    },
+    {
+      "id": "preposition-aus-3",
+      "topic_id": "prepositions",
+      "lemma": "aus",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Das Brot kommt ___ der Küche.",
+      "answer": "aus",
+      "options": [
+        "in",
+        "aus",
+        "mit",
+        "für",
+        "bei"
+      ],
+      "instruction_de": "Wähle die Präposition mit der passenden Bedeutung.",
+      "instruction_ru": "Выберите предлог с подходящим значением."
+    },
+    {
+      "id": "preposition-aus-4",
+      "topic_id": "prepositions",
+      "lemma": "aus",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Wir kommen ___ der Schule.",
+      "answer": "aus",
+      "options": [
+        "in",
+        "aus",
+        "mit",
+        "für",
+        "bei"
+      ],
+      "instruction_de": "Wähle die Präposition mit der passenden Bedeutung.",
+      "instruction_ru": "Выберите предлог с подходящим значением."
+    },
+    {
+      "id": "preposition-mit-1",
+      "topic_id": "prepositions",
+      "lemma": "mit",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Sie lernt ___ Anna.",
+      "answer": "mit",
+      "options": [
+        "in",
+        "aus",
+        "mit",
+        "für",
+        "bei"
+      ],
+      "instruction_de": "Wähle die Präposition mit der passenden Bedeutung.",
+      "instruction_ru": "Выберите предлог с подходящим значением."
+    },
+    {
+      "id": "preposition-mit-2",
+      "topic_id": "prepositions",
+      "lemma": "mit",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Wir spielen ___ den Kindern.",
+      "answer": "mit",
+      "options": [
+        "in",
+        "aus",
+        "mit",
+        "für",
+        "bei"
+      ],
+      "instruction_de": "Wähle die Präposition mit der passenden Bedeutung.",
+      "instruction_ru": "Выберите предлог с подходящим значением."
+    },
+    {
+      "id": "preposition-mit-3",
+      "topic_id": "prepositions",
+      "lemma": "mit",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Er kommt ___ dem Bus.",
+      "answer": "mit",
+      "options": [
+        "in",
+        "aus",
+        "mit",
+        "für",
+        "bei"
+      ],
+      "instruction_de": "Wähle die Präposition mit der passenden Bedeutung.",
+      "instruction_ru": "Выберите предлог с подходящим значением."
+    },
+    {
+      "id": "preposition-mit-4",
+      "topic_id": "prepositions",
+      "lemma": "mit",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Ich telefoniere ___ der Familie.",
+      "answer": "mit",
+      "options": [
+        "in",
+        "aus",
+        "mit",
+        "für",
+        "bei"
+      ],
+      "instruction_de": "Wähle die Präposition mit der passenden Bedeutung.",
+      "instruction_ru": "Выберите предлог с подходящим значением."
+    },
+    {
+      "id": "preposition-für-1",
+      "topic_id": "prepositions",
+      "lemma": "für",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Das Buch ist ___ Lara.",
+      "answer": "für",
+      "options": [
+        "in",
+        "aus",
+        "mit",
+        "für",
+        "bei"
+      ],
+      "instruction_de": "Wähle die Präposition mit der passenden Bedeutung.",
+      "instruction_ru": "Выберите предлог с подходящим значением."
+    },
+    {
+      "id": "preposition-für-2",
+      "topic_id": "prepositions",
+      "lemma": "für",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Wir lernen ___ den Test.",
+      "answer": "für",
+      "options": [
+        "in",
+        "aus",
+        "mit",
+        "für",
+        "bei"
+      ],
+      "instruction_de": "Wähle die Präposition mit der passenden Bedeutung.",
+      "instruction_ru": "Выберите предлог с подходящим значением."
+    },
+    {
+      "id": "preposition-für-3",
+      "topic_id": "prepositions",
+      "lemma": "für",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Ich koche ___ die Familie.",
+      "answer": "für",
+      "options": [
+        "in",
+        "aus",
+        "mit",
+        "für",
+        "bei"
+      ],
+      "instruction_de": "Wähle die Präposition mit der passenden Bedeutung.",
+      "instruction_ru": "Выберите предлог с подходящим значением."
+    },
+    {
+      "id": "preposition-für-4",
+      "topic_id": "prepositions",
+      "lemma": "für",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Die Blumen sind ___ Anna.",
+      "answer": "für",
+      "options": [
+        "in",
+        "aus",
+        "mit",
+        "für",
+        "bei"
+      ],
+      "instruction_de": "Wähle die Präposition mit der passenden Bedeutung.",
+      "instruction_ru": "Выберите предлог с подходящим значением."
+    },
+    {
+      "id": "preposition-bei-1",
+      "topic_id": "prepositions",
+      "lemma": "bei",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Er wohnt ___ Ali.",
+      "answer": "bei",
+      "options": [
+        "in",
+        "aus",
+        "mit",
+        "für",
+        "bei"
+      ],
+      "instruction_de": "Wähle die Präposition mit der passenden Bedeutung.",
+      "instruction_ru": "Выберите предлог с подходящим значением."
+    },
+    {
+      "id": "preposition-bei-2",
+      "topic_id": "prepositions",
+      "lemma": "bei",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Ich bin ___ der Familie.",
+      "answer": "bei",
+      "options": [
+        "in",
+        "aus",
+        "mit",
+        "für",
+        "bei"
+      ],
+      "instruction_de": "Wähle die Präposition mit der passenden Bedeutung.",
+      "instruction_ru": "Выберите предлог с подходящим значением."
+    },
+    {
+      "id": "preposition-bei-3",
+      "topic_id": "prepositions",
+      "lemma": "bei",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Lara ar___tet bei einer Firma.",
+      "answer": "bei",
+      "options": [
+        "in",
+        "aus",
+        "mit",
+        "für",
+        "bei"
+      ],
+      "instruction_de": "Wähle die Präposition mit der passenden Bedeutung.",
+      "instruction_ru": "Выберите предлог с подходящим значением."
+    },
+    {
+      "id": "preposition-bei-4",
+      "topic_id": "prepositions",
+      "lemma": "bei",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Das Kind bleibt ___ der Mutter.",
+      "answer": "bei",
+      "options": [
+        "in",
+        "aus",
+        "mit",
+        "für",
+        "bei"
+      ],
+      "instruction_de": "Wähle die Präposition mit der passenden Bedeutung.",
+      "instruction_ru": "Выберите предлог с подходящим значением."
+    },
+    {
+      "id": "negation-verb-lernen",
+      "topic_id": "negation",
+      "lemma": "lernen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Ich lerne heute ___.",
+      "answer": "nicht",
+      "options": [
+        "nicht",
+        "kein",
+        "keine"
+      ],
+      "instruction_de": "Hier wird die Handlung verneint.",
+      "instruction_ru": "Здесь отрицается действие."
+    },
+    {
+      "id": "negation-verb-machen",
+      "topic_id": "negation",
+      "lemma": "machen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Ich mache heute ___.",
+      "answer": "nicht",
+      "options": [
+        "nicht",
+        "kein",
+        "keine"
+      ],
+      "instruction_de": "Hier wird die Handlung verneint.",
+      "instruction_ru": "Здесь отрицается действие."
+    },
+    {
+      "id": "negation-verb-wohnen",
+      "topic_id": "negation",
+      "lemma": "wohnen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Ich wohne heute ___.",
+      "answer": "nicht",
+      "options": [
+        "nicht",
+        "kein",
+        "keine"
+      ],
+      "instruction_de": "Hier wird die Handlung verneint.",
+      "instruction_ru": "Здесь отрицается действие."
+    },
+    {
+      "id": "negation-verb-kommen",
+      "topic_id": "negation",
+      "lemma": "kommen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Ich komme heute ___.",
+      "answer": "nicht",
+      "options": [
+        "nicht",
+        "kein",
+        "keine"
+      ],
+      "instruction_de": "Hier wird die Handlung verneint.",
+      "instruction_ru": "Здесь отрицается действие."
+    },
+    {
+      "id": "negation-verb-leben",
+      "topic_id": "negation",
+      "lemma": "leben",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Ich lebe heute ___.",
+      "answer": "nicht",
+      "options": [
+        "nicht",
+        "kein",
+        "keine"
+      ],
+      "instruction_de": "Hier wird die Handlung verneint.",
+      "instruction_ru": "Здесь отрицается действие."
+    },
+    {
+      "id": "negation-verb-kaufen",
+      "topic_id": "negation",
+      "lemma": "kaufen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Ich kaufe heute ___.",
+      "answer": "nicht",
+      "options": [
+        "nicht",
+        "kein",
+        "keine"
+      ],
+      "instruction_de": "Hier wird die Handlung verneint.",
+      "instruction_ru": "Здесь отрицается действие."
+    },
+    {
+      "id": "negation-verb-spielen",
+      "topic_id": "negation",
+      "lemma": "spielen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Ich spiele heute ___.",
+      "answer": "nicht",
+      "options": [
+        "nicht",
+        "kein",
+        "keine"
+      ],
+      "instruction_de": "Hier wird die Handlung verneint.",
+      "instruction_ru": "Здесь отрицается действие."
+    },
+    {
+      "id": "negation-verb-hören",
+      "topic_id": "negation",
+      "lemma": "hören",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Ich höre heute ___.",
+      "answer": "nicht",
+      "options": [
+        "nicht",
+        "kein",
+        "keine"
+      ],
+      "instruction_de": "Hier wird die Handlung verneint.",
+      "instruction_ru": "Здесь отрицается действие."
+    },
+    {
+      "id": "negation-verb-fragen",
+      "topic_id": "negation",
+      "lemma": "fragen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Ich frage heute ___.",
+      "answer": "nicht",
+      "options": [
+        "nicht",
+        "kein",
+        "keine"
+      ],
+      "instruction_de": "Hier wird die Handlung verneint.",
+      "instruction_ru": "Здесь отрицается действие."
+    },
+    {
+      "id": "negation-verb-sagen",
+      "topic_id": "negation",
+      "lemma": "sagen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Ich sage heute ___.",
+      "answer": "nicht",
+      "options": [
+        "nicht",
+        "kein",
+        "keine"
+      ],
+      "instruction_de": "Hier wird die Handlung verneint.",
+      "instruction_ru": "Здесь отрицается действие."
     }
   ]
 }

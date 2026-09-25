@@ -43,6 +43,37 @@ void main() {
         hasLength(40),
       );
     }
+
+    final trainableTopics = catalog.topics
+        .where((topic) => topic.trainable)
+        .map((topic) => topic.id)
+        .toSet();
+    expect(trainableTopics, hasLength(16));
+    for (final topicId in trainableTopics) {
+      expect(
+        catalog.exercises.where((exercise) => exercise.topicId == topicId),
+        hasLength(greaterThanOrEqualTo(20)),
+        reason: '$topicId must have a useful static exercise bank',
+      );
+    }
+    expect(
+      catalog.exercises.where((exercise) => exercise.type.name == 'wordOrder'),
+      isNotEmpty,
+    );
+    expect(
+      catalog.exercises.where((exercise) => exercise.type.name == 'yesNo'),
+      isNotEmpty,
+    );
+    expect(
+      catalog.exercises
+          .where(
+            (exercise) =>
+                exercise.options.isNotEmpty &&
+                exercise.type.name != 'wordOrder',
+          )
+          .every((exercise) => exercise.options.contains(exercise.answer)),
+      isTrue,
+    );
   });
 
   test('activates only learned topics with a matching active verb', () async {
@@ -54,6 +85,26 @@ void main() {
         activeLemmas: {'lernen'},
       ),
       {'regular_present'},
+    );
+  });
+
+  test('activates foundation topics by matching dictionary item type',
+      () async {
+    final catalog = await GrammarCatalog.load(rootBundle);
+
+    expect(
+      catalog.availableTopicIds(
+        learnedTopicIds: {'articles', 'prepositions', 'verb_basics'},
+        activeItemKeys: {'noun:tisch', 'word:in', 'verb:lernen'},
+      ),
+      {'articles', 'prepositions', 'verb_basics'},
+    );
+    expect(
+      catalog.availableTopicIds(
+        learnedTopicIds: {'articles'},
+        activeItemKeys: {'verb:lernen'},
+      ),
+      isEmpty,
     );
   });
 }

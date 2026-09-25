@@ -32,6 +32,8 @@ final class GrammarCatalog {
     );
     if (content is! Map<String, Object?> ||
         exerciseData is! Map<String, Object?> ||
+        content['version'] != 1 ||
+        (exerciseData['version'] != 1 && exerciseData['version'] != 2) ||
         content['topics'] is! List ||
         content['verbs'] is! List ||
         exerciseData['exercises'] is! List) {
@@ -56,13 +58,15 @@ final class GrammarCatalog {
 
   List<GrammarExercise> exercisesFor({
     required String topicId,
-    required Set<String> activeLemmas,
+    Set<String> activeLemmas = const {},
+    Set<String> activeItemKeys = const {},
   }) {
     return exercises
         .where(
           (exercise) =>
               exercise.topicId == topicId &&
-              activeLemmas.contains(exercise.lemma),
+              (activeItemKeys.contains(exercise.itemKey) ||
+                  activeLemmas.contains(exercise.lemma)),
         )
         .toList(growable: false);
   }
@@ -81,14 +85,16 @@ final class GrammarCatalog {
 
   Set<String> availableTopicIds({
     required Set<String> learnedTopicIds,
-    required Set<String> activeLemmas,
+    Set<String> activeLemmas = const {},
+    Set<String> activeItemKeys = const {},
   }) {
     return topics
         .where((topic) => topic.trainable && learnedTopicIds.contains(topic.id))
         .where(
-          (topic) => verbsFor(
+          (topic) => exercisesFor(
             topicId: topic.id,
             activeLemmas: activeLemmas,
+            activeItemKeys: activeItemKeys,
           ).isNotEmpty,
         )
         .map((topic) => topic.id)
@@ -132,6 +138,13 @@ final class GrammarCatalog {
         lemma: normalizeLemma(_string(json, 'lemma')),
         prompt: _string(json, 'prompt'),
         answer: _string(json, 'answer'),
+        type: GrammarExerciseType.fromWireName(
+          _optionalString(json, 'type') ?? 'text',
+        ),
+        requiredItemType: _optionalString(json, 'required_item_type') ?? 'verb',
+        options: json['options'] == null ? const [] : _strings(json, 'options'),
+        instructionDe: _optionalString(json, 'instruction_de') ?? '',
+        instructionRu: _optionalString(json, 'instruction_ru') ?? '',
       );
 
   static Map<String, Object?> _map(Object? value) {
@@ -143,6 +156,13 @@ final class GrammarCatalog {
 
   static String _string(Map<String, Object?> json, String key) {
     final value = json[key];
+    if (value is! String) throw FormatException('$key must be a string.');
+    return value;
+  }
+
+  static String? _optionalString(Map<String, Object?> json, String key) {
+    final value = json[key];
+    if (value == null) return null;
     if (value is! String) throw FormatException('$key must be a string.');
     return value;
   }

@@ -22,9 +22,9 @@ final class UiStrings {
   String get grammarReady =>
       choose('Bereit zum Aktivieren', 'Можно отметить изученным');
   String get grammarReference => choose('Grundlage', 'Справочный раздел');
-  String grammarNeedsVerb(String lemma) => choose(
-        'Füge zuerst „$lemma“ als Verb zu Wörter hinzu.',
-        'Сначала добавьте «$lemma» в словарь с типом «Глагол».',
+  String grammarNeedsMaterial(String description) => choose(
+        'Füge zuerst passendes Material hinzu: $description.',
+        'Сначала добавьте подходящий материал: $description.',
       );
   String get markLearned =>
       choose('Als gelernt markieren', 'Отметить изученным');
@@ -189,6 +189,9 @@ final class UiStrings {
         'Для занятия не хватает изученных тем или подходящих глаголов.',
       );
   String get grammarEnding => choose('Fehlender Teil', 'Пропущенная часть');
+  String get chooseAnswer => choose('Wähle eine Antwort', 'Выберите ответ');
+  String get buildSentence => choose('Baue den Satz', 'Соберите предложение');
+  String get undoLastWord => choose('Letztes Wort zurück', 'Убрать последнее');
   String get again => choose('Noch einmal', 'Повторить ещё раз');
   String get statsEmpty => choose(
         'Noch keine Wiederholungen. Starte eine Sitzung unter „Heute“.',

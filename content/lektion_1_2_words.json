@@ -1,0 +1,1371 @@
+{
+  "format_version": 2,
+  "words": [
+    {
+      "type": "verb",
+      "german": "sein",
+      "translation_ru": "быть",
+      "example": "Ich bin aus Deutschland.",
+      "note": "Неправильный глагол «быть»; формы ich bin, du bist, er/sie ist, wir/sie/Sie sind."
+    },
+    {
+      "type": "verb",
+      "german": "heißen",
+      "translation_ru": "называться; иметь имя",
+      "example": "Ich heiße Lara.",
+      "note": "О человеке: «зваться, иметь имя»; ß читается как с."
+    },
+    {
+      "type": "verb",
+      "german": "kommen",
+      "translation_ru": "приходить; приезжать",
+      "example": "Ich komme aus Polen.",
+      "note": "В выражении kommen aus означает «быть родом из, приехать из»."
+    },
+    {
+      "type": "verb",
+      "german": "sprechen",
+      "translation_ru": "говорить",
+      "example": "Ich spreche Deutsch.",
+      "note": "О языке: sprechen Deutsch, Englisch usw.; форма du spricht без s неверна, правильно sprichst."
+    },
+    {
+      "type": "verb",
+      "german": "lernen",
+      "translation_ru": "учить; изучать",
+      "example": "Ich lerne Deutsch."
+    },
+    {
+      "type": "verb",
+      "german": "leben",
+      "translation_ru": "жить",
+      "example": "Lara lebt in Poznań."
+    },
+    {
+      "type": "verb",
+      "german": "haben",
+      "translation_ru": "иметь",
+      "example": "Ich habe eine Familie.",
+      "note": "Неправильный глагол «иметь»; ich habe, du hast, er/sie hat."
+    },
+    {
+      "type": "verb",
+      "german": "wohnen",
+      "translation_ru": "жить; проживать",
+      "example": "Ich wohne in Berlin."
+    },
+    {
+      "type": "verb",
+      "german": "fragen",
+      "translation_ru": "спрашивать",
+      "example": "Ich frage: Wie heißen Sie?"
+    },
+    {
+      "type": "verb",
+      "german": "sagen",
+      "translation_ru": "говорить; сказать",
+      "example": "Was sagen Sie?"
+    },
+    {
+      "type": "verb",
+      "german": "hören",
+      "translation_ru": "слышать; слушать",
+      "example": "Hören Sie gut zu."
+    },
+    {
+      "type": "verb",
+      "german": "lesen",
+      "translation_ru": "читать",
+      "example": "Ich lese die Frage."
+    },
+    {
+      "type": "verb",
+      "german": "schreiben",
+      "translation_ru": "писать",
+      "example": "Ich schreibe meinen Namen."
+    },
+    {
+      "type": "verb",
+      "german": "sehen",
+      "translation_ru": "видеть; смотреть",
+      "example": "Ich sehe ein Bild."
+    },
+    {
+      "type": "verb",
+      "german": "machen",
+      "translation_ru": "делать",
+      "example": "Ich mache eine Pause."
+    },
+    {
+      "type": "verb",
+      "german": "spielen",
+      "translation_ru": "играть",
+      "example": "Wir spielen ein Spiel."
+    },
+    {
+      "type": "verb",
+      "german": "suchen",
+      "translation_ru": "искать",
+      "example": "Ich suche die Antwort."
+    },
+    {
+      "type": "verb",
+      "german": "zeigen",
+      "translation_ru": "показывать",
+      "example": "Zeigen Sie das Bild."
+    },
+    {
+      "type": "verb",
+      "german": "markieren",
+      "translation_ru": "отмечать; выделять",
+      "example": "Markieren Sie das Wort."
+    },
+    {
+      "type": "verb",
+      "german": "nachsprechen",
+      "translation_ru": "повторять за кем-либо",
+      "example": "Sprechen Sie nach."
+    },
+    {
+      "type": "verb",
+      "german": "raten",
+      "translation_ru": "угадывать; советовать",
+      "example": "Raten Sie das Wort."
+    },
+    {
+      "type": "verb",
+      "german": "meinen",
+      "translation_ru": "считать; иметь в виду",
+      "example": "Was meinen Sie?"
+    },
+    {
+      "type": "verb",
+      "german": "notieren",
+      "translation_ru": "записывать",
+      "example": "Notieren Sie die Antwort."
+    },
+    {
+      "type": "verb",
+      "german": "vergleichen",
+      "translation_ru": "сравнивать",
+      "example": "Vergleichen Sie die Sätze."
+    },
+    {
+      "type": "verb",
+      "german": "variieren",
+      "translation_ru": "варьировать; изменять",
+      "example": "Variieren Sie den Dialog."
+    },
+    {
+      "type": "verb",
+      "german": "erzählen",
+      "translation_ru": "рассказывать",
+      "example": "Ich erzähle von meiner Familie."
+    },
+    {
+      "type": "verb",
+      "german": "arbeiten",
+      "translation_ru": "работать",
+      "example": "Wir arbeiten zu zweit."
+    },
+    {
+      "type": "verb",
+      "german": "zeichnen",
+      "translation_ru": "рисовать",
+      "example": "Ich zeichne ein Bild."
+    },
+    {
+      "type": "verb",
+      "german": "verbinden",
+      "translation_ru": "соединять",
+      "example": "Verbinden Sie die Wörter."
+    },
+    {
+      "type": "verb",
+      "german": "buchstabieren",
+      "translation_ru": "произносить по буквам",
+      "example": "Ich buchstabiere meinen Namen."
+    },
+    {
+      "type": "verb",
+      "german": "ergänzen",
+      "translation_ru": "дополнять",
+      "example": "Ergänzen Sie den Satz."
+    },
+    {
+      "type": "verb",
+      "german": "zuordnen",
+      "translation_ru": "соотносить; распределять",
+      "example": "Ordnen Sie zu."
+    },
+    {
+      "type": "verb",
+      "german": "ankreuzen",
+      "translation_ru": "отмечать крестиком",
+      "example": "Kreuzen Sie die richtige Antwort an."
+    },
+    {
+      "type": "verb",
+      "german": "ausfüllen",
+      "translation_ru": "заполнять",
+      "example": "Ich fülle das Formular aus."
+    },
+    {
+      "type": "verb",
+      "german": "willkommen heißen",
+      "translation_ru": "приветствовать",
+      "example": "Wir heißen Sie herzlich willkommen."
+    },
+    {
+      "type": "verb",
+      "german": "sich verabschieden",
+      "translation_ru": "прощаться",
+      "example": "Wir verabschieden uns."
+    },
+    {
+      "type": "verb",
+      "german": "geboren sein",
+      "translation_ru": "родиться; быть рождённым",
+      "example": "Ich bin in Berlin geboren."
+    },
+    {
+      "type": "verb",
+      "german": "ansehen",
+      "translation_ru": "смотреть; рассматривать",
+      "example": "Sehen Sie die Bilder an."
+    },
+    {
+      "type": "verb",
+      "german": "finden",
+      "translation_ru": "находить",
+      "example": "Ich finde die Antwort."
+    },
+    {
+      "type": "verb",
+      "german": "ordnen",
+      "translation_ru": "упорядочивать; распределять",
+      "example": "Ordnen Sie die Wörter."
+    },
+    {
+      "type": "verb",
+      "german": "kreuzen",
+      "translation_ru": "отмечать крестиком",
+      "example": "Kreuzen Sie die richtige Antwort an."
+    },
+    {
+      "type": "verb",
+      "german": "sprechen nach",
+      "translation_ru": "повторять сказанное",
+      "example": "Sprechen Sie den Satz nach."
+    },
+    {
+      "type": "verb",
+      "german": "antworten",
+      "translation_ru": "отвечать",
+      "example": "Ich antworte auf die Frage."
+    },
+    {
+      "type": "verb",
+      "german": "schreiben über",
+      "translation_ru": "писать о",
+      "example": "Ich schreibe über meine Familie."
+    },
+    {
+      "type": "verb",
+      "german": "sich fühlen",
+      "translation_ru": "чувствовать себя",
+      "example": "Wie fühlen Sie sich?"
+    },
+    {
+      "type": "word",
+      "german": "ich",
+      "translation_ru": "я",
+      "example": "Ich heiße Anna."
+    },
+    {
+      "type": "word",
+      "german": "du",
+      "translation_ru": "ты",
+      "example": "Wie heißt du?"
+    },
+    {
+      "type": "word",
+      "german": "er",
+      "translation_ru": "он",
+      "example": "Er kommt aus Kanada."
+    },
+    {
+      "type": "word",
+      "german": "sie/Sie",
+      "translation_ru": "она; они; Вы (вежливая форма)",
+      "example": "Sie sprechen Deutsch. / Sie kommt aus Polen.",
+      "note": "sie со строчной: «она» или «они»; Sie с заглавной: вежливое «Вы»."
+    },
+    {
+      "type": "word",
+      "german": "wir",
+      "translation_ru": "мы",
+      "example": "Wir lernen Deutsch."
+    },
+    {
+      "type": "word",
+      "german": "ihr",
+      "translation_ru": "вы (множественное число)",
+      "example": "Woher kommt ihr?"
+    },
+    {
+      "type": "word",
+      "german": "mein",
+      "translation_ru": "мой; моя; моё",
+      "example": "Das ist mein Bruder."
+    },
+    {
+      "type": "word",
+      "german": "meine",
+      "translation_ru": "мой; моя; мои",
+      "example": "Das ist meine Familie."
+    },
+    {
+      "type": "word",
+      "german": "dein",
+      "translation_ru": "твой; твоя; твоё",
+      "example": "Ist das dein Vater?"
+    },
+    {
+      "type": "word",
+      "german": "Ihre",
+      "translation_ru": "Ваш; Ваша; Ваши",
+      "example": "Wie ist Ihre Adresse?",
+      "note": "Вежливая форма «Ваш/Ваша»; Ihre Adresse = Ваш адрес."
+    },
+    {
+      "type": "word",
+      "german": "und",
+      "translation_ru": "и"
+    },
+    {
+      "type": "word",
+      "german": "ein",
+      "translation_ru": "один; неопределённый артикль"
+    },
+    {
+      "type": "word",
+      "german": "bisschen",
+      "translation_ru": "немного"
+    },
+    {
+      "type": "word",
+      "german": "aus",
+      "translation_ru": "из; от",
+      "example": "Ich komme aus Deutschland.",
+      "note": "Предлог происхождения: aus Deutschland, aus der Schweiz, aus den USA."
+    },
+    {
+      "type": "word",
+      "german": "in",
+      "translation_ru": "в; внутри",
+      "example": "Ich wohne in München."
+    },
+    {
+      "type": "word",
+      "german": "bei",
+      "translation_ru": "у; при; в месте",
+      "example": "Willkommen bei uns.",
+      "note": "Предлог «у, в, при»; часто с местом или организацией: bei einer Firma."
+    },
+    {
+      "type": "word",
+      "german": "wie",
+      "translation_ru": "как",
+      "example": "Wie heißen Sie?"
+    },
+    {
+      "type": "word",
+      "german": "wer",
+      "translation_ru": "кто",
+      "example": "Wer ist das?"
+    },
+    {
+      "type": "word",
+      "german": "was",
+      "translation_ru": "что; какой",
+      "example": "Was sprechen Sie?"
+    },
+    {
+      "type": "word",
+      "german": "wo",
+      "translation_ru": "где",
+      "example": "Wo wohnen Sie?"
+    },
+    {
+      "type": "word",
+      "german": "woher",
+      "translation_ru": "откуда",
+      "example": "Woher kommen Sie?"
+    },
+    {
+      "type": "word",
+      "german": "ja",
+      "translation_ru": "да",
+      "example": "Ja, das stimmt."
+    },
+    {
+      "type": "word",
+      "german": "nein",
+      "translation_ru": "нет",
+      "example": "Nein, das ist falsch."
+    },
+    {
+      "type": "word",
+      "german": "nicht",
+      "translation_ru": "не",
+      "example": "Ich spreche nicht gut Deutsch."
+    },
+    {
+      "type": "word",
+      "german": "gut",
+      "translation_ru": "хорошо; хороший",
+      "example": "Wie geht es dir? – Gut, danke."
+    },
+    {
+      "type": "word",
+      "german": "super",
+      "translation_ru": "супер; отлично",
+      "example": "Wie geht es? – Super!"
+    },
+    {
+      "type": "word",
+      "german": "sehr",
+      "translation_ru": "очень",
+      "example": "Danke, sehr gut."
+    },
+    {
+      "type": "word",
+      "german": "so",
+      "translation_ru": "так"
+    },
+    {
+      "type": "word",
+      "german": "auch",
+      "translation_ru": "тоже; также",
+      "example": "Ich spreche auch Englisch."
+    },
+    {
+      "type": "word",
+      "german": "na ja",
+      "translation_ru": "ну да; ну что ж"
+    },
+    {
+      "type": "word",
+      "german": "ach",
+      "translation_ru": "ах"
+    },
+    {
+      "type": "word",
+      "german": "falsch",
+      "translation_ru": "неправильный; неверно",
+      "example": "Nein, das ist falsch."
+    },
+    {
+      "type": "word",
+      "german": "zusammen",
+      "translation_ru": "вместе",
+      "example": "Wir lernen zusammen."
+    },
+    {
+      "type": "word",
+      "german": "jetzt",
+      "translation_ru": "сейчас",
+      "example": "Jetzt machen wir eine Pause."
+    },
+    {
+      "type": "word",
+      "german": "geschieden",
+      "translation_ru": "разведённый"
+    },
+    {
+      "type": "word",
+      "german": "verheiratet",
+      "translation_ru": "женатый; замужняя"
+    },
+    {
+      "type": "word",
+      "german": "ledig",
+      "translation_ru": "неженатый; незамужняя"
+    },
+    {
+      "type": "word",
+      "german": "verwitwet",
+      "translation_ru": "вдовец; вдова"
+    },
+    {
+      "type": "word",
+      "german": "geboren",
+      "translation_ru": "рождённый"
+    },
+    {
+      "type": "word",
+      "german": "international",
+      "translation_ru": "международный"
+    },
+    {
+      "type": "word",
+      "german": "interessant",
+      "translation_ru": "интересный",
+      "example": "Das ist interessant."
+    },
+    {
+      "type": "word",
+      "german": "toll",
+      "translation_ru": "классный; замечательный",
+      "example": "Ah, toll!"
+    },
+    {
+      "type": "word",
+      "german": "danke",
+      "translation_ru": "спасибо",
+      "example": "Danke, sehr gut."
+    },
+    {
+      "type": "word",
+      "german": "bitte",
+      "translation_ru": "пожалуйста; прошу",
+      "example": "Wie bitte?"
+    },
+    {
+      "type": "word",
+      "german": "herzlich",
+      "translation_ru": "сердечно; радушно",
+      "example": "Herzlich willkommen!"
+    },
+    {
+      "type": "word",
+      "german": "richtig",
+      "translation_ru": "правильный; верно",
+      "example": "Ja, das ist richtig."
+    },
+    {
+      "type": "word",
+      "german": "noch einmal",
+      "translation_ru": "ещё раз",
+      "example": "Hören Sie noch einmal."
+    },
+    {
+      "type": "word",
+      "german": "sehr gut",
+      "translation_ru": "очень хорошо",
+      "example": "Wie geht es? – Sehr gut."
+    },
+    {
+      "type": "word",
+      "german": "nicht so gut",
+      "translation_ru": "не очень хорошо",
+      "example": "Wie geht es? – Nicht so gut."
+    },
+    {
+      "type": "word",
+      "german": "Tut mir leid",
+      "translation_ru": "мне жаль; извините",
+      "example": "Tut mir leid, Frau Bauer."
+    },
+    {
+      "type": "word",
+      "german": "Einen Moment",
+      "translation_ru": "одну минуту",
+      "example": "Einen Moment, bitte."
+    },
+    {
+      "type": "word",
+      "german": "Vielen Dank",
+      "translation_ru": "большое спасибо",
+      "example": "Vielen Dank!"
+    },
+    {
+      "type": "word",
+      "german": "Guten Tag",
+      "translation_ru": "добрый день; здравствуйте",
+      "example": "Guten Tag, Frau Schneider."
+    },
+    {
+      "type": "word",
+      "german": "Guten Morgen",
+      "translation_ru": "доброе утро",
+      "example": "Guten Morgen!"
+    },
+    {
+      "type": "word",
+      "german": "Guten Abend",
+      "translation_ru": "добрый вечер",
+      "example": "Guten Abend, meine Damen und Herren."
+    },
+    {
+      "type": "word",
+      "german": "Gute Nacht",
+      "translation_ru": "спокойной ночи",
+      "example": "Gute Nacht, Papa."
+    },
+    {
+      "type": "word",
+      "german": "Auf Wiedersehen",
+      "translation_ru": "до свидания",
+      "example": "Auf Wiedersehen, Herr Müller."
+    },
+    {
+      "type": "word",
+      "german": "Auf Wiederhören",
+      "translation_ru": "до свидания (по телефону)",
+      "example": "Auf Wiederhören am Telefon."
+    },
+    {
+      "type": "word",
+      "german": "Tschüs",
+      "translation_ru": "пока; до свидания",
+      "example": "Tschüs, bis morgen!"
+    },
+    {
+      "type": "noun",
+      "german": "Name",
+      "translation_ru": "имя; название",
+      "article": "der",
+      "plural": "Namen",
+      "example": "Mein Name ist Anna."
+    },
+    {
+      "type": "noun",
+      "german": "Vorname",
+      "translation_ru": "имя",
+      "article": "der",
+      "plural": "Vornamen",
+      "example": "Mein Vorname ist Anna."
+    },
+    {
+      "type": "noun",
+      "german": "Familienname",
+      "translation_ru": "фамилия",
+      "article": "der",
+      "plural": "Familiennamen",
+      "example": "Mein Familienname ist Bauer."
+    },
+    {
+      "type": "noun",
+      "german": "Herr",
+      "translation_ru": "господин",
+      "article": "der",
+      "plural": "Herren",
+      "example": "Guten Tag, Herr Müller."
+    },
+    {
+      "type": "noun",
+      "german": "Papa",
+      "translation_ru": "папа",
+      "article": "der",
+      "plural": "Papas",
+      "example": "Gute Nacht, Papa."
+    },
+    {
+      "type": "noun",
+      "german": "Mann",
+      "translation_ru": "мужчина; муж",
+      "article": "der",
+      "plural": "Männer",
+      "example": "Das ist mein Mann."
+    },
+    {
+      "type": "noun",
+      "german": "Vater",
+      "translation_ru": "отец",
+      "article": "der",
+      "plural": "Väter",
+      "example": "Das ist mein Vater."
+    },
+    {
+      "type": "noun",
+      "german": "Bruder",
+      "translation_ru": "брат",
+      "article": "der",
+      "plural": "Brüder",
+      "example": "Das ist mein Bruder."
+    },
+    {
+      "type": "noun",
+      "german": "Sohn",
+      "translation_ru": "сын",
+      "article": "der",
+      "plural": "Söhne",
+      "example": "Mein Sohn ist fünf Jahre alt."
+    },
+    {
+      "type": "noun",
+      "german": "Opa",
+      "translation_ru": "дедушка",
+      "article": "der",
+      "plural": "Opas",
+      "example": "Mein Opa lebt in Berlin."
+    },
+    {
+      "type": "noun",
+      "german": "Enkel",
+      "translation_ru": "внук",
+      "article": "der",
+      "plural": "Enkel",
+      "example": "Das ist mein Enkel."
+    },
+    {
+      "type": "noun",
+      "german": "Geburtsort",
+      "translation_ru": "место рождения",
+      "article": "der",
+      "plural": "Geburtsorte",
+      "example": "Mein Geburtsort ist Madrid.",
+      "note": "Место рождения, не страна происхождения."
+    },
+    {
+      "type": "noun",
+      "german": "Wohnort",
+      "translation_ru": "место жительства",
+      "article": "der",
+      "plural": "Wohnorte",
+      "example": "Mein Wohnort ist Hamburg.",
+      "note": "Город или место, где человек живёт сейчас."
+    },
+    {
+      "type": "noun",
+      "german": "Familienstand",
+      "translation_ru": "семейное положение",
+      "article": "der",
+      "plural": "Familienstände",
+      "example": "Familienstand: ledig.",
+      "note": "Семейное положение: ledig, verheiratet, geschieden или verwitwet."
+    },
+    {
+      "type": "noun",
+      "german": "Kurs",
+      "translation_ru": "курс; занятие",
+      "article": "der",
+      "plural": "Kurse",
+      "example": "Ich bin im Deutschkurs."
+    },
+    {
+      "type": "noun",
+      "german": "Park",
+      "translation_ru": "парк",
+      "article": "der",
+      "plural": "Parks",
+      "example": "Wir lernen im Park."
+    },
+    {
+      "type": "noun",
+      "german": "Norden",
+      "translation_ru": "север",
+      "article": "der",
+      "plural": "Norden",
+      "note": "Сторона света; der Norden."
+    },
+    {
+      "type": "noun",
+      "german": "Osten",
+      "translation_ru": "восток",
+      "article": "der",
+      "plural": "Osten",
+      "note": "Сторона света; der Osten."
+    },
+    {
+      "type": "noun",
+      "german": "Süden",
+      "translation_ru": "юг",
+      "article": "der",
+      "plural": "Süden",
+      "note": "Сторона света; der Süden."
+    },
+    {
+      "type": "noun",
+      "german": "Westen",
+      "translation_ru": "запад",
+      "article": "der",
+      "plural": "Westen",
+      "note": "Сторона света; der Westen."
+    },
+    {
+      "type": "noun",
+      "german": "Buchstabe",
+      "translation_ru": "буква",
+      "article": "der",
+      "plural": "Buchstaben",
+      "example": "Der erste Buchstabe ist A."
+    },
+    {
+      "type": "noun",
+      "german": "Kursbuch",
+      "translation_ru": "учебник",
+      "article": "das",
+      "plural": "Kursbücher",
+      "example": "Das Kursbuch liegt auf dem Tisch."
+    },
+    {
+      "type": "noun",
+      "german": "Lernwortschatz",
+      "translation_ru": "учебный словарь; лексика для изучения",
+      "article": "der",
+      "plural": "Lernwortschätze",
+      "example": "Der Lernwortschatz steht am Ende der Lektion.",
+      "note": "Учебный словарь с лексикой урока."
+    },
+    {
+      "type": "noun",
+      "german": "Kind",
+      "translation_ru": "ребёнок",
+      "article": "das",
+      "plural": "Kinder",
+      "example": "Das Kind lernt Deutsch."
+    },
+    {
+      "type": "noun",
+      "german": "Deutsch",
+      "translation_ru": "немецкий язык",
+      "article": "das",
+      "plural": "—",
+      "example": "Ich spreche Deutsch.",
+      "note": "Название языка; как существительное пишется с заглавной буквы."
+    },
+    {
+      "type": "noun",
+      "german": "Gespräch",
+      "translation_ru": "разговор; диалог",
+      "article": "das",
+      "plural": "Gespräche",
+      "example": "Wir schreiben ein Gespräch."
+    },
+    {
+      "type": "noun",
+      "german": "Wort",
+      "translation_ru": "слово",
+      "article": "das",
+      "plural": "Wörter",
+      "example": "Was bedeutet dieses Wort?"
+    },
+    {
+      "type": "noun",
+      "german": "Jahr",
+      "translation_ru": "год",
+      "article": "das",
+      "plural": "Jahre",
+      "example": "Ich bin zwanzig Jahre alt."
+    },
+    {
+      "type": "noun",
+      "german": "Land",
+      "translation_ru": "страна; земля",
+      "article": "das",
+      "plural": "Länder",
+      "example": "Aus welchem Land kommen Sie?"
+    },
+    {
+      "type": "noun",
+      "german": "Telefon",
+      "translation_ru": "телефон",
+      "article": "das",
+      "plural": "Telefone",
+      "example": "Meine Telefonnummer ist neu."
+    },
+    {
+      "type": "noun",
+      "german": "Formular",
+      "translation_ru": "формуляр; бланк",
+      "article": "das",
+      "plural": "Formulare",
+      "example": "Bitte füllen Sie das Formular aus."
+    },
+    {
+      "type": "noun",
+      "german": "Alter",
+      "translation_ru": "возраст",
+      "article": "das",
+      "plural": "—",
+      "example": "Wie alt sind Sie?"
+    },
+    {
+      "type": "noun",
+      "german": "Alphabet",
+      "translation_ru": "алфавит",
+      "article": "das",
+      "plural": "Alphabete",
+      "example": "Das Alphabet beginnt mit A."
+    },
+    {
+      "type": "noun",
+      "german": "Bild",
+      "translation_ru": "изображение; картинка",
+      "article": "das",
+      "plural": "Bilder",
+      "example": "Sehen Sie das Bild an."
+    },
+    {
+      "type": "noun",
+      "german": "E-Mail",
+      "translation_ru": "электронная почта; электронное письмо",
+      "article": "die",
+      "plural": "E-Mails",
+      "example": "Wie ist Ihre E-Mail-Adresse?",
+      "note": "Сокращение от elektronische Mail; в немецком обычно die E-Mail."
+    },
+    {
+      "type": "noun",
+      "german": "Frau",
+      "translation_ru": "женщина; госпожа; жена",
+      "article": "die",
+      "plural": "Frauen",
+      "example": "Guten Tag, Frau Weber."
+    },
+    {
+      "type": "noun",
+      "german": "Dame",
+      "translation_ru": "дама; госпожа",
+      "article": "die",
+      "plural": "Damen",
+      "example": "Guten Abend, meine Damen und Herren."
+    },
+    {
+      "type": "noun",
+      "german": "Musik",
+      "translation_ru": "музыка",
+      "article": "die",
+      "plural": "—",
+      "example": "Ich höre gern Musik."
+    },
+    {
+      "type": "noun",
+      "german": "Fremdsprache",
+      "translation_ru": "иностранный язык",
+      "article": "die",
+      "plural": "Fremdsprachen",
+      "example": "Deutsch ist eine Fremdsprache."
+    },
+    {
+      "type": "noun",
+      "german": "Anmeldung",
+      "translation_ru": "регистрация; заявление",
+      "article": "die",
+      "plural": "Anmeldungen",
+      "example": "Die Anmeldung ist heute."
+    },
+    {
+      "type": "noun",
+      "german": "Postleitzahl",
+      "translation_ru": "почтовый индекс",
+      "article": "die",
+      "plural": "Postleitzahlen",
+      "example": "Wie ist Ihre Postleitzahl?",
+      "note": "Почтовый индекс; часто сокращается как PLZ."
+    },
+    {
+      "type": "noun",
+      "german": "Straße",
+      "translation_ru": "улица",
+      "article": "die",
+      "plural": "Straßen",
+      "example": "Ich wohne in der Bahnhofstraße."
+    },
+    {
+      "type": "noun",
+      "german": "Stadt",
+      "translation_ru": "город",
+      "article": "die",
+      "plural": "Städte",
+      "example": "Berlin ist eine große Stadt."
+    },
+    {
+      "type": "noun",
+      "german": "Frage",
+      "translation_ru": "вопрос",
+      "article": "die",
+      "plural": "Fragen",
+      "example": "Ich habe eine Frage."
+    },
+    {
+      "type": "noun",
+      "german": "Antwort",
+      "translation_ru": "ответ",
+      "article": "die",
+      "plural": "Antworten",
+      "example": "Die Antwort ist richtig."
+    },
+    {
+      "type": "noun",
+      "german": "Familie",
+      "translation_ru": "семья",
+      "article": "die",
+      "plural": "Familien",
+      "example": "Das ist meine Familie."
+    },
+    {
+      "type": "noun",
+      "german": "Mutter",
+      "translation_ru": "мать; мама",
+      "article": "die",
+      "plural": "Mütter",
+      "example": "Meine Mutter lebt in Wien."
+    },
+    {
+      "type": "noun",
+      "german": "Schwester",
+      "translation_ru": "сестра",
+      "article": "die",
+      "plural": "Schwestern",
+      "example": "Das ist meine Schwester."
+    },
+    {
+      "type": "noun",
+      "german": "Oma",
+      "translation_ru": "бабушка",
+      "article": "die",
+      "plural": "Omas",
+      "example": "Meine Oma wohnt in Köln."
+    },
+    {
+      "type": "noun",
+      "german": "Tochter",
+      "translation_ru": "дочь",
+      "article": "die",
+      "plural": "Töchter",
+      "example": "Meine Tochter ist acht Jahre alt."
+    },
+    {
+      "type": "noun",
+      "german": "Enkelin",
+      "translation_ru": "внучка",
+      "article": "die",
+      "plural": "Enkelinnen",
+      "example": "Das ist meine Enkelin."
+    },
+    {
+      "type": "noun",
+      "german": "Ehefrau",
+      "translation_ru": "жена",
+      "article": "die",
+      "plural": "Ehefrauen",
+      "example": "Das ist meine Ehefrau."
+    },
+    {
+      "type": "noun",
+      "german": "Zahl",
+      "translation_ru": "число; цифра",
+      "article": "die",
+      "plural": "Zahlen",
+      "example": "Die Zahl ist zehn."
+    },
+    {
+      "type": "noun",
+      "german": "Nummer",
+      "translation_ru": "номер",
+      "article": "die",
+      "plural": "Nummern",
+      "example": "Wie ist Ihre Telefonnummer?"
+    },
+    {
+      "type": "noun",
+      "german": "Sprache",
+      "translation_ru": "язык",
+      "article": "die",
+      "plural": "Sprachen",
+      "example": "Deutsch ist eine Sprache."
+    },
+    {
+      "type": "noun",
+      "german": "Firma",
+      "translation_ru": "фирма; компания",
+      "article": "die",
+      "plural": "Firmen",
+      "example": "Ich arbeite bei einer Firma."
+    },
+    {
+      "type": "noun",
+      "german": "Adresse",
+      "translation_ru": "адрес",
+      "article": "die",
+      "plural": "Adressen",
+      "example": "Wie ist Ihre Adresse?"
+    },
+    {
+      "type": "noun",
+      "german": "Visitenkarte",
+      "translation_ru": "визитная карточка",
+      "article": "die",
+      "plural": "Visitenkarten",
+      "example": "Hier ist meine Visitenkarte."
+    },
+    {
+      "type": "noun",
+      "german": "Hauptstadt",
+      "translation_ru": "столица",
+      "article": "die",
+      "plural": "Hauptstädte",
+      "example": "Berlin ist die Hauptstadt von Deutschland."
+    },
+    {
+      "type": "noun",
+      "german": "Eltern",
+      "translation_ru": "родители",
+      "article": "die",
+      "plural": "—",
+      "example": "Das sind meine Eltern."
+    },
+    {
+      "type": "noun",
+      "german": "Geschwister",
+      "translation_ru": "братья и сёстры; братья/сёстры",
+      "article": "die",
+      "plural": "—",
+      "example": "Ich habe zwei Geschwister."
+    },
+    {
+      "type": "noun",
+      "german": "Großeltern",
+      "translation_ru": "бабушка и дедушка; дедушка и бабушка",
+      "article": "die",
+      "plural": "—",
+      "example": "Das sind meine Großeltern."
+    },
+    {
+      "type": "noun",
+      "german": "Ehemann",
+      "translation_ru": "муж",
+      "article": "der",
+      "plural": "Ehemänner",
+      "example": "Das ist mein Ehemann."
+    },
+    {
+      "type": "noun",
+      "german": "Ehe",
+      "translation_ru": "брак",
+      "article": "die",
+      "plural": "Ehen",
+      "example": "Die Ehe ist geschieden."
+    },
+    {
+      "type": "noun",
+      "german": "Pause",
+      "translation_ru": "перерыв",
+      "article": "die",
+      "plural": "Pausen",
+      "example": "Wir machen eine Pause."
+    },
+    {
+      "type": "word",
+      "german": "Deutschland",
+      "translation_ru": "Германия"
+    },
+    {
+      "type": "word",
+      "german": "Österreich",
+      "translation_ru": "Австрия",
+      "note": "Название страны без артикля: aus Österreich."
+    },
+    {
+      "type": "word",
+      "german": "die Schweiz",
+      "translation_ru": "Швейцария",
+      "note": "Название страны употребляется с артиклем die: aus der Schweiz."
+    },
+    {
+      "type": "word",
+      "german": "Polen",
+      "translation_ru": "Польша"
+    },
+    {
+      "type": "word",
+      "german": "Kanada",
+      "translation_ru": "Канада"
+    },
+    {
+      "type": "word",
+      "german": "Portugal",
+      "translation_ru": "Португалия"
+    },
+    {
+      "type": "word",
+      "german": "Indien",
+      "translation_ru": "Индия"
+    },
+    {
+      "type": "word",
+      "german": "Iran",
+      "translation_ru": "Иран"
+    },
+    {
+      "type": "word",
+      "german": "Thailand",
+      "translation_ru": "Таиланд"
+    },
+    {
+      "type": "word",
+      "german": "Spanien",
+      "translation_ru": "Испания"
+    },
+    {
+      "type": "word",
+      "german": "Italien",
+      "translation_ru": "Италия"
+    },
+    {
+      "type": "word",
+      "german": "Griechenland",
+      "translation_ru": "Греция"
+    },
+    {
+      "type": "word",
+      "german": "Türkei",
+      "translation_ru": "Турция"
+    },
+    {
+      "type": "word",
+      "german": "Ungarn",
+      "translation_ru": "Венгрия"
+    },
+    {
+      "type": "word",
+      "german": "Rumänien",
+      "translation_ru": "Румыния"
+    },
+    {
+      "type": "word",
+      "german": "Bulgarien",
+      "translation_ru": "Болгария"
+    },
+    {
+      "type": "word",
+      "german": "Syrien",
+      "translation_ru": "Сирия"
+    },
+    {
+      "type": "word",
+      "german": "Ukraine",
+      "translation_ru": "Украина"
+    },
+    {
+      "type": "word",
+      "german": "Bosnien",
+      "translation_ru": "Босния"
+    },
+    {
+      "type": "word",
+      "german": "Kroatien",
+      "translation_ru": "Хорватия"
+    },
+    {
+      "type": "word",
+      "german": "Polnisch",
+      "translation_ru": "польский язык; по-польски"
+    },
+    {
+      "type": "word",
+      "german": "Englisch",
+      "translation_ru": "английский язык; по-английски"
+    },
+    {
+      "type": "word",
+      "german": "Russisch",
+      "translation_ru": "русский язык; по-русски"
+    },
+    {
+      "type": "word",
+      "german": "Spanisch",
+      "translation_ru": "испанский язык; по-испански"
+    },
+    {
+      "type": "word",
+      "german": "Türkisch",
+      "translation_ru": "турецкий язык; по-турецки"
+    },
+    {
+      "type": "word",
+      "german": "Italienisch",
+      "translation_ru": "итальянский язык; по-итальянски"
+    },
+    {
+      "type": "word",
+      "german": "Französisch",
+      "translation_ru": "французский язык; по-французски"
+    },
+    {
+      "type": "word",
+      "german": "Arabisch",
+      "translation_ru": "арабский язык; по-арабски"
+    },
+    {
+      "type": "word",
+      "german": "Griechisch",
+      "translation_ru": "греческий язык; по-гречески"
+    },
+    {
+      "type": "word",
+      "german": "Ungarisch",
+      "translation_ru": "венгерский язык; по-венгерски"
+    },
+    {
+      "type": "word",
+      "german": "Rumänisch",
+      "translation_ru": "румынский язык; по-румынски"
+    },
+    {
+      "type": "word",
+      "german": "Bulgarisch",
+      "translation_ru": "болгарский язык; по-болгарски"
+    },
+    {
+      "type": "word",
+      "german": "Persisch",
+      "translation_ru": "персидский язык; по-персидски",
+      "note": "Персидский язык; не путать со страной Iran."
+    },
+    {
+      "type": "word",
+      "german": "Lublin",
+      "translation_ru": "Люблин"
+    },
+    {
+      "type": "word",
+      "german": "Ottawa",
+      "translation_ru": "Оттава"
+    },
+    {
+      "type": "word",
+      "german": "Poznań",
+      "translation_ru": "Познань"
+    },
+    {
+      "type": "word",
+      "german": "München",
+      "translation_ru": "Мюнхен"
+    },
+    {
+      "type": "word",
+      "german": "Berlin",
+      "translation_ru": "Берлин"
+    },
+    {
+      "type": "word",
+      "german": "Madrid",
+      "translation_ru": "Мадрид"
+    },
+    {
+      "type": "word",
+      "german": "Hamburg",
+      "translation_ru": "Гамбург"
+    },
+    {
+      "type": "word",
+      "german": "Köln",
+      "translation_ru": "Кёльн"
+    },
+    {
+      "type": "word",
+      "german": "Wien",
+      "translation_ru": "Вена"
+    },
+    {
+      "type": "word",
+      "german": "Düsseldorf",
+      "translation_ru": "Дюссельдорф"
+    }
+  ]
+}

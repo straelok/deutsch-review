@@ -64,6 +64,8 @@ class _PracticePageState extends State<PracticePage> {
   bool _complete = false;
   Map<String, bool> _grammarResults = const {};
   final Map<String, TextEditingController> _grammarControllers = {};
+  String? _selectedGrammarOption;
+  List<int> _wordOrderSelection = const [];
 
   LearningItem? get _current => _queue.isEmpty ? null : _queue.first;
   String? get _currentGrammar =>
@@ -365,22 +367,22 @@ class _PracticePageState extends State<PracticePage> {
                   if (paradigm != null)
                     _paradigmFields(paradigm)
                   else ...[
+                    if (_exerciseInstruction(exercise!).isNotEmpty) ...[
+                      Text(
+                        _exerciseInstruction(exercise),
+                        textAlign: TextAlign.center,
+                        style: Theme.of(context).textTheme.titleMedium,
+                      ),
+                      const SizedBox(height: 12),
+                    ],
                     Text(
-                      exercise!.prompt,
+                      exercise.prompt,
                       key: const Key('grammar-prompt'),
                       textAlign: TextAlign.center,
                       style: Theme.of(context).textTheme.headlineMedium,
                     ),
                     const SizedBox(height: 24),
-                    TextField(
-                      key: const Key('grammar-answer'),
-                      controller: _answerController,
-                      focusNode: _answerFocus,
-                      enabled: !_answered,
-                      decoration: InputDecoration(labelText: s.grammarEnding),
-                      textInputAction: TextInputAction.done,
-                      onSubmitted: (_) => _answered ? null : _checkGrammar(),
-                    ),
+                    _grammarExerciseInput(exercise),
                   ],
                   if (_answered) ...[
                     const SizedBox(height: 18),
@@ -423,6 +425,111 @@ class _PracticePageState extends State<PracticePage> {
       ),
     );
   }
+
+  Widget _grammarExerciseInput(GrammarExercise exercise) {
+    final s = widget.strings;
+    switch (exercise.type) {
+      case GrammarExerciseType.text:
+        return TextField(
+          key: const Key('grammar-answer'),
+          controller: _answerController,
+          focusNode: _answerFocus,
+          enabled: !_answered,
+          decoration: InputDecoration(labelText: s.grammarEnding),
+          textInputAction: TextInputAction.done,
+          onSubmitted: (_) => _answered ? null : _checkGrammar(),
+        );
+      case GrammarExerciseType.choice:
+      case GrammarExerciseType.yesNo:
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Text(s.chooseAnswer),
+            const SizedBox(height: 10),
+            Wrap(
+              alignment: WrapAlignment.center,
+              spacing: 10,
+              runSpacing: 10,
+              children: exercise.options
+                  .map(
+                    (option) => ChoiceChip(
+                      key: Key('grammar-option-$option'),
+                      label: Text(option),
+                      selected: _selectedGrammarOption == option,
+                      onSelected: _answered
+                          ? null
+                          : (_) => setState(
+                                () => _selectedGrammarOption = option,
+                              ),
+                    ),
+                  )
+                  .toList(growable: false),
+            ),
+          ],
+        );
+      case GrammarExerciseType.wordOrder:
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Text(s.buildSentence),
+            const SizedBox(height: 10),
+            Container(
+              key: const Key('grammar-word-order-answer'),
+              constraints: const BoxConstraints(minHeight: 52),
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: Theme.of(context).colorScheme.outlineVariant,
+                ),
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: Text(_wordOrderAnswer(exercise)),
+            ),
+            const SizedBox(height: 10),
+            Wrap(
+              alignment: WrapAlignment.center,
+              spacing: 8,
+              runSpacing: 8,
+              children: [
+                for (var index = 0; index < exercise.options.length; index++)
+                  OutlinedButton(
+                    key: Key('grammar-token-$index'),
+                    onPressed: _answered || _wordOrderSelection.contains(index)
+                        ? null
+                        : () => setState(
+                              () => _wordOrderSelection = [
+                                ..._wordOrderSelection,
+                                index,
+                              ],
+                            ),
+                    child: Text(exercise.options[index]),
+                  ),
+              ],
+            ),
+            TextButton.icon(
+              key: const Key('grammar-word-order-undo'),
+              onPressed: _answered || _wordOrderSelection.isEmpty
+                  ? null
+                  : () => setState(
+                        () => _wordOrderSelection = _wordOrderSelection
+                            .take(_wordOrderSelection.length - 1)
+                            .toList(growable: false),
+                      ),
+              icon: const Icon(Icons.undo),
+              label: Text(s.undoLastWord),
+            ),
+          ],
+        );
+    }
+  }
+
+  String _exerciseInstruction(GrammarExercise exercise) =>
+      widget.strings.isRussian
+          ? exercise.instructionRu
+          : exercise.instructionDe;
+
+  String _wordOrderAnswer(GrammarExercise exercise) =>
+      _wordOrderSelection.map((index) => exercise.options[index]).join(' ');
 
   Widget _paradigmFields(GrammarVerb verb) {
     final regular = verb.topicId == 'regular_present';
@@ -521,13 +628,13 @@ class _PracticePageState extends State<PracticePage> {
     final now = DateTime.now();
     final items = await widget.learningItems.findActive();
     final grammarProgress = await widget.grammar.progress();
-    final activeLemmas = _verbLemmas(items);
+    final activeItemKeys = _activeItemKeys(items);
     final availableTopics = widget.grammarCatalog.availableTopicIds(
       learnedTopicIds: grammarProgress.values
           .where((entry) => entry.learned)
           .map((entry) => entry.topicId)
           .toSet(),
-      activeLemmas: activeLemmas,
+      activeItemKeys: activeItemKeys,
     );
     final sessions = await widget.sessions.ensureDay(
       localDate: localDayKey(now),
@@ -655,37 +762,68 @@ class _PracticePageState extends State<PracticePage> {
   }) async {
     if (length <= 0 || _availableGrammarTopics.isEmpty) return const [];
     final outcomes = await widget.grammar.recentOutcomes();
-    final topicId = buildWeightedQueue(
+    final itemKeys = _activeItemKeys(_activeItems);
+    final verbLemmas = _verbLemmas(_activeItems);
+    final used = _daySessions.expand((session) => session.queueItemIds).toSet();
+    final queue = <String>[];
+    if (includeParadigm) {
+      final conjugationTopics = _availableGrammarTopics
+          .where(const {'regular_present', 'sein', 'haben'}.contains)
+          .toList(growable: false);
+      if (conjugationTopics.isNotEmpty) {
+        final topicId = buildWeightedQueue(
+          itemIds: conjugationTopics,
+          recentOutcomes: outcomes,
+          length: 1,
+          random: _random,
+        ).first;
+        final verbs = widget.grammarCatalog.verbsFor(
+          topicId: topicId,
+          activeLemmas: verbLemmas,
+        );
+        if (verbs.isNotEmpty) {
+          final verb = verbs[_random.nextInt(verbs.length)];
+          queue.add('paradigm:$topicId:${verb.lemma}');
+        }
+      }
+    }
+
+    final topicPlan = buildWeightedQueue(
       itemIds: _availableGrammarTopics.toList(growable: false),
       recentOutcomes: outcomes,
-      length: 1,
+      length: length - queue.length,
       random: _random,
-    ).first;
-    final lemmas = _verbLemmas(_activeItems);
-    final verbs = widget.grammarCatalog.verbsFor(
-      topicId: topicId,
-      activeLemmas: lemmas,
     );
-    if (verbs.isEmpty) return const [];
-    final verb = verbs[_random.nextInt(verbs.length)];
-    final used = _daySessions.expand((session) => session.queueItemIds).toSet();
-    final candidates = widget.grammarCatalog
-        .exercisesFor(topicId: topicId, activeLemmas: lemmas)
-        .where(
-          (exercise) =>
-              exercise.lemma == verb.lemma && !used.contains(exercise.id),
+    for (final topicId in topicPlan) {
+      final eligible = widget.grammarCatalog.exercisesFor(
+        topicId: topicId,
+        activeItemKeys: itemKeys,
+      );
+      var candidates = eligible
+          .where(
+            (exercise) =>
+                !used.contains(exercise.id) && !queue.contains(exercise.id),
+          )
+          .toList(growable: true);
+      if (candidates.isEmpty) candidates = [...eligible];
+      if (candidates.isEmpty) continue;
+      candidates.shuffle(_random);
+      queue.add(candidates.first.id);
+    }
+
+    final allEligible = _availableGrammarTopics
+        .expand(
+          (topicId) => widget.grammarCatalog.exercisesFor(
+            topicId: topicId,
+            activeItemKeys: itemKeys,
+          ),
         )
         .toList(growable: true)
       ..shuffle(_random);
-    if (candidates.isEmpty) return const [];
-    final queue = <String>[];
-    if (includeParadigm) {
-      queue.add('paradigm:$topicId:${verb.lemma}');
-    }
-    var index = 0;
-    while (queue.length < length) {
-      queue.add(candidates[index % candidates.length].id);
-      index++;
+    var fallbackIndex = 0;
+    while (queue.length < length && allEligible.isNotEmpty) {
+      queue.add(allEligible[fallbackIndex % allEligible.length].id);
+      fallbackIndex++;
     }
     return queue;
   }
@@ -696,7 +834,7 @@ class _PracticePageState extends State<PracticePage> {
     final exercise = widget.grammarCatalog.exercise(id);
     return exercise != null &&
         _availableGrammarTopics.contains(exercise.topicId) &&
-        _verbLemmas(_activeItems).contains(exercise.lemma);
+        _activeItemKeys(_activeItems).contains(exercise.itemKey);
   }
 
   GrammarVerb? _paradigm(String id) {
@@ -710,6 +848,13 @@ class _PracticePageState extends State<PracticePage> {
       .where((item) => item.type == LearningItemType.verb)
       .map(learningItemGerman)
       .map(GrammarCatalog.normalizeLemma)
+      .toSet();
+
+  Set<String> _activeItemKeys(List<LearningItem> items) => items
+      .map(
+        (item) => '${item.type.wireName}:'
+            '${GrammarCatalog.normalizeLemma(learningItemGerman(item))}',
+      )
       .toSet();
 
   List<LearningItem> _itemsForIds(List<String> ids) {
@@ -811,7 +956,13 @@ class _PracticePageState extends State<PracticePage> {
       }
     } else {
       final exercise = widget.grammarCatalog.exercise(taskId)!;
-      final answer = _answerController.text.trim();
+      final answer = switch (exercise.type) {
+        GrammarExerciseType.text => _answerController.text.trim(),
+        GrammarExerciseType.choice ||
+        GrammarExerciseType.yesNo =>
+          _selectedGrammarOption ?? '',
+        GrammarExerciseType.wordOrder => _wordOrderAnswer(exercise),
+      };
       if (answer.isEmpty) return;
       final correct = isPracticeAnswerCorrect(
         answer: answer,
@@ -868,6 +1019,8 @@ class _PracticePageState extends State<PracticePage> {
 
   void _clearGrammarInput() {
     _answerController.clear();
+    _selectedGrammarOption = null;
+    _wordOrderSelection = const [];
     for (final controller in _grammarControllers.values) {
       controller.clear();
     }

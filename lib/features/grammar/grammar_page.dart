@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../domain/grammar.dart';
-import '../../domain/learning_item.dart';
 import '../../domain/learning_item_display.dart';
 import '../../domain/repositories/grammar_repository.dart';
 import '../../domain/repositories/learning_item_repository.dart';
@@ -33,7 +32,7 @@ class GrammarPage extends StatefulWidget {
 class _GrammarPageState extends State<GrammarPage> {
   Map<String, GrammarTopicProgress> _progress = const {};
   Map<String, GrammarSummary> _summaries = const {};
-  Set<String> _activeVerbLemmas = const {};
+  Set<String> _activeItemKeys = const {};
   bool _loading = true;
 
   @override
@@ -69,7 +68,7 @@ class _GrammarPageState extends State<GrammarPage> {
   Widget _topicCard(GrammarTopic topic) {
     final s = widget.strings;
     final learned = _progress[topic.id]?.learned ?? false;
-    final available = _hasRequiredVerb(topic.id);
+    final available = _hasRequiredMaterial(topic.id);
     final summary =
         _summaries[topic.id] ?? const GrammarSummary(attempts: 0, correct: 0);
     return Card(
@@ -97,7 +96,9 @@ class _GrammarPageState extends State<GrammarPage> {
                       ? s.grammarLearned
                       : available
                           ? s.grammarReady
-                          : s.grammarNeedsVerb(_requiredLemma(topic.id))
+                          : s.grammarNeedsMaterial(
+                              _requiredMaterial(topic.id),
+                            )
                   : s.grammarReference,
             ),
             if (summary.attempts > 0)
@@ -120,8 +121,8 @@ class _GrammarPageState extends State<GrammarPage> {
         topic: topic,
         strings: widget.strings,
         learned: _progress[topic.id]?.learned ?? false,
-        canLearn: _hasRequiredVerb(topic.id),
-        requiredLemma: _requiredLemma(topic.id),
+        canLearn: _hasRequiredMaterial(topic.id),
+        requiredMaterial: _requiredMaterial(topic.id),
         summary: _summaries[topic.id] ??
             const GrammarSummary(attempts: 0, correct: 0),
         onToggle: topic.trainable
@@ -139,23 +140,23 @@ class _GrammarPageState extends State<GrammarPage> {
     }
   }
 
-  bool _hasRequiredVerb(String topicId) {
+  bool _hasRequiredMaterial(String topicId) {
     return widget.catalog
-        .verbsFor(
-          topicId: topicId,
-          activeLemmas: _activeVerbLemmas,
-        )
+        .exercisesFor(topicId: topicId, activeItemKeys: _activeItemKeys)
         .isNotEmpty;
   }
 
-  String _requiredLemma(String topicId) => switch (topicId) {
-        'sein' => 'sein',
-        'haben' => 'haben',
-        _ => widget.strings.choose(
-            'ein unterstütztes regelmäßiges Verb',
-            'поддерживаемый регулярный глагол',
-          ),
-      };
+  String _requiredMaterial(String topicId) {
+    final examples = widget.catalog.exercises
+        .where((exercise) => exercise.topicId == topicId)
+        .map((exercise) => exercise.lemma)
+        .toSet()
+        .take(3)
+        .join(', ');
+    return examples.isEmpty
+        ? widget.strings.choose('ein passendes Wort', 'подходящее слово')
+        : examples;
+  }
 
   String _title(GrammarTopic topic) =>
       widget.strings.isRussian ? topic.titleRu : topic.titleDe;
@@ -172,10 +173,11 @@ class _GrammarPageState extends State<GrammarPage> {
     }
     if (!mounted) return;
     setState(() {
-      _activeVerbLemmas = items
-          .where((item) => item.type == LearningItemType.verb)
-          .map(learningItemGerman)
-          .map(GrammarCatalog.normalizeLemma)
+      _activeItemKeys = items
+          .map(
+            (item) => '${item.type.wireName}:'
+                '${GrammarCatalog.normalizeLemma(learningItemGerman(item))}',
+          )
           .toSet();
       _progress = progress;
       _summaries = summaries;
@@ -190,7 +192,7 @@ class _GrammarTopicDialog extends StatefulWidget {
     required this.strings,
     required this.learned,
     required this.canLearn,
-    required this.requiredLemma,
+    required this.requiredMaterial,
     required this.summary,
     this.onToggle,
   });
@@ -199,7 +201,7 @@ class _GrammarTopicDialog extends StatefulWidget {
   final UiStrings strings;
   final bool learned;
   final bool canLearn;
-  final String requiredLemma;
+  final String requiredMaterial;
   final GrammarSummary summary;
   final Future<void> Function(bool learned)? onToggle;
 
@@ -262,7 +264,7 @@ class _GrammarTopicDialogState extends State<_GrammarTopicDialog> {
                 ),
                 if (!widget.canLearn && !_learned) ...[
                   const SizedBox(height: 8),
-                  Text(s.grammarNeedsVerb(widget.requiredLemma)),
+                  Text(s.grammarNeedsMaterial(widget.requiredMaterial)),
                 ],
               ],
             ],

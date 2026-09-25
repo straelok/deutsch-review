@@ -45,6 +45,11 @@ final class GrammarExercise {
     required this.lemma,
     required this.prompt,
     required this.answer,
+    this.type = GrammarExerciseType.text,
+    this.requiredItemType = 'verb',
+    this.options = const [],
+    this.instructionDe = '',
+    this.instructionRu = '',
   });
 
   final String id;
@@ -52,6 +57,31 @@ final class GrammarExercise {
   final String lemma;
   final String prompt;
   final String answer;
+  final GrammarExerciseType type;
+  final String requiredItemType;
+  final List<String> options;
+  final String instructionDe;
+  final String instructionRu;
+
+  String get itemKey => '$requiredItemType:$lemma';
+}
+
+enum GrammarExerciseType {
+  text('text'),
+  choice('choice'),
+  yesNo('yes_no'),
+  wordOrder('word_order');
+
+  const GrammarExerciseType(this.wireName);
+
+  final String wireName;
+
+  static GrammarExerciseType fromWireName(String value) => values.firstWhere(
+        (type) => type.wireName == value,
+        orElse: () => throw FormatException(
+          'Unknown grammar exercise type: $value',
+        ),
+      );
 }
 
 final class GrammarTopicProgress {

@@ -17,7 +17,7 @@
         "В словаре глагол записан в инфинитиве. В предложении его форма изменяется."
       ],
       "table": [["lernen", "учить"], ["wohnen", "жить"], ["sein", "быть"]],
-      "trainable": false
+      "trainable": true
     },
     {
       "id": "infinitive_stem",
@@ -35,7 +35,7 @@
         "К основе добавляется личное окончание."
       ],
       "table": [["lernen", "lern", "-en"], ["wohnen", "wohn", "-en"], ["machen", "mach", "-en"]],
-      "trainable": false
+      "trainable": true
     },
     {
       "id": "personal_pronouns",
@@ -53,7 +53,7 @@
         "Sie — вежливое обращение, оно пишется с заглавной буквы."
       ],
       "table": [["ich", "я"], ["du", "ты"], ["er/sie/es", "он/она/оно"], ["wir", "мы"], ["ihr", "вы"], ["sie/Sie", "они/Вы"]],
-      "trainable": false
+      "trainable": true
     },
     {
       "id": "regular_present",
@@ -95,6 +95,186 @@
       "explanation_de": ["Achte besonders auf du hast und er/sie/es hat."],
       "explanation_ru": ["Обратите особое внимание на du hast и er/sie/es hat."],
       "table": [["ich", "habe"], ["du", "hast"], ["er/sie/es", "hat"], ["wir", "haben"], ["ihr", "habt"], ["sie/Sie", "haben"]],
+      "trainable": true
+    },
+    {
+      "id": "parts_of_speech",
+      "order": 7,
+      "title_de": "Wortarten erkennen",
+      "title_ru": "Как различать части речи",
+      "summary_de": "Wörter haben verschiedene Aufgaben im Satz.",
+      "summary_ru": "Слова выполняют в предложении разные задачи.",
+      "explanation_de": [
+        "Nomen nennen Personen oder Dinge, Verben beschreiben Handlungen und Adjektive Eigenschaften.",
+        "Pronomen ersetzen Nomen, Adverbien ergänzen Umstände und Präpositionen verbinden Wörter."
+      ],
+      "explanation_ru": [
+        "Существительные называют людей и предметы, глаголы обозначают действия, а прилагательные — признаки.",
+        "Местоимения заменяют существительные, наречия уточняют обстоятельства, а предлоги связывают слова."
+      ],
+      "table": [["Nomen", "der Tisch"], ["Verb", "lernen"], ["Adjektiv", "klein"], ["Adverb", "heute"], ["Präposition", "in"]],
+      "trainable": true
+    },
+    {
+      "id": "noun_basics",
+      "order": 8,
+      "title_de": "Nomen und Großschreibung",
+      "title_ru": "Существительные и заглавная буква",
+      "summary_de": "Deutsche Nomen werden großgeschrieben.",
+      "summary_ru": "Немецкие существительные пишутся с заглавной буквы.",
+      "explanation_de": [
+        "Ein Nomen bezeichnet zum Beispiel eine Person, einen Ort oder einen Gegenstand.",
+        "Nomen beginnen im Deutschen immer mit einem Großbuchstaben und werden meist mit Artikel gelernt."
+      ],
+      "explanation_ru": [
+        "Существительное называет, например, человека, место или предмет.",
+        "В немецком существительные всегда начинаются с заглавной буквы и обычно учатся вместе с артиклем."
+      ],
+      "table": [["Person", "die Frau"], ["Ort", "die Schule"], ["Gegenstand", "der Tisch"]],
+      "trainable": true
+    },
+    {
+      "id": "articles",
+      "order": 9,
+      "title_de": "Artikel: der, die, das und ein",
+      "title_ru": "Артикли: der, die, das и ein",
+      "summary_de": "Der Artikel zeigt Genus und Bestimmtheit.",
+      "summary_ru": "Артикль показывает род и определённость.",
+      "explanation_de": [
+        "Lerne jedes Nomen zusammen mit seinem bestimmten Artikel: der, die oder das.",
+        "Ein und eine nennt etwas noch nicht Bestimmtes. Ohne Artikel spricht man vom Nullartikel."
+      ],
+      "explanation_ru": [
+        "Учите каждое существительное вместе с определённым артиклем: der, die или das.",
+        "Ein и eine называют пока не определённый предмет. Отсутствие артикля называется нулевым артиклем."
+      ],
+      "table": [["maskulin", "der / ein"], ["feminin", "die / eine"], ["neutral", "das / ein"], ["Plural", "die"]],
+      "trainable": true
+    },
+    {
+      "id": "adjectives_adverbs",
+      "order": 10,
+      "title_de": "Adjektive und Adverbien",
+      "title_ru": "Прилагательные и наречия",
+      "summary_de": "Eigenschaft eines Nomens oder nähere Angabe zur Handlung.",
+      "summary_ru": "Признак предмета или уточнение действия.",
+      "explanation_de": [
+        "Ein Adjektiv beschreibt ein Nomen: ein kleines Haus.",
+        "Ein Adverb beschreibt zum Beispiel wann oder wie etwas geschieht: heute lernen, schnell sprechen."
+      ],
+      "explanation_ru": [
+        "Прилагательное описывает существительное: ein kleines Haus.",
+        "Наречие уточняет, например, когда или как происходит действие: heute lernen, schnell sprechen."
+      ],
+      "table": [["Adjektiv", "ein kleines Haus"], ["Adverb", "heute lernen / schnell sprechen"]],
+      "trainable": true
+    },
+    {
+      "id": "prepositions",
+      "order": 11,
+      "title_de": "Präpositionen",
+      "title_ru": "Предлоги",
+      "summary_de": "Präpositionen zeigen Beziehungen wie Ort oder Richtung.",
+      "summary_ru": "Предлоги показывают отношения места, направления и другие связи.",
+      "explanation_de": [
+        "Präpositionen stehen vor einer Wortgruppe: in Berlin, aus Polen, mit Anna.",
+        "Die genaue Kasusform wird später gelernt; zuerst erkennst du Bedeutung und Position."
+      ],
+      "explanation_ru": [
+        "Предлог ставится перед группой слов: in Berlin, aus Polen, mit Anna.",
+        "Точная форма падежа будет изучаться позже; сначала важно узнавать значение и место предлога."
+      ],
+      "table": [["in", "в"], ["aus", "из"], ["mit", "с"], ["für", "для"], ["bei", "у / при"]],
+      "trainable": true
+    },
+    {
+      "id": "sentence_basics",
+      "order": 12,
+      "title_de": "Der einfache Satz",
+      "title_ru": "Простое предложение",
+      "summary_de": "Im Aussagesatz steht das konjugierte Verb an Position zwei.",
+      "summary_ru": "В повествовательном предложении спрягаемый глагол занимает второе место.",
+      "explanation_de": [
+        "Ein einfacher Aussagesatz hat oft Subjekt, Verb und Ergänzung: Ich lerne Deutsch.",
+        "Auch wenn ein anderes Element zuerst steht, bleibt das Verb an Position zwei: Heute lerne ich Deutsch."
+      ],
+      "explanation_ru": [
+        "Простое утверждение часто состоит из подлежащего, глагола и дополнения: Ich lerne Deutsch.",
+        "Если на первом месте стоит другой элемент, глагол всё равно остаётся вторым: Heute lerne ich Deutsch."
+      ],
+      "table": [["Position 1", "Position 2", "Rest"], ["Ich", "lerne", "Deutsch."], ["Heute", "lerne", "ich Deutsch."]],
+      "trainable": true
+    },
+    {
+      "id": "yes_no_questions",
+      "order": 13,
+      "title_de": "Ja-/Nein-Fragen",
+      "title_ru": "Вопросы с ответом да или нет",
+      "summary_de": "Das Verb steht am Anfang, die Antwort ist oft Ja oder Nein.",
+      "summary_ru": "Глагол стоит в начале, а ответ часто начинается с Ja или Nein.",
+      "explanation_de": [
+        "Eine Ja-/Nein-Frage beginnt mit dem konjugierten Verb: Lernst du Deutsch?",
+        "Antworte kurz mit Ja oder Nein und prüfe die Information im Satz."
+      ],
+      "explanation_ru": [
+        "Вопрос с ответом да или нет начинается со спрягаемого глагола: Lernst du Deutsch?",
+        "Ответьте коротко Ja или Nein, сверяя вопрос с данной информацией."
+      ],
+      "table": [["Frage", "Lernst du Deutsch?"], ["Ja", "Ja, ich lerne Deutsch."], ["Nein", "Nein, ich lerne Englisch."]],
+      "trainable": true
+    },
+    {
+      "id": "w_questions",
+      "order": 14,
+      "title_de": "W-Fragen",
+      "title_ru": "Вопросы с вопросительным словом",
+      "summary_de": "Das Fragewort nennt die gesuchte Information.",
+      "summary_ru": "Вопросительное слово показывает, какую информацию нужно назвать.",
+      "explanation_de": [
+        "Wer fragt nach einer Person, was nach einer Sache, wo nach einem Ort, wann nach einer Zeit und wie nach der Art.",
+        "Nach dem Fragewort steht meist das konjugierte Verb: Wo wohnst du?"
+      ],
+      "explanation_ru": [
+        "Wer спрашивает о человеке, was — о предмете, wo — о месте, wann — о времени, wie — о способе.",
+        "После вопросительного слова обычно стоит спрягаемый глагол: Wo wohnst du?"
+      ],
+      "table": [["Wer?", "Person"], ["Was?", "Sache"], ["Wo?", "Ort"], ["Wann?", "Zeit"], ["Wie?", "Art"]],
+      "trainable": true
+    },
+    {
+      "id": "negation",
+      "order": 15,
+      "title_de": "Negation mit nicht und kein",
+      "title_ru": "Отрицание с nicht и kein",
+      "summary_de": "kein negiert meist ein Nomen, nicht andere Satzteile.",
+      "summary_ru": "Kein обычно отрицает существительное, nicht — другие части предложения.",
+      "explanation_de": [
+        "Kein steht bei einem Nomen ohne bestimmten Artikel: Ich habe kein Auto.",
+        "Nicht negiert zum Beispiel ein Verb, ein Adjektiv oder eine ganze Aussage: Ich komme heute nicht."
+      ],
+      "explanation_ru": [
+        "Kein ставится при существительном без определённого артикля: Ich habe kein Auto.",
+        "Nicht отрицает, например, действие, признак или всё утверждение: Ich komme heute nicht."
+      ],
+      "table": [["kein", "Ich habe kein Auto."], ["nicht", "Ich komme heute nicht."]],
+      "trainable": true
+    },
+    {
+      "id": "cases_intro",
+      "order": 16,
+      "title_de": "Kasus: Nominativ und Akkusativ",
+      "title_ru": "Падежи: Nominativ и Akkusativ",
+      "summary_de": "Der Kasus zeigt die Aufgabe eines Nomens im Satz.",
+      "summary_ru": "Падеж показывает роль существительного в предложении.",
+      "explanation_de": [
+        "Der Nominativ nennt meist, wer oder was handelt. Der Akkusativ nennt oft das direkte Ziel der Handlung.",
+        "Bei maskulinen Nomen wird der zu den: Der Mann kauft den Apfel. Weitere Formen kommen später."
+      ],
+      "explanation_ru": [
+        "Nominativ обычно называет того, кто действует. Akkusativ часто обозначает прямой объект действия.",
+        "У существительных мужского рода der меняется на den: Der Mann kauft den Apfel. Остальные формы будут позже."
+      ],
+      "table": [["Nominativ", "Wer oder was?", "der Mann"], ["Akkusativ", "Wen oder was?", "den Apfel"]],
       "trainable": true
     }
   ],

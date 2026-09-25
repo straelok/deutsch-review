@@ -293,6 +293,63 @@ void main() {
     expect(find.text('lernen'), findsOneWidget);
     expect(find.byKey(const Key('grammar-form-ich')), findsOneWidget);
   });
+
+  testWidgets('mixes learned foundation topics and supports new answer modes', (
+    tester,
+  ) async {
+    final database = AppDatabase.inMemory();
+    addTearDown(database.close);
+    final grammar = SqliteGrammarRepository(database);
+    final catalog = _foundationGrammarCatalog();
+    await SqliteLearningItemRepository(database).save(_verb());
+    final now = DateTime.now().toUtc();
+    await grammar.setLearned(
+      topicId: 'verb_basics',
+      learned: true,
+      now: now,
+    );
+    await grammar.setLearned(
+      topicId: 'sentence_basics',
+      learned: true,
+      now: now,
+    );
+
+    await tester.pumpWidget(_app(database, grammarCatalog: catalog));
+    await tester.pumpAndSettle();
+    await tester.scrollUntilVisible(find.text('Sitzung 6'), 300);
+    await tester.tap(find.byKey(const Key('start-review-6')));
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 200));
+
+    final session = (await SqliteDailySessionRepository(database).ensureDay(
+      localDate: localDayKey(DateTime.now()),
+      now: DateTime.now().toUtc(),
+      includeGrammar: true,
+    ))
+        .firstWhere((entry) => entry.slot == 6);
+    expect(session.queueItemIds.toSet(),
+        {'foundation-choice', 'foundation-order'});
+
+    Future<void> answerVisibleExercise() async {
+      if (find.byKey(const Key('grammar-option-Verb')).evaluate().isNotEmpty) {
+        await tester.tap(find.byKey(const Key('grammar-option-Verb')));
+      } else {
+        await tester.tap(find.byKey(const Key('grammar-token-2')));
+        await tester.tap(find.byKey(const Key('grammar-token-1')));
+        await tester.tap(find.byKey(const Key('grammar-token-0')));
+      }
+      await tester.tap(find.byKey(const Key('check-grammar-answer')));
+      await tester.pump();
+      expect(find.text('Richtig'), findsOneWidget);
+      await tester.tap(find.byKey(const Key('next-grammar-answer')));
+      await tester.pump();
+    }
+
+    await answerVisibleExercise();
+    await answerVisibleExercise();
+    expect(database.connection.select('SELECT * FROM grammar_attempts'),
+        hasLength(2));
+  });
 }
 
 DeutschReviewApp _app(
@@ -405,5 +462,56 @@ GrammarCatalog _grammarCatalog() {
         answer: 'e',
       ),
     ),
+  );
+}
+
+GrammarCatalog _foundationGrammarCatalog() {
+  const choiceTopic = GrammarTopic(
+    id: 'verb_basics',
+    order: 1,
+    titleDe: 'Was ist ein Verb?',
+    titleRu: 'Что такое глагол',
+    summaryDe: 'Wortart',
+    summaryRu: 'Часть речи',
+    explanationDe: ['Erklärung'],
+    explanationRu: ['Объяснение'],
+    table: [],
+    trainable: true,
+  );
+  const orderTopic = GrammarTopic(
+    id: 'sentence_basics',
+    order: 2,
+    titleDe: 'Der einfache Satz',
+    titleRu: 'Простое предложение',
+    summaryDe: 'Wortstellung',
+    summaryRu: 'Порядок слов',
+    explanationDe: ['Erklärung'],
+    explanationRu: ['Объяснение'],
+    table: [],
+    trainable: true,
+  );
+  return GrammarCatalog(
+    topics: const [choiceTopic, orderTopic],
+    verbs: const [],
+    exercises: const [
+      GrammarExercise(
+        id: 'foundation-choice',
+        topicId: 'verb_basics',
+        lemma: 'lernen',
+        prompt: 'Welche Wortart ist „lernen“?',
+        answer: 'Verb',
+        type: GrammarExerciseType.choice,
+        options: ['Nomen', 'Verb'],
+      ),
+      GrammarExercise(
+        id: 'foundation-order',
+        topicId: 'sentence_basics',
+        lemma: 'lernen',
+        prompt: 'Ordne die Wörter.',
+        answer: 'Ich lerne heute.',
+        type: GrammarExerciseType.wordOrder,
+        options: ['heute.', 'lerne', 'Ich'],
+      ),
+    ],
   );
 }
