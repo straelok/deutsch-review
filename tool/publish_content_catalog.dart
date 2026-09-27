@@ -95,7 +95,7 @@ Future<void> _ensureBucket(
   final getResponse = await getRequest.close();
   final getBody = await utf8.decoder.bind(getResponse).join();
   if (getResponse.statusCode >= 200 && getResponse.statusCode < 300) return;
-  if (getResponse.statusCode != HttpStatus.notFound) {
+  if (!_isMissingBucket(getResponse.statusCode, getBody)) {
     throw HttpException(
       'Bucket check failed (${getResponse.statusCode}): $getBody',
       uri: getUri,
@@ -122,6 +122,19 @@ Future<void> _ensureBucket(
     );
   }
   stdout.writeln('Created public bucket learning-content.');
+}
+
+bool _isMissingBucket(int statusCode, String body) {
+  if (statusCode == HttpStatus.notFound) return true;
+  try {
+    final decoded = jsonDecode(body);
+    return decoded is Map &&
+        (decoded['code'] == 'NoSuchBucket' ||
+            decoded['statusCode'] == '404' ||
+            decoded['statusCode'] == 404);
+  } on FormatException {
+    return false;
+  }
 }
 
 Future<void> _upload(
