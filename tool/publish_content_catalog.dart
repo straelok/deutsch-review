@@ -12,12 +12,16 @@ Future<void> main(List<String> arguments) async {
       File('${input.path}${Platform.pathSeparator}catalog.json.gz');
   final baseUrl =
       Platform.environment['SUPABASE_URL']?.replaceFirst(RegExp(r'/$'), '');
-  final serviceKey = Platform.environment['SUPABASE_SERVICE_ROLE_KEY'];
+  final serviceKey = Platform.environment['SUPABASE_SECRET_KEY'] ??
+      Platform.environment['SUPABASE_SERVICE_ROLE_KEY'];
   if (baseUrl == null ||
       baseUrl.isEmpty ||
       serviceKey == null ||
       serviceKey.isEmpty) {
-    stderr.writeln('SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY are required.');
+    stderr.writeln(
+      'SUPABASE_URL and SUPABASE_SECRET_KEY '
+      '(or SUPABASE_SERVICE_ROLE_KEY) are required.',
+    );
     exitCode = 64;
     return;
   }
@@ -37,6 +41,7 @@ Future<void> main(List<String> arguments) async {
 
   final client = HttpClient();
   try {
+    await _ensureBucket(client, baseUrl, serviceKey);
     await _upload(
       client,
       baseUrl,
@@ -79,6 +84,46 @@ Future<void> main(List<String> arguments) async {
       'Published ${manifest['content_version']} and updated latest manifest.');
 }
 
+Future<void> _ensureBucket(
+  HttpClient client,
+  String baseUrl,
+  String key,
+) async {
+  final getUri = Uri.parse('$baseUrl/storage/v1/bucket/learning-content');
+  final getRequest = await client.getUrl(getUri);
+  _authorize(getRequest, key);
+  final getResponse = await getRequest.close();
+  final getBody = await utf8.decoder.bind(getResponse).join();
+  if (getResponse.statusCode >= 200 && getResponse.statusCode < 300) return;
+  if (getResponse.statusCode != HttpStatus.notFound) {
+    throw HttpException(
+      'Bucket check failed (${getResponse.statusCode}): $getBody',
+      uri: getUri,
+    );
+  }
+
+  final createUri = Uri.parse('$baseUrl/storage/v1/bucket');
+  final createRequest = await client.postUrl(createUri);
+  _authorize(createRequest, key);
+  createRequest.headers.contentType = ContentType.json;
+  createRequest.write(jsonEncode({
+    'id': 'learning-content',
+    'name': 'learning-content',
+    'public': true,
+    'file_size_limit': 1048576,
+    'allowed_mime_types': ['application/json', 'application/gzip'],
+  }));
+  final createResponse = await createRequest.close();
+  final createBody = await utf8.decoder.bind(createResponse).join();
+  if (createResponse.statusCode < 200 || createResponse.statusCode >= 300) {
+    throw HttpException(
+      'Bucket creation failed (${createResponse.statusCode}): $createBody',
+      uri: createUri,
+    );
+  }
+  stdout.writeln('Created public bucket learning-content.');
+}
+
 Future<void> _upload(
   HttpClient client,
   String baseUrl,
@@ -90,9 +135,8 @@ Future<void> _upload(
 }) async {
   final uri = Uri.parse('$baseUrl/storage/v1/object/learning-content/$path');
   final request = await client.postUrl(uri);
+  _authorize(request, key);
   request.headers
-    ..set(HttpHeaders.authorizationHeader, 'Bearer $key')
-    ..set('apikey', key)
     ..set('x-upsert', upsert ? 'true' : 'false')
     ..contentType = ContentType.parse(contentType);
   request.add(bytes);
@@ -110,12 +154,10 @@ Future<List<int>> _download(
   String key,
   String path,
 ) async {
-  final uri = Uri.parse(
-      '$baseUrl/storage/v1/object/authenticated/learning-content/$path');
+  final uri =
+      Uri.parse('$baseUrl/storage/v1/object/public/learning-content/$path');
   final request = await client.getUrl(uri);
-  request.headers
-    ..set(HttpHeaders.authorizationHeader, 'Bearer $key')
-    ..set('apikey', key);
+  _authorize(request, key);
   final response = await request.close();
   final bytes = await response
       .fold<List<int>>(<int>[], (result, chunk) => result..addAll(chunk));
@@ -125,6 +167,12 @@ Future<List<int>> _download(
         uri: uri);
   }
   return bytes;
+}
+
+void _authorize(HttpClientRequest request, String key) {
+  request.headers
+    ..set(HttpHeaders.authorizationHeader, 'Bearer $key')
+    ..set('apikey', key);
 }
 
 Map<String, String> _options(List<String> arguments) {

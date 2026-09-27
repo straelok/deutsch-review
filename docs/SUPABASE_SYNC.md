@@ -44,23 +44,25 @@
 
 1. Создать бесплатный проект в панели Supabase и сохранить пароль базы вне
    репозитория.
-2. Установить Supabase CLI, выполнить `supabase login` и связать каталог с
-   проектом через `supabase link --project-ref <project-id>`.
-3. Выполнить `supabase db push`.
-4. Выполнить `supabase functions deploy sync-profile --no-verify-jwt`.
-5. Скопировать `tool/supabase_defines.example.json` в
+2. Скопировать `tool/supabase_defines.example.json` в
    `tool/supabase_defines.json` и указать URL проекта и publishable key.
    Этот локальный файл исключён из Git.
-6. Собирать приложение с параметром
+3. Собирать приложение с параметром
    `--dart-define-from-file=tool/supabase_defines.json`.
 
-Для общего учебного каталога дополнительно применяется миграция
-`202609270001_learning_content_bucket.sql`. Пакет собирается командой
-`dart run tool/build_content_catalog.dart --version=YYYY.MM.DD.N`, а публикация
-выполняется `tool/publish_content_catalog.dart` только при заданных локально
-`SUPABASE_URL` и `SUPABASE_SERVICE_ROLE_KEY`. На 27 сентября 2026 года эта
-миграция ещё не применена: публичная проверка возвращает `Bucket not found`.
-Секрет не записывается в файлы.
+Для публикации общего учебного каталога Supabase CLI не требуется. Каталог
+собирается и загружается одной командой:
+
+```powershell
+.\tool\publish_content_catalog.ps1 -Version 2026.09.27.2
+```
+
+Скрипт запрашивает secret/service-role key, если он не задан в переменной
+окружения `SUPABASE_SECRET_KEY` или `SUPABASE_SERVICE_ROLE_KEY`. Ключ
+используется только в памяти процесса и не записывается в файлы. При первой
+публикации скрипт создаёт публичный bucket `learning-content`, затем загружает
+неизменяемый пакет и манифест версии, проверяет пакет обратным скачиванием и
+только после этого обновляет `latest/manifest.json`.
 
 Новые ключи Supabase имеют форматы `sb_publishable_...` и `sb_secret_...`.
 Клиенту разрешён только publishable key. Secret key или старый service-role key
