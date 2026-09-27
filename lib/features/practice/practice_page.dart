@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../../domain/answer_checker.dart';
 import '../../domain/daily_session.dart';
@@ -70,6 +71,7 @@ class _PracticePageState extends State<PracticePage> {
   bool _answered = false;
   bool _lastCorrect = false;
   bool _savingVocabularyAnswer = false;
+  bool _unknownShortcutPending = false;
   bool _complete = false;
   String? _pendingVocabularyAnswer;
   int _loadRevision = 0;
@@ -136,10 +138,10 @@ class _PracticePageState extends State<PracticePage> {
     }
 
     if (_session!.kind == DailySessionKind.grammar) {
-      return _grammarPractice();
+      return _withUnknownShortcut(_grammarPractice());
     }
     if (_session!.kind == DailySessionKind.numbers) {
-      return _numberPractice();
+      return _withUnknownShortcut(_numberPractice());
     }
 
     final item = _current;
@@ -155,7 +157,7 @@ class _PracticePageState extends State<PracticePage> {
         toRussian ? learningItemMeaning(item) : learningItemGerman(item);
     final note = learningItemNote(item);
     final example = learningItemExample(item);
-    return Center(
+    return _withUnknownShortcut(Center(
       child: SingleChildScrollView(
         padding: const EdgeInsets.all(24),
         child: ConstrainedBox(
@@ -292,7 +294,36 @@ class _PracticePageState extends State<PracticePage> {
           ),
         ),
       ),
+    ));
+  }
+
+  Widget _withUnknownShortcut(Widget child) {
+    return CallbackShortcuts(
+      bindings: <ShortcutActivator, VoidCallback>{
+        const SingleActivator(LogicalKeyboardKey.escape):
+            _submitUnknownFromKeyboard,
+      },
+      child: Focus(autofocus: true, child: child),
     );
+  }
+
+  void _submitUnknownFromKeyboard() {
+    if (_answered ||
+        _complete ||
+        _unknownShortcutPending ||
+        _savingVocabularyAnswer ||
+        _session == null) {
+      return;
+    }
+    _unknownShortcutPending = true;
+    final submission = switch (_session!.kind) {
+      DailySessionKind.grammar => _unknownGrammarAnswer(),
+      DailySessionKind.numbers => _unknownNumber(),
+      DailySessionKind.vocabularyToGerman ||
+      DailySessionKind.vocabularyToRussian =>
+        _unknownAnswer(),
+    };
+    submission.whenComplete(() => _unknownShortcutPending = false);
   }
 
   Widget _sessionSelection() {
