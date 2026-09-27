@@ -317,6 +317,8 @@ void main() {
     await tester.pumpWidget(_app(database));
     await tester.pumpAndSettle();
     await tester.scrollUntilVisible(find.text('Zahlentraining 1'), 300);
+    await tester.ensureVisible(find.byKey(const Key('start-review-7')));
+    await tester.pumpAndSettle();
     await tester.tap(find.byKey(const Key('start-review-7')));
     await tester.pumpAndSettle();
 
@@ -383,12 +385,90 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.text('8 von 8 Sitzungen abgeschlossen'), findsOneWidget);
+    await tester.tap(
+      find.byKey(
+        const Key('toggle-session-category-vocabulary-to-german'),
+      ),
+    );
+    await tester.pumpAndSettle();
     await tester.scrollUntilVisible(
       find.byKey(const Key('create-extra-session')),
       300,
     );
     expect(find.byKey(const Key('create-extra-session')), findsOneWidget);
     await tester.tap(find.byKey(const Key('create-extra-session')));
+    await tester.pumpAndSettle();
+
+    expect(find.byKey(const Key('practice-answer')), findsOneWidget);
+  });
+
+  testWidgets('collapses a category and starts its next lesson from the header',
+      (
+    tester,
+  ) async {
+    final database = AppDatabase.inMemory();
+    addTearDown(database.close);
+    await SqliteLearningItemRepository(database).save(_word());
+
+    await tester.pumpWidget(_app(database));
+    await tester.pumpAndSettle();
+
+    expect(
+      find.byKey(
+        const Key('session-category-progress-vocabulary-to-german'),
+      ),
+      findsOneWidget,
+    );
+    expect(find.text('0/3'), findsWidgets);
+    expect(find.text('Wörter auf Deutsch · Übung 1'), findsOneWidget);
+
+    await tester.tap(
+      find.byKey(
+        const Key('toggle-session-category-vocabulary-to-german'),
+      ),
+    );
+    await tester.pumpAndSettle();
+
+    expect(find.text('Wörter auf Deutsch · Übung 1'), findsNothing);
+    expect(find.text('Nächste Lektion'), findsWidgets);
+    await tester.tap(
+      find.byKey(
+        const Key('session-category-action-vocabulary-to-german'),
+      ),
+    );
+    await tester.pumpAndSettle();
+
+    expect(find.byKey(const Key('practice-answer')), findsOneWidget);
+  });
+
+  testWidgets('continues an unfinished lesson from its category header', (
+    tester,
+  ) async {
+    final database = AppDatabase.inMemory();
+    addTearDown(database.close);
+    await SqliteLearningItemRepository(database).save(_word());
+    final sessions = SqliteDailySessionRepository(database);
+    final now = DateTime.now();
+    final day = await sessions.ensureDay(
+      localDate: localDayKey(now),
+      now: now.toUtc(),
+    );
+    final first = day.firstWhere((session) => session.slot == 1);
+    await sessions.start(
+      id: first.id,
+      queueItemIds: const ['word-1'],
+      now: now.toUtc(),
+    );
+
+    await tester.pumpWidget(_app(database));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Lektion fortsetzen'), findsOneWidget);
+    await tester.tap(
+      find.byKey(
+        const Key('session-category-action-vocabulary-to-german'),
+      ),
+    );
     await tester.pumpAndSettle();
 
     expect(find.byKey(const Key('practice-answer')), findsOneWidget);

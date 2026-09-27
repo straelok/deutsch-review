@@ -116,6 +116,11 @@ final class UiStrings {
   String get getNewLesson =>
       choose('Neue Sitzung starten', 'Получить новый урок');
   String get addLesson => choose('Weitere Lektion', 'Добавить урок');
+  String get nextLesson => choose('Nächste Lektion', 'Следующий урок');
+  String get continueLesson => choose('Lektion fortsetzen', 'Продолжить урок');
+  String get expand => choose('Aufklappen', 'Развернуть');
+  String get collapse => choose('Einklappen', 'Свернуть');
+  String categoryProgress(int completed, int total) => '$completed/$total';
   String sessionAnswers(int answered, int target) =>
       choose('$answered von $target Antworten', '$answered из $target ответов');
   String get planned => choose('Geplant', 'Запланировано');

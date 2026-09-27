@@ -78,6 +78,7 @@ class _PracticePageState extends State<PracticePage> {
   final Map<String, TextEditingController> _grammarControllers = {};
   String? _selectedGrammarOption;
   List<int> _wordOrderSelection = const [];
+  final Set<DailySessionKind> _collapsedCategories = {};
 
   LearningItem? get _current => _queue.isEmpty ? null : _queue.first;
   String? get _currentGrammar =>
@@ -363,6 +364,7 @@ class _PracticePageState extends State<PracticePage> {
         Text(s.chooseSession),
         const SizedBox(height: 16),
         _sessionCategory(
+          kind: DailySessionKind.vocabularyToGerman,
           icon: Icons.arrow_forward,
           title: s.toGermanCategory,
           sessions: [...toGermanSessions, ...extraToGerman],
@@ -372,6 +374,7 @@ class _PracticePageState extends State<PracticePage> {
         ),
         const SizedBox(height: 20),
         _sessionCategory(
+          kind: DailySessionKind.vocabularyToRussian,
           icon: Icons.arrow_back,
           title: s.toRussianCategory,
           sessions: [...toRussianSessions, ...extraToRussian],
@@ -382,6 +385,7 @@ class _PracticePageState extends State<PracticePage> {
         ),
         const SizedBox(height: 20),
         _sessionCategory(
+          kind: DailySessionKind.numbers,
           icon: Icons.pin_outlined,
           title: s.numbersCategory,
           sessions: [...numberSessions, ...extraNumbers],
@@ -392,6 +396,7 @@ class _PracticePageState extends State<PracticePage> {
         if (grammarSessions.isNotEmpty) ...[
           const SizedBox(height: 20),
           _sessionCategory(
+            kind: DailySessionKind.grammar,
             icon: Icons.school_outlined,
             title: s.grammarCategory,
             sessions: [...grammarSessions, ...extraGrammar],
@@ -405,6 +410,7 @@ class _PracticePageState extends State<PracticePage> {
   }
 
   Widget _sessionCategory({
+    required DailySessionKind kind,
     required IconData icon,
     required String title,
     required List<DailySession> sessions,
@@ -412,30 +418,118 @@ class _PracticePageState extends State<PracticePage> {
     required Key addKey,
     required VoidCallback onAdd,
   }) {
+    final collapsed = _collapsedCategories.contains(kind);
+    final completed = sessions.where((session) => session.isComplete).length;
+    final inProgress = sessions
+        .where((session) => session.status == DailySessionStatus.inProgress)
+        .firstOrNull;
+    final next = sessions
+        .where((session) => session.status == DailySessionStatus.planned)
+        .firstOrNull;
+    final actionSession = inProgress ?? next;
+    final actionEnabled = inProgress != null
+        ? _canOpenSession(inProgress)
+        : canAdd
+            ? true
+            : actionSession != null && _canOpenSession(actionSession);
+    final actionLabel = inProgress != null
+        ? widget.strings.continueLesson
+        : canAdd
+            ? widget.strings.addLesson
+            : widget.strings.nextLesson;
+    final actionIcon = inProgress != null
+        ? Icons.play_arrow
+        : canAdd
+            ? Icons.add
+            : Icons.skip_next;
+    final categoryKey = kind.wireName.replaceAll('_', '-');
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Row(
-          children: [
-            Icon(icon),
-            const SizedBox(width: 8),
-            Expanded(
-              child: Text(title, style: Theme.of(context).textTheme.titleLarge),
+        Card(
+          margin: EdgeInsets.zero,
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(8, 8, 12, 8),
+            child: Row(
+              children: [
+                IconButton(
+                  key: Key('toggle-session-category-$categoryKey'),
+                  tooltip: collapsed
+                      ? widget.strings.expand
+                      : widget.strings.collapse,
+                  onPressed: () => setState(() {
+                    if (collapsed) {
+                      _collapsedCategories.remove(kind);
+                    } else {
+                      _collapsedCategories.add(kind);
+                    }
+                  }),
+                  icon: Icon(
+                    collapsed ? Icons.expand_more : Icons.expand_less,
+                  ),
+                ),
+                Icon(icon),
+                const SizedBox(width: 10),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        title,
+                        style: Theme.of(context).textTheme.titleMedium,
+                      ),
+                      Text(
+                        widget.strings.categoryProgress(
+                          completed,
+                          sessions.length,
+                        ),
+                        key: Key('session-category-progress-$categoryKey'),
+                        style: Theme.of(context).textTheme.bodySmall,
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(width: 8),
+                FilledButton.tonalIcon(
+                  key: canAdd && inProgress == null
+                      ? addKey
+                      : Key('session-category-action-$categoryKey'),
+                  onPressed: actionEnabled
+                      ? () {
+                          if (inProgress != null) {
+                            _selectSession(inProgress);
+                          } else if (canAdd) {
+                            onAdd();
+                          } else if (next != null) {
+                            _selectSession(next);
+                          }
+                        }
+                      : null,
+                  icon: Icon(actionIcon, size: 18),
+                  label: Text(actionLabel),
+                  style: const ButtonStyle(
+                    visualDensity: VisualDensity.compact,
+                  ),
+                ),
+              ],
             ),
-            if (canAdd)
-              OutlinedButton.icon(
-                key: addKey,
-                onPressed: onAdd,
-                icon: const Icon(Icons.add, size: 18),
-                label: Text(widget.strings.addLesson),
-              ),
-          ],
+          ),
         ),
-        const SizedBox(height: 8),
-        ...sessions.map(_sessionCard),
+        if (!collapsed) ...[
+          const SizedBox(height: 8),
+          ...sessions.map(_sessionCard),
+        ],
       ],
     );
   }
+
+  bool _canOpenSession(DailySession session) => switch (session.kind) {
+        DailySessionKind.grammar =>
+          _availableGrammarTopics.isNotEmpty || session.queueItemIds.isNotEmpty,
+        DailySessionKind.numbers => true,
+        _ => _activeItems.isNotEmpty,
+      };
 
   Widget _reminderCard(ReminderController reminders) {
     final s = widget.strings;
@@ -915,14 +1009,8 @@ class _PracticePageState extends State<PracticePage> {
             key: session.slot == 1
                 ? const Key('start-review')
                 : Key('start-review-${session.slot ?? session.id}'),
-            onPressed: switch (session.kind) {
-              DailySessionKind.grammar =>
-                _availableGrammarTopics.isEmpty && session.queueItemIds.isEmpty
-                    ? null
-                    : () => _selectSession(session),
-              DailySessionKind.numbers => () => _selectSession(session),
-              _ => _activeItems.isEmpty ? null : () => _selectSession(session),
-            },
+            onPressed:
+                _canOpenSession(session) ? () => _selectSession(session) : null,
             child: Text(
               session.status == DailySessionStatus.inProgress
                   ? s.continueSession
