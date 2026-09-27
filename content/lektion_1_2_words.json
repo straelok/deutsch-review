@@ -297,7 +297,7 @@
     {
       "type": "word",
       "german": "sie/Sie",
-      "translation_ru": "она; они; Вы (вежливая форма)",
+      "translation_ru": "она; они; Вы (вежливая форма); Вы",
       "example": "Sie sprechen Deutsch. / Sie kommt aus Polen.",
       "note": "sie со строчной: «она» или «они»; Sie с заглавной: вежливое «Вы»."
     },
@@ -310,7 +310,7 @@
     {
       "type": "word",
       "german": "ihr",
-      "translation_ru": "вы (множественное число)",
+      "translation_ru": "вы (множественное число); вы",
       "example": "Woher kommt ihr?"
     },
     {
@@ -613,7 +613,7 @@
     {
       "type": "word",
       "german": "Auf Wiederhören",
-      "translation_ru": "до свидания (по телефону)",
+      "translation_ru": "до свидания (по телефону); до свидания",
       "example": "Auf Wiederhören am Telefon."
     },
     {

@@ -24,6 +24,22 @@ void main() {
     );
     expect(catalog.exercise('regular-0001')?.answer, 'e');
     expect(catalog.verb('sein')?.forms['du'], 'bist');
+    expect(catalog.topics.any((topic) => topic.id == 'alphabet'), isTrue);
+    expect(catalog.topics.any((topic) => topic.id == 'numbers'), isTrue);
+    expect(
+      catalog.topics.every(
+        (topic) =>
+            topic.explanationDe.length >= 4 &&
+            topic.explanationRu.length >= 4 &&
+            topic.table.isNotEmpty,
+      ),
+      isTrue,
+    );
+    final numbers = catalog.topics.singleWhere(
+      (topic) => topic.id == 'numbers',
+    );
+    expect(numbers.table.expand((row) => row), contains('100'));
+    expect(numbers.table.expand((row) => row).join(' '), contains('IPA'));
     final regular = catalog.exercises
         .where((exercise) => exercise.topicId == 'regular_present')
         .toList();
@@ -48,7 +64,7 @@ void main() {
         .where((topic) => topic.trainable)
         .map((topic) => topic.id)
         .toSet();
-    expect(trainableTopics, hasLength(16));
+    expect(trainableTopics, hasLength(19));
     for (final topicId in trainableTopics) {
       expect(
         catalog.exercises.where((exercise) => exercise.topicId == topicId),
@@ -74,6 +90,31 @@ void main() {
           .every((exercise) => exercise.options.contains(exercise.answer)),
       isTrue,
     );
+  });
+
+  test('offers reading exercises without dictionary prerequisites', () async {
+    final catalog = await GrammarCatalog.load(rootBundle);
+
+    expect(
+      catalog.availableTopicIds(
+        learnedTopicIds: {
+          'reading_vowels',
+          'reading_consonants',
+          'reading_stress',
+        },
+      ),
+      {'reading_vowels', 'reading_consonants', 'reading_stress'},
+    );
+    for (final topicId in const {
+      'reading_vowels',
+      'reading_consonants',
+      'reading_stress',
+    }) {
+      expect(
+        catalog.exercises.where((exercise) => exercise.topicId == topicId),
+        hasLength(20),
+      );
+    }
   });
 
   test('activates only learned topics with a matching active verb', () async {

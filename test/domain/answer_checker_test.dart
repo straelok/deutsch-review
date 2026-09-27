@@ -23,4 +23,45 @@ void main() {
       isFalse,
     );
   });
+
+  test('accepts any semicolon-separated Russian translation', () {
+    expect(
+      isAnyPracticeAnswerCorrect(
+        answer: 'изучать',
+        expectedAlternatives: 'учить; изучать; обучаться',
+      ),
+      isTrue,
+    );
+    expect(
+      isAnyPracticeAnswerCorrect(
+        answer: 'ЕЛКА',
+        expectedAlternatives: 'дерево; ёлка',
+      ),
+      isTrue,
+    );
+    expect(
+      isAnyPracticeAnswerCorrect(
+        answer: 'учиться',
+        expectedAlternatives: 'учить; изучать; обучаться',
+      ),
+      isFalse,
+    );
+  });
+
+  test('appends one normalized Russian answer without duplicates', () {
+    expect(
+      appendRussianPracticeAnswerAlternative(
+        expectedAlternatives: 'польский язык',
+        answer: '  польский  ',
+      ),
+      'польский язык; польский',
+    );
+    expect(
+      appendRussianPracticeAnswerAlternative(
+        expectedAlternatives: 'дерево; ёлка',
+        answer: 'ЕЛКА',
+      ),
+      'дерево; ёлка',
+    );
+  });
 }

@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
@@ -71,7 +72,6 @@ Future<void> main() async {
             },
           )
         : null;
-    await reminders?.initialize();
     final sessions = SyncingDailySessionRepository(localSessions, () {
       syncController.scheduleSync();
       reminders?.refresh();
@@ -80,16 +80,19 @@ Future<void> main() async {
       SqlitePracticeRepository(database),
       syncController.scheduleSync,
     );
+    final settings = SqliteSettingsRepository(database);
+    final initialLanguage = await settings.readLanguage();
     runApp(
       DeutschReviewApp(
         learningItems: learningItems,
         sessions: sessions,
-        settings: SqliteSettingsRepository(database),
+        settings: settings,
         practice: practice,
         grammar: grammar,
         grammarCatalog: grammarCatalog,
         syncController: syncController,
         reminders: reminders,
+        initialLanguage: initialLanguage,
         onDispose: () {
           reminders?.dispose();
           syncController.dispose();
@@ -97,6 +100,9 @@ Future<void> main() async {
         },
       ),
     );
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (reminders != null) unawaited(reminders.initialize());
+    });
   } catch (error) {
     runApp(DatabaseErrorApp(message: error.toString()));
   }

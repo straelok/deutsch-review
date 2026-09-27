@@ -27,6 +27,7 @@ class DeutschReviewApp extends StatefulWidget {
     required this.grammarCatalog,
     this.syncController,
     this.reminders,
+    this.initialLanguage,
     this.onDispose,
     super.key,
   });
@@ -39,6 +40,7 @@ class DeutschReviewApp extends StatefulWidget {
   final GrammarCatalog grammarCatalog;
   final SyncController? syncController;
   final ReminderController? reminders;
+  final AppLanguage? initialLanguage;
   final VoidCallback? onDispose;
 
   @override
@@ -46,13 +48,13 @@ class DeutschReviewApp extends StatefulWidget {
 }
 
 class _DeutschReviewAppState extends State<DeutschReviewApp> {
-  AppLanguage _language = AppLanguage.german;
+  late AppLanguage _language = widget.initialLanguage ?? AppLanguage.german;
 
   @override
   void initState() {
     super.initState();
     widget.reminders?.setLanguage(_language);
-    _loadLanguage();
+    if (widget.initialLanguage == null) _loadLanguage();
   }
 
   @override
@@ -172,6 +174,8 @@ class _HomeScreenState extends State<HomeScreen> {
   int _statisticsRevision = 0;
   int _lastSyncRevision = 0;
   int _lastReminderRevision = 0;
+  int _practiceRequestRevision = 0;
+  String? _practiceTopicId;
 
   @override
   void initState() {
@@ -230,6 +234,8 @@ class _HomeScreenState extends State<HomeScreen> {
         reminders: widget.reminders,
         grammar: widget.grammar,
         grammarCatalog: widget.grammarCatalog,
+        requestedTopicId: _practiceTopicId,
+        practiceRequestRevision: _practiceRequestRevision,
       ),
       DictionaryMaterialPage(
         repository: widget.learningItems,
@@ -247,6 +253,7 @@ class _HomeScreenState extends State<HomeScreen> {
           setState(() => _statisticsRevision++);
           widget.reminders?.refresh(force: true);
         },
+        onPracticeTopic: _practiceTopic,
       ),
       StatisticsPage(
         repository: widget.practice,
@@ -338,6 +345,14 @@ class _HomeScreenState extends State<HomeScreen> {
 
   void _selectDestination(int index) {
     setState(() => _selectedIndex = index);
+  }
+
+  void _practiceTopic(String topicId) {
+    setState(() {
+      _practiceTopicId = topicId;
+      _practiceRequestRevision++;
+      _selectedIndex = 0;
+    });
   }
 
   void _syncChanged() {

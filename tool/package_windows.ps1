@@ -49,19 +49,13 @@ try {
     throw "Flutter Windows build failed with exit code $LASTEXITCODE."
   }
 
-  $bundleCandidates = Get-ChildItem -LiteralPath $buildRoot -Directory -Recurse |
-    Where-Object {
-      (Test-Path -LiteralPath (Join-Path $_.FullName 'deutsch_review.exe')) -and
-      (Test-Path -LiteralPath (Join-Path $_.FullName 'flutter_windows.dll')) -and
-      (Test-Path -LiteralPath (Join-Path $_.FullName 'data\flutter_assets'))
-    } |
-    Sort-Object {
-      (Get-Item -LiteralPath (Join-Path $_.FullName 'deutsch_review.exe')).LastWriteTimeUtc
-    } -Descending
-
-  $sourceBundle = $bundleCandidates | Select-Object -First 1
-  if ($null -eq $sourceBundle) {
-    throw 'Flutter produced no complete Windows bundle.'
+  $sourceBundle = Join-Path $buildRoot 'install'
+  if (
+    -not (Test-Path -LiteralPath (Join-Path $sourceBundle 'deutsch_review.exe')) -or
+    -not (Test-Path -LiteralPath (Join-Path $sourceBundle 'flutter_windows.dll')) -or
+    -not (Test-Path -LiteralPath (Join-Path $sourceBundle 'data\flutter_assets'))
+  ) {
+    throw "Flutter produced no complete $Configuration Windows install bundle."
   }
 
   New-Item -ItemType Directory -Path $distRoot -Force | Out-Null
@@ -76,7 +70,7 @@ try {
   }
 
   New-Item -ItemType Directory -Path $bundlePath | Out-Null
-  Get-ChildItem -LiteralPath $sourceBundle.FullName -Force |
+  Get-ChildItem -LiteralPath $sourceBundle -Force |
     Copy-Item -Destination $bundlePath -Recurse -Force
   Copy-Item -LiteralPath (Join-Path $PSScriptRoot 'windows_package_readme.txt') `
     -Destination (Join-Path $bundlePath 'README.txt')

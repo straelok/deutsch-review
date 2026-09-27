@@ -23,19 +23,40 @@ final class SqliteDailySessionRepository implements DailySessionRepository {
     final timestamp = now.toUtc().toIso8601String();
     database.connection.execute('BEGIN IMMEDIATE');
     try {
-      for (var slot = 1; slot <= 5; slot++) {
+      for (var slot = 1; slot <= 6; slot++) {
+        final kind = slot <= 3
+            ? DailySessionKind.vocabularyToGerman
+            : DailySessionKind.vocabularyToRussian;
         database.connection.execute(
           '''
           INSERT OR IGNORE INTO daily_sessions (
             id, local_date, slot, kind, status, target_answers, answered_count,
             queue_json, last_item_id, created_at, updated_at, completed_at
-          ) VALUES (?, ?, ?, 'vocabulary', 'planned', 20, 0, '[]', NULL, ?, ?, NULL)
+          ) VALUES (?, ?, ?, ?, 'planned', 20, 0, '[]', NULL, ?, ?, NULL)
+          ''',
+          <Object?>[
+            newUuidV4(),
+            localDate,
+            slot,
+            kind.wireName,
+            timestamp,
+            timestamp,
+          ],
+        );
+      }
+      for (var slot = 7; slot <= 8; slot++) {
+        database.connection.execute(
+          '''
+          INSERT OR IGNORE INTO daily_sessions (
+            id, local_date, slot, kind, status, target_answers, answered_count,
+            queue_json, last_item_id, created_at, updated_at, completed_at
+          ) VALUES (?, ?, ?, 'numbers', 'planned', 20, 0, '[]', NULL, ?, ?, NULL)
           ''',
           <Object?>[newUuidV4(), localDate, slot, timestamp, timestamp],
         );
       }
       if (includeGrammar) {
-        for (var slot = 6; slot <= 7; slot++) {
+        for (var slot = 9; slot <= 10; slot++) {
           database.connection.execute(
             '''
             INSERT OR IGNORE INTO daily_sessions (
@@ -68,6 +89,7 @@ final class SqliteDailySessionRepository implements DailySessionRepository {
   Future<DailySession> createExtra({
     required String localDate,
     required DateTime now,
+    DailySessionKind kind = DailySessionKind.vocabularyToGerman,
   }) async {
     final id = newUuidV4();
     final timestamp = now.toUtc().toIso8601String();
@@ -76,9 +98,16 @@ final class SqliteDailySessionRepository implements DailySessionRepository {
       INSERT INTO daily_sessions (
         id, local_date, slot, kind, status, target_answers, answered_count,
         queue_json, last_item_id, created_at, updated_at, completed_at
-      ) VALUES (?, ?, NULL, 'vocabulary', 'planned', 20, 0, '[]', NULL, ?, ?, NULL)
+      ) VALUES (?, ?, NULL, ?, 'planned', ?, 0, '[]', NULL, ?, ?, NULL)
       ''',
-      <Object?>[id, localDate, timestamp, timestamp],
+      <Object?>[
+        id,
+        localDate,
+        kind.wireName,
+        kind == DailySessionKind.grammar ? 10 : 20,
+        timestamp,
+        timestamp,
+      ],
     );
     return (await findById(id))!;
   }
@@ -171,7 +200,8 @@ final class SqliteDailySessionRepository implements DailySessionRepository {
     final session = await findById(sessionId);
     if (session == null ||
         session.isComplete ||
-        session.kind != DailySessionKind.grammar ||
+        (session.kind != DailySessionKind.grammar &&
+            session.kind != DailySessionKind.numbers) ||
         attempts.isEmpty) {
       throw StateError('Cannot record a grammar task for this session.');
     }

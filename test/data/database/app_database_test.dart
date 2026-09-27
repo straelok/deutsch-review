@@ -108,7 +108,7 @@ void main() {
     );
   });
 
-  test('migrates version 3 sessions to grammar-aware version 4', () {
+  test('migrates version 3 sessions to the current directional schema', () {
     final directory = Directory.systemTemp.createTempSync('deutsch_review_');
     addTearDown(() => directory.deleteSync(recursive: true));
     final path = '${directory.path}${Platform.pathSeparator}version3.sqlite';
@@ -131,11 +131,11 @@ void main() {
     final migrated = AppDatabase.open(path);
     addTearDown(migrated.close);
 
-    expect(migrated.schemaVersion, 4);
+    expect(migrated.schemaVersion, currentSchemaVersion);
     final session = migrated.connection
         .select("SELECT * FROM daily_sessions WHERE id = 'session-1'")
         .single;
-    expect(session['kind'], 'vocabulary');
+    expect(session['kind'], 'vocabulary_to_german');
     expect(migrated.integrityCheck(), ['ok']);
     expect(migrated.foreignKeyCheck(), isEmpty);
     expect(
@@ -145,6 +145,90 @@ void main() {
           .where((file) => file.path.contains('version3.sqlite.backup-v3-')),
       hasLength(1),
     );
+  });
+
+  test('moves version 4 grammar slots without losing progress', () {
+    final directory = Directory.systemTemp.createTempSync('deutsch_review_');
+    addTearDown(() => directory.deleteSync(recursive: true));
+    final path = '${directory.path}${Platform.pathSeparator}version4.sqlite';
+    final oldDatabase = sqlite3.open(path);
+    oldDatabase
+      ..execute(migrationFrom0To1)
+      ..execute(migrationFrom1To2)
+      ..execute(migrationFrom2To3)
+      ..execute(migrationFrom3To4)
+      ..execute('PRAGMA user_version = 4')
+      ..execute('''
+        INSERT INTO daily_sessions (
+          id, local_date, slot, kind, status, target_answers, answered_count,
+          queue_json, last_item_id, created_at, updated_at, completed_at
+        ) VALUES
+          ('word-session', '2026-09-25', 4, 'vocabulary', 'planned', 20, 0,
+           '[]', NULL, '2026-09-25T10:00:00.000Z',
+           '2026-09-25T10:00:00.000Z', NULL),
+          ('grammar-session', '2026-09-25', 6, 'grammar', 'in_progress', 10, 3,
+           '["exercise-1"]', 'exercise-0', '2026-09-25T10:00:00.000Z',
+           '2026-09-25T10:10:00.000Z', NULL)
+      ''')
+      ..close();
+
+    final migrated = AppDatabase.open(path);
+    addTearDown(migrated.close);
+    final word = migrated.connection
+        .select("SELECT * FROM daily_sessions WHERE id = 'word-session'")
+        .single;
+    final grammar = migrated.connection
+        .select("SELECT * FROM daily_sessions WHERE id = 'grammar-session'")
+        .single;
+
+    expect(word['kind'], 'vocabulary_to_russian');
+    expect(word['slot'], 4);
+    expect(grammar['kind'], 'grammar');
+    expect(grammar['slot'], 9);
+    expect(grammar['answered_count'], 3);
+    expect(migrated.integrityCheck(), ['ok']);
+  });
+
+  test('moves version 5 grammar and expands planned number lessons', () {
+    final directory = Directory.systemTemp.createTempSync('deutsch_review_');
+    addTearDown(() => directory.deleteSync(recursive: true));
+    final path = '${directory.path}${Platform.pathSeparator}version5.sqlite';
+    final oldDatabase = sqlite3.open(path);
+    oldDatabase
+      ..execute(migrationFrom0To1)
+      ..execute(migrationFrom1To2)
+      ..execute(migrationFrom2To3)
+      ..execute(migrationFrom3To4)
+      ..execute(migrationFrom4To5)
+      ..execute('PRAGMA user_version = 5')
+      ..execute('''
+        INSERT INTO daily_sessions (
+          id, local_date, slot, kind, status, target_answers, answered_count,
+          queue_json, last_item_id, created_at, updated_at, completed_at
+        ) VALUES
+          ('numbers', '2026-09-26', 7, 'numbers', 'planned', 10, 0,
+           '[]', NULL, '2026-09-26T10:00:00.000Z',
+           '2026-09-26T10:00:00.000Z', NULL),
+          ('grammar', '2026-09-26', 8, 'grammar', 'in_progress', 10, 3,
+           '["exercise-1"]', 'exercise-0', '2026-09-26T10:00:00.000Z',
+           '2026-09-26T10:10:00.000Z', NULL)
+      ''')
+      ..close();
+
+    final migrated = AppDatabase.open(path);
+    addTearDown(migrated.close);
+    final numbers = migrated.connection
+        .select("SELECT * FROM daily_sessions WHERE id = 'numbers'")
+        .single;
+    final grammar = migrated.connection
+        .select("SELECT * FROM daily_sessions WHERE id = 'grammar'")
+        .single;
+
+    expect(numbers['slot'], 7);
+    expect(numbers['target_answers'], 20);
+    expect(grammar['slot'], 9);
+    expect(grammar['answered_count'], 3);
+    expect(migrated.integrityCheck(), ['ok']);
   });
 
   test('rejects a database created by a newer application version', () {

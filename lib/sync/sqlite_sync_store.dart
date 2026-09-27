@@ -157,7 +157,14 @@ final class SqliteSyncStore {
     final id = _string(session, 'id');
     final localDate = _string(session, 'localDate');
     final slotValue = session['slot'];
-    final slot = slotValue == null ? null : _integer(session, 'slot');
+    final kind = _sessionKind(session);
+    final rawSlot = slotValue == null ? null : _integer(session, 'slot');
+    final currentPlan = session['planVersion'] == 2;
+    final slot = switch ((kind, rawSlot, currentPlan)) {
+      ('grammar', 6 || 7, _) => rawSlot! + 3,
+      ('grammar', 8 || 9, false) => rawSlot! + 1,
+      _ => rawSlot,
+    };
     final existing = slot == null
         ? database.connection.select(
             'SELECT id FROM daily_sessions WHERE id = ?',
@@ -192,9 +199,13 @@ final class SqliteSyncStore {
         targetId,
         localDate,
         slot,
-        session['kind'] is String ? session['kind'] as String : 'vocabulary',
+        kind,
         _string(session, 'status'),
-        _integer(session, 'targetAnswers'),
+        kind == 'numbers' &&
+                _string(session, 'status') == 'planned' &&
+                _integer(session, 'answeredCount') == 0
+            ? 20
+            : _integer(session, 'targetAnswers'),
         _integer(session, 'answeredCount'),
         jsonEncode(queue),
         session['lastItemId'] as String?,
@@ -203,6 +214,15 @@ final class SqliteSyncStore {
         _nullableDateString(session, 'completedAt'),
       ],
     );
+  }
+
+  static String _sessionKind(Map<String, Object?> session) {
+    final kind = session['kind'];
+    if (kind is String && kind != 'vocabulary') return kind;
+    final slot = session['slot'];
+    return slot is int && slot >= 4 && slot <= 5
+        ? 'vocabulary_to_russian'
+        : 'vocabulary_to_german';
   }
 
   void _mergeGrammarProgress(Map<String, Object?> progress) {
@@ -307,6 +327,7 @@ final class SqliteSyncStore {
         'createdAt': row['created_at'] as String,
         'updatedAt': row['updated_at'] as String,
         'completedAt': row['completed_at'] as String?,
+        'planVersion': 2,
       };
 
   static Map<String, Object?> _grammarProgressToJson(dynamic row) =>

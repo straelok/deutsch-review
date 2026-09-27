@@ -9,7 +9,7 @@ import 'package:flutter_test/flutter_test.dart';
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
-  test('schedules reminders and skips today after five sessions', () async {
+  test('schedules reminders and skips today after eight sessions', () async {
     final sessions = _FakeSessions();
     final gateway = _FakeGateway();
     final controller = ReminderController(
@@ -21,7 +21,7 @@ void main() {
     await controller.initialize();
     expect(gateway.skipToday, isFalse);
 
-    sessions.completed = 5;
+    sessions.completed = 8;
     await controller.refresh(force: true);
     expect(gateway.skipToday, isTrue);
   });
@@ -81,12 +81,16 @@ final class _FakeSessions implements DailySessionRepository {
     bool includeGrammar = false,
   }) async {
     return List.generate(
-      5,
+      8,
       (index) => DailySession(
         id: '$localDate-${index + 1}',
         localDate: localDate,
         slot: index + 1,
-        kind: DailySessionKind.vocabulary,
+        kind: index < 3
+            ? DailySessionKind.vocabularyToGerman
+            : index < 6
+                ? DailySessionKind.vocabularyToRussian
+                : DailySessionKind.numbers,
         status: index < completed
             ? DailySessionStatus.completed
             : DailySessionStatus.planned,
@@ -103,6 +107,7 @@ final class _FakeSessions implements DailySessionRepository {
   Future<DailySession> createExtra({
     required String localDate,
     required DateTime now,
+    DailySessionKind kind = DailySessionKind.vocabularyToGerman,
   }) =>
       throw UnimplementedError();
 

@@ -74,6 +74,16 @@ final class WordJsonCodec {
     };
     final german = _requiredString(value, 'german', index);
     final translation = _requiredString(value, 'translation_ru', index);
+    if (german.contains(';')) {
+      throw FormatException(
+        'words[$index].german должен содержать один немецкий вариант.',
+      );
+    }
+    if (translation.split(';').any((part) => part.trim().isEmpty)) {
+      throw FormatException(
+        'words[$index].translation_ru содержит пустой вариант.',
+      );
+    }
     final article = type == LearningItemType.noun
         ? _requiredString(value, 'article', index)
         : null;

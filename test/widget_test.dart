@@ -1,11 +1,15 @@
 import 'package:deutsch_review/app.dart';
+import 'dart:convert';
+
 import 'package:deutsch_review/data/database/app_database.dart';
 import 'package:deutsch_review/data/repositories/sqlite_learning_item_repository.dart';
 import 'package:deutsch_review/data/repositories/sqlite_grammar_repository.dart';
 import 'package:deutsch_review/data/repositories/sqlite_daily_session_repository.dart';
 import 'package:deutsch_review/data/repositories/sqlite_practice_repository.dart';
 import 'package:deutsch_review/data/repositories/sqlite_settings_repository.dart';
+import 'package:deutsch_review/domain/app_language.dart';
 import 'package:deutsch_review/domain/daily_session.dart';
+import 'package:deutsch_review/domain/german_numbers.dart';
 import 'package:deutsch_review/domain/grammar.dart';
 import 'package:deutsch_review/domain/learning_item.dart';
 import 'package:deutsch_review/grammar/grammar_catalog.dart';
@@ -24,8 +28,8 @@ void main() {
     await tester.pumpWidget(_app(database));
     await tester.pumpAndSettle();
 
-    expect(find.text('0 von 5 Sitzungen abgeschlossen'), findsOneWidget);
-    expect(find.text('Sitzung 1'), findsOneWidget);
+    expect(find.text('0 von 8 Sitzungen abgeschlossen'), findsOneWidget);
+    expect(find.text('Wörter auf Deutsch · Übung 1'), findsOneWidget);
 
     await tester.tap(find.text('Wörter'));
     await tester.pumpAndSettle();
@@ -202,6 +206,161 @@ void main() {
     expect(find.text('1'), findsWidgets);
   });
 
+  testWidgets('records an unknown vocabulary answer and reveals the solution', (
+    tester,
+  ) async {
+    final database = AppDatabase.inMemory();
+    addTearDown(database.close);
+    await SqliteLearningItemRepository(database).save(_word());
+
+    await tester.pumpWidget(_app(database));
+    await tester.pumpAndSettle();
+    await tester.tap(find.byKey(const Key('start-review')));
+    await tester.pumpAndSettle();
+    await tester.tap(find.byKey(const Key('unknown-answer')));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Richtige Antwort: lernen'), findsOneWidget);
+    final attempts = database.connection.select(
+      'SELECT answer_text, correct FROM practice_attempts',
+    );
+    expect(attempts, hasLength(1));
+    expect(attempts.single['answer_text'], '');
+    expect(attempts.single['correct'], 0);
+  });
+
+  testWidgets('accepts any Russian translation in the reverse lesson', (
+    tester,
+  ) async {
+    final database = AppDatabase.inMemory();
+    addTearDown(database.close);
+    await SqliteLearningItemRepository(database).save(_wordWithTranslations());
+
+    await tester.pumpWidget(_app(database));
+    await tester.pumpAndSettle();
+    await tester.scrollUntilVisible(
+      find.text('Wörter auf Russisch · Übung 1'),
+      300,
+    );
+    await tester.ensureVisible(find.byKey(const Key('start-review-4')));
+    await tester.pumpAndSettle();
+    await tester.tap(find.byKey(const Key('start-review-4')));
+    await tester.pumpAndSettle();
+
+    expect(find.text('lernen'), findsOneWidget);
+    await tester.enterText(
+      find.byKey(const Key('practice-answer')),
+      'изучать',
+    );
+    await tester.tap(find.byKey(const Key('check-answer')));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Richtig'), findsOneWidget);
+  });
+
+  testWidgets('adds a rejected Russian translation and records it as correct', (
+    tester,
+  ) async {
+    final database = AppDatabase.inMemory();
+    addTearDown(database.close);
+    await SqliteLearningItemRepository(database).save(_polishWord());
+
+    await tester.pumpWidget(_app(database));
+    await tester.pumpAndSettle();
+    await tester.scrollUntilVisible(
+      find.text('Wörter auf Russisch · Übung 1'),
+      300,
+    );
+    await tester.ensureVisible(find.byKey(const Key('start-review-4')));
+    await tester.pumpAndSettle();
+    await tester.tap(find.byKey(const Key('start-review-4')));
+    await tester.pumpAndSettle();
+
+    await tester.enterText(
+      find.byKey(const Key('practice-answer')),
+      'польский',
+    );
+    await tester.tap(find.byKey(const Key('check-answer')));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Noch nicht richtig'), findsOneWidget);
+    expect(find.byKey(const Key('accept-russian-translation')), findsOneWidget);
+    expect(
+      database.connection.select('SELECT * FROM practice_attempts'),
+      isEmpty,
+    );
+
+    await tester.ensureVisible(
+      find.byKey(const Key('accept-russian-translation')),
+    );
+    await tester.pumpAndSettle();
+    await tester.tap(find.byKey(const Key('accept-russian-translation')));
+    await tester.pumpAndSettle();
+
+    final saved = await SqliteLearningItemRepository(database).findById(
+      'word-polish',
+    );
+    expect(saved?.content['translation_ru'], 'польский язык; польский');
+    final attempts = database.connection.select(
+      'SELECT answer_text, correct FROM practice_attempts',
+    );
+    expect(attempts, hasLength(1));
+    expect(attempts.single['answer_text'], 'польский');
+    expect(attempts.single['correct'], 1);
+    expect(find.text('Richtig'), findsOneWidget);
+  });
+
+  testWidgets('practices digits in both directions', (tester) async {
+    final database = AppDatabase.inMemory();
+    addTearDown(database.close);
+
+    await tester.pumpWidget(_app(database));
+    await tester.pumpAndSettle();
+    await tester.scrollUntilVisible(find.text('Zahlentraining 1'), 300);
+    await tester.tap(find.byKey(const Key('start-review-7')));
+    await tester.pumpAndSettle();
+
+    final queue = (jsonDecode(
+      database.connection
+          .select('SELECT queue_json FROM daily_sessions WHERE slot = 7')
+          .single['queue_json'] as String,
+    ) as List<Object?>)
+        .cast<String>();
+    expect(queue, hasLength(20));
+    expect(queue.where((task) => task.contains(':to_digits:')), hasLength(10));
+    expect(queue.where((task) => task.contains(':to_german:')), hasLength(10));
+    expect(queue.map((task) => task.split(':').last).toSet(), hasLength(10));
+
+    final words = {
+      for (var value = 0; value <= 100; value++)
+        germanNumberWord(value): '$value',
+    };
+    final firstPrompt = tester.widget<Text>(
+      find.byKey(const Key('number-prompt')),
+    );
+    await tester.enterText(
+      find.byKey(const Key('number-answer')),
+      words[firstPrompt.data]!,
+    );
+    await tester.tap(find.byKey(const Key('check-number-answer')));
+    await tester.pumpAndSettle();
+    expect(find.text('Richtig'), findsOneWidget);
+
+    await tester.tap(find.byKey(const Key('next-number-answer')));
+    await tester.pumpAndSettle();
+    final secondPrompt = tester.widget<Text>(
+      find.byKey(const Key('number-prompt')),
+    );
+    final inverse = {for (final entry in words.entries) entry.value: entry.key};
+    await tester.enterText(
+      find.byKey(const Key('number-answer')),
+      inverse[secondPrompt.data]!,
+    );
+    await tester.tap(find.byKey(const Key('check-number-answer')));
+    await tester.pumpAndSettle();
+    expect(find.text('Richtig'), findsOneWidget);
+  });
+
   testWidgets('bietet nach fünf Sitzungen einen neuen Unterricht an', (
     tester,
   ) async {
@@ -223,7 +382,7 @@ void main() {
     await tester.pumpWidget(_app(database));
     await tester.pumpAndSettle();
 
-    expect(find.text('5 von 5 Sitzungen abgeschlossen'), findsOneWidget);
+    expect(find.text('8 von 8 Sitzungen abgeschlossen'), findsOneWidget);
     await tester.scrollUntilVisible(
       find.byKey(const Key('create-extra-session')),
       300,
@@ -283,15 +442,196 @@ void main() {
 
     await tester.tap(find.text('Heute'));
     await tester.pumpAndSettle();
-    expect(find.text('0 von 7 Sitzungen abgeschlossen'), findsOneWidget);
-    await tester.scrollUntilVisible(find.text('Sitzung 6'), 300);
-    expect(find.text('Sitzung 6'), findsOneWidget);
+    expect(find.text('0 von 10 Sitzungen abgeschlossen'), findsOneWidget);
+    await tester.scrollUntilVisible(
+      find.text('Gemischte Grammatikübung 1'),
+      300,
+    );
+    expect(find.text('Gemischte Grammatikübung 1'), findsOneWidget);
+    expect(
+      find.textContaining('Regelmäßige Verben im Präsens'),
+      findsNWidgets(2),
+    );
 
-    await tester.tap(find.byKey(const Key('start-review-6')));
+    await tester.ensureVisible(find.byKey(const Key('start-review-9')));
+    await tester.pumpAndSettle();
+    await tester.tap(find.byKey(const Key('start-review-9')));
     await tester.pump();
     await tester.pump(const Duration(milliseconds: 200));
     expect(find.text('lernen'), findsOneWidget);
     expect(find.byKey(const Key('grammar-form-ich')), findsOneWidget);
+  });
+
+  testWidgets('filters grammar topics by learning status', (tester) async {
+    final database = AppDatabase.inMemory();
+    addTearDown(database.close);
+    final catalog = _foundationGrammarCatalog();
+    await SqliteGrammarRepository(database).setLearned(
+      topicId: 'verb_basics',
+      learned: true,
+      now: DateTime.now().toUtc(),
+    );
+
+    await tester.pumpWidget(_app(database, grammarCatalog: catalog));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Grammatik'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Alle'), findsOneWidget);
+    expect(find.text('Nicht gelernt'), findsOneWidget);
+    expect(find.text('Gelernt'), findsWidgets);
+
+    await tester.tap(find.text('Nicht gelernt'));
+    await tester.pumpAndSettle();
+    expect(find.byKey(const Key('grammar-topic-verb_basics')), findsNothing);
+    expect(
+      find.byKey(const Key('grammar-topic-sentence_basics')),
+      findsOneWidget,
+    );
+
+    await tester.tap(find.text('Gelernt').first);
+    await tester.pumpAndSettle();
+    expect(
+      find.byKey(const Key('grammar-topic-verb_basics')),
+      findsOneWidget,
+    );
+    expect(
+      find.byKey(const Key('grammar-topic-sentence_basics')),
+      findsNothing,
+    );
+  });
+
+  testWidgets('offers to add required grammar material without duplicates', (
+    tester,
+  ) async {
+    final database = AppDatabase.inMemory();
+    addTearDown(database.close);
+    final catalog = _grammarCatalog();
+
+    await tester.pumpWidget(_app(database, grammarCatalog: catalog));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Grammatik'));
+    await tester.pumpAndSettle();
+    await tester.tap(
+      find.byKey(const Key('grammar-topic-regular_present')),
+    );
+    await tester.pumpAndSettle();
+    await tester.tap(
+      find.byKey(const Key('toggle-topic-regular_present')),
+    );
+    await tester.pumpAndSettle();
+
+    expect(find.byKey(const Key('add-required-material')), findsOneWidget);
+    await tester.tap(find.byKey(const Key('add-required-material')));
+    await tester.pumpAndSettle();
+
+    final items = await SqliteLearningItemRepository(database).findActive();
+    expect(items, hasLength(1));
+    expect(items.single.content['german'], 'lernen');
+    expect(
+      (await SqliteGrammarRepository(database).progress())['regular_present']
+          ?.learned,
+      isTrue,
+    );
+  });
+
+  testWidgets('starts a focused lesson directly from grammar theory', (
+    tester,
+  ) async {
+    final database = AppDatabase.inMemory();
+    addTearDown(database.close);
+    final catalog = _foundationGrammarCatalog();
+    await SqliteLearningItemRepository(database).save(_verb());
+
+    await tester.pumpWidget(_app(database, grammarCatalog: catalog));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Grammatik'));
+    await tester.pumpAndSettle();
+    await tester.tap(
+      find.byKey(const Key('grammar-topic-sentence_basics')),
+    );
+    await tester.pumpAndSettle();
+    await tester.tap(
+      find.byKey(const Key('practice-topic-sentence_basics')),
+    );
+    await tester.pumpAndSettle();
+
+    expect(find.byKey(const Key('grammar-word-order-answer')), findsOneWidget);
+    final sessions = database.connection.select(
+      "SELECT queue_json FROM daily_sessions WHERE kind = 'grammar' "
+      'AND slot IS NULL',
+    );
+    expect(sessions, hasLength(1));
+    expect(sessions.single['queue_json'], contains('foundation-order'));
+    expect(sessions.single['queue_json'], isNot(contains('foundation-choice')));
+  });
+
+  testWidgets('starts reading practice without dictionary material', (
+    tester,
+  ) async {
+    final database = AppDatabase.inMemory();
+    addTearDown(database.close);
+    final catalog = _readingCatalog();
+
+    await tester.pumpWidget(_app(database, grammarCatalog: catalog));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Grammatik'));
+    await tester.pumpAndSettle();
+    await tester.scrollUntilVisible(
+      find.text('Leseregeln: Vokale und Doppellaute'),
+      300,
+    );
+    await tester.tap(
+      find.byKey(const Key('grammar-topic-reading_vowels')),
+    );
+    await tester.pumpAndSettle();
+
+    expect(find.textContaining('Liebe [ˈliːbə]'), findsWidgets);
+    await tester.tap(
+      find.byKey(const Key('practice-topic-reading_vowels')),
+    );
+    await tester.pumpAndSettle();
+
+    expect(find.byKey(const Key('grammar-prompt')), findsOneWidget);
+    expect(find.byKey(const Key('check-grammar-answer')), findsOneWidget);
+    final sessions = database.connection.select(
+      "SELECT queue_json FROM daily_sessions WHERE kind = 'grammar' "
+      'AND slot IS NULL',
+    );
+    expect(sessions, hasLength(1));
+    expect(sessions.single['queue_json'], contains('reading-vowels-'));
+  });
+
+  testWidgets('shows Russian grammar instructions and answer choices', (
+    tester,
+  ) async {
+    final database = AppDatabase.inMemory();
+    addTearDown(database.close);
+    await SqliteLearningItemRepository(database).save(_verb());
+    await SqliteSettingsRepository(database).saveLanguage(AppLanguage.russian);
+    await SqliteGrammarRepository(database).setLearned(
+      topicId: 'verb_basics',
+      learned: true,
+      now: DateTime.now().toUtc(),
+    );
+
+    await tester.pumpWidget(
+      _app(database, grammarCatalog: _russianChoiceCatalog()),
+    );
+    await tester.pumpAndSettle();
+    await tester.scrollUntilVisible(
+      find.text('Смешанная практика грамматики №1'),
+      300,
+    );
+    await tester.ensureVisible(find.byKey(const Key('start-review-9')));
+    await tester.pumpAndSettle();
+    await tester.tap(find.byKey(const Key('start-review-9')));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Определите часть речи.'), findsOneWidget);
+    expect(find.text('Глагол'), findsOneWidget);
+    expect(find.text('Существительное'), findsOneWidget);
+    expect(find.byKey(const Key('unknown-grammar-answer')), findsOneWidget);
   });
 
   testWidgets('mixes learned foundation topics and supports new answer modes', (
@@ -316,8 +656,13 @@ void main() {
 
     await tester.pumpWidget(_app(database, grammarCatalog: catalog));
     await tester.pumpAndSettle();
-    await tester.scrollUntilVisible(find.text('Sitzung 6'), 300);
-    await tester.tap(find.byKey(const Key('start-review-6')));
+    await tester.scrollUntilVisible(
+      find.text('Gemischte Grammatikübung 1'),
+      300,
+    );
+    await tester.ensureVisible(find.byKey(const Key('start-review-9')));
+    await tester.pumpAndSettle();
+    await tester.tap(find.byKey(const Key('start-review-9')));
     await tester.pump();
     await tester.pump(const Duration(milliseconds: 200));
 
@@ -326,7 +671,7 @@ void main() {
       now: DateTime.now().toUtc(),
       includeGrammar: true,
     ))
-        .firstWhere((entry) => entry.slot == 6);
+        .firstWhere((entry) => entry.slot == 9);
     expect(session.queueItemIds.toSet(),
         {'foundation-choice', 'foundation-order'});
 
@@ -400,6 +745,44 @@ LearningItem _word() {
       'translation_ru': 'учить',
       'example': 'Ich lerne Deutsch.',
       'note': 'Wort aus Lektion 1',
+    },
+  );
+}
+
+LearningItem _wordWithTranslations() {
+  final item = _word();
+  return LearningItem(
+    id: item.id,
+    type: item.type,
+    level: item.level,
+    lesson: item.lesson,
+    topic: item.topic,
+    learned: item.learned,
+    createdAt: item.createdAt,
+    updatedAt: item.updatedAt,
+    sourceRef: item.sourceRef,
+    content: const {
+      'german': 'lernen',
+      'translation_ru': 'учить; изучать; обучаться',
+    },
+  );
+}
+
+LearningItem _polishWord() {
+  final now = DateTime.utc(2026, 9, 27, 10);
+  return LearningItem(
+    id: 'word-polish',
+    type: LearningItemType.word,
+    level: 'A1.1',
+    lesson: '1',
+    topic: 'Sprachen',
+    learned: true,
+    createdAt: now,
+    updatedAt: now,
+    sourceRef: 'test',
+    content: const {
+      'german': 'Polnisch',
+      'translation_ru': 'польский язык',
     },
   );
 }
@@ -513,5 +896,69 @@ GrammarCatalog _foundationGrammarCatalog() {
         options: ['heute.', 'lerne', 'Ich'],
       ),
     ],
+  );
+}
+
+GrammarCatalog _russianChoiceCatalog() {
+  const topic = GrammarTopic(
+    id: 'verb_basics',
+    order: 1,
+    titleDe: 'Was ist ein Verb?',
+    titleRu: 'Что такое глагол',
+    summaryDe: 'Wortart',
+    summaryRu: 'Часть речи',
+    explanationDe: ['Erklärung'],
+    explanationRu: ['Объяснение'],
+    table: [],
+    trainable: true,
+  );
+  return GrammarCatalog(
+    topics: const [topic],
+    verbs: const [],
+    exercises: const [
+      GrammarExercise(
+        id: 'russian-choice',
+        topicId: 'verb_basics',
+        lemma: 'lernen',
+        prompt: 'Welche Wortart ist „lernen“?',
+        answer: 'Verb',
+        type: GrammarExerciseType.choice,
+        options: ['Nomen', 'Verb'],
+        instructionDe: 'Bestimme die Wortart.',
+        instructionRu: 'Определите часть речи.',
+      ),
+    ],
+  );
+}
+
+GrammarCatalog _readingCatalog() {
+  const topic = GrammarTopic(
+    id: 'reading_vowels',
+    order: -4,
+    titleDe: 'Leseregeln: Vokale und Doppellaute',
+    titleRu: 'Правила чтения: гласные и дифтонги',
+    summaryDe: 'Vokale lesen',
+    summaryRu: 'Чтение гласных',
+    explanationDe: ['ie: Liebe [ˈliːbə]'],
+    explanationRu: ['ie: Liebe [ˈliːbə]'],
+    table: [],
+    trainable: true,
+  );
+  return GrammarCatalog(
+    topics: const [topic],
+    verbs: const [],
+    exercises: List.generate(
+      20,
+      (index) => GrammarExercise(
+        id: 'reading-vowels-$index',
+        topicId: 'reading_vowels',
+        lemma: 'reading',
+        prompt: 'Liebe: ie = ?',
+        answer: '[iː]',
+        type: GrammarExerciseType.choice,
+        requiredItemType: 'none',
+        options: const ['[iː]', '[ɪ]'],
+      ),
+    ),
   );
 }

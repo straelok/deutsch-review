@@ -1,4 +1,4 @@
-const currentSchemaVersion = 4;
+const currentSchemaVersion = 6;
 
 const migrationFrom0To1 = '''
 CREATE TABLE learning_items (
@@ -220,6 +220,138 @@ SELECT
 FROM daily_sessions_v3;
 
 DROP TABLE daily_sessions_v3;
+
+CREATE UNIQUE INDEX daily_sessions_required_slot_idx
+  ON daily_sessions (local_date, slot)
+  WHERE slot IS NOT NULL;
+CREATE INDEX daily_sessions_date_status_idx
+  ON daily_sessions (local_date, status);
+''';
+
+const migrationFrom4To5 = '''
+ALTER TABLE daily_sessions RENAME TO daily_sessions_v4;
+
+CREATE TABLE daily_sessions (
+  id TEXT PRIMARY KEY NOT NULL,
+  local_date TEXT NOT NULL,
+  slot INTEGER CHECK (slot IS NULL OR slot BETWEEN 1 AND 9),
+  kind TEXT NOT NULL CHECK (kind IN (
+    'vocabulary_to_german',
+    'vocabulary_to_russian',
+    'grammar',
+    'numbers'
+  )),
+  status TEXT NOT NULL CHECK (status IN ('planned', 'in_progress', 'completed')),
+  target_answers INTEGER NOT NULL CHECK (target_answers > 0),
+  answered_count INTEGER NOT NULL DEFAULT 0
+    CHECK (answered_count >= 0 AND answered_count <= target_answers),
+  queue_json TEXT NOT NULL CHECK (
+    json_valid(queue_json) AND json_type(queue_json) = 'array'
+  ),
+  last_item_id TEXT,
+  created_at TEXT NOT NULL,
+  updated_at TEXT NOT NULL,
+  completed_at TEXT,
+  CHECK (
+    (status = 'completed' AND answered_count = target_answers AND completed_at IS NOT NULL)
+    OR
+    (status != 'completed' AND answered_count < target_answers AND completed_at IS NULL)
+  )
+);
+
+INSERT INTO daily_sessions (
+  id, local_date, slot, kind, status, target_answers, answered_count,
+  queue_json, last_item_id, created_at, updated_at, completed_at
+)
+SELECT
+  id,
+  local_date,
+  CASE
+    WHEN kind = 'grammar' AND slot IS NOT NULL THEN slot + 2
+    ELSE slot
+  END,
+  CASE
+    WHEN kind = 'grammar' THEN 'grammar'
+    WHEN slot BETWEEN 4 AND 5 THEN 'vocabulary_to_russian'
+    ELSE 'vocabulary_to_german'
+  END,
+  status,
+  target_answers,
+  answered_count,
+  queue_json,
+  last_item_id,
+  created_at,
+  updated_at,
+  completed_at
+FROM daily_sessions_v4;
+
+DROP TABLE daily_sessions_v4;
+
+CREATE UNIQUE INDEX daily_sessions_required_slot_idx
+  ON daily_sessions (local_date, slot)
+  WHERE slot IS NOT NULL;
+CREATE INDEX daily_sessions_date_status_idx
+  ON daily_sessions (local_date, status);
+''';
+
+const migrationFrom5To6 = '''
+ALTER TABLE daily_sessions RENAME TO daily_sessions_v5;
+
+CREATE TABLE daily_sessions (
+  id TEXT PRIMARY KEY NOT NULL,
+  local_date TEXT NOT NULL,
+  slot INTEGER CHECK (slot IS NULL OR slot BETWEEN 1 AND 10),
+  kind TEXT NOT NULL CHECK (kind IN (
+    'vocabulary_to_german',
+    'vocabulary_to_russian',
+    'grammar',
+    'numbers'
+  )),
+  status TEXT NOT NULL CHECK (status IN ('planned', 'in_progress', 'completed')),
+  target_answers INTEGER NOT NULL CHECK (target_answers > 0),
+  answered_count INTEGER NOT NULL DEFAULT 0
+    CHECK (answered_count >= 0 AND answered_count <= target_answers),
+  queue_json TEXT NOT NULL CHECK (
+    json_valid(queue_json) AND json_type(queue_json) = 'array'
+  ),
+  last_item_id TEXT,
+  created_at TEXT NOT NULL,
+  updated_at TEXT NOT NULL,
+  completed_at TEXT,
+  CHECK (
+    (status = 'completed' AND answered_count = target_answers AND completed_at IS NOT NULL)
+    OR
+    (status != 'completed' AND answered_count < target_answers AND completed_at IS NULL)
+  )
+);
+
+INSERT INTO daily_sessions (
+  id, local_date, slot, kind, status, target_answers, answered_count,
+  queue_json, last_item_id, created_at, updated_at, completed_at
+)
+SELECT
+  id,
+  local_date,
+  CASE
+    WHEN kind = 'grammar' AND slot IS NOT NULL THEN slot + 1
+    ELSE slot
+  END,
+  kind,
+  status,
+  CASE
+    WHEN kind = 'numbers' AND status = 'planned' AND answered_count = 0
+      THEN 20
+    ELSE target_answers
+  END,
+  answered_count,
+  queue_json,
+  last_item_id,
+  created_at,
+  updated_at,
+  completed_at
+FROM daily_sessions_v5;
+
+DROP TABLE daily_sessions_v5;
 
 CREATE UNIQUE INDEX daily_sessions_required_slot_idx
   ON daily_sessions (local_date, slot)

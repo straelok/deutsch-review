@@ -16,14 +16,17 @@ enum DailySessionStatus {
 }
 
 enum DailySessionKind {
-  vocabulary('vocabulary'),
-  grammar('grammar');
+  vocabularyToGerman('vocabulary_to_german'),
+  vocabularyToRussian('vocabulary_to_russian'),
+  grammar('grammar'),
+  numbers('numbers');
 
   const DailySessionKind(this.wireName);
 
   final String wireName;
 
   static DailySessionKind fromWireName(String value) {
+    if (value == 'vocabulary') return vocabularyToGerman;
     return values.firstWhere(
       (kind) => kind.wireName == value,
       orElse: () => throw ArgumentError.value(value, 'value', 'Unknown kind'),

@@ -14,6 +14,7 @@ abstract interface class DailySessionRepository {
   Future<DailySession> createExtra({
     required String localDate,
     required DateTime now,
+    DailySessionKind kind = DailySessionKind.vocabularyToGerman,
   });
 
   Future<DailySession> start({

@@ -21,6 +21,8 @@ final class ReminderController extends ChangeNotifier
 
   bool _enabled = false;
   bool _busy = false;
+  bool _initialized = false;
+  Future<void>? _initialization;
   int _openTodayRevision = 0;
   String? _lastDay;
   int? _lastCompleted;
@@ -32,8 +34,16 @@ final class ReminderController extends ChangeNotifier
   int get openTodayRevision => _openTodayRevision;
 
   Future<void> initialize() async {
+    if (_initialization case final initialization?) return initialization;
+    final initialization = _initialize();
+    _initialization = initialization;
+    return initialization;
+  }
+
+  Future<void> _initialize() async {
     WidgetsBinding.instance.addObserver(this);
     final launchedFromReminder = await _gateway.initialize(_openToday);
+    _initialized = true;
     _enabled = await _gateway.notificationsEnabled();
     if (launchedFromReminder) _openToday();
     await refresh(force: true);
@@ -56,11 +66,11 @@ final class ReminderController extends ChangeNotifier
   void setLanguage(AppLanguage language) {
     if (_language == language) return;
     _language = language;
-    refresh(force: true);
+    if (_initialized) refresh(force: true);
   }
 
   Future<void> refresh({bool force = false}) async {
-    if (!isSupported) return;
+    if (!isSupported || !_initialized) return;
     final now = DateTime.now();
     final day = localDayKey(now);
     final sessions = await _sessions.ensureDay(
@@ -104,7 +114,7 @@ final class ReminderController extends ChangeNotifier
 
   @override
   void dispose() {
-    WidgetsBinding.instance.removeObserver(this);
+    if (_initialized) WidgetsBinding.instance.removeObserver(this);
     super.dispose();
   }
 }

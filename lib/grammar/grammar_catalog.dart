@@ -65,7 +65,8 @@ final class GrammarCatalog {
         .where(
           (exercise) =>
               exercise.topicId == topicId &&
-              (activeItemKeys.contains(exercise.itemKey) ||
+              (exercise.requiredItemType == 'none' ||
+                  activeItemKeys.contains(exercise.itemKey) ||
                   activeLemmas.contains(exercise.lemma)),
         )
         .toList(growable: false);

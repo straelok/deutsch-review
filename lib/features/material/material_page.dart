@@ -11,6 +11,7 @@ import '../../domain/practice.dart';
 import '../../domain/repositories/learning_item_repository.dart';
 import '../../domain/repositories/practice_repository.dart';
 import '../../import_export/word_json_codec.dart';
+import '../../import_export/word_import_planner.dart';
 import '../../l10n/ui_strings.dart';
 
 class DictionaryMaterialPage extends StatefulWidget {
@@ -255,35 +256,42 @@ class _MaterialPageState extends State<DictionaryMaterialPage> {
         utf8.decode(bytes),
         importedAt: DateTime.now().toUtc(),
       );
-      final existingIds = _items.map((item) => item.id).toSet();
-      final existingKeys = _items.map(_duplicateKey).toSet();
-      final seenIds = <String>{};
-      final seenKeys = <String>{};
-      final additions = <LearningItem>[];
-      var skipped = 0;
+      final existing = [..._items];
+      final activeIds = existing.map((item) => item.id).toSet();
       for (final item in decoded) {
-        final idExists = existingIds.contains(item.id) ||
-            await widget.repository.findById(item.id) != null ||
-            !seenIds.add(item.id);
-        final key = _duplicateKey(item);
-        final wordExists = existingKeys.contains(key) || !seenKeys.add(key);
-        if (idExists || wordExists) {
-          skipped++;
-        } else {
-          additions.add(item);
+        if (!activeIds.contains(item.id)) {
+          final stored = await widget.repository.findById(item.id);
+          if (stored != null) {
+            existing.add(stored);
+            activeIds.add(stored.id);
+          }
         }
       }
+      final plan = planWordImport(
+        existing: existing,
+        imported: decoded,
+        importedAt: DateTime.now().toUtc(),
+      );
       if (!mounted) return;
       final confirmed = await _confirmImport(
-        additions: additions.length,
-        skipped: skipped,
+        additions: plan.additions.length,
+        updates: plan.updates.length,
+        skipped: plan.skipped,
       );
-      if (!confirmed || additions.isEmpty) return;
-      await widget.repository.saveAll(additions);
+      if (!confirmed || plan.itemsToSave.isEmpty) return;
+      await widget.repository.saveAll(plan.itemsToSave);
       await _reload();
       if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(s.importComplete(additions.length, skipped))),
+        SnackBar(
+          content: Text(
+            s.importComplete(
+              plan.additions.length,
+              plan.updates.length,
+              plan.skipped,
+            ),
+          ),
+        ),
       );
     } catch (error) {
       if (!mounted) return;
@@ -327,6 +335,7 @@ class _MaterialPageState extends State<DictionaryMaterialPage> {
 
   Future<bool> _confirmImport({
     required int additions,
+    required int updates,
     required int skipped,
   }) async {
     final s = widget.strings;
@@ -334,13 +343,15 @@ class _MaterialPageState extends State<DictionaryMaterialPage> {
           context: context,
           builder: (context) => AlertDialog(
             title: Text(s.importPreviewTitle),
-            content: Text(s.importPreview(additions, skipped)),
+            content: Text(s.importPreview(additions, updates, skipped)),
             actions: [
               TextButton(
                 onPressed: () => Navigator.pop(context, false),
-                child: Text(additions == 0 ? s.close : s.cancel),
+                child: Text(
+                  additions == 0 && updates == 0 ? s.close : s.cancel,
+                ),
               ),
-              if (additions > 0)
+              if (additions > 0 || updates > 0)
                 FilledButton(
                   key: const Key('confirm-import'),
                   onPressed: () => Navigator.pop(context, true),
@@ -351,9 +362,6 @@ class _MaterialPageState extends State<DictionaryMaterialPage> {
         ) ??
         false;
   }
-
-  static String _duplicateKey(LearningItem item) =>
-      '${item.type.wireName}:${learningItemGerman(item).trim().toLowerCase()}';
 
   Future<void> _openEditor([LearningItem? item]) async {
     final summary =
@@ -372,8 +380,8 @@ class _MaterialPageState extends State<DictionaryMaterialPage> {
       (existing) =>
           existing.id != saved.id &&
           existing.type == saved.type &&
-          learningItemGerman(existing).trim().toLowerCase() ==
-              learningItemGerman(saved).trim().toLowerCase(),
+          learningItemGerman(existing).trim() ==
+              learningItemGerman(saved).trim(),
     );
     if (duplicate && !await _confirmDuplicate()) return;
 
@@ -443,6 +451,7 @@ class _MaterialPageState extends State<DictionaryMaterialPage> {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text(s.deleted),
+        showCloseIcon: true,
         action: SnackBarAction(
           label: s.undo,
           onPressed: () async {
@@ -598,6 +607,7 @@ class _LearningItemEditorState extends State<_LearningItemEditor> {
                   capitalization: _isNoun
                       ? TextCapitalization.words
                       : TextCapitalization.sentences,
+                  validator: _singleGerman,
                 ),
                 if (_isNoun) ...[
                   const SizedBox(height: 12),
@@ -611,6 +621,8 @@ class _LearningItemEditorState extends State<_LearningItemEditor> {
                   key: const Key('translation'),
                   controller: _translation,
                   label: s.meaning,
+                  helperText: s.meaningAlternativesHint,
+                  validator: _russianAlternatives,
                 ),
                 const SizedBox(height: 12),
                 _field(
@@ -666,12 +678,14 @@ class _LearningItemEditorState extends State<_LearningItemEditor> {
     TextCapitalization capitalization = TextCapitalization.sentences,
     bool required = true,
     int maxLines = 1,
+    String? helperText,
+    FormFieldValidator<String>? validator,
   }) {
     return TextFormField(
       key: key,
       controller: controller,
-      decoration: InputDecoration(labelText: label),
-      validator: required ? _required : null,
+      decoration: InputDecoration(labelText: label, helperText: helperText),
+      validator: validator ?? (required ? _required : null),
       textCapitalization: capitalization,
       maxLines: maxLines,
     );
@@ -680,6 +694,20 @@ class _LearningItemEditorState extends State<_LearningItemEditor> {
   String? _required(String? value) {
     return value == null || value.trim().isEmpty
         ? widget.strings.requiredField
+        : null;
+  }
+
+  String? _singleGerman(String? value) {
+    final requiredError = _required(value);
+    if (requiredError != null) return requiredError;
+    return value!.contains(';') ? widget.strings.singleGermanEntry : null;
+  }
+
+  String? _russianAlternatives(String? value) {
+    final requiredError = _required(value);
+    if (requiredError != null) return requiredError;
+    return value!.split(';').any((part) => part.trim().isEmpty)
+        ? widget.strings.invalidRussianAlternatives
         : null;
   }
 

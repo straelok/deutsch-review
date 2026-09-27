@@ -8,7 +8,8 @@ import 'package:deutsch_review/domain/practice.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  test('creates exactly five required sessions per day', () async {
+  test('creates six directional vocabulary sessions and two number sessions',
+      () async {
     final database = AppDatabase.inMemory();
     addTearDown(database.close);
     final repository = SqliteDailySessionRepository(database);
@@ -18,8 +19,28 @@ void main() {
     final second =
         await repository.ensureDay(localDate: '2026-09-24', now: now);
 
-    expect(first.where((session) => session.isRequired), hasLength(5));
-    expect(second.where((session) => session.isRequired), hasLength(5));
+    expect(first.where((session) => session.isRequired), hasLength(8));
+    expect(second.where((session) => session.isRequired), hasLength(8));
+    expect(
+      first.where(
+          (session) => session.kind == DailySessionKind.vocabularyToGerman),
+      hasLength(3),
+    );
+    expect(
+      first.where(
+          (session) => session.kind == DailySessionKind.vocabularyToRussian),
+      hasLength(3),
+    );
+    expect(
+      first.where((session) => session.kind == DailySessionKind.numbers),
+      hasLength(2),
+    );
+    expect(
+      first
+          .where((session) => session.kind == DailySessionKind.numbers)
+          .every((session) => session.targetAnswers == 20),
+      isTrue,
+    );
     expect(first.map((session) => session.id),
         second.map((session) => session.id));
   });
@@ -93,12 +114,36 @@ void main() {
       includeGrammar: true,
     );
 
-    expect(sessions.where((session) => session.isRequired), hasLength(7));
+    expect(sessions.where((session) => session.isRequired), hasLength(10));
     expect(
         sessions.where((session) => session.kind == DailySessionKind.grammar),
         hasLength(2));
     expect(
-        sessions.firstWhere((session) => session.slot == 6).targetAnswers, 10);
+        sessions.firstWhere((session) => session.slot == 9).targetAnswers, 10);
+  });
+
+  test('creates an extra session in the requested category', () async {
+    final database = AppDatabase.inMemory();
+    addTearDown(database.close);
+    final repository = SqliteDailySessionRepository(database);
+    final now = DateTime.utc(2026, 9, 24, 10);
+
+    final grammar = await repository.createExtra(
+      localDate: '2026-09-24',
+      now: now,
+      kind: DailySessionKind.grammar,
+    );
+
+    expect(grammar.isRequired, isFalse);
+    expect(grammar.kind, DailySessionKind.grammar);
+    expect(grammar.targetAnswers, 10);
+
+    final numbers = await repository.createExtra(
+      localDate: '2026-09-24',
+      now: now,
+      kind: DailySessionKind.numbers,
+    );
+    expect(numbers.targetAnswers, 20);
   });
 
   test('records a grammar task atomically with all field attempts', () async {
@@ -111,7 +156,7 @@ void main() {
       now: now,
       includeGrammar: true,
     ))
-        .firstWhere((session) => session.slot == 6);
+        .firstWhere((session) => session.slot == 9);
     await repository.start(
       id: planned.id,
       queueItemIds: List.generate(10, (index) => 'grammar-$index'),

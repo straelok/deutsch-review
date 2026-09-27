@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:deutsch_review/domain/learning_item.dart';
+import 'package:deutsch_review/domain/learning_item_display.dart';
 import 'package:deutsch_review/import_export/word_json_codec.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -92,6 +95,54 @@ void main() {
         importedAt: now,
       ),
       throwsFormatException,
+    );
+  });
+
+  test('supports Russian alternatives but rejects multiple German entries', () {
+    final restored = codec
+        .decode(
+          '{"format_version":2,"words":[{"type":"word",'
+          '"german":"lernen","translation_ru":"учить; изучать"}]}',
+          importedAt: now,
+        )
+        .single;
+    expect(restored.content['translation_ru'], 'учить; изучать');
+
+    expect(
+      () => codec.decode(
+        '{"format_version":2,"words":[{"type":"word",'
+        '"german":"lernen; studieren","translation_ru":"учить"}]}',
+        importedAt: now,
+      ),
+      throwsFormatException,
+    );
+  });
+
+  test('validates the bundled starter vocabulary', () {
+    final source = File(
+      'content/worttrieb-words-2026-09-26.json',
+    ).readAsStringSync();
+    final items = codec.decode(source, importedAt: now);
+    final keys = items
+        .map(
+          (item) => '${item.type.wireName}:'
+              '${learningItemGerman(item).trim()}',
+        )
+        .toSet();
+
+    expect(items, hasLength(271));
+    expect(keys, hasLength(items.length));
+    expect(
+      items.any((item) => item.content['german'] == 'Supermarkt'),
+      isTrue,
+    );
+    expect(
+      items.every(
+        (item) => (item.content['translation_ru'] as String)
+            .split(';')
+            .every((part) => part.trim().isNotEmpty),
+      ),
+      isTrue,
     );
   });
 }

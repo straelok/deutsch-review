@@ -109,8 +109,13 @@ final class SyncingDailySessionRepository implements DailySessionRepository {
   Future<DailySession> createExtra({
     required String localDate,
     required DateTime now,
+    DailySessionKind kind = DailySessionKind.vocabularyToGerman,
   }) async {
-    final session = await _delegate.createExtra(localDate: localDate, now: now);
+    final session = await _delegate.createExtra(
+      localDate: localDate,
+      now: now,
+      kind: kind,
+    );
     _onChanged();
     return session;
   }

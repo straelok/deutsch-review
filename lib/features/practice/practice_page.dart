@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import '../../domain/answer_checker.dart';
 import '../../domain/daily_session.dart';
 import '../../domain/grammar.dart';
+import '../../domain/german_numbers.dart';
 import '../../domain/id_generator.dart';
 import '../../domain/learning_item.dart';
 import '../../domain/learning_item_display.dart';
@@ -28,6 +29,8 @@ class PracticePage extends StatefulWidget {
     required this.strings,
     required this.refreshToken,
     required this.onAttemptSaved,
+    this.requestedTopicId,
+    this.practiceRequestRevision = 0,
     this.reminders,
     super.key,
   });
@@ -40,6 +43,8 @@ class PracticePage extends StatefulWidget {
   final UiStrings strings;
   final int refreshToken;
   final VoidCallback onAttemptSaved;
+  final String? requestedTopicId;
+  final int practiceRequestRevision;
   final ReminderController? reminders;
 
   @override
@@ -49,19 +54,26 @@ class PracticePage extends StatefulWidget {
 class _PracticePageState extends State<PracticePage> {
   final _answerController = TextEditingController();
   final _answerFocus = FocusNode();
+  final _nextFocus = FocusNode(debugLabel: 'next-lesson-question');
   final _random = Random();
   List<LearningItem> _activeItems = const [];
   List<LearningItem> _queue = const [];
   List<DailySession> _daySessions = const [];
   List<String> _grammarQueue = const [];
   List<String> _nextGrammarQueue = const [];
+  List<String> _numberQueue = const [];
+  List<String> _nextNumberQueue = const [];
   Set<String> _availableGrammarTopics = const {};
   DailySession? _session;
   List<LearningItem> _nextQueue = const [];
   bool _loading = true;
   bool _answered = false;
   bool _lastCorrect = false;
+  bool _savingVocabularyAnswer = false;
   bool _complete = false;
+  String? _pendingVocabularyAnswer;
+  int _loadRevision = 0;
+  String? _focusedGrammarTopicId;
   Map<String, bool> _grammarResults = const {};
   final Map<String, TextEditingController> _grammarControllers = {};
   String? _selectedGrammarOption;
@@ -70,6 +82,8 @@ class _PracticePageState extends State<PracticePage> {
   LearningItem? get _current => _queue.isEmpty ? null : _queue.first;
   String? get _currentGrammar =>
       _grammarQueue.isEmpty ? null : _grammarQueue.first;
+  String? get _currentNumber =>
+      _numberQueue.isEmpty ? null : _numberQueue.first;
 
   @override
   void initState() {
@@ -83,12 +97,19 @@ class _PracticePageState extends State<PracticePage> {
     if (widget.refreshToken != oldWidget.refreshToken && _session == null) {
       _load();
     }
+    if (widget.practiceRequestRevision != oldWidget.practiceRequestRevision &&
+        widget.requestedTopicId != null) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted) _startRequestedLesson(widget.requestedTopicId!);
+      });
+    }
   }
 
   @override
   void dispose() {
     _answerController.dispose();
     _answerFocus.dispose();
+    _nextFocus.dispose();
     for (final controller in _grammarControllers.values) {
       controller.dispose();
     }
@@ -116,6 +137,9 @@ class _PracticePageState extends State<PracticePage> {
     if (_session!.kind == DailySessionKind.grammar) {
       return _grammarPractice();
     }
+    if (_session!.kind == DailySessionKind.numbers) {
+      return _numberPractice();
+    }
 
     final item = _current;
     if (item == null) {
@@ -125,7 +149,9 @@ class _PracticePageState extends State<PracticePage> {
         message: s.reviewEmpty,
       );
     }
-    final expected = learningItemGerman(item);
+    final toRussian = _session!.kind == DailySessionKind.vocabularyToRussian;
+    final expected =
+        toRussian ? learningItemMeaning(item) : learningItemGerman(item);
     final note = learningItemNote(item);
     final example = learningItemExample(item);
     return Center(
@@ -143,7 +169,7 @@ class _PracticePageState extends State<PracticePage> {
                     alignment: Alignment.centerLeft,
                     child: TextButton.icon(
                       key: const Key('back-to-plan'),
-                      onPressed: _load,
+                      onPressed: _savingVocabularyAnswer ? null : _returnToPlan,
                       icon: const Icon(Icons.arrow_back),
                       label: Text(s.dailyPlan),
                     ),
@@ -158,7 +184,9 @@ class _PracticePageState extends State<PracticePage> {
                   ),
                   const SizedBox(height: 24),
                   Text(
-                    learningItemMeaning(item),
+                    toRussian
+                        ? learningItemGerman(item)
+                        : learningItemMeaning(item),
                     key: const Key('practice-prompt'),
                     textAlign: TextAlign.center,
                     style: Theme.of(context).textTheme.headlineMedium,
@@ -169,7 +197,9 @@ class _PracticePageState extends State<PracticePage> {
                     controller: _answerController,
                     focusNode: _answerFocus,
                     enabled: !_answered,
-                    decoration: InputDecoration(labelText: s.yourAnswer),
+                    decoration: InputDecoration(
+                      labelText: toRussian ? s.russianAnswer : s.yourAnswer,
+                    ),
                     textInputAction: TextInputAction.done,
                     onSubmitted: (_) => _answered ? null : _checkAnswer(),
                   ),
@@ -196,6 +226,27 @@ class _PracticePageState extends State<PracticePage> {
                             if (!_lastCorrect) ...[
                               const SizedBox(height: 6),
                               Text(s.correctAnswer(expected)),
+                              if (toRussian &&
+                                  _pendingVocabularyAnswer != null) ...[
+                                const SizedBox(height: 10),
+                                OutlinedButton.icon(
+                                  key: const Key(
+                                    'accept-russian-translation',
+                                  ),
+                                  onPressed: _savingVocabularyAnswer
+                                      ? null
+                                      : _acceptRussianTranslation,
+                                  icon: _savingVocabularyAnswer
+                                      ? const SizedBox.square(
+                                          dimension: 16,
+                                          child: CircularProgressIndicator(
+                                            strokeWidth: 2,
+                                          ),
+                                        )
+                                      : const Icon(Icons.add, size: 18),
+                                  label: Text(s.acceptMyTranslation),
+                                ),
+                              ],
                             ],
                             if (example != null) ...[
                               const SizedBox(height: 6),
@@ -211,11 +262,29 @@ class _PracticePageState extends State<PracticePage> {
                     ),
                   ],
                   const SizedBox(height: 20),
-                  FilledButton(
-                    key: Key(_answered ? 'next-answer' : 'check-answer'),
-                    onPressed: _answered ? _next : _checkAnswer,
-                    child: Text(_answered ? s.next : s.check),
-                  ),
+                  if (_answered)
+                    FilledButton(
+                      key: const Key('next-answer'),
+                      focusNode: _nextFocus,
+                      onPressed: _savingVocabularyAnswer ? null : _next,
+                      child: Text(s.next),
+                    )
+                  else ...[
+                    FilledButton(
+                      key: const Key('check-answer'),
+                      onPressed: _checkAnswer,
+                      child: Text(s.check),
+                    ),
+                    const SizedBox(height: 28),
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: TextButton(
+                        key: const Key('unknown-answer'),
+                        onPressed: _unknownAnswer,
+                        child: Text(s.doNotKnow),
+                      ),
+                    ),
+                  ],
                 ],
               ),
             ),
@@ -229,12 +298,47 @@ class _PracticePageState extends State<PracticePage> {
     final s = widget.strings;
     final requiredSessions =
         _daySessions.where((session) => session.isRequired).toList();
-    final extraSessions =
-        _daySessions.where((session) => !session.isRequired).toList();
+    final toGermanSessions = requiredSessions
+        .where((session) => session.kind == DailySessionKind.vocabularyToGerman)
+        .toList();
+    final toRussianSessions = requiredSessions
+        .where(
+            (session) => session.kind == DailySessionKind.vocabularyToRussian)
+        .toList();
+    final grammarSessions = requiredSessions
+        .where((session) => session.kind == DailySessionKind.grammar)
+        .toList();
+    final numberSessions = requiredSessions
+        .where((session) => session.kind == DailySessionKind.numbers)
+        .toList();
+    final extraToGerman = _daySessions
+        .where((session) =>
+            !session.isRequired &&
+            session.kind == DailySessionKind.vocabularyToGerman)
+        .toList();
+    final extraToRussian = _daySessions
+        .where((session) =>
+            !session.isRequired &&
+            session.kind == DailySessionKind.vocabularyToRussian)
+        .toList();
+    final extraGrammar = _daySessions
+        .where((session) =>
+            !session.isRequired && session.kind == DailySessionKind.grammar)
+        .toList();
+    final extraNumbers = _daySessions
+        .where((session) =>
+            !session.isRequired && session.kind == DailySessionKind.numbers)
+        .toList();
     final completed =
         requiredSessions.where((session) => session.isComplete).length;
-    final dayComplete =
-        requiredSessions.isNotEmpty && completed == requiredSessions.length;
+    final toGermanComplete = toGermanSessions.isNotEmpty &&
+        toGermanSessions.every((session) => session.isComplete);
+    final toRussianComplete = toRussianSessions.isNotEmpty &&
+        toRussianSessions.every((session) => session.isComplete);
+    final grammarComplete = grammarSessions.isNotEmpty &&
+        grammarSessions.every((session) => session.isComplete);
+    final numbersComplete = numberSessions.isNotEmpty &&
+        numberSessions.every((session) => session.isComplete);
 
     return ListView(
       padding: const EdgeInsets.all(24),
@@ -257,23 +361,78 @@ class _PracticePageState extends State<PracticePage> {
         ],
         const SizedBox(height: 16),
         Text(s.chooseSession),
-        const SizedBox(height: 8),
-        ...requiredSessions.map(_sessionCard),
-        if (dayComplete) ...[
-          const SizedBox(height: 12),
-          FilledButton.icon(
-            key: const Key('create-extra-session'),
-            onPressed: _createExtraSession,
-            icon: const Icon(Icons.add),
-            label: Text(s.getNewLesson),
+        const SizedBox(height: 16),
+        _sessionCategory(
+          icon: Icons.arrow_forward,
+          title: s.toGermanCategory,
+          sessions: [...toGermanSessions, ...extraToGerman],
+          canAdd: toGermanComplete,
+          addKey: const Key('create-extra-session'),
+          onAdd: () => _createExtraSession(DailySessionKind.vocabularyToGerman),
+        ),
+        const SizedBox(height: 20),
+        _sessionCategory(
+          icon: Icons.arrow_back,
+          title: s.toRussianCategory,
+          sessions: [...toRussianSessions, ...extraToRussian],
+          canAdd: toRussianComplete,
+          addKey: const Key('create-extra-to-russian-session'),
+          onAdd: () =>
+              _createExtraSession(DailySessionKind.vocabularyToRussian),
+        ),
+        const SizedBox(height: 20),
+        _sessionCategory(
+          icon: Icons.pin_outlined,
+          title: s.numbersCategory,
+          sessions: [...numberSessions, ...extraNumbers],
+          canAdd: numbersComplete,
+          addKey: const Key('create-extra-number-session'),
+          onAdd: () => _createExtraSession(DailySessionKind.numbers),
+        ),
+        if (grammarSessions.isNotEmpty) ...[
+          const SizedBox(height: 20),
+          _sessionCategory(
+            icon: Icons.school_outlined,
+            title: s.grammarCategory,
+            sessions: [...grammarSessions, ...extraGrammar],
+            canAdd: grammarComplete,
+            addKey: const Key('create-extra-grammar-session'),
+            onAdd: () => _createExtraSession(DailySessionKind.grammar),
           ),
         ],
-        if (extraSessions.isNotEmpty) ...[
-          const SizedBox(height: 24),
-          Text(s.extraSession, style: Theme.of(context).textTheme.titleLarge),
-          const SizedBox(height: 8),
-          ...extraSessions.map(_sessionCard),
-        ],
+      ],
+    );
+  }
+
+  Widget _sessionCategory({
+    required IconData icon,
+    required String title,
+    required List<DailySession> sessions,
+    required bool canAdd,
+    required Key addKey,
+    required VoidCallback onAdd,
+  }) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Row(
+          children: [
+            Icon(icon),
+            const SizedBox(width: 8),
+            Expanded(
+              child: Text(title, style: Theme.of(context).textTheme.titleLarge),
+            ),
+            if (canAdd)
+              OutlinedButton.icon(
+                key: addKey,
+                onPressed: onAdd,
+                icon: const Icon(Icons.add, size: 18),
+                label: Text(widget.strings.addLesson),
+              ),
+          ],
+        ),
+        const SizedBox(height: 8),
+        ...sessions.map(_sessionCard),
       ],
     );
   }
@@ -306,6 +465,124 @@ class _PracticePageState extends State<PracticePage> {
                         )
                       : Text(s.enableReminders),
                 ),
+        ),
+      ),
+    );
+  }
+
+  Widget _numberPractice() {
+    final s = widget.strings;
+    final taskId = _currentNumber;
+    if (taskId == null) {
+      return _CenteredPanel(
+        icon: Icons.pin_outlined,
+        title: s.numbersCategory,
+        message: s.grammarSessionUnavailable,
+        action: TextButton.icon(
+          onPressed: _load,
+          icon: const Icon(Icons.arrow_back),
+          label: Text(s.dailyPlan),
+        ),
+      );
+    }
+    final task = _numberTask(taskId);
+    return Center(
+      child: SingleChildScrollView(
+        padding: const EdgeInsets.all(24),
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 680),
+          child: Card(
+            child: Padding(
+              padding: const EdgeInsets.all(28),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: TextButton.icon(
+                      key: const Key('back-to-plan'),
+                      onPressed: _load,
+                      icon: const Icon(Icons.arrow_back),
+                      label: Text(s.dailyPlan),
+                    ),
+                  ),
+                  Text(
+                    s.progress(
+                      _session!.answeredCount,
+                      _session!.targetAnswers,
+                    ),
+                    style: Theme.of(context).textTheme.labelLarge,
+                  ),
+                  const SizedBox(height: 24),
+                  Text(
+                    task.$1,
+                    key: const Key('number-prompt'),
+                    textAlign: TextAlign.center,
+                    style: Theme.of(context).textTheme.headlineMedium,
+                  ),
+                  const SizedBox(height: 28),
+                  TextField(
+                    key: const Key('number-answer'),
+                    controller: _answerController,
+                    focusNode: _answerFocus,
+                    enabled: !_answered,
+                    keyboardType:
+                        task.$3 ? TextInputType.number : TextInputType.text,
+                    decoration: InputDecoration(
+                      labelText:
+                          task.$3 ? s.digitsAnswer : s.germanNumberAnswer,
+                    ),
+                    textInputAction: TextInputAction.done,
+                    onSubmitted: (_) => _answered ? null : _checkNumber(),
+                  ),
+                  if (_answered) ...[
+                    const SizedBox(height: 20),
+                    Container(
+                      padding: const EdgeInsets.all(16),
+                      decoration: BoxDecoration(
+                        color: (_lastCorrect
+                                ? Colors.green
+                                : Theme.of(context).colorScheme.error)
+                            .withValues(alpha: 0.14),
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(_lastCorrect ? s.correct : s.incorrect),
+                          if (!_lastCorrect) Text(s.correctAnswer(task.$2)),
+                        ],
+                      ),
+                    ),
+                  ],
+                  const SizedBox(height: 20),
+                  if (_answered)
+                    FilledButton(
+                      key: const Key('next-number-answer'),
+                      focusNode: _nextFocus,
+                      onPressed: _nextNumber,
+                      child: Text(s.next),
+                    )
+                  else ...[
+                    FilledButton(
+                      key: const Key('check-number-answer'),
+                      onPressed: _checkNumber,
+                      child: Text(s.check),
+                    ),
+                    const SizedBox(height: 28),
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: TextButton(
+                        key: const Key('unknown-number-answer'),
+                        onPressed: _unknownNumber,
+                        child: Text(s.doNotKnow),
+                      ),
+                    ),
+                  ],
+                ],
+              ),
+            ),
+          ),
         ),
       ),
     );
@@ -410,13 +687,29 @@ class _PracticePageState extends State<PracticePage> {
                     ),
                   ],
                   const SizedBox(height: 20),
-                  FilledButton(
-                    key: Key(_answered
-                        ? 'next-grammar-answer'
-                        : 'check-grammar-answer'),
-                    onPressed: _answered ? _nextGrammar : _checkGrammar,
-                    child: Text(_answered ? s.next : s.check),
-                  ),
+                  if (_answered)
+                    FilledButton(
+                      key: const Key('next-grammar-answer'),
+                      focusNode: _nextFocus,
+                      onPressed: _nextGrammar,
+                      child: Text(s.next),
+                    )
+                  else ...[
+                    FilledButton(
+                      key: const Key('check-grammar-answer'),
+                      onPressed: _checkGrammar,
+                      child: Text(s.check),
+                    ),
+                    const SizedBox(height: 28),
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: TextButton(
+                        key: const Key('unknown-grammar-answer'),
+                        onPressed: _unknownGrammarAnswer,
+                        child: Text(s.doNotKnow),
+                      ),
+                    ),
+                  ],
                 ],
               ),
             ),
@@ -454,7 +747,7 @@ class _PracticePageState extends State<PracticePage> {
                   .map(
                     (option) => ChoiceChip(
                       key: Key('grammar-option-$option'),
-                      label: Text(option),
+                      label: Text(_optionLabel(option)),
                       selected: _selectedGrammarOption == option,
                       onSelected: _answered
                           ? null
@@ -525,8 +818,37 @@ class _PracticePageState extends State<PracticePage> {
 
   String _exerciseInstruction(GrammarExercise exercise) =>
       widget.strings.isRussian
-          ? exercise.instructionRu
+          ? exercise.instructionRu.isEmpty
+              ? widget.strings.fillMissingPart
+              : exercise.instructionRu
           : exercise.instructionDe;
+
+  String _optionLabel(String option) {
+    if (!widget.strings.isRussian) return option;
+    return const {
+          'Ja': 'Да',
+          'Nein': 'Нет',
+          'Verb': 'Глагол',
+          'Nomen': 'Существительное',
+          'Adjektiv': 'Прилагательное',
+          'Adverb': 'Наречие',
+          'Präposition': 'Предлог',
+          'Nominativ': 'Именительный падеж',
+          'Akkusativ': 'Винительный падеж',
+          'Frage': 'Вопрос',
+          'ein Nomen': 'существительное',
+          'einen Umstand': 'обстоятельство',
+          'Mit wem': 'С кем',
+          'Wann': 'Когда',
+          'Was': 'Что',
+          'Wen': 'Кого',
+          'Wer': 'Кто',
+          'Wie': 'Как',
+          'Wo': 'Где',
+          'Woher': 'Откуда',
+        }[option] ??
+        option;
+  }
 
   String _wordOrderAnswer(GrammarExercise exercise) =>
       _wordOrderSelection.map((index) => exercise.options[index]).join(' ');
@@ -542,7 +864,9 @@ class _PracticePageState extends State<PracticePage> {
           style: Theme.of(context).textTheme.headlineMedium,
         ),
         const SizedBox(height: 16),
-        ...verb.forms.entries.map((entry) {
+        ...verb.forms.entries.indexed.map((indexedEntry) {
+          final index = indexedEntry.$1;
+          final entry = indexedEntry.$2;
           final controller = _grammarControllers.putIfAbsent(
             entry.key,
             TextEditingController.new,
@@ -560,6 +884,7 @@ class _PracticePageState extends State<PracticePage> {
                   child: TextField(
                     key: Key('grammar-form-${entry.key}'),
                     controller: controller,
+                    focusNode: index == 0 ? _answerFocus : null,
                     enabled: !_answered,
                     decoration: InputDecoration(
                       isDense: true,
@@ -590,13 +915,14 @@ class _PracticePageState extends State<PracticePage> {
             key: session.slot == 1
                 ? const Key('start-review')
                 : Key('start-review-${session.slot ?? session.id}'),
-            onPressed: session.kind == DailySessionKind.grammar
-                ? _availableGrammarTopics.isEmpty
-                    ? null
-                    : () => _selectSession(session)
-                : _activeItems.isEmpty
+            onPressed: switch (session.kind) {
+              DailySessionKind.grammar =>
+                _availableGrammarTopics.isEmpty && session.queueItemIds.isEmpty
                     ? null
                     : () => _selectSession(session),
+              DailySessionKind.numbers => () => _selectSession(session),
+              _ => _activeItems.isEmpty ? null : () => _selectSession(session),
+            },
             child: Text(
               session.status == DailySessionStatus.inProgress
                   ? s.continueSession
@@ -610,21 +936,78 @@ class _PracticePageState extends State<PracticePage> {
               ? const Icon(Icons.check)
               : Text('${session.slot ?? '+'}'),
         ),
-        title: Text(
-          session.slot == null
-              ? s.extraSession
-              : s.sessionNumber(session.slot!),
-        ),
+        title: Text(_sessionTitle(session)),
         subtitle: Text(
-          '$status · ${s.sessionAnswers(session.answeredCount, session.targetAnswers)}',
+          [
+            '$status · ${s.sessionAnswers(session.answeredCount, session.targetAnswers)}',
+            if (_grammarSessionDetails(session) case final details?) details,
+          ].join('\n'),
         ),
         trailing: action,
       ),
     );
   }
 
+  String _sessionTitle(DailySession session) {
+    final s = widget.strings;
+    final position =
+        _daySessions.indexWhere((candidate) => candidate.id == session.id);
+    final ordinal = _daySessions
+        .take(position < 0 ? _daySessions.length : position + 1)
+        .where((candidate) => candidate.kind == session.kind)
+        .length;
+    return switch (session.kind) {
+      DailySessionKind.vocabularyToGerman =>
+        s.vocabularyToGermanLesson(ordinal),
+      DailySessionKind.vocabularyToRussian =>
+        s.vocabularyToRussianLesson(ordinal),
+      DailySessionKind.numbers => s.numbersLesson(ordinal),
+      DailySessionKind.grammar =>
+        _focusedTopicTitle(session) ?? s.grammarLesson(ordinal),
+    };
+  }
+
+  String? _grammarSessionDetails(DailySession session) {
+    if (session.kind != DailySessionKind.grammar) return null;
+    final topicIds = _grammarTopicIds(session.queueItemIds);
+    final planned = topicIds.isEmpty;
+    final resolvedIds = planned ? _availableGrammarTopics : topicIds;
+    final titles = widget.grammarCatalog.topics
+        .where((topic) => resolvedIds.contains(topic.id))
+        .map(
+            (topic) => widget.strings.isRussian ? topic.titleRu : topic.titleDe)
+        .join(', ');
+    if (titles.isEmpty) return null;
+    return planned
+        ? widget.strings.grammarTopicsPlanned(titles)
+        : widget.strings.grammarTopics(titles);
+  }
+
+  Set<String> _grammarTopicIds(Iterable<String> queue) => queue
+      .map((id) {
+        final paradigmParts = id.split(':');
+        if (paradigmParts.length == 3 && paradigmParts.first == 'paradigm') {
+          return paradigmParts[1];
+        }
+        return widget.grammarCatalog.exercise(id)?.topicId;
+      })
+      .whereType<String>()
+      .toSet();
+
+  String? _focusedTopicTitle(DailySession session) {
+    final topicIds = _grammarTopicIds(session.queueItemIds);
+    if (topicIds.length != 1) return null;
+    final topic = widget.grammarCatalog.topics
+        .where((candidate) => candidate.id == topicIds.single)
+        .firstOrNull;
+    if (topic == null) return null;
+    final title = widget.strings.isRussian ? topic.titleRu : topic.titleDe;
+    return widget.strings.topicGrammarLesson(title);
+  }
+
   Future<void> _load() async {
-    setState(() => _loading = true);
+    final revision = ++_loadRevision;
+    if (_daySessions.isEmpty && mounted) setState(() => _loading = true);
     final now = DateTime.now();
     final items = await widget.learningItems.findActive();
     final grammarProgress = await widget.grammar.progress();
@@ -641,7 +1024,7 @@ class _PracticePageState extends State<PracticePage> {
       now: now.toUtc(),
       includeGrammar: availableTopics.isNotEmpty,
     );
-    if (!mounted) return;
+    if (!mounted || revision != _loadRevision) return;
     setState(() {
       _activeItems = items
           .where(
@@ -656,7 +1039,11 @@ class _PracticePageState extends State<PracticePage> {
       _session = null;
       _queue = const [];
       _grammarQueue = const [];
+      _numberQueue = const [];
+      _focusedGrammarTopicId = null;
       _answered = false;
+      _pendingVocabularyAnswer = null;
+      _savingVocabularyAnswer = false;
       _complete = false;
       _loading = false;
     });
@@ -666,12 +1053,39 @@ class _PracticePageState extends State<PracticePage> {
     if (!session.isComplete) await _openSession(session.id);
   }
 
-  Future<void> _createExtraSession() async {
+  Future<void> _createExtraSession(DailySessionKind kind) async {
     final extra = await widget.sessions.createExtra(
       localDate: localDayKey(DateTime.now()),
       now: DateTime.now().toUtc(),
+      kind: kind,
     );
     await _openSession(extra.id);
+  }
+
+  Future<void> _startRequestedLesson(String topicId) async {
+    if (topicId == 'numbers') {
+      await _createExtraSession(DailySessionKind.numbers);
+      return;
+    }
+    setState(() => _loading = true);
+    final items = await widget.learningItems.findActive();
+    final progress = await widget.grammar.progress();
+    final availableTopics = widget.grammarCatalog.availableTopicIds(
+      learnedTopicIds: progress.values
+          .where((entry) => entry.learned)
+          .map((entry) => entry.topicId)
+          .toSet(),
+      activeItemKeys: _activeItemKeys(items),
+    );
+    if (!mounted) return;
+    _activeItems = items;
+    _availableGrammarTopics = availableTopics;
+    if (!availableTopics.contains(topicId)) {
+      await _load();
+      return;
+    }
+    _focusedGrammarTopicId = topicId;
+    await _createExtraSession(DailySessionKind.grammar);
   }
 
   Future<void> _openSession(String id) async {
@@ -694,10 +1108,15 @@ class _PracticePageState extends State<PracticePage> {
       session = await widget.sessions.createExtra(
         localDate: localDayKey(DateTime.now()),
         now: DateTime.now().toUtc(),
+        kind: session.kind,
       );
     }
     if (session.kind == DailySessionKind.grammar) {
       await _openGrammarSession(session);
+      return;
+    }
+    if (session.kind == DailySessionKind.numbers) {
+      await _openNumberSession(session);
       return;
     }
     var queue = _itemsForIds(session.queueItemIds);
@@ -719,10 +1138,70 @@ class _PracticePageState extends State<PracticePage> {
       _session = resolvedSession;
       _queue = queue;
       _answered = false;
+      _pendingVocabularyAnswer = null;
+      _savingVocabularyAnswer = false;
       _complete = resolvedSession.isComplete;
       _loading = false;
     });
-    if (_queue.isNotEmpty) _answerFocus.requestFocus();
+    if (_queue.isNotEmpty) _focusAnswerField();
+  }
+
+  Future<void> _openNumberSession(DailySession session) async {
+    var queue =
+        session.queueItemIds.where(_isValidNumberTask).toList(growable: false);
+    if (session.status == DailySessionStatus.planned ||
+        queue.length != session.remaining) {
+      queue = _buildNumberQueue(session.remaining);
+      session = await widget.sessions.start(
+        id: session.id,
+        queueItemIds: queue,
+        now: DateTime.now().toUtc(),
+      );
+    }
+    if (!mounted) return;
+    _answerController.clear();
+    setState(() {
+      _session = session;
+      _numberQueue = queue;
+      _answered = false;
+      _complete = session.isComplete;
+      _loading = false;
+    });
+    if (queue.isNotEmpty) _focusAnswerField();
+  }
+
+  List<String> _buildNumberQueue(int length) {
+    final values = List<int>.generate(101, (index) => index)..shuffle(_random);
+    final completeSet = values
+        .expand(
+          (value) => [
+            'number:to_digits:$value',
+            'number:to_german:$value',
+          ],
+        )
+        .toList(growable: false);
+    return List<String>.generate(
+      length,
+      (index) => completeSet[index % completeSet.length],
+      growable: false,
+    );
+  }
+
+  bool _isValidNumberTask(String id) {
+    final parts = id.split(':');
+    if (parts.length != 3 || parts.first != 'number') return false;
+    if (parts[1] != 'to_digits' && parts[1] != 'to_german') return false;
+    final value = int.tryParse(parts[2]);
+    return value != null && value >= 0 && value <= 100;
+  }
+
+  (String, String, bool) _numberTask(String id) {
+    final parts = id.split(':');
+    final value = int.parse(parts[2]);
+    final toDigits = parts[1] == 'to_digits';
+    return toDigits
+        ? (germanNumberWord(value), '$value', true)
+        : ('$value', germanNumberWord(value), false);
   }
 
   Future<void> _openGrammarSession(DailySession session) async {
@@ -733,6 +1212,7 @@ class _PracticePageState extends State<PracticePage> {
       queue = await _buildGrammarQueue(
         length: session.remaining,
         includeParadigm: session.answeredCount == 0,
+        topicId: _focusedGrammarTopicId,
       );
       if (queue.isNotEmpty) {
         session = await widget.sessions.start(
@@ -751,23 +1231,26 @@ class _PracticePageState extends State<PracticePage> {
       _complete = session.isComplete;
       _loading = false;
     });
-    if (queue.isNotEmpty && _paradigm(queue.first) == null) {
-      _answerFocus.requestFocus();
-    }
+    if (queue.isNotEmpty) _focusAnswerField();
   }
 
   Future<List<String>> _buildGrammarQueue({
     required int length,
     required bool includeParadigm,
+    String? topicId,
   }) async {
     if (length <= 0 || _availableGrammarTopics.isEmpty) return const [];
+    final topicIds = topicId == null
+        ? _availableGrammarTopics
+        : _availableGrammarTopics.where((id) => id == topicId).toSet();
+    if (topicIds.isEmpty) return const [];
     final outcomes = await widget.grammar.recentOutcomes();
     final itemKeys = _activeItemKeys(_activeItems);
     final verbLemmas = _verbLemmas(_activeItems);
     final used = _daySessions.expand((session) => session.queueItemIds).toSet();
     final queue = <String>[];
     if (includeParadigm) {
-      final conjugationTopics = _availableGrammarTopics
+      final conjugationTopics = topicIds
           .where(const {'regular_present', 'sein', 'haben'}.contains)
           .toList(growable: false);
       if (conjugationTopics.isNotEmpty) {
@@ -789,7 +1272,7 @@ class _PracticePageState extends State<PracticePage> {
     }
 
     final topicPlan = buildWeightedQueue(
-      itemIds: _availableGrammarTopics.toList(growable: false),
+      itemIds: topicIds.toList(growable: false),
       recentOutcomes: outcomes,
       length: length - queue.length,
       random: _random,
@@ -811,7 +1294,7 @@ class _PracticePageState extends State<PracticePage> {
       queue.add(candidates.first.id);
     }
 
-    final allEligible = _availableGrammarTopics
+    final allEligible = topicIds
         .expand(
           (topicId) => widget.grammarCatalog.exercisesFor(
             topicId: topicId,
@@ -834,7 +1317,8 @@ class _PracticePageState extends State<PracticePage> {
     final exercise = widget.grammarCatalog.exercise(id);
     return exercise != null &&
         _availableGrammarTopics.contains(exercise.topicId) &&
-        _activeItemKeys(_activeItems).contains(exercise.itemKey);
+        (exercise.requiredItemType == 'none' ||
+            _activeItemKeys(_activeItems).contains(exercise.itemKey));
   }
 
   GrammarVerb? _paradigm(String id) {
@@ -888,11 +1372,56 @@ class _PracticePageState extends State<PracticePage> {
 
   Future<void> _checkAnswer() async {
     if (_answered || _answerController.text.trim().isEmpty) return;
+    await _submitAnswer(_answerController.text.trim());
+  }
+
+  Future<void> _unknownAnswer() => _submitAnswer('');
+
+  Future<void> _submitAnswer(String answer) async {
+    if (_answered || _current == null) return;
     final item = _current!;
-    final correct = isPracticeAnswerCorrect(
-      answer: _answerController.text,
-      expected: learningItemGerman(item),
+    final toRussian = _session!.kind == DailySessionKind.vocabularyToRussian;
+    final correct = toRussian
+        ? isAnyPracticeAnswerCorrect(
+            answer: answer,
+            expectedAlternatives: learningItemMeaning(item),
+          )
+        : isPracticeAnswerCorrect(
+            answer: answer,
+            expected: learningItemGerman(item),
+          );
+
+    if (toRussian && !correct && answer.isNotEmpty && !answer.contains(';')) {
+      setState(() {
+        _answered = true;
+        _lastCorrect = false;
+        _pendingVocabularyAnswer = answer;
+      });
+      _focusNextButton();
+      return;
+    }
+
+    final result = await _recordVocabularyAnswer(
+      item: item,
+      answer: answer,
+      correct: correct,
     );
+    if (!mounted) return;
+    setState(() {
+      _session = result.$1;
+      _nextQueue = result.$2;
+      _answered = true;
+      _lastCorrect = correct;
+      _pendingVocabularyAnswer = null;
+    });
+    _focusNextButton();
+  }
+
+  Future<(DailySession, List<LearningItem>)> _recordVocabularyAnswer({
+    required LearningItem item,
+    required String answer,
+    required bool correct,
+  }) async {
     final nextQueue = await _buildQueue(
       length: _session!.remaining - 1,
       previousItemId: item.id,
@@ -904,7 +1433,7 @@ class _PracticePageState extends State<PracticePage> {
         id: newUuidV4(),
         itemId: item.id,
         sessionId: _session!.id,
-        answerText: _answerController.text.trim(),
+        answerText: answer,
         correct: correct,
         attemptedAt: DateTime.now().toUtc(),
       ),
@@ -913,16 +1442,129 @@ class _PracticePageState extends State<PracticePage> {
       now: DateTime.now().toUtc(),
     );
     widget.onAttemptSaved();
-    if (!mounted) return;
-    setState(() {
-      _session = updatedSession;
-      _nextQueue = nextQueue;
-      _answered = true;
-      _lastCorrect = correct;
-    });
+    return (updatedSession, nextQueue);
   }
 
-  Future<void> _checkGrammar() async {
+  Future<void> _acceptRussianTranslation() async {
+    final answer = _pendingVocabularyAnswer;
+    final item = _current;
+    if (answer == null || item == null || _savingVocabularyAnswer) return;
+
+    setState(() => _savingVocabularyAnswer = true);
+    try {
+      final currentTime = DateTime.now().toUtc();
+      final updatedAt =
+          currentTime.isBefore(item.createdAt) ? item.createdAt : currentTime;
+      final updatedItem = LearningItem(
+        id: item.id,
+        type: item.type,
+        level: item.level,
+        lesson: item.lesson,
+        topic: item.topic,
+        learned: item.learned,
+        createdAt: item.createdAt,
+        updatedAt: updatedAt,
+        deletedAt: item.deletedAt,
+        sourceRef: item.sourceRef,
+        content: {
+          ...item.content,
+          'translation_ru': appendRussianPracticeAnswerAlternative(
+            expectedAlternatives: learningItemMeaning(item),
+            answer: answer,
+          ),
+        },
+      );
+      await widget.learningItems.save(updatedItem);
+      _replaceActiveItem(updatedItem);
+      final result = await _recordVocabularyAnswer(
+        item: updatedItem,
+        answer: answer,
+        correct: true,
+      );
+      if (!mounted) return;
+      setState(() {
+        _session = result.$1;
+        _nextQueue = result.$2;
+        _lastCorrect = true;
+        _pendingVocabularyAnswer = null;
+        _savingVocabularyAnswer = false;
+      });
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(widget.strings.translationAdded)),
+      );
+      _focusNextButton();
+    } catch (_) {
+      if (!mounted) return;
+      setState(() => _savingVocabularyAnswer = false);
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(widget.strings.translationAddFailed)),
+      );
+    }
+  }
+
+  void _replaceActiveItem(LearningItem replacement) {
+    _activeItems = [
+      for (final item in _activeItems)
+        if (item.id == replacement.id) replacement else item,
+    ];
+    _queue = [
+      for (final item in _queue)
+        if (item.id == replacement.id) replacement else item,
+    ];
+  }
+
+  Future<void> _checkNumber() async {
+    if (_answered || _answerController.text.trim().isEmpty) return;
+    await _submitNumber(_answerController.text.trim());
+  }
+
+  Future<void> _unknownNumber() => _submitNumber('');
+
+  Future<void> _submitNumber(String answer) async {
+    final taskId = _currentNumber;
+    if (_answered || taskId == null) return;
+    final task = _numberTask(taskId);
+    final value = int.parse(taskId.split(':').last);
+    final correct = value == 100 && taskId.contains(':to_german:')
+        ? isAnyPracticeAnswerCorrect(
+            answer: answer,
+            expectedAlternatives: 'hundert;einhundert',
+          )
+        : isPracticeAnswerCorrect(answer: answer, expected: task.$2);
+    final remaining = _numberQueue.skip(1).toList(growable: false);
+    final updated = await widget.sessions.recordGrammarTask(
+      sessionId: _session!.id,
+      attempts: [
+        GrammarAttempt(
+          id: newUuidV4(),
+          topicId: 'numbers',
+          exerciseId: taskId,
+          sessionId: _session!.id,
+          answerText: answer,
+          correct: correct,
+          attemptedAt: DateTime.now().toUtc(),
+        ),
+      ],
+      remainingQueueItemIds: remaining,
+      lastExerciseId: taskId,
+      now: DateTime.now().toUtc(),
+    );
+    widget.onAttemptSaved();
+    if (!mounted) return;
+    setState(() {
+      _session = updated;
+      _nextNumberQueue = remaining;
+      _lastCorrect = correct;
+      _answered = true;
+    });
+    _focusNextButton();
+  }
+
+  Future<void> _checkGrammar() => _submitGrammar(allowEmpty: false);
+
+  Future<void> _unknownGrammarAnswer() => _submitGrammar(allowEmpty: true);
+
+  Future<void> _submitGrammar({required bool allowEmpty}) async {
     if (_answered || _currentGrammar == null) return;
     final taskId = _currentGrammar!;
     final paradigm = _paradigm(taskId);
@@ -934,7 +1576,7 @@ class _PracticePageState extends State<PracticePage> {
       final regular = paradigm.topicId == 'regular_present';
       for (final entry in paradigm.forms.entries) {
         final answer = _grammarControllers[entry.key]?.text.trim() ?? '';
-        if (answer.isEmpty) return;
+        if (answer.isEmpty && !allowEmpty) return;
         final expected =
             regular ? entry.value.substring(paradigm.stem.length) : entry.value;
         final correct = isPracticeAnswerCorrect(
@@ -963,7 +1605,7 @@ class _PracticePageState extends State<PracticePage> {
           _selectedGrammarOption ?? '',
         GrammarExerciseType.wordOrder => _wordOrderAnswer(exercise),
       };
-      if (answer.isEmpty) return;
+      if (answer.isEmpty && !allowEmpty) return;
       final correct = isPracticeAnswerCorrect(
         answer: answer,
         expected: exercise.answer,
@@ -999,6 +1641,19 @@ class _PracticePageState extends State<PracticePage> {
       _lastCorrect = results.values.every((value) => value);
       _answered = true;
     });
+    _focusNextButton();
+  }
+
+  void _focusNextButton() {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted && _answered) _nextFocus.requestFocus();
+    });
+  }
+
+  void _focusAnswerField() {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted && !_answered && !_complete) _answerFocus.requestFocus();
+    });
   }
 
   void _nextGrammar() {
@@ -1010,11 +1665,18 @@ class _PracticePageState extends State<PracticePage> {
       _answered = false;
       _complete = _session!.isComplete;
     });
-    if (!_complete &&
-        _grammarQueue.isNotEmpty &&
-        _paradigm(_grammarQueue.first) == null) {
-      _answerFocus.requestFocus();
-    }
+    if (!_complete && _grammarQueue.isNotEmpty) _focusAnswerField();
+  }
+
+  void _nextNumber() {
+    setState(() {
+      _answerController.clear();
+      _numberQueue = _nextNumberQueue;
+      _nextNumberQueue = const [];
+      _answered = false;
+      _complete = _session!.isComplete;
+    });
+    if (!_complete) _focusAnswerField();
   }
 
   void _clearGrammarInput() {
@@ -1026,15 +1688,48 @@ class _PracticePageState extends State<PracticePage> {
     }
   }
 
-  void _next() {
+  Future<void> _returnToPlan() async {
+    if (!await _recordPendingVocabularyError()) return;
+    await _load();
+  }
+
+  Future<void> _next() async {
+    if (!await _recordPendingVocabularyError()) return;
     setState(() {
       _answerController.clear();
       _queue = _nextQueue;
       _nextQueue = const [];
       _answered = false;
+      _pendingVocabularyAnswer = null;
       _complete = _session!.isComplete;
     });
-    if (!_complete) _answerFocus.requestFocus();
+    if (!_complete) _focusAnswerField();
+  }
+
+  Future<bool> _recordPendingVocabularyError() async {
+    final answer = _pendingVocabularyAnswer;
+    final item = _current;
+    if (answer == null || item == null) return true;
+    setState(() => _savingVocabularyAnswer = true);
+    try {
+      final result = await _recordVocabularyAnswer(
+        item: item,
+        answer: answer,
+        correct: false,
+      );
+      if (!mounted) return false;
+      setState(() {
+        _session = result.$1;
+        _nextQueue = result.$2;
+        _pendingVocabularyAnswer = null;
+        _savingVocabularyAnswer = false;
+      });
+      return true;
+    } catch (_) {
+      if (!mounted) return false;
+      setState(() => _savingVocabularyAnswer = false);
+      return false;
+    }
   }
 }
 

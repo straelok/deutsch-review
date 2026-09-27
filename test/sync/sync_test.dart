@@ -55,7 +55,7 @@ void main() {
     final sessions = target.connection.select(
       "SELECT * FROM daily_sessions WHERE local_date = '2026-09-23'",
     );
-    expect(sessions, hasLength(5));
+    expect(sessions, hasLength(8));
     expect(target.integrityCheck(), <String>['ok']);
     expect(target.foreignKeyCheck(), isEmpty);
     expect(
