@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'content/content_controller.dart';
 import 'domain/app_language.dart';
 import 'domain/repositories/daily_session_repository.dart';
 import 'domain/repositories/grammar_repository.dart';
@@ -25,6 +26,7 @@ class DeutschReviewApp extends StatefulWidget {
     required this.practice,
     required this.grammar,
     required this.grammarCatalog,
+    this.contentController,
     this.syncController,
     this.reminders,
     this.initialLanguage,
@@ -38,6 +40,7 @@ class DeutschReviewApp extends StatefulWidget {
   final PracticeRepository practice;
   final GrammarRepository grammar;
   final GrammarCatalog grammarCatalog;
+  final ContentController? contentController;
   final SyncController? syncController;
   final ReminderController? reminders;
   final AppLanguage? initialLanguage;
@@ -49,10 +52,13 @@ class DeutschReviewApp extends StatefulWidget {
 
 class _DeutschReviewAppState extends State<DeutschReviewApp> {
   late AppLanguage _language = widget.initialLanguage ?? AppLanguage.german;
+  late GrammarCatalog _grammarCatalog =
+      widget.contentController?.catalog ?? widget.grammarCatalog;
 
   @override
   void initState() {
     super.initState();
+    widget.contentController?.addListener(_contentChanged);
     widget.reminders?.setLanguage(_language);
     if (widget.initialLanguage == null) _loadLanguage();
   }
@@ -78,7 +84,8 @@ class _DeutschReviewAppState extends State<DeutschReviewApp> {
         sessions: widget.sessions,
         practice: widget.practice,
         grammar: widget.grammar,
-        grammarCatalog: widget.grammarCatalog,
+        grammarCatalog: _grammarCatalog,
+        contentController: widget.contentController,
         syncController: widget.syncController,
         reminders: widget.reminders,
         language: _language,
@@ -101,8 +108,16 @@ class _DeutschReviewAppState extends State<DeutschReviewApp> {
 
   @override
   void dispose() {
+    widget.contentController?.removeListener(_contentChanged);
     widget.onDispose?.call();
     super.dispose();
+  }
+
+  void _contentChanged() {
+    final catalog = widget.contentController?.catalog;
+    if (catalog != null && !identical(catalog, _grammarCatalog) && mounted) {
+      setState(() => _grammarCatalog = catalog);
+    }
   }
 }
 
@@ -148,6 +163,7 @@ class HomeScreen extends StatefulWidget {
     required this.practice,
     required this.grammar,
     required this.grammarCatalog,
+    this.contentController,
     this.syncController,
     this.reminders,
     required this.language,
@@ -160,6 +176,7 @@ class HomeScreen extends StatefulWidget {
   final PracticeRepository practice;
   final GrammarRepository grammar;
   final GrammarCatalog grammarCatalog;
+  final ContentController? contentController;
   final SyncController? syncController;
   final ReminderController? reminders;
   final AppLanguage language;

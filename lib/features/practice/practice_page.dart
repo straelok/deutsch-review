@@ -97,6 +97,10 @@ class _PracticePageState extends State<PracticePage> {
   @override
   void didUpdateWidget(covariant PracticePage oldWidget) {
     super.didUpdateWidget(oldWidget);
+    if (!identical(widget.grammarCatalog, oldWidget.grammarCatalog) &&
+        _session == null) {
+      _load();
+    }
     if (widget.refreshToken != oldWidget.refreshToken && _session == null) {
       _load();
     }

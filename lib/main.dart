@@ -5,6 +5,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'app.dart';
+import 'content/content_bundle.dart';
+import 'content/content_controller.dart';
+import 'content/content_gateway.dart';
+import 'content/content_store.dart';
 import 'data/database/app_database.dart';
 import 'data/database/app_database_path.dart';
 import 'data/repositories/sqlite_learning_item_repository.dart';
@@ -25,9 +29,22 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   try {
-    final database = AppDatabase.open(await applicationDatabasePath());
-    final grammarCatalog = await GrammarCatalog.load(rootBundle);
+    final databasePath = await applicationDatabasePath();
+    final database = AppDatabase.open(databasePath);
+    final bundledContent = await loadBundledContent(rootBundle);
     final configuration = SyncConfiguration.fromEnvironment();
+    final contentController = ContentController(
+      bundled: bundledContent,
+      store: ContentStore(
+        Directory(
+          '${File(databasePath).parent.path}${Platform.pathSeparator}content',
+        ),
+      ),
+      gateway: configuration == null
+          ? null
+          : HttpContentGateway(supabaseUrl: configuration.url),
+    );
+    await contentController.initialize();
     final syncController = SyncController(
       localStore: SqliteSyncStore(database),
       gateway: configuration == null
@@ -60,7 +77,7 @@ Future<void> main() async {
                         item.content['german'] as String? ?? '',
                       ))
                   .toSet();
-              return grammarCatalog
+              return contentController.catalog
                   .availableTopicIds(
                     learnedTopicIds: progress.values
                         .where((entry) => entry.learned)
@@ -89,19 +106,22 @@ Future<void> main() async {
         settings: settings,
         practice: practice,
         grammar: grammar,
-        grammarCatalog: grammarCatalog,
+        grammarCatalog: contentController.catalog,
+        contentController: contentController,
         syncController: syncController,
         reminders: reminders,
         initialLanguage: initialLanguage,
         onDispose: () {
           reminders?.dispose();
           syncController.dispose();
+          contentController.dispose();
           database.close();
         },
       ),
     );
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (reminders != null) unawaited(reminders.initialize());
+      unawaited(contentController.checkOnLaunch());
     });
   } catch (error) {
     runApp(DatabaseErrorApp(message: error.toString()));
