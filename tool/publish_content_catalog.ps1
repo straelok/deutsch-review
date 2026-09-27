@@ -18,7 +18,7 @@ function Read-SecretKey {
     return $value.Trim()
   }
 
-  $secureValue = Read-Host 'Supabase secret/service-role key (не сохраняется)' -AsSecureString
+  $secureValue = Read-Host 'Supabase secret/service-role key (not saved)' -AsSecureString
   $pointer = [Runtime.InteropServices.Marshal]::SecureStringToBSTR($secureValue)
   try {
     $value = [Runtime.InteropServices.Marshal]::PtrToStringBSTR($pointer)
