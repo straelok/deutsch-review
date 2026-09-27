@@ -15008,6 +15008,78 @@
     },
     {
       "id": "reading-stress-20", "topic_id": "reading_stress", "lemma": "reading", "required_item_type": "none", "type": "choice", "prompt": "Vorname", "answer": "[ˈfoːɐ̯ˌnaːmə]", "options": ["[ˈfoːɐ̯ˌnaːmə]", "[foːɐ̯ˈnaːmə]", "[ˈfɔʁnamə]"], "instruction_de": "Im Kompositum trägt der erste Teil den Hauptakzent.", "instruction_ru": "В сложном слове главное ударение падает на первую часть."
+    },
+    {
+      "id": "verb-first-question-order-01", "topic_id": "yes_no_questions", "lemma": "lernen", "required_item_type": "verb", "type": "word_order", "prompt": "Aussage: Du lernst Deutsch.", "answer": "Lernst du Deutsch?", "options": ["Lernst", "du", "Deutsch?"], "instruction_de": "Bilde eine Frage mit dem Verb am Anfang.", "instruction_ru": "Составьте вопрос, поставив глагол в начало."
+    },
+    {
+      "id": "verb-first-question-order-02", "topic_id": "yes_no_questions", "lemma": "wohnen", "required_item_type": "verb", "type": "word_order", "prompt": "Aussage: Ihr wohnt in Berlin.", "answer": "Wohnt ihr in Berlin?", "options": ["Wohnt", "ihr", "in", "Berlin?"], "instruction_de": "Bilde eine Frage mit dem Verb am Anfang.", "instruction_ru": "Составьте вопрос, поставив глагол в начало."
+    },
+    {
+      "id": "verb-first-question-order-03", "topic_id": "yes_no_questions", "lemma": "kommen", "required_item_type": "verb", "type": "word_order", "prompt": "Aussage: Sie kommen heute.", "answer": "Kommen Sie heute?", "options": ["Kommen", "Sie", "heute?"], "instruction_de": "Bilde eine höfliche Frage.", "instruction_ru": "Составьте вежливый вопрос."
+    },
+    {
+      "id": "verb-first-question-order-04", "topic_id": "yes_no_questions", "lemma": "kaufen", "required_item_type": "verb", "type": "word_order", "prompt": "Aussage: Er kauft Brot.", "answer": "Kauft er Brot?", "options": ["Kauft", "er", "Brot?"], "instruction_de": "Bilde eine Frage mit dem Verb am Anfang.", "instruction_ru": "Составьте вопрос, поставив глагол в начало."
+    },
+    {
+      "id": "verb-first-question-order-05", "topic_id": "yes_no_questions", "lemma": "spielen", "required_item_type": "verb", "type": "word_order", "prompt": "Aussage: Ihr spielt Fußball.", "answer": "Spielt ihr Fußball?", "options": ["Spielt", "ihr", "Fußball?"], "instruction_de": "Bilde eine Frage mit dem Verb am Anfang.", "instruction_ru": "Составьте вопрос, поставив глагол в начало."
+    },
+    {
+      "id": "verb-first-question-order-06", "topic_id": "yes_no_questions", "lemma": "hören", "required_item_type": "verb", "type": "word_order", "prompt": "Aussage: Du hörst Musik.", "answer": "Hörst du Musik?", "options": ["Hörst", "du", "Musik?"], "instruction_de": "Bilde eine Frage mit dem Verb am Anfang.", "instruction_ru": "Составьте вопрос, поставив глагол в начало."
+    },
+    {
+      "id": "verb-first-question-order-07", "topic_id": "yes_no_questions", "lemma": "kochen", "required_item_type": "verb", "type": "word_order", "prompt": "Aussage: Sie kocht heute.", "answer": "Kocht sie heute?", "options": ["Kocht", "sie", "heute?"], "instruction_de": "Bilde eine Frage mit dem Verb am Anfang.", "instruction_ru": "Составьте вопрос, поставив глагол в начало."
+    },
+    {
+      "id": "verb-first-question-order-08", "topic_id": "yes_no_questions", "lemma": "frühstücken", "required_item_type": "verb", "type": "word_order", "prompt": "Aussage: Ihr frühstückt um acht.", "answer": "Frühstückt ihr um acht?", "options": ["Frühstückt", "ihr", "um", "acht?"], "instruction_de": "Bilde eine Frage mit dem Verb am Anfang.", "instruction_ru": "Составьте вопрос, поставив глагол в начало."
+    },
+    {
+      "id": "verb-first-question-order-09", "topic_id": "yes_no_questions", "lemma": "telefonieren", "required_item_type": "verb", "type": "word_order", "prompt": "Aussage: Du telefonierst mit Anna.", "answer": "Telefonierst du mit Anna?", "options": ["Telefonierst", "du", "mit", "Anna?"], "instruction_de": "Bilde eine Frage mit dem Verb am Anfang.", "instruction_ru": "Составьте вопрос, поставив глагол в начало."
+    },
+    {
+      "id": "verb-first-question-order-10", "topic_id": "yes_no_questions", "lemma": "fotografieren", "required_item_type": "verb", "type": "word_order", "prompt": "Aussage: Du fotografierst gern.", "answer": "Fotografierst du gern?", "options": ["Fotografierst", "du", "gern?"], "instruction_de": "Bilde eine Frage mit dem Verb am Anfang.", "instruction_ru": "Составьте вопрос, поставив глагол в начало."
+    },
+    {
+      "id": "verb-first-question-order-11", "topic_id": "yes_no_questions", "lemma": "sein", "required_item_type": "verb", "type": "word_order", "prompt": "Aussage: Die Kinder sind müde.", "answer": "Sind die Kinder müde?", "options": ["Sind", "die", "Kinder", "müde?"], "instruction_de": "Bilde eine Frage mit sein am Anfang.", "instruction_ru": "Составьте вопрос с sein в начале."
+    },
+    {
+      "id": "verb-first-question-order-12", "topic_id": "yes_no_questions", "lemma": "haben", "required_item_type": "verb", "type": "word_order", "prompt": "Aussage: Du hast Zeit.", "answer": "Hast du Zeit?", "options": ["Hast", "du", "Zeit?"], "instruction_de": "Bilde eine Frage mit haben am Anfang.", "instruction_ru": "Составьте вопрос с haben в начале."
+    },
+    {
+      "id": "verb-first-question-choice-01", "topic_id": "yes_no_questions", "lemma": "lernen", "required_item_type": "verb", "type": "choice", "prompt": "Aussage: Ihr lernt zusammen.", "answer": "Lernt ihr zusammen?", "options": ["Lernt ihr zusammen?", "Ihr lernt zusammen?", "Lernen ihr zusammen?"], "instruction_de": "Welche Frage ist richtig?", "instruction_ru": "Какой вопрос построен правильно?"
+    },
+    {
+      "id": "verb-first-question-choice-02", "topic_id": "yes_no_questions", "lemma": "wohnen", "required_item_type": "verb", "type": "choice", "prompt": "Aussage: Du wohnst in Köln.", "answer": "Wohnst du in Köln?", "options": ["Wohnst du in Köln?", "Du wohnst in Köln?", "Wohnt du in Köln?"], "instruction_de": "Welche Frage ist richtig?", "instruction_ru": "Какой вопрос построен правильно?"
+    },
+    {
+      "id": "verb-first-question-choice-03", "topic_id": "yes_no_questions", "lemma": "kommen", "required_item_type": "verb", "type": "choice", "prompt": "Aussage: Er kommt aus Polen.", "answer": "Kommt er aus Polen?", "options": ["Kommt er aus Polen?", "Er kommt aus Polen?", "Kommst er aus Polen?"], "instruction_de": "Welche Frage ist richtig?", "instruction_ru": "Какой вопрос построен правильно?"
+    },
+    {
+      "id": "verb-first-question-choice-04", "topic_id": "yes_no_questions", "lemma": "kaufen", "required_item_type": "verb", "type": "choice", "prompt": "Aussage: Sie kaufen zwei Äpfel.", "answer": "Kaufen Sie zwei Äpfel?", "options": ["Kaufen Sie zwei Äpfel?", "Sie kaufen zwei Äpfel?", "Kauft Sie zwei Äpfel?"], "instruction_de": "Welche höfliche Frage ist richtig?", "instruction_ru": "Какой вежливый вопрос построен правильно?"
+    },
+    {
+      "id": "verb-first-question-choice-05", "topic_id": "yes_no_questions", "lemma": "spielen", "required_item_type": "verb", "type": "choice", "prompt": "Aussage: Sie spielt Tennis.", "answer": "Spielt sie Tennis?", "options": ["Spielt sie Tennis?", "Sie spielt Tennis?", "Spielst sie Tennis?"], "instruction_de": "Welche Frage ist richtig?", "instruction_ru": "Какой вопрос построен правильно?"
+    },
+    {
+      "id": "verb-first-question-choice-06", "topic_id": "yes_no_questions", "lemma": "hören", "required_item_type": "verb", "type": "choice", "prompt": "Aussage: Ihr hört den Dialog.", "answer": "Hört ihr den Dialog?", "options": ["Hört ihr den Dialog?", "Ihr hört den Dialog?", "Hören ihr den Dialog?"], "instruction_de": "Welche Frage ist richtig?", "instruction_ru": "Какой вопрос построен правильно?"
+    },
+    {
+      "id": "verb-first-question-choice-07", "topic_id": "yes_no_questions", "lemma": "kochen", "required_item_type": "verb", "type": "choice", "prompt": "Aussage: Du kochst gern.", "answer": "Kochst du gern?", "options": ["Kochst du gern?", "Du kochst gern?", "Kocht du gern?"], "instruction_de": "Welche Frage ist richtig?", "instruction_ru": "Какой вопрос построен правильно?"
+    },
+    {
+      "id": "verb-first-question-choice-08", "topic_id": "yes_no_questions", "lemma": "frühstücken", "required_item_type": "verb", "type": "choice", "prompt": "Aussage: Er frühstückt zu Hause.", "answer": "Frühstückt er zu Hause?", "options": ["Frühstückt er zu Hause?", "Er frühstückt zu Hause?", "Frühstücken er zu Hause?"], "instruction_de": "Welche Frage ist richtig?", "instruction_ru": "Какой вопрос построен правильно?"
+    },
+    {
+      "id": "verb-first-question-choice-09", "topic_id": "yes_no_questions", "lemma": "telefonieren", "required_item_type": "verb", "type": "choice", "prompt": "Aussage: Sie telefoniert am Abend.", "answer": "Telefoniert sie am Abend?", "options": ["Telefoniert sie am Abend?", "Sie telefoniert am Abend?", "Telefonierst sie am Abend?"], "instruction_de": "Welche Frage ist richtig?", "instruction_ru": "Какой вопрос построен правильно?"
+    },
+    {
+      "id": "verb-first-question-choice-10", "topic_id": "yes_no_questions", "lemma": "fotografieren", "required_item_type": "verb", "type": "choice", "prompt": "Aussage: Ihr fotografiert im Park.", "answer": "Fotografiert ihr im Park?", "options": ["Fotografiert ihr im Park?", "Ihr fotografiert im Park?", "Fotografieren ihr im Park?"], "instruction_de": "Welche Frage ist richtig?", "instruction_ru": "Какой вопрос построен правильно?"
+    },
+    {
+      "id": "verb-first-question-choice-11", "topic_id": "yes_no_questions", "lemma": "sein", "required_item_type": "verb", "type": "choice", "prompt": "Aussage: Du bist verheiratet.", "answer": "Bist du verheiratet?", "options": ["Bist du verheiratet?", "Du bist verheiratet?", "Sind du verheiratet?"], "instruction_de": "Welche Frage mit sein ist richtig?", "instruction_ru": "Какой вопрос с sein построен правильно?"
+    },
+    {
+      "id": "verb-first-question-choice-12", "topic_id": "yes_no_questions", "lemma": "haben", "required_item_type": "verb", "type": "choice", "prompt": "Aussage: Sie hat Kinder.", "answer": "Hat sie Kinder?", "options": ["Hat sie Kinder?", "Sie hat Kinder?", "Hast sie Kinder?"], "instruction_de": "Welche Frage mit haben ist richtig?", "instruction_ru": "Какой вопрос с haben построен правильно?"
     }
   ]
 }

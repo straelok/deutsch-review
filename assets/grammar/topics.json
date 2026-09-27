@@ -465,25 +465,27 @@
     {
       "id": "yes_no_questions",
       "order": 13,
-      "title_de": "Ja-/Nein-Fragen",
-      "title_ru": "Вопросы с ответом да или нет",
-      "summary_de": "Das Verb steht am Anfang, die Antwort ist oft Ja oder Nein.",
-      "summary_ru": "Глагол стоит в начале, а ответ часто начинается с Ja или Nein.",
+      "title_de": "Fragen mit dem Verb am Anfang",
+      "title_ru": "Вопросы с глаголом в начале",
+      "summary_de": "In einer Ja-/Nein-Frage steht das konjugierte Verb auf Position eins.",
+      "summary_ru": "В вопросе без вопросительного слова спрягаемый глагол стоит на первом месте.",
       "explanation_de": [
-        "Eine Ja-/Nein-Frage beginnt mit dem konjugierten Verb: Lernst du Deutsch?",
-        "Antworte kurz mit Ja oder Nein und prüfe die Information im Satz.",
-        "Nach dem Verb folgt meistens das Subjekt, danach der Rest: Wohnst du in Berlin? Hat er ein Auto?",
-        "Bei sein und haben wird keine zusätzliche Form gebraucht: Bist du müde? Hast du Zeit?",
-        "Eine vollständige Antwort wiederholt die passende Verbform: Ja, ich lerne Deutsch. Nein, ich lerne nicht."
+        "Eine Frage ohne Fragewort beginnt mit dem konjugierten Verb: Lernst du Deutsch? Solche Fragen nennt man auch Ja-/Nein-Fragen.",
+        "Aus der Aussage „Du lernst Deutsch.“ wird die Frage „Lernst du Deutsch?“. Das Verb wechselt von Position zwei auf Position eins.",
+        "Nach dem Verb folgt normalerweise das Subjekt, danach der Rest: Wohnst du in Berlin? Kauft er Brot?",
+        "Die Verbform muss zum Subjekt passen. Deshalb heißt es „Kommst du?“, aber „Kommt ihr?“ und „Kommen Sie?“.",
+        "Auch sein und haben stehen direkt am Anfang: Bist du müde? Sind Sie verheiratet? Hast du Zeit?",
+        "Man antwortet kurz mit Ja oder Nein oder mit einem vollständigen Satz: Ja, ich lerne Deutsch. Nein, ich lerne nicht."
       ],
       "explanation_ru": [
-        "Вопрос с ответом да или нет начинается со спрягаемого глагола: Lernst du Deutsch?",
-        "Ответьте коротко Ja или Nein, сверяя вопрос с данной информацией.",
-        "После глагола обычно следует подлежащее, затем остальная часть: Wohnst du in Berlin? Hat er ein Auto?",
-        "С sein и haben вспомогательная форма не требуется: Bist du müde? Hast du Zeit?",
-        "Полный ответ повторяет подходящую форму глагола: Ja, ich lerne Deutsch. Nein, ich lerne nicht."
+        "Вопрос без вопросительного слова начинается со спрягаемого глагола: Lernst du Deutsch? Такие вопросы также называют вопросами с ответом Ja или Nein.",
+        "Из утверждения «Du lernst Deutsch.» получается вопрос «Lernst du Deutsch?». Глагол перемещается со второго места на первое.",
+        "После глагола обычно идёт подлежащее, затем остальные части предложения: Wohnst du in Berlin? Kauft er Brot?",
+        "Форма глагола должна соответствовать подлежащему: Kommst du?, но Kommt ihr? и Kommen Sie?.",
+        "Глаголы sein и haben тоже ставятся прямо в начало: Bist du müde? Sind Sie verheiratet? Hast du Zeit?",
+        "Можно ответить кратко Ja или Nein либо полным предложением: Ja, ich lerne Deutsch. Nein, ich lerne nicht."
       ],
-      "table": [["Frage", "Lernst du Deutsch?"], ["Ja", "Ja, ich lerne Deutsch."], ["Nein", "Nein, ich lerne Englisch."]],
+      "table": [["Aussage", "Du lernst Deutsch."], ["Frage", "Lernst du Deutsch?"], ["Schema", "Verb + Subjekt + Rest?"], ["Ja", "Ja, ich lerne Deutsch."], ["Nein", "Nein, ich lerne nicht."]],
       "trainable": true
     },
     {
