@@ -58,7 +58,9 @@
 `202609270001_learning_content_bucket.sql`. Пакет собирается командой
 `dart run tool/build_content_catalog.dart --version=YYYY.MM.DD.N`, а публикация
 выполняется `tool/publish_content_catalog.dart` только при заданных локально
-`SUPABASE_URL` и `SUPABASE_SERVICE_ROLE_KEY`. Секрет не записывается в файлы.
+`SUPABASE_URL` и `SUPABASE_SERVICE_ROLE_KEY`. На 27 сентября 2026 года эта
+миграция ещё не применена: публичная проверка возвращает `Bucket not found`.
+Секрет не записывается в файлы.
 
 Новые ключи Supabase имеют форматы `sb_publishable_...` и `sb_secret_...`.
 Клиенту разрешён только publishable key. Secret key или старый service-role key

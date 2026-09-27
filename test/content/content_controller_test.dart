@@ -105,6 +105,61 @@ void main() {
     expect(controller.catalog.contentVersion, '2026.09.27.2');
     expect(gateway.versionManifestRequests, 1);
   });
+
+  test('follows an intentional manifest rollback', () async {
+    final directory = Directory.systemTemp.createTempSync('content_rollback_');
+    addTearDown(() => directory.deleteSync(recursive: true));
+    final previous = await _fixture('2026.09.27.1');
+    final current = await _fixture('2026.09.27.2');
+    final store = ContentStore(directory);
+    await store.install(current.manifest, current.compressedBytes);
+    final controller = ContentController(
+      bundled: previous,
+      store: store,
+      gateway: _FakeGateway(previous),
+    );
+    addTearDown(controller.dispose);
+
+    await controller.initialize();
+    expect(controller.catalog.contentVersion, '2026.09.27.2');
+    await controller.checkOnLaunch();
+
+    expect(controller.catalog.contentVersion, '2026.09.27.1');
+    expect(controller.phase, ContentUpdatePhase.updated);
+  });
+
+  test('rejects a catalog that requires a newer content schema', () async {
+    final directory = Directory.systemTemp.createTempSync('content_schema_');
+    addTearDown(() => directory.deleteSync(recursive: true));
+    final bundled = await _fixture('2026.09.27.1');
+    final remote = ContentBundle(
+      manifest: ContentManifest(
+        contentVersion: '2026.09.27.2',
+        schemaVersion: 2,
+        minimumAppContentSchema: 2,
+        bundlePath: 'content/versions/2026.09.27.2/catalog.json.gz',
+        sha256: bundled.manifest.sha256,
+        compressedSize: bundled.manifest.compressedSize,
+        uncompressedSize: bundled.manifest.uncompressedSize,
+        publishedAt: DateTime.utc(2026, 9, 28),
+      ),
+      catalog: bundled.catalog,
+      compressedBytes: bundled.compressedBytes,
+    );
+    final gateway = _FakeGateway(remote);
+    final controller = ContentController(
+      bundled: bundled,
+      store: ContentStore(directory),
+      gateway: gateway,
+    );
+    addTearDown(controller.dispose);
+
+    await controller.checkOnLaunch();
+
+    expect(controller.catalog.contentVersion, '2026.09.27.1');
+    expect(controller.phase, ContentUpdatePhase.incompatible);
+    expect(gateway.bundleRequests, 0);
+  });
 }
 
 final class _FakeGateway implements ContentGateway {
