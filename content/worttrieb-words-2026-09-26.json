@@ -1,7 +1,626 @@
 {
   "format_version": 2,
-  "exported_at": "2026-09-26T10:29:22.9318507Z",
+  "exported_at": "2026-09-27T19:06:42.976626Z",
   "words": [
+    {
+      "id": "a3c7d2e1-5f88-4b31-9d62-c7e40b19a4d5",
+      "type": "word",
+      "german": "Sie",
+      "translation_ru": "Вы (вежливая форма); вы",
+      "example": "Wie heißen Sie?",
+      "note": "Всегда пишется с заглавной буквы и используется для вежливого обращения к одному или нескольким людям.",
+      "created_at": "2026-09-26T12:40:00.000Z",
+      "updated_at": "2026-09-27T10:31:10.917715Z"
+    },
+    {
+      "id": "b0000001-0000-4000-8000-000000000001",
+      "type": "noun",
+      "german": "Geschäft",
+      "translation_ru": "магазин; торговая точка",
+      "article": "das",
+      "plural": "Geschäfte",
+      "example": "Das Geschäft ist heute geöffnet.",
+      "created_at": "2026-09-26T12:20:00.000Z",
+      "updated_at": "2026-09-26T12:20:00.000Z"
+    },
+    {
+      "id": "b0000002-0000-4000-8000-000000000002",
+      "type": "noun",
+      "german": "Supermarkt",
+      "translation_ru": "супермаркет",
+      "article": "der",
+      "plural": "Supermärkte",
+      "example": "Ich kaufe im Supermarkt ein.",
+      "created_at": "2026-09-26T12:20:00.000Z",
+      "updated_at": "2026-09-26T12:20:00.000Z"
+    },
+    {
+      "id": "b0000003-0000-4000-8000-000000000003",
+      "type": "noun",
+      "german": "Bäckerei",
+      "translation_ru": "пекарня; булочная",
+      "article": "die",
+      "plural": "Bäckereien",
+      "example": "Die Brötchen sind aus der Bäckerei.",
+      "created_at": "2026-09-26T12:20:00.000Z",
+      "updated_at": "2026-09-26T12:20:00.000Z"
+    },
+    {
+      "id": "b0000004-0000-4000-8000-000000000004",
+      "type": "noun",
+      "german": "Markt",
+      "translation_ru": "рынок",
+      "article": "der",
+      "plural": "Märkte",
+      "example": "Auf dem Markt gibt es frisches Gemüse.",
+      "created_at": "2026-09-26T12:20:00.000Z",
+      "updated_at": "2026-09-26T12:20:00.000Z"
+    },
+    {
+      "id": "b0000005-0000-4000-8000-000000000005",
+      "type": "noun",
+      "german": "Kasse",
+      "translation_ru": "касса",
+      "article": "die",
+      "plural": "Kassen",
+      "example": "Ich bezahle an der Kasse.",
+      "created_at": "2026-09-26T12:20:00.000Z",
+      "updated_at": "2026-09-26T12:20:00.000Z"
+    },
+    {
+      "id": "b0000006-0000-4000-8000-000000000006",
+      "type": "noun",
+      "german": "Preis",
+      "translation_ru": "цена; стоимость",
+      "article": "der",
+      "plural": "Preise",
+      "example": "Der Preis ist niedrig.",
+      "created_at": "2026-09-26T12:20:00.000Z",
+      "updated_at": "2026-09-26T12:20:00.000Z"
+    },
+    {
+      "id": "b0000007-0000-4000-8000-000000000007",
+      "type": "noun",
+      "german": "Euro",
+      "translation_ru": "евро",
+      "article": "der",
+      "plural": "Euro",
+      "example": "Das kostet drei Euro.",
+      "note": "После числа обычно используется форма Euro без окончания.",
+      "created_at": "2026-09-26T12:20:00.000Z",
+      "updated_at": "2026-09-26T12:20:00.000Z"
+    },
+    {
+      "id": "b0000008-0000-4000-8000-000000000008",
+      "type": "noun",
+      "german": "Cent",
+      "translation_ru": "цент",
+      "article": "der",
+      "plural": "Cent",
+      "example": "Das kostet neunzig Cent.",
+      "created_at": "2026-09-26T12:20:00.000Z",
+      "updated_at": "2026-09-26T12:20:00.000Z"
+    },
+    {
+      "id": "b0000009-0000-4000-8000-000000000009",
+      "type": "noun",
+      "german": "Geld",
+      "translation_ru": "деньги",
+      "article": "das",
+      "plural": "—",
+      "example": "Ich habe genug Geld.",
+      "note": "Обычно употребляется без формы множественного числа.",
+      "created_at": "2026-09-26T12:20:00.000Z",
+      "updated_at": "2026-09-26T12:20:00.000Z"
+    },
+    {
+      "id": "b0000010-0000-4000-8000-000000000010",
+      "type": "noun",
+      "german": "Tüte",
+      "translation_ru": "пакет; сумка-пакет",
+      "article": "die",
+      "plural": "Tüten",
+      "example": "Brauchen Sie eine Tüte?",
+      "created_at": "2026-09-26T12:20:00.000Z",
+      "updated_at": "2026-09-26T12:20:00.000Z"
+    },
+    {
+      "id": "b0000011-0000-4000-8000-000000000011",
+      "type": "noun",
+      "german": "Einkaufswagen",
+      "translation_ru": "тележка для покупок; покупательская тележка",
+      "article": "der",
+      "plural": "Einkaufswagen",
+      "example": "Der Einkaufswagen steht am Eingang.",
+      "created_at": "2026-09-26T12:20:00.000Z",
+      "updated_at": "2026-09-26T12:20:00.000Z"
+    },
+    {
+      "id": "b0000012-0000-4000-8000-000000000012",
+      "type": "noun",
+      "german": "Kassenbon",
+      "translation_ru": "кассовый чек; чек",
+      "article": "der",
+      "plural": "Kassenbons",
+      "example": "Möchten Sie den Kassenbon?",
+      "created_at": "2026-09-26T12:20:00.000Z",
+      "updated_at": "2026-09-26T12:20:00.000Z"
+    },
+    {
+      "id": "b0000013-0000-4000-8000-000000000013",
+      "type": "noun",
+      "german": "Angebot",
+      "translation_ru": "предложение; товар по акции; акция",
+      "article": "das",
+      "plural": "Angebote",
+      "example": "Der Kaffee ist heute im Angebot.",
+      "created_at": "2026-09-26T12:20:00.000Z",
+      "updated_at": "2026-09-26T12:20:00.000Z"
+    },
+    {
+      "id": "b0000014-0000-4000-8000-000000000014",
+      "type": "noun",
+      "german": "Brot",
+      "translation_ru": "хлеб",
+      "article": "das",
+      "plural": "Brote",
+      "example": "Ich möchte ein Brot, bitte.",
+      "created_at": "2026-09-26T12:20:00.000Z",
+      "updated_at": "2026-09-26T12:20:00.000Z"
+    },
+    {
+      "id": "b0000015-0000-4000-8000-000000000015",
+      "type": "noun",
+      "german": "Brötchen",
+      "translation_ru": "булочка; хлебная булочка",
+      "article": "das",
+      "plural": "Brötchen",
+      "example": "Ich nehme drei Brötchen.",
+      "created_at": "2026-09-26T12:20:00.000Z",
+      "updated_at": "2026-09-26T12:20:00.000Z"
+    },
+    {
+      "id": "b0000016-0000-4000-8000-000000000016",
+      "type": "noun",
+      "german": "Milch",
+      "translation_ru": "молоко",
+      "article": "die",
+      "plural": "—",
+      "example": "Wir brauchen noch Milch.",
+      "created_at": "2026-09-26T12:20:00.000Z",
+      "updated_at": "2026-09-26T12:20:00.000Z"
+    },
+    {
+      "id": "b0000017-0000-4000-8000-000000000017",
+      "type": "noun",
+      "german": "Wasser",
+      "translation_ru": "вода",
+      "article": "das",
+      "plural": "—",
+      "example": "Eine Flasche Wasser, bitte.",
+      "created_at": "2026-09-26T12:20:00.000Z",
+      "updated_at": "2026-09-26T12:20:00.000Z"
+    },
+    {
+      "id": "b0000018-0000-4000-8000-000000000018",
+      "type": "noun",
+      "german": "Kaffee",
+      "translation_ru": "кофе",
+      "article": "der",
+      "plural": "Kaffees",
+      "example": "Der Kaffee kostet vier Euro.",
+      "created_at": "2026-09-26T12:20:00.000Z",
+      "updated_at": "2026-09-26T12:20:00.000Z"
+    },
+    {
+      "id": "b0000019-0000-4000-8000-000000000019",
+      "type": "noun",
+      "german": "Tee",
+      "translation_ru": "чай",
+      "article": "der",
+      "plural": "Tees",
+      "example": "Ich kaufe eine Packung Tee.",
+      "created_at": "2026-09-26T12:20:00.000Z",
+      "updated_at": "2026-09-26T12:20:00.000Z"
+    },
+    {
+      "id": "b0000020-0000-4000-8000-000000000020",
+      "type": "noun",
+      "german": "Apfel",
+      "translation_ru": "яблоко",
+      "article": "der",
+      "plural": "Äpfel",
+      "example": "Ein Kilo Äpfel, bitte.",
+      "created_at": "2026-09-26T12:20:00.000Z",
+      "updated_at": "2026-09-26T12:20:00.000Z"
+    },
+    {
+      "id": "b0000021-0000-4000-8000-000000000021",
+      "type": "noun",
+      "german": "Banane",
+      "translation_ru": "банан",
+      "article": "die",
+      "plural": "Bananen",
+      "example": "Die Bananen sind billig.",
+      "created_at": "2026-09-26T12:20:00.000Z",
+      "updated_at": "2026-09-26T12:20:00.000Z"
+    },
+    {
+      "id": "b0000022-0000-4000-8000-000000000022",
+      "type": "noun",
+      "german": "Tomate",
+      "translation_ru": "помидор; томат",
+      "article": "die",
+      "plural": "Tomaten",
+      "example": "Ich nehme fünf Tomaten.",
+      "created_at": "2026-09-26T12:20:00.000Z",
+      "updated_at": "2026-09-26T12:20:00.000Z"
+    },
+    {
+      "id": "b0000023-0000-4000-8000-000000000023",
+      "type": "noun",
+      "german": "Kartoffel",
+      "translation_ru": "картофель; картофелина; картошка",
+      "article": "die",
+      "plural": "Kartoffeln",
+      "example": "Die Kartoffeln kosten zwei Euro.",
+      "created_at": "2026-09-26T12:20:00.000Z",
+      "updated_at": "2026-09-26T23:44:44.929043Z"
+    },
+    {
+      "id": "b0000024-0000-4000-8000-000000000024",
+      "type": "noun",
+      "german": "Käse",
+      "translation_ru": "сыр",
+      "article": "der",
+      "plural": "—",
+      "example": "Ich möchte zweihundert Gramm Käse.",
+      "created_at": "2026-09-26T12:20:00.000Z",
+      "updated_at": "2026-09-26T12:20:00.000Z"
+    },
+    {
+      "id": "b0000025-0000-4000-8000-000000000025",
+      "type": "noun",
+      "german": "Wurst",
+      "translation_ru": "колбаса",
+      "article": "die",
+      "plural": "Würste",
+      "example": "Die Wurst ist frisch.",
+      "created_at": "2026-09-26T12:20:00.000Z",
+      "updated_at": "2026-09-26T12:20:00.000Z"
+    },
+    {
+      "id": "b0000026-0000-4000-8000-000000000026",
+      "type": "noun",
+      "german": "Fleisch",
+      "translation_ru": "мясо",
+      "article": "das",
+      "plural": "—",
+      "example": "Wir kaufen heute Fleisch.",
+      "created_at": "2026-09-26T12:20:00.000Z",
+      "updated_at": "2026-09-26T12:20:00.000Z"
+    },
+    {
+      "id": "b0000027-0000-4000-8000-000000000027",
+      "type": "noun",
+      "german": "Gemüse",
+      "translation_ru": "овощи; овощная продукция",
+      "article": "das",
+      "plural": "—",
+      "example": "Das Gemüse ist frisch.",
+      "created_at": "2026-09-26T12:20:00.000Z",
+      "updated_at": "2026-09-26T12:20:00.000Z"
+    },
+    {
+      "id": "b0000028-0000-4000-8000-000000000028",
+      "type": "noun",
+      "german": "Obst",
+      "translation_ru": "фрукты; фруктовая продукция",
+      "article": "das",
+      "plural": "—",
+      "example": "Wo ist das Obst?",
+      "created_at": "2026-09-26T12:20:00.000Z",
+      "updated_at": "2026-09-26T12:20:00.000Z"
+    },
+    {
+      "id": "b0000029-0000-4000-8000-000000000029",
+      "type": "noun",
+      "german": "Flasche",
+      "translation_ru": "бутылка",
+      "article": "die",
+      "plural": "Flaschen",
+      "example": "Ich brauche zwei Flaschen Wasser.",
+      "created_at": "2026-09-26T12:20:00.000Z",
+      "updated_at": "2026-09-26T12:20:00.000Z"
+    },
+    {
+      "id": "b0000030-0000-4000-8000-000000000030",
+      "type": "noun",
+      "german": "Packung",
+      "translation_ru": "упаковка; пачка",
+      "article": "die",
+      "plural": "Packungen",
+      "example": "Eine Packung Kaffee, bitte.",
+      "created_at": "2026-09-26T12:20:00.000Z",
+      "updated_at": "2026-09-26T12:20:00.000Z"
+    },
+    {
+      "id": "b0000031-0000-4000-8000-000000000031",
+      "type": "noun",
+      "german": "Kilo",
+      "translation_ru": "килограмм; кило",
+      "article": "das",
+      "plural": "Kilos",
+      "example": "Ein Kilo Tomaten kostet drei Euro.",
+      "created_at": "2026-09-26T12:20:00.000Z",
+      "updated_at": "2026-09-26T12:20:00.000Z"
+    },
+    {
+      "id": "b0000032-0000-4000-8000-000000000032",
+      "type": "noun",
+      "german": "Gramm",
+      "translation_ru": "грамм",
+      "article": "das",
+      "plural": "Gramm",
+      "example": "Ich nehme fünfhundert Gramm Fleisch.",
+      "created_at": "2026-09-26T12:20:00.000Z",
+      "updated_at": "2026-09-26T12:20:00.000Z"
+    },
+    {
+      "id": "b0000033-0000-4000-8000-000000000033",
+      "type": "noun",
+      "german": "Stück",
+      "translation_ru": "штука; кусок; штук",
+      "article": "das",
+      "plural": "Stücke",
+      "example": "Ich nehme zwei Stück.",
+      "note": "После числительных форма не меняется: zwei Stück, fünf Stück — «две штуки», «пять штук».",
+      "created_at": "2026-09-26T12:20:00.000Z",
+      "updated_at": "2026-09-26T23:47:10.639998Z"
+    },
+    {
+      "id": "b0000034-0000-4000-8000-000000000034",
+      "type": "noun",
+      "german": "Verkäufer",
+      "translation_ru": "продавец",
+      "article": "der",
+      "plural": "Verkäufer",
+      "example": "Der Verkäufer hilft dem Kunden.",
+      "created_at": "2026-09-26T12:20:00.000Z",
+      "updated_at": "2026-09-26T12:20:00.000Z"
+    },
+    {
+      "id": "b0000035-0000-4000-8000-000000000035",
+      "type": "noun",
+      "german": "Verkäuferin",
+      "translation_ru": "продавщица; продавец",
+      "article": "die",
+      "plural": "Verkäuferinnen",
+      "example": "Die Verkäuferin sagt den Preis.",
+      "created_at": "2026-09-26T12:20:00.000Z",
+      "updated_at": "2026-09-26T12:20:00.000Z"
+    },
+    {
+      "id": "b0000036-0000-4000-8000-000000000036",
+      "type": "noun",
+      "german": "Kunde",
+      "translation_ru": "покупатель; клиент",
+      "article": "der",
+      "plural": "Kunden",
+      "example": "Der Kunde bezahlt mit Karte.",
+      "created_at": "2026-09-26T12:20:00.000Z",
+      "updated_at": "2026-09-26T12:20:00.000Z"
+    },
+    {
+      "id": "b0000037-0000-4000-8000-000000000037",
+      "type": "noun",
+      "german": "Kundin",
+      "translation_ru": "покупательница; клиентка",
+      "article": "die",
+      "plural": "Kundinnen",
+      "example": "Die Kundin braucht eine Tüte.",
+      "created_at": "2026-09-26T12:20:00.000Z",
+      "updated_at": "2026-09-26T12:20:00.000Z"
+    },
+    {
+      "id": "b0000038-0000-4000-8000-000000000038",
+      "type": "verb",
+      "german": "kaufen",
+      "translation_ru": "покупать; купить",
+      "example": "Ich kaufe Brot und Milch.",
+      "created_at": "2026-09-26T12:20:00.000Z",
+      "updated_at": "2026-09-26T12:20:00.000Z"
+    },
+    {
+      "id": "b0000039-0000-4000-8000-000000000039",
+      "type": "verb",
+      "german": "kosten",
+      "translation_ru": "стоить",
+      "example": "Was kostet das Brot?",
+      "created_at": "2026-09-26T12:20:00.000Z",
+      "updated_at": "2026-09-26T12:20:00.000Z"
+    },
+    {
+      "id": "b0000040-0000-4000-8000-000000000040",
+      "type": "verb",
+      "german": "bezahlen",
+      "translation_ru": "платить; оплачивать",
+      "example": "Ich bezahle bar.",
+      "created_at": "2026-09-26T12:20:00.000Z",
+      "updated_at": "2026-09-26T12:20:00.000Z"
+    },
+    {
+      "id": "b0000041-0000-4000-8000-000000000041",
+      "type": "verb",
+      "german": "brauchen",
+      "translation_ru": "нуждаться; быть нужным; требоваться",
+      "example": "Ich brauche eine Flasche Wasser.",
+      "created_at": "2026-09-26T12:20:00.000Z",
+      "updated_at": "2026-09-26T12:20:00.000Z"
+    },
+    {
+      "id": "b0000042-0000-4000-8000-000000000042",
+      "type": "verb",
+      "german": "nehmen",
+      "translation_ru": "брать; взять",
+      "example": "Ich nehme zwei Brötchen.",
+      "created_at": "2026-09-26T12:20:00.000Z",
+      "updated_at": "2026-09-26T12:20:00.000Z"
+    },
+    {
+      "id": "b0000043-0000-4000-8000-000000000043",
+      "type": "verb",
+      "german": "geben",
+      "translation_ru": "давать; дать",
+      "example": "Geben Sie mir bitte eine Tüte.",
+      "created_at": "2026-09-26T12:20:00.000Z",
+      "updated_at": "2026-09-26T12:20:00.000Z"
+    },
+    {
+      "id": "b0000044-0000-4000-8000-000000000044",
+      "type": "verb",
+      "german": "möchten",
+      "translation_ru": "хотеть; желать",
+      "example": "Ich möchte einen Kaffee.",
+      "note": "Вежливая форма желания: ich möchte, Sie möchten.",
+      "created_at": "2026-09-26T12:20:00.000Z",
+      "updated_at": "2026-09-26T12:20:00.000Z"
+    },
+    {
+      "id": "b0000045-0000-4000-8000-000000000045",
+      "type": "word",
+      "german": "teuer",
+      "translation_ru": "дорогой; дорого",
+      "example": "Der Käse ist zu teuer.",
+      "created_at": "2026-09-26T12:20:00.000Z",
+      "updated_at": "2026-09-26T12:20:00.000Z"
+    },
+    {
+      "id": "b0000046-0000-4000-8000-000000000046",
+      "type": "word",
+      "german": "billig",
+      "translation_ru": "дешёвый; дёшево",
+      "example": "Die Äpfel sind heute billig.",
+      "created_at": "2026-09-26T12:20:00.000Z",
+      "updated_at": "2026-09-26T12:20:00.000Z"
+    },
+    {
+      "id": "b0000047-0000-4000-8000-000000000047",
+      "type": "word",
+      "german": "frisch",
+      "translation_ru": "свежий; свежо",
+      "example": "Das Brot ist frisch.",
+      "created_at": "2026-09-26T12:20:00.000Z",
+      "updated_at": "2026-09-26T12:20:00.000Z"
+    },
+    {
+      "id": "b0000048-0000-4000-8000-000000000048",
+      "type": "word",
+      "german": "noch",
+      "translation_ru": "ещё; всё ещё",
+      "example": "Brauchen Sie noch etwas?",
+      "created_at": "2026-09-26T12:20:00.000Z",
+      "updated_at": "2026-09-26T12:20:00.000Z"
+    },
+    {
+      "id": "b0000049-0000-4000-8000-000000000049",
+      "type": "word",
+      "german": "nur",
+      "translation_ru": "только; всего лишь",
+      "example": "Das kostet nur zwei Euro.",
+      "created_at": "2026-09-26T12:20:00.000Z",
+      "updated_at": "2026-09-26T12:20:00.000Z"
+    },
+    {
+      "id": "b0000050-0000-4000-8000-000000000050",
+      "type": "word",
+      "german": "bar",
+      "translation_ru": "наличными; за наличные",
+      "example": "Ich bezahle bar.",
+      "created_at": "2026-09-26T12:20:00.000Z",
+      "updated_at": "2026-09-26T12:20:00.000Z"
+    },
+    {
+      "id": "b0000051-0000-4000-8000-000000000051",
+      "type": "word",
+      "german": "mit Karte",
+      "translation_ru": "картой; банковской картой",
+      "example": "Kann ich mit Karte bezahlen?",
+      "created_at": "2026-09-26T12:20:00.000Z",
+      "updated_at": "2026-09-26T12:20:00.000Z"
+    },
+    {
+      "id": "b0000052-0000-4000-8000-000000000052",
+      "type": "word",
+      "german": "Wie viel",
+      "translation_ru": "сколько; как много",
+      "example": "Wie viel kostet das?",
+      "created_at": "2026-09-26T12:20:00.000Z",
+      "updated_at": "2026-09-26T12:20:00.000Z"
+    },
+    {
+      "id": "b0000053-0000-4000-8000-000000000053",
+      "type": "word",
+      "german": "Was kostet das",
+      "translation_ru": "сколько это стоит; какова цена",
+      "example": "Was kostet das? – Drei Euro.",
+      "created_at": "2026-09-26T12:20:00.000Z",
+      "updated_at": "2026-09-26T12:20:00.000Z"
+    },
+    {
+      "id": "b0000054-0000-4000-8000-000000000054",
+      "type": "word",
+      "german": "Ich möchte",
+      "translation_ru": "я хотел бы; я хочу",
+      "example": "Ich möchte ein Kilo Äpfel.",
+      "created_at": "2026-09-26T12:20:00.000Z",
+      "updated_at": "2026-09-26T12:20:00.000Z"
+    },
+    {
+      "id": "b0000055-0000-4000-8000-000000000055",
+      "type": "word",
+      "german": "Sonst noch etwas",
+      "translation_ru": "что-нибудь ещё; ещё что-нибудь",
+      "example": "Sonst noch etwas? – Nein, danke.",
+      "created_at": "2026-09-26T12:20:00.000Z",
+      "updated_at": "2026-09-26T12:20:00.000Z"
+    },
+    {
+      "id": "b0000056-0000-4000-8000-000000000056",
+      "type": "word",
+      "german": "Das macht",
+      "translation_ru": "с Вас; получается; стоимость",
+      "example": "Das macht fünf Euro zwanzig.",
+      "created_at": "2026-09-26T12:20:00.000Z",
+      "updated_at": "2026-09-26T23:40:20.920748Z"
+    },
+    {
+      "id": "b0000057-0000-4000-8000-000000000057",
+      "type": "word",
+      "german": "Das ist alles",
+      "translation_ru": "это всё; это всё, спасибо",
+      "example": "Das ist alles, danke.",
+      "created_at": "2026-09-26T12:20:00.000Z",
+      "updated_at": "2026-09-26T12:20:00.000Z"
+    },
+    {
+      "id": "b0000058-0000-4000-8000-000000000058",
+      "type": "word",
+      "german": "mehr",
+      "translation_ru": "больше; ещё",
+      "example": "Ich brauche mehr Wasser.",
+      "created_at": "2026-09-26T12:20:00.000Z",
+      "updated_at": "2026-09-26T12:20:00.000Z"
+    },
+    {
+      "id": "b0000059-0000-4000-8000-000000000059",
+      "type": "word",
+      "german": "weniger",
+      "translation_ru": "меньше",
+      "example": "Ich möchte weniger Käse.",
+      "created_at": "2026-09-26T12:20:00.000Z",
+      "updated_at": "2026-09-26T12:20:00.000Z"
+    },
     {
       "id": "043491e0-f0ff-45f6-934e-fd5b19b3dd1b",
       "type": "noun",
@@ -29,7 +648,7 @@
       "translation_ru": "Венгрия",
       "example": "Ich komme aus Ungarn.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-26T18:51:17.340237Z"
     },
     {
       "id": "0924f75e-1d0e-4995-b359-4124918fd6cb",
@@ -67,7 +686,7 @@
       "translation_ru": "вдовец; вдова",
       "example": "Sie ist verwitwet.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-26T18:51:17.340237Z"
     },
     {
       "id": "0cbc7009-8826-44d6-bfa6-5f0dc876eee6",
@@ -85,12 +704,12 @@
       "type": "noun",
       "german": "Süden",
       "translation_ru": "юг",
-      "example": "München liegt im Süden Deutschlands.",
       "article": "der",
       "plural": "Süden",
+      "example": "München liegt im Süden Deutschlands.",
       "note": "Сторона света; der Süden.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-26T18:51:17.340237Z"
     },
     {
       "id": "10070b85-4d6b-415e-a57d-0e47e1b048ec",
@@ -108,7 +727,7 @@
       "translation_ru": "Польша",
       "example": "Ich komme aus Polen.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-26T18:51:17.340237Z"
     },
     {
       "id": "15092eaf-e711-476d-9c57-7a3aa2030eb2",
@@ -145,7 +764,7 @@
       "translation_ru": "Мадрид",
       "example": "Sie wohnt in Madrid.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-26T18:51:17.340237Z"
     },
     {
       "id": "185ca066-4116-48bc-8d20-393e81483aed",
@@ -182,10 +801,10 @@
       "id": "18e47d3e-c66b-45ba-b729-f8d5d026772b",
       "type": "word",
       "german": "Polnisch",
-      "translation_ru": "польский язык; по-польски",
+      "translation_ru": "польский язык; по-польски; польский",
       "example": "Ich spreche Polnisch.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-27T12:59:55.762339Z"
     },
     {
       "id": "195e3cd8-3e0f-4662-a2d6-6141d42a25ac",
@@ -225,7 +844,7 @@
       "plural": "Gespräche",
       "example": "Wir führen ein Gespräch.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-26T15:17:34.381623Z"
     },
     {
       "id": "224ebf38-f777-46cb-90a2-d350ae2013ac",
@@ -365,19 +984,19 @@
       "translation_ru": "один; неопределённый артикль",
       "example": "Das ist ein Mann.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-26T18:51:17.340237Z"
     },
     {
       "id": "27f8c7d2-ab88-4640-9ac2-0e7b52332cc4",
       "type": "noun",
       "german": "Westen",
       "translation_ru": "запад",
-      "example": "Köln liegt im Westen Deutschlands.",
       "article": "der",
       "plural": "Westen",
+      "example": "Köln liegt im Westen Deutschlands.",
       "note": "Сторона света; der Westen.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-26T18:51:17.340237Z"
     },
     {
       "id": "28676fa0-7d5d-45ce-b62f-083f4d2c2bba",
@@ -467,20 +1086,20 @@
       "id": "3752d454-d0c7-4358-ad9a-d3fee98b3259",
       "type": "word",
       "german": "Griechisch",
-      "translation_ru": "греческий язык; по-гречески",
+      "translation_ru": "греческий язык; по-гречески; греческий",
       "example": "Sie spricht Griechisch.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-27T12:59:50.920363Z"
     },
     {
       "id": "3a382f52-041b-4441-905d-28a83fd2a21f",
       "type": "word",
       "german": "Persisch",
-      "translation_ru": "персидский язык; по-персидски",
+      "translation_ru": "персидский язык; по-персидски; персидский",
       "example": "Er spricht Persisch.",
       "note": "Персидский язык; не путать со страной Iran.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-26T23:38:23.879707Z"
     },
     {
       "id": "3bab6845-e971-41e7-889e-9e626ec79499",
@@ -509,7 +1128,7 @@
       "translation_ru": "Вена",
       "example": "Wien liegt in Österreich.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-26T18:51:17.340237Z"
     },
     {
       "id": "3febc6cd-0825-46d1-973f-7a3346396d66",
@@ -518,7 +1137,7 @@
       "translation_ru": "Румыния",
       "example": "Sie kommt aus Rumänien.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-26T18:51:17.340237Z"
     },
     {
       "id": "4087e4f2-3903-44ff-88b1-e7c3d30805c0",
@@ -554,7 +1173,7 @@
       "translation_ru": "Турция",
       "example": "Er kommt aus der Türkei.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-26T18:51:17.340237Z"
     },
     {
       "id": "43746876-33a9-488d-a951-7389c50b5759",
@@ -569,19 +1188,19 @@
       "id": "474b7f83-295f-4d3f-974b-bfa8479b7599",
       "type": "word",
       "german": "Türkisch",
-      "translation_ru": "турецкий язык; по-турецки",
+      "translation_ru": "турецкий язык; по-турецки; турецкий",
       "example": "Wir sprechen Türkisch.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-26T23:30:16.154161Z"
     },
     {
       "id": "48ac6e65-96a9-4d03-a1b4-e8812309653d",
       "type": "word",
       "german": "falsch",
-      "translation_ru": "неправильный; неверно",
+      "translation_ru": "неправильный; неверно; не правильно",
       "example": "Nein, das ist falsch.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-27T15:34:21.037378Z"
     },
     {
       "id": "496ca88c-6ca6-4439-8000-8564244e7abe",
@@ -598,21 +1217,21 @@
       "id": "4ab6aa8a-1283-450d-af57-9ee74da2d006",
       "type": "noun",
       "german": "Visitenkarte",
-      "translation_ru": "визитная карточка",
+      "translation_ru": "визитная карточка; визитная карта",
       "article": "die",
       "plural": "Visitenkarten",
       "example": "Hier ist meine Visitenkarte.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-27T13:27:55.291411Z"
     },
     {
       "id": "4af8eb67-7fe1-466f-900e-197cf6f4a31b",
       "type": "verb",
       "german": "laut sprechen",
-      "translation_ru": "говорить вслух; говорить громко",
+      "translation_ru": "говорить вслух; говорить громко; громко говорить",
       "example": "Bitte sprechen Sie laut.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-27T09:33:33.429077Z"
     },
     {
       "id": "4b49eae8-2f7f-4cf1-9199-319aefe646c4",
@@ -630,7 +1249,7 @@
       "translation_ru": "Германия",
       "example": "Ich wohne in Deutschland.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-26T18:51:17.340237Z"
     },
     {
       "id": "4e67a351-5680-47d1-85cc-9b9917cf4fc0",
@@ -650,7 +1269,7 @@
       "translation_ru": "Мюнхен",
       "example": "München liegt in Deutschland.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-26T18:51:17.340237Z"
     },
     {
       "id": "50172564-1c2e-4888-9f14-9337034e1ede",
@@ -679,7 +1298,7 @@
       "translation_ru": "английский язык; английский; по-английски",
       "example": "Sprechen Sie Englisch?",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-26T18:51:17.340237Z"
     },
     {
       "id": "51414429-60fa-441a-bf31-0a2de44fbe68",
@@ -717,7 +1336,7 @@
       "translation_ru": "Гамбург",
       "example": "Er wohnt in Hamburg.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-26T18:51:17.340237Z"
     },
     {
       "id": "53d0c626-5935-4db7-9dc8-d8f22b97f243",
@@ -754,10 +1373,10 @@
       "id": "560a501c-4195-401d-b370-8e933aefbf02",
       "type": "word",
       "german": "verheiratet",
-      "translation_ru": "женатый; замужняя",
+      "translation_ru": "женатый; замужняя; женат",
       "example": "Ich bin verheiratet.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-27T08:27:41.639178Z"
     },
     {
       "id": "561d79ca-c112-41d6-9f9d-e8684d6264f9",
@@ -793,27 +1412,27 @@
       "translation_ru": "неженатый; незамужняя",
       "example": "Sie ist ledig.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-26T18:51:17.340237Z"
     },
     {
       "id": "5d2a1c0a-23fe-4ac1-87c4-d02da6cfce20",
       "type": "noun",
       "german": "Fremdsprache",
-      "translation_ru": "иностранный язык",
+      "translation_ru": "иностранный язык; не родной язык",
       "article": "die",
       "plural": "Fremdsprachen",
       "example": "Deutsch ist eine Fremdsprache.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-27T12:57:50.421924Z"
     },
     {
       "id": "5e29c8c4-aa99-4785-a8b4-41dc0ce214c4",
       "type": "verb",
       "german": "lernen",
-      "translation_ru": "учить; изучать",
+      "translation_ru": "учить; изучать; учиться",
       "example": "Ich lerne Deutsch.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-26T23:42:01.398606Z"
     },
     {
       "id": "624979d3-073e-47df-9f01-59bdd68ef159",
@@ -822,7 +1441,7 @@
       "translation_ru": "так",
       "example": "So ist es richtig.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-26T18:51:17.340237Z"
     },
     {
       "id": "62b3e2a4-86f1-4fee-a98c-6e0b54f11dc1",
@@ -840,7 +1459,7 @@
       "translation_ru": "Украина",
       "example": "Sie kommt aus der Ukraine.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-26T18:51:17.340237Z"
     },
     {
       "id": "6611c15f-1094-48c4-a1dc-967b9f3a2774",
@@ -858,10 +1477,10 @@
       "id": "66836642-b01d-4ee5-a7bb-1d40b0ad7cea",
       "type": "word",
       "german": "Russisch",
-      "translation_ru": "русский язык; по-русски",
+      "translation_ru": "русский язык; по-русски; русский",
       "example": "Ich spreche Russisch.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-27T10:30:22.584361Z"
     },
     {
       "id": "69029c8c-deb2-4cb3-b64b-932441ee1fa5",
@@ -920,7 +1539,7 @@
       "translation_ru": "Сирия",
       "example": "Er kommt aus Syrien.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-26T18:51:17.340237Z"
     },
     {
       "id": "7216c983-f4d0-4374-9646-40501cb20b19",
@@ -942,16 +1561,16 @@
       "plural": "Pausen",
       "example": "Wir machen eine Pause.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-26T19:09:43.707918Z"
     },
     {
       "id": "73bdf8dd-a415-4a67-acb9-e8de9f64a56d",
       "type": "word",
       "german": "richtig",
-      "translation_ru": "правильный; верно",
+      "translation_ru": "правильный; верно; правильно",
       "example": "Ja, das ist richtig.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-26T23:34:45.908376Z"
     },
     {
       "id": "750d7def-dfdf-4c91-844a-4de0b09fa82f",
@@ -972,17 +1591,7 @@
       "example": "Kommt sie aus Polen? / Wo wohnen sie?",
       "note": "Строчная форма: «она» или «они»; значение ясно из контекста и формы глагола.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
-    },
-    {
-      "id": "a3c7d2e1-5f88-4b31-9d62-c7e40b19a4d5",
-      "type": "word",
-      "german": "Sie",
-      "translation_ru": "Вы (вежливая форма); Вы",
-      "example": "Wie heißen Sie?",
-      "note": "Всегда пишется с заглавной буквы и используется для вежливого обращения к одному или нескольким людям.",
-      "created_at": "2026-09-26T12:40:00.000Z",
-      "updated_at": "2026-09-26T12:40:00.000Z"
+      "updated_at": "2026-09-26T18:20:04.505335Z"
     },
     {
       "id": "77a21fe5-4ba1-451c-b8db-f12f934a0715",
@@ -991,7 +1600,7 @@
       "translation_ru": "Кёльн",
       "example": "Köln liegt am Rhein.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-26T18:51:17.340237Z"
     },
     {
       "id": "785b1194-d1f4-4dd2-aaac-29899a89e1bf",
@@ -1001,7 +1610,7 @@
       "example": "Wien liegt in Österreich.",
       "note": "Название страны без артикля: aus Österreich.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-26T18:51:17.340237Z"
     },
     {
       "id": "7a4091e3-2139-48b8-8f5f-1d27e9ef54d5",
@@ -1010,7 +1619,7 @@
       "translation_ru": "и",
       "example": "Anna und Paul wohnen in Berlin.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-26T18:51:17.340237Z"
     },
     {
       "id": "7c98db5a-8ee4-478e-811f-72a79bab3c44",
@@ -1048,7 +1657,7 @@
       "translation_ru": "Хорватия",
       "example": "Sie kommt aus Kroatien.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-26T18:51:17.340237Z"
     },
     {
       "id": "84571d0f-f932-4269-9811-98d2eec59492",
@@ -1057,7 +1666,7 @@
       "translation_ru": "Италия",
       "example": "Er kommt aus Italien.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-26T18:51:17.340237Z"
     },
     {
       "id": "863695ac-191c-4cdb-b783-6aaf2f0797e6",
@@ -1123,10 +1732,10 @@
       "id": "89100def-71ae-44c9-a15d-1e8e13c30ccc",
       "type": "word",
       "german": "Arabisch",
-      "translation_ru": "арабский язык; по-арабски",
+      "translation_ru": "арабский язык; по-арабски; арабский",
       "example": "Sie spricht Arabisch.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-26T23:59:58.570601Z"
     },
     {
       "id": "8a678ee5-e19b-488f-ac6e-0d3d047fc475",
@@ -1135,7 +1744,7 @@
       "translation_ru": "итальянский язык; по-итальянски",
       "example": "Ich spreche Italienisch.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-26T18:51:17.340237Z"
     },
     {
       "id": "8abf6802-8e4e-4669-82b7-ea7a1e3b1e8b",
@@ -1144,7 +1753,7 @@
       "translation_ru": "Болгария",
       "example": "Er kommt aus Bulgarien.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-26T18:51:17.340237Z"
     },
     {
       "id": "8c9d2234-3f23-47d5-920a-9af4148c295d",
@@ -1168,10 +1777,10 @@
       "id": "90d6fb13-6646-40f5-88cf-69948b3aace1",
       "type": "verb",
       "german": "nachsprechen",
-      "translation_ru": "повторять за кем-либо",
+      "translation_ru": "повторять за кем-либо; повторять",
       "example": "Sprechen Sie nach.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-27T10:29:12.386587Z"
     },
     {
       "id": "920fe672-f202-4316-8c7b-53ba396f7e10",
@@ -1242,7 +1851,7 @@
       "translation_ru": "международный",
       "example": "Berlin ist eine internationale Stadt.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-26T18:51:17.340237Z"
     },
     {
       "id": "9bae776e-4bf1-4f9a-bd93-19d82a56e1c3",
@@ -1259,24 +1868,24 @@
       "id": "9bf8a997-7cf2-43ac-81f6-5de88ee6d5a4",
       "type": "noun",
       "german": "Tochter",
-      "translation_ru": "дочь",
+      "translation_ru": "дочь; дочка",
       "article": "die",
       "plural": "Töchter",
       "example": "Meine Tochter ist acht Jahre alt.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-26T23:52:14.933057Z"
     },
     {
       "id": "9cb51d7d-e421-4a75-80d3-b6f878385301",
       "type": "noun",
       "german": "Lernwortschatz",
-      "translation_ru": "учебный словарь; лексика для изучения",
+      "translation_ru": "учебный словарь; лексика для изучения; словарь",
       "article": "der",
       "plural": "Lernwortschätze",
       "example": "Der Lernwortschatz steht am Ende der Lektion.",
       "note": "Учебный словарь с лексикой урока.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-27T15:46:44.353745Z"
     },
     {
       "id": "9d6c71cc-5370-48b9-807c-3be491526160",
@@ -1296,7 +1905,7 @@
       "translation_ru": "рождённый",
       "example": "Ich bin in Polen geboren.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-26T18:51:17.340237Z"
     },
     {
       "id": "9f5d7f39-8859-4e85-bb3f-068143f57454",
@@ -1312,35 +1921,35 @@
       "type": "noun",
       "german": "Osten",
       "translation_ru": "восток",
-      "example": "Berlin liegt im Osten Deutschlands.",
       "article": "der",
       "plural": "Osten",
+      "example": "Berlin liegt im Osten Deutschlands.",
       "note": "Сторона света; der Osten.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-26T18:51:17.340237Z"
     },
     {
       "id": "a1a22e95-1792-4d06-ba86-4c75eb8fbfb8",
       "type": "noun",
       "german": "Norden",
       "translation_ru": "север",
-      "example": "Hamburg liegt im Norden Deutschlands.",
       "article": "der",
       "plural": "Norden",
+      "example": "Hamburg liegt im Norden Deutschlands.",
       "note": "Сторона света; der Norden.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-26T18:51:17.340237Z"
     },
     {
       "id": "a2d4384e-46b4-4e3d-8ac8-ca9d1d7c81ce",
       "type": "noun",
       "german": "Herr",
-      "translation_ru": "господин",
+      "translation_ru": "господин; уважаемый",
       "article": "der",
       "plural": "Herren",
       "example": "Guten Tag, Herr Müller.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-26T23:24:15.599517Z"
     },
     {
       "id": "a42b8cc8-0c96-484b-8eac-464ca5137a4a",
@@ -1349,7 +1958,7 @@
       "translation_ru": "болгарский язык; по-болгарски",
       "example": "Er spricht Bulgarisch.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-26T18:51:17.340237Z"
     },
     {
       "id": "a4e50575-0f76-4d69-88f5-5e587147ae21",
@@ -1358,7 +1967,7 @@
       "translation_ru": "Берлин",
       "example": "Berlin ist die Hauptstadt Deutschlands.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-26T18:51:17.340237Z"
     },
     {
       "id": "a7baa55b-fa3e-4252-92db-323e283344b6",
@@ -1367,7 +1976,7 @@
       "translation_ru": "Познань",
       "example": "Poznań liegt in Polen.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-26T18:51:17.340237Z"
     },
     {
       "id": "a938b6e3-43b3-435d-8f25-68f4b0cdd1b3",
@@ -1382,21 +1991,21 @@
       "id": "a992ef83-8c46-40a7-a590-2779e56765c9",
       "type": "noun",
       "german": "Kursbuch",
-      "translation_ru": "учебник",
+      "translation_ru": "учебник; учебная книга",
       "article": "das",
       "plural": "Kursbücher",
       "example": "Das Kursbuch liegt auf dem Tisch.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-27T00:02:12.818075Z"
     },
     {
       "id": "ab4aa007-14b7-43e2-9d51-1160485598c7",
       "type": "verb",
       "german": "buchstabieren",
-      "translation_ru": "произносить по буквам",
+      "translation_ru": "произносить по буквам; говорить по буквам",
       "example": "Ich buchstabiere meinen Namen.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-27T15:22:59.018146Z"
     },
     {
       "id": "ad2ee545-b454-4768-b1b4-e2f98cf996f6",
@@ -1414,12 +2023,12 @@
       "id": "ae9e4356-7366-446f-943e-a67881e787ab",
       "type": "noun",
       "german": "Geschwister",
-      "translation_ru": "братья и сёстры; родные братья и сёстры",
+      "translation_ru": "братья и сёстры; родные братья и сёстры; сестры и братья",
       "article": "die",
       "plural": "—",
       "example": "Ich habe zwei Geschwister.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-27T07:44:48.037157Z"
     },
     {
       "id": "afa7f551-59fa-4691-bb7d-7fd3686b9ed6",
@@ -1437,16 +2046,16 @@
       "translation_ru": "Дюссельдорф",
       "example": "Sie wohnt in Düsseldorf.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-26T18:51:17.340237Z"
     },
     {
       "id": "b15e218a-e111-4170-85db-0e659dd979f5",
       "type": "word",
       "german": "Rumänisch",
-      "translation_ru": "румынский язык; по-румынски",
+      "translation_ru": "румынский язык; по-румынски; румынский",
       "example": "Sie spricht Rumänisch.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-27T09:07:32.607265Z"
     },
     {
       "id": "b2ac88f7-72c1-4ad5-a2ea-71bc0e5bf7e8",
@@ -1455,7 +2064,7 @@
       "translation_ru": "Португалия",
       "example": "Er kommt aus Portugal.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-26T18:51:17.340237Z"
     },
     {
       "id": "b2d48dc4-c691-4ff5-883e-a85eac4e367f",
@@ -1473,11 +2082,11 @@
       "id": "b37fe2b8-10ca-4c76-abbf-c5f1fcc01a89",
       "type": "verb",
       "german": "heißen",
-      "translation_ru": "называться; иметь имя",
+      "translation_ru": "называться; иметь имя; зовут",
       "example": "Ich heiße Lara.",
       "note": "О человеке: «зваться, иметь имя»; ß читается как с.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-26T23:33:06.519112Z"
     },
     {
       "id": "b5c52c56-bc96-413c-8b23-dd3dec3cf085",
@@ -1506,7 +2115,7 @@
       "translation_ru": "выбирать; отбирать",
       "example": "Wählen Sie die richtige Antwort aus.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-26T15:17:34.381623Z"
     },
     {
       "id": "b81950c2-b34b-4e53-b614-24145c73a965",
@@ -1515,7 +2124,7 @@
       "translation_ru": "разведённый",
       "example": "Er ist geschieden.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-26T18:51:17.340237Z"
     },
     {
       "id": "b864f295-dbb4-49cd-abe4-2f7009d0ef1e",
@@ -1613,16 +2222,16 @@
       "translation_ru": "немного",
       "example": "Ich spreche ein bisschen Deutsch.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-26T18:51:17.340237Z"
     },
     {
       "id": "cb4ef0df-0ca5-4f89-9948-a65c80f405a0",
       "type": "word",
       "german": "Auf Wiederhören",
-      "translation_ru": "до свидания (по телефону); до свидания",
+      "translation_ru": "до свидания (по телефону); услышимся; досвидания (по телефону)",
       "example": "Auf Wiederhören am Telefon.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-27T13:27:37.501547Z"
     },
     {
       "id": "cd08bc21-d813-4b52-b115-735b4d9b90e2",
@@ -1637,13 +2246,13 @@
       "id": "cd7e9e87-c529-48ea-bad2-bb62c3f763e5",
       "type": "noun",
       "german": "Deutsch",
-      "translation_ru": "немецкий язык",
+      "translation_ru": "немецкий язык; немецкий",
       "article": "das",
       "plural": "—",
       "example": "Ich spreche Deutsch.",
       "note": "Название языка; как существительное пишется с заглавной буквы.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-27T08:16:44.197245Z"
     },
     {
       "id": "cdb38e0c-51e0-45f3-a882-622ccc72cb29",
@@ -1658,19 +2267,19 @@
       "id": "ce5f5308-a726-4d73-92f5-ad711696e919",
       "type": "word",
       "german": "Thailand",
-      "translation_ru": "Таиланд",
+      "translation_ru": "Таиланд; тайланд",
       "example": "Sie kommt aus Thailand.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-26T23:48:25.204988Z"
     },
     {
       "id": "d05bf85d-2fa1-4495-9f83-2cd73a7a997a",
       "type": "word",
       "german": "Spanisch",
-      "translation_ru": "испанский язык; по-испански",
+      "translation_ru": "испанский язык; по-испански; испанский",
       "example": "Wir sprechen Spanisch.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-27T12:59:31.484396Z"
     },
     {
       "id": "d42a876c-cbe5-428e-b916-bdef15b02fa2",
@@ -1721,16 +2330,16 @@
       "translation_ru": "Индия",
       "example": "Er kommt aus Indien.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-26T18:51:17.340237Z"
     },
     {
       "id": "decedaa5-28cd-4d85-8997-67b9b323184b",
       "type": "word",
       "german": "Ungarisch",
-      "translation_ru": "венгерский язык; по-венгерски",
+      "translation_ru": "венгерский язык; по-венгерски; венгерский",
       "example": "Sie spricht Ungarisch.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-26T23:26:20.995622Z"
     },
     {
       "id": "e0ae12d0-2f69-45b4-a724-d6b4e2b79dff",
@@ -1739,7 +2348,7 @@
       "translation_ru": "Канада",
       "example": "Ottawa liegt in Kanada.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-26T18:51:17.340237Z"
     },
     {
       "id": "e330fa80-8e4e-49e3-ba8b-8b41b60621b7",
@@ -1759,7 +2368,7 @@
       "translation_ru": "Греция",
       "example": "Sie kommt aus Griechenland.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-26T18:51:17.340237Z"
     },
     {
       "id": "e4f9152d-7c41-43a5-9610-a46265b56031",
@@ -1785,10 +2394,10 @@
       "id": "e7dff5cc-44e3-43e9-8d35-18b789c03b04",
       "type": "word",
       "german": "Einen Moment",
-      "translation_ru": "одну минуту",
+      "translation_ru": "одну минуту; одну минутку",
       "example": "Einen Moment, bitte.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-27T13:28:23.729438Z"
     },
     {
       "id": "e8245722-c46c-4dc6-a931-aac29a168ccd",
@@ -1797,16 +2406,16 @@
       "translation_ru": "Люблин",
       "example": "Lublin liegt in Polen.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-26T18:51:17.340237Z"
     },
     {
       "id": "e8e8ace6-9a14-4028-ba3b-21f9c64b8599",
       "type": "word",
       "german": "Tut mir leid",
-      "translation_ru": "мне жаль; извините",
+      "translation_ru": "мне жаль; извините; соболезную",
       "example": "Tut mir leid, Frau Bauer.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-27T00:07:57.282734Z"
     },
     {
       "id": "e90f22ea-a5c9-456e-9b81-8dc7aff54816",
@@ -1871,7 +2480,7 @@
       "translation_ru": "Босния",
       "example": "Er kommt aus Bosnien.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-26T18:51:17.340237Z"
     },
     {
       "id": "ec287c39-65b5-46f3-b0b9-ef3844debd89",
@@ -1920,16 +2529,16 @@
       "translation_ru": "вы (множественное число); вы",
       "example": "Woher kommt ihr?",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-27T15:37:40.403861Z"
     },
     {
       "id": "f2923a7e-ba03-4dea-a5f2-f0e861dca195",
       "type": "word",
       "german": "Französisch",
-      "translation_ru": "французский язык; по-французски",
+      "translation_ru": "французский язык; по-французски; французкий; французский",
       "example": "Sie spricht Französisch.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-26T23:50:41.616816Z"
     },
     {
       "id": "f2bf4641-1942-4042-8204-ae963b75556d",
@@ -1956,7 +2565,7 @@
       "translation_ru": "Испания",
       "example": "Madrid liegt in Spanien.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-26T18:51:17.340237Z"
     },
     {
       "id": "f40482d6-8dfa-4f22-9c1d-ac42f424372e",
@@ -1995,7 +2604,7 @@
       "example": "Ich wohne in der Schweiz.",
       "note": "Название страны употребляется с артиклем die: aus der Schweiz.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-26T18:51:17.340237Z"
     },
     {
       "id": "f6566b2e-8167-45d7-8257-22b10d96fd26",
@@ -2004,7 +2613,7 @@
       "translation_ru": "Иран",
       "example": "Er kommt aus dem Iran.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-26T18:51:17.340237Z"
     },
     {
       "id": "f78b8157-d5fb-404d-a63d-a1255549f202",
@@ -2013,7 +2622,7 @@
       "translation_ru": "Оттава",
       "example": "Ottawa ist die Hauptstadt Kanadas.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-26T18:51:17.340237Z"
     },
     {
       "id": "fa2b0c87-7fec-4c1f-8466-55c813393863",
@@ -2040,7 +2649,7 @@
       "translation_ru": "ах",
       "example": "Ach, so ist das!",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-26T18:51:17.340237Z"
     },
     {
       "id": "fdbae2ed-41b1-4e61-8301-588839b135e4",
@@ -2051,7 +2660,7 @@
       "plural": "Ehen",
       "example": "Sie leben in einer Ehe.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
+      "updated_at": "2026-09-26T15:17:34.381623Z"
     },
     {
       "id": "febde14a-0a73-442c-8173-1e412042f1a7",
@@ -2060,302 +2669,7 @@
       "translation_ru": "ну да; ну что ж",
       "example": "Na ja, vielleicht morgen.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z"
-    },
-    {
-      "id": "b0000001-0000-4000-8000-000000000001",
-      "type": "noun", "german": "Geschäft", "translation_ru": "магазин; торговая точка", "article": "das", "plural": "Geschäfte",
-      "example": "Das Geschäft ist heute geöffnet.", "created_at": "2026-09-26T12:20:00.000Z", "updated_at": "2026-09-26T12:20:00.000Z"
-    },
-    {
-      "id": "b0000002-0000-4000-8000-000000000002",
-      "type": "noun", "german": "Supermarkt", "translation_ru": "супермаркет", "article": "der", "plural": "Supermärkte",
-      "example": "Ich kaufe im Supermarkt ein.", "created_at": "2026-09-26T12:20:00.000Z", "updated_at": "2026-09-26T12:20:00.000Z"
-    },
-    {
-      "id": "b0000003-0000-4000-8000-000000000003",
-      "type": "noun", "german": "Bäckerei", "translation_ru": "пекарня; булочная", "article": "die", "plural": "Bäckereien",
-      "example": "Die Brötchen sind aus der Bäckerei.", "created_at": "2026-09-26T12:20:00.000Z", "updated_at": "2026-09-26T12:20:00.000Z"
-    },
-    {
-      "id": "b0000004-0000-4000-8000-000000000004",
-      "type": "noun", "german": "Markt", "translation_ru": "рынок", "article": "der", "plural": "Märkte",
-      "example": "Auf dem Markt gibt es frisches Gemüse.", "created_at": "2026-09-26T12:20:00.000Z", "updated_at": "2026-09-26T12:20:00.000Z"
-    },
-    {
-      "id": "b0000005-0000-4000-8000-000000000005",
-      "type": "noun", "german": "Kasse", "translation_ru": "касса", "article": "die", "plural": "Kassen",
-      "example": "Ich bezahle an der Kasse.", "created_at": "2026-09-26T12:20:00.000Z", "updated_at": "2026-09-26T12:20:00.000Z"
-    },
-    {
-      "id": "b0000006-0000-4000-8000-000000000006",
-      "type": "noun", "german": "Preis", "translation_ru": "цена; стоимость", "article": "der", "plural": "Preise",
-      "example": "Der Preis ist niedrig.", "created_at": "2026-09-26T12:20:00.000Z", "updated_at": "2026-09-26T12:20:00.000Z"
-    },
-    {
-      "id": "b0000007-0000-4000-8000-000000000007",
-      "type": "noun", "german": "Euro", "translation_ru": "евро", "article": "der", "plural": "Euro",
-      "example": "Das kostet drei Euro.", "note": "После числа обычно используется форма Euro без окончания.", "created_at": "2026-09-26T12:20:00.000Z", "updated_at": "2026-09-26T12:20:00.000Z"
-    },
-    {
-      "id": "b0000008-0000-4000-8000-000000000008",
-      "type": "noun", "german": "Cent", "translation_ru": "цент", "article": "der", "plural": "Cent",
-      "example": "Das kostet neunzig Cent.", "created_at": "2026-09-26T12:20:00.000Z", "updated_at": "2026-09-26T12:20:00.000Z"
-    },
-    {
-      "id": "b0000009-0000-4000-8000-000000000009",
-      "type": "noun", "german": "Geld", "translation_ru": "деньги", "article": "das", "plural": "—",
-      "example": "Ich habe genug Geld.", "note": "Обычно употребляется без формы множественного числа.", "created_at": "2026-09-26T12:20:00.000Z", "updated_at": "2026-09-26T12:20:00.000Z"
-    },
-    {
-      "id": "b0000010-0000-4000-8000-000000000010",
-      "type": "noun", "german": "Tüte", "translation_ru": "пакет; сумка-пакет", "article": "die", "plural": "Tüten",
-      "example": "Brauchen Sie eine Tüte?", "created_at": "2026-09-26T12:20:00.000Z", "updated_at": "2026-09-26T12:20:00.000Z"
-    },
-    {
-      "id": "b0000011-0000-4000-8000-000000000011",
-      "type": "noun", "german": "Einkaufswagen", "translation_ru": "тележка для покупок; покупательская тележка", "article": "der", "plural": "Einkaufswagen",
-      "example": "Der Einkaufswagen steht am Eingang.", "created_at": "2026-09-26T12:20:00.000Z", "updated_at": "2026-09-26T12:20:00.000Z"
-    },
-    {
-      "id": "b0000012-0000-4000-8000-000000000012",
-      "type": "noun", "german": "Kassenbon", "translation_ru": "кассовый чек; чек", "article": "der", "plural": "Kassenbons",
-      "example": "Möchten Sie den Kassenbon?", "created_at": "2026-09-26T12:20:00.000Z", "updated_at": "2026-09-26T12:20:00.000Z"
-    },
-    {
-      "id": "b0000013-0000-4000-8000-000000000013",
-      "type": "noun", "german": "Angebot", "translation_ru": "предложение; товар по акции; акция", "article": "das", "plural": "Angebote",
-      "example": "Der Kaffee ist heute im Angebot.", "created_at": "2026-09-26T12:20:00.000Z", "updated_at": "2026-09-26T12:20:00.000Z"
-    },
-    {
-      "id": "b0000014-0000-4000-8000-000000000014",
-      "type": "noun", "german": "Brot", "translation_ru": "хлеб", "article": "das", "plural": "Brote",
-      "example": "Ich möchte ein Brot, bitte.", "created_at": "2026-09-26T12:20:00.000Z", "updated_at": "2026-09-26T12:20:00.000Z"
-    },
-    {
-      "id": "b0000015-0000-4000-8000-000000000015",
-      "type": "noun", "german": "Brötchen", "translation_ru": "булочка; хлебная булочка", "article": "das", "plural": "Brötchen",
-      "example": "Ich nehme drei Brötchen.", "created_at": "2026-09-26T12:20:00.000Z", "updated_at": "2026-09-26T12:20:00.000Z"
-    },
-    {
-      "id": "b0000016-0000-4000-8000-000000000016",
-      "type": "noun", "german": "Milch", "translation_ru": "молоко", "article": "die", "plural": "—",
-      "example": "Wir brauchen noch Milch.", "created_at": "2026-09-26T12:20:00.000Z", "updated_at": "2026-09-26T12:20:00.000Z"
-    },
-    {
-      "id": "b0000017-0000-4000-8000-000000000017",
-      "type": "noun", "german": "Wasser", "translation_ru": "вода", "article": "das", "plural": "—",
-      "example": "Eine Flasche Wasser, bitte.", "created_at": "2026-09-26T12:20:00.000Z", "updated_at": "2026-09-26T12:20:00.000Z"
-    },
-    {
-      "id": "b0000018-0000-4000-8000-000000000018",
-      "type": "noun", "german": "Kaffee", "translation_ru": "кофе", "article": "der", "plural": "Kaffees",
-      "example": "Der Kaffee kostet vier Euro.", "created_at": "2026-09-26T12:20:00.000Z", "updated_at": "2026-09-26T12:20:00.000Z"
-    },
-    {
-      "id": "b0000019-0000-4000-8000-000000000019",
-      "type": "noun", "german": "Tee", "translation_ru": "чай", "article": "der", "plural": "Tees",
-      "example": "Ich kaufe eine Packung Tee.", "created_at": "2026-09-26T12:20:00.000Z", "updated_at": "2026-09-26T12:20:00.000Z"
-    },
-    {
-      "id": "b0000020-0000-4000-8000-000000000020",
-      "type": "noun", "german": "Apfel", "translation_ru": "яблоко", "article": "der", "plural": "Äpfel",
-      "example": "Ein Kilo Äpfel, bitte.", "created_at": "2026-09-26T12:20:00.000Z", "updated_at": "2026-09-26T12:20:00.000Z"
-    },
-    {
-      "id": "b0000021-0000-4000-8000-000000000021",
-      "type": "noun", "german": "Banane", "translation_ru": "банан", "article": "die", "plural": "Bananen",
-      "example": "Die Bananen sind billig.", "created_at": "2026-09-26T12:20:00.000Z", "updated_at": "2026-09-26T12:20:00.000Z"
-    },
-    {
-      "id": "b0000022-0000-4000-8000-000000000022",
-      "type": "noun", "german": "Tomate", "translation_ru": "помидор; томат", "article": "die", "plural": "Tomaten",
-      "example": "Ich nehme fünf Tomaten.", "created_at": "2026-09-26T12:20:00.000Z", "updated_at": "2026-09-26T12:20:00.000Z"
-    },
-    {
-      "id": "b0000023-0000-4000-8000-000000000023",
-      "type": "noun", "german": "Kartoffel", "translation_ru": "картофель; картофелина", "article": "die", "plural": "Kartoffeln",
-      "example": "Die Kartoffeln kosten zwei Euro.", "created_at": "2026-09-26T12:20:00.000Z", "updated_at": "2026-09-26T12:20:00.000Z"
-    },
-    {
-      "id": "b0000024-0000-4000-8000-000000000024",
-      "type": "noun", "german": "Käse", "translation_ru": "сыр", "article": "der", "plural": "—",
-      "example": "Ich möchte zweihundert Gramm Käse.", "created_at": "2026-09-26T12:20:00.000Z", "updated_at": "2026-09-26T12:20:00.000Z"
-    },
-    {
-      "id": "b0000025-0000-4000-8000-000000000025",
-      "type": "noun", "german": "Wurst", "translation_ru": "колбаса", "article": "die", "plural": "Würste",
-      "example": "Die Wurst ist frisch.", "created_at": "2026-09-26T12:20:00.000Z", "updated_at": "2026-09-26T12:20:00.000Z"
-    },
-    {
-      "id": "b0000026-0000-4000-8000-000000000026",
-      "type": "noun", "german": "Fleisch", "translation_ru": "мясо", "article": "das", "plural": "—",
-      "example": "Wir kaufen heute Fleisch.", "created_at": "2026-09-26T12:20:00.000Z", "updated_at": "2026-09-26T12:20:00.000Z"
-    },
-    {
-      "id": "b0000027-0000-4000-8000-000000000027",
-      "type": "noun", "german": "Gemüse", "translation_ru": "овощи; овощная продукция", "article": "das", "plural": "—",
-      "example": "Das Gemüse ist frisch.", "created_at": "2026-09-26T12:20:00.000Z", "updated_at": "2026-09-26T12:20:00.000Z"
-    },
-    {
-      "id": "b0000028-0000-4000-8000-000000000028",
-      "type": "noun", "german": "Obst", "translation_ru": "фрукты; фруктовая продукция", "article": "das", "plural": "—",
-      "example": "Wo ist das Obst?", "created_at": "2026-09-26T12:20:00.000Z", "updated_at": "2026-09-26T12:20:00.000Z"
-    },
-    {
-      "id": "b0000029-0000-4000-8000-000000000029",
-      "type": "noun", "german": "Flasche", "translation_ru": "бутылка", "article": "die", "plural": "Flaschen",
-      "example": "Ich brauche zwei Flaschen Wasser.", "created_at": "2026-09-26T12:20:00.000Z", "updated_at": "2026-09-26T12:20:00.000Z"
-    },
-    {
-      "id": "b0000030-0000-4000-8000-000000000030",
-      "type": "noun", "german": "Packung", "translation_ru": "упаковка; пачка", "article": "die", "plural": "Packungen",
-      "example": "Eine Packung Kaffee, bitte.", "created_at": "2026-09-26T12:20:00.000Z", "updated_at": "2026-09-26T12:20:00.000Z"
-    },
-    {
-      "id": "b0000031-0000-4000-8000-000000000031",
-      "type": "noun", "german": "Kilo", "translation_ru": "килограмм; кило", "article": "das", "plural": "Kilos",
-      "example": "Ein Kilo Tomaten kostet drei Euro.", "created_at": "2026-09-26T12:20:00.000Z", "updated_at": "2026-09-26T12:20:00.000Z"
-    },
-    {
-      "id": "b0000032-0000-4000-8000-000000000032",
-      "type": "noun", "german": "Gramm", "translation_ru": "грамм", "article": "das", "plural": "Gramm",
-      "example": "Ich nehme fünfhundert Gramm Fleisch.", "created_at": "2026-09-26T12:20:00.000Z", "updated_at": "2026-09-26T12:20:00.000Z"
-    },
-    {
-      "id": "b0000033-0000-4000-8000-000000000033",
-      "type": "noun", "german": "Stück", "translation_ru": "штука; кусок", "article": "das", "plural": "Stücke",
-      "example": "Ich nehme zwei Stück.", "note": "После числительных форма не меняется: zwei Stück, fünf Stück — «две штуки», «пять штук».", "created_at": "2026-09-26T12:20:00.000Z", "updated_at": "2026-09-26T12:40:00.000Z"
-    },
-    {
-      "id": "b0000034-0000-4000-8000-000000000034",
-      "type": "noun", "german": "Verkäufer", "translation_ru": "продавец", "article": "der", "plural": "Verkäufer",
-      "example": "Der Verkäufer hilft dem Kunden.", "created_at": "2026-09-26T12:20:00.000Z", "updated_at": "2026-09-26T12:20:00.000Z"
-    },
-    {
-      "id": "b0000035-0000-4000-8000-000000000035",
-      "type": "noun", "german": "Verkäuferin", "translation_ru": "продавщица; продавец", "article": "die", "plural": "Verkäuferinnen",
-      "example": "Die Verkäuferin sagt den Preis.", "created_at": "2026-09-26T12:20:00.000Z", "updated_at": "2026-09-26T12:20:00.000Z"
-    },
-    {
-      "id": "b0000036-0000-4000-8000-000000000036",
-      "type": "noun", "german": "Kunde", "translation_ru": "покупатель; клиент", "article": "der", "plural": "Kunden",
-      "example": "Der Kunde bezahlt mit Karte.", "created_at": "2026-09-26T12:20:00.000Z", "updated_at": "2026-09-26T12:20:00.000Z"
-    },
-    {
-      "id": "b0000037-0000-4000-8000-000000000037",
-      "type": "noun", "german": "Kundin", "translation_ru": "покупательница; клиентка", "article": "die", "plural": "Kundinnen",
-      "example": "Die Kundin braucht eine Tüte.", "created_at": "2026-09-26T12:20:00.000Z", "updated_at": "2026-09-26T12:20:00.000Z"
-    },
-    {
-      "id": "b0000038-0000-4000-8000-000000000038",
-      "type": "verb", "german": "kaufen", "translation_ru": "покупать; купить",
-      "example": "Ich kaufe Brot und Milch.", "created_at": "2026-09-26T12:20:00.000Z", "updated_at": "2026-09-26T12:20:00.000Z"
-    },
-    {
-      "id": "b0000039-0000-4000-8000-000000000039",
-      "type": "verb", "german": "kosten", "translation_ru": "стоить",
-      "example": "Was kostet das Brot?", "created_at": "2026-09-26T12:20:00.000Z", "updated_at": "2026-09-26T12:20:00.000Z"
-    },
-    {
-      "id": "b0000040-0000-4000-8000-000000000040",
-      "type": "verb", "german": "bezahlen", "translation_ru": "платить; оплачивать",
-      "example": "Ich bezahle bar.", "created_at": "2026-09-26T12:20:00.000Z", "updated_at": "2026-09-26T12:20:00.000Z"
-    },
-    {
-      "id": "b0000041-0000-4000-8000-000000000041",
-      "type": "verb", "german": "brauchen", "translation_ru": "нуждаться; быть нужным; требоваться",
-      "example": "Ich brauche eine Flasche Wasser.", "created_at": "2026-09-26T12:20:00.000Z", "updated_at": "2026-09-26T12:20:00.000Z"
-    },
-    {
-      "id": "b0000042-0000-4000-8000-000000000042",
-      "type": "verb", "german": "nehmen", "translation_ru": "брать; взять",
-      "example": "Ich nehme zwei Brötchen.", "created_at": "2026-09-26T12:20:00.000Z", "updated_at": "2026-09-26T12:20:00.000Z"
-    },
-    {
-      "id": "b0000043-0000-4000-8000-000000000043",
-      "type": "verb", "german": "geben", "translation_ru": "давать; дать",
-      "example": "Geben Sie mir bitte eine Tüte.", "created_at": "2026-09-26T12:20:00.000Z", "updated_at": "2026-09-26T12:20:00.000Z"
-    },
-    {
-      "id": "b0000044-0000-4000-8000-000000000044",
-      "type": "verb", "german": "möchten", "translation_ru": "хотеть; желать",
-      "example": "Ich möchte einen Kaffee.", "note": "Вежливая форма желания: ich möchte, Sie möchten.", "created_at": "2026-09-26T12:20:00.000Z", "updated_at": "2026-09-26T12:20:00.000Z"
-    },
-    {
-      "id": "b0000045-0000-4000-8000-000000000045",
-      "type": "word", "german": "teuer", "translation_ru": "дорогой; дорого",
-      "example": "Der Käse ist zu teuer.", "created_at": "2026-09-26T12:20:00.000Z", "updated_at": "2026-09-26T12:20:00.000Z"
-    },
-    {
-      "id": "b0000046-0000-4000-8000-000000000046",
-      "type": "word", "german": "billig", "translation_ru": "дешёвый; дёшево",
-      "example": "Die Äpfel sind heute billig.", "created_at": "2026-09-26T12:20:00.000Z", "updated_at": "2026-09-26T12:20:00.000Z"
-    },
-    {
-      "id": "b0000047-0000-4000-8000-000000000047",
-      "type": "word", "german": "frisch", "translation_ru": "свежий; свежо",
-      "example": "Das Brot ist frisch.", "created_at": "2026-09-26T12:20:00.000Z", "updated_at": "2026-09-26T12:20:00.000Z"
-    },
-    {
-      "id": "b0000048-0000-4000-8000-000000000048",
-      "type": "word", "german": "noch", "translation_ru": "ещё; всё ещё",
-      "example": "Brauchen Sie noch etwas?", "created_at": "2026-09-26T12:20:00.000Z", "updated_at": "2026-09-26T12:20:00.000Z"
-    },
-    {
-      "id": "b0000049-0000-4000-8000-000000000049",
-      "type": "word", "german": "nur", "translation_ru": "только; всего лишь",
-      "example": "Das kostet nur zwei Euro.", "created_at": "2026-09-26T12:20:00.000Z", "updated_at": "2026-09-26T12:20:00.000Z"
-    },
-    {
-      "id": "b0000050-0000-4000-8000-000000000050",
-      "type": "word", "german": "bar", "translation_ru": "наличными; за наличные",
-      "example": "Ich bezahle bar.", "created_at": "2026-09-26T12:20:00.000Z", "updated_at": "2026-09-26T12:20:00.000Z"
-    },
-    {
-      "id": "b0000051-0000-4000-8000-000000000051",
-      "type": "word", "german": "mit Karte", "translation_ru": "картой; банковской картой",
-      "example": "Kann ich mit Karte bezahlen?", "created_at": "2026-09-26T12:20:00.000Z", "updated_at": "2026-09-26T12:20:00.000Z"
-    },
-    {
-      "id": "b0000052-0000-4000-8000-000000000052",
-      "type": "word", "german": "Wie viel", "translation_ru": "сколько; как много",
-      "example": "Wie viel kostet das?", "created_at": "2026-09-26T12:20:00.000Z", "updated_at": "2026-09-26T12:20:00.000Z"
-    },
-    {
-      "id": "b0000053-0000-4000-8000-000000000053",
-      "type": "word", "german": "Was kostet das", "translation_ru": "сколько это стоит; какова цена",
-      "example": "Was kostet das? – Drei Euro.", "created_at": "2026-09-26T12:20:00.000Z", "updated_at": "2026-09-26T12:20:00.000Z"
-    },
-    {
-      "id": "b0000054-0000-4000-8000-000000000054",
-      "type": "word", "german": "Ich möchte", "translation_ru": "я хотел бы; я хочу",
-      "example": "Ich möchte ein Kilo Äpfel.", "created_at": "2026-09-26T12:20:00.000Z", "updated_at": "2026-09-26T12:20:00.000Z"
-    },
-    {
-      "id": "b0000055-0000-4000-8000-000000000055",
-      "type": "word", "german": "Sonst noch etwas", "translation_ru": "что-нибудь ещё; ещё что-нибудь",
-      "example": "Sonst noch etwas? – Nein, danke.", "created_at": "2026-09-26T12:20:00.000Z", "updated_at": "2026-09-26T12:20:00.000Z"
-    },
-    {
-      "id": "b0000056-0000-4000-8000-000000000056",
-      "type": "word", "german": "Das macht", "translation_ru": "с Вас; получается",
-      "example": "Das macht fünf Euro zwanzig.", "created_at": "2026-09-26T12:20:00.000Z", "updated_at": "2026-09-26T12:20:00.000Z"
-    },
-    {
-      "id": "b0000057-0000-4000-8000-000000000057",
-      "type": "word", "german": "Das ist alles", "translation_ru": "это всё; это всё, спасибо",
-      "example": "Das ist alles, danke.", "created_at": "2026-09-26T12:20:00.000Z", "updated_at": "2026-09-26T12:20:00.000Z"
-    },
-    {
-      "id": "b0000058-0000-4000-8000-000000000058",
-      "type": "word", "german": "mehr", "translation_ru": "больше; ещё",
-      "example": "Ich brauche mehr Wasser.", "created_at": "2026-09-26T12:20:00.000Z", "updated_at": "2026-09-26T12:20:00.000Z"
-    },
-    {
-      "id": "b0000059-0000-4000-8000-000000000059",
-      "type": "word", "german": "weniger", "translation_ru": "меньше",
-      "example": "Ich möchte weniger Käse.", "created_at": "2026-09-26T12:20:00.000Z", "updated_at": "2026-09-26T12:20:00.000Z"
+      "updated_at": "2026-09-26T18:51:17.340237Z"
     }
   ]
 }
