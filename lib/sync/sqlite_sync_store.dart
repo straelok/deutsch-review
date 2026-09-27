@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import '../data/database/app_database.dart';
+import '../domain/daily_session.dart';
 
 final class SqliteSyncStore {
   const SqliteSyncStore(this.database);
@@ -183,8 +184,9 @@ final class SqliteSyncStore {
       '''
       INSERT INTO daily_sessions (
         id, local_date, slot, kind, status, target_answers, answered_count,
-        queue_json, last_item_id, created_at, updated_at, completed_at
-      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        queue_json, last_item_id, created_at, updated_at, completed_at,
+        content_version
+      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
       ON CONFLICT(id) DO UPDATE SET
         kind = excluded.kind,
         status = excluded.status,
@@ -193,7 +195,8 @@ final class SqliteSyncStore {
         queue_json = excluded.queue_json,
         last_item_id = excluded.last_item_id,
         updated_at = excluded.updated_at,
-        completed_at = excluded.completed_at
+        completed_at = excluded.completed_at,
+        content_version = excluded.content_version
       ''',
       <Object?>[
         targetId,
@@ -212,6 +215,9 @@ final class SqliteSyncStore {
         _dateString(session, 'createdAt'),
         _dateString(session, 'updatedAt'),
         _nullableDateString(session, 'completedAt'),
+        session['contentVersion'] is String
+            ? session['contentVersion'] as String
+            : bundledContentVersion,
       ],
     );
   }
@@ -328,6 +334,7 @@ final class SqliteSyncStore {
         'updatedAt': row['updated_at'] as String,
         'completedAt': row['completed_at'] as String?,
         'planVersion': 2,
+        'contentVersion': row['content_version'] as String,
       };
 
   static Map<String, Object?> _grammarProgressToJson(dynamic row) =>

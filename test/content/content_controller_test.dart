@@ -80,13 +80,40 @@ void main() {
     expect(controller.catalog.contentVersion, '2026.09.27.1');
     expect(controller.phase, ContentUpdatePhase.error);
   });
+
+  test('downloads an older session catalog without activating it', () async {
+    final directory = Directory.systemTemp.createTempSync('content_session_');
+    addTearDown(() => directory.deleteSync(recursive: true));
+    final bundled = await _fixture('2026.09.27.1');
+    final current = await _fixture('2026.09.27.2');
+    final oldSession = await _fixture('2026.09.26.1');
+    final gateway = _FakeGateway(current, versions: {
+      oldSession.manifest.contentVersion: oldSession,
+    });
+    final controller = ContentController(
+      bundled: bundled,
+      store: ContentStore(directory),
+      gateway: gateway,
+    );
+    addTearDown(controller.dispose);
+
+    await controller.initialize();
+    await controller.checkOnLaunch();
+    final restored = await controller.catalogForVersion('2026.09.26.1');
+
+    expect(restored?.contentVersion, '2026.09.26.1');
+    expect(controller.catalog.contentVersion, '2026.09.27.2');
+    expect(gateway.versionManifestRequests, 1);
+  });
 }
 
 final class _FakeGateway implements ContentGateway {
-  _FakeGateway(this.bundle);
+  _FakeGateway(this.bundle, {this.versions = const {}});
 
   final ContentBundle bundle;
+  final Map<String, ContentBundle> versions;
   int manifestRequests = 0;
+  int versionManifestRequests = 0;
   int bundleRequests = 0;
 
   @override
@@ -96,9 +123,15 @@ final class _FakeGateway implements ContentGateway {
   }
 
   @override
+  Future<ContentManifest> fetchVersionManifest(String version) async {
+    versionManifestRequests++;
+    return (versions[version] ?? bundle).manifest;
+  }
+
+  @override
   Future<Uint8List> fetchBundle(ContentManifest manifest) async {
     bundleRequests++;
-    return bundle.compressedBytes;
+    return (versions[manifest.contentVersion] ?? bundle).compressedBytes;
   }
 }
 

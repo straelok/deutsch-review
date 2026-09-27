@@ -122,6 +122,44 @@ void main() {
         sessions.firstWhere((session) => session.slot == 9).targetAnswers, 10);
   });
 
+  test('pins content version when a planned session starts', () async {
+    final database = AppDatabase.inMemory();
+    addTearDown(database.close);
+    var version = '2026.09.27.1';
+    final repository = SqliteDailySessionRepository(
+      database,
+      contentVersion: () => version,
+    );
+    final now = DateTime.utc(2026, 9, 27, 10);
+    final planned = (await repository.ensureDay(
+      localDate: '2026-09-27',
+      now: now,
+      includeGrammar: true,
+    ))
+        .firstWhere((session) => session.kind == DailySessionKind.grammar);
+    expect(planned.contentVersion, '2026.09.27.1');
+
+    version = '2026.09.27.2';
+    final started = await repository.start(
+      id: planned.id,
+      queueItemIds: const ['exercise-1'],
+      now: now.add(const Duration(minutes: 1)),
+    );
+    version = '2026.09.27.3';
+    final resumed = await repository.start(
+      id: planned.id,
+      queueItemIds: const ['exercise-1'],
+      now: now.add(const Duration(minutes: 2)),
+    );
+
+    expect(started.contentVersion, '2026.09.27.2');
+    expect(resumed.contentVersion, '2026.09.27.2');
+    expect(
+      repository.unfinishedContentVersions(),
+      {'2026.09.27.1', '2026.09.27.2'},
+    );
+  });
+
   test('creates an extra session in the requested category', () async {
     final database = AppDatabase.inMemory();
     addTearDown(database.close);

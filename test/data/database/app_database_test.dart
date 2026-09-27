@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:deutsch_review/data/database/app_database.dart';
 import 'package:deutsch_review/data/database/schema.dart';
+import 'package:deutsch_review/domain/daily_session.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:sqlite3/sqlite3.dart';
 
@@ -228,6 +229,41 @@ void main() {
     expect(numbers['target_answers'], 20);
     expect(grammar['slot'], 9);
     expect(grammar['answered_count'], 3);
+    expect(migrated.integrityCheck(), ['ok']);
+  });
+
+  test('assigns the bundled content version to version 6 sessions', () {
+    final directory = Directory.systemTemp.createTempSync('deutsch_review_');
+    addTearDown(() => directory.deleteSync(recursive: true));
+    final path = '${directory.path}${Platform.pathSeparator}version6.sqlite';
+    final oldDatabase = sqlite3.open(path);
+    oldDatabase
+      ..execute(migrationFrom0To1)
+      ..execute(migrationFrom1To2)
+      ..execute(migrationFrom2To3)
+      ..execute(migrationFrom3To4)
+      ..execute(migrationFrom4To5)
+      ..execute(migrationFrom5To6)
+      ..execute('PRAGMA user_version = 6')
+      ..execute('''
+        INSERT INTO daily_sessions (
+          id, local_date, slot, kind, status, target_answers, answered_count,
+          queue_json, last_item_id, created_at, updated_at, completed_at
+        ) VALUES (
+          'grammar', '2026-09-27', 9, 'grammar', 'in_progress', 10, 1,
+          '["exercise-1"]', 'exercise-0', '2026-09-27T10:00:00.000Z',
+          '2026-09-27T10:10:00.000Z', NULL
+        )
+      ''')
+      ..close();
+
+    final migrated = AppDatabase.open(path);
+    addTearDown(migrated.close);
+    final session = migrated.connection
+        .select("SELECT * FROM daily_sessions WHERE id = 'grammar'")
+        .single;
+
+    expect(session['content_version'], bundledContentVersion);
     expect(migrated.integrityCheck(), ['ok']);
   });
 

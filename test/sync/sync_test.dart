@@ -29,7 +29,10 @@ void main() {
     addTearDown(source.close);
     addTearDown(target.close);
     final sourceItems = SqliteLearningItemRepository(source);
-    final sourceSessions = SqliteDailySessionRepository(source);
+    final sourceSessions = SqliteDailySessionRepository(
+      source,
+      contentVersion: () => '2026.09.27.2',
+    );
     final targetSessions = SqliteDailySessionRepository(target);
     final now = DateTime.utc(2026, 9, 23, 10);
 
@@ -47,6 +50,11 @@ void main() {
     );
 
     final payload = SqliteSyncStore(source).buildPayload();
+    final exportedSessions = payload['sessions']! as List<Object?>;
+    expect(
+      (exportedSessions.first! as Map<String, Object?>)['contentVersion'],
+      '2026.09.27.2',
+    );
     SqliteSyncStore(target).mergePayload(payload);
 
     final item = await SqliteLearningItemRepository(target).findById('word-1');
@@ -56,6 +64,12 @@ void main() {
       "SELECT * FROM daily_sessions WHERE local_date = '2026-09-23'",
     );
     expect(sessions, hasLength(8));
+    expect(
+      sessions.every(
+        (session) => session['content_version'] == '2026.09.27.2',
+      ),
+      isTrue,
+    );
     expect(target.integrityCheck(), <String>['ok']);
     expect(target.foreignKeyCheck(), isEmpty);
     expect(

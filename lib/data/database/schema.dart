@@ -1,4 +1,4 @@
-const currentSchemaVersion = 6;
+const currentSchemaVersion = 7;
 
 const migrationFrom0To1 = '''
 CREATE TABLE learning_items (
@@ -358,4 +358,9 @@ CREATE UNIQUE INDEX daily_sessions_required_slot_idx
   WHERE slot IS NOT NULL;
 CREATE INDEX daily_sessions_date_status_idx
   ON daily_sessions (local_date, status);
+''';
+
+const migrationFrom6To7 = '''
+ALTER TABLE daily_sessions
+ADD COLUMN content_version TEXT NOT NULL DEFAULT '2026.09.27.1';
 ''';

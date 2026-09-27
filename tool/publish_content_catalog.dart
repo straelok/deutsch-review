@@ -50,6 +50,19 @@ Future<void> main(List<String> arguments) async {
     if (sha256.convert(downloaded).toString() != expectedHash) {
       throw StateError('Uploaded bundle verification failed.');
     }
+    final version = manifest['content_version'];
+    if (version is! String) {
+      throw const FormatException('Manifest content version is invalid.');
+    }
+    await _upload(
+      client,
+      baseUrl,
+      serviceKey,
+      'content/versions/$version/manifest.json',
+      await manifestFile.readAsBytes(),
+      contentType: 'application/json',
+      upsert: false,
+    );
     await _upload(
       client,
       baseUrl,

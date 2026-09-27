@@ -10,9 +10,15 @@ import '../../domain/repositories/daily_session_repository.dart';
 import '../database/app_database.dart';
 
 final class SqliteDailySessionRepository implements DailySessionRepository {
-  const SqliteDailySessionRepository(this.database);
+  const SqliteDailySessionRepository(
+    this.database, {
+    String Function()? contentVersion,
+  }) : _contentVersion = contentVersion ?? _defaultContentVersion;
 
   final AppDatabase database;
+  final String Function() _contentVersion;
+
+  static String _defaultContentVersion() => bundledContentVersion;
 
   @override
   Future<List<DailySession>> ensureDay({
@@ -31,8 +37,9 @@ final class SqliteDailySessionRepository implements DailySessionRepository {
           '''
           INSERT OR IGNORE INTO daily_sessions (
             id, local_date, slot, kind, status, target_answers, answered_count,
-            queue_json, last_item_id, created_at, updated_at, completed_at
-          ) VALUES (?, ?, ?, ?, 'planned', 20, 0, '[]', NULL, ?, ?, NULL)
+            queue_json, last_item_id, created_at, updated_at, completed_at,
+            content_version
+          ) VALUES (?, ?, ?, ?, 'planned', 20, 0, '[]', NULL, ?, ?, NULL, ?)
           ''',
           <Object?>[
             newUuidV4(),
@@ -41,6 +48,7 @@ final class SqliteDailySessionRepository implements DailySessionRepository {
             kind.wireName,
             timestamp,
             timestamp,
+            _contentVersion(),
           ],
         );
       }
@@ -49,10 +57,18 @@ final class SqliteDailySessionRepository implements DailySessionRepository {
           '''
           INSERT OR IGNORE INTO daily_sessions (
             id, local_date, slot, kind, status, target_answers, answered_count,
-            queue_json, last_item_id, created_at, updated_at, completed_at
-          ) VALUES (?, ?, ?, 'numbers', 'planned', 20, 0, '[]', NULL, ?, ?, NULL)
+            queue_json, last_item_id, created_at, updated_at, completed_at,
+            content_version
+          ) VALUES (?, ?, ?, 'numbers', 'planned', 20, 0, '[]', NULL, ?, ?, NULL, ?)
           ''',
-          <Object?>[newUuidV4(), localDate, slot, timestamp, timestamp],
+          <Object?>[
+            newUuidV4(),
+            localDate,
+            slot,
+            timestamp,
+            timestamp,
+            _contentVersion(),
+          ],
         );
       }
       if (includeGrammar) {
@@ -61,10 +77,18 @@ final class SqliteDailySessionRepository implements DailySessionRepository {
             '''
             INSERT OR IGNORE INTO daily_sessions (
               id, local_date, slot, kind, status, target_answers, answered_count,
-              queue_json, last_item_id, created_at, updated_at, completed_at
-            ) VALUES (?, ?, ?, 'grammar', 'planned', 10, 0, '[]', NULL, ?, ?, NULL)
+              queue_json, last_item_id, created_at, updated_at, completed_at,
+              content_version
+            ) VALUES (?, ?, ?, 'grammar', 'planned', 10, 0, '[]', NULL, ?, ?, NULL, ?)
             ''',
-            <Object?>[newUuidV4(), localDate, slot, timestamp, timestamp],
+            <Object?>[
+              newUuidV4(),
+              localDate,
+              slot,
+              timestamp,
+              timestamp,
+              _contentVersion(),
+            ],
           );
         }
       }
@@ -97,8 +121,9 @@ final class SqliteDailySessionRepository implements DailySessionRepository {
       '''
       INSERT INTO daily_sessions (
         id, local_date, slot, kind, status, target_answers, answered_count,
-        queue_json, last_item_id, created_at, updated_at, completed_at
-      ) VALUES (?, ?, NULL, ?, 'planned', ?, 0, '[]', NULL, ?, ?, NULL)
+        queue_json, last_item_id, created_at, updated_at, completed_at,
+        content_version
+      ) VALUES (?, ?, NULL, ?, 'planned', ?, 0, '[]', NULL, ?, ?, NULL, ?)
       ''',
       <Object?>[
         id,
@@ -107,6 +132,7 @@ final class SqliteDailySessionRepository implements DailySessionRepository {
         kind == DailySessionKind.grammar ? 10 : 20,
         timestamp,
         timestamp,
+        _contentVersion(),
       ],
     );
     return (await findById(id))!;
@@ -121,12 +147,15 @@ final class SqliteDailySessionRepository implements DailySessionRepository {
     database.connection.execute(
       '''
       UPDATE daily_sessions
-      SET status = 'in_progress', queue_json = ?, updated_at = ?
+      SET status = 'in_progress', queue_json = ?, updated_at = ?,
+          content_version = CASE
+            WHEN status = 'planned' THEN ? ELSE content_version END
       WHERE id = ? AND status != 'completed'
       ''',
       <Object?>[
         jsonEncode(queueItemIds),
         now.toUtc().toIso8601String(),
+        _contentVersion(),
         id,
       ],
     );
@@ -284,10 +313,18 @@ final class SqliteDailySessionRepository implements DailySessionRepository {
       lastItemId: row['last_item_id'] as String?,
       createdAt: DateTime.parse(row['created_at'] as String).toUtc(),
       updatedAt: DateTime.parse(row['updated_at'] as String).toUtc(),
+      contentVersion: row['content_version'] as String,
       completedAt: switch (row['completed_at']) {
         final String value => DateTime.parse(value).toUtc(),
         _ => null,
       },
     );
   }
+
+  Set<String> unfinishedContentVersions() => database.connection
+      .select(
+        "SELECT DISTINCT content_version FROM daily_sessions WHERE status != 'completed'",
+      )
+      .map((row) => row['content_version'] as String)
+      .toSet();
 }

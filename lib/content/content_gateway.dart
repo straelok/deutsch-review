@@ -7,6 +7,8 @@ import 'content_manifest.dart';
 abstract interface class ContentGateway {
   Future<ContentManifest> fetchManifest();
 
+  Future<ContentManifest> fetchVersionManifest(String version);
+
   Future<Uint8List> fetchBundle(ContentManifest manifest);
 }
 
@@ -24,7 +26,19 @@ final class HttpContentGateway implements ContentGateway {
 
   @override
   Future<ContentManifest> fetchManifest() async {
-    final bytes = await _get(_manifestPath, _maximumManifestSize);
+    return _fetchManifest(_manifestPath);
+  }
+
+  @override
+  Future<ContentManifest> fetchVersionManifest(String version) {
+    if (!RegExp(r'^\d{4}\.\d{2}\.\d{2}\.\d+$').hasMatch(version)) {
+      throw const FormatException('Invalid requested content version.');
+    }
+    return _fetchManifest('content/versions/$version/manifest.json');
+  }
+
+  Future<ContentManifest> _fetchManifest(String path) async {
+    final bytes = await _get(path, _maximumManifestSize);
     final decoded = jsonDecode(utf8.decode(bytes));
     if (decoded is! Map) {
       throw const FormatException('Content manifest must be an object.');

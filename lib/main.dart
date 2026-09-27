@@ -63,7 +63,13 @@ Future<void> main() async {
       SqliteGrammarRepository(database),
       syncController.scheduleSync,
     );
-    final localSessions = SqliteDailySessionRepository(database);
+    final localSessions = SqliteDailySessionRepository(
+      database,
+      contentVersion: () => contentController.catalog.contentVersion,
+    );
+    await contentController.pruneVersions(
+      localSessions.unfinishedContentVersions(),
+    );
     final reminders = Platform.isAndroid
         ? ReminderController(
             sessions: localSessions,

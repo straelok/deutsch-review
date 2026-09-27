@@ -64,6 +64,29 @@ final class ContentController extends ChangeNotifier {
     return future.whenComplete(() => _currentCheck = null);
   }
 
+  Future<GrammarCatalog?> catalogForVersion(String version) async {
+    if (_active.manifest.contentVersion == version) return _active.catalog;
+    if (_bundled.manifest.contentVersion == version) return _bundled.catalog;
+    final local = await _store.loadVersion(version);
+    if (local != null) return local.catalog;
+    final gateway = _gateway;
+    if (gateway == null) return null;
+    try {
+      final manifest = await gateway.fetchVersionManifest(version);
+      if (manifest.contentVersion != version || !manifest.isCompatible) {
+        return null;
+      }
+      final bytes = await gateway.fetchBundle(manifest);
+      final bundle = await _store.install(manifest, bytes, activate: false);
+      return bundle.catalog;
+    } on Object {
+      return null;
+    }
+  }
+
+  Future<void> pruneVersions(Set<String> retainedVersions) =>
+      _store.removeUnusedVersions(retainedVersions);
+
   Future<void> _performCheck() async {
     final gateway = _gateway;
     if (gateway == null) {

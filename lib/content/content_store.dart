@@ -40,8 +40,9 @@ final class ContentStore {
 
   Future<ContentBundle> install(
     ContentManifest manifest,
-    Uint8List bytes,
-  ) async {
+    Uint8List bytes, {
+    bool activate = true,
+  }) async {
     final verified = await decodeContentBundle(manifest, bytes);
     await _versions.create(recursive: true);
     final bundle = _bundleFile(manifest.contentVersion);
@@ -54,7 +55,7 @@ final class ContentStore {
       jsonEncode(manifest.toJson()),
       flush: true,
     );
-    await _activate(manifest);
+    if (activate) await _activate(manifest);
     return verified;
   }
 

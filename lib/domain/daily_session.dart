@@ -1,3 +1,5 @@
+const bundledContentVersion = '2026.09.27.1';
+
 enum DailySessionStatus {
   planned('planned'),
   inProgress('in_progress'),
@@ -46,6 +48,7 @@ final class DailySession {
     required this.queueItemIds,
     required this.createdAt,
     required this.updatedAt,
+    this.contentVersion = bundledContentVersion,
     this.lastItemId,
     this.completedAt,
   });
@@ -61,6 +64,7 @@ final class DailySession {
   final String? lastItemId;
   final DateTime createdAt;
   final DateTime updatedAt;
+  final String contentVersion;
   final DateTime? completedAt;
 
   bool get isRequired => slot != null;

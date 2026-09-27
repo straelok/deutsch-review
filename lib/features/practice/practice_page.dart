@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import '../../content/content_controller.dart';
 import '../../domain/answer_checker.dart';
 import '../../domain/daily_session.dart';
 import '../../domain/grammar.dart';
@@ -27,6 +28,7 @@ class PracticePage extends StatefulWidget {
     required this.sessions,
     required this.grammar,
     required this.grammarCatalog,
+    this.contentController,
     required this.strings,
     required this.refreshToken,
     required this.onAttemptSaved,
@@ -41,6 +43,7 @@ class PracticePage extends StatefulWidget {
   final DailySessionRepository sessions;
   final GrammarRepository grammar;
   final GrammarCatalog grammarCatalog;
+  final ContentController? contentController;
   final UiStrings strings;
   final int refreshToken;
   final VoidCallback onAttemptSaved;
@@ -76,6 +79,9 @@ class _PracticePageState extends State<PracticePage> {
   String? _pendingVocabularyAnswer;
   int _loadRevision = 0;
   String? _focusedGrammarTopicId;
+  GrammarCatalog? _sessionCatalog;
+  bool _sessionContentUnavailable = false;
+  String? _unavailableSessionId;
   Map<String, bool> _grammarResults = const {};
   final Map<String, TextEditingController> _grammarControllers = {};
   String? _selectedGrammarOption;
@@ -87,6 +93,7 @@ class _PracticePageState extends State<PracticePage> {
       _grammarQueue.isEmpty ? null : _grammarQueue.first;
   String? get _currentNumber =>
       _numberQueue.isEmpty ? null : _numberQueue.first;
+  GrammarCatalog get _catalog => _sessionCatalog ?? widget.grammarCatalog;
 
   @override
   void initState() {
@@ -127,6 +134,26 @@ class _PracticePageState extends State<PracticePage> {
   Widget build(BuildContext context) {
     final s = widget.strings;
     if (_loading) return const Center(child: CircularProgressIndicator());
+    if (_sessionContentUnavailable) {
+      return _CenteredPanel(
+        icon: Icons.cloud_off_outlined,
+        title: s.isRussian
+            ? 'Версия урока недоступна'
+            : 'Lektionsversion nicht verfügbar',
+        message: s.isRussian
+            ? 'Подключитесь к интернету и повторите попытку. '
+                'Прогресс занятия сохранён.'
+            : 'Bitte verbinden Sie sich mit dem Internet und versuchen Sie '
+                'es erneut. Der Lernstand bleibt gespeichert.',
+        action: FilledButton.icon(
+          onPressed: _unavailableSessionId == null
+              ? _load
+              : () => _openSession(_unavailableSessionId!),
+          icon: const Icon(Icons.refresh),
+          label: Text(s.isRussian ? 'Повторить' : 'Erneut versuchen'),
+        ),
+      );
+    }
     if (_session == null) return _sessionSelection();
     if (_complete) {
       return _CenteredPanel(
@@ -733,8 +760,7 @@ class _PracticePageState extends State<PracticePage> {
       );
     }
     final paradigm = _paradigm(taskId);
-    final exercise =
-        paradigm == null ? widget.grammarCatalog.exercise(taskId) : null;
+    final exercise = paradigm == null ? _catalog.exercise(taskId) : null;
     if (paradigm == null && exercise == null) {
       return _CenteredPanel(
         icon: Icons.error_outline,
@@ -1095,7 +1121,7 @@ class _PracticePageState extends State<PracticePage> {
     final topicIds = _grammarTopicIds(session.queueItemIds);
     final planned = topicIds.isEmpty;
     final resolvedIds = planned ? _availableGrammarTopics : topicIds;
-    final titles = widget.grammarCatalog.topics
+    final titles = _catalog.topics
         .where((topic) => resolvedIds.contains(topic.id))
         .map(
             (topic) => widget.strings.isRussian ? topic.titleRu : topic.titleDe)
@@ -1112,7 +1138,7 @@ class _PracticePageState extends State<PracticePage> {
         if (paradigmParts.length == 3 && paradigmParts.first == 'paradigm') {
           return paradigmParts[1];
         }
-        return widget.grammarCatalog.exercise(id)?.topicId;
+        return _catalog.exercise(id)?.topicId;
       })
       .whereType<String>()
       .toSet();
@@ -1120,7 +1146,7 @@ class _PracticePageState extends State<PracticePage> {
   String? _focusedTopicTitle(DailySession session) {
     final topicIds = _grammarTopicIds(session.queueItemIds);
     if (topicIds.length != 1) return null;
-    final topic = widget.grammarCatalog.topics
+    final topic = _catalog.topics
         .where((candidate) => candidate.id == topicIds.single)
         .firstOrNull;
     if (topic == null) return null;
@@ -1131,11 +1157,14 @@ class _PracticePageState extends State<PracticePage> {
   Future<void> _load() async {
     final revision = ++_loadRevision;
     if (_daySessions.isEmpty && mounted) setState(() => _loading = true);
+    _sessionCatalog = null;
+    _sessionContentUnavailable = false;
+    _unavailableSessionId = null;
     final now = DateTime.now();
     final items = await widget.learningItems.findActive();
     final grammarProgress = await widget.grammar.progress();
     final activeItemKeys = _activeItemKeys(items);
-    final availableTopics = widget.grammarCatalog.availableTopicIds(
+    final availableTopics = _catalog.availableTopicIds(
       learnedTopicIds: grammarProgress.values
           .where((entry) => entry.learned)
           .map((entry) => entry.topicId)
@@ -1193,7 +1222,7 @@ class _PracticePageState extends State<PracticePage> {
     setState(() => _loading = true);
     final items = await widget.learningItems.findActive();
     final progress = await widget.grammar.progress();
-    final availableTopics = widget.grammarCatalog.availableTopicIds(
+    final availableTopics = _catalog.availableTopicIds(
       learnedTopicIds: progress.values
           .where((entry) => entry.learned)
           .map((entry) => entry.topicId)
@@ -1235,6 +1264,17 @@ class _PracticePageState extends State<PracticePage> {
       );
     }
     if (session.kind == DailySessionKind.grammar) {
+      final catalog = await _catalogForSession(session);
+      if (!mounted) return;
+      if (catalog == null) {
+        setState(() {
+          _sessionContentUnavailable = true;
+          _unavailableSessionId = session!.id;
+          _loading = false;
+        });
+        return;
+      }
+      _sessionCatalog = catalog;
       await _openGrammarSession(session);
       return;
     }
@@ -1267,6 +1307,16 @@ class _PracticePageState extends State<PracticePage> {
       _loading = false;
     });
     if (_queue.isNotEmpty) _focusAnswerField();
+  }
+
+  Future<GrammarCatalog?> _catalogForSession(DailySession session) async {
+    if (session.status == DailySessionStatus.planned ||
+        session.contentVersion == widget.grammarCatalog.contentVersion) {
+      return widget.grammarCatalog;
+    }
+    return widget.contentController?.catalogForVersion(
+      session.contentVersion,
+    );
   }
 
   Future<void> _openNumberSession(DailySession session) async {
@@ -1328,8 +1378,13 @@ class _PracticePageState extends State<PracticePage> {
   }
 
   Future<void> _openGrammarSession(DailySession session) async {
-    var queue =
-        session.queueItemIds.where(_isValidGrammarTask).toList(growable: false);
+    var queue = session.queueItemIds
+        .where(
+          session.status == DailySessionStatus.planned
+              ? _isValidGrammarTask
+              : _grammarTaskExists,
+        )
+        .toList(growable: false);
     if (session.status == DailySessionStatus.planned ||
         queue.length != session.remaining) {
       queue = await _buildGrammarQueue(
@@ -1383,7 +1438,7 @@ class _PracticePageState extends State<PracticePage> {
           length: 1,
           random: _random,
         ).first;
-        final verbs = widget.grammarCatalog.verbsFor(
+        final verbs = _catalog.verbsFor(
           topicId: topicId,
           activeLemmas: verbLemmas,
         );
@@ -1401,7 +1456,7 @@ class _PracticePageState extends State<PracticePage> {
       random: _random,
     );
     for (final topicId in topicPlan) {
-      final eligible = widget.grammarCatalog.exercisesFor(
+      final eligible = _catalog.exercisesFor(
         topicId: topicId,
         activeItemKeys: itemKeys,
       );
@@ -1419,7 +1474,7 @@ class _PracticePageState extends State<PracticePage> {
 
     final allEligible = topicIds
         .expand(
-          (topicId) => widget.grammarCatalog.exercisesFor(
+          (topicId) => _catalog.exercisesFor(
             topicId: topicId,
             activeItemKeys: itemKeys,
           ),
@@ -1437,17 +1492,20 @@ class _PracticePageState extends State<PracticePage> {
   bool _isValidGrammarTask(String id) {
     final paradigm = _paradigm(id);
     if (paradigm != null) return true;
-    final exercise = widget.grammarCatalog.exercise(id);
+    final exercise = _catalog.exercise(id);
     return exercise != null &&
         _availableGrammarTopics.contains(exercise.topicId) &&
         (exercise.requiredItemType == 'none' ||
             _activeItemKeys(_activeItems).contains(exercise.itemKey));
   }
 
+  bool _grammarTaskExists(String id) =>
+      _paradigm(id) != null || _catalog.exercise(id) != null;
+
   GrammarVerb? _paradigm(String id) {
     final parts = id.split(':');
     if (parts.length != 3 || parts.first != 'paradigm') return null;
-    final verb = widget.grammarCatalog.verb(parts[2]);
+    final verb = _catalog.verb(parts[2]);
     return verb?.topicId == parts[1] ? verb : null;
   }
 
@@ -1720,7 +1778,7 @@ class _PracticePageState extends State<PracticePage> {
         );
       }
     } else {
-      final exercise = widget.grammarCatalog.exercise(taskId)!;
+      final exercise = _catalog.exercise(taskId)!;
       final answer = switch (exercise.type) {
         GrammarExerciseType.text => _answerController.text.trim(),
         GrammarExerciseType.choice ||

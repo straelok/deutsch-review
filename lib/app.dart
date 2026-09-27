@@ -251,6 +251,7 @@ class _HomeScreenState extends State<HomeScreen> {
         reminders: widget.reminders,
         grammar: widget.grammar,
         grammarCatalog: widget.grammarCatalog,
+        contentController: widget.contentController,
         requestedTopicId: _practiceTopicId,
         practiceRequestRevision: _practiceRequestRevision,
       ),
