@@ -9,6 +9,7 @@ final class GrammarCatalog {
     required List<GrammarTopic> topics,
     required List<GrammarVerb> verbs,
     required List<GrammarExercise> exercises,
+    this.contentVersion = 'test',
   })  : topics = List.unmodifiable(topics),
         verbs = List.unmodifiable(verbs),
         exercises = List.unmodifiable(exercises),
@@ -20,6 +21,7 @@ final class GrammarCatalog {
   final List<GrammarTopic> topics;
   final List<GrammarVerb> verbs;
   final List<GrammarExercise> exercises;
+  final String contentVersion;
   final Map<String, GrammarVerb> _verbsByLemma;
   final Map<String, GrammarExercise> _exercisesById;
 
@@ -49,6 +51,50 @@ final class GrammarCatalog {
       exercises: (exerciseData['exercises'] as List)
           .map((value) => _exercise(_map(value)))
           .toList(growable: false),
+      contentVersion: 'bundled-legacy',
+    );
+  }
+
+  factory GrammarCatalog.fromPackageJson(Map<String, Object?> json) {
+    if (json['schema_version'] != 1 ||
+        json['content_version'] is! String ||
+        json['topics'] is! List ||
+        json['verbs'] is! List ||
+        json['exercises'] is! List ||
+        json['lesson_content'] is! Map) {
+      throw const FormatException('Invalid content catalog.');
+    }
+    final topics = (json['topics'] as List)
+        .map((value) => _topic(_map(value)))
+        .toList(growable: false);
+    final topicIds = <String>{};
+    for (final topic in topics) {
+      if (!topicIds.add(topic.id)) {
+        throw FormatException('Duplicate topic ID: ${topic.id}.');
+      }
+    }
+    final verbs = (json['verbs'] as List)
+        .map((value) => _verb(_map(value)))
+        .toList(growable: false);
+    final exercises = (json['exercises'] as List)
+        .map((value) => _exercise(_map(value)))
+        .toList(growable: false);
+    final exerciseIds = <String>{};
+    for (final exercise in exercises) {
+      if (!topicIds.contains(exercise.topicId)) {
+        throw FormatException(
+          'Exercise ${exercise.id} references an unknown topic.',
+        );
+      }
+      if (!exerciseIds.add(exercise.id)) {
+        throw FormatException('Duplicate exercise ID: ${exercise.id}.');
+      }
+    }
+    return GrammarCatalog(
+      topics: topics,
+      verbs: verbs,
+      exercises: exercises,
+      contentVersion: json['content_version']! as String,
     );
   }
 
