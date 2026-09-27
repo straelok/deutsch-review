@@ -31,6 +31,16 @@ final class PracticeSummary {
   double get accuracy => attempts == 0 ? 0 : correct / attempts;
 }
 
+final class WordPracticeStatistics {
+  const WordPracticeStatistics({
+    required this.recent,
+    required this.allTime,
+  });
+
+  final PracticeSummary recent;
+  final PracticeSummary allTime;
+}
+
 final class ItemPracticeSummary {
   const ItemPracticeSummary({
     required this.item,

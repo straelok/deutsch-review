@@ -35,6 +35,7 @@ class DictionaryMaterialPage extends StatefulWidget {
 class _MaterialPageState extends State<DictionaryMaterialPage> {
   final _searchController = TextEditingController();
   List<LearningItem> _items = const [];
+  Map<String, WordPracticeStatistics> _statistics = const {};
   Object? _loadError;
   bool _loading = true;
   bool _fileBusy = false;
@@ -177,6 +178,7 @@ class _MaterialPageState extends State<DictionaryMaterialPage> {
         final item = filtered[index];
         final note = learningItemNote(item);
         final example = learningItemExample(item);
+        final statistics = _statistics[item.id];
         return Card(
           child: ListTile(
             contentPadding:
@@ -198,6 +200,11 @@ class _MaterialPageState extends State<DictionaryMaterialPage> {
                 Text(learningItemMeaning(item)),
                 if (example != null) Text(s.exampleValue(example)),
                 if (note != null) Text(s.noteValue(note)),
+                _DictionaryWordStatistics(
+                  statistics: statistics,
+                  strings: s,
+                  itemId: item.id,
+                ),
                 Text(s.addedAt(item.createdAt)),
               ],
             ),
@@ -226,10 +233,14 @@ class _MaterialPageState extends State<DictionaryMaterialPage> {
       _loadError = null;
     });
     try {
-      final items = await widget.repository.findActive();
+      final itemsFuture = widget.repository.findActive();
+      final statisticsFuture = widget.practice.statisticsByItem();
+      final items = await itemsFuture;
+      final statistics = await statisticsFuture;
       if (!mounted) return;
       setState(() {
         _items = items;
+        _statistics = statistics;
         _loading = false;
       });
     } catch (error) {
@@ -364,14 +375,10 @@ class _MaterialPageState extends State<DictionaryMaterialPage> {
   }
 
   Future<void> _openEditor([LearningItem? item]) async {
-    final summary =
-        item == null ? null : await widget.practice.summaryForItem(item.id);
-    if (!mounted) return;
     final saved = await showDialog<LearningItem>(
       context: context,
       builder: (context) => _LearningItemEditor(
         item: item,
-        statistics: summary,
         strings: widget.strings,
       ),
     );
@@ -498,12 +505,10 @@ class _LearningItemEditor extends StatefulWidget {
   const _LearningItemEditor({
     required this.strings,
     this.item,
-    this.statistics,
   });
 
   final UiStrings strings;
   final LearningItem? item;
-  final PracticeSummary? statistics;
 
   @override
   State<_LearningItemEditor> createState() => _LearningItemEditorState();
@@ -640,10 +645,6 @@ class _LearningItemEditorState extends State<_LearningItemEditor> {
                   required: false,
                   maxLines: 3,
                 ),
-                if (widget.statistics case final statistics?) ...[
-                  const SizedBox(height: 20),
-                  _WordStatistics(summary: statistics, strings: s),
-                ],
                 if (widget.item != null) ...[
                   const SizedBox(height: 16),
                   Align(
@@ -740,53 +741,54 @@ class _LearningItemEditorState extends State<_LearningItemEditor> {
   }
 }
 
-class _WordStatistics extends StatelessWidget {
-  const _WordStatistics({required this.summary, required this.strings});
+class _DictionaryWordStatistics extends StatelessWidget {
+  const _DictionaryWordStatistics({
+    required this.statistics,
+    required this.strings,
+    required this.itemId,
+  });
 
-  final PracticeSummary summary;
+  final WordPracticeStatistics? statistics;
   final UiStrings strings;
+  final String itemId;
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+    return Wrap(
+      key: Key('word-statistics-$itemId'),
+      spacing: 12,
+      runSpacing: 2,
       children: [
-        Text(
-          strings.wordStatistics,
-          style: Theme.of(context).textTheme.titleMedium,
+        _value(
+          context,
+          strings.recentStatistics,
+          statistics?.recent,
         ),
-        const SizedBox(height: 8),
-        Wrap(
-          spacing: 16,
-          runSpacing: 8,
-          children: [
-            _value('word-stat-attempts', strings.attempts, summary.attempts),
-            _value(
-                'word-stat-correct', strings.correctAnswers, summary.correct),
-            _value('word-stat-errors', strings.errors, summary.errors),
-            _value(
-              'word-stat-accuracy',
-              strings.accuracy,
-              '${(summary.accuracy * 100).round()} %',
-            ),
-          ],
+        _value(
+          context,
+          strings.allTimeStatistics,
+          statistics?.allTime,
         ),
       ],
     );
   }
 
-  Widget _value(String key, String label, Object value) {
-    return Text.rich(
-      TextSpan(
-        children: [
-          TextSpan(text: '$label: '),
-          TextSpan(
-            text: '$value',
-            style: const TextStyle(fontWeight: FontWeight.bold),
-          ),
-        ],
-      ),
-      key: Key(key),
+  Widget _value(
+    BuildContext context,
+    String label,
+    PracticeSummary? summary,
+  ) {
+    final text = summary == null || summary.attempts == 0
+        ? strings.noPracticeStat(label)
+        : strings.practiceStat(
+            label,
+            summary.correct,
+            summary.attempts,
+            (summary.accuracy * 100).round(),
+          );
+    return Text(
+      text,
+      style: Theme.of(context).textTheme.bodySmall,
     );
   }
 }

@@ -12,6 +12,7 @@ import 'package:deutsch_review/domain/daily_session.dart';
 import 'package:deutsch_review/domain/german_numbers.dart';
 import 'package:deutsch_review/domain/grammar.dart';
 import 'package:deutsch_review/domain/learning_item.dart';
+import 'package:deutsch_review/domain/practice.dart';
 import 'package:deutsch_review/grammar/grammar_catalog.dart';
 import 'package:deutsch_review/sync/sqlite_sync_store.dart';
 import 'package:deutsch_review/sync/sync_controller.dart';
@@ -70,6 +71,8 @@ void main() {
     expect(find.text('lernen'), findsOneWidget);
     expect(find.text('Beispiel: Ich lerne Deutsch.'), findsOneWidget);
     expect(find.text('Notiz: Неправильный глагол'), findsOneWidget);
+    expect(find.text('Letzte 10: –'), findsOneWidget);
+    expect(find.text('Gesamt: –'), findsOneWidget);
     expect(find.text('1 Wörter'), findsOneWidget);
     expect(find.textContaining('Hinzugefügt:'), findsOneWidget);
 
@@ -77,8 +80,6 @@ void main() {
     await tester.pumpAndSettle();
     await tester.tap(find.text('Bearbeiten'));
     await tester.pumpAndSettle();
-    expect(find.text('Statistik für dieses Wort'), findsOneWidget);
-    expect(find.byKey(const Key('word-stat-attempts')), findsOneWidget);
     await tester.enterText(find.byKey(const Key('german')), 'wiederholen');
     await tester.enterText(find.byKey(const Key('note')), 'Повторять материал');
     await tester.tap(find.byKey(const Key('save-material')));
@@ -112,6 +113,41 @@ void main() {
 
     expect(find.text('der Tisch'), findsOneWidget);
     expect(find.textContaining('стол'), findsOneWidget);
+  });
+
+  testWidgets('shows recent and all-time statistics in the word list', (
+    tester,
+  ) async {
+    final database = AppDatabase.inMemory();
+    addTearDown(database.close);
+    final items = SqliteLearningItemRepository(database);
+    final practice = SqlitePracticeRepository(database);
+    final word = _word();
+    await items.save(word);
+    for (var index = 0; index < 12; index++) {
+      await practice.saveAttempt(
+        PracticeAttempt(
+          id: 'attempt-$index',
+          itemId: word.id,
+          sessionId: 'session-1',
+          answerText: 'lernen',
+          correct: index >= 5,
+          attemptedAt: word.createdAt.add(Duration(minutes: index)),
+        ),
+      );
+    }
+
+    await tester.pumpWidget(_app(database));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Wörter'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Letzte 10: 7/10 · 70 %'), findsOneWidget);
+    expect(find.text('Gesamt: 7/12 · 58 %'), findsOneWidget);
+    expect(
+      find.byKey(const Key('word-statistics-word-1')),
+      findsOneWidget,
+    );
   });
 
   testWidgets('wechselt die Sprache und behält sie nach einem Neustart', (

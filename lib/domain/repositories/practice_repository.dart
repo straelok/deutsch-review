@@ -5,7 +5,9 @@ abstract interface class PracticeRepository {
 
   Future<PracticeSummary> summary();
 
-  Future<PracticeSummary> summaryForItem(String itemId);
+  Future<Map<String, WordPracticeStatistics>> statisticsByItem({
+    int recentLimit = 10,
+  });
 
   Future<Map<String, List<bool>>> recentOutcomes({int limitPerItem = 10});
 

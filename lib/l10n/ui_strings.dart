@@ -311,8 +311,14 @@ final class UiStrings {
   String get errors => choose('Fehler', 'Ошибки');
   String get accuracy => choose('Genauigkeit', 'Точность');
   String get problemWords => choose('Problemwörter', 'Проблемные слова');
-  String get wordStatistics =>
-      choose('Statistik für dieses Wort', 'Статистика по этому слову');
+  String practiceStat(String label, int correct, int attempts, int percent) =>
+      choose(
+        '$label: $correct/$attempts · $percent %',
+        '$label: $correct/$attempts · $percent %',
+      );
+  String get recentStatistics => choose('Letzte 10', 'Последние 10');
+  String get allTimeStatistics => choose('Gesamt', 'За всё время');
+  String noPracticeStat(String label) => choose('$label: –', '$label: —');
   String errorCount(int count) => choose('$count Fehler', 'Ошибок: $count');
   String get loading => choose('Wird geladen…', 'Загрузка…');
   String get syncTitle => choose('Synchronisierung', 'Синхронизация');

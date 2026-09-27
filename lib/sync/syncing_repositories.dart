@@ -194,6 +194,8 @@ final class SyncingPracticeRepository implements PracticeRepository {
   Future<PracticeSummary> summary() => _delegate.summary();
 
   @override
-  Future<PracticeSummary> summaryForItem(String itemId) =>
-      _delegate.summaryForItem(itemId);
+  Future<Map<String, WordPracticeStatistics>> statisticsByItem({
+    int recentLimit = 10,
+  }) =>
+      _delegate.statisticsByItem(recentLimit: recentLimit);
 }

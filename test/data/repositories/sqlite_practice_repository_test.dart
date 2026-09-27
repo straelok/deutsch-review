@@ -53,16 +53,28 @@ void main() {
     expect(summary.correct, 1);
     expect(summary.errors, 1);
     expect(summary.accuracy, 0.5);
-    final itemSummary = await practice.summaryForItem('item-1');
-    expect(itemSummary.attempts, 2);
-    expect(itemSummary.correct, 1);
-    expect(itemSummary.errors, 1);
-    expect(itemSummary.accuracy, 0.5);
-    expect((await practice.summaryForItem('unknown')).attempts, 0);
     final recent = await practice.recentOutcomes();
     expect(recent['item-1'], <bool>[true, false]);
     final problem = (await practice.problemItems()).single;
     expect(problem.item.id, 'item-1');
     expect(problem.errors, 1);
+
+    for (var index = 3; index <= 12; index++) {
+      await practice.saveAttempt(
+        PracticeAttempt(
+          id: 'attempt-$index',
+          itemId: 'item-1',
+          sessionId: 'session-2',
+          answerText: 'lernen',
+          correct: index <= 9,
+          attemptedAt: now.add(Duration(minutes: index)),
+        ),
+      );
+    }
+    final statistics = (await practice.statisticsByItem())['item-1']!;
+    expect(statistics.recent.attempts, 10);
+    expect(statistics.recent.correct, 7);
+    expect(statistics.allTime.attempts, 12);
+    expect(statistics.allTime.correct, 8);
   });
 }

@@ -44,19 +44,51 @@ final class SqlitePracticeRepository implements PracticeRepository {
   }
 
   @override
-  Future<PracticeSummary> summaryForItem(String itemId) async {
-    final row = database.connection.select(
-      '''
-      SELECT COUNT(*) AS attempts, COALESCE(SUM(correct), 0) AS correct
+  Future<Map<String, WordPracticeStatistics>> statisticsByItem({
+    int recentLimit = 10,
+  }) async {
+    final allTimeRows = database.connection.select('''
+      SELECT item_id, COUNT(*) AS attempts, COALESCE(SUM(correct), 0) AS correct
       FROM practice_attempts
-      WHERE item_id = ?
+      GROUP BY item_id
+    ''');
+    final recentRows = database.connection.select(
+      '''
+      WITH ranked AS (
+        SELECT
+          item_id,
+          correct,
+          ROW_NUMBER() OVER (
+            PARTITION BY item_id
+            ORDER BY attempted_at DESC, id DESC
+          ) AS position
+        FROM practice_attempts
+      )
+      SELECT item_id, COUNT(*) AS attempts, COALESCE(SUM(correct), 0) AS correct
+      FROM ranked
+      WHERE position <= ?
+      GROUP BY item_id
       ''',
-      <Object?>[itemId],
-    ).single;
-    return PracticeSummary(
-      attempts: row['attempts'] as int,
-      correct: row['correct'] as int,
+      <Object?>[recentLimit],
     );
+    final recentByItem = <String, PracticeSummary>{
+      for (final row in recentRows)
+        row['item_id'] as String: PracticeSummary(
+          attempts: row['attempts'] as int,
+          correct: row['correct'] as int,
+        ),
+    };
+    return <String, WordPracticeStatistics>{
+      for (final row in allTimeRows)
+        row['item_id'] as String: WordPracticeStatistics(
+          recent: recentByItem[row['item_id'] as String] ??
+              const PracticeSummary(attempts: 0, correct: 0),
+          allTime: PracticeSummary(
+            attempts: row['attempts'] as int,
+            correct: row['correct'] as int,
+          ),
+        ),
+    };
   }
 
   @override
