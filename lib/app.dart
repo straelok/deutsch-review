@@ -8,6 +8,7 @@ import 'domain/repositories/learning_item_repository.dart';
 import 'domain/repositories/practice_repository.dart';
 import 'domain/repositories/settings_repository.dart';
 import 'features/material/material_page.dart';
+import 'features/content/content_status_dialog.dart';
 import 'features/grammar/grammar_page.dart';
 import 'features/practice/practice_page.dart';
 import 'features/statistics/statistics_page.dart';
@@ -290,6 +291,21 @@ class _HomeScreenState extends State<HomeScreen> {
           appBar: AppBar(
             title: const Text('Worttrieb'),
             actions: [
+              if (widget.contentController case final content?)
+                AnimatedBuilder(
+                  animation: content,
+                  builder: (context, _) => IconButton(
+                    key: const Key('content-status'),
+                    tooltip: s.isRussian ? 'Учебные материалы' : 'Lerninhalte',
+                    onPressed: _openContentStatus,
+                    icon: content.phase == ContentUpdatePhase.checking
+                        ? const SizedBox.square(
+                            dimension: 20,
+                            child: CircularProgressIndicator(strokeWidth: 2),
+                          )
+                        : Icon(_contentIcon(content.phase)),
+                  ),
+                ),
               PopupMenuButton<AppLanguage>(
                 key: const Key('language-switch'),
                 tooltip: s.switchLanguage,
@@ -401,10 +417,32 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
+  Future<void> _openContentStatus() async {
+    final content = widget.contentController;
+    if (content == null) return;
+    await showContentStatusDialog(
+      context: context,
+      controller: content,
+      language: widget.language,
+    );
+  }
+
   static IconData _syncIcon(SyncPhase phase) => switch (phase) {
         SyncPhase.syncing => Icons.sync,
         SyncPhase.synced => Icons.cloud_done_outlined,
         SyncPhase.error || SyncPhase.unavailable => Icons.cloud_off_outlined,
         SyncPhase.disconnected || SyncPhase.idle => Icons.cloud_queue_outlined,
+      };
+
+  static IconData _contentIcon(ContentUpdatePhase phase) => switch (phase) {
+        ContentUpdatePhase.updated ||
+        ContentUpdatePhase.upToDate =>
+          Icons.library_add_check_outlined,
+        ContentUpdatePhase.incompatible => Icons.system_update_outlined,
+        ContentUpdatePhase.error => Icons.cloud_off_outlined,
+        ContentUpdatePhase.idle ||
+        ContentUpdatePhase.unavailable ||
+        ContentUpdatePhase.checking =>
+          Icons.auto_stories_outlined,
       };
 }

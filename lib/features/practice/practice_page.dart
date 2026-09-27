@@ -86,7 +86,8 @@ class _PracticePageState extends State<PracticePage> {
   final Map<String, TextEditingController> _grammarControllers = {};
   String? _selectedGrammarOption;
   List<int> _wordOrderSelection = const [];
-  final Set<DailySessionKind> _collapsedCategories = {};
+  final Set<DailySessionKind> _collapsedCategories =
+      DailySessionKind.values.toSet();
 
   LearningItem? get _current => _queue.isEmpty ? null : _queue.first;
   String? get _currentGrammar =>

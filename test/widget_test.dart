@@ -30,7 +30,13 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.text('0 von 8 Sitzungen abgeschlossen'), findsOneWidget);
-    expect(find.text('Wörter auf Deutsch · Übung 1'), findsOneWidget);
+    expect(find.text('Wörter auf Deutsch · Übung 1'), findsNothing);
+    expect(
+      find.byKey(
+        const Key('session-category-action-vocabulary-to-german'),
+      ),
+      findsOneWidget,
+    );
 
     await tester.tap(find.text('Wörter'));
     await tester.pumpAndSettle();
@@ -210,6 +216,7 @@ void main() {
 
     await tester.pumpWidget(_app(database));
     await tester.pumpAndSettle();
+    await _expandCategory(tester, 'vocabulary-to-german');
     await tester.tap(find.byKey(const Key('start-review')));
     await tester.pumpAndSettle();
     expect(find.text('учить'), findsOneWidget);
@@ -233,6 +240,7 @@ void main() {
     await tester.pumpWidget(const SizedBox.shrink());
     await tester.pumpWidget(_app(database));
     await tester.pumpAndSettle();
+    await _expandCategory(tester, 'vocabulary-to-german');
     expect(find.textContaining('1 von 20 Antworten'), findsOneWidget);
 
     await tester.tap(find.text('Statistik'));
@@ -251,6 +259,7 @@ void main() {
 
     await tester.pumpWidget(_app(database));
     await tester.pumpAndSettle();
+    await _expandCategory(tester, 'vocabulary-to-german');
     await tester.tap(find.byKey(const Key('start-review')));
     await tester.pumpAndSettle();
     await tester.tap(find.byKey(const Key('unknown-answer')));
@@ -274,6 +283,7 @@ void main() {
 
     await tester.pumpWidget(_app(database));
     await tester.pumpAndSettle();
+    await _expandCategory(tester, 'vocabulary-to-russian');
     await tester.scrollUntilVisible(
       find.text('Wörter auf Russisch · Übung 1'),
       300,
@@ -303,6 +313,7 @@ void main() {
 
     await tester.pumpWidget(_app(database));
     await tester.pumpAndSettle();
+    await _expandCategory(tester, 'vocabulary-to-russian');
     await tester.scrollUntilVisible(
       find.text('Wörter auf Russisch · Übung 1'),
       300,
@@ -352,6 +363,7 @@ void main() {
 
     await tester.pumpWidget(_app(database));
     await tester.pumpAndSettle();
+    await _expandCategory(tester, 'numbers');
     await tester.scrollUntilVisible(find.text('Zahlentraining 1'), 300);
     await tester.ensureVisible(find.byKey(const Key('start-review-7')));
     await tester.pumpAndSettle();
@@ -438,8 +450,7 @@ void main() {
     expect(find.byKey(const Key('practice-answer')), findsOneWidget);
   });
 
-  testWidgets('collapses a category and starts its next lesson from the header',
-      (
+  testWidgets('starts the next lesson from a collapsed category header', (
     tester,
   ) async {
     final database = AppDatabase.inMemory();
@@ -456,15 +467,6 @@ void main() {
       findsOneWidget,
     );
     expect(find.text('0/3'), findsWidgets);
-    expect(find.text('Wörter auf Deutsch · Übung 1'), findsOneWidget);
-
-    await tester.tap(
-      find.byKey(
-        const Key('toggle-session-category-vocabulary-to-german'),
-      ),
-    );
-    await tester.pumpAndSettle();
-
     expect(find.text('Wörter auf Deutsch · Übung 1'), findsNothing);
     expect(find.text('Nächste Lektion'), findsWidgets);
     await tester.tap(
@@ -559,6 +561,7 @@ void main() {
     await tester.tap(find.text('Heute'));
     await tester.pumpAndSettle();
     expect(find.text('0 von 10 Sitzungen abgeschlossen'), findsOneWidget);
+    await _expandCategory(tester, 'grammar');
     await tester.scrollUntilVisible(
       find.text('Gemischte Grammatikübung 1'),
       300,
@@ -735,6 +738,7 @@ void main() {
       _app(database, grammarCatalog: _russianChoiceCatalog()),
     );
     await tester.pumpAndSettle();
+    await _expandCategory(tester, 'grammar');
     await tester.scrollUntilVisible(
       find.text('Смешанная практика грамматики №1'),
       300,
@@ -772,6 +776,7 @@ void main() {
 
     await tester.pumpWidget(_app(database, grammarCatalog: catalog));
     await tester.pumpAndSettle();
+    await _expandCategory(tester, 'grammar');
     await tester.scrollUntilVisible(
       find.text('Gemischte Grammatikübung 1'),
       300,
@@ -811,6 +816,13 @@ void main() {
     expect(database.connection.select('SELECT * FROM grammar_attempts'),
         hasLength(2));
   });
+}
+
+Future<void> _expandCategory(WidgetTester tester, String category) async {
+  await tester.tap(
+    find.byKey(Key('toggle-session-category-$category')),
+  );
+  await tester.pumpAndSettle();
 }
 
 DeutschReviewApp _app(
