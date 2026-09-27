@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://worttrieb.app/schema/content-catalog-v1.json",
+  "title": "Worttrieb learning content catalog",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "content_version",
+    "topics",
+    "verbs",
+    "exercises",
+    "lesson_content"
+  ],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "content_version": { "type": "string", "minLength": 1 },
+    "topics": { "type": "array", "items": { "type": "object" } },
+    "verbs": { "type": "array", "items": { "type": "object" } },
+    "exercises": { "type": "array", "items": { "type": "object" } },
+    "lesson_content": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["alphabet", "numbers", "reading_rules"],
+      "properties": {
+        "alphabet": { "type": "array" },
+        "numbers": { "type": "array" },
+        "reading_rules": { "type": "array" }
+      }
+    }
+  }
+}

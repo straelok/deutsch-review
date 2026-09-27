@@ -54,6 +54,12 @@
 6. Собирать приложение с параметром
    `--dart-define-from-file=tool/supabase_defines.json`.
 
+Для общего учебного каталога дополнительно применяется миграция
+`202609270001_learning_content_bucket.sql`. Пакет собирается командой
+`dart run tool/build_content_catalog.dart --version=YYYY.MM.DD.N`, а публикация
+выполняется `tool/publish_content_catalog.dart` только при заданных локально
+`SUPABASE_URL` и `SUPABASE_SERVICE_ROLE_KEY`. Секрет не записывается в файлы.
+
 Новые ключи Supabase имеют форматы `sb_publishable_...` и `sb_secret_...`.
 Клиенту разрешён только publishable key. Secret key или старый service-role key
 нельзя сохранять в исходниках, локальном JSON сборки или GitHub.
