@@ -75,6 +75,7 @@ class _PracticePageState extends State<PracticePage> {
   bool _lastCorrect = false;
   bool _savingVocabularyAnswer = false;
   bool _unknownShortcutPending = false;
+  bool _showVocabularyHelp = false;
   bool _complete = false;
   String? _pendingVocabularyAnswer;
   int _loadRevision = 0;
@@ -189,6 +190,11 @@ class _PracticePageState extends State<PracticePage> {
         toRussian ? learningItemMeaning(item) : learningItemGerman(item);
     final note = learningItemNote(item);
     final example = learningItemExample(item);
+    final examples = example
+        ?.split(';')
+        .map((value) => value.trim())
+        .where((value) => value.isNotEmpty)
+        .toList(growable: false);
     return _withUnknownShortcut(Center(
       child: SingleChildScrollView(
         padding: const EdgeInsets.all(24),
@@ -226,6 +232,40 @@ class _PracticePageState extends State<PracticePage> {
                     textAlign: TextAlign.center,
                     style: Theme.of(context).textTheme.headlineMedium,
                   ),
+                  if (!_answered &&
+                      toRussian &&
+                      examples != null &&
+                      examples.isNotEmpty) ...[
+                    const SizedBox(height: 12),
+                    if (_showVocabularyHelp)
+                      Semantics(
+                        liveRegion: true,
+                        child: Column(
+                          key: const Key('vocabulary-help-examples'),
+                          children: [
+                            Text(
+                              s.usageExamples,
+                              style: Theme.of(context).textTheme.labelLarge,
+                            ),
+                            const SizedBox(height: 4),
+                            for (final value in examples)
+                              Text(value, textAlign: TextAlign.center),
+                          ],
+                        ),
+                      )
+                    else
+                      Align(
+                        alignment: Alignment.center,
+                        child: TextButton.icon(
+                          key: const Key('vocabulary-help'),
+                          onPressed: () => setState(
+                            () => _showVocabularyHelp = true,
+                          ),
+                          icon: const Icon(Icons.lightbulb_outline),
+                          label: Text(s.needHelp),
+                        ),
+                      ),
+                  ],
                   const SizedBox(height: 28),
                   TextField(
                     key: const Key('practice-answer'),
@@ -1195,6 +1235,7 @@ class _PracticePageState extends State<PracticePage> {
       _numberQueue = const [];
       _focusedGrammarTopicId = null;
       _answered = false;
+      _showVocabularyHelp = false;
       _pendingVocabularyAnswer = null;
       _savingVocabularyAnswer = false;
       _complete = false;
@@ -1302,6 +1343,7 @@ class _PracticePageState extends State<PracticePage> {
       _session = resolvedSession;
       _queue = queue;
       _answered = false;
+      _showVocabularyHelp = false;
       _pendingVocabularyAnswer = null;
       _savingVocabularyAnswer = false;
       _complete = resolvedSession.isComplete;
@@ -1883,6 +1925,7 @@ class _PracticePageState extends State<PracticePage> {
       _nextQueue = const [];
       _answered = false;
       _pendingVocabularyAnswer = null;
+      _showVocabularyHelp = false;
       _complete = _session!.isComplete;
     });
     if (!_complete) _focusAnswerField();

@@ -258,6 +258,8 @@ final class UiStrings {
   String get digitsAnswer => choose('Ziffer', 'Цифра');
   String get check => choose('Prüfen', 'Проверить');
   String get doNotKnow => choose('Ich weiß es nicht', 'Не знаю');
+  String get needHelp => choose('Ich brauche Hilfe', 'Мне нужна помощь');
+  String get usageExamples => choose('Beispiele', 'Примеры');
   String get correct => choose('Richtig', 'Правильно');
   String get incorrect => choose('Noch nicht richtig', 'Пока неверно');
   String correctAnswer(String answer) => choose(

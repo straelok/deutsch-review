@@ -304,6 +304,39 @@ void main() {
     expect(find.text('Richtig'), findsOneWidget);
   });
 
+  testWidgets('shows usage examples as help only in the reverse lesson', (
+    tester,
+  ) async {
+    final database = AppDatabase.inMemory();
+    addTearDown(database.close);
+    await SqliteLearningItemRepository(database).save(_wordWithExamples());
+
+    await tester.pumpWidget(_app(database));
+    await tester.pumpAndSettle();
+    await _expandCategory(tester, 'vocabulary-to-russian');
+    await tester.scrollUntilVisible(
+      find.text('Wörter auf Russisch · Übung 1'),
+      300,
+    );
+    await tester.ensureVisible(find.byKey(const Key('start-review-4')));
+    await tester.tap(find.byKey(const Key('start-review-4')));
+    await tester.pumpAndSettle();
+
+    expect(find.byKey(const Key('vocabulary-help')), findsOneWidget);
+    expect(find.text('Ich lerne Deutsch.'), findsNothing);
+    await tester.tap(find.byKey(const Key('vocabulary-help')));
+    await tester.pumpAndSettle();
+    expect(find.text('Ich lerne Deutsch.'), findsOneWidget);
+    expect(find.text('Wir lernen zusammen.'), findsOneWidget);
+
+    await tester.tap(find.byKey(const Key('back-to-plan')));
+    await tester.pumpAndSettle();
+    await _expandCategory(tester, 'vocabulary-to-german');
+    await tester.tap(find.byKey(const Key('start-review')));
+    await tester.pumpAndSettle();
+    expect(find.byKey(const Key('vocabulary-help')), findsNothing);
+  });
+
   testWidgets('adds a rejected Russian translation and records it as correct', (
     tester,
   ) async {
@@ -892,6 +925,26 @@ LearningItem _wordWithTranslations() {
     content: const {
       'german': 'lernen',
       'translation_ru': 'учить; изучать; обучаться',
+    },
+  );
+}
+
+LearningItem _wordWithExamples() {
+  final item = _word();
+  return LearningItem(
+    id: item.id,
+    type: item.type,
+    level: item.level,
+    lesson: item.lesson,
+    topic: item.topic,
+    learned: item.learned,
+    createdAt: item.createdAt,
+    updatedAt: item.updatedAt,
+    sourceRef: item.sourceRef,
+    content: const {
+      'german': 'lernen',
+      'translation_ru': 'учить',
+      'example': 'Ich lerne Deutsch.; Wir lernen zusammen.',
     },
   );
 }
