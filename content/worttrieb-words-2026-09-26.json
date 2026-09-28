@@ -1,6 +1,6 @@
 {
   "format_version": 2,
-  "exported_at": "2026-09-27T19:06:42.976626Z",
+  "exported_at": "2026-09-28T13:10:12.084409Z",
   "words": [
     {
       "id": "a3c7d2e1-5f88-4b31-9d62-c7e40b19a4d5",
@@ -19,7 +19,7 @@
       "translation_ru": "магазин; торговая точка",
       "article": "das",
       "plural": "Geschäfte",
-      "example": "Das Geschäft ist heute geöffnet.",
+      "example": "Das Geschäft ist heute geöffnet.; Das Geschäft schließt um acht Uhr.",
       "created_at": "2026-09-26T12:20:00.000Z",
       "updated_at": "2026-09-26T12:20:00.000Z"
     },
@@ -52,7 +52,7 @@
       "translation_ru": "рынок",
       "article": "der",
       "plural": "Märkte",
-      "example": "Auf dem Markt gibt es frisches Gemüse.",
+      "example": "Auf dem Markt gibt es frisches Gemüse.; Der Markt ist am Samstag geöffnet.",
       "created_at": "2026-09-26T12:20:00.000Z",
       "updated_at": "2026-09-26T12:20:00.000Z"
     },
@@ -108,7 +108,7 @@
       "translation_ru": "деньги",
       "article": "das",
       "plural": "—",
-      "example": "Ich habe genug Geld.",
+      "example": "Ich habe genug Geld.; Das Geld liegt auf dem Tisch.",
       "note": "Обычно употребляется без формы множественного числа.",
       "created_at": "2026-09-26T12:20:00.000Z",
       "updated_at": "2026-09-26T12:20:00.000Z"
@@ -120,7 +120,7 @@
       "translation_ru": "пакет; сумка-пакет",
       "article": "die",
       "plural": "Tüten",
-      "example": "Brauchen Sie eine Tüte?",
+      "example": "Brauchen Sie eine Tüte?; Die Äpfel sind in der Tüte.",
       "created_at": "2026-09-26T12:20:00.000Z",
       "updated_at": "2026-09-26T12:20:00.000Z"
     },
@@ -131,7 +131,7 @@
       "translation_ru": "тележка для покупок; покупательская тележка",
       "article": "der",
       "plural": "Einkaufswagen",
-      "example": "Der Einkaufswagen steht am Eingang.",
+      "example": "Der Einkaufswagen steht am Eingang.; Der Einkaufswagen ist voll.",
       "created_at": "2026-09-26T12:20:00.000Z",
       "updated_at": "2026-09-26T12:20:00.000Z"
     },
@@ -142,7 +142,7 @@
       "translation_ru": "кассовый чек; чек",
       "article": "der",
       "plural": "Kassenbons",
-      "example": "Möchten Sie den Kassenbon?",
+      "example": "Möchten Sie den Kassenbon?; Der Kassenbon ist in der Tüte.",
       "created_at": "2026-09-26T12:20:00.000Z",
       "updated_at": "2026-09-26T12:20:00.000Z"
     },
@@ -274,7 +274,7 @@
       "translation_ru": "сыр",
       "article": "der",
       "plural": "—",
-      "example": "Ich möchte zweihundert Gramm Käse.",
+      "example": "Ich möchte zweihundert Gramm Käse.; Der Käse liegt im Kühlschrank.",
       "created_at": "2026-09-26T12:20:00.000Z",
       "updated_at": "2026-09-26T12:20:00.000Z"
     },
@@ -307,7 +307,7 @@
       "translation_ru": "овощи; овощная продукция",
       "article": "das",
       "plural": "—",
-      "example": "Das Gemüse ist frisch.",
+      "example": "Das Gemüse ist frisch.; Ich kaufe Gemüse auf dem Markt.",
       "created_at": "2026-09-26T12:20:00.000Z",
       "updated_at": "2026-09-26T12:20:00.000Z"
     },
@@ -318,7 +318,7 @@
       "translation_ru": "фрукты; фруктовая продукция",
       "article": "das",
       "plural": "—",
-      "example": "Wo ist das Obst?",
+      "example": "Wo ist das Obst?; Wir essen jeden Tag Obst.",
       "created_at": "2026-09-26T12:20:00.000Z",
       "updated_at": "2026-09-26T12:20:00.000Z"
     },
@@ -329,7 +329,7 @@
       "translation_ru": "бутылка",
       "article": "die",
       "plural": "Flaschen",
-      "example": "Ich brauche zwei Flaschen Wasser.",
+      "example": "Ich brauche zwei Flaschen Wasser.; Die Flasche steht auf dem Tisch.",
       "created_at": "2026-09-26T12:20:00.000Z",
       "updated_at": "2026-09-26T12:20:00.000Z"
     },
@@ -373,7 +373,7 @@
       "translation_ru": "штука; кусок; штук",
       "article": "das",
       "plural": "Stücke",
-      "example": "Ich nehme zwei Stück.",
+      "example": "Ich nehme zwei Stück.; Ich möchte drei Stück Kuchen.",
       "note": "После числительных форма не меняется: zwei Stück, fünf Stück — «две штуки», «пять штук».",
       "created_at": "2026-09-26T12:20:00.000Z",
       "updated_at": "2026-09-26T23:47:10.639998Z"
@@ -385,7 +385,7 @@
       "translation_ru": "продавец",
       "article": "der",
       "plural": "Verkäufer",
-      "example": "Der Verkäufer hilft dem Kunden.",
+      "example": "Der Verkäufer hilft dem Kunden.; Der Verkäufer zeigt mir den Käse.",
       "created_at": "2026-09-26T12:20:00.000Z",
       "updated_at": "2026-09-26T12:20:00.000Z"
     },
@@ -407,7 +407,7 @@
       "translation_ru": "покупатель; клиент",
       "article": "der",
       "plural": "Kunden",
-      "example": "Der Kunde bezahlt mit Karte.",
+      "example": "Der Kunde bezahlt mit Karte.; Der Kunde kauft Brot.",
       "created_at": "2026-09-26T12:20:00.000Z",
       "updated_at": "2026-09-26T12:20:00.000Z"
     },
@@ -418,7 +418,7 @@
       "translation_ru": "покупательница; клиентка",
       "article": "die",
       "plural": "Kundinnen",
-      "example": "Die Kundin braucht eine Tüte.",
+      "example": "Die Kundin braucht eine Tüte.; Die Kundin wartet an der Kasse.",
       "created_at": "2026-09-26T12:20:00.000Z",
       "updated_at": "2026-09-26T12:20:00.000Z"
     },
@@ -427,7 +427,7 @@
       "type": "verb",
       "german": "kaufen",
       "translation_ru": "покупать; купить",
-      "example": "Ich kaufe Brot und Milch.",
+      "example": "Ich kaufe Brot und Milch.; Wir kaufen Obst und Gemüse.",
       "created_at": "2026-09-26T12:20:00.000Z",
       "updated_at": "2026-09-26T12:20:00.000Z"
     },
@@ -436,7 +436,7 @@
       "type": "verb",
       "german": "kosten",
       "translation_ru": "стоить",
-      "example": "Was kostet das Brot?",
+      "example": "Was kostet das Brot?; Die Äpfel kosten drei Euro.",
       "created_at": "2026-09-26T12:20:00.000Z",
       "updated_at": "2026-09-26T12:20:00.000Z"
     },
@@ -445,7 +445,7 @@
       "type": "verb",
       "german": "bezahlen",
       "translation_ru": "платить; оплачивать",
-      "example": "Ich bezahle bar.",
+      "example": "Ich bezahle bar.; Wir bezahlen an der Kasse.",
       "created_at": "2026-09-26T12:20:00.000Z",
       "updated_at": "2026-09-26T12:20:00.000Z"
     },
@@ -454,7 +454,7 @@
       "type": "verb",
       "german": "brauchen",
       "translation_ru": "нуждаться; быть нужным; требоваться",
-      "example": "Ich brauche eine Flasche Wasser.",
+      "example": "Ich brauche eine Flasche Wasser.; Brauchst du meine Hilfe?",
       "created_at": "2026-09-26T12:20:00.000Z",
       "updated_at": "2026-09-26T12:20:00.000Z"
     },
@@ -463,7 +463,7 @@
       "type": "verb",
       "german": "nehmen",
       "translation_ru": "брать; взять",
-      "example": "Ich nehme zwei Brötchen.",
+      "example": "Ich nehme zwei Brötchen.; Wir nehmen den Bus.",
       "created_at": "2026-09-26T12:20:00.000Z",
       "updated_at": "2026-09-26T12:20:00.000Z"
     },
@@ -472,7 +472,7 @@
       "type": "verb",
       "german": "geben",
       "translation_ru": "давать; дать",
-      "example": "Geben Sie mir bitte eine Tüte.",
+      "example": "Geben Sie mir bitte eine Tüte.; Kannst du mir das Brot geben?",
       "created_at": "2026-09-26T12:20:00.000Z",
       "updated_at": "2026-09-26T12:20:00.000Z"
     },
@@ -491,7 +491,7 @@
       "type": "word",
       "german": "teuer",
       "translation_ru": "дорогой; дорого",
-      "example": "Der Käse ist zu teuer.",
+      "example": "Der Käse ist zu teuer.; Das Auto ist sehr teuer.",
       "created_at": "2026-09-26T12:20:00.000Z",
       "updated_at": "2026-09-26T12:20:00.000Z"
     },
@@ -500,7 +500,7 @@
       "type": "word",
       "german": "billig",
       "translation_ru": "дешёвый; дёшево",
-      "example": "Die Äpfel sind heute billig.",
+      "example": "Die Äpfel sind heute billig.; Das Brot ist hier billig.",
       "created_at": "2026-09-26T12:20:00.000Z",
       "updated_at": "2026-09-26T12:20:00.000Z"
     },
@@ -518,7 +518,7 @@
       "type": "word",
       "german": "noch",
       "translation_ru": "ещё; всё ещё",
-      "example": "Brauchen Sie noch etwas?",
+      "example": "Brauchen Sie noch etwas?; Er wohnt noch in Berlin.",
       "created_at": "2026-09-26T12:20:00.000Z",
       "updated_at": "2026-09-26T12:20:00.000Z"
     },
@@ -527,7 +527,7 @@
       "type": "word",
       "german": "nur",
       "translation_ru": "только; всего лишь",
-      "example": "Das kostet nur zwei Euro.",
+      "example": "Das kostet nur zwei Euro.; Ich habe nur einen Bruder.",
       "created_at": "2026-09-26T12:20:00.000Z",
       "updated_at": "2026-09-26T12:20:00.000Z"
     },
@@ -536,7 +536,7 @@
       "type": "word",
       "german": "bar",
       "translation_ru": "наличными; за наличные",
-      "example": "Ich bezahle bar.",
+      "example": "Ich bezahle bar.; Wir zahlen heute bar.",
       "created_at": "2026-09-26T12:20:00.000Z",
       "updated_at": "2026-09-26T12:20:00.000Z"
     },
@@ -545,7 +545,7 @@
       "type": "word",
       "german": "mit Karte",
       "translation_ru": "картой; банковской картой",
-      "example": "Kann ich mit Karte bezahlen?",
+      "example": "Kann ich mit Karte bezahlen?; Sie bezahlt mit Karte.",
       "created_at": "2026-09-26T12:20:00.000Z",
       "updated_at": "2026-09-26T12:20:00.000Z"
     },
@@ -554,7 +554,7 @@
       "type": "word",
       "german": "Wie viel",
       "translation_ru": "сколько; как много",
-      "example": "Wie viel kostet das?",
+      "example": "Wie viel kostet das?; Wie viel kostet die Milch?",
       "created_at": "2026-09-26T12:20:00.000Z",
       "updated_at": "2026-09-26T12:20:00.000Z"
     },
@@ -572,7 +572,7 @@
       "type": "word",
       "german": "Ich möchte",
       "translation_ru": "я хотел бы; я хочу",
-      "example": "Ich möchte ein Kilo Äpfel.",
+      "example": "Ich möchte ein Kilo Äpfel.; Ich möchte einen Kaffee.",
       "created_at": "2026-09-26T12:20:00.000Z",
       "updated_at": "2026-09-26T12:20:00.000Z"
     },
@@ -581,7 +581,7 @@
       "type": "word",
       "german": "Sonst noch etwas",
       "translation_ru": "что-нибудь ещё; ещё что-нибудь",
-      "example": "Sonst noch etwas? – Nein, danke.",
+      "example": "Sonst noch etwas? – Nein, danke.; Möchten Sie sonst noch etwas?",
       "created_at": "2026-09-26T12:20:00.000Z",
       "updated_at": "2026-09-26T12:20:00.000Z"
     },
@@ -590,7 +590,7 @@
       "type": "word",
       "german": "Das macht",
       "translation_ru": "с Вас; получается; стоимость",
-      "example": "Das macht fünf Euro zwanzig.",
+      "example": "Das macht fünf Euro zwanzig.; Das macht zehn Euro.",
       "created_at": "2026-09-26T12:20:00.000Z",
       "updated_at": "2026-09-26T23:40:20.920748Z"
     },
@@ -599,7 +599,7 @@
       "type": "word",
       "german": "Das ist alles",
       "translation_ru": "это всё; это всё, спасибо",
-      "example": "Das ist alles, danke.",
+      "example": "Das ist alles, danke.; Das ist alles für heute.",
       "created_at": "2026-09-26T12:20:00.000Z",
       "updated_at": "2026-09-26T12:20:00.000Z"
     },
@@ -608,7 +608,7 @@
       "type": "word",
       "german": "mehr",
       "translation_ru": "больше; ещё",
-      "example": "Ich brauche mehr Wasser.",
+      "example": "Ich brauche mehr Wasser.; Möchten Sie noch mehr Kaffee?",
       "created_at": "2026-09-26T12:20:00.000Z",
       "updated_at": "2026-09-26T12:20:00.000Z"
     },
@@ -617,7 +617,7 @@
       "type": "word",
       "german": "weniger",
       "translation_ru": "меньше",
-      "example": "Ich möchte weniger Käse.",
+      "example": "Ich möchte weniger Käse.; Heute habe ich weniger Zeit.",
       "created_at": "2026-09-26T12:20:00.000Z",
       "updated_at": "2026-09-26T12:20:00.000Z"
     },
@@ -628,7 +628,7 @@
       "translation_ru": "возраст",
       "article": "das",
       "plural": "—",
-      "example": "Wie alt sind Sie?",
+      "example": "Wie alt sind Sie?; Bitte schreiben Sie Ihr Alter auf.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z"
     },
@@ -637,7 +637,7 @@
       "type": "word",
       "german": "wie",
       "translation_ru": "как",
-      "example": "Wie heißen Sie?",
+      "example": "Wie heißen Sie?; Wie geht es dir?",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z"
     },
@@ -675,7 +675,7 @@
       "type": "verb",
       "german": "ankreuzen",
       "translation_ru": "отмечать крестиком",
-      "example": "Kreuzen Sie die richtige Antwort an.",
+      "example": "Kreuzen Sie die richtige Antwort an.; Bitte kreuzen Sie Ja an.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z"
     },
@@ -684,7 +684,7 @@
       "type": "word",
       "german": "verwitwet",
       "translation_ru": "вдовец; вдова",
-      "example": "Sie ist verwitwet.",
+      "example": "Sie ist verwitwet.; Mein Großvater ist verwitwet.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-26T18:51:17.340237Z"
     },
@@ -706,7 +706,7 @@
       "translation_ru": "юг",
       "article": "der",
       "plural": "Süden",
-      "example": "München liegt im Süden Deutschlands.",
+      "example": "München liegt im Süden Deutschlands.; Im Süden ist es warm.",
       "note": "Сторона света; der Süden.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-26T18:51:17.340237Z"
@@ -716,7 +716,7 @@
       "type": "verb",
       "german": "antworten",
       "translation_ru": "отвечать",
-      "example": "Ich antworte auf die Frage.",
+      "example": "Ich antworte auf die Frage.; Bitte antworten Sie auf die Frage.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z"
     },
@@ -743,7 +743,7 @@
       "type": "verb",
       "german": "haben",
       "translation_ru": "иметь",
-      "example": "Ich habe eine Familie.",
+      "example": "Ich habe eine Familie.; Wir haben heute Deutsch.",
       "note": "Неправильный глагол «иметь»; ich habe, du hast, er/sie hat.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z"
@@ -753,7 +753,7 @@
       "type": "verb",
       "german": "geboren sein",
       "translation_ru": "родиться; быть рождённым",
-      "example": "Ich bin in Berlin geboren.",
+      "example": "Ich bin in Berlin geboren.; Sie ist in Köln geboren.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z"
     },
@@ -793,7 +793,7 @@
       "type": "verb",
       "german": "notieren",
       "translation_ru": "записывать",
-      "example": "Notieren Sie die Antwort.",
+      "example": "Notieren Sie die Antwort.; Ich notiere die Adresse.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z"
     },
@@ -820,7 +820,7 @@
       "type": "verb",
       "german": "raten",
       "translation_ru": "угадывать; советовать",
-      "example": "Raten Sie das Wort.",
+      "example": "Raten Sie das Wort.; Kannst du die Antwort raten?",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z"
     },
@@ -831,7 +831,7 @@
       "translation_ru": "регистрация; заявление",
       "article": "die",
       "plural": "Anmeldungen",
-      "example": "Die Anmeldung ist heute.",
+      "example": "Die Anmeldung ist heute.; Bitte bringen Sie die Anmeldung mit.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z"
     },
@@ -842,7 +842,7 @@
       "translation_ru": "разговор; диалог",
       "article": "das",
       "plural": "Gespräche",
-      "example": "Wir führen ein Gespräch.",
+      "example": "Wir führen ein Gespräch.; Das Gespräch ist kurz.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-26T15:17:34.381623Z"
     },
@@ -853,7 +853,7 @@
       "translation_ru": "семейное положение",
       "article": "der",
       "plural": "Familienstände",
-      "example": "Familienstand: ledig.",
+      "example": "Familienstand: ledig.; Bitte nennen Sie Ihren Familienstand.",
       "note": "Семейное положение: ledig, verheiratet, geschieden или verwitwet.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z"
@@ -874,7 +874,7 @@
       "type": "word",
       "german": "interessant",
       "translation_ru": "интересный",
-      "example": "Das ist interessant.",
+      "example": "Das ist interessant.; Der Kurs ist sehr interessant.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z"
     },
@@ -932,7 +932,7 @@
       "type": "verb",
       "german": "lesen",
       "translation_ru": "читать",
-      "example": "Ich lese die Frage.",
+      "example": "Ich lese die Frage.; Wir lesen einen kurzen Text.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z"
     },
@@ -941,7 +941,7 @@
       "type": "verb",
       "german": "leben",
       "translation_ru": "жить",
-      "example": "Lara lebt in Poznań.",
+      "example": "Lara lebt in Poznań.; Meine Großeltern leben in Wien.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z"
     },
@@ -950,7 +950,7 @@
       "type": "verb",
       "german": "meinen",
       "translation_ru": "считать; иметь в виду",
-      "example": "Was meinen Sie?",
+      "example": "Was meinen Sie?; Ich meine meinen Bruder.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z"
     },
@@ -972,7 +972,7 @@
       "translation_ru": "почтовый индекс",
       "article": "die",
       "plural": "Postleitzahlen",
-      "example": "Wie ist Ihre Postleitzahl?",
+      "example": "Wie ist Ihre Postleitzahl?; Meine Postleitzahl ist 40210.",
       "note": "Почтовый индекс; часто сокращается как PLZ.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z"
@@ -982,7 +982,7 @@
       "type": "word",
       "german": "ein",
       "translation_ru": "один; неопределённый артикль",
-      "example": "Das ist ein Mann.",
+      "example": "Das ist ein Mann.; Ich kaufe ein Brot.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-26T18:51:17.340237Z"
     },
@@ -1012,7 +1012,7 @@
       "type": "word",
       "german": "Gute Nacht",
       "translation_ru": "спокойной ночи",
-      "example": "Gute Nacht, Papa.",
+      "example": "Gute Nacht, Papa.; Ich wünsche dir eine gute Nacht.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z"
     },
@@ -1023,7 +1023,7 @@
       "translation_ru": "год",
       "article": "das",
       "plural": "Jahre",
-      "example": "Ich bin zwanzig Jahre alt.",
+      "example": "Ich bin zwanzig Jahre alt.; Das Jahr hat zwölf Monate.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z"
     },
@@ -1050,7 +1050,7 @@
       "type": "word",
       "german": "woher",
       "translation_ru": "откуда",
-      "example": "Woher kommen Sie?",
+      "example": "Woher kommen Sie?; Woher kommt deine Familie?",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z"
     },
@@ -1059,7 +1059,7 @@
       "type": "verb",
       "german": "willkommen heißen",
       "translation_ru": "приветствовать",
-      "example": "Wir heißen Sie herzlich willkommen.",
+      "example": "Wir heißen Sie herzlich willkommen.; Die Lehrerin heißt uns willkommen.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z"
     },
@@ -1087,7 +1087,7 @@
       "type": "word",
       "german": "Griechisch",
       "translation_ru": "греческий язык; по-гречески; греческий",
-      "example": "Sie spricht Griechisch.",
+      "example": "Sie spricht Griechisch.; Griechisch klingt schön.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-27T12:59:50.920363Z"
     },
@@ -1106,7 +1106,7 @@
       "type": "word",
       "german": "jetzt",
       "translation_ru": "сейчас",
-      "example": "Jetzt machen wir eine Pause.",
+      "example": "Jetzt machen wir eine Pause.; Ich habe jetzt Zeit.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z"
     },
@@ -1126,7 +1126,7 @@
       "type": "word",
       "german": "Wien",
       "translation_ru": "Вена",
-      "example": "Wien liegt in Österreich.",
+      "example": "Wien liegt in Österreich.; Meine Freundin wohnt in Wien.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-26T18:51:17.340237Z"
     },
@@ -1153,7 +1153,7 @@
       "type": "verb",
       "german": "zeichnen",
       "translation_ru": "рисовать",
-      "example": "Ich zeichne ein Bild.",
+      "example": "Ich zeichne ein Bild.; Das Kind zeichnet ein Haus.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z"
     },
@@ -1180,7 +1180,7 @@
       "type": "verb",
       "german": "zeigen",
       "translation_ru": "показывать",
-      "example": "Zeigen Sie das Bild.",
+      "example": "Zeigen Sie das Bild.; Ich zeige dir meine Wohnung.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z"
     },
@@ -1198,7 +1198,7 @@
       "type": "word",
       "german": "falsch",
       "translation_ru": "неправильный; неверно; не правильно",
-      "example": "Nein, das ist falsch.",
+      "example": "Nein, das ist falsch.; Diese Antwort ist falsch.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-27T15:34:21.037378Z"
     },
@@ -1220,7 +1220,7 @@
       "translation_ru": "визитная карточка; визитная карта",
       "article": "die",
       "plural": "Visitenkarten",
-      "example": "Hier ist meine Visitenkarte.",
+      "example": "Hier ist meine Visitenkarte.; Auf der Visitenkarte steht ihre Telefonnummer.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-27T13:27:55.291411Z"
     },
@@ -1229,7 +1229,7 @@
       "type": "verb",
       "german": "laut sprechen",
       "translation_ru": "говорить вслух; говорить громко; громко говорить",
-      "example": "Bitte sprechen Sie laut.",
+      "example": "Bitte sprechen Sie laut.; Bitte sprechen Sie laut und langsam.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-27T09:33:33.429077Z"
     },
@@ -1247,7 +1247,7 @@
       "type": "word",
       "german": "Deutschland",
       "translation_ru": "Германия",
-      "example": "Ich wohne in Deutschland.",
+      "example": "Ich wohne in Deutschland.; Berlin liegt in Deutschland.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-26T18:51:17.340237Z"
     },
@@ -1258,7 +1258,7 @@
       "translation_ru": "внук",
       "article": "der",
       "plural": "Enkel",
-      "example": "Das ist mein Enkel.",
+      "example": "Das ist mein Enkel.; Mein Enkel ist fünf Jahre alt.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z"
     },
@@ -1287,7 +1287,7 @@
       "type": "word",
       "german": "herzlich",
       "translation_ru": "сердечно; радушно",
-      "example": "Herzlich willkommen!",
+      "example": "Herzlich willkommen!; Wir begrüßen Sie herzlich.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z"
     },
@@ -1325,7 +1325,7 @@
       "type": "verb",
       "german": "sagen",
       "translation_ru": "говорить; сказать",
-      "example": "Was sagen Sie?",
+      "example": "Was sagen Sie?; Bitte sagen Sie Ihren Namen.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z"
     },
@@ -1356,7 +1356,7 @@
       "translation_ru": "внучка",
       "article": "die",
       "plural": "Enkelinnen",
-      "example": "Das ist meine Enkelin.",
+      "example": "Das ist meine Enkelin.; Seine Enkelin heißt Mia.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z"
     },
@@ -1374,7 +1374,7 @@
       "type": "word",
       "german": "verheiratet",
       "translation_ru": "женатый; замужняя; женат",
-      "example": "Ich bin verheiratet.",
+      "example": "Ich bin verheiratet.; Mein Bruder ist verheiratet.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-27T08:27:41.639178Z"
     },
@@ -1383,7 +1383,7 @@
       "type": "verb",
       "german": "ansehen",
       "translation_ru": "смотреть; рассматривать",
-      "example": "Sehen Sie die Bilder an.",
+      "example": "Sehen Sie die Bilder an.; Ich sehe mir den Film an.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z"
     },
@@ -1401,7 +1401,7 @@
       "type": "verb",
       "german": "ergänzen",
       "translation_ru": "дополнять",
-      "example": "Ergänzen Sie den Satz.",
+      "example": "Ergänzen Sie den Satz.; Bitte ergänzen Sie das Wort.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z"
     },
@@ -1410,7 +1410,7 @@
       "type": "word",
       "german": "ledig",
       "translation_ru": "неженатый; незамужняя",
-      "example": "Sie ist ledig.",
+      "example": "Sie ist ledig.; Mein Bruder ist ledig.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-26T18:51:17.340237Z"
     },
@@ -1421,7 +1421,7 @@
       "translation_ru": "иностранный язык; не родной язык",
       "article": "die",
       "plural": "Fremdsprachen",
-      "example": "Deutsch ist eine Fremdsprache.",
+      "example": "Deutsch ist eine Fremdsprache.; Ich lerne Deutsch als Fremdsprache.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-27T12:57:50.421924Z"
     },
@@ -1439,7 +1439,7 @@
       "type": "word",
       "german": "so",
       "translation_ru": "так",
-      "example": "So ist es richtig.",
+      "example": "So ist es richtig.; Bitte machen Sie es so.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-26T18:51:17.340237Z"
     },
@@ -1448,7 +1448,7 @@
       "type": "verb",
       "german": "sich fühlen",
       "translation_ru": "чувствовать себя",
-      "example": "Wie fühlen Sie sich?",
+      "example": "Wie fühlen Sie sich?; Ich fühle mich heute gut.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z"
     },
@@ -1468,7 +1468,7 @@
       "translation_ru": "место рождения",
       "article": "der",
       "plural": "Geburtsorte",
-      "example": "Mein Geburtsort ist Madrid.",
+      "example": "Mein Geburtsort ist Madrid.; Köln ist sein Geburtsort.",
       "note": "Место рождения, не страна происхождения.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z"
@@ -1487,7 +1487,7 @@
       "type": "word",
       "german": "nicht",
       "translation_ru": "не",
-      "example": "Ich spreche nicht gut Deutsch.",
+      "example": "Ich spreche nicht gut Deutsch.; Heute arbeite ich nicht.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z"
     },
@@ -1527,7 +1527,7 @@
       "type": "verb",
       "german": "kommen",
       "translation_ru": "приходить; приезжать",
-      "example": "Ich komme aus Polen.",
+      "example": "Ich komme aus Polen.; Ich komme aus der Ukraine.",
       "note": "В выражении kommen aus означает «быть родом из, приехать из».",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z"
@@ -1559,7 +1559,7 @@
       "translation_ru": "перерыв; пауза",
       "article": "die",
       "plural": "Pausen",
-      "example": "Wir machen eine Pause.",
+      "example": "Wir machen eine Pause.; Die Pause dauert zehn Minuten.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-26T19:09:43.707918Z"
     },
@@ -1588,7 +1588,7 @@
       "type": "word",
       "german": "sie",
       "translation_ru": "она; они",
-      "example": "Kommt sie aus Polen? / Wo wohnen sie?",
+      "example": "Kommt sie aus Polen? / Wo wohnen sie?; Sie arbeitet heute zu Hause.",
       "note": "Строчная форма: «она» или «они»; значение ясно из контекста и формы глагола.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-26T18:20:04.505335Z"
@@ -1607,7 +1607,7 @@
       "type": "word",
       "german": "Österreich",
       "translation_ru": "Австрия",
-      "example": "Wien liegt in Österreich.",
+      "example": "Wien liegt in Österreich.; Österreich liegt südlich von Deutschland.",
       "note": "Название страны без артикля: aus Österreich.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-26T18:51:17.340237Z"
@@ -1637,7 +1637,7 @@
       "type": "verb",
       "german": "suchen",
       "translation_ru": "искать",
-      "example": "Ich suche die Antwort.",
+      "example": "Ich suche die Antwort.; Wir suchen eine neue Wohnung.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z"
     },
@@ -1646,7 +1646,7 @@
       "type": "verb",
       "german": "vergleichen",
       "translation_ru": "сравнивать",
-      "example": "Vergleichen Sie die Sätze.",
+      "example": "Vergleichen Sie die Sätze.; Wir vergleichen zwei Bilder.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z"
     },
@@ -1655,7 +1655,7 @@
       "type": "word",
       "german": "Kroatien",
       "translation_ru": "Хорватия",
-      "example": "Sie kommt aus Kroatien.",
+      "example": "Sie kommt aus Kroatien.; Kroatien liegt in Europa.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-26T18:51:17.340237Z"
     },
@@ -1684,7 +1684,7 @@
       "type": "verb",
       "german": "ordnen",
       "translation_ru": "упорядочивать; распределять",
-      "example": "Ordnen Sie die Wörter.",
+      "example": "Ordnen Sie die Wörter.; Bitte ordnen Sie die Bilder.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z"
     },
@@ -1751,7 +1751,7 @@
       "type": "word",
       "german": "Bulgarien",
       "translation_ru": "Болгария",
-      "example": "Er kommt aus Bulgarien.",
+      "example": "Er kommt aus Bulgarien.; Sofia liegt in Bulgarien.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-26T18:51:17.340237Z"
     },
@@ -1760,7 +1760,7 @@
       "type": "word",
       "german": "wer",
       "translation_ru": "кто",
-      "example": "Wer ist das?",
+      "example": "Wer ist das?; Wer kommt heute?",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z"
     },
@@ -1769,7 +1769,7 @@
       "type": "verb",
       "german": "erzählen",
       "translation_ru": "рассказывать",
-      "example": "Ich erzähle von meiner Familie.",
+      "example": "Ich erzähle von meiner Familie.; Er erzählt eine Geschichte.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z"
     },
@@ -1778,7 +1778,7 @@
       "type": "verb",
       "german": "nachsprechen",
       "translation_ru": "повторять за кем-либо; повторять",
-      "example": "Sprechen Sie nach.",
+      "example": "Sprechen Sie nach.; Die Schüler sprechen den Satz nach.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-27T10:29:12.386587Z"
     },
@@ -1787,7 +1787,7 @@
       "type": "verb",
       "german": "sich verabschieden",
       "translation_ru": "прощаться",
-      "example": "Wir verabschieden uns.",
+      "example": "Wir verabschieden uns.; Er verabschiedet sich von seiner Familie.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z"
     },
@@ -1818,7 +1818,7 @@
       "type": "verb",
       "german": "verbinden",
       "translation_ru": "соединять",
-      "example": "Verbinden Sie die Wörter.",
+      "example": "Verbinden Sie die Wörter.; Die Straße verbindet zwei Städte.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z"
     },
@@ -1829,7 +1829,7 @@
       "translation_ru": "изображение; картинка",
       "article": "das",
       "plural": "Bilder",
-      "example": "Sehen Sie das Bild an.",
+      "example": "Sehen Sie das Bild an.; Das Bild ist schön.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z"
     },
@@ -1849,7 +1849,7 @@
       "type": "word",
       "german": "international",
       "translation_ru": "международный",
-      "example": "Berlin ist eine internationale Stadt.",
+      "example": "Berlin ist eine internationale Stadt.; Das Team ist international.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-26T18:51:17.340237Z"
     },
@@ -1882,7 +1882,7 @@
       "translation_ru": "учебный словарь; лексика для изучения; словарь",
       "article": "der",
       "plural": "Lernwortschätze",
-      "example": "Der Lernwortschatz steht am Ende der Lektion.",
+      "example": "Der Lernwortschatz steht am Ende der Lektion.; Ich wiederhole den Lernwortschatz.",
       "note": "Учебный словарь с лексикой урока.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-27T15:46:44.353745Z"
@@ -1912,7 +1912,7 @@
       "type": "word",
       "german": "auch",
       "translation_ru": "тоже; также",
-      "example": "Ich spreche auch Englisch.",
+      "example": "Ich spreche auch Englisch.; Meine Schwester lernt auch Deutsch.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z"
     },
@@ -1923,7 +1923,7 @@
       "translation_ru": "восток",
       "article": "der",
       "plural": "Osten",
-      "example": "Berlin liegt im Osten Deutschlands.",
+      "example": "Berlin liegt im Osten Deutschlands.; Die Sonne geht im Osten auf.",
       "note": "Сторона света; der Osten.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-26T18:51:17.340237Z"
@@ -1956,7 +1956,7 @@
       "type": "word",
       "german": "Bulgarisch",
       "translation_ru": "болгарский язык; по-болгарски",
-      "example": "Er spricht Bulgarisch.",
+      "example": "Er spricht Bulgarisch.; Meine Nachbarin spricht Bulgarisch.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-26T18:51:17.340237Z"
     },
@@ -2003,7 +2003,7 @@
       "type": "verb",
       "german": "buchstabieren",
       "translation_ru": "произносить по буквам; говорить по буквам",
-      "example": "Ich buchstabiere meinen Namen.",
+      "example": "Ich buchstabiere meinen Namen.; Bitte buchstabieren Sie das Wort.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-27T15:22:59.018146Z"
     },
@@ -2014,7 +2014,7 @@
       "translation_ru": "место жительства",
       "article": "der",
       "plural": "Wohnorte",
-      "example": "Mein Wohnort ist Hamburg.",
+      "example": "Mein Wohnort ist Hamburg.; Berlin ist ihr Wohnort.",
       "note": "Город или место, где человек живёт сейчас.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z"
@@ -2026,7 +2026,7 @@
       "translation_ru": "братья и сёстры; родные братья и сёстры; сестры и братья",
       "article": "die",
       "plural": "—",
-      "example": "Ich habe zwei Geschwister.",
+      "example": "Ich habe zwei Geschwister.; Meine Geschwister wohnen in Polen.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-27T07:44:48.037157Z"
     },
@@ -2035,7 +2035,7 @@
       "type": "verb",
       "german": "ausfüllen",
       "translation_ru": "заполнять",
-      "example": "Ich fülle das Formular aus.",
+      "example": "Ich fülle das Formular aus.; Bitte füllen Sie dieses Blatt aus.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z"
     },
@@ -2044,7 +2044,7 @@
       "type": "word",
       "german": "Düsseldorf",
       "translation_ru": "Дюссельдорф",
-      "example": "Sie wohnt in Düsseldorf.",
+      "example": "Sie wohnt in Düsseldorf.; Düsseldorf liegt am Rhein.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-26T18:51:17.340237Z"
     },
@@ -2073,7 +2073,7 @@
       "translation_ru": "электронная почта; электронное письмо",
       "article": "die",
       "plural": "E-Mails",
-      "example": "Wie ist Ihre E-Mail-Adresse?",
+      "example": "Wie ist Ihre E-Mail-Adresse?; Ich schreibe dir eine E-Mail.",
       "note": "Сокращение от elektronische Mail; в немецком обычно die E-Mail.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z"
@@ -2104,7 +2104,7 @@
       "type": "word",
       "german": "ja",
       "translation_ru": "да",
-      "example": "Ja, das stimmt.",
+      "example": "Ja, das stimmt.; Ja, ich komme morgen.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z"
     },
@@ -2113,7 +2113,7 @@
       "type": "verb",
       "german": "auswählen",
       "translation_ru": "выбирать; отбирать",
-      "example": "Wählen Sie die richtige Antwort aus.",
+      "example": "Wählen Sie die richtige Antwort aus.; Du kannst ein Bild auswählen.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-26T15:17:34.381623Z"
     },
@@ -2122,7 +2122,7 @@
       "type": "word",
       "german": "geschieden",
       "translation_ru": "разведённый",
-      "example": "Er ist geschieden.",
+      "example": "Er ist geschieden.; Meine Eltern sind geschieden.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-26T18:51:17.340237Z"
     },
@@ -2142,7 +2142,7 @@
       "type": "word",
       "german": "bei",
       "translation_ru": "у; при; в месте",
-      "example": "Willkommen bei uns.",
+      "example": "Willkommen bei uns.; Ich wohne bei meiner Familie.",
       "note": "Предлог «у, в, при»; часто с местом или организацией: bei einer Firma.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z"
@@ -2163,7 +2163,7 @@
       "type": "word",
       "german": "dein",
       "translation_ru": "твой; твоя; твоё",
-      "example": "Ist das dein Vater?",
+      "example": "Ist das dein Vater?; Wie ist dein Name?",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z"
     },
@@ -2172,7 +2172,7 @@
       "type": "verb",
       "german": "sprechen",
       "translation_ru": "говорить",
-      "example": "Ich spreche Deutsch.",
+      "example": "Ich spreche Deutsch.; Wir sprechen im Kurs Deutsch.",
       "note": "О языке: sprechen Deutsch, Englisch usw.; форма du spricht без s неверна, правильно sprichst.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z"
@@ -2182,7 +2182,7 @@
       "type": "verb",
       "german": "variieren",
       "translation_ru": "варьировать; изменять",
-      "example": "Variieren Sie den Dialog.",
+      "example": "Variieren Sie den Dialog.; Wir variieren die Sätze.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z"
     },
@@ -2191,7 +2191,7 @@
       "type": "word",
       "german": "wo",
       "translation_ru": "где",
-      "example": "Wo wohnen Sie?",
+      "example": "Wo wohnen Sie?; Wo ist der Bahnhof?",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z"
     },
@@ -2200,7 +2200,7 @@
       "type": "word",
       "german": "toll",
       "translation_ru": "классный; замечательный",
-      "example": "Ah, toll!",
+      "example": "Ah, toll!; Dein Bild ist toll.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z"
     },
@@ -2220,7 +2220,7 @@
       "type": "word",
       "german": "bisschen",
       "translation_ru": "немного",
-      "example": "Ich spreche ein bisschen Deutsch.",
+      "example": "Ich spreche ein bisschen Deutsch.; Ich verstehe ein bisschen Deutsch.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-26T18:51:17.340237Z"
     },
@@ -2259,7 +2259,7 @@
       "type": "verb",
       "german": "fragen",
       "translation_ru": "спрашивать",
-      "example": "Ich frage: Wie heißen Sie?",
+      "example": "Ich frage: Wie heißen Sie?; Darf ich etwas fragen?",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z"
     },
@@ -2268,7 +2268,7 @@
       "type": "word",
       "german": "Thailand",
       "translation_ru": "Таиланд; тайланд",
-      "example": "Sie kommt aus Thailand.",
+      "example": "Sie kommt aus Thailand.; Bangkok liegt in Thailand.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-26T23:48:25.204988Z"
     },
@@ -2286,7 +2286,7 @@
       "type": "verb",
       "german": "sehen",
       "translation_ru": "видеть; смотреть",
-      "example": "Ich sehe ein Bild.",
+      "example": "Ich sehe ein Bild.; Wir sehen den Supermarkt.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z"
     },
@@ -2319,7 +2319,7 @@
       "translation_ru": "ответ",
       "article": "die",
       "plural": "Antworten",
-      "example": "Die Antwort ist richtig.",
+      "example": "Die Antwort ist richtig.; Ich kenne die Antwort.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z"
     },
@@ -2337,7 +2337,7 @@
       "type": "word",
       "german": "Ungarisch",
       "translation_ru": "венгерский язык; по-венгерски; венгерский",
-      "example": "Sie spricht Ungarisch.",
+      "example": "Sie spricht Ungarisch.; Ungarisch ist eine Sprache.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-26T23:26:20.995622Z"
     },
@@ -2357,7 +2357,7 @@
       "translation_ru": "число; цифра",
       "article": "die",
       "plural": "Zahlen",
-      "example": "Die Zahl ist zehn.",
+      "example": "Die Zahl ist zehn.; Schreiben Sie die Zahl auf.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z"
     },
@@ -2377,7 +2377,7 @@
       "translation_ru": "вопрос",
       "article": "die",
       "plural": "Fragen",
-      "example": "Ich habe eine Frage.",
+      "example": "Ich habe eine Frage.; Die Frage ist einfach.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z"
     },
@@ -2422,7 +2422,7 @@
       "type": "word",
       "german": "noch einmal",
       "translation_ru": "ещё раз",
-      "example": "Hören Sie noch einmal.",
+      "example": "Hören Sie noch einmal.; Bitte sagen Sie das noch einmal.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z"
     },
@@ -2431,7 +2431,7 @@
       "type": "verb",
       "german": "zuordnen",
       "translation_ru": "соотносить; распределять",
-      "example": "Ordnen Sie zu.",
+      "example": "Ordnen Sie zu.; Ordnen Sie die Bilder den Wörtern zu.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z"
     },
@@ -2460,7 +2460,7 @@
       "type": "verb",
       "german": "schreiben über",
       "translation_ru": "писать о",
-      "example": "Ich schreibe über meine Familie.",
+      "example": "Ich schreibe über meine Familie.; Wir schreiben über Deutschland.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z"
     },
@@ -2469,7 +2469,7 @@
       "type": "verb",
       "german": "hören",
       "translation_ru": "слышать; слушать",
-      "example": "Hören Sie gut zu.",
+      "example": "Hören Sie gut zu.; Ich höre gern Musik.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z"
     },
@@ -2487,7 +2487,7 @@
       "type": "word",
       "german": "zusammen",
       "translation_ru": "вместе",
-      "example": "Wir lernen zusammen.",
+      "example": "Wir lernen zusammen.; Wir wohnen zusammen.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z"
     },
@@ -2507,7 +2507,7 @@
       "type": "verb",
       "german": "sein",
       "translation_ru": "быть",
-      "example": "Ich bin aus Deutschland.",
+      "example": "Ich bin aus Deutschland.; Wir sind heute zu Hause.",
       "note": "Неправильный глагол «быть»; формы ich bin, du bist, er/sie ist, wir/sie/Sie sind.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z"
@@ -2517,7 +2517,7 @@
       "type": "word",
       "german": "Ihre",
       "translation_ru": "Ваш; Ваша; Ваши",
-      "example": "Wie ist Ihre Adresse?",
+      "example": "Wie ist Ihre Adresse?; Ist das Ihre Tasche?",
       "note": "Вежливая форма «Ваш/Ваша»; Ihre Adresse = Ваш адрес.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z"
@@ -2527,7 +2527,7 @@
       "type": "word",
       "german": "ihr",
       "translation_ru": "вы (множественное число); вы",
-      "example": "Woher kommt ihr?",
+      "example": "Woher kommt ihr?; Lernt ihr heute Deutsch?",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-27T15:37:40.403861Z"
     },
@@ -2545,7 +2545,7 @@
       "type": "verb",
       "german": "markieren",
       "translation_ru": "отмечать; выделять",
-      "example": "Markieren Sie das Wort.",
+      "example": "Markieren Sie das Wort.; Bitte markieren Sie die richtige Antwort.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z"
     },
@@ -2601,7 +2601,7 @@
       "type": "word",
       "german": "die Schweiz",
       "translation_ru": "Швейцария",
-      "example": "Ich wohne in der Schweiz.",
+      "example": "Ich wohne in der Schweiz.; Die Schweiz liegt in Europa.",
       "note": "Название страны употребляется с артиклем die: aus der Schweiz.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-26T18:51:17.340237Z"
@@ -2647,7 +2647,7 @@
       "type": "word",
       "german": "ach",
       "translation_ru": "ах",
-      "example": "Ach, so ist das!",
+      "example": "Ach, so ist das!; Ach nein, das ist schade!",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-26T18:51:17.340237Z"
     },
@@ -2658,7 +2658,7 @@
       "translation_ru": "брак",
       "article": "die",
       "plural": "Ehen",
-      "example": "Sie leben in einer Ehe.",
+      "example": "Sie leben in einer Ehe.; Ihre Ehe ist glücklich.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-26T15:17:34.381623Z"
     },
@@ -2667,7 +2667,7 @@
       "type": "word",
       "german": "na ja",
       "translation_ru": "ну да; ну что ж",
-      "example": "Na ja, vielleicht morgen.",
+      "example": "Na ja, vielleicht morgen.; Na ja, ich weiß es nicht.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-26T18:51:17.340237Z"
     }
