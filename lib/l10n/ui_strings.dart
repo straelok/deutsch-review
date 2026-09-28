@@ -15,8 +15,6 @@ final class UiStrings {
   String get grammar => choose('Grammatik', 'Грамматика');
   String get statistics => choose('Statistik', 'Статистика');
   String get todayStatistics => choose('Heute', 'За сегодня');
-  String get allTimeWordsStatistics =>
-      choose('Wörter · Gesamt', 'Слова · За всё время');
   String get grammarIntro => choose(
         'Lies eine bereits gelernte Regel und markiere sie danach als gelernt.',
         'Откройте уже пройденное правило и отметьте его изученным.',

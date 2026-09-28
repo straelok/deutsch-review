@@ -92,6 +92,20 @@ final class SqliteGrammarRepository implements GrammarRepository {
   }
 
   @override
+  Future<GrammarSummary> categorySummary({required bool numbers}) async {
+    final topicCondition = numbers ? '=' : '<>';
+    final row = database.connection.select('''
+      SELECT COUNT(*) AS attempts, COALESCE(SUM(correct), 0) AS correct
+      FROM grammar_attempts
+      WHERE topic_id $topicCondition 'numbers'
+      ''').single;
+    return GrammarSummary(
+      attempts: row['attempts'] as int,
+      correct: row['correct'] as int,
+    );
+  }
+
+  @override
   Future<Map<String, List<bool>>> recentOutcomes({
     int limitPerTopic = 10,
   }) async {

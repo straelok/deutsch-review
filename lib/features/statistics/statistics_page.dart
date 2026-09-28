@@ -36,6 +36,9 @@ class _StatisticsPageState extends State<StatisticsPage> {
   PracticeSummary? _wordsToday;
   PracticeSummary? _numbersToday;
   PracticeSummary? _grammarToday;
+  PracticeSummary? _numbersAllTime;
+  PracticeSummary? _grammarAllTime;
+  _StatisticsPeriod _period = _StatisticsPeriod.today;
 
   @override
   void initState() {
@@ -58,7 +61,9 @@ class _StatisticsPageState extends State<StatisticsPage> {
         _requiredToday == null ||
         _wordsToday == null ||
         _numbersToday == null ||
-        _grammarToday == null) {
+        _grammarToday == null ||
+        _numbersAllTime == null ||
+        _grammarAllTime == null) {
       return const Center(child: CircularProgressIndicator());
     }
 
@@ -67,62 +72,46 @@ class _StatisticsPageState extends State<StatisticsPage> {
       children: [
         Text(s.statistics, style: Theme.of(context).textTheme.headlineMedium),
         const SizedBox(height: 16),
-        Text(s.todayStatistics, style: Theme.of(context).textTheme.titleLarge),
-        const SizedBox(height: 8),
-        _Metric(
-          label: s.dailyPlan,
-          value: '${_completedToday!}/${_requiredToday!}',
-        ),
-        const SizedBox(height: 12),
-        Wrap(
-          spacing: 12,
-          runSpacing: 12,
-          children: [
-            _DailyCategoryStatistics(
-              key: const Key('daily-statistics-words'),
-              icon: Icons.translate,
-              title: s.wordsCategory,
-              summary: _wordsToday!,
-              strings: s,
+        SegmentedButton<_StatisticsPeriod>(
+          key: const Key('statistics-period'),
+          segments: <ButtonSegment<_StatisticsPeriod>>[
+            ButtonSegment<_StatisticsPeriod>(
+              value: _StatisticsPeriod.today,
+              icon: const Icon(Icons.today_outlined),
+              label: Text(s.todayStatistics),
             ),
-            _DailyCategoryStatistics(
-              key: const Key('daily-statistics-numbers'),
-              icon: Icons.numbers,
-              title: s.numbersCategory,
-              summary: _numbersToday!,
-              strings: s,
-            ),
-            _DailyCategoryStatistics(
-              key: const Key('daily-statistics-grammar'),
-              icon: Icons.school_outlined,
-              title: s.grammarCategory,
-              summary: _grammarToday!,
-              strings: s,
+            ButtonSegment<_StatisticsPeriod>(
+              value: _StatisticsPeriod.allTime,
+              icon: const Icon(Icons.history),
+              label: Text(s.allTimeStatistics),
             ),
           ],
+          selected: <_StatisticsPeriod>{_period},
+          onSelectionChanged: (selected) {
+            setState(() => _period = selected.single);
+          },
         ),
-        const SizedBox(height: 28),
-        Text(
-          s.allTimeWordsStatistics,
-          style: Theme.of(context).textTheme.titleLarge,
-        ),
-        if (summary.attempts == 0) ...[
-          const SizedBox(height: 20),
-          Text(s.statsEmpty),
-        ] else ...[
+        const SizedBox(height: 16),
+        if (_period == _StatisticsPeriod.today) ...[
+          _Metric(
+            label: s.dailyPlan,
+            value: '${_completedToday!}/${_requiredToday!}',
+          ),
           const SizedBox(height: 12),
-          Wrap(
-            spacing: 12,
-            runSpacing: 12,
-            children: [
-              _Metric(label: s.attempts, value: '${summary.attempts}'),
-              _Metric(label: s.correctAnswers, value: '${summary.correct}'),
-              _Metric(label: s.errors, value: '${summary.errors}'),
-              _Metric(
-                label: s.accuracy,
-                value: '${(summary.accuracy * 100).round()} %',
-              ),
-            ],
+          _CategoryStatisticsGrid(
+            keyPrefix: 'daily-statistics',
+            words: _wordsToday!,
+            numbers: _numbersToday!,
+            grammar: _grammarToday!,
+            strings: s,
+          ),
+        ] else ...[
+          _CategoryStatisticsGrid(
+            keyPrefix: 'all-time-statistics',
+            words: summary,
+            numbers: _numbersAllTime!,
+            grammar: _grammarAllTime!,
+            strings: s,
           ),
           const SizedBox(height: 28),
           Text(s.problemWords, style: Theme.of(context).textTheme.titleLarge),
@@ -160,6 +149,8 @@ class _StatisticsPageState extends State<StatisticsPage> {
       now,
       numbers: false,
     );
+    final numbersAllTimeFuture = widget.grammar.categorySummary(numbers: true);
+    final grammarAllTimeFuture = widget.grammar.categorySummary(numbers: false);
     final daySessions = await widget.sessions.ensureDay(
       localDate: localDayKey(now),
       now: now.toUtc(),
@@ -169,6 +160,8 @@ class _StatisticsPageState extends State<StatisticsPage> {
     final wordsToday = await wordsTodayFuture;
     final numbersToday = await numbersTodayFuture;
     final grammarToday = await grammarTodayFuture;
+    final numbersAllTime = await numbersAllTimeFuture;
+    final grammarAllTime = await grammarAllTimeFuture;
     if (!mounted) return;
     setState(() {
       _summary = summary;
@@ -182,6 +175,14 @@ class _StatisticsPageState extends State<StatisticsPage> {
         attempts: grammarToday.attempts,
         correct: grammarToday.correct,
       );
+      _numbersAllTime = PracticeSummary(
+        attempts: numbersAllTime.attempts,
+        correct: numbersAllTime.correct,
+      );
+      _grammarAllTime = PracticeSummary(
+        attempts: grammarAllTime.attempts,
+        correct: grammarAllTime.correct,
+      );
       _completedToday = daySessions
           .where((session) => session.isRequired && session.isComplete)
           .length;
@@ -191,8 +192,57 @@ class _StatisticsPageState extends State<StatisticsPage> {
   }
 }
 
-class _DailyCategoryStatistics extends StatelessWidget {
-  const _DailyCategoryStatistics({
+enum _StatisticsPeriod { today, allTime }
+
+class _CategoryStatisticsGrid extends StatelessWidget {
+  const _CategoryStatisticsGrid({
+    required this.keyPrefix,
+    required this.words,
+    required this.numbers,
+    required this.grammar,
+    required this.strings,
+  });
+
+  final String keyPrefix;
+  final PracticeSummary words;
+  final PracticeSummary numbers;
+  final PracticeSummary grammar;
+  final UiStrings strings;
+
+  @override
+  Widget build(BuildContext context) {
+    return Wrap(
+      spacing: 12,
+      runSpacing: 12,
+      children: [
+        _CategoryStatistics(
+          key: Key('$keyPrefix-words'),
+          icon: Icons.translate,
+          title: strings.wordsCategory,
+          summary: words,
+          strings: strings,
+        ),
+        _CategoryStatistics(
+          key: Key('$keyPrefix-numbers'),
+          icon: Icons.numbers,
+          title: strings.numbersCategory,
+          summary: numbers,
+          strings: strings,
+        ),
+        _CategoryStatistics(
+          key: Key('$keyPrefix-grammar'),
+          icon: Icons.school_outlined,
+          title: strings.grammarCategory,
+          summary: grammar,
+          strings: strings,
+        ),
+      ],
+    );
+  }
+}
+
+class _CategoryStatistics extends StatelessWidget {
+  const _CategoryStatistics({
     required this.icon,
     required this.title,
     required this.summary,

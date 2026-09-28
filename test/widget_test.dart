@@ -245,11 +245,14 @@ void main() {
 
     await tester.tap(find.text('Statistik'));
     await tester.pumpAndSettle();
+    await tester.tap(find.text('Gesamt'));
+    await tester.pumpAndSettle();
     await tester.scrollUntilVisible(find.text('Problemwörter'), 300);
     await tester.pumpAndSettle();
     expect(find.text('Problemwörter'), findsOneWidget);
     expect(find.text('lernen'), findsOneWidget);
-    expect(find.text('1'), findsWidgets);
+    expect(find.text('1 Fehler · Genauigkeit: 0 %'), findsOneWidget);
+    expect(find.text('0/1'), findsOneWidget);
   });
 
   testWidgets('shows separate daily statistics for each practice category', (
@@ -279,13 +282,16 @@ void main() {
         id, item_id, session_id, answer_text, correct, attempted_at
       ) VALUES
         ('word-correct', 'word-1', ?, 'lernen', 1, ?),
-        ('word-error', 'word-1', ?, 'leren', 0, ?)
+        ('word-error', 'word-1', ?, 'leren', 0, ?),
+        ('word-old', 'word-1', ?, 'lernen', 1, ?)
       ''',
       <Object?>[
         vocabularySession.id,
         now.toUtc().toIso8601String(),
         vocabularySession.id,
         now.toUtc().toIso8601String(),
+        vocabularySession.id,
+        now.subtract(const Duration(days: 2)).toUtc().toIso8601String(),
       ],
     );
     database.connection.execute(
@@ -296,15 +302,21 @@ void main() {
       ) VALUES
         ('number-correct', 'numbers', 'number:to_digits:1', ?, '1', 1, ?),
         ('number-error', 'numbers', 'number:to_german:1', ?, '', 0, ?),
-        ('grammar-error', 'sein', 'sein-1', ?, '', 0, ?)
+        ('number-old', 'numbers', 'number:to_digits:2', ?, '2', 1, ?),
+        ('grammar-error', 'sein', 'sein-1', ?, '', 0, ?),
+        ('grammar-old', 'haben', 'haben-1', ?, 'habe', 1, ?)
       ''',
       <Object?>[
         numberSession.id,
         now.toUtc().toIso8601String(),
         numberSession.id,
         now.toUtc().toIso8601String(),
+        numberSession.id,
+        now.subtract(const Duration(days: 2)).toUtc().toIso8601String(),
         grammarSession.id,
         now.toUtc().toIso8601String(),
+        grammarSession.id,
+        now.subtract(const Duration(days: 2)).toUtc().toIso8601String(),
       ],
     );
 
@@ -340,6 +352,31 @@ void main() {
       'Fehler: 1',
       'Genauigkeit: 0 %',
     ]);
+    expect(find.text('Problemwörter'), findsNothing);
+
+    await tester.tap(find.text('Gesamt'));
+    await tester.pumpAndSettle();
+    expectCategory('all-time-statistics-words', <String>[
+      'Versuche: 3',
+      'Richtig: 2',
+      'Fehler: 1',
+      'Genauigkeit: 67 %',
+    ]);
+    expectCategory('all-time-statistics-numbers', <String>[
+      'Versuche: 3',
+      'Richtig: 2',
+      'Fehler: 1',
+      'Genauigkeit: 67 %',
+    ]);
+    expectCategory('all-time-statistics-grammar', <String>[
+      'Versuche: 2',
+      'Richtig: 1',
+      'Fehler: 1',
+      'Genauigkeit: 50 %',
+    ]);
+    await tester.scrollUntilVisible(find.text('Problemwörter'), 300);
+    await tester.pumpAndSettle();
+    expect(find.text('Problemwörter'), findsOneWidget);
   });
 
   testWidgets('records an unknown vocabulary answer and reveals the solution', (

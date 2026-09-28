@@ -39,6 +39,10 @@ final class SyncingGrammarRepository implements GrammarRepository {
     required bool numbers,
   }) =>
       _delegate.summaryForDay(localDay, numbers: numbers);
+
+  @override
+  Future<GrammarSummary> categorySummary({required bool numbers}) =>
+      _delegate.categorySummary(numbers: numbers);
 }
 
 final class SyncingLearningItemRepository implements LearningItemRepository {

@@ -80,9 +80,15 @@ void main() {
 
     final numbers = await repository.summaryForDay(day, numbers: true);
     final grammar = await repository.summaryForDay(day, numbers: false);
+    final allNumbers = await repository.categorySummary(numbers: true);
+    final allGrammar = await repository.categorySummary(numbers: false);
     expect(numbers.attempts, 2);
     expect(numbers.correct, 1);
     expect(grammar.attempts, 1);
     expect(grammar.correct, 0);
+    expect(allNumbers.attempts, 2);
+    expect(allNumbers.correct, 1);
+    expect(allGrammar.attempts, 2);
+    expect(allGrammar.correct, 1);
   });
 }

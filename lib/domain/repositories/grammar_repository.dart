@@ -16,5 +16,7 @@ abstract interface class GrammarRepository {
     required bool numbers,
   });
 
+  Future<GrammarSummary> categorySummary({required bool numbers});
+
   Future<Map<String, List<bool>>> recentOutcomes({int limitPerTopic = 10});
 }
