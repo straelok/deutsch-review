@@ -77,4 +77,49 @@ void main() {
     expect(statistics.allTime.attempts, 12);
     expect(statistics.allTime.correct, 8);
   });
+
+  test('calculates vocabulary statistics for one local day', () async {
+    final database = AppDatabase.inMemory();
+    addTearDown(database.close);
+    final items = SqliteLearningItemRepository(database);
+    final practice = SqlitePracticeRepository(database);
+    final day = DateTime(2026, 9, 28);
+    await items.save(
+      LearningItem(
+        id: 'item-1',
+        type: LearningItemType.word,
+        level: '',
+        lesson: '',
+        topic: '',
+        learned: true,
+        createdAt: day.toUtc(),
+        updatedAt: day.toUtc(),
+        sourceRef: 'test',
+        content: const {'german': 'lernen', 'translation_ru': 'учить'},
+      ),
+    );
+
+    for (final entry in <(String, DateTime, bool)>[
+      ('previous', DateTime(2026, 9, 27, 23, 59), false),
+      ('today-correct', DateTime(2026, 9, 28, 9), true),
+      ('today-error', DateTime(2026, 9, 28, 20), false),
+      ('next', DateTime(2026, 9, 29), true),
+    ]) {
+      await practice.saveAttempt(
+        PracticeAttempt(
+          id: entry.$1,
+          itemId: 'item-1',
+          sessionId: 'session-1',
+          answerText: '',
+          correct: entry.$3,
+          attemptedAt: entry.$2.toUtc(),
+        ),
+      );
+    }
+
+    final summary = await practice.summaryForDay(day);
+    expect(summary.attempts, 2);
+    expect(summary.correct, 1);
+    expect(summary.errors, 1);
+  });
 }

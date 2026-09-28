@@ -61,6 +61,37 @@ final class SqliteGrammarRepository implements GrammarRepository {
   }
 
   @override
+  Future<GrammarSummary> summaryForDay(
+    DateTime localDay, {
+    required bool numbers,
+  }) async {
+    final start = DateTime(
+      localDay.year,
+      localDay.month,
+      localDay.day,
+    ).toUtc();
+    final end = DateTime(
+      localDay.year,
+      localDay.month,
+      localDay.day + 1,
+    ).toUtc();
+    final topicCondition = numbers ? '=' : '<>';
+    final row = database.connection.select(
+      '''
+      SELECT COUNT(*) AS attempts, COALESCE(SUM(correct), 0) AS correct
+      FROM grammar_attempts
+      WHERE attempted_at >= ? AND attempted_at < ?
+        AND topic_id $topicCondition 'numbers'
+      ''',
+      <Object?>[start.toIso8601String(), end.toIso8601String()],
+    ).single;
+    return GrammarSummary(
+      attempts: row['attempts'] as int,
+      correct: row['correct'] as int,
+    );
+  }
+
+  @override
   Future<Map<String, List<bool>>> recentOutcomes({
     int limitPerTopic = 10,
   }) async {

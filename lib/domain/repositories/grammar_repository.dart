@@ -11,5 +11,10 @@ abstract interface class GrammarRepository {
 
   Future<GrammarSummary> summary(String topicId);
 
+  Future<GrammarSummary> summaryForDay(
+    DateTime localDay, {
+    required bool numbers,
+  });
+
   Future<Map<String, List<bool>>> recentOutcomes({int limitPerTopic = 10});
 }

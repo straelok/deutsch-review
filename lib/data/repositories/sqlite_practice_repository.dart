@@ -44,6 +44,32 @@ final class SqlitePracticeRepository implements PracticeRepository {
   }
 
   @override
+  Future<PracticeSummary> summaryForDay(DateTime localDay) async {
+    final start = DateTime(
+      localDay.year,
+      localDay.month,
+      localDay.day,
+    ).toUtc();
+    final end = DateTime(
+      localDay.year,
+      localDay.month,
+      localDay.day + 1,
+    ).toUtc();
+    final row = database.connection.select(
+      '''
+      SELECT COUNT(*) AS attempts, COALESCE(SUM(correct), 0) AS correct
+      FROM practice_attempts
+      WHERE attempted_at >= ? AND attempted_at < ?
+      ''',
+      <Object?>[start.toIso8601String(), end.toIso8601String()],
+    ).single;
+    return PracticeSummary(
+      attempts: row['attempts'] as int,
+      correct: row['correct'] as int,
+    );
+  }
+
+  @override
   Future<Map<String, WordPracticeStatistics>> statisticsByItem({
     int recentLimit = 10,
   }) async {

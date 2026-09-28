@@ -32,6 +32,13 @@ final class SyncingGrammarRepository implements GrammarRepository {
 
   @override
   Future<GrammarSummary> summary(String topicId) => _delegate.summary(topicId);
+
+  @override
+  Future<GrammarSummary> summaryForDay(
+    DateTime localDay, {
+    required bool numbers,
+  }) =>
+      _delegate.summaryForDay(localDay, numbers: numbers);
 }
 
 final class SyncingLearningItemRepository implements LearningItemRepository {
@@ -192,6 +199,10 @@ final class SyncingPracticeRepository implements PracticeRepository {
 
   @override
   Future<PracticeSummary> summary() => _delegate.summary();
+
+  @override
+  Future<PracticeSummary> summaryForDay(DateTime localDay) =>
+      _delegate.summaryForDay(localDay);
 
   @override
   Future<Map<String, WordPracticeStatistics>> statisticsByItem({

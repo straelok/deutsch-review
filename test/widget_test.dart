@@ -245,9 +245,101 @@ void main() {
 
     await tester.tap(find.text('Statistik'));
     await tester.pumpAndSettle();
+    await tester.scrollUntilVisible(find.text('Problemwörter'), 300);
+    await tester.pumpAndSettle();
     expect(find.text('Problemwörter'), findsOneWidget);
     expect(find.text('lernen'), findsOneWidget);
     expect(find.text('1'), findsWidgets);
+  });
+
+  testWidgets('shows separate daily statistics for each practice category', (
+    tester,
+  ) async {
+    final database = AppDatabase.inMemory();
+    addTearDown(database.close);
+    await SqliteLearningItemRepository(database).save(_word());
+    final now = DateTime.now();
+    final sessions = await SqliteDailySessionRepository(database).ensureDay(
+      localDate: localDayKey(now),
+      now: now.toUtc(),
+      includeGrammar: true,
+    );
+    final vocabularySession = sessions.firstWhere(
+      (session) => session.kind == DailySessionKind.vocabularyToGerman,
+    );
+    final numberSession = sessions.firstWhere(
+      (session) => session.kind == DailySessionKind.numbers,
+    );
+    final grammarSession = sessions.firstWhere(
+      (session) => session.kind == DailySessionKind.grammar,
+    );
+    database.connection.execute(
+      '''
+      INSERT INTO practice_attempts (
+        id, item_id, session_id, answer_text, correct, attempted_at
+      ) VALUES
+        ('word-correct', 'word-1', ?, 'lernen', 1, ?),
+        ('word-error', 'word-1', ?, 'leren', 0, ?)
+      ''',
+      <Object?>[
+        vocabularySession.id,
+        now.toUtc().toIso8601String(),
+        vocabularySession.id,
+        now.toUtc().toIso8601String(),
+      ],
+    );
+    database.connection.execute(
+      '''
+      INSERT INTO grammar_attempts (
+        id, topic_id, exercise_id, session_id,
+        answer_text, correct, attempted_at
+      ) VALUES
+        ('number-correct', 'numbers', 'number:to_digits:1', ?, '1', 1, ?),
+        ('number-error', 'numbers', 'number:to_german:1', ?, '', 0, ?),
+        ('grammar-error', 'sein', 'sein-1', ?, '', 0, ?)
+      ''',
+      <Object?>[
+        numberSession.id,
+        now.toUtc().toIso8601String(),
+        numberSession.id,
+        now.toUtc().toIso8601String(),
+        grammarSession.id,
+        now.toUtc().toIso8601String(),
+      ],
+    );
+
+    await tester.pumpWidget(_app(database));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Statistik'));
+    await tester.pumpAndSettle();
+
+    void expectCategory(String key, List<String> values) {
+      final card = find.byKey(Key(key));
+      expect(card, findsOneWidget);
+      for (final value in values) {
+        expect(find.descendant(of: card, matching: find.text(value)),
+            findsOneWidget);
+      }
+    }
+
+    expectCategory('daily-statistics-words', <String>[
+      'Versuche: 2',
+      'Richtig: 1',
+      'Fehler: 1',
+      'Genauigkeit: 50 %',
+    ]);
+    expectCategory('daily-statistics-numbers', <String>[
+      'Versuche: 2',
+      'Richtig: 1',
+      'Fehler: 1',
+      'Genauigkeit: 50 %',
+    ]);
+    expectCategory('daily-statistics-grammar', <String>[
+      'Versuche: 1',
+      'Richtig: 0',
+      'Fehler: 1',
+      'Genauigkeit: 0 %',
+    ]);
   });
 
   testWidgets('records an unknown vocabulary answer and reveals the solution', (

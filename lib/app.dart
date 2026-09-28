@@ -276,6 +276,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       StatisticsPage(
         repository: widget.practice,
+        grammar: widget.grammar,
         sessions: widget.sessions,
         strings: s,
         refreshToken: _statisticsRevision,
