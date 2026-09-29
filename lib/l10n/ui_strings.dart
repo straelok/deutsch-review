@@ -35,6 +35,20 @@ final class UiStrings {
         'Deutsch → Russisch',
         'С немецкого на русский',
       );
+  String get importantWordsCategory =>
+      choose('Wichtige Wörter', 'Важные слова');
+  String get importantToGermanCategory => choose(
+        'Wichtig: Russisch → Deutsch',
+        'Важные: с русского на немецкий',
+      );
+  String get importantToRussianCategory => choose(
+        'Wichtig: Deutsch → Russisch',
+        'Важные: с немецкого на русский',
+      );
+  String get noImportantWordsHint => choose(
+        'Markiere zuerst wichtige Wörter in deiner Wörterliste.',
+        'Сначала отметьте важные слова в словаре.',
+      );
   String get noLearnedLessons => choose(
         'Noch keine Lektionen als gelernt markiert.',
         'Пока нет уроков, отмеченных как изученные.',
@@ -93,6 +107,14 @@ final class UiStrings {
         'Wörter auf Russisch · Übung $number',
         'Практика слов на русском №$number',
       );
+  String importantVocabularyToGermanLesson(int number) => choose(
+        'Wichtige Wörter auf Deutsch · Übung $number',
+        'Важные слова на немецком №$number',
+      );
+  String importantVocabularyToRussianLesson(int number) => choose(
+        'Wichtige Wörter auf Russisch · Übung $number',
+        'Важные слова на русском №$number',
+      );
   String grammarLesson(int number) => choose(
         'Gemischte Grammatikübung $number',
         'Смешанная практика грамматики №$number',
@@ -141,6 +163,24 @@ final class UiStrings {
   String get add => choose('Hinzufügen', 'Добавить');
   String get importJson => choose('JSON importieren', 'Импорт JSON');
   String get exportJson => choose('JSON exportieren', 'Экспорт JSON');
+  String get markImportant =>
+      choose('Als wichtig markieren', 'Отметить важным');
+  String get removeImportant =>
+      choose('Nicht mehr wichtig', 'Снять отметку «Важное»');
+  String get clearImportantWords =>
+      choose('Alle Markierungen entfernen', 'Убрать все важные');
+  String get clearImportantWordsTitle => choose(
+        'Alle wichtigen Markierungen entfernen?',
+        'Убрать все отметки «Важное»?',
+      );
+  String clearImportantWordsMessage(int count) => choose(
+        'Die Markierung wird bei $count Wörtern entfernt. Begonnene Lektionen bleiben erhalten.',
+        'Отметка будет снята с $count слов. Начатые уроки сохранятся.',
+      );
+  String get importantWordsCleared => choose(
+        'Alle wichtigen Markierungen wurden entfernt.',
+        'Все отметки «Важное» сняты.',
+      );
   String get importPreviewTitle => choose('Import prüfen', 'Проверка импорта');
   String importPreview(int additions, int updates, int skipped) => choose(
         'Neue Wörter: $additions\nAktualisiert: $updates\nUnverändert oder übersprungen: $skipped',

@@ -182,6 +182,18 @@ void main() {
       kind: DailySessionKind.numbers,
     );
     expect(numbers.targetAnswers, 20);
+
+    final important = await repository.createExtra(
+      localDate: '2026-09-24',
+      now: now,
+      kind: DailySessionKind.importantVocabularyToGerman,
+    );
+    expect(important.isRequired, isFalse);
+    expect(important.targetAnswers, 20);
+    expect(
+      important.kind,
+      DailySessionKind.importantVocabularyToGerman,
+    );
   });
 
   test('records a grammar task atomically with all field attempts', () async {

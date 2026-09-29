@@ -156,6 +156,72 @@ void main() {
     );
   });
 
+  testWidgets('marks important words and clears them only after confirmation', (
+    tester,
+  ) async {
+    final database = AppDatabase.inMemory();
+    addTearDown(database.close);
+    final repository = SqliteLearningItemRepository(database);
+    await repository.save(_word());
+    await repository.save(_importantWord());
+
+    await tester.pumpWidget(_app(database));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Wörter'));
+    await tester.pumpAndSettle();
+
+    final toggleWord = find.byKey(const Key('toggle-important-word-1')).last;
+    await tester.ensureVisible(toggleWord);
+    await tester.pumpAndSettle();
+    await tester.tap(toggleWord);
+    await tester.pumpAndSettle();
+    expect((await repository.findById('word-1'))!.isImportant, isTrue);
+
+    await tester.tap(find.byKey(const Key('clear-important-words')));
+    await tester.pumpAndSettle();
+    expect(
+      find.byKey(const Key('confirm-clear-important-words')),
+      findsOneWidget,
+    );
+    await tester.tap(find.text('Abbrechen'));
+    await tester.pumpAndSettle();
+    expect((await repository.findById('word-1'))!.isImportant, isTrue);
+    expect((await repository.findById('important-word'))!.isImportant, isTrue);
+
+    await tester.tap(find.byKey(const Key('clear-important-words')));
+    await tester.pumpAndSettle();
+    await tester.tap(find.byKey(const Key('confirm-clear-important-words')));
+    await tester.pumpAndSettle();
+
+    expect((await repository.findById('word-1'))!.isImportant, isFalse);
+    expect(
+      (await repository.findById('important-word'))!.isImportant,
+      isFalse,
+    );
+  });
+
+  testWidgets('important practice contains only marked words', (tester) async {
+    final database = AppDatabase.inMemory();
+    addTearDown(database.close);
+    final repository = SqliteLearningItemRepository(database);
+    await repository.save(_word());
+    await repository.save(_importantWord());
+
+    await tester.pumpWidget(_app(database));
+    await tester.pumpAndSettle();
+    final start = find.byKey(
+      const Key('create-important-to-german-session'),
+    );
+    await tester.scrollUntilVisible(start, 300);
+    await tester.pumpAndSettle();
+    await tester.tap(start);
+    await tester.pumpAndSettle();
+
+    expect(find.byKey(const Key('practice-prompt')), findsOneWidget);
+    expect(find.text('завтра'), findsOneWidget);
+    expect(find.text('учить'), findsNothing);
+  });
+
   testWidgets('wechselt die Sprache und behält sie nach einem Neustart', (
     tester,
   ) async {
@@ -981,9 +1047,10 @@ void main() {
 }
 
 Future<void> _expandCategory(WidgetTester tester, String category) async {
-  await tester.tap(
-    find.byKey(Key('toggle-session-category-$category')),
-  );
+  final toggle = find.byKey(Key('toggle-session-category-$category'));
+  await tester.scrollUntilVisible(toggle, 300);
+  await tester.pumpAndSettle();
+  await tester.tap(toggle);
   await tester.pumpAndSettle();
 }
 
@@ -1035,6 +1102,26 @@ LearningItem _word() {
       'translation_ru': 'учить',
       'example': 'Ich lerne Deutsch.',
       'note': 'Wort aus Lektion 1',
+    },
+  );
+}
+
+LearningItem _importantWord() {
+  final now = DateTime.utc(2026, 9, 29, 10);
+  return LearningItem(
+    id: 'important-word',
+    type: LearningItemType.word,
+    level: 'A1.1',
+    lesson: '2',
+    topic: 'Zeit',
+    learned: true,
+    createdAt: now,
+    updatedAt: now,
+    sourceRef: 'test',
+    content: const {
+      'german': 'morgen',
+      'translation_ru': 'завтра',
+      'important': true,
     },
   );
 }

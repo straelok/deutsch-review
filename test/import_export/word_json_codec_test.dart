@@ -88,6 +88,43 @@ void main() {
     expect(restored.content['german'], 'lernen');
   });
 
+  test('round-trips an optional important mark', () {
+    final source = LearningItem(
+      id: 'important-word',
+      type: LearningItemType.word,
+      level: '',
+      lesson: '',
+      topic: '',
+      learned: true,
+      createdAt: now,
+      updatedAt: now,
+      sourceRef: 'manual',
+      content: const {
+        'german': 'morgen',
+        'translation_ru': 'завтра',
+        'important': true,
+      },
+    );
+
+    final json = codec.encode([source], exportedAt: now);
+    final restored = codec.decode(json, importedAt: now).single;
+
+    expect(json, contains('"important": true'));
+    expect(restored.isImportant, isTrue);
+  });
+
+  test('rejects a non-boolean important mark', () {
+    expect(
+      () => codec.decode(
+        '{"format_version":2,"words":[{"type":"word",'
+        '"german":"morgen","translation_ru":"завтра",'
+        '"important":"yes"}]}',
+        importedAt: now,
+      ),
+      throwsFormatException,
+    );
+  });
+
   test('rejects the whole package when a required field is missing', () {
     expect(
       () => codec.decode(

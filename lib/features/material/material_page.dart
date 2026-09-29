@@ -102,6 +102,16 @@ class _MaterialPageState extends State<DictionaryMaterialPage> {
                 runSpacing: 8,
                 children: [
                   OutlinedButton.icon(
+                    key: const Key('clear-important-words'),
+                    onPressed: _loading ||
+                            _fileBusy ||
+                            !_items.any((item) => item.isImportant)
+                        ? null
+                        : _clearImportantWords,
+                    icon: const Icon(Icons.star_outline),
+                    label: Text(s.clearImportantWords),
+                  ),
+                  OutlinedButton.icon(
                     key: const Key('import-json'),
                     onPressed: _loading || _fileBusy ? null : _importJson,
                     icon: const Icon(Icons.file_download_outlined),
@@ -208,15 +218,33 @@ class _MaterialPageState extends State<DictionaryMaterialPage> {
                 Text(s.addedAt(item.createdAt)),
               ],
             ),
-            trailing: PopupMenuButton<String>(
-              key: Key('item-menu-${item.id}'),
-              onSelected: (action) {
-                if (action == 'edit') _openEditor(item);
-                if (action == 'delete') _delete(item);
-              },
-              itemBuilder: (context) => [
-                PopupMenuItem(value: 'edit', child: Text(s.edit)),
-                PopupMenuItem(value: 'delete', child: Text(s.delete)),
+            trailing: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                IconButton(
+                  key: Key('toggle-important-${item.id}'),
+                  tooltip: item.isImportant
+                      ? s.removeImportant
+                      : s.markImportant,
+                  onPressed: () => _toggleImportant(item),
+                  icon: Icon(
+                    item.isImportant ? Icons.star : Icons.star_border,
+                    color: item.isImportant
+                        ? Theme.of(context).colorScheme.tertiary
+                        : null,
+                  ),
+                ),
+                PopupMenuButton<String>(
+                  key: Key('item-menu-${item.id}'),
+                  onSelected: (action) {
+                    if (action == 'edit') _openEditor(item);
+                    if (action == 'delete') _delete(item);
+                  },
+                  itemBuilder: (context) => [
+                    PopupMenuItem(value: 'edit', child: Text(s.edit)),
+                    PopupMenuItem(value: 'delete', child: Text(s.delete)),
+                  ],
+                ),
               ],
             ),
           ),
@@ -407,6 +435,80 @@ class _MaterialPageState extends State<DictionaryMaterialPage> {
         SnackBar(content: Text(widget.strings.saveError)),
       );
     }
+  }
+
+  Future<void> _toggleImportant(LearningItem item) async {
+    final now = DateTime.now().toUtc();
+    final content = <String, Object?>{...item.content};
+    if (item.isImportant) {
+      content.remove('important');
+    } else {
+      content['important'] = true;
+    }
+    await widget.repository.save(
+      LearningItem(
+        id: item.id,
+        type: item.type,
+        level: item.level,
+        lesson: item.lesson,
+        topic: item.topic,
+        learned: item.learned,
+        createdAt: item.createdAt,
+        updatedAt: now.isBefore(item.createdAt) ? item.createdAt : now,
+        deletedAt: item.deletedAt,
+        sourceRef: item.sourceRef,
+        content: content,
+      ),
+    );
+    await _reload();
+  }
+
+  Future<void> _clearImportantWords() async {
+    final s = widget.strings;
+    final count = _items.where((item) => item.isImportant).length;
+    final confirmed = await showDialog<bool>(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text(s.clearImportantWordsTitle),
+        content: Text(s.clearImportantWordsMessage(count)),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context, false),
+            child: Text(s.cancel),
+          ),
+          FilledButton(
+            key: const Key('confirm-clear-important-words'),
+            onPressed: () => Navigator.pop(context, true),
+            child: Text(s.clearImportantWords),
+          ),
+        ],
+      ),
+    );
+    if (confirmed != true) return;
+
+    final now = DateTime.now().toUtc();
+    final updates = _items.where((item) => item.isImportant).map((item) {
+      final content = <String, Object?>{...item.content}..remove('important');
+      return LearningItem(
+        id: item.id,
+        type: item.type,
+        level: item.level,
+        lesson: item.lesson,
+        topic: item.topic,
+        learned: item.learned,
+        createdAt: item.createdAt,
+        updatedAt: now.isBefore(item.createdAt) ? item.createdAt : now,
+        deletedAt: item.deletedAt,
+        sourceRef: item.sourceRef,
+        content: content,
+      );
+    }).toList(growable: false);
+    await widget.repository.saveAll(updates);
+    await _reload();
+    if (!mounted) return;
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text(s.importantWordsCleared)),
+    );
   }
 
   Future<bool> _confirmDuplicate() async {
@@ -735,6 +837,7 @@ class _LearningItemEditorState extends State<_LearningItemEditor> {
           if (_isNoun) 'plural': _plural.text.trim(),
           if (_example.text.trim().isNotEmpty) 'example': _example.text.trim(),
           if (_note.text.trim().isNotEmpty) 'note': _note.text.trim(),
+          if (previous?.isImportant ?? false) 'important': true,
         },
       ),
     );

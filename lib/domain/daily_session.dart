@@ -20,6 +20,8 @@ enum DailySessionStatus {
 enum DailySessionKind {
   vocabularyToGerman('vocabulary_to_german'),
   vocabularyToRussian('vocabulary_to_russian'),
+  importantVocabularyToGerman('important_vocabulary_to_german'),
+  importantVocabularyToRussian('important_vocabulary_to_russian'),
   grammar('grammar'),
   numbers('numbers');
 
@@ -34,6 +36,25 @@ enum DailySessionKind {
       orElse: () => throw ArgumentError.value(value, 'value', 'Unknown kind'),
     );
   }
+
+  bool get isVocabulary => switch (this) {
+        vocabularyToGerman ||
+        vocabularyToRussian ||
+        importantVocabularyToGerman ||
+        importantVocabularyToRussian =>
+          true,
+        grammar || numbers => false,
+      };
+
+  bool get isToRussian => switch (this) {
+        vocabularyToRussian || importantVocabularyToRussian => true,
+        _ => false,
+      };
+
+  bool get isImportantVocabulary => switch (this) {
+        importantVocabularyToGerman || importantVocabularyToRussian => true,
+        _ => false,
+      };
 }
 
 final class DailySession {

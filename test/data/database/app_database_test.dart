@@ -267,6 +267,59 @@ void main() {
     expect(migrated.integrityCheck(), ['ok']);
   });
 
+  test('adds important vocabulary session kinds in version 8', () {
+    final directory = Directory.systemTemp.createTempSync('deutsch_review_');
+    addTearDown(() => directory.deleteSync(recursive: true));
+    final path = '${directory.path}${Platform.pathSeparator}version7.sqlite';
+    final oldDatabase = sqlite3.open(path);
+    oldDatabase
+      ..execute(migrationFrom0To1)
+      ..execute(migrationFrom1To2)
+      ..execute(migrationFrom2To3)
+      ..execute(migrationFrom3To4)
+      ..execute(migrationFrom4To5)
+      ..execute(migrationFrom5To6)
+      ..execute(migrationFrom6To7)
+      ..execute('PRAGMA user_version = 7')
+      ..execute('''
+        INSERT INTO daily_sessions (
+          id, local_date, slot, kind, status, target_answers, answered_count,
+          queue_json, last_item_id, created_at, updated_at, completed_at,
+          content_version
+        ) VALUES (
+          'existing', '2026-09-29', 1, 'vocabulary_to_german', 'in_progress',
+          20, 1, '["word-1"]', 'word-2', '2026-09-29T10:00:00.000Z',
+          '2026-09-29T10:01:00.000Z', NULL, '2026.09.27.2'
+        )
+      ''')
+      ..close();
+
+    final migrated = AppDatabase.open(path);
+    addTearDown(migrated.close);
+    final existing = migrated.connection
+        .select("SELECT * FROM daily_sessions WHERE id = 'existing'")
+        .single;
+
+    expect(existing['answered_count'], 1);
+    expect(existing['content_version'], '2026.09.27.2');
+    expect(
+      () => migrated.connection.execute('''
+        INSERT INTO daily_sessions (
+          id, local_date, slot, kind, status, target_answers, answered_count,
+          queue_json, last_item_id, created_at, updated_at, completed_at,
+          content_version
+        ) VALUES (
+          'important', '2026-09-29', NULL,
+          'important_vocabulary_to_german', 'planned', 20, 0, '[]', NULL,
+          '2026-09-29T10:00:00.000Z', '2026-09-29T10:00:00.000Z', NULL,
+          '2026.09.27.2'
+        )
+      '''),
+      returnsNormally,
+    );
+    expect(migrated.integrityCheck(), ['ok']);
+  });
+
   test('rejects a database created by a newer application version', () {
     final directory = Directory.systemTemp.createTempSync('deutsch_review_');
     addTearDown(() => directory.deleteSync(recursive: true));

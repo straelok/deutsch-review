@@ -49,6 +49,7 @@ final class WordJsonCodec {
       if (item.type == LearningItemType.noun) 'plural': content['plural'],
       if (content['example'] case final String value) 'example': value,
       if (content['note'] case final String value) 'note': value,
+      if (item.isImportant) 'important': true,
       'created_at': item.createdAt.toUtc().toIso8601String(),
       'updated_at': item.updatedAt.toUtc().toIso8601String(),
     };
@@ -99,6 +100,11 @@ final class WordJsonCodec {
         _optionalDate(value['created_at'], index, 'created_at') ?? now;
     final updatedAt =
         _optionalDate(value['updated_at'], index, 'updated_at') ?? now;
+    final important = value['important'];
+    if (important != null && important is! bool) {
+      throw FormatException(
+          'words[$index].important должен быть true или false.');
+    }
 
     return LearningItem(
       id: id,
@@ -118,6 +124,7 @@ final class WordJsonCodec {
         if (_optionalString(value['example']) case final value?)
           'example': value,
         if (_optionalString(value['note']) case final value?) 'note': value,
+        if (important is bool) 'important': important,
       },
     );
   }

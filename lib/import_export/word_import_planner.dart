@@ -54,6 +54,11 @@ WordImportPlan planWordImport({
       continue;
     }
 
+    final replacementContent = <String, Object?>{
+      ...incoming.content,
+      if (!incoming.content.containsKey('important') && current.isImportant)
+        'important': true,
+    };
     final replacement = LearningItem(
       id: current.id,
       type: incoming.type,
@@ -64,7 +69,7 @@ WordImportPlan planWordImport({
       createdAt: current.createdAt,
       updatedAt: importedAt.toUtc(),
       sourceRef: 'json',
-      content: incoming.content,
+      content: replacementContent,
     );
     if (current.deletedAt == null &&
         current.type == replacement.type &&

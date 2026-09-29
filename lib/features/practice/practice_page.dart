@@ -185,7 +185,7 @@ class _PracticePageState extends State<PracticePage> {
         message: s.reviewEmpty,
       );
     }
-    final toRussian = _session!.kind == DailySessionKind.vocabularyToRussian;
+    final toRussian = _session!.kind.isToRussian;
     final expected =
         toRussian ? learningItemMeaning(item) : learningItemGerman(item);
     final note = learningItemNote(item);
@@ -392,7 +392,9 @@ class _PracticePageState extends State<PracticePage> {
       DailySessionKind.grammar => _unknownGrammarAnswer(),
       DailySessionKind.numbers => _unknownNumber(),
       DailySessionKind.vocabularyToGerman ||
-      DailySessionKind.vocabularyToRussian =>
+      DailySessionKind.vocabularyToRussian ||
+      DailySessionKind.importantVocabularyToGerman ||
+      DailySessionKind.importantVocabularyToRussian =>
         _unknownAnswer(),
     };
     submission.whenComplete(() => _unknownShortcutPending = false);
@@ -433,6 +435,18 @@ class _PracticePageState extends State<PracticePage> {
         .where((session) =>
             !session.isRequired && session.kind == DailySessionKind.numbers)
         .toList();
+    final importantToGerman = _daySessions
+        .where((session) =>
+            !session.isRequired &&
+            session.kind == DailySessionKind.importantVocabularyToGerman)
+        .toList();
+    final importantToRussian = _daySessions
+        .where((session) =>
+            !session.isRequired &&
+            session.kind == DailySessionKind.importantVocabularyToRussian)
+        .toList();
+    final importantItems =
+        _activeItems.where((item) => item.isImportant).toList();
     final completed =
         requiredSessions.where((session) => session.isComplete).length;
     final toGermanComplete = toGermanSessions.isNotEmpty &&
@@ -487,6 +501,48 @@ class _PracticePageState extends State<PracticePage> {
               _createExtraSession(DailySessionKind.vocabularyToRussian),
         ),
         const SizedBox(height: 20),
+        Text(
+          s.importantWordsCategory,
+          style: Theme.of(context).textTheme.titleLarge,
+        ),
+        const SizedBox(height: 8),
+        if (importantItems.isEmpty &&
+            importantToGerman.every((session) => session.isComplete) &&
+            importantToRussian.every((session) => session.isComplete)) ...[
+          Card(
+            child: ListTile(
+              leading: const Icon(Icons.star_outline),
+              title: Text(s.noImportantWordsHint),
+            ),
+          ),
+          const SizedBox(height: 8),
+        ],
+        _sessionCategory(
+          kind: DailySessionKind.importantVocabularyToGerman,
+          icon: Icons.star,
+          title: s.importantToGermanCategory,
+          sessions: importantToGerman,
+          canAdd: true,
+          canStart: importantItems.isNotEmpty,
+          addKey: const Key('create-important-to-german-session'),
+          onAdd: () => _createExtraSession(
+            DailySessionKind.importantVocabularyToGerman,
+          ),
+        ),
+        const SizedBox(height: 12),
+        _sessionCategory(
+          kind: DailySessionKind.importantVocabularyToRussian,
+          icon: Icons.star_border,
+          title: s.importantToRussianCategory,
+          sessions: importantToRussian,
+          canAdd: true,
+          canStart: importantItems.isNotEmpty,
+          addKey: const Key('create-important-to-russian-session'),
+          onAdd: () => _createExtraSession(
+            DailySessionKind.importantVocabularyToRussian,
+          ),
+        ),
+        const SizedBox(height: 20),
         _sessionCategory(
           kind: DailySessionKind.numbers,
           icon: Icons.pin_outlined,
@@ -518,6 +574,7 @@ class _PracticePageState extends State<PracticePage> {
     required String title,
     required List<DailySession> sessions,
     required bool canAdd,
+    bool canStart = true,
     required Key addKey,
     required VoidCallback onAdd,
   }) {
@@ -533,12 +590,14 @@ class _PracticePageState extends State<PracticePage> {
     final actionEnabled = inProgress != null
         ? _canOpenSession(inProgress)
         : canAdd
-            ? true
+            ? canStart
             : actionSession != null && _canOpenSession(actionSession);
     final actionLabel = inProgress != null
         ? widget.strings.continueLesson
         : canAdd
-            ? widget.strings.addLesson
+            ? sessions.isEmpty
+                ? widget.strings.start
+                : widget.strings.addLesson
             : widget.strings.nextLesson;
     final actionIcon = inProgress != null
         ? Icons.play_arrow
@@ -631,6 +690,10 @@ class _PracticePageState extends State<PracticePage> {
         DailySessionKind.grammar =>
           _availableGrammarTopics.isNotEmpty || session.queueItemIds.isNotEmpty,
         DailySessionKind.numbers => true,
+        DailySessionKind.importantVocabularyToGerman ||
+        DailySessionKind.importantVocabularyToRussian =>
+          session.queueItemIds.isNotEmpty ||
+              _activeItems.any((item) => item.isImportant),
         _ => _activeItems.isNotEmpty,
       };
 
@@ -1151,6 +1214,10 @@ class _PracticePageState extends State<PracticePage> {
         s.vocabularyToGermanLesson(ordinal),
       DailySessionKind.vocabularyToRussian =>
         s.vocabularyToRussianLesson(ordinal),
+      DailySessionKind.importantVocabularyToGerman =>
+        s.importantVocabularyToGermanLesson(ordinal),
+      DailySessionKind.importantVocabularyToRussian =>
+        s.importantVocabularyToRussianLesson(ordinal),
       DailySessionKind.numbers => s.numbersLesson(ordinal),
       DailySessionKind.grammar =>
         _focusedTopicTitle(session) ?? s.grammarLesson(ordinal),
@@ -1330,6 +1397,9 @@ class _PracticePageState extends State<PracticePage> {
       queue = await _buildQueue(
         length: session.remaining,
         previousItemId: session.lastItemId,
+        items: session.kind.isImportantVocabulary
+            ? _activeItems.where((item) => item.isImportant).toList()
+            : null,
       );
       session = await widget.sessions.start(
         id: session.id,
@@ -1575,6 +1645,7 @@ class _PracticePageState extends State<PracticePage> {
     String? previousItemId,
     String? answeredItemId,
     bool? answerCorrect,
+    List<LearningItem>? items,
   }) async {
     final outcomes = await widget.practice.recentOutcomes();
     if (answeredItemId != null && answerCorrect != null) {
@@ -1584,14 +1655,16 @@ class _PracticePageState extends State<PracticePage> {
       ];
       outcomes[answeredItemId] = projected.take(10).toList(growable: false);
     }
+    final candidates = items ?? _activeItems;
     final ids = buildWeightedQueue(
-      itemIds: _activeItems.map((item) => item.id).toList(growable: false),
+      itemIds: candidates.map((item) => item.id).toList(growable: false),
       recentOutcomes: outcomes,
       length: length,
       random: _random,
       previousItemId: previousItemId,
     );
-    return _itemsForIds(ids);
+    final byId = {for (final item in candidates) item.id: item};
+    return ids.map((id) => byId[id]).whereType<LearningItem>().toList();
   }
 
   Future<void> _checkAnswer() async {
@@ -1604,7 +1677,7 @@ class _PracticePageState extends State<PracticePage> {
   Future<void> _submitAnswer(String answer) async {
     if (_answered || _current == null) return;
     final item = _current!;
-    final toRussian = _session!.kind == DailySessionKind.vocabularyToRussian;
+    final toRussian = _session!.kind.isToRussian;
     final correct = toRussian
         ? isAnyPracticeAnswerCorrect(
             answer: answer,
@@ -1651,6 +1724,9 @@ class _PracticePageState extends State<PracticePage> {
       previousItemId: item.id,
       answeredItemId: item.id,
       answerCorrect: correct,
+      items: _session!.kind.isImportantVocabulary
+          ? _importantSessionItems()
+          : null,
     );
     final updatedSession = await widget.sessions.recordAnswer(
       attempt: PracticeAttempt(
@@ -1667,6 +1743,13 @@ class _PracticePageState extends State<PracticePage> {
     );
     widget.onAttemptSaved();
     return (updatedSession, nextQueue);
+  }
+
+  List<LearningItem> _importantSessionItems() {
+    if (_queue.isNotEmpty) {
+      return {for (final item in _queue) item.id: item}.values.toList();
+    }
+    return _activeItems.where((item) => item.isImportant).toList();
   }
 
   Future<void> _acceptRussianTranslation() async {

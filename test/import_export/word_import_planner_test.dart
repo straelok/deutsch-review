@@ -81,6 +81,56 @@ void main() {
     expect(plan.updates, hasLength(1));
     expect(plan.updates.single.deletedAt, isNull);
   });
+
+  test('keeps a local important mark when older JSON omits it', () {
+    final existing = _word(
+      id: 'local-id',
+      german: 'lernen',
+      translation: 'учить',
+      createdAt: createdAt,
+      important: true,
+    );
+    final incoming = _word(
+      id: 'local-id',
+      german: 'lernen',
+      translation: 'учить; изучать',
+      createdAt: importedAt,
+    );
+
+    final plan = planWordImport(
+      existing: [existing],
+      imported: [incoming],
+      importedAt: importedAt,
+    );
+
+    expect(plan.updates.single.isImportant, isTrue);
+  });
+
+  test('an explicit false mark clears a local important mark', () {
+    final existing = _word(
+      id: 'local-id',
+      german: 'lernen',
+      translation: 'учить',
+      createdAt: createdAt,
+      important: true,
+    );
+    final incoming = _word(
+      id: 'local-id',
+      german: 'lernen',
+      translation: 'учить',
+      createdAt: importedAt,
+      important: false,
+      includeImportant: true,
+    );
+
+    final plan = planWordImport(
+      existing: [existing],
+      imported: [incoming],
+      importedAt: importedAt,
+    );
+
+    expect(plan.updates.single.isImportant, isFalse);
+  });
 }
 
 LearningItem _word({
@@ -89,6 +139,8 @@ LearningItem _word({
   required String translation,
   required DateTime createdAt,
   DateTime? deletedAt,
+  bool important = false,
+  bool includeImportant = false,
 }) {
   return LearningItem(
     id: id,
@@ -101,6 +153,10 @@ LearningItem _word({
     updatedAt: createdAt,
     deletedAt: deletedAt,
     sourceRef: 'json',
-    content: {'german': german, 'translation_ru': translation},
+    content: {
+      'german': german,
+      'translation_ru': translation,
+      if (important || includeImportant) 'important': important,
+    },
   );
 }

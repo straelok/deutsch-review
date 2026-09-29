@@ -50,4 +50,5 @@ final class LearningItem {
   final Map<String, Object?> content;
 
   bool get isAvailableForReview => deletedAt == null;
+  bool get isImportant => content['important'] == true;
 }
