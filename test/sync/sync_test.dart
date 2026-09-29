@@ -79,6 +79,41 @@ void main() {
     );
   });
 
+  test('stale synchronization cannot roll session progress back', () async {
+    final source = AppDatabase.inMemory();
+    final target = AppDatabase.inMemory();
+    addTearDown(source.close);
+    addTearDown(target.close);
+    final now = DateTime.utc(2026, 9, 29, 10);
+    final sourceSessions = SqliteDailySessionRepository(source);
+    final targetSessions = SqliteDailySessionRepository(target);
+    await sourceSessions.ensureDay(localDate: '2026-09-29', now: now);
+    await targetSessions.ensureDay(localDate: '2026-09-29', now: now);
+
+    source.connection.execute(
+      "UPDATE daily_sessions SET status = 'in_progress', "
+      "answered_count = 10, queue_json = '[\"stale\"]', "
+      "updated_at = '2026-09-29T10:20:00.000Z' WHERE slot = 1",
+    );
+    target.connection.execute(
+      "UPDATE daily_sessions SET status = 'in_progress', "
+      "answered_count = 11, queue_json = '[\"current\"]', "
+      "updated_at = '2026-09-29T10:10:00.000Z' WHERE slot = 1",
+    );
+
+    SqliteSyncStore(target).mergePayload(
+      SqliteSyncStore(source).buildPayload(),
+    );
+
+    final session = target.connection
+        .select(
+          'SELECT answered_count, queue_json FROM daily_sessions WHERE slot = 1',
+        )
+        .single;
+    expect(session['answered_count'], 11);
+    expect(session['queue_json'], '["current"]');
+  });
+
   test('controller persists nickname and completes synchronization', () async {
     final database = AppDatabase.inMemory();
     addTearDown(database.close);

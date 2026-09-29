@@ -271,7 +271,7 @@ class _PracticePageState extends State<PracticePage> {
                     key: const Key('practice-answer'),
                     controller: _answerController,
                     focusNode: _answerFocus,
-                    enabled: !_answered,
+                    enabled: !_answered && !_savingVocabularyAnswer,
                     decoration: InputDecoration(
                       labelText: toRussian ? s.russianAnswer : s.yourAnswer,
                     ),
@@ -347,7 +347,7 @@ class _PracticePageState extends State<PracticePage> {
                   else ...[
                     FilledButton(
                       key: const Key('check-answer'),
-                      onPressed: _checkAnswer,
+                      onPressed: _savingVocabularyAnswer ? null : _checkAnswer,
                       child: Text(s.check),
                     ),
                     const SizedBox(height: 28),
@@ -355,7 +355,8 @@ class _PracticePageState extends State<PracticePage> {
                       alignment: Alignment.centerRight,
                       child: TextButton(
                         key: const Key('unknown-answer'),
-                        onPressed: _unknownAnswer,
+                        onPressed:
+                            _savingVocabularyAnswer ? null : _unknownAnswer,
                         child: Text(s.doNotKnow),
                       ),
                     ),
@@ -1643,18 +1644,9 @@ class _PracticePageState extends State<PracticePage> {
   Future<List<LearningItem>> _buildQueue({
     required int length,
     String? previousItemId,
-    String? answeredItemId,
-    bool? answerCorrect,
     List<LearningItem>? items,
   }) async {
     final outcomes = await widget.practice.recentOutcomes();
-    if (answeredItemId != null && answerCorrect != null) {
-      final projected = <bool>[
-        answerCorrect,
-        ...outcomes[answeredItemId] ?? const <bool>[],
-      ];
-      outcomes[answeredItemId] = projected.take(10).toList(growable: false);
-    }
     final candidates = items ?? _activeItems;
     final ids = buildWeightedQueue(
       itemIds: candidates.map((item) => item.id).toList(growable: false),
@@ -1675,7 +1667,7 @@ class _PracticePageState extends State<PracticePage> {
   Future<void> _unknownAnswer() => _submitAnswer('');
 
   Future<void> _submitAnswer(String answer) async {
-    if (_answered || _current == null) return;
+    if (_answered || _savingVocabularyAnswer || _current == null) return;
     final item = _current!;
     final toRussian = _session!.kind.isToRussian;
     final correct = toRussian
@@ -1698,20 +1690,30 @@ class _PracticePageState extends State<PracticePage> {
       return;
     }
 
-    final result = await _recordVocabularyAnswer(
-      item: item,
-      answer: answer,
-      correct: correct,
-    );
-    if (!mounted) return;
-    setState(() {
-      _session = result.$1;
-      _nextQueue = result.$2;
-      _answered = true;
-      _lastCorrect = correct;
-      _pendingVocabularyAnswer = null;
-    });
-    _focusNextButton();
+    setState(() => _savingVocabularyAnswer = true);
+    try {
+      final result = await _recordVocabularyAnswer(
+        item: item,
+        answer: answer,
+        correct: correct,
+      );
+      if (!mounted) return;
+      setState(() {
+        _session = result.$1;
+        _nextQueue = result.$2;
+        _answered = true;
+        _lastCorrect = correct;
+        _pendingVocabularyAnswer = null;
+        _savingVocabularyAnswer = false;
+      });
+      _focusNextButton();
+    } catch (_) {
+      if (!mounted) return;
+      setState(() => _savingVocabularyAnswer = false);
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(widget.strings.answerSaveFailed)),
+      );
+    }
   }
 
   Future<(DailySession, List<LearningItem>)> _recordVocabularyAnswer({
@@ -1719,15 +1721,7 @@ class _PracticePageState extends State<PracticePage> {
     required String answer,
     required bool correct,
   }) async {
-    final nextQueue = await _buildQueue(
-      length: _session!.remaining - 1,
-      previousItemId: item.id,
-      answeredItemId: item.id,
-      answerCorrect: correct,
-      items: _session!.kind.isImportantVocabulary
-          ? _importantSessionItems()
-          : null,
-    );
+    final nextQueue = _queue.skip(1).toList(growable: false);
     final updatedSession = await widget.sessions.recordAnswer(
       attempt: PracticeAttempt(
         id: newUuidV4(),
@@ -1743,13 +1737,6 @@ class _PracticePageState extends State<PracticePage> {
     );
     widget.onAttemptSaved();
     return (updatedSession, nextQueue);
-  }
-
-  List<LearningItem> _importantSessionItems() {
-    if (_queue.isNotEmpty) {
-      return {for (final item in _queue) item.id: item}.values.toList();
-    }
-    return _activeItems.where((item) => item.isImportant).toList();
   }
 
   Future<void> _acceptRussianTranslation() async {
@@ -2036,6 +2023,9 @@ class _PracticePageState extends State<PracticePage> {
     } catch (_) {
       if (!mounted) return false;
       setState(() => _savingVocabularyAnswer = false);
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(widget.strings.answerSaveFailed)),
+      );
       return false;
     }
   }

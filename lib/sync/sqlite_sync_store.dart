@@ -168,14 +168,34 @@ final class SqliteSyncStore {
     };
     final existing = slot == null
         ? database.connection.select(
-            'SELECT id FROM daily_sessions WHERE id = ?',
+            'SELECT id, status, answered_count, updated_at '
+            'FROM daily_sessions WHERE id = ?',
             <Object?>[id],
           )
         : database.connection.select(
-            'SELECT id FROM daily_sessions WHERE local_date = ? AND slot = ?',
+            'SELECT id, status, answered_count, updated_at '
+            'FROM daily_sessions WHERE local_date = ? AND slot = ?',
             <Object?>[localDate, slot],
           );
     final targetId = existing.isEmpty ? id : existing.single['id'] as String;
+    final incomingStatus = _string(session, 'status');
+    final incomingAnsweredCount = _integer(session, 'answeredCount');
+    final incomingUpdatedAt = DateTime.parse(
+      _dateString(session, 'updatedAt'),
+    );
+    if (existing.isNotEmpty &&
+        _localSessionIsNewer(
+          status: existing.single['status'] as String,
+          answeredCount: existing.single['answered_count'] as int,
+          updatedAt: DateTime.parse(
+            existing.single['updated_at'] as String,
+          ),
+          incomingStatus: incomingStatus,
+          incomingAnsweredCount: incomingAnsweredCount,
+          incomingUpdatedAt: incomingUpdatedAt,
+        )) {
+      return;
+    }
     final queue = session['queueItemIds'];
     if (queue is! List || queue.any((value) => value is! String)) {
       throw const FormatException('Session queue must be a string array.');
@@ -203,13 +223,13 @@ final class SqliteSyncStore {
         localDate,
         slot,
         kind,
-        _string(session, 'status'),
+        incomingStatus,
         kind == 'numbers' &&
-                _string(session, 'status') == 'planned' &&
-                _integer(session, 'answeredCount') == 0
+                incomingStatus == 'planned' &&
+                incomingAnsweredCount == 0
             ? 20
             : _integer(session, 'targetAnswers'),
-        _integer(session, 'answeredCount'),
+        incomingAnsweredCount,
         jsonEncode(queue),
         session['lastItemId'] as String?,
         _dateString(session, 'createdAt'),
@@ -221,6 +241,30 @@ final class SqliteSyncStore {
       ],
     );
   }
+
+  static bool _localSessionIsNewer({
+    required String status,
+    required int answeredCount,
+    required DateTime updatedAt,
+    required String incomingStatus,
+    required int incomingAnsweredCount,
+    required DateTime incomingUpdatedAt,
+  }) {
+    final localRank = _sessionStatusRank(status);
+    final incomingRank = _sessionStatusRank(incomingStatus);
+    if (localRank != incomingRank) return localRank > incomingRank;
+    if (answeredCount != incomingAnsweredCount) {
+      return answeredCount > incomingAnsweredCount;
+    }
+    return updatedAt.isAfter(incomingUpdatedAt);
+  }
+
+  static int _sessionStatusRank(String status) => switch (status) {
+        'completed' => 2,
+        'in_progress' => 1,
+        'planned' => 0,
+        _ => throw FormatException('Unknown session status: $status'),
+      };
 
   static String _sessionKind(Map<String, Object?> session) {
     final kind = session['kind'];

@@ -319,6 +319,10 @@ final class UiStrings {
         'Die Übersetzung konnte nicht ergänzt werden.',
         'Не удалось добавить вариант перевода.',
       );
+  String get answerSaveFailed => choose(
+        'Die Antwort konnte nicht gespeichert werden. Bitte versuche es erneut.',
+        'Не удалось сохранить ответ. Попробуйте ещё раз.',
+      );
   String get next => choose('Weiter', 'Далее');
   String progress(int answered, int target) => choose(
         'Antwort ${answered + 1} von $target',

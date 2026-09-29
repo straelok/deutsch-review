@@ -222,6 +222,68 @@ void main() {
     expect(find.text('учить'), findsNothing);
   });
 
+  testWidgets('vocabulary lesson keeps its original remaining queue', (
+    tester,
+  ) async {
+    final database = AppDatabase.inMemory();
+    addTearDown(database.close);
+    final repository = SqliteLearningItemRepository(database);
+    final now = DateTime.utc(2026, 9, 29, 10);
+    for (var index = 0; index < 8; index++) {
+      await repository.save(
+        LearningItem(
+          id: 'important-$index',
+          type: LearningItemType.word,
+          level: 'A1.1',
+          lesson: '2',
+          topic: 'test',
+          learned: true,
+          createdAt: now,
+          updatedAt: now,
+          sourceRef: 'test',
+          content: {
+            'german': 'Wort$index',
+            'translation_ru': 'слово$index',
+            'important': true,
+          },
+        ),
+      );
+    }
+
+    await tester.pumpWidget(_app(database));
+    await tester.pumpAndSettle();
+    final start = find.byKey(
+      const Key('create-important-to-german-session'),
+    );
+    await tester.scrollUntilVisible(start, 300);
+    await tester.pumpAndSettle();
+    await tester.tap(start);
+    await tester.pumpAndSettle();
+
+    final before = database.connection
+        .select(
+          "SELECT queue_json FROM daily_sessions "
+          "WHERE kind = 'important_vocabulary_to_german'",
+        )
+        .single;
+    final originalQueue =
+        (jsonDecode(before['queue_json'] as String) as List).cast<String>();
+
+    await tester.tap(find.byKey(const Key('unknown-answer')));
+    await tester.pumpAndSettle();
+
+    final after = database.connection
+        .select(
+          "SELECT answered_count, queue_json FROM daily_sessions "
+          "WHERE kind = 'important_vocabulary_to_german'",
+        )
+        .single;
+    final remainingQueue =
+        (jsonDecode(after['queue_json'] as String) as List).cast<String>();
+    expect(after['answered_count'], 1);
+    expect(remainingQueue, originalQueue.skip(1));
+  });
+
   testWidgets('wechselt die Sprache und behält sie nach einem Neustart', (
     tester,
   ) async {
