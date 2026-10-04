@@ -371,6 +371,7 @@ const _prepositions = <({String lemma, List<String> examples})>[
 ];
 
 void main() {
+  final curatedExercises = _loadCuratedExercises();
   final exercises = <Map<String, Object?>>[];
   var index = 1;
   for (final entry in _regular.entries) {
@@ -410,10 +411,17 @@ void main() {
     ],
     tails: _habenTails,
   );
+  _addLessonOneSpecialVerbExercises(exercises);
   _addFoundationExercises(exercises);
+  final generatedIds = exercises.map((exercise) => exercise['id']).toSet();
+  exercises.addAll(
+    curatedExercises.where(
+      (exercise) => generatedIds.add(exercise['id']),
+    ),
+  );
 
   final regularCount = exercises
-      .where((exercise) => exercise['topic_id'] == 'regular_present')
+      .where((exercise) => (exercise['id'] as String).startsWith('regular-'))
       .length;
   if (regularCount != 1000) {
     throw StateError('Expected 1000 regular exercises, got $regularCount.');
@@ -428,6 +436,294 @@ void main() {
   File('assets/grammar/exercises.json')
     ..createSync(recursive: true)
     ..writeAsStringSync('$output\n');
+}
+
+List<Map<String, Object?>> _loadCuratedExercises() {
+  final file = File('assets/grammar/exercises.json');
+  if (!file.existsSync()) return const [];
+
+  final document = jsonDecode(file.readAsStringSync()) as Map<String, Object?>;
+  final existing = document['exercises'] as List<Object?>? ?? const [];
+  return existing.cast<Map<String, Object?>>().where((exercise) {
+    final id = exercise['id'] as String? ?? '';
+    return id.startsWith('reading-') || id.startsWith('verb-first-question-');
+  }).toList(growable: false);
+}
+
+void _addLessonOneSpecialVerbExercises(
+  List<Map<String, Object?>> exercises,
+) {
+  const items = <({
+    String id,
+    String lemma,
+    String prompt,
+    String answer,
+    List<String> options,
+  })>[
+    (
+      id: 'heissen-01',
+      lemma: 'heißen',
+      prompt: 'Ich ___ Nora.',
+      answer: 'heiße',
+      options: ['heiße', 'heißt', 'heißen'],
+    ),
+    (
+      id: 'heissen-02',
+      lemma: 'heißen',
+      prompt: 'Wie ___ du?',
+      answer: 'heißt',
+      options: ['heiße', 'heißt', 'heißen'],
+    ),
+    (
+      id: 'heissen-03',
+      lemma: 'heißen',
+      prompt: 'Wie ___ Sie?',
+      answer: 'heißen',
+      options: ['heiße', 'heißt', 'heißen'],
+    ),
+    (
+      id: 'heissen-04',
+      lemma: 'heißen',
+      prompt: 'Er ___ Amir.',
+      answer: 'heißt',
+      options: ['heiße', 'heißt', 'heißen'],
+    ),
+    (
+      id: 'heissen-05',
+      lemma: 'heißen',
+      prompt: 'Wir ___ Berger.',
+      answer: 'heißen',
+      options: ['heiße', 'heißt', 'heißen'],
+    ),
+    (
+      id: 'heissen-06',
+      lemma: 'heißen',
+      prompt: 'Ihr ___ Kaya.',
+      answer: 'heißt',
+      options: ['heißt', 'heißen', 'heiße'],
+    ),
+    (
+      id: 'sprechen-01',
+      lemma: 'sprechen',
+      prompt: 'Ich ___ Deutsch.',
+      answer: 'spreche',
+      options: ['spreche', 'sprichst', 'sprechen'],
+    ),
+    (
+      id: 'sprechen-02',
+      lemma: 'sprechen',
+      prompt: 'Was ___ du?',
+      answer: 'sprichst',
+      options: ['spreche', 'sprichst', 'sprechen'],
+    ),
+    (
+      id: 'sprechen-03',
+      lemma: 'sprechen',
+      prompt: 'Was ___ Sie?',
+      answer: 'sprechen',
+      options: ['spreche', 'sprichst', 'sprechen'],
+    ),
+    (
+      id: 'sprechen-04',
+      lemma: 'sprechen',
+      prompt: 'Sie ___ Polnisch.',
+      answer: 'spricht',
+      options: ['spricht', 'sprecht', 'sprechen'],
+    ),
+    (
+      id: 'sprechen-05',
+      lemma: 'sprechen',
+      prompt: 'Wir ___ Arabisch.',
+      answer: 'sprechen',
+      options: ['spricht', 'sprecht', 'sprechen'],
+    ),
+    (
+      id: 'sprechen-06',
+      lemma: 'sprechen',
+      prompt: 'Ihr ___ Englisch.',
+      answer: 'sprecht',
+      options: ['spricht', 'sprecht', 'sprechen'],
+    ),
+    (
+      id: 'arbeiten-01',
+      lemma: 'arbeiten',
+      prompt: 'Ich ___ in Berlin.',
+      answer: 'arbeite',
+      options: ['arbeite', 'arbeitest', 'arbeitet'],
+    ),
+    (
+      id: 'arbeiten-02',
+      lemma: 'arbeiten',
+      prompt: 'Wo ___ du?',
+      answer: 'arbeitest',
+      options: ['arbeite', 'arbeitest', 'arbeitet'],
+    ),
+    (
+      id: 'arbeiten-03',
+      lemma: 'arbeiten',
+      prompt: 'Er ___ heute.',
+      answer: 'arbeitet',
+      options: ['arbeiten', 'arbeitest', 'arbeitet'],
+    ),
+    (
+      id: 'arbeiten-04',
+      lemma: 'arbeiten',
+      prompt: 'Ihr ___ zusammen.',
+      answer: 'arbeitet',
+      options: ['arbeiten', 'arbeitet', 'arbeitest'],
+    ),
+    (
+      id: 'reden-01',
+      lemma: 'reden',
+      prompt: 'Ich ___ mit Anna.',
+      answer: 'rede',
+      options: ['rede', 'redest', 'redet'],
+    ),
+    (
+      id: 'reden-02',
+      lemma: 'reden',
+      prompt: 'Mit wem ___ du?',
+      answer: 'redest',
+      options: ['rede', 'redest', 'redet'],
+    ),
+    (
+      id: 'reden-03',
+      lemma: 'reden',
+      prompt: 'Sie ___ über den Kurs.',
+      answer: 'redet',
+      options: ['reden', 'redest', 'redet'],
+    ),
+    (
+      id: 'reden-04',
+      lemma: 'reden',
+      prompt: 'Ihr ___ leise.',
+      answer: 'redet',
+      options: ['reden', 'redet', 'redest'],
+    ),
+    (
+      id: 'tanzen-01',
+      lemma: 'tanzen',
+      prompt: 'Ich ___ gern.',
+      answer: 'tanze',
+      options: ['tanze', 'tanzt', 'tanzen'],
+    ),
+    (
+      id: 'tanzen-02',
+      lemma: 'tanzen',
+      prompt: 'Du ___ sehr gut.',
+      answer: 'tanzt',
+      options: ['tanze', 'tanzt', 'tanzen'],
+    ),
+    (
+      id: 'tanzen-03',
+      lemma: 'tanzen',
+      prompt: 'Er ___ heute.',
+      answer: 'tanzt',
+      options: ['tanze', 'tanzt', 'tanzen'],
+    ),
+    (
+      id: 'tanzen-04',
+      lemma: 'tanzen',
+      prompt: 'Wir ___ zusammen.',
+      answer: 'tanzen',
+      options: ['tanze', 'tanzt', 'tanzen'],
+    ),
+  ];
+  for (final item in items) {
+    _addExercise(
+      exercises,
+      id: 'lesson1-special-${item.id}',
+      topicId: 'lesson1_special_verbs',
+      lemma: item.lemma,
+      prompt: item.prompt,
+      answer: item.answer,
+      type: 'choice',
+      options: item.options,
+      instructionDe: 'Wähle die richtige Verbform.',
+      instructionRu: 'Выберите правильную форму глагола.',
+    );
+  }
+
+  const questions = <({
+    String id,
+    String lemma,
+    String prompt,
+    String answer,
+    List<String> options,
+  })>[
+    (
+      id: 'frage-01',
+      lemma: 'heißen',
+      prompt: 'Frage mit du: Name',
+      answer: 'Wie heißt du?',
+      options: ['Wie', 'heißt', 'du?'],
+    ),
+    (
+      id: 'frage-02',
+      lemma: 'heißen',
+      prompt: 'Höfliche Frage: Name',
+      answer: 'Wie heißen Sie?',
+      options: ['Wie', 'heißen', 'Sie?'],
+    ),
+    (
+      id: 'frage-03',
+      lemma: 'sprechen',
+      prompt: 'Frage mit du: Sprache',
+      answer: 'Was sprichst du?',
+      options: ['Was', 'sprichst', 'du?'],
+    ),
+    (
+      id: 'frage-04',
+      lemma: 'sprechen',
+      prompt: 'Höfliche Frage: Sprache',
+      answer: 'Was sprechen Sie?',
+      options: ['Was', 'sprechen', 'Sie?'],
+    ),
+  ];
+  for (final item in questions) {
+    _addExercise(
+      exercises,
+      id: 'lesson1-special-${item.id}',
+      topicId: 'lesson1_special_verbs',
+      lemma: item.lemma,
+      prompt: item.prompt,
+      answer: item.answer,
+      type: 'word_order',
+      options: item.options,
+      instructionDe: 'Bilde eine W-Frage.',
+      instructionRu: 'Составьте вопрос с вопросительным словом.',
+    );
+  }
+
+  const dochItems = <({String id, String prompt, String answer})>[
+    (id: 'doch-01', prompt: 'Lernst du nicht Deutsch? — ___!', answer: 'Doch'),
+    (id: 'doch-02', prompt: 'Arbeitet er heute nicht? — ___!', answer: 'Doch'),
+    (
+      id: 'doch-03',
+      prompt: 'Kommen Sie nicht aus Berlin? — ___!',
+      answer: 'Doch'
+    ),
+    (
+      id: 'doch-04',
+      prompt: 'Sprichst du kein Englisch? — ___!',
+      answer: 'Doch'
+    ),
+  ];
+  for (final item in dochItems) {
+    _addExercise(
+      exercises,
+      id: 'lesson1-special-${item.id}',
+      topicId: 'yes_no_questions',
+      lemma: 'doch',
+      itemType: 'word',
+      prompt: item.prompt,
+      answer: item.answer,
+      type: 'choice',
+      options: const ['Doch', 'Nein', 'Ja'],
+      instructionDe: 'Wähle die passende Antwort auf die negative Frage.',
+      instructionRu: 'Выберите подходящий ответ на отрицательный вопрос.',
+    );
+  }
 }
 
 void _addFoundationExercises(List<Map<String, Object?>> exercises) {
@@ -460,7 +756,7 @@ void _addFoundationExercises(List<Map<String, Object?>> exercises) {
       _addExercise(
         exercises,
         id: 'pronoun-$lemma-${subject.key.replaceAll('/', '-')}',
-        topicId: 'personal_pronouns',
+        topicId: 'regular_present',
         lemma: lemma,
         prompt: '___ $stem${subject.ending} Deutsch.',
         answer: subject.text,

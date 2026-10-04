@@ -8122,6 +8122,518 @@
       "answer": "haben"
     },
     {
+      "id": "lesson1-special-heissen-01",
+      "topic_id": "lesson1_special_verbs",
+      "lemma": "heißen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Ich ___ Nora.",
+      "answer": "heiße",
+      "options": [
+        "heiße",
+        "heißt",
+        "heißen"
+      ],
+      "instruction_de": "Wähle die richtige Verbform.",
+      "instruction_ru": "Выберите правильную форму глагола."
+    },
+    {
+      "id": "lesson1-special-heissen-02",
+      "topic_id": "lesson1_special_verbs",
+      "lemma": "heißen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Wie ___ du?",
+      "answer": "heißt",
+      "options": [
+        "heiße",
+        "heißt",
+        "heißen"
+      ],
+      "instruction_de": "Wähle die richtige Verbform.",
+      "instruction_ru": "Выберите правильную форму глагола."
+    },
+    {
+      "id": "lesson1-special-heissen-03",
+      "topic_id": "lesson1_special_verbs",
+      "lemma": "heißen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Wie ___ Sie?",
+      "answer": "heißen",
+      "options": [
+        "heiße",
+        "heißt",
+        "heißen"
+      ],
+      "instruction_de": "Wähle die richtige Verbform.",
+      "instruction_ru": "Выберите правильную форму глагола."
+    },
+    {
+      "id": "lesson1-special-heissen-04",
+      "topic_id": "lesson1_special_verbs",
+      "lemma": "heißen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Er ___ Amir.",
+      "answer": "heißt",
+      "options": [
+        "heiße",
+        "heißt",
+        "heißen"
+      ],
+      "instruction_de": "Wähle die richtige Verbform.",
+      "instruction_ru": "Выберите правильную форму глагола."
+    },
+    {
+      "id": "lesson1-special-heissen-05",
+      "topic_id": "lesson1_special_verbs",
+      "lemma": "heißen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Wir ___ Berger.",
+      "answer": "heißen",
+      "options": [
+        "heiße",
+        "heißt",
+        "heißen"
+      ],
+      "instruction_de": "Wähle die richtige Verbform.",
+      "instruction_ru": "Выберите правильную форму глагола."
+    },
+    {
+      "id": "lesson1-special-heissen-06",
+      "topic_id": "lesson1_special_verbs",
+      "lemma": "heißen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Ihr ___ Kaya.",
+      "answer": "heißt",
+      "options": [
+        "heißt",
+        "heißen",
+        "heiße"
+      ],
+      "instruction_de": "Wähle die richtige Verbform.",
+      "instruction_ru": "Выберите правильную форму глагола."
+    },
+    {
+      "id": "lesson1-special-sprechen-01",
+      "topic_id": "lesson1_special_verbs",
+      "lemma": "sprechen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Ich ___ Deutsch.",
+      "answer": "spreche",
+      "options": [
+        "spreche",
+        "sprichst",
+        "sprechen"
+      ],
+      "instruction_de": "Wähle die richtige Verbform.",
+      "instruction_ru": "Выберите правильную форму глагола."
+    },
+    {
+      "id": "lesson1-special-sprechen-02",
+      "topic_id": "lesson1_special_verbs",
+      "lemma": "sprechen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Was ___ du?",
+      "answer": "sprichst",
+      "options": [
+        "spreche",
+        "sprichst",
+        "sprechen"
+      ],
+      "instruction_de": "Wähle die richtige Verbform.",
+      "instruction_ru": "Выберите правильную форму глагола."
+    },
+    {
+      "id": "lesson1-special-sprechen-03",
+      "topic_id": "lesson1_special_verbs",
+      "lemma": "sprechen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Was ___ Sie?",
+      "answer": "sprechen",
+      "options": [
+        "spreche",
+        "sprichst",
+        "sprechen"
+      ],
+      "instruction_de": "Wähle die richtige Verbform.",
+      "instruction_ru": "Выберите правильную форму глагола."
+    },
+    {
+      "id": "lesson1-special-sprechen-04",
+      "topic_id": "lesson1_special_verbs",
+      "lemma": "sprechen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Sie ___ Polnisch.",
+      "answer": "spricht",
+      "options": [
+        "spricht",
+        "sprecht",
+        "sprechen"
+      ],
+      "instruction_de": "Wähle die richtige Verbform.",
+      "instruction_ru": "Выберите правильную форму глагола."
+    },
+    {
+      "id": "lesson1-special-sprechen-05",
+      "topic_id": "lesson1_special_verbs",
+      "lemma": "sprechen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Wir ___ Arabisch.",
+      "answer": "sprechen",
+      "options": [
+        "spricht",
+        "sprecht",
+        "sprechen"
+      ],
+      "instruction_de": "Wähle die richtige Verbform.",
+      "instruction_ru": "Выберите правильную форму глагола."
+    },
+    {
+      "id": "lesson1-special-sprechen-06",
+      "topic_id": "lesson1_special_verbs",
+      "lemma": "sprechen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Ihr ___ Englisch.",
+      "answer": "sprecht",
+      "options": [
+        "spricht",
+        "sprecht",
+        "sprechen"
+      ],
+      "instruction_de": "Wähle die richtige Verbform.",
+      "instruction_ru": "Выберите правильную форму глагола."
+    },
+    {
+      "id": "lesson1-special-arbeiten-01",
+      "topic_id": "lesson1_special_verbs",
+      "lemma": "arbeiten",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Ich ___ in Berlin.",
+      "answer": "arbeite",
+      "options": [
+        "arbeite",
+        "arbeitest",
+        "arbeitet"
+      ],
+      "instruction_de": "Wähle die richtige Verbform.",
+      "instruction_ru": "Выберите правильную форму глагола."
+    },
+    {
+      "id": "lesson1-special-arbeiten-02",
+      "topic_id": "lesson1_special_verbs",
+      "lemma": "arbeiten",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Wo ___ du?",
+      "answer": "arbeitest",
+      "options": [
+        "arbeite",
+        "arbeitest",
+        "arbeitet"
+      ],
+      "instruction_de": "Wähle die richtige Verbform.",
+      "instruction_ru": "Выберите правильную форму глагола."
+    },
+    {
+      "id": "lesson1-special-arbeiten-03",
+      "topic_id": "lesson1_special_verbs",
+      "lemma": "arbeiten",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Er ___ heute.",
+      "answer": "arbeitet",
+      "options": [
+        "arbeiten",
+        "arbeitest",
+        "arbeitet"
+      ],
+      "instruction_de": "Wähle die richtige Verbform.",
+      "instruction_ru": "Выберите правильную форму глагола."
+    },
+    {
+      "id": "lesson1-special-arbeiten-04",
+      "topic_id": "lesson1_special_verbs",
+      "lemma": "arbeiten",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Ihr ___ zusammen.",
+      "answer": "arbeitet",
+      "options": [
+        "arbeiten",
+        "arbeitet",
+        "arbeitest"
+      ],
+      "instruction_de": "Wähle die richtige Verbform.",
+      "instruction_ru": "Выберите правильную форму глагола."
+    },
+    {
+      "id": "lesson1-special-reden-01",
+      "topic_id": "lesson1_special_verbs",
+      "lemma": "reden",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Ich ___ mit Anna.",
+      "answer": "rede",
+      "options": [
+        "rede",
+        "redest",
+        "redet"
+      ],
+      "instruction_de": "Wähle die richtige Verbform.",
+      "instruction_ru": "Выберите правильную форму глагола."
+    },
+    {
+      "id": "lesson1-special-reden-02",
+      "topic_id": "lesson1_special_verbs",
+      "lemma": "reden",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Mit wem ___ du?",
+      "answer": "redest",
+      "options": [
+        "rede",
+        "redest",
+        "redet"
+      ],
+      "instruction_de": "Wähle die richtige Verbform.",
+      "instruction_ru": "Выберите правильную форму глагола."
+    },
+    {
+      "id": "lesson1-special-reden-03",
+      "topic_id": "lesson1_special_verbs",
+      "lemma": "reden",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Sie ___ über den Kurs.",
+      "answer": "redet",
+      "options": [
+        "reden",
+        "redest",
+        "redet"
+      ],
+      "instruction_de": "Wähle die richtige Verbform.",
+      "instruction_ru": "Выберите правильную форму глагола."
+    },
+    {
+      "id": "lesson1-special-reden-04",
+      "topic_id": "lesson1_special_verbs",
+      "lemma": "reden",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Ihr ___ leise.",
+      "answer": "redet",
+      "options": [
+        "reden",
+        "redet",
+        "redest"
+      ],
+      "instruction_de": "Wähle die richtige Verbform.",
+      "instruction_ru": "Выберите правильную форму глагола."
+    },
+    {
+      "id": "lesson1-special-tanzen-01",
+      "topic_id": "lesson1_special_verbs",
+      "lemma": "tanzen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Ich ___ gern.",
+      "answer": "tanze",
+      "options": [
+        "tanze",
+        "tanzt",
+        "tanzen"
+      ],
+      "instruction_de": "Wähle die richtige Verbform.",
+      "instruction_ru": "Выберите правильную форму глагола."
+    },
+    {
+      "id": "lesson1-special-tanzen-02",
+      "topic_id": "lesson1_special_verbs",
+      "lemma": "tanzen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Du ___ sehr gut.",
+      "answer": "tanzt",
+      "options": [
+        "tanze",
+        "tanzt",
+        "tanzen"
+      ],
+      "instruction_de": "Wähle die richtige Verbform.",
+      "instruction_ru": "Выберите правильную форму глагола."
+    },
+    {
+      "id": "lesson1-special-tanzen-03",
+      "topic_id": "lesson1_special_verbs",
+      "lemma": "tanzen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Er ___ heute.",
+      "answer": "tanzt",
+      "options": [
+        "tanze",
+        "tanzt",
+        "tanzen"
+      ],
+      "instruction_de": "Wähle die richtige Verbform.",
+      "instruction_ru": "Выберите правильную форму глагола."
+    },
+    {
+      "id": "lesson1-special-tanzen-04",
+      "topic_id": "lesson1_special_verbs",
+      "lemma": "tanzen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Wir ___ zusammen.",
+      "answer": "tanzen",
+      "options": [
+        "tanze",
+        "tanzt",
+        "tanzen"
+      ],
+      "instruction_de": "Wähle die richtige Verbform.",
+      "instruction_ru": "Выберите правильную форму глагола."
+    },
+    {
+      "id": "lesson1-special-frage-01",
+      "topic_id": "lesson1_special_verbs",
+      "lemma": "heißen",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "Frage mit du: Name",
+      "answer": "Wie heißt du?",
+      "options": [
+        "Wie",
+        "heißt",
+        "du?"
+      ],
+      "instruction_de": "Bilde eine W-Frage.",
+      "instruction_ru": "Составьте вопрос с вопросительным словом."
+    },
+    {
+      "id": "lesson1-special-frage-02",
+      "topic_id": "lesson1_special_verbs",
+      "lemma": "heißen",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "Höfliche Frage: Name",
+      "answer": "Wie heißen Sie?",
+      "options": [
+        "Wie",
+        "heißen",
+        "Sie?"
+      ],
+      "instruction_de": "Bilde eine W-Frage.",
+      "instruction_ru": "Составьте вопрос с вопросительным словом."
+    },
+    {
+      "id": "lesson1-special-frage-03",
+      "topic_id": "lesson1_special_verbs",
+      "lemma": "sprechen",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "Frage mit du: Sprache",
+      "answer": "Was sprichst du?",
+      "options": [
+        "Was",
+        "sprichst",
+        "du?"
+      ],
+      "instruction_de": "Bilde eine W-Frage.",
+      "instruction_ru": "Составьте вопрос с вопросительным словом."
+    },
+    {
+      "id": "lesson1-special-frage-04",
+      "topic_id": "lesson1_special_verbs",
+      "lemma": "sprechen",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "Höfliche Frage: Sprache",
+      "answer": "Was sprechen Sie?",
+      "options": [
+        "Was",
+        "sprechen",
+        "Sie?"
+      ],
+      "instruction_de": "Bilde eine W-Frage.",
+      "instruction_ru": "Составьте вопрос с вопросительным словом."
+    },
+    {
+      "id": "lesson1-special-doch-01",
+      "topic_id": "yes_no_questions",
+      "lemma": "doch",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Lernst du nicht Deutsch? — ___!",
+      "answer": "Doch",
+      "options": [
+        "Doch",
+        "Nein",
+        "Ja"
+      ],
+      "instruction_de": "Wähle die passende Antwort auf die negative Frage.",
+      "instruction_ru": "Выберите подходящий ответ на отрицательный вопрос."
+    },
+    {
+      "id": "lesson1-special-doch-02",
+      "topic_id": "yes_no_questions",
+      "lemma": "doch",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Arbeitet er heute nicht? — ___!",
+      "answer": "Doch",
+      "options": [
+        "Doch",
+        "Nein",
+        "Ja"
+      ],
+      "instruction_de": "Wähle die passende Antwort auf die negative Frage.",
+      "instruction_ru": "Выберите подходящий ответ на отрицательный вопрос."
+    },
+    {
+      "id": "lesson1-special-doch-03",
+      "topic_id": "yes_no_questions",
+      "lemma": "doch",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Kommen Sie nicht aus Berlin? — ___!",
+      "answer": "Doch",
+      "options": [
+        "Doch",
+        "Nein",
+        "Ja"
+      ],
+      "instruction_de": "Wähle die passende Antwort auf die negative Frage.",
+      "instruction_ru": "Выберите подходящий ответ на отрицательный вопрос."
+    },
+    {
+      "id": "lesson1-special-doch-04",
+      "topic_id": "yes_no_questions",
+      "lemma": "doch",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Sprichst du kein Englisch? — ___!",
+      "answer": "Doch",
+      "options": [
+        "Doch",
+        "Nein",
+        "Ja"
+      ],
+      "instruction_de": "Wähle die passende Antwort auf die negative Frage.",
+      "instruction_ru": "Выберите подходящий ответ на отрицательный вопрос."
+    },
+    {
       "id": "verb-basics-lernen",
       "topic_id": "verb_basics",
       "lemma": "lernen",
@@ -8234,7 +8746,7 @@
       "lemma": "lernen",
       "required_item_type": "verb",
       "type": "yes_no",
-      "prompt": "Lara lernt heute. Lernt Lara heute?",
+      "prompt": "Lara lernt Deutsch. Lernt Lara Deutsch.",
       "answer": "Ja",
       "options": [
         "Ja",
@@ -8249,7 +8761,7 @@
       "lemma": "lernen",
       "required_item_type": "verb",
       "type": "yes_no",
-      "prompt": "Lara lernt heute. Lernt Lara morgen?",
+      "prompt": "Lara lernt Deutsch. Lernt Anna Deutsch.",
       "answer": "Nein",
       "options": [
         "Ja",
@@ -8372,7 +8884,7 @@
       "lemma": "machen",
       "required_item_type": "verb",
       "type": "yes_no",
-      "prompt": "Lara macht heute. Macht Lara heute?",
+      "prompt": "Lara macht die Hausaufgaben. Macht Lara die Hausaufgaben.",
       "answer": "Ja",
       "options": [
         "Ja",
@@ -8387,7 +8899,7 @@
       "lemma": "machen",
       "required_item_type": "verb",
       "type": "yes_no",
-      "prompt": "Lara macht heute. Macht Lara morgen?",
+      "prompt": "Lara macht die Hausaufgaben. Macht Anna die Hausaufgaben.",
       "answer": "Nein",
       "options": [
         "Ja",
@@ -8510,7 +9022,7 @@
       "lemma": "wohnen",
       "required_item_type": "verb",
       "type": "yes_no",
-      "prompt": "Lara wohnt heute. Wohnt Lara heute?",
+      "prompt": "Lara wohnt in Berlin. Wohnt Lara in Berlin.",
       "answer": "Ja",
       "options": [
         "Ja",
@@ -8525,7 +9037,7 @@
       "lemma": "wohnen",
       "required_item_type": "verb",
       "type": "yes_no",
-      "prompt": "Lara wohnt heute. Wohnt Lara morgen?",
+      "prompt": "Lara wohnt in Berlin. Wohnt Anna in Berlin.",
       "answer": "Nein",
       "options": [
         "Ja",
@@ -8648,7 +9160,7 @@
       "lemma": "kommen",
       "required_item_type": "verb",
       "type": "yes_no",
-      "prompt": "Lara kommt heute. Kommt Lara heute?",
+      "prompt": "Lara kommt aus Polen. Kommt Lara aus Polen.",
       "answer": "Ja",
       "options": [
         "Ja",
@@ -8663,7 +9175,7 @@
       "lemma": "kommen",
       "required_item_type": "verb",
       "type": "yes_no",
-      "prompt": "Lara kommt heute. Kommt Lara morgen?",
+      "prompt": "Lara kommt aus Polen. Kommt Anna aus Polen.",
       "answer": "Nein",
       "options": [
         "Ja",
@@ -8786,7 +9298,7 @@
       "lemma": "leben",
       "required_item_type": "verb",
       "type": "yes_no",
-      "prompt": "Lara lebt heute. Lebt Lara heute?",
+      "prompt": "Lara lebt in Deutschland. Lebt Lara in Deutschland.",
       "answer": "Ja",
       "options": [
         "Ja",
@@ -8801,7 +9313,7 @@
       "lemma": "leben",
       "required_item_type": "verb",
       "type": "yes_no",
-      "prompt": "Lara lebt heute. Lebt Lara morgen?",
+      "prompt": "Lara lebt in Deutschland. Lebt Anna in Deutschland.",
       "answer": "Nein",
       "options": [
         "Ja",
@@ -8924,7 +9436,7 @@
       "lemma": "kaufen",
       "required_item_type": "verb",
       "type": "yes_no",
-      "prompt": "Lara kauft heute. Kauft Lara heute?",
+      "prompt": "Lara kauft frisches Brot. Kauft Lara frisches Brot.",
       "answer": "Ja",
       "options": [
         "Ja",
@@ -8939,7 +9451,7 @@
       "lemma": "kaufen",
       "required_item_type": "verb",
       "type": "yes_no",
-      "prompt": "Lara kauft heute. Kauft Lara morgen?",
+      "prompt": "Lara kauft frisches Brot. Kauft Anna frisches Brot.",
       "answer": "Nein",
       "options": [
         "Ja",
@@ -9062,7 +9574,7 @@
       "lemma": "spielen",
       "required_item_type": "verb",
       "type": "yes_no",
-      "prompt": "Lara spielt heute. Spielt Lara heute?",
+      "prompt": "Lara spielt gern Fußball. Spielt Lara gern Fußball.",
       "answer": "Ja",
       "options": [
         "Ja",
@@ -9077,7 +9589,7 @@
       "lemma": "spielen",
       "required_item_type": "verb",
       "type": "yes_no",
-      "prompt": "Lara spielt heute. Spielt Lara morgen?",
+      "prompt": "Lara spielt gern Fußball. Spielt Anna gern Fußball.",
       "answer": "Nein",
       "options": [
         "Ja",
@@ -9200,7 +9712,7 @@
       "lemma": "hören",
       "required_item_type": "verb",
       "type": "yes_no",
-      "prompt": "Lara hört heute. Hört Lara heute?",
+      "prompt": "Lara hört gern Musik. Hört Lara gern Musik.",
       "answer": "Ja",
       "options": [
         "Ja",
@@ -9215,7 +9727,7 @@
       "lemma": "hören",
       "required_item_type": "verb",
       "type": "yes_no",
-      "prompt": "Lara hört heute. Hört Lara morgen?",
+      "prompt": "Lara hört gern Musik. Hört Anna gern Musik.",
       "answer": "Nein",
       "options": [
         "Ja",
@@ -9338,7 +9850,7 @@
       "lemma": "fragen",
       "required_item_type": "verb",
       "type": "yes_no",
-      "prompt": "Lara fragt heute. Fragt Lara heute?",
+      "prompt": "Lara fragt den Lehrer. Fragt Lara den Lehrer.",
       "answer": "Ja",
       "options": [
         "Ja",
@@ -9353,7 +9865,7 @@
       "lemma": "fragen",
       "required_item_type": "verb",
       "type": "yes_no",
-      "prompt": "Lara fragt heute. Fragt Lara morgen?",
+      "prompt": "Lara fragt den Lehrer. Fragt Anna den Lehrer.",
       "answer": "Nein",
       "options": [
         "Ja",
@@ -9476,7 +9988,7 @@
       "lemma": "sagen",
       "required_item_type": "verb",
       "type": "yes_no",
-      "prompt": "Lara sagt heute. Sagt Lara heute?",
+      "prompt": "Lara sagt den Namen. Sagt Lara den Namen.",
       "answer": "Ja",
       "options": [
         "Ja",
@@ -9491,7 +10003,7 @@
       "lemma": "sagen",
       "required_item_type": "verb",
       "type": "yes_no",
-      "prompt": "Lara sagt heute. Sagt Lara morgen?",
+      "prompt": "Lara sagt den Namen. Sagt Anna den Namen.",
       "answer": "Nein",
       "options": [
         "Ja",
@@ -9615,7 +10127,7 @@
       "lemma": "glauben",
       "required_item_type": "verb",
       "type": "yes_no",
-      "prompt": "Lara glaubt heute. Glaubt Lara heute?",
+      "prompt": "Lara glaubt an den Erfolg. Glaubt Lara an den Erfolg.",
       "answer": "Ja",
       "options": [
         "Ja",
@@ -9630,7 +10142,7 @@
       "lemma": "glauben",
       "required_item_type": "verb",
       "type": "yes_no",
-      "prompt": "Lara glaubt heute. Glaubt Lara morgen?",
+      "prompt": "Lara glaubt an den Erfolg. Glaubt Anna an den Erfolg.",
       "answer": "Nein",
       "options": [
         "Ja",
@@ -9753,7 +10265,7 @@
       "lemma": "brauchen",
       "required_item_type": "verb",
       "type": "yes_no",
-      "prompt": "Lara braucht heute. Braucht Lara heute?",
+      "prompt": "Lara braucht mehr Zeit. Braucht Lara mehr Zeit.",
       "answer": "Ja",
       "options": [
         "Ja",
@@ -9768,7 +10280,7 @@
       "lemma": "brauchen",
       "required_item_type": "verb",
       "type": "yes_no",
-      "prompt": "Lara braucht heute. Braucht Lara morgen?",
+      "prompt": "Lara braucht mehr Zeit. Braucht Anna mehr Zeit.",
       "answer": "Nein",
       "options": [
         "Ja",
@@ -9891,7 +10403,7 @@
       "lemma": "kochen",
       "required_item_type": "verb",
       "type": "yes_no",
-      "prompt": "Lara kocht heute. Kocht Lara heute?",
+      "prompt": "Lara kocht heute Suppe. Kocht Lara heute Suppe.",
       "answer": "Ja",
       "options": [
         "Ja",
@@ -9906,7 +10418,7 @@
       "lemma": "kochen",
       "required_item_type": "verb",
       "type": "yes_no",
-      "prompt": "Lara kocht heute. Kocht Lara morgen?",
+      "prompt": "Lara kocht heute Suppe. Kocht Anna heute Suppe.",
       "answer": "Nein",
       "options": [
         "Ja",
@@ -10029,7 +10541,7 @@
       "lemma": "grillen",
       "required_item_type": "verb",
       "type": "yes_no",
-      "prompt": "Lara grillt heute. Grillt Lara heute?",
+      "prompt": "Lara grillt im Garten. Grillt Lara im Garten.",
       "answer": "Ja",
       "options": [
         "Ja",
@@ -10044,7 +10556,7 @@
       "lemma": "grillen",
       "required_item_type": "verb",
       "type": "yes_no",
-      "prompt": "Lara grillt heute. Grillt Lara morgen?",
+      "prompt": "Lara grillt im Garten. Grillt Anna im Garten.",
       "answer": "Nein",
       "options": [
         "Ja",
@@ -10168,7 +10680,7 @@
       "lemma": "frühstücken",
       "required_item_type": "verb",
       "type": "yes_no",
-      "prompt": "Lara frühstückt heute. Frühstückt Lara heute?",
+      "prompt": "Lara frühstückt um sieben Uhr. Frühstückt Lara um sieben Uhr.",
       "answer": "Ja",
       "options": [
         "Ja",
@@ -10183,7 +10695,7 @@
       "lemma": "frühstücken",
       "required_item_type": "verb",
       "type": "yes_no",
-      "prompt": "Lara frühstückt heute. Frühstückt Lara morgen?",
+      "prompt": "Lara frühstückt um sieben Uhr. Frühstückt Anna um sieben Uhr.",
       "answer": "Nein",
       "options": [
         "Ja",
@@ -10306,7 +10818,7 @@
       "lemma": "fotografieren",
       "required_item_type": "verb",
       "type": "yes_no",
-      "prompt": "Lara fotografiert heute. Fotografiert Lara heute?",
+      "prompt": "Lara fotografiert die Familie. Fotografiert Lara die Familie.",
       "answer": "Ja",
       "options": [
         "Ja",
@@ -10321,7 +10833,7 @@
       "lemma": "fotografieren",
       "required_item_type": "verb",
       "type": "yes_no",
-      "prompt": "Lara fotografiert heute. Fotografiert Lara morgen?",
+      "prompt": "Lara fotografiert die Familie. Fotografiert Anna die Familie.",
       "answer": "Nein",
       "options": [
         "Ja",
@@ -10445,7 +10957,7 @@
       "lemma": "telefonieren",
       "required_item_type": "verb",
       "type": "yes_no",
-      "prompt": "Lara telefoniert heute. Telefoniert Lara heute?",
+      "prompt": "Lara telefoniert mit der Familie. Telefoniert Lara mit der Familie.",
       "answer": "Ja",
       "options": [
         "Ja",
@@ -10460,7 +10972,7 @@
       "lemma": "telefonieren",
       "required_item_type": "verb",
       "type": "yes_no",
-      "prompt": "Lara telefoniert heute. Telefoniert Lara morgen?",
+      "prompt": "Lara telefoniert mit der Familie. Telefoniert Anna mit der Familie.",
       "answer": "Nein",
       "options": [
         "Ja",
@@ -10583,7 +11095,7 @@
       "lemma": "studieren",
       "required_item_type": "verb",
       "type": "yes_no",
-      "prompt": "Lara studiert heute. Studiert Lara heute?",
+      "prompt": "Lara studiert in Berlin. Studiert Lara in Berlin.",
       "answer": "Ja",
       "options": [
         "Ja",
@@ -10598,7 +11110,7 @@
       "lemma": "studieren",
       "required_item_type": "verb",
       "type": "yes_no",
-      "prompt": "Lara studiert heute. Studiert Lara morgen?",
+      "prompt": "Lara studiert in Berlin. Studiert Anna in Berlin.",
       "answer": "Nein",
       "options": [
         "Ja",
@@ -10721,7 +11233,7 @@
       "lemma": "suchen",
       "required_item_type": "verb",
       "type": "yes_no",
-      "prompt": "Lara sucht heute. Sucht Lara heute?",
+      "prompt": "Lara sucht den Schlüssel. Sucht Lara den Schlüssel.",
       "answer": "Ja",
       "options": [
         "Ja",
@@ -10736,7 +11248,7 @@
       "lemma": "suchen",
       "required_item_type": "verb",
       "type": "yes_no",
-      "prompt": "Lara sucht heute. Sucht Lara morgen?",
+      "prompt": "Lara sucht den Schlüssel. Sucht Anna den Schlüssel.",
       "answer": "Nein",
       "options": [
         "Ja",
@@ -10859,7 +11371,7 @@
       "lemma": "besuchen",
       "required_item_type": "verb",
       "type": "yes_no",
-      "prompt": "Lara besucht heute. Besucht Lara heute?",
+      "prompt": "Lara besucht die Familie. Besucht Lara die Familie.",
       "answer": "Ja",
       "options": [
         "Ja",
@@ -10874,7 +11386,7 @@
       "lemma": "besuchen",
       "required_item_type": "verb",
       "type": "yes_no",
-      "prompt": "Lara besucht heute. Besucht Lara morgen?",
+      "prompt": "Lara besucht die Familie. Besucht Anna die Familie.",
       "answer": "Nein",
       "options": [
         "Ja",
@@ -10997,7 +11509,7 @@
       "lemma": "lieben",
       "required_item_type": "verb",
       "type": "yes_no",
-      "prompt": "Lara liebt heute. Liebt Lara heute?",
+      "prompt": "Lara liebt gute Musik. Liebt Lara gute Musik.",
       "answer": "Ja",
       "options": [
         "Ja",
@@ -11012,7 +11524,7 @@
       "lemma": "lieben",
       "required_item_type": "verb",
       "type": "yes_no",
-      "prompt": "Lara liebt heute. Liebt Lara morgen?",
+      "prompt": "Lara liebt gute Musik. Liebt Anna gute Musik.",
       "answer": "Nein",
       "options": [
         "Ja",
@@ -11135,7 +11647,7 @@
       "lemma": "zeigen",
       "required_item_type": "verb",
       "type": "yes_no",
-      "prompt": "Lara zeigt heute. Zeigt Lara heute?",
+      "prompt": "Lara zeigt den Weg. Zeigt Lara den Weg.",
       "answer": "Ja",
       "options": [
         "Ja",
@@ -11150,7 +11662,7 @@
       "lemma": "zeigen",
       "required_item_type": "verb",
       "type": "yes_no",
-      "prompt": "Lara zeigt heute. Zeigt Lara morgen?",
+      "prompt": "Lara zeigt den Weg. Zeigt Anna den Weg.",
       "answer": "Nein",
       "options": [
         "Ja",
@@ -11273,7 +11785,7 @@
       "lemma": "erklären",
       "required_item_type": "verb",
       "type": "yes_no",
-      "prompt": "Lara erklärt heute. Erklärt Lara heute?",
+      "prompt": "Lara erklärt die Aufgabe. Erklärt Lara die Aufgabe.",
       "answer": "Ja",
       "options": [
         "Ja",
@@ -11288,7 +11800,7 @@
       "lemma": "erklären",
       "required_item_type": "verb",
       "type": "yes_no",
-      "prompt": "Lara erklärt heute. Erklärt Lara morgen?",
+      "prompt": "Lara erklärt die Aufgabe. Erklärt Anna die Aufgabe.",
       "answer": "Nein",
       "options": [
         "Ja",
@@ -11412,7 +11924,7 @@
       "lemma": "üben",
       "required_item_type": "verb",
       "type": "yes_no",
-      "prompt": "Lara übt heute. Übt Lara heute?",
+      "prompt": "Lara übt jeden Tag Deutsch. Übt Lara jeden Tag Deutsch.",
       "answer": "Ja",
       "options": [
         "Ja",
@@ -11427,7 +11939,7 @@
       "lemma": "üben",
       "required_item_type": "verb",
       "type": "yes_no",
-      "prompt": "Lara übt heute. Übt Lara morgen?",
+      "prompt": "Lara übt jeden Tag Deutsch. Übt Anna jeden Tag Deutsch.",
       "answer": "Nein",
       "options": [
         "Ja",
@@ -11550,7 +12062,7 @@
       "lemma": "bezahlen",
       "required_item_type": "verb",
       "type": "yes_no",
-      "prompt": "Lara bezahlt heute. Bezahlt Lara heute?",
+      "prompt": "Lara bezahlt die Rechnung. Bezahlt Lara die Rechnung.",
       "answer": "Ja",
       "options": [
         "Ja",
@@ -11565,7 +12077,7 @@
       "lemma": "bezahlen",
       "required_item_type": "verb",
       "type": "yes_no",
-      "prompt": "Lara bezahlt heute. Bezahlt Lara morgen?",
+      "prompt": "Lara bezahlt die Rechnung. Bezahlt Anna die Rechnung.",
       "answer": "Nein",
       "options": [
         "Ja",
@@ -14830,256 +15342,1352 @@
       "instruction_ru": "Здесь отрицается действие."
     },
     {
-      "id": "reading-vowels-01", "topic_id": "reading_vowels", "lemma": "reading", "required_item_type": "none", "type": "choice", "prompt": "Liebe: ie = ?", "answer": "[iː]", "options": ["[iː]", "[ɪ]", "[aɪ̯]"], "instruction_de": "Wähle den Laut der markierten Buchstabengruppe.", "instruction_ru": "Выберите звук выделенного буквосочетания."
-    },
-    {
-      "id": "reading-vowels-02", "topic_id": "reading_vowels", "lemma": "reading", "required_item_type": "none", "type": "choice", "prompt": "mein: ei = ?", "answer": "[aɪ̯]", "options": ["[aɪ̯]", "[iː]", "[ɔɪ̯]"], "instruction_de": "Wähle den richtigen Doppellaut.", "instruction_ru": "Выберите правильный дифтонг."
-    },
-    {
-      "id": "reading-vowels-03", "topic_id": "reading_vowels", "lemma": "reading", "required_item_type": "none", "type": "choice", "prompt": "neu: eu = ?", "answer": "[ɔɪ̯]", "options": ["[ɔɪ̯]", "[aɪ̯]", "[uː]"], "instruction_de": "Wähle den richtigen Doppellaut.", "instruction_ru": "Выберите правильный дифтонг."
-    },
-    {
-      "id": "reading-vowels-04", "topic_id": "reading_vowels", "lemma": "reading", "required_item_type": "none", "type": "choice", "prompt": "Häuser: äu = ?", "answer": "[ɔɪ̯]", "options": ["[ɔɪ̯]", "[ɛː]", "[aʊ̯]"], "instruction_de": "Wähle den richtigen Doppellaut.", "instruction_ru": "Выберите правильный дифтонг."
-    },
-    {
-      "id": "reading-vowels-05", "topic_id": "reading_vowels", "lemma": "reading", "required_item_type": "none", "type": "choice", "prompt": "schön: ö = ?", "answer": "[øː]", "options": ["[øː]", "[oː]", "[œ]"], "instruction_de": "Der Vokal ist lang. Wähle den Laut.", "instruction_ru": "Гласный долгий. Выберите звук."
-    },
-    {
-      "id": "reading-vowels-06", "topic_id": "reading_vowels", "lemma": "reading", "required_item_type": "none", "type": "choice", "prompt": "Tür: ü = ?", "answer": "[yː]", "options": ["[yː]", "[uː]", "[ʏ]"], "instruction_de": "Der Vokal ist lang. Wähle den Laut.", "instruction_ru": "Гласный долгий. Выберите звук."
-    },
-    {
-      "id": "reading-vowels-07", "topic_id": "reading_vowels", "lemma": "reading", "required_item_type": "none", "type": "choice", "prompt": "Mann: a = ?", "answer": "[a]", "options": ["[a]", "[aː]", "[ə]"], "instruction_de": "Zwei Konsonanten zeigen einen kurzen Vokal.", "instruction_ru": "Две согласные указывают на краткий гласный."
-    },
-    {
-      "id": "reading-vowels-08", "topic_id": "reading_vowels", "lemma": "reading", "required_item_type": "none", "type": "choice", "prompt": "Name: a = ?", "answer": "[aː]", "options": ["[aː]", "[a]", "[ɛː]"], "instruction_de": "Wähle die Länge des Vokals.", "instruction_ru": "Выберите долготу гласного."
-    },
-    {
-      "id": "reading-vowels-09", "topic_id": "reading_vowels", "lemma": "reading", "required_item_type": "none", "type": "choice", "prompt": "Boot: oo = ?", "answer": "[oː]", "options": ["[oː]", "[ɔ]", "[uː]"], "instruction_de": "Ein Doppelvokal ist meistens lang.", "instruction_ru": "Удвоенная гласная обычно долгая."
-    },
-    {
-      "id": "reading-vowels-10", "topic_id": "reading_vowels", "lemma": "reading", "required_item_type": "none", "type": "choice", "prompt": "Zahl: ah = ?", "answer": "[aː]", "options": ["[aː]", "[a]", "[ha]"], "instruction_de": "Das Dehnungs-h wird nicht gesprochen.", "instruction_ru": "Буква h указывает на долготу и не произносится."
-    },
-    {
-      "id": "reading-vowels-11", "topic_id": "reading_vowels", "lemma": "reading", "required_item_type": "none", "type": "choice", "prompt": "kommen: o = ?", "answer": "[ɔ]", "options": ["[ɔ]", "[oː]", "[œ]"], "instruction_de": "Zwei Konsonanten zeigen einen kurzen Vokal.", "instruction_ru": "Две согласные указывают на краткий гласный."
-    },
-    {
-      "id": "reading-vowels-12", "topic_id": "reading_vowels", "lemma": "reading", "required_item_type": "none", "type": "choice", "prompt": "bitte: unbetontes e = ?", "answer": "[ə]", "options": ["[ə]", "[eː]", "[ɛ]"], "instruction_de": "Wähle den Laut der unbetonten Endung.", "instruction_ru": "Выберите звук безударного окончания."
-    },
-    {
-      "id": "reading-vowels-13", "topic_id": "reading_vowels", "lemma": "reading", "required_item_type": "none", "type": "choice", "prompt": "Lehrer: -er = ?", "answer": "[ɐ]", "options": ["[ɐ]", "[eːɐ̯]", "[ɛʁ]"], "instruction_de": "Wähle die häufige Standardaussprache der Endung.", "instruction_ru": "Выберите частое стандартное произношение окончания."
-    },
-    {
-      "id": "reading-vowels-14", "topic_id": "reading_vowels", "lemma": "reading", "required_item_type": "none", "type": "choice", "prompt": "sehen: eh = ?", "answer": "[eː]", "options": ["[eː]", "[ɛ]", "[ə]"], "instruction_de": "Das Dehnungs-h macht den Vokal lang.", "instruction_ru": "h указывает на долгий гласный."
-    },
-    {
-      "id": "reading-vowels-15", "topic_id": "reading_vowels", "lemma": "reading", "required_item_type": "none", "type": "choice", "prompt": "Kind: i = ?", "answer": "[ɪ]", "options": ["[ɪ]", "[iː]", "[yː]"], "instruction_de": "Vor mehreren Konsonanten ist der Vokal meist kurz.", "instruction_ru": "Перед несколькими согласными гласный обычно краткий."
-    },
-    {
-      "id": "reading-vowels-16", "topic_id": "reading_vowels", "lemma": "reading", "required_item_type": "none", "type": "choice", "prompt": "müssen: ü = ?", "answer": "[ʏ]", "options": ["[ʏ]", "[yː]", "[u]"], "instruction_de": "Wähle den kurzen Umlaut.", "instruction_ru": "Выберите краткий умлаут."
-    },
-    {
-      "id": "reading-vowels-17", "topic_id": "reading_vowels", "lemma": "reading", "required_item_type": "none", "type": "choice", "prompt": "Öl: Ö = ?", "answer": "[øː]", "options": ["[øː]", "[œ]", "[oː]"], "instruction_de": "Wähle den langen Umlaut.", "instruction_ru": "Выберите долгий умлаут."
-    },
-    {
-      "id": "reading-vowels-18", "topic_id": "reading_vowels", "lemma": "reading", "required_item_type": "none", "type": "choice", "prompt": "Äpfel: Ä = ?", "answer": "[ɛ]", "options": ["[ɛ]", "[ɛː]", "[a]"], "instruction_de": "Wähle den kurzen Umlaut.", "instruction_ru": "Выберите краткий умлаут."
-    },
-    {
-      "id": "reading-vowels-19", "topic_id": "reading_vowels", "lemma": "reading", "required_item_type": "none", "type": "choice", "prompt": "Meer: ee = ?", "answer": "[eː]", "options": ["[eː]", "[ɛ]", "[iː]"], "instruction_de": "Ein Doppelvokal ist meistens lang.", "instruction_ru": "Удвоенная гласная обычно долгая."
-    },
-    {
-      "id": "reading-vowels-20", "topic_id": "reading_vowels", "lemma": "reading", "required_item_type": "none", "type": "choice", "prompt": "Mai: ai = ?", "answer": "[aɪ̯]", "options": ["[aɪ̯]", "[ɔɪ̯]", "[iː]"], "instruction_de": "ai klingt wie ei.", "instruction_ru": "ai читается так же, как ei."
-    },
-    {
-      "id": "reading-consonants-01", "topic_id": "reading_consonants", "lemma": "reading", "required_item_type": "none", "type": "choice", "prompt": "Schule: sch = ?", "answer": "[ʃ]", "options": ["[ʃ]", "[s]", "[ç]"], "instruction_de": "Wähle den Laut der Buchstabengruppe.", "instruction_ru": "Выберите звук буквосочетания."
-    },
-    {
-      "id": "reading-consonants-02", "topic_id": "reading_consonants", "lemma": "reading", "required_item_type": "none", "type": "choice", "prompt": "spielen: sp- = ?", "answer": "[ʃp]", "options": ["[ʃp]", "[sp]", "[ʃt]"], "instruction_de": "Beachte die Aussprache am Wortanfang.", "instruction_ru": "Учтите произношение в начале слова."
-    },
-    {
-      "id": "reading-consonants-03", "topic_id": "reading_consonants", "lemma": "reading", "required_item_type": "none", "type": "choice", "prompt": "Straße: st- = ?", "answer": "[ʃt]", "options": ["[ʃt]", "[st]", "[ts]"], "instruction_de": "Beachte die Aussprache am Wortanfang.", "instruction_ru": "Учтите произношение в начале слова."
-    },
-    {
-      "id": "reading-consonants-04", "topic_id": "reading_consonants", "lemma": "reading", "required_item_type": "none", "type": "choice", "prompt": "Bach: ch = ?", "answer": "[x]", "options": ["[x]", "[ç]", "[k]"], "instruction_de": "Nach a steht meist der ach-Laut.", "instruction_ru": "После a обычно произносится твёрдый звук ch."
-    },
-    {
-      "id": "reading-consonants-05", "topic_id": "reading_consonants", "lemma": "reading", "required_item_type": "none", "type": "choice", "prompt": "ich: ch = ?", "answer": "[ç]", "options": ["[ç]", "[x]", "[ʃ]"], "instruction_de": "Nach i steht meist der ich-Laut.", "instruction_ru": "После i обычно произносится мягкий звук ch."
-    },
-    {
-      "id": "reading-consonants-06", "topic_id": "reading_consonants", "lemma": "reading", "required_item_type": "none", "type": "choice", "prompt": "Bücher: ch = ?", "answer": "[ç]", "options": ["[ç]", "[x]", "[k]"], "instruction_de": "Nach ü steht meist der ich-Laut.", "instruction_ru": "После ü обычно произносится мягкий звук ch."
-    },
-    {
-      "id": "reading-consonants-07", "topic_id": "reading_consonants", "lemma": "reading", "required_item_type": "none", "type": "choice", "prompt": "Zeit: Z = ?", "answer": "[ts]", "options": ["[ts]", "[z]", "[s]"], "instruction_de": "z bezeichnet im Deutschen zwei Laute zusammen.", "instruction_ru": "Немецкая z обозначает сочетание двух звуков."
-    },
-    {
-      "id": "reading-consonants-08", "topic_id": "reading_consonants", "lemma": "reading", "required_item_type": "none", "type": "choice", "prompt": "sitzen: tz = ?", "answer": "[ts]", "options": ["[ts]", "[tz]", "[s]"], "instruction_de": "tz klingt wie z.", "instruction_ru": "tz читается так же, как z."
-    },
-    {
-      "id": "reading-consonants-09", "topic_id": "reading_consonants", "lemma": "reading", "required_item_type": "none", "type": "choice", "prompt": "Wasser: W = ?", "answer": "[v]", "options": ["[v]", "[w]", "[f]"], "instruction_de": "Wähle den deutschen Laut für w.", "instruction_ru": "Выберите немецкий звук для w."
-    },
-    {
-      "id": "reading-consonants-10", "topic_id": "reading_consonants", "lemma": "reading", "required_item_type": "none", "type": "choice", "prompt": "ja: j = ?", "answer": "[j]", "options": ["[j]", "[dʒ]", "[ʒ]"], "instruction_de": "Wähle den deutschen Laut für j.", "instruction_ru": "Выберите немецкий звук для j."
-    },
-    {
-      "id": "reading-consonants-11", "topic_id": "reading_consonants", "lemma": "reading", "required_item_type": "none", "type": "choice", "prompt": "Vater: V = ?", "answer": "[f]", "options": ["[f]", "[v]", "[w]"], "instruction_de": "In diesem deutschen Wort klingt v wie f.", "instruction_ru": "В этом немецком слове v читается как f."
-    },
-    {
-      "id": "reading-consonants-12", "topic_id": "reading_consonants", "lemma": "reading", "required_item_type": "none", "type": "choice", "prompt": "Vase: V = ?", "answer": "[v]", "options": ["[v]", "[f]", "[b]"], "instruction_de": "Im Fremdwort klingt v wie w.", "instruction_ru": "В заимствованном слове v читается как немецкая w."
-    },
-    {
-      "id": "reading-consonants-13", "topic_id": "reading_consonants", "lemma": "reading", "required_item_type": "none", "type": "choice", "prompt": "Quelle: qu = ?", "answer": "[kv]", "options": ["[kv]", "[k]", "[kw]"], "instruction_de": "Wähle die deutsche Aussprache von qu.", "instruction_ru": "Выберите немецкое произношение qu."
-    },
-    {
-      "id": "reading-consonants-14", "topic_id": "reading_consonants", "lemma": "reading", "required_item_type": "none", "type": "choice", "prompt": "singen: ng = ?", "answer": "[ŋ]", "options": ["[ŋ]", "[nɡ]", "[ɲ]"], "instruction_de": "Das g wird nicht einzeln gesprochen.", "instruction_ru": "Отдельный звук g не произносится."
-    },
-    {
-      "id": "reading-consonants-15", "topic_id": "reading_consonants", "lemma": "reading", "required_item_type": "none", "type": "choice", "prompt": "trinken: nk = ?", "answer": "[ŋk]", "options": ["[ŋk]", "[nk]", "[nɡ]"], "instruction_de": "Wähle die Lautgruppe für nk.", "instruction_ru": "Выберите сочетание звуков для nk."
-    },
-    {
-      "id": "reading-consonants-16", "topic_id": "reading_consonants", "lemma": "reading", "required_item_type": "none", "type": "choice", "prompt": "lieb: b am Ende = ?", "answer": "[p]", "options": ["[p]", "[b]", "[f]"], "instruction_de": "Beachte die Auslautverhärtung.", "instruction_ru": "Учтите оглушение согласной в конце."
-    },
-    {
-      "id": "reading-consonants-17", "topic_id": "reading_consonants", "lemma": "reading", "required_item_type": "none", "type": "choice", "prompt": "Hund: d am Ende = ?", "answer": "[t]", "options": ["[t]", "[d]", "[θ]"], "instruction_de": "Beachte die Auslautverhärtung.", "instruction_ru": "Учтите оглушение согласной в конце."
-    },
-    {
-      "id": "reading-consonants-18", "topic_id": "reading_consonants", "lemma": "reading", "required_item_type": "none", "type": "choice", "prompt": "Tag: g am Ende = ?", "answer": "[k]", "options": ["[k]", "[ɡ]", "[ç]"], "instruction_de": "Beachte die Auslautverhärtung.", "instruction_ru": "Учтите оглушение согласной в конце."
-    },
-    {
-      "id": "reading-consonants-19", "topic_id": "reading_consonants", "lemma": "reading", "required_item_type": "none", "type": "choice", "prompt": "Kasse: ss = ?", "answer": "[s]", "options": ["[s]", "[z]", "[ʃ]"], "instruction_de": "ss wird stimmlos gesprochen.", "instruction_ru": "ss произносится как глухой звук."
-    },
-    {
-      "id": "reading-consonants-20", "topic_id": "reading_consonants", "lemma": "reading", "required_item_type": "none", "type": "choice", "prompt": "Straße: ß = ?", "answer": "[s]", "options": ["[s]", "[z]", "[ts]"], "instruction_de": "ß wird stimmlos gesprochen.", "instruction_ru": "ß произносится как глухой звук."
-    },
-    {
-      "id": "reading-stress-01", "topic_id": "reading_stress", "lemma": "reading", "required_item_type": "none", "type": "choice", "prompt": "lernen", "answer": "[ˈlɛʁnən]", "options": ["[ˈlɛʁnən]", "[lɛʁˈnən]", "[ˈleːʁnən]"], "instruction_de": "Wähle Aussprache und Betonung.", "instruction_ru": "Выберите произношение и ударение."
-    },
-    {
-      "id": "reading-stress-02", "topic_id": "reading_stress", "lemma": "reading", "required_item_type": "none", "type": "choice", "prompt": "Mutter", "answer": "[ˈmʊtɐ]", "options": ["[ˈmʊtɐ]", "[mʊˈtɛʁ]", "[ˈmuːtɐ]"], "instruction_de": "Wähle Aussprache und Betonung.", "instruction_ru": "Выберите произношение и ударение."
-    },
-    {
-      "id": "reading-stress-03", "topic_id": "reading_stress", "lemma": "reading", "required_item_type": "none", "type": "choice", "prompt": "bezahlen", "answer": "[bəˈtsaːlən]", "options": ["[bəˈtsaːlən]", "[ˈbətsaːlən]", "[bətsaˈlən]"], "instruction_de": "be- ist unbetont; der Stamm trägt den Akzent.", "instruction_ru": "Приставка be- безударна; ударение падает на корень."
-    },
-    {
-      "id": "reading-stress-04", "topic_id": "reading_stress", "lemma": "reading", "required_item_type": "none", "type": "choice", "prompt": "verstehen", "answer": "[fɛɐ̯ˈʃteːən]", "options": ["[fɛɐ̯ˈʃteːən]", "[ˈfɛɐ̯ʃteːən]", "[fɛɐ̯ʃtəˈeːn]"], "instruction_de": "ver- ist unbetont; der Stamm trägt den Akzent.", "instruction_ru": "Приставка ver- безударна; ударение падает на корень."
-    },
-    {
-      "id": "reading-stress-05", "topic_id": "reading_stress", "lemma": "reading", "required_item_type": "none", "type": "choice", "prompt": "anrufen", "answer": "[ˈanˌʁuːfn̩]", "options": ["[ˈanˌʁuːfn̩]", "[anˈʁuːfn̩]", "[ˈaːnʁʊfən]"], "instruction_de": "Die trennbare Vorsilbe an- ist betont.", "instruction_ru": "Отделяемая приставка an- ударная."
-    },
-    {
-      "id": "reading-stress-06", "topic_id": "reading_stress", "lemma": "reading", "required_item_type": "none", "type": "choice", "prompt": "einkaufen", "answer": "[ˈaɪ̯nˌkaʊ̯fn̩]", "options": ["[ˈaɪ̯nˌkaʊ̯fn̩]", "[aɪ̯nˈkaʊ̯fn̩]", "[ˈiːnkaʊ̯fən]"], "instruction_de": "Die trennbare Vorsilbe ein- ist betont.", "instruction_ru": "Отделяемая приставка ein- ударная."
-    },
-    {
-      "id": "reading-stress-07", "topic_id": "reading_stress", "lemma": "reading", "required_item_type": "none", "type": "choice", "prompt": "studieren", "answer": "[ʃtuˈdiːʁən]", "options": ["[ʃtuˈdiːʁən]", "[ˈʃtuːdiʁən]", "[ʃtudiˈʁən]"], "instruction_de": "Bei -ieren liegt der Akzent vor der Endung.", "instruction_ru": "В глаголах на -ieren ударение находится перед окончанием."
-    },
-    {
-      "id": "reading-stress-08", "topic_id": "reading_stress", "lemma": "reading", "required_item_type": "none", "type": "choice", "prompt": "telefonieren", "answer": "[telefoˈniːʁən]", "options": ["[telefoˈniːʁən]", "[ˈtelefoniːʁən]", "[teleˈfɔniʁən]"], "instruction_de": "Bei -ieren liegt der Akzent vor der Endung.", "instruction_ru": "В глаголах на -ieren ударение находится перед окончанием."
-    },
-    {
-      "id": "reading-stress-09", "topic_id": "reading_stress", "lemma": "reading", "required_item_type": "none", "type": "choice", "prompt": "richtig", "answer": "[ˈʁɪçtɪç]", "options": ["[ˈʁɪçtɪç]", "[ʁɪçˈtɪɡ]", "[ˈʁiːçtɪk]"], "instruction_de": "Wähle die Standardaussprache von -ig am Wortende.", "instruction_ru": "Выберите стандартное произношение -ig в конце слова."
-    },
-    {
-      "id": "reading-stress-10", "topic_id": "reading_stress", "lemma": "reading", "required_item_type": "none", "type": "choice", "prompt": "richtige", "answer": "[ˈʁɪçtɪɡə]", "options": ["[ˈʁɪçtɪɡə]", "[ʁɪçˈtiːɡə]", "[ˈʁɪçtɪçə]"], "instruction_de": "Vor einem Vokal hört man bei -ig häufig [ɡ].", "instruction_ru": "Перед гласной в -ig часто слышится [ɡ]."
-    },
-    {
-      "id": "reading-stress-11", "topic_id": "reading_stress", "lemma": "reading", "required_item_type": "none", "type": "choice", "prompt": "Haustür", "answer": "[ˈhaʊ̯sˌtyːɐ̯]", "options": ["[ˈhaʊ̯sˌtyːɐ̯]", "[haʊ̯sˈtyːɐ̯]", "[ˈhɔɪ̯styːɐ̯]"], "instruction_de": "Im Kompositum trägt der erste Teil den Hauptakzent.", "instruction_ru": "В сложном слове главное ударение падает на первую часть."
-    },
-    {
-      "id": "reading-stress-12", "topic_id": "reading_stress", "lemma": "reading", "required_item_type": "none", "type": "choice", "prompt": "Bahnhof", "answer": "[ˈbaːnˌhoːf]", "options": ["[ˈbaːnˌhoːf]", "[baːnˈhɔf]", "[ˈbanhɔf]"], "instruction_de": "Im Kompositum trägt der erste Teil den Hauptakzent.", "instruction_ru": "В сложном слове главное ударение падает на первую часть."
-    },
-    {
-      "id": "reading-stress-13", "topic_id": "reading_stress", "lemma": "reading", "required_item_type": "none", "type": "choice", "prompt": "bekommen", "answer": "[bəˈkɔmən]", "options": ["[bəˈkɔmən]", "[ˈbeːkɔmən]", "[bəkɔˈmən]"], "instruction_de": "be- ist unbetont.", "instruction_ru": "Приставка be- безударна."
-    },
-    {
-      "id": "reading-stress-14", "topic_id": "reading_stress", "lemma": "reading", "required_item_type": "none", "type": "choice", "prompt": "erzählen", "answer": "[ɛɐ̯ˈtsɛːlən]", "options": ["[ɛɐ̯ˈtsɛːlən]", "[ˈɛʁtsɛlən]", "[ɛʁtsɛˈlən]"], "instruction_de": "er- ist unbetont.", "instruction_ru": "Приставка er- безударна."
-    },
-    {
-      "id": "reading-stress-15", "topic_id": "reading_stress", "lemma": "reading", "required_item_type": "none", "type": "choice", "prompt": "mitkommen", "answer": "[ˈmɪtˌkɔmən]", "options": ["[ˈmɪtˌkɔmən]", "[mɪtˈkoːmən]", "[ˈmiːtkɔmən]"], "instruction_de": "Die trennbare Vorsilbe mit- ist betont.", "instruction_ru": "Отделяемая приставка mit- ударная."
-    },
-    {
-      "id": "reading-stress-16", "topic_id": "reading_stress", "lemma": "reading", "required_item_type": "none", "type": "choice", "prompt": "aufstehen", "answer": "[ˈaʊ̯fˌʃteːən]", "options": ["[ˈaʊ̯fˌʃteːən]", "[aʊ̯fˈsteːən]", "[ˈɔɪ̯fʃtɛən]"], "instruction_de": "Die trennbare Vorsilbe auf- ist betont.", "instruction_ru": "Отделяемая приставка auf- ударная."
-    },
-    {
-      "id": "reading-stress-17", "topic_id": "reading_stress", "lemma": "reading", "required_item_type": "none", "type": "choice", "prompt": "probieren", "answer": "[pʁoˈbiːʁən]", "options": ["[pʁoˈbiːʁən]", "[ˈpʁoːbiʁən]", "[pʁobiˈʁən]"], "instruction_de": "Bei -ieren liegt der Akzent vor der Endung.", "instruction_ru": "В глаголах на -ieren ударение находится перед окончанием."
-    },
-    {
-      "id": "reading-stress-18", "topic_id": "reading_stress", "lemma": "reading", "required_item_type": "none", "type": "choice", "prompt": "Wohnzimmer", "answer": "[ˈvoːnˌtsɪmɐ]", "options": ["[ˈvoːnˌtsɪmɐ]", "[voːnˈtsɪmɐ]", "[ˈvɔnziːmɐ]"], "instruction_de": "Im Kompositum trägt der erste Teil den Hauptakzent.", "instruction_ru": "В сложном слове главное ударение падает на первую часть."
-    },
-    {
-      "id": "reading-stress-19", "topic_id": "reading_stress", "lemma": "reading", "required_item_type": "none", "type": "choice", "prompt": "Entschuldigung", "answer": "[ɛntˈʃʊldɪɡʊŋ]", "options": ["[ɛntˈʃʊldɪɡʊŋ]", "[ˈɛntʃʊldɪɡʊŋ]", "[ɛntʃʊlˈdiːɡʊŋ]"], "instruction_de": "ent- ist unbetont; der Stamm trägt den Akzent.", "instruction_ru": "Приставка ent- безударна; ударение падает на корень."
-    },
-    {
-      "id": "reading-stress-20", "topic_id": "reading_stress", "lemma": "reading", "required_item_type": "none", "type": "choice", "prompt": "Vorname", "answer": "[ˈfoːɐ̯ˌnaːmə]", "options": ["[ˈfoːɐ̯ˌnaːmə]", "[foːɐ̯ˈnaːmə]", "[ˈfɔʁnamə]"], "instruction_de": "Im Kompositum trägt der erste Teil den Hauptakzent.", "instruction_ru": "В сложном слове главное ударение падает на первую часть."
-    },
-    {
-      "id": "verb-first-question-order-01", "topic_id": "yes_no_questions", "lemma": "lernen", "required_item_type": "verb", "type": "word_order", "prompt": "Aussage: Du lernst Deutsch.", "answer": "Lernst du Deutsch?", "options": ["Lernst", "du", "Deutsch?"], "instruction_de": "Bilde eine Frage mit dem Verb am Anfang.", "instruction_ru": "Составьте вопрос, поставив глагол в начало."
-    },
-    {
-      "id": "verb-first-question-order-02", "topic_id": "yes_no_questions", "lemma": "wohnen", "required_item_type": "verb", "type": "word_order", "prompt": "Aussage: Ihr wohnt in Berlin.", "answer": "Wohnt ihr in Berlin?", "options": ["Wohnt", "ihr", "in", "Berlin?"], "instruction_de": "Bilde eine Frage mit dem Verb am Anfang.", "instruction_ru": "Составьте вопрос, поставив глагол в начало."
-    },
-    {
-      "id": "verb-first-question-order-03", "topic_id": "yes_no_questions", "lemma": "kommen", "required_item_type": "verb", "type": "word_order", "prompt": "Aussage: Sie kommen heute.", "answer": "Kommen Sie heute?", "options": ["Kommen", "Sie", "heute?"], "instruction_de": "Bilde eine höfliche Frage.", "instruction_ru": "Составьте вежливый вопрос."
-    },
-    {
-      "id": "verb-first-question-order-04", "topic_id": "yes_no_questions", "lemma": "kaufen", "required_item_type": "verb", "type": "word_order", "prompt": "Aussage: Er kauft Brot.", "answer": "Kauft er Brot?", "options": ["Kauft", "er", "Brot?"], "instruction_de": "Bilde eine Frage mit dem Verb am Anfang.", "instruction_ru": "Составьте вопрос, поставив глагол в начало."
-    },
-    {
-      "id": "verb-first-question-order-05", "topic_id": "yes_no_questions", "lemma": "spielen", "required_item_type": "verb", "type": "word_order", "prompt": "Aussage: Ihr spielt Fußball.", "answer": "Spielt ihr Fußball?", "options": ["Spielt", "ihr", "Fußball?"], "instruction_de": "Bilde eine Frage mit dem Verb am Anfang.", "instruction_ru": "Составьте вопрос, поставив глагол в начало."
-    },
-    {
-      "id": "verb-first-question-order-06", "topic_id": "yes_no_questions", "lemma": "hören", "required_item_type": "verb", "type": "word_order", "prompt": "Aussage: Du hörst Musik.", "answer": "Hörst du Musik?", "options": ["Hörst", "du", "Musik?"], "instruction_de": "Bilde eine Frage mit dem Verb am Anfang.", "instruction_ru": "Составьте вопрос, поставив глагол в начало."
-    },
-    {
-      "id": "verb-first-question-order-07", "topic_id": "yes_no_questions", "lemma": "kochen", "required_item_type": "verb", "type": "word_order", "prompt": "Aussage: Sie kocht heute.", "answer": "Kocht sie heute?", "options": ["Kocht", "sie", "heute?"], "instruction_de": "Bilde eine Frage mit dem Verb am Anfang.", "instruction_ru": "Составьте вопрос, поставив глагол в начало."
-    },
-    {
-      "id": "verb-first-question-order-08", "topic_id": "yes_no_questions", "lemma": "frühstücken", "required_item_type": "verb", "type": "word_order", "prompt": "Aussage: Ihr frühstückt um acht.", "answer": "Frühstückt ihr um acht?", "options": ["Frühstückt", "ihr", "um", "acht?"], "instruction_de": "Bilde eine Frage mit dem Verb am Anfang.", "instruction_ru": "Составьте вопрос, поставив глагол в начало."
-    },
-    {
-      "id": "verb-first-question-order-09", "topic_id": "yes_no_questions", "lemma": "telefonieren", "required_item_type": "verb", "type": "word_order", "prompt": "Aussage: Du telefonierst mit Anna.", "answer": "Telefonierst du mit Anna?", "options": ["Telefonierst", "du", "mit", "Anna?"], "instruction_de": "Bilde eine Frage mit dem Verb am Anfang.", "instruction_ru": "Составьте вопрос, поставив глагол в начало."
-    },
-    {
-      "id": "verb-first-question-order-10", "topic_id": "yes_no_questions", "lemma": "fotografieren", "required_item_type": "verb", "type": "word_order", "prompt": "Aussage: Du fotografierst gern.", "answer": "Fotografierst du gern?", "options": ["Fotografierst", "du", "gern?"], "instruction_de": "Bilde eine Frage mit dem Verb am Anfang.", "instruction_ru": "Составьте вопрос, поставив глагол в начало."
-    },
-    {
-      "id": "verb-first-question-order-11", "topic_id": "yes_no_questions", "lemma": "sein", "required_item_type": "verb", "type": "word_order", "prompt": "Aussage: Die Kinder sind müde.", "answer": "Sind die Kinder müde?", "options": ["Sind", "die", "Kinder", "müde?"], "instruction_de": "Bilde eine Frage mit sein am Anfang.", "instruction_ru": "Составьте вопрос с sein в начале."
-    },
-    {
-      "id": "verb-first-question-order-12", "topic_id": "yes_no_questions", "lemma": "haben", "required_item_type": "verb", "type": "word_order", "prompt": "Aussage: Du hast Zeit.", "answer": "Hast du Zeit?", "options": ["Hast", "du", "Zeit?"], "instruction_de": "Bilde eine Frage mit haben am Anfang.", "instruction_ru": "Составьте вопрос с haben в начале."
-    },
-    {
-      "id": "verb-first-question-choice-01", "topic_id": "yes_no_questions", "lemma": "lernen", "required_item_type": "verb", "type": "choice", "prompt": "Aussage: Ihr lernt zusammen.", "answer": "Lernt ihr zusammen?", "options": ["Lernt ihr zusammen?", "Ihr lernt zusammen?", "Lernen ihr zusammen?"], "instruction_de": "Welche Frage ist richtig?", "instruction_ru": "Какой вопрос построен правильно?"
-    },
-    {
-      "id": "verb-first-question-choice-02", "topic_id": "yes_no_questions", "lemma": "wohnen", "required_item_type": "verb", "type": "choice", "prompt": "Aussage: Du wohnst in Köln.", "answer": "Wohnst du in Köln?", "options": ["Wohnst du in Köln?", "Du wohnst in Köln?", "Wohnt du in Köln?"], "instruction_de": "Welche Frage ist richtig?", "instruction_ru": "Какой вопрос построен правильно?"
-    },
-    {
-      "id": "verb-first-question-choice-03", "topic_id": "yes_no_questions", "lemma": "kommen", "required_item_type": "verb", "type": "choice", "prompt": "Aussage: Er kommt aus Polen.", "answer": "Kommt er aus Polen?", "options": ["Kommt er aus Polen?", "Er kommt aus Polen?", "Kommst er aus Polen?"], "instruction_de": "Welche Frage ist richtig?", "instruction_ru": "Какой вопрос построен правильно?"
-    },
-    {
-      "id": "verb-first-question-choice-04", "topic_id": "yes_no_questions", "lemma": "kaufen", "required_item_type": "verb", "type": "choice", "prompt": "Aussage: Sie kaufen zwei Äpfel.", "answer": "Kaufen Sie zwei Äpfel?", "options": ["Kaufen Sie zwei Äpfel?", "Sie kaufen zwei Äpfel?", "Kauft Sie zwei Äpfel?"], "instruction_de": "Welche höfliche Frage ist richtig?", "instruction_ru": "Какой вежливый вопрос построен правильно?"
-    },
-    {
-      "id": "verb-first-question-choice-05", "topic_id": "yes_no_questions", "lemma": "spielen", "required_item_type": "verb", "type": "choice", "prompt": "Aussage: Sie spielt Tennis.", "answer": "Spielt sie Tennis?", "options": ["Spielt sie Tennis?", "Sie spielt Tennis?", "Spielst sie Tennis?"], "instruction_de": "Welche Frage ist richtig?", "instruction_ru": "Какой вопрос построен правильно?"
-    },
-    {
-      "id": "verb-first-question-choice-06", "topic_id": "yes_no_questions", "lemma": "hören", "required_item_type": "verb", "type": "choice", "prompt": "Aussage: Ihr hört den Dialog.", "answer": "Hört ihr den Dialog?", "options": ["Hört ihr den Dialog?", "Ihr hört den Dialog?", "Hören ihr den Dialog?"], "instruction_de": "Welche Frage ist richtig?", "instruction_ru": "Какой вопрос построен правильно?"
-    },
-    {
-      "id": "verb-first-question-choice-07", "topic_id": "yes_no_questions", "lemma": "kochen", "required_item_type": "verb", "type": "choice", "prompt": "Aussage: Du kochst gern.", "answer": "Kochst du gern?", "options": ["Kochst du gern?", "Du kochst gern?", "Kocht du gern?"], "instruction_de": "Welche Frage ist richtig?", "instruction_ru": "Какой вопрос построен правильно?"
-    },
-    {
-      "id": "verb-first-question-choice-08", "topic_id": "yes_no_questions", "lemma": "frühstücken", "required_item_type": "verb", "type": "choice", "prompt": "Aussage: Er frühstückt zu Hause.", "answer": "Frühstückt er zu Hause?", "options": ["Frühstückt er zu Hause?", "Er frühstückt zu Hause?", "Frühstücken er zu Hause?"], "instruction_de": "Welche Frage ist richtig?", "instruction_ru": "Какой вопрос построен правильно?"
-    },
-    {
-      "id": "verb-first-question-choice-09", "topic_id": "yes_no_questions", "lemma": "telefonieren", "required_item_type": "verb", "type": "choice", "prompt": "Aussage: Sie telefoniert am Abend.", "answer": "Telefoniert sie am Abend?", "options": ["Telefoniert sie am Abend?", "Sie telefoniert am Abend?", "Telefonierst sie am Abend?"], "instruction_de": "Welche Frage ist richtig?", "instruction_ru": "Какой вопрос построен правильно?"
-    },
-    {
-      "id": "verb-first-question-choice-10", "topic_id": "yes_no_questions", "lemma": "fotografieren", "required_item_type": "verb", "type": "choice", "prompt": "Aussage: Ihr fotografiert im Park.", "answer": "Fotografiert ihr im Park?", "options": ["Fotografiert ihr im Park?", "Ihr fotografiert im Park?", "Fotografieren ihr im Park?"], "instruction_de": "Welche Frage ist richtig?", "instruction_ru": "Какой вопрос построен правильно?"
-    },
-    {
-      "id": "verb-first-question-choice-11", "topic_id": "yes_no_questions", "lemma": "sein", "required_item_type": "verb", "type": "choice", "prompt": "Aussage: Du bist verheiratet.", "answer": "Bist du verheiratet?", "options": ["Bist du verheiratet?", "Du bist verheiratet?", "Sind du verheiratet?"], "instruction_de": "Welche Frage mit sein ist richtig?", "instruction_ru": "Какой вопрос с sein построен правильно?"
-    },
-    {
-      "id": "verb-first-question-choice-12", "topic_id": "yes_no_questions", "lemma": "haben", "required_item_type": "verb", "type": "choice", "prompt": "Aussage: Sie hat Kinder.", "answer": "Hat sie Kinder?", "options": ["Hat sie Kinder?", "Sie hat Kinder?", "Hast sie Kinder?"], "instruction_de": "Welche Frage mit haben ist richtig?", "instruction_ru": "Какой вопрос с haben построен правильно?"
+      "id": "reading-vowels-01",
+      "topic_id": "reading_vowels",
+      "lemma": "reading",
+      "required_item_type": "none",
+      "type": "choice",
+      "prompt": "Liebe: ie = ?",
+      "answer": "[iː]",
+      "options": [
+        "[iː]",
+        "[ɪ]",
+        "[aɪ̯]"
+      ],
+      "instruction_de": "Wähle den Laut der markierten Buchstabengruppe.",
+      "instruction_ru": "Выберите звук выделенного буквосочетания."
+    },
+    {
+      "id": "reading-vowels-02",
+      "topic_id": "reading_vowels",
+      "lemma": "reading",
+      "required_item_type": "none",
+      "type": "choice",
+      "prompt": "mein: ei = ?",
+      "answer": "[aɪ̯]",
+      "options": [
+        "[aɪ̯]",
+        "[iː]",
+        "[ɔɪ̯]"
+      ],
+      "instruction_de": "Wähle den richtigen Doppellaut.",
+      "instruction_ru": "Выберите правильный дифтонг."
+    },
+    {
+      "id": "reading-vowels-03",
+      "topic_id": "reading_vowels",
+      "lemma": "reading",
+      "required_item_type": "none",
+      "type": "choice",
+      "prompt": "neu: eu = ?",
+      "answer": "[ɔɪ̯]",
+      "options": [
+        "[ɔɪ̯]",
+        "[aɪ̯]",
+        "[uː]"
+      ],
+      "instruction_de": "Wähle den richtigen Doppellaut.",
+      "instruction_ru": "Выберите правильный дифтонг."
+    },
+    {
+      "id": "reading-vowels-04",
+      "topic_id": "reading_vowels",
+      "lemma": "reading",
+      "required_item_type": "none",
+      "type": "choice",
+      "prompt": "Häuser: äu = ?",
+      "answer": "[ɔɪ̯]",
+      "options": [
+        "[ɔɪ̯]",
+        "[ɛː]",
+        "[aʊ̯]"
+      ],
+      "instruction_de": "Wähle den richtigen Doppellaut.",
+      "instruction_ru": "Выберите правильный дифтонг."
+    },
+    {
+      "id": "reading-vowels-05",
+      "topic_id": "reading_vowels",
+      "lemma": "reading",
+      "required_item_type": "none",
+      "type": "choice",
+      "prompt": "schön: ö = ?",
+      "answer": "[øː]",
+      "options": [
+        "[øː]",
+        "[oː]",
+        "[œ]"
+      ],
+      "instruction_de": "Der Vokal ist lang. Wähle den Laut.",
+      "instruction_ru": "Гласный долгий. Выберите звук."
+    },
+    {
+      "id": "reading-vowels-06",
+      "topic_id": "reading_vowels",
+      "lemma": "reading",
+      "required_item_type": "none",
+      "type": "choice",
+      "prompt": "Tür: ü = ?",
+      "answer": "[yː]",
+      "options": [
+        "[yː]",
+        "[uː]",
+        "[ʏ]"
+      ],
+      "instruction_de": "Der Vokal ist lang. Wähle den Laut.",
+      "instruction_ru": "Гласный долгий. Выберите звук."
+    },
+    {
+      "id": "reading-vowels-07",
+      "topic_id": "reading_vowels",
+      "lemma": "reading",
+      "required_item_type": "none",
+      "type": "choice",
+      "prompt": "Mann: a = ?",
+      "answer": "[a]",
+      "options": [
+        "[a]",
+        "[aː]",
+        "[ə]"
+      ],
+      "instruction_de": "Zwei Konsonanten zeigen einen kurzen Vokal.",
+      "instruction_ru": "Две согласные указывают на краткий гласный."
+    },
+    {
+      "id": "reading-vowels-08",
+      "topic_id": "reading_vowels",
+      "lemma": "reading",
+      "required_item_type": "none",
+      "type": "choice",
+      "prompt": "Name: a = ?",
+      "answer": "[aː]",
+      "options": [
+        "[aː]",
+        "[a]",
+        "[ɛː]"
+      ],
+      "instruction_de": "Wähle die Länge des Vokals.",
+      "instruction_ru": "Выберите долготу гласного."
+    },
+    {
+      "id": "reading-vowels-09",
+      "topic_id": "reading_vowels",
+      "lemma": "reading",
+      "required_item_type": "none",
+      "type": "choice",
+      "prompt": "Boot: oo = ?",
+      "answer": "[oː]",
+      "options": [
+        "[oː]",
+        "[ɔ]",
+        "[uː]"
+      ],
+      "instruction_de": "Ein Doppelvokal ist meistens lang.",
+      "instruction_ru": "Удвоенная гласная обычно долгая."
+    },
+    {
+      "id": "reading-vowels-10",
+      "topic_id": "reading_vowels",
+      "lemma": "reading",
+      "required_item_type": "none",
+      "type": "choice",
+      "prompt": "Zahl: ah = ?",
+      "answer": "[aː]",
+      "options": [
+        "[aː]",
+        "[a]",
+        "[ha]"
+      ],
+      "instruction_de": "Das Dehnungs-h wird nicht gesprochen.",
+      "instruction_ru": "Буква h указывает на долготу и не произносится."
+    },
+    {
+      "id": "reading-vowels-11",
+      "topic_id": "reading_vowels",
+      "lemma": "reading",
+      "required_item_type": "none",
+      "type": "choice",
+      "prompt": "kommen: o = ?",
+      "answer": "[ɔ]",
+      "options": [
+        "[ɔ]",
+        "[oː]",
+        "[œ]"
+      ],
+      "instruction_de": "Zwei Konsonanten zeigen einen kurzen Vokal.",
+      "instruction_ru": "Две согласные указывают на краткий гласный."
+    },
+    {
+      "id": "reading-vowels-12",
+      "topic_id": "reading_vowels",
+      "lemma": "reading",
+      "required_item_type": "none",
+      "type": "choice",
+      "prompt": "bitte: unbetontes e = ?",
+      "answer": "[ə]",
+      "options": [
+        "[ə]",
+        "[eː]",
+        "[ɛ]"
+      ],
+      "instruction_de": "Wähle den Laut der unbetonten Endung.",
+      "instruction_ru": "Выберите звук безударного окончания."
+    },
+    {
+      "id": "reading-vowels-13",
+      "topic_id": "reading_vowels",
+      "lemma": "reading",
+      "required_item_type": "none",
+      "type": "choice",
+      "prompt": "Lehrer: -er = ?",
+      "answer": "[ɐ]",
+      "options": [
+        "[ɐ]",
+        "[eːɐ̯]",
+        "[ɛʁ]"
+      ],
+      "instruction_de": "Wähle die häufige Standardaussprache der Endung.",
+      "instruction_ru": "Выберите частое стандартное произношение окончания."
+    },
+    {
+      "id": "reading-vowels-14",
+      "topic_id": "reading_vowels",
+      "lemma": "reading",
+      "required_item_type": "none",
+      "type": "choice",
+      "prompt": "sehen: eh = ?",
+      "answer": "[eː]",
+      "options": [
+        "[eː]",
+        "[ɛ]",
+        "[ə]"
+      ],
+      "instruction_de": "Das Dehnungs-h macht den Vokal lang.",
+      "instruction_ru": "h указывает на долгий гласный."
+    },
+    {
+      "id": "reading-vowels-15",
+      "topic_id": "reading_vowels",
+      "lemma": "reading",
+      "required_item_type": "none",
+      "type": "choice",
+      "prompt": "Kind: i = ?",
+      "answer": "[ɪ]",
+      "options": [
+        "[ɪ]",
+        "[iː]",
+        "[yː]"
+      ],
+      "instruction_de": "Vor mehreren Konsonanten ist der Vokal meist kurz.",
+      "instruction_ru": "Перед несколькими согласными гласный обычно краткий."
+    },
+    {
+      "id": "reading-vowels-16",
+      "topic_id": "reading_vowels",
+      "lemma": "reading",
+      "required_item_type": "none",
+      "type": "choice",
+      "prompt": "müssen: ü = ?",
+      "answer": "[ʏ]",
+      "options": [
+        "[ʏ]",
+        "[yː]",
+        "[u]"
+      ],
+      "instruction_de": "Wähle den kurzen Umlaut.",
+      "instruction_ru": "Выберите краткий умлаут."
+    },
+    {
+      "id": "reading-vowels-17",
+      "topic_id": "reading_vowels",
+      "lemma": "reading",
+      "required_item_type": "none",
+      "type": "choice",
+      "prompt": "Öl: Ö = ?",
+      "answer": "[øː]",
+      "options": [
+        "[øː]",
+        "[œ]",
+        "[oː]"
+      ],
+      "instruction_de": "Wähle den langen Umlaut.",
+      "instruction_ru": "Выберите долгий умлаут."
+    },
+    {
+      "id": "reading-vowels-18",
+      "topic_id": "reading_vowels",
+      "lemma": "reading",
+      "required_item_type": "none",
+      "type": "choice",
+      "prompt": "Äpfel: Ä = ?",
+      "answer": "[ɛ]",
+      "options": [
+        "[ɛ]",
+        "[ɛː]",
+        "[a]"
+      ],
+      "instruction_de": "Wähle den kurzen Umlaut.",
+      "instruction_ru": "Выберите краткий умлаут."
+    },
+    {
+      "id": "reading-vowels-19",
+      "topic_id": "reading_vowels",
+      "lemma": "reading",
+      "required_item_type": "none",
+      "type": "choice",
+      "prompt": "Meer: ee = ?",
+      "answer": "[eː]",
+      "options": [
+        "[eː]",
+        "[ɛ]",
+        "[iː]"
+      ],
+      "instruction_de": "Ein Doppelvokal ist meistens lang.",
+      "instruction_ru": "Удвоенная гласная обычно долгая."
+    },
+    {
+      "id": "reading-vowels-20",
+      "topic_id": "reading_vowels",
+      "lemma": "reading",
+      "required_item_type": "none",
+      "type": "choice",
+      "prompt": "Mai: ai = ?",
+      "answer": "[aɪ̯]",
+      "options": [
+        "[aɪ̯]",
+        "[ɔɪ̯]",
+        "[iː]"
+      ],
+      "instruction_de": "ai klingt wie ei.",
+      "instruction_ru": "ai читается так же, как ei."
+    },
+    {
+      "id": "reading-consonants-01",
+      "topic_id": "reading_consonants",
+      "lemma": "reading",
+      "required_item_type": "none",
+      "type": "choice",
+      "prompt": "Schule: sch = ?",
+      "answer": "[ʃ]",
+      "options": [
+        "[ʃ]",
+        "[s]",
+        "[ç]"
+      ],
+      "instruction_de": "Wähle den Laut der Buchstabengruppe.",
+      "instruction_ru": "Выберите звук буквосочетания."
+    },
+    {
+      "id": "reading-consonants-02",
+      "topic_id": "reading_consonants",
+      "lemma": "reading",
+      "required_item_type": "none",
+      "type": "choice",
+      "prompt": "spielen: sp- = ?",
+      "answer": "[ʃp]",
+      "options": [
+        "[ʃp]",
+        "[sp]",
+        "[ʃt]"
+      ],
+      "instruction_de": "Beachte die Aussprache am Wortanfang.",
+      "instruction_ru": "Учтите произношение в начале слова."
+    },
+    {
+      "id": "reading-consonants-03",
+      "topic_id": "reading_consonants",
+      "lemma": "reading",
+      "required_item_type": "none",
+      "type": "choice",
+      "prompt": "Straße: st- = ?",
+      "answer": "[ʃt]",
+      "options": [
+        "[ʃt]",
+        "[st]",
+        "[ts]"
+      ],
+      "instruction_de": "Beachte die Aussprache am Wortanfang.",
+      "instruction_ru": "Учтите произношение в начале слова."
+    },
+    {
+      "id": "reading-consonants-04",
+      "topic_id": "reading_consonants",
+      "lemma": "reading",
+      "required_item_type": "none",
+      "type": "choice",
+      "prompt": "Bach: ch = ?",
+      "answer": "[x]",
+      "options": [
+        "[x]",
+        "[ç]",
+        "[k]"
+      ],
+      "instruction_de": "Nach a steht meist der ach-Laut.",
+      "instruction_ru": "После a обычно произносится твёрдый звук ch."
+    },
+    {
+      "id": "reading-consonants-05",
+      "topic_id": "reading_consonants",
+      "lemma": "reading",
+      "required_item_type": "none",
+      "type": "choice",
+      "prompt": "ich: ch = ?",
+      "answer": "[ç]",
+      "options": [
+        "[ç]",
+        "[x]",
+        "[ʃ]"
+      ],
+      "instruction_de": "Nach i steht meist der ich-Laut.",
+      "instruction_ru": "После i обычно произносится мягкий звук ch."
+    },
+    {
+      "id": "reading-consonants-06",
+      "topic_id": "reading_consonants",
+      "lemma": "reading",
+      "required_item_type": "none",
+      "type": "choice",
+      "prompt": "Bücher: ch = ?",
+      "answer": "[ç]",
+      "options": [
+        "[ç]",
+        "[x]",
+        "[k]"
+      ],
+      "instruction_de": "Nach ü steht meist der ich-Laut.",
+      "instruction_ru": "После ü обычно произносится мягкий звук ch."
+    },
+    {
+      "id": "reading-consonants-07",
+      "topic_id": "reading_consonants",
+      "lemma": "reading",
+      "required_item_type": "none",
+      "type": "choice",
+      "prompt": "Zeit: Z = ?",
+      "answer": "[ts]",
+      "options": [
+        "[ts]",
+        "[z]",
+        "[s]"
+      ],
+      "instruction_de": "z bezeichnet im Deutschen zwei Laute zusammen.",
+      "instruction_ru": "Немецкая z обозначает сочетание двух звуков."
+    },
+    {
+      "id": "reading-consonants-08",
+      "topic_id": "reading_consonants",
+      "lemma": "reading",
+      "required_item_type": "none",
+      "type": "choice",
+      "prompt": "sitzen: tz = ?",
+      "answer": "[ts]",
+      "options": [
+        "[ts]",
+        "[tz]",
+        "[s]"
+      ],
+      "instruction_de": "tz klingt wie z.",
+      "instruction_ru": "tz читается так же, как z."
+    },
+    {
+      "id": "reading-consonants-09",
+      "topic_id": "reading_consonants",
+      "lemma": "reading",
+      "required_item_type": "none",
+      "type": "choice",
+      "prompt": "Wasser: W = ?",
+      "answer": "[v]",
+      "options": [
+        "[v]",
+        "[w]",
+        "[f]"
+      ],
+      "instruction_de": "Wähle den deutschen Laut für w.",
+      "instruction_ru": "Выберите немецкий звук для w."
+    },
+    {
+      "id": "reading-consonants-10",
+      "topic_id": "reading_consonants",
+      "lemma": "reading",
+      "required_item_type": "none",
+      "type": "choice",
+      "prompt": "ja: j = ?",
+      "answer": "[j]",
+      "options": [
+        "[j]",
+        "[dʒ]",
+        "[ʒ]"
+      ],
+      "instruction_de": "Wähle den deutschen Laut für j.",
+      "instruction_ru": "Выберите немецкий звук для j."
+    },
+    {
+      "id": "reading-consonants-11",
+      "topic_id": "reading_consonants",
+      "lemma": "reading",
+      "required_item_type": "none",
+      "type": "choice",
+      "prompt": "Vater: V = ?",
+      "answer": "[f]",
+      "options": [
+        "[f]",
+        "[v]",
+        "[w]"
+      ],
+      "instruction_de": "In diesem deutschen Wort klingt v wie f.",
+      "instruction_ru": "В этом немецком слове v читается как f."
+    },
+    {
+      "id": "reading-consonants-12",
+      "topic_id": "reading_consonants",
+      "lemma": "reading",
+      "required_item_type": "none",
+      "type": "choice",
+      "prompt": "Vase: V = ?",
+      "answer": "[v]",
+      "options": [
+        "[v]",
+        "[f]",
+        "[b]"
+      ],
+      "instruction_de": "Im Fremdwort klingt v wie w.",
+      "instruction_ru": "В заимствованном слове v читается как немецкая w."
+    },
+    {
+      "id": "reading-consonants-13",
+      "topic_id": "reading_consonants",
+      "lemma": "reading",
+      "required_item_type": "none",
+      "type": "choice",
+      "prompt": "Quelle: qu = ?",
+      "answer": "[kv]",
+      "options": [
+        "[kv]",
+        "[k]",
+        "[kw]"
+      ],
+      "instruction_de": "Wähle die deutsche Aussprache von qu.",
+      "instruction_ru": "Выберите немецкое произношение qu."
+    },
+    {
+      "id": "reading-consonants-14",
+      "topic_id": "reading_consonants",
+      "lemma": "reading",
+      "required_item_type": "none",
+      "type": "choice",
+      "prompt": "singen: ng = ?",
+      "answer": "[ŋ]",
+      "options": [
+        "[ŋ]",
+        "[nɡ]",
+        "[ɲ]"
+      ],
+      "instruction_de": "Das g wird nicht einzeln gesprochen.",
+      "instruction_ru": "Отдельный звук g не произносится."
+    },
+    {
+      "id": "reading-consonants-15",
+      "topic_id": "reading_consonants",
+      "lemma": "reading",
+      "required_item_type": "none",
+      "type": "choice",
+      "prompt": "trinken: nk = ?",
+      "answer": "[ŋk]",
+      "options": [
+        "[ŋk]",
+        "[nk]",
+        "[nɡ]"
+      ],
+      "instruction_de": "Wähle die Lautgruppe für nk.",
+      "instruction_ru": "Выберите сочетание звуков для nk."
+    },
+    {
+      "id": "reading-consonants-16",
+      "topic_id": "reading_consonants",
+      "lemma": "reading",
+      "required_item_type": "none",
+      "type": "choice",
+      "prompt": "lieb: b am Ende = ?",
+      "answer": "[p]",
+      "options": [
+        "[p]",
+        "[b]",
+        "[f]"
+      ],
+      "instruction_de": "Beachte die Auslautverhärtung.",
+      "instruction_ru": "Учтите оглушение согласной в конце."
+    },
+    {
+      "id": "reading-consonants-17",
+      "topic_id": "reading_consonants",
+      "lemma": "reading",
+      "required_item_type": "none",
+      "type": "choice",
+      "prompt": "Hund: d am Ende = ?",
+      "answer": "[t]",
+      "options": [
+        "[t]",
+        "[d]",
+        "[θ]"
+      ],
+      "instruction_de": "Beachte die Auslautverhärtung.",
+      "instruction_ru": "Учтите оглушение согласной в конце."
+    },
+    {
+      "id": "reading-consonants-18",
+      "topic_id": "reading_consonants",
+      "lemma": "reading",
+      "required_item_type": "none",
+      "type": "choice",
+      "prompt": "Tag: g am Ende = ?",
+      "answer": "[k]",
+      "options": [
+        "[k]",
+        "[ɡ]",
+        "[ç]"
+      ],
+      "instruction_de": "Beachte die Auslautverhärtung.",
+      "instruction_ru": "Учтите оглушение согласной в конце."
+    },
+    {
+      "id": "reading-consonants-19",
+      "topic_id": "reading_consonants",
+      "lemma": "reading",
+      "required_item_type": "none",
+      "type": "choice",
+      "prompt": "Kasse: ss = ?",
+      "answer": "[s]",
+      "options": [
+        "[s]",
+        "[z]",
+        "[ʃ]"
+      ],
+      "instruction_de": "ss wird stimmlos gesprochen.",
+      "instruction_ru": "ss произносится как глухой звук."
+    },
+    {
+      "id": "reading-consonants-20",
+      "topic_id": "reading_consonants",
+      "lemma": "reading",
+      "required_item_type": "none",
+      "type": "choice",
+      "prompt": "Straße: ß = ?",
+      "answer": "[s]",
+      "options": [
+        "[s]",
+        "[z]",
+        "[ts]"
+      ],
+      "instruction_de": "ß wird stimmlos gesprochen.",
+      "instruction_ru": "ß произносится как глухой звук."
+    },
+    {
+      "id": "reading-stress-01",
+      "topic_id": "reading_stress",
+      "lemma": "reading",
+      "required_item_type": "none",
+      "type": "choice",
+      "prompt": "lernen",
+      "answer": "[ˈlɛʁnən]",
+      "options": [
+        "[ˈlɛʁnən]",
+        "[lɛʁˈnən]",
+        "[ˈleːʁnən]"
+      ],
+      "instruction_de": "Wähle Aussprache und Betonung.",
+      "instruction_ru": "Выберите произношение и ударение."
+    },
+    {
+      "id": "reading-stress-02",
+      "topic_id": "reading_stress",
+      "lemma": "reading",
+      "required_item_type": "none",
+      "type": "choice",
+      "prompt": "Mutter",
+      "answer": "[ˈmʊtɐ]",
+      "options": [
+        "[ˈmʊtɐ]",
+        "[mʊˈtɛʁ]",
+        "[ˈmuːtɐ]"
+      ],
+      "instruction_de": "Wähle Aussprache und Betonung.",
+      "instruction_ru": "Выберите произношение и ударение."
+    },
+    {
+      "id": "reading-stress-03",
+      "topic_id": "reading_stress",
+      "lemma": "reading",
+      "required_item_type": "none",
+      "type": "choice",
+      "prompt": "bezahlen",
+      "answer": "[bəˈtsaːlən]",
+      "options": [
+        "[bəˈtsaːlən]",
+        "[ˈbətsaːlən]",
+        "[bətsaˈlən]"
+      ],
+      "instruction_de": "be- ist unbetont; der Stamm trägt den Akzent.",
+      "instruction_ru": "Приставка be- безударна; ударение падает на корень."
+    },
+    {
+      "id": "reading-stress-04",
+      "topic_id": "reading_stress",
+      "lemma": "reading",
+      "required_item_type": "none",
+      "type": "choice",
+      "prompt": "verstehen",
+      "answer": "[fɛɐ̯ˈʃteːən]",
+      "options": [
+        "[fɛɐ̯ˈʃteːən]",
+        "[ˈfɛɐ̯ʃteːən]",
+        "[fɛɐ̯ʃtəˈeːn]"
+      ],
+      "instruction_de": "ver- ist unbetont; der Stamm trägt den Akzent.",
+      "instruction_ru": "Приставка ver- безударна; ударение падает на корень."
+    },
+    {
+      "id": "reading-stress-05",
+      "topic_id": "reading_stress",
+      "lemma": "reading",
+      "required_item_type": "none",
+      "type": "choice",
+      "prompt": "anrufen",
+      "answer": "[ˈanˌʁuːfn̩]",
+      "options": [
+        "[ˈanˌʁuːfn̩]",
+        "[anˈʁuːfn̩]",
+        "[ˈaːnʁʊfən]"
+      ],
+      "instruction_de": "Die trennbare Vorsilbe an- ist betont.",
+      "instruction_ru": "Отделяемая приставка an- ударная."
+    },
+    {
+      "id": "reading-stress-06",
+      "topic_id": "reading_stress",
+      "lemma": "reading",
+      "required_item_type": "none",
+      "type": "choice",
+      "prompt": "einkaufen",
+      "answer": "[ˈaɪ̯nˌkaʊ̯fn̩]",
+      "options": [
+        "[ˈaɪ̯nˌkaʊ̯fn̩]",
+        "[aɪ̯nˈkaʊ̯fn̩]",
+        "[ˈiːnkaʊ̯fən]"
+      ],
+      "instruction_de": "Die trennbare Vorsilbe ein- ist betont.",
+      "instruction_ru": "Отделяемая приставка ein- ударная."
+    },
+    {
+      "id": "reading-stress-07",
+      "topic_id": "reading_stress",
+      "lemma": "reading",
+      "required_item_type": "none",
+      "type": "choice",
+      "prompt": "studieren",
+      "answer": "[ʃtuˈdiːʁən]",
+      "options": [
+        "[ʃtuˈdiːʁən]",
+        "[ˈʃtuːdiʁən]",
+        "[ʃtudiˈʁən]"
+      ],
+      "instruction_de": "Bei -ieren liegt der Akzent vor der Endung.",
+      "instruction_ru": "В глаголах на -ieren ударение находится перед окончанием."
+    },
+    {
+      "id": "reading-stress-08",
+      "topic_id": "reading_stress",
+      "lemma": "reading",
+      "required_item_type": "none",
+      "type": "choice",
+      "prompt": "telefonieren",
+      "answer": "[telefoˈniːʁən]",
+      "options": [
+        "[telefoˈniːʁən]",
+        "[ˈtelefoniːʁən]",
+        "[teleˈfɔniʁən]"
+      ],
+      "instruction_de": "Bei -ieren liegt der Akzent vor der Endung.",
+      "instruction_ru": "В глаголах на -ieren ударение находится перед окончанием."
+    },
+    {
+      "id": "reading-stress-09",
+      "topic_id": "reading_stress",
+      "lemma": "reading",
+      "required_item_type": "none",
+      "type": "choice",
+      "prompt": "richtig",
+      "answer": "[ˈʁɪçtɪç]",
+      "options": [
+        "[ˈʁɪçtɪç]",
+        "[ʁɪçˈtɪɡ]",
+        "[ˈʁiːçtɪk]"
+      ],
+      "instruction_de": "Wähle die Standardaussprache von -ig am Wortende.",
+      "instruction_ru": "Выберите стандартное произношение -ig в конце слова."
+    },
+    {
+      "id": "reading-stress-10",
+      "topic_id": "reading_stress",
+      "lemma": "reading",
+      "required_item_type": "none",
+      "type": "choice",
+      "prompt": "richtige",
+      "answer": "[ˈʁɪçtɪɡə]",
+      "options": [
+        "[ˈʁɪçtɪɡə]",
+        "[ʁɪçˈtiːɡə]",
+        "[ˈʁɪçtɪçə]"
+      ],
+      "instruction_de": "Vor einem Vokal hört man bei -ig häufig [ɡ].",
+      "instruction_ru": "Перед гласной в -ig часто слышится [ɡ]."
+    },
+    {
+      "id": "reading-stress-11",
+      "topic_id": "reading_stress",
+      "lemma": "reading",
+      "required_item_type": "none",
+      "type": "choice",
+      "prompt": "Haustür",
+      "answer": "[ˈhaʊ̯sˌtyːɐ̯]",
+      "options": [
+        "[ˈhaʊ̯sˌtyːɐ̯]",
+        "[haʊ̯sˈtyːɐ̯]",
+        "[ˈhɔɪ̯styːɐ̯]"
+      ],
+      "instruction_de": "Im Kompositum trägt der erste Teil den Hauptakzent.",
+      "instruction_ru": "В сложном слове главное ударение падает на первую часть."
+    },
+    {
+      "id": "reading-stress-12",
+      "topic_id": "reading_stress",
+      "lemma": "reading",
+      "required_item_type": "none",
+      "type": "choice",
+      "prompt": "Bahnhof",
+      "answer": "[ˈbaːnˌhoːf]",
+      "options": [
+        "[ˈbaːnˌhoːf]",
+        "[baːnˈhɔf]",
+        "[ˈbanhɔf]"
+      ],
+      "instruction_de": "Im Kompositum trägt der erste Teil den Hauptakzent.",
+      "instruction_ru": "В сложном слове главное ударение падает на первую часть."
+    },
+    {
+      "id": "reading-stress-13",
+      "topic_id": "reading_stress",
+      "lemma": "reading",
+      "required_item_type": "none",
+      "type": "choice",
+      "prompt": "bekommen",
+      "answer": "[bəˈkɔmən]",
+      "options": [
+        "[bəˈkɔmən]",
+        "[ˈbeːkɔmən]",
+        "[bəkɔˈmən]"
+      ],
+      "instruction_de": "be- ist unbetont.",
+      "instruction_ru": "Приставка be- безударна."
+    },
+    {
+      "id": "reading-stress-14",
+      "topic_id": "reading_stress",
+      "lemma": "reading",
+      "required_item_type": "none",
+      "type": "choice",
+      "prompt": "erzählen",
+      "answer": "[ɛɐ̯ˈtsɛːlən]",
+      "options": [
+        "[ɛɐ̯ˈtsɛːlən]",
+        "[ˈɛʁtsɛlən]",
+        "[ɛʁtsɛˈlən]"
+      ],
+      "instruction_de": "er- ist unbetont.",
+      "instruction_ru": "Приставка er- безударна."
+    },
+    {
+      "id": "reading-stress-15",
+      "topic_id": "reading_stress",
+      "lemma": "reading",
+      "required_item_type": "none",
+      "type": "choice",
+      "prompt": "mitkommen",
+      "answer": "[ˈmɪtˌkɔmən]",
+      "options": [
+        "[ˈmɪtˌkɔmən]",
+        "[mɪtˈkoːmən]",
+        "[ˈmiːtkɔmən]"
+      ],
+      "instruction_de": "Die trennbare Vorsilbe mit- ist betont.",
+      "instruction_ru": "Отделяемая приставка mit- ударная."
+    },
+    {
+      "id": "reading-stress-16",
+      "topic_id": "reading_stress",
+      "lemma": "reading",
+      "required_item_type": "none",
+      "type": "choice",
+      "prompt": "aufstehen",
+      "answer": "[ˈaʊ̯fˌʃteːən]",
+      "options": [
+        "[ˈaʊ̯fˌʃteːən]",
+        "[aʊ̯fˈsteːən]",
+        "[ˈɔɪ̯fʃtɛən]"
+      ],
+      "instruction_de": "Die trennbare Vorsilbe auf- ist betont.",
+      "instruction_ru": "Отделяемая приставка auf- ударная."
+    },
+    {
+      "id": "reading-stress-17",
+      "topic_id": "reading_stress",
+      "lemma": "reading",
+      "required_item_type": "none",
+      "type": "choice",
+      "prompt": "probieren",
+      "answer": "[pʁoˈbiːʁən]",
+      "options": [
+        "[pʁoˈbiːʁən]",
+        "[ˈpʁoːbiʁən]",
+        "[pʁobiˈʁən]"
+      ],
+      "instruction_de": "Bei -ieren liegt der Akzent vor der Endung.",
+      "instruction_ru": "В глаголах на -ieren ударение находится перед окончанием."
+    },
+    {
+      "id": "reading-stress-18",
+      "topic_id": "reading_stress",
+      "lemma": "reading",
+      "required_item_type": "none",
+      "type": "choice",
+      "prompt": "Wohnzimmer",
+      "answer": "[ˈvoːnˌtsɪmɐ]",
+      "options": [
+        "[ˈvoːnˌtsɪmɐ]",
+        "[voːnˈtsɪmɐ]",
+        "[ˈvɔnziːmɐ]"
+      ],
+      "instruction_de": "Im Kompositum trägt der erste Teil den Hauptakzent.",
+      "instruction_ru": "В сложном слове главное ударение падает на первую часть."
+    },
+    {
+      "id": "reading-stress-19",
+      "topic_id": "reading_stress",
+      "lemma": "reading",
+      "required_item_type": "none",
+      "type": "choice",
+      "prompt": "Entschuldigung",
+      "answer": "[ɛntˈʃʊldɪɡʊŋ]",
+      "options": [
+        "[ɛntˈʃʊldɪɡʊŋ]",
+        "[ˈɛntʃʊldɪɡʊŋ]",
+        "[ɛntʃʊlˈdiːɡʊŋ]"
+      ],
+      "instruction_de": "ent- ist unbetont; der Stamm trägt den Akzent.",
+      "instruction_ru": "Приставка ent- безударна; ударение падает на корень."
+    },
+    {
+      "id": "reading-stress-20",
+      "topic_id": "reading_stress",
+      "lemma": "reading",
+      "required_item_type": "none",
+      "type": "choice",
+      "prompt": "Vorname",
+      "answer": "[ˈfoːɐ̯ˌnaːmə]",
+      "options": [
+        "[ˈfoːɐ̯ˌnaːmə]",
+        "[foːɐ̯ˈnaːmə]",
+        "[ˈfɔʁnamə]"
+      ],
+      "instruction_de": "Im Kompositum trägt der erste Teil den Hauptakzent.",
+      "instruction_ru": "В сложном слове главное ударение падает на первую часть."
+    },
+    {
+      "id": "verb-first-question-order-01",
+      "topic_id": "yes_no_questions",
+      "lemma": "lernen",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "Aussage: Du lernst Deutsch.",
+      "answer": "Lernst du Deutsch?",
+      "options": [
+        "Lernst",
+        "du",
+        "Deutsch?"
+      ],
+      "instruction_de": "Bilde eine Frage mit dem Verb am Anfang.",
+      "instruction_ru": "Составьте вопрос, поставив глагол в начало."
+    },
+    {
+      "id": "verb-first-question-order-02",
+      "topic_id": "yes_no_questions",
+      "lemma": "wohnen",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "Aussage: Ihr wohnt in Berlin.",
+      "answer": "Wohnt ihr in Berlin?",
+      "options": [
+        "Wohnt",
+        "ihr",
+        "in",
+        "Berlin?"
+      ],
+      "instruction_de": "Bilde eine Frage mit dem Verb am Anfang.",
+      "instruction_ru": "Составьте вопрос, поставив глагол в начало."
+    },
+    {
+      "id": "verb-first-question-order-03",
+      "topic_id": "yes_no_questions",
+      "lemma": "kommen",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "Aussage: Sie kommen heute.",
+      "answer": "Kommen Sie heute?",
+      "options": [
+        "Kommen",
+        "Sie",
+        "heute?"
+      ],
+      "instruction_de": "Bilde eine höfliche Frage.",
+      "instruction_ru": "Составьте вежливый вопрос."
+    },
+    {
+      "id": "verb-first-question-order-04",
+      "topic_id": "yes_no_questions",
+      "lemma": "kaufen",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "Aussage: Er kauft Brot.",
+      "answer": "Kauft er Brot?",
+      "options": [
+        "Kauft",
+        "er",
+        "Brot?"
+      ],
+      "instruction_de": "Bilde eine Frage mit dem Verb am Anfang.",
+      "instruction_ru": "Составьте вопрос, поставив глагол в начало."
+    },
+    {
+      "id": "verb-first-question-order-05",
+      "topic_id": "yes_no_questions",
+      "lemma": "spielen",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "Aussage: Ihr spielt Fußball.",
+      "answer": "Spielt ihr Fußball?",
+      "options": [
+        "Spielt",
+        "ihr",
+        "Fußball?"
+      ],
+      "instruction_de": "Bilde eine Frage mit dem Verb am Anfang.",
+      "instruction_ru": "Составьте вопрос, поставив глагол в начало."
+    },
+    {
+      "id": "verb-first-question-order-06",
+      "topic_id": "yes_no_questions",
+      "lemma": "hören",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "Aussage: Du hörst Musik.",
+      "answer": "Hörst du Musik?",
+      "options": [
+        "Hörst",
+        "du",
+        "Musik?"
+      ],
+      "instruction_de": "Bilde eine Frage mit dem Verb am Anfang.",
+      "instruction_ru": "Составьте вопрос, поставив глагол в начало."
+    },
+    {
+      "id": "verb-first-question-order-07",
+      "topic_id": "yes_no_questions",
+      "lemma": "kochen",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "Aussage: Sie kocht heute.",
+      "answer": "Kocht sie heute?",
+      "options": [
+        "Kocht",
+        "sie",
+        "heute?"
+      ],
+      "instruction_de": "Bilde eine Frage mit dem Verb am Anfang.",
+      "instruction_ru": "Составьте вопрос, поставив глагол в начало."
+    },
+    {
+      "id": "verb-first-question-order-08",
+      "topic_id": "yes_no_questions",
+      "lemma": "frühstücken",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "Aussage: Ihr frühstückt um acht.",
+      "answer": "Frühstückt ihr um acht?",
+      "options": [
+        "Frühstückt",
+        "ihr",
+        "um",
+        "acht?"
+      ],
+      "instruction_de": "Bilde eine Frage mit dem Verb am Anfang.",
+      "instruction_ru": "Составьте вопрос, поставив глагол в начало."
+    },
+    {
+      "id": "verb-first-question-order-09",
+      "topic_id": "yes_no_questions",
+      "lemma": "telefonieren",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "Aussage: Du telefonierst mit Anna.",
+      "answer": "Telefonierst du mit Anna?",
+      "options": [
+        "Telefonierst",
+        "du",
+        "mit",
+        "Anna?"
+      ],
+      "instruction_de": "Bilde eine Frage mit dem Verb am Anfang.",
+      "instruction_ru": "Составьте вопрос, поставив глагол в начало."
+    },
+    {
+      "id": "verb-first-question-order-10",
+      "topic_id": "yes_no_questions",
+      "lemma": "fotografieren",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "Aussage: Du fotografierst gern.",
+      "answer": "Fotografierst du gern?",
+      "options": [
+        "Fotografierst",
+        "du",
+        "gern?"
+      ],
+      "instruction_de": "Bilde eine Frage mit dem Verb am Anfang.",
+      "instruction_ru": "Составьте вопрос, поставив глагол в начало."
+    },
+    {
+      "id": "verb-first-question-order-11",
+      "topic_id": "yes_no_questions",
+      "lemma": "sein",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "Aussage: Die Kinder sind müde.",
+      "answer": "Sind die Kinder müde?",
+      "options": [
+        "Sind",
+        "die",
+        "Kinder",
+        "müde?"
+      ],
+      "instruction_de": "Bilde eine Frage mit sein am Anfang.",
+      "instruction_ru": "Составьте вопрос с sein в начале."
+    },
+    {
+      "id": "verb-first-question-order-12",
+      "topic_id": "yes_no_questions",
+      "lemma": "haben",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "Aussage: Du hast Zeit.",
+      "answer": "Hast du Zeit?",
+      "options": [
+        "Hast",
+        "du",
+        "Zeit?"
+      ],
+      "instruction_de": "Bilde eine Frage mit haben am Anfang.",
+      "instruction_ru": "Составьте вопрос с haben в начале."
+    },
+    {
+      "id": "verb-first-question-choice-01",
+      "topic_id": "yes_no_questions",
+      "lemma": "lernen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Aussage: Ihr lernt zusammen.",
+      "answer": "Lernt ihr zusammen?",
+      "options": [
+        "Lernt ihr zusammen?",
+        "Ihr lernt zusammen?",
+        "Lernen ihr zusammen?"
+      ],
+      "instruction_de": "Welche Frage ist richtig?",
+      "instruction_ru": "Какой вопрос построен правильно?"
+    },
+    {
+      "id": "verb-first-question-choice-02",
+      "topic_id": "yes_no_questions",
+      "lemma": "wohnen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Aussage: Du wohnst in Köln.",
+      "answer": "Wohnst du in Köln?",
+      "options": [
+        "Wohnst du in Köln?",
+        "Du wohnst in Köln?",
+        "Wohnt du in Köln?"
+      ],
+      "instruction_de": "Welche Frage ist richtig?",
+      "instruction_ru": "Какой вопрос построен правильно?"
+    },
+    {
+      "id": "verb-first-question-choice-03",
+      "topic_id": "yes_no_questions",
+      "lemma": "kommen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Aussage: Er kommt aus Polen.",
+      "answer": "Kommt er aus Polen?",
+      "options": [
+        "Kommt er aus Polen?",
+        "Er kommt aus Polen?",
+        "Kommst er aus Polen?"
+      ],
+      "instruction_de": "Welche Frage ist richtig?",
+      "instruction_ru": "Какой вопрос построен правильно?"
+    },
+    {
+      "id": "verb-first-question-choice-04",
+      "topic_id": "yes_no_questions",
+      "lemma": "kaufen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Aussage: Sie kaufen zwei Äpfel.",
+      "answer": "Kaufen Sie zwei Äpfel?",
+      "options": [
+        "Kaufen Sie zwei Äpfel?",
+        "Sie kaufen zwei Äpfel?",
+        "Kauft Sie zwei Äpfel?"
+      ],
+      "instruction_de": "Welche höfliche Frage ist richtig?",
+      "instruction_ru": "Какой вежливый вопрос построен правильно?"
+    },
+    {
+      "id": "verb-first-question-choice-05",
+      "topic_id": "yes_no_questions",
+      "lemma": "spielen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Aussage: Sie spielt Tennis.",
+      "answer": "Spielt sie Tennis?",
+      "options": [
+        "Spielt sie Tennis?",
+        "Sie spielt Tennis?",
+        "Spielst sie Tennis?"
+      ],
+      "instruction_de": "Welche Frage ist richtig?",
+      "instruction_ru": "Какой вопрос построен правильно?"
+    },
+    {
+      "id": "verb-first-question-choice-06",
+      "topic_id": "yes_no_questions",
+      "lemma": "hören",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Aussage: Ihr hört den Dialog.",
+      "answer": "Hört ihr den Dialog?",
+      "options": [
+        "Hört ihr den Dialog?",
+        "Ihr hört den Dialog?",
+        "Hören ihr den Dialog?"
+      ],
+      "instruction_de": "Welche Frage ist richtig?",
+      "instruction_ru": "Какой вопрос построен правильно?"
+    },
+    {
+      "id": "verb-first-question-choice-07",
+      "topic_id": "yes_no_questions",
+      "lemma": "kochen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Aussage: Du kochst gern.",
+      "answer": "Kochst du gern?",
+      "options": [
+        "Kochst du gern?",
+        "Du kochst gern?",
+        "Kocht du gern?"
+      ],
+      "instruction_de": "Welche Frage ist richtig?",
+      "instruction_ru": "Какой вопрос построен правильно?"
+    },
+    {
+      "id": "verb-first-question-choice-08",
+      "topic_id": "yes_no_questions",
+      "lemma": "frühstücken",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Aussage: Er frühstückt zu Hause.",
+      "answer": "Frühstückt er zu Hause?",
+      "options": [
+        "Frühstückt er zu Hause?",
+        "Er frühstückt zu Hause?",
+        "Frühstücken er zu Hause?"
+      ],
+      "instruction_de": "Welche Frage ist richtig?",
+      "instruction_ru": "Какой вопрос построен правильно?"
+    },
+    {
+      "id": "verb-first-question-choice-09",
+      "topic_id": "yes_no_questions",
+      "lemma": "telefonieren",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Aussage: Sie telefoniert am Abend.",
+      "answer": "Telefoniert sie am Abend?",
+      "options": [
+        "Telefoniert sie am Abend?",
+        "Sie telefoniert am Abend?",
+        "Telefonierst sie am Abend?"
+      ],
+      "instruction_de": "Welche Frage ist richtig?",
+      "instruction_ru": "Какой вопрос построен правильно?"
+    },
+    {
+      "id": "verb-first-question-choice-10",
+      "topic_id": "yes_no_questions",
+      "lemma": "fotografieren",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Aussage: Ihr fotografiert im Park.",
+      "answer": "Fotografiert ihr im Park?",
+      "options": [
+        "Fotografiert ihr im Park?",
+        "Ihr fotografiert im Park?",
+        "Fotografieren ihr im Park?"
+      ],
+      "instruction_de": "Welche Frage ist richtig?",
+      "instruction_ru": "Какой вопрос построен правильно?"
+    },
+    {
+      "id": "verb-first-question-choice-11",
+      "topic_id": "yes_no_questions",
+      "lemma": "sein",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Aussage: Du bist verheiratet.",
+      "answer": "Bist du verheiratet?",
+      "options": [
+        "Bist du verheiratet?",
+        "Du bist verheiratet?",
+        "Sind du verheiratet?"
+      ],
+      "instruction_de": "Welche Frage mit sein ist richtig?",
+      "instruction_ru": "Какой вопрос с sein построен правильно?"
+    },
+    {
+      "id": "verb-first-question-choice-12",
+      "topic_id": "yes_no_questions",
+      "lemma": "haben",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Aussage: Sie hat Kinder.",
+      "answer": "Hat sie Kinder?",
+      "options": [
+        "Hat sie Kinder?",
+        "Sie hat Kinder?",
+        "Hast sie Kinder?"
+      ],
+      "instruction_de": "Welche Frage mit haben ist richtig?",
+      "instruction_ru": "Какой вопрос с haben построен правильно?"
     }
   ]
 }

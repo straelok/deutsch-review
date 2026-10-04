@@ -261,6 +261,35 @@
       "trainable": true
     },
     {
+      "id": "lesson1_special_verbs",
+      "order": 4,
+      "title_de": "Besondere Verbformen im Präsens",
+      "title_ru": "Особые формы глаголов в Präsens",
+      "summary_de": "Einige Verbstämme brauchen ein zusätzliches e, verlieren ein s oder ändern den Stammvokal.",
+      "summary_ru": "Некоторые основы требуют дополнительную e, не принимают лишнюю s или меняют корневую гласную.",
+      "explanation_de": [
+        "Nach einem Stamm auf -d oder -t steht vor -st und -t ein zusätzliches e: du arbeitest, er arbeitet, ihr arbeitet; du redest.",
+        "Nach einem Stamm auf -s, -ß oder -z bekommt du nur -t statt -st: du heißt, du tanzt. Die Form heißst gibt es nicht.",
+        "Bei sprechen wird e bei du und er/sie/es zu i: du sprichst, er spricht. Die Formen ich spreche, wir sprechen, ihr sprecht und sie/Sie sprechen behalten e.",
+        "In einer W-Frage steht die konjugierte Form direkt nach dem Fragewort: Wie heißt du? Was sprechen Sie?",
+        "Sie ist die höfliche Anrede und wird großgeschrieben. du verwendet man bei vertrauten Personen und Kindern."
+      ],
+      "explanation_ru": [
+        "После основы на -d или -t перед окончаниями -st и -t добавляется e: du arbeitest, er arbeitet, ihr arbeitet; du redest. Так форму легче произнести.",
+        "После основы на -s, -ß или -z форма du получает только -t вместо -st: du heißt, du tanzt. Формы heißst не существует.",
+        "В sprechen гласная e меняется на i в формах du и er/sie/es: du sprichst, er spricht. В формах ich spreche, wir sprechen, ihr sprecht и sie/Sie sprechen сохраняется e.",
+        "В W-вопросе спрягаемая форма стоит сразу после вопросительного слова: Wie heißt du? — Как тебя зовут? Was sprechen Sie? — На каком языке Вы говорите?",
+        "Sie — вежливое обращение «Вы» и всегда пишется с заглавной буквы. du — обращение «ты» к знакомым людям и детям."
+      ],
+      "table": [
+        ["Besonderheit / Особенность", "Verb / Глагол", "Beispiel / Пример"],
+        ["основа на -d/-t: добавляется e", "arbeiten / reden", "du arbeitest / du redest"],
+        ["основа на -s/-ß/-z: у du только -t", "heißen / tanzen", "du heißt / du tanzt"],
+        ["e меняется на i", "sprechen", "du sprichst / er spricht"]
+      ],
+      "trainable": true
+    },
+    {
       "id": "sein",
       "order": 5,
       "title_de": "Das Verb sein",
@@ -422,6 +451,7 @@
         "Präpositionen stehen vor einer Wortgruppe: in Berlin, aus Polen, mit Anna.",
         "Die genaue Kasusform wird später gelernt; zuerst erkennst du Bedeutung und Position.",
         "Einige Präpositionen haben eine feste Grundbedeutung: aus bezeichnet Herkunft, mit Begleitung oder Mittel, für Ziel oder Empfänger.",
+        "Die meisten Ländernamen stehen nach aus ohne Artikel: aus Deutschland. Ländernamen mit Artikel ändern sich: aus der Schweiz, aus dem Jemen, aus den USA. Lerne diese Formen zuerst als feste Gruppen.",
         "in kann einen Ort oder eine Richtung ausdrücken. Der Kasus zeigt später den Unterschied: in der Schule, in die Schule.",
         "Lerne Präpositionen am besten in kurzen Gruppen statt einzeln: aus Berlin, mit dem Bus, für meine Mutter."
       ],
@@ -429,10 +459,11 @@
         "Предлог ставится перед группой слов: in Berlin, aus Polen, mit Anna.",
         "Точная форма падежа будет изучаться позже; сначала важно узнавать значение и место предлога.",
         "Некоторые предлоги имеют устойчивое основное значение: aus обозначает происхождение, mit — совместность или средство, für — цель или получателя.",
+        "Большинство названий стран после aus употребляются без артикля: aus Deutschland — из Германии. Если у страны есть артикль, форма меняется: aus der Schweiz — из Швейцарии, aus dem Jemen — из Йемена, aus den USA — из США. Пока учите эти сочетания целиком.",
         "in может обозначать место или направление. Позднее падеж покажет разницу: in der Schule, in die Schule.",
         "Предлоги полезнее учить в коротких сочетаниях: aus Berlin, mit dem Bus, für meine Mutter."
       ],
-      "table": [["Präposition / Предлог", "Bedeutung / Значение"], ["in", "в"], ["aus", "из"], ["mit", "с"], ["für", "для"], ["bei", "у / при"]],
+      "table": [["Präposition / Предлог", "Bedeutung / Значение"], ["in", "в"], ["aus", "из"], ["mit", "с"], ["für", "для"], ["bei", "у / при"], ["aus Deutschland", "из Германии"], ["aus der Schweiz", "из Швейцарии"], ["aus dem Jemen", "из Йемена"], ["aus den USA", "из США"]],
       "trainable": true
     },
     {
@@ -472,7 +503,8 @@
         "Nach dem Verb folgt normalerweise das Subjekt, danach der Rest: Wohnst du in Berlin? Kauft er Brot?",
         "Die Verbform muss zum Subjekt passen. Deshalb heißt es „Kommst du?“, aber „Kommt ihr?“ und „Kommen Sie?“.",
         "Auch sein und haben stehen direkt am Anfang: Bist du müde? Sind Sie verheiratet? Hast du Zeit?",
-        "Man antwortet kurz mit Ja oder Nein oder mit einem vollständigen Satz: Ja, ich lerne Deutsch. Nein, ich lerne nicht."
+        "Man antwortet kurz mit Ja oder Nein oder mit einem vollständigen Satz: Ja, ich lerne Deutsch. Nein, ich lerne nicht.",
+        "Auf eine negative Frage antwortet man mit doch, wenn man widerspricht und die Handlung bestätigt: Lernst du nicht Deutsch? — Doch, ich lerne Deutsch."
       ],
       "explanation_ru": [
         "Вопрос без вопросительного слова начинается со спрягаемого глагола: Lernst du Deutsch? Такие вопросы также называют вопросами с ответом Ja или Nein.",
@@ -480,9 +512,10 @@
         "После глагола обычно идёт подлежащее, затем остальные части предложения: Wohnst du in Berlin? Kauft er Brot?",
         "Форма глагола должна соответствовать подлежащему: Kommst du?, но Kommt ihr? и Kommen Sie?.",
         "Глаголы sein и haben тоже ставятся прямо в начало: Bist du müde? Sind Sie verheiratet? Hast du Zeit?",
-        "Можно ответить кратко Ja или Nein либо полным предложением: Ja, ich lerne Deutsch. Nein, ich lerne nicht."
+        "Можно ответить кратко Ja или Nein либо полным предложением: Ja, ich lerne Deutsch. Nein, ich lerne nicht.",
+        "На отрицательный вопрос используется doch, если нужно возразить и подтвердить действие: Lernst du nicht Deutsch? — Doch, ich lerne Deutsch. По-русски это означает «Нет, учу» или «Наоборот, учу»."
       ],
-      "table": [["Deutsch / Термин", "Beispiel und Bedeutung / Пример и смысл"], ["Aussage / Утверждение", "Du lernst Deutsch. — Ты учишь немецкий."], ["Frage / Вопрос", "Lernst du Deutsch? — Ты учишь немецкий?"], ["Schema / Схема", "Verb + Subjekt + Rest? — глагол + подлежащее + остальное?"], ["Ja / Да", "Ja, ich lerne Deutsch. — Да, я учу немецкий."], ["Nein / Нет", "Nein, ich lerne nicht. — Нет, я не учу немецкий."]],
+      "table": [["Deutsch / Термин", "Beispiel und Bedeutung / Пример и смысл"], ["Aussage / Утверждение", "Du lernst Deutsch. — Ты учишь немецкий."], ["Frage / Вопрос", "Lernst du Deutsch? — Ты учишь немецкий?"], ["Schema / Схема", "Verb + Subjekt + Rest? — глагол + подлежащее + остальное?"], ["Ja / Да", "Ja, ich lerne Deutsch. — Да, я учу немецкий."], ["Nein / Нет", "Nein, ich lerne nicht. — Нет, я не учу немецкий."], ["Doch / Наоборот, да", "Lernst du nicht Deutsch? — Doch! — Ты не учишь немецкий? — Нет, учу!"]],
       "trainable": true
     },
     {
@@ -584,6 +617,11 @@
     {"lemma":"erklären","topic_id":"regular_present","stem":"erklär","forms":{"ich":"erkläre","du":"erklärst","er/sie/es":"erklärt","wir":"erklären","ihr":"erklärt","sie/Sie":"erklären"}},
     {"lemma":"üben","topic_id":"regular_present","stem":"üb","forms":{"ich":"übe","du":"übst","er/sie/es":"übt","wir":"üben","ihr":"übt","sie/Sie":"üben"}},
     {"lemma":"bezahlen","topic_id":"regular_present","stem":"bezahl","forms":{"ich":"bezahle","du":"bezahlst","er/sie/es":"bezahlt","wir":"bezahlen","ihr":"bezahlt","sie/Sie":"bezahlen"}},
+    {"lemma":"heißen","topic_id":"lesson1_special_verbs","stem":"heiß","forms":{"ich":"heiße","du":"heißt","er/sie/es":"heißt","wir":"heißen","ihr":"heißt","sie/Sie":"heißen"}},
+    {"lemma":"sprechen","topic_id":"lesson1_special_verbs","stem":"sprech","forms":{"ich":"spreche","du":"sprichst","er/sie/es":"spricht","wir":"sprechen","ihr":"sprecht","sie/Sie":"sprechen"}},
+    {"lemma":"arbeiten","topic_id":"lesson1_special_verbs","stem":"arbeit","forms":{"ich":"arbeite","du":"arbeitest","er/sie/es":"arbeitet","wir":"arbeiten","ihr":"arbeitet","sie/Sie":"arbeiten"}},
+    {"lemma":"reden","topic_id":"lesson1_special_verbs","stem":"red","forms":{"ich":"rede","du":"redest","er/sie/es":"redet","wir":"reden","ihr":"redet","sie/Sie":"reden"}},
+    {"lemma":"tanzen","topic_id":"lesson1_special_verbs","stem":"tanz","forms":{"ich":"tanze","du":"tanzt","er/sie/es":"tanzt","wir":"tanzen","ihr":"tanzt","sie/Sie":"tanzen"}},
     {"lemma":"sein","topic_id":"sein","stem":"","forms":{"ich":"bin","du":"bist","er/sie/es":"ist","wir":"sind","ihr":"seid","sie/Sie":"sind"}},
     {"lemma":"haben","topic_id":"haben","stem":"","forms":{"ich":"habe","du":"hast","er/sie/es":"hat","wir":"haben","ihr":"habt","sie/Sie":"haben"}}
   ]

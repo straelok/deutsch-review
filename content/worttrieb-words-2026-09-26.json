@@ -1,6 +1,6 @@
 {
   "format_version": 2,
-  "exported_at": "2026-10-04T12:30:00.000Z",
+  "exported_at": "2026-10-04T21:00:00.000Z",
   "words": [
     {
       "id": "c1000001-0000-4000-8000-000000000001",
@@ -3526,6 +3526,120 @@
       "note": "Может означать повторение учебного материала или повтор действия.",
       "created_at": "2026-10-04T12:30:00.000Z",
       "updated_at": "2026-10-04T12:30:00.000Z"
+    },
+    {
+      "id": "d3000001-0000-4000-8000-000000000001", "type": "noun", "german": "Lektion", "translation_ru": "урок; раздел учебника", "article": "die", "plural": "Lektionen", "example": "Heute lernen wir Lektion eins.; Das Wort steht in dieser Lektion.", "created_at": "2026-10-04T21:00:00.000Z", "updated_at": "2026-10-04T21:00:00.000Z"
+    },
+    {
+      "id": "d3000002-0000-4000-8000-000000000002", "type": "word", "german": "ein bisschen", "translation_ru": "немного; чуть-чуть", "example": "Ich spreche ein bisschen Deutsch.; Nur ein bisschen, bitte.", "note": "Устойчивое сочетание, пишется раздельно.", "created_at": "2026-10-04T21:00:00.000Z", "updated_at": "2026-10-04T21:00:00.000Z"
+    },
+    {
+      "id": "d3000003-0000-4000-8000-000000000003", "type": "word", "german": "hallo", "translation_ru": "привет; здравствуйте", "example": "Hallo, ich bin Anna.; Hallo zusammen!", "note": "Нейтральное неофициальное приветствие.", "created_at": "2026-10-04T21:00:00.000Z", "updated_at": "2026-10-04T21:00:00.000Z"
+    },
+    {
+      "id": "d3000005-0000-4000-8000-000000000005", "type": "word", "german": "willkommen", "translation_ru": "добро пожаловать; желанный", "example": "Willkommen im Kurs!; Herzlich willkommen!", "created_at": "2026-10-04T21:00:00.000Z", "updated_at": "2026-10-04T21:00:00.000Z"
+    },
+    {
+      "id": "d3000006-0000-4000-8000-000000000006", "type": "noun", "german": "Entschuldigung", "translation_ru": "извинение; извините; простите", "article": "die", "plural": "Entschuldigungen", "example": "Entschuldigung, wie heißen Sie?; Bitte entschuldigen Sie die Verspätung.", "note": "Entschuldigung! часто используется как самостоятельное вежливое обращение.", "created_at": "2026-10-04T21:00:00.000Z", "updated_at": "2026-10-04T21:00:00.000Z"
+    },
+    {
+      "id": "d3000007-0000-4000-8000-000000000007", "type": "noun", "german": "Schweiz", "translation_ru": "Швейцария", "article": "die", "plural": "—", "example": "Ich komme aus der Schweiz.; Bern liegt in der Schweiz.", "note": "Название страны употребляется с артиклем die.", "created_at": "2026-10-04T21:00:00.000Z", "updated_at": "2026-10-04T21:00:00.000Z"
+    },
+    {
+      "id": "d3000008-0000-4000-8000-000000000008", "type": "word", "german": "aha", "translation_ru": "ага; понятно", "example": "Aha, du kommst aus Polen.; Aha, interessant!", "created_at": "2026-10-04T21:00:00.000Z", "updated_at": "2026-10-04T21:00:00.000Z"
+    },
+    {
+      "id": "d3000009-0000-4000-8000-000000000009", "type": "word", "german": "Wie bitte?", "translation_ru": "что, простите?; повторите, пожалуйста", "example": "Wie bitte? Buchstabieren Sie das bitte.; Wie bitte? Ich verstehe Sie nicht.", "note": "Вежливая просьба повторить сказанное.", "created_at": "2026-10-04T21:00:00.000Z", "updated_at": "2026-10-04T21:00:00.000Z"
+    },
+    {
+      "id": "d3000010-0000-4000-8000-000000000010", "type": "word", "german": "Liechtenstein", "translation_ru": "Лихтенштейн", "example": "Vaduz liegt in Liechtenstein.; Ich komme aus Liechtenstein.", "created_at": "2026-10-04T21:00:00.000Z", "updated_at": "2026-10-04T21:00:00.000Z"
+    },
+    {
+      "id": "d3000011-0000-4000-8000-000000000011", "type": "word", "german": "Jemen", "translation_ru": "Йемен", "example": "Ich komme aus dem Jemen.; Sana'a liegt im Jemen.", "note": "Обычно употребляется с артиклем der: aus dem Jemen.", "created_at": "2026-10-04T21:00:00.000Z", "updated_at": "2026-10-04T21:00:00.000Z"
+    },
+    {
+      "id": "d3000012-0000-4000-8000-000000000012", "type": "word", "german": "Sudan", "translation_ru": "Судан", "example": "Er kommt aus dem Sudan.; Khartum liegt im Sudan.", "note": "Часто употребляется с артиклем der: aus dem Sudan.", "created_at": "2026-10-04T21:00:00.000Z", "updated_at": "2026-10-04T21:00:00.000Z"
+    },
+    {
+      "id": "d3000013-0000-4000-8000-000000000013", "type": "word", "german": "USA", "translation_ru": "США; Соединённые Штаты", "example": "Sie kommt aus den USA.; Die USA liegen in Nordamerika.", "note": "Употребляется во множественном числе с артиклем die: aus den USA.", "created_at": "2026-10-04T21:00:00.000Z", "updated_at": "2026-10-04T21:00:00.000Z"
+    },
+    {
+      "id": "d3000014-0000-4000-8000-000000000014", "type": "word", "german": "Irak", "translation_ru": "Ирак", "example": "Er kommt aus dem Irak.; Bagdad liegt im Irak.", "note": "Часто употребляется с артиклем der: aus dem Irak.", "created_at": "2026-10-04T21:00:00.000Z", "updated_at": "2026-10-04T21:00:00.000Z"
+    },
+    {
+      "id": "d3000015-0000-4000-8000-000000000015", "type": "word", "german": "Nigeria", "translation_ru": "Нигерия", "example": "Ada kommt aus Nigeria.; Abuja liegt in Nigeria.", "created_at": "2026-10-04T21:00:00.000Z", "updated_at": "2026-10-04T21:00:00.000Z"
+    },
+    {
+      "id": "d3000016-0000-4000-8000-000000000016", "type": "word", "german": "Kamerun", "translation_ru": "Камерун", "example": "Er kommt aus Kamerun.; Jaunde liegt in Kamerun.", "created_at": "2026-10-04T21:00:00.000Z", "updated_at": "2026-10-04T21:00:00.000Z"
+    },
+    {
+      "id": "d3000017-0000-4000-8000-000000000017", "type": "word", "german": "Ghana", "translation_ru": "Гана", "example": "Ebo kommt aus Ghana.; Accra liegt in Ghana.", "created_at": "2026-10-04T21:00:00.000Z", "updated_at": "2026-10-04T21:00:00.000Z"
+    },
+    {
+      "id": "d3000018-0000-4000-8000-000000000018", "type": "word", "german": "Marokko", "translation_ru": "Марокко", "example": "Samira kommt aus Marokko.; Rabat liegt in Marokko.", "created_at": "2026-10-04T21:00:00.000Z", "updated_at": "2026-10-04T21:00:00.000Z"
+    },
+    {
+      "id": "d3000020-0000-4000-8000-000000000020", "type": "word", "german": "schön", "translation_ru": "красивый; хороший; приятно", "example": "Das ist schön.; Ah, schön!", "created_at": "2026-10-04T21:00:00.000Z", "updated_at": "2026-10-04T21:00:00.000Z"
+    },
+    {
+      "id": "d3000021-0000-4000-8000-000000000021", "type": "word", "german": "freut mich", "translation_ru": "приятно познакомиться; рад знакомству", "example": "Guten Tag, freut mich.; Ich bin Anna. Freut mich!", "note": "Краткая разговорная форма от Es freut mich.", "created_at": "2026-10-04T21:00:00.000Z", "updated_at": "2026-10-04T21:00:00.000Z"
+    },
+    {
+      "id": "d3000022-0000-4000-8000-000000000022", "type": "noun", "german": "Nachname", "translation_ru": "фамилия", "article": "der", "plural": "Nachnamen", "example": "Mein Nachname ist Weber.; Schreiben Sie Ihren Nachnamen.", "created_at": "2026-10-04T21:00:00.000Z", "updated_at": "2026-10-04T21:00:00.000Z"
+    },
+    {
+      "id": "d3000023-0000-4000-8000-000000000023", "type": "noun", "german": "Hausnummer", "translation_ru": "номер дома", "article": "die", "plural": "Hausnummern", "example": "Meine Hausnummer ist zwölf.; Ergänzen Sie Straße und Hausnummer.", "created_at": "2026-10-04T21:00:00.000Z", "updated_at": "2026-10-04T21:00:00.000Z"
+    },
+    {
+      "id": "d3000024-0000-4000-8000-000000000024", "type": "noun", "german": "Brief", "translation_ru": "письмо", "article": "der", "plural": "Briefe", "example": "Ich schreibe einen Brief.; Der Brief kommt morgen.", "created_at": "2026-10-04T21:00:00.000Z", "updated_at": "2026-10-04T21:00:00.000Z"
+    },
+    {
+      "id": "d3000025-0000-4000-8000-000000000025", "type": "noun", "german": "Briefumschlag", "translation_ru": "конверт", "article": "der", "plural": "Briefumschläge", "example": "Die Adresse steht auf dem Briefumschlag.; Schreiben Sie den Namen auf den Briefumschlag.", "created_at": "2026-10-04T21:00:00.000Z", "updated_at": "2026-10-04T21:00:00.000Z"
+    },
+    {
+      "id": "d3000026-0000-4000-8000-000000000026", "type": "verb", "german": "stimmen", "translation_ru": "быть верным; совпадать; голосовать", "example": "Ja, das stimmt.; Die Adresse stimmt nicht.", "note": "В уроке используется выражение Das stimmt — Это верно.", "created_at": "2026-10-04T21:00:00.000Z", "updated_at": "2026-10-04T21:00:00.000Z"
+    },
+    {
+      "id": "d3000027-0000-4000-8000-000000000027", "type": "word", "german": "da", "translation_ru": "здесь; там; вот", "example": "Frau Bär ist nicht da.; Da ist die Schule.", "created_at": "2026-10-04T21:00:00.000Z", "updated_at": "2026-10-04T21:00:00.000Z"
+    },
+    {
+      "id": "d3000028-0000-4000-8000-000000000028", "type": "verb", "german": "üben", "translation_ru": "упражняться; тренировать; практиковать", "example": "Wir üben Deutsch.; Ich übe die Aussprache.", "created_at": "2026-10-04T21:00:00.000Z", "updated_at": "2026-10-04T21:00:00.000Z"
+    },
+    {
+      "id": "d3000029-0000-4000-8000-000000000029", "type": "noun", "german": "Moment", "translation_ru": "момент; мгновение", "article": "der", "plural": "Momente", "example": "Einen Moment, bitte.; Das war ein schöner Moment.", "created_at": "2026-10-04T21:00:00.000Z", "updated_at": "2026-10-04T21:00:00.000Z"
+    },
+    {
+      "id": "d3000030-0000-4000-8000-000000000030", "type": "noun", "german": "Partner", "translation_ru": "партнёр; собеседник", "article": "der", "plural": "Partner", "example": "Sprechen Sie mit Ihrem Partner.; Mein Partner heißt Jan.", "created_at": "2026-10-04T21:00:00.000Z", "updated_at": "2026-10-04T21:00:00.000Z"
+    },
+    {
+      "id": "d3000031-0000-4000-8000-000000000031", "type": "noun", "german": "Partnerin", "translation_ru": "партнёрша; собеседница", "article": "die", "plural": "Partnerinnen", "example": "Sprechen Sie mit Ihrer Partnerin.; Meine Partnerin kommt aus Wien.", "created_at": "2026-10-04T21:00:00.000Z", "updated_at": "2026-10-04T21:00:00.000Z"
+    },
+    {
+      "id": "d3000032-0000-4000-8000-000000000032", "type": "noun", "german": "Person", "translation_ru": "человек; персона", "article": "die", "plural": "Personen", "example": "Wer ist diese Person?; Drei Personen warten hier.", "created_at": "2026-10-04T21:00:00.000Z", "updated_at": "2026-10-04T21:00:00.000Z"
+    },
+    {
+      "id": "d3000033-0000-4000-8000-000000000033", "type": "noun", "german": "Heimatland", "translation_ru": "родная страна; страна происхождения", "article": "das", "plural": "Heimatländer", "example": "Was ist Ihr Heimatland?; Polen ist mein Heimatland.", "created_at": "2026-10-04T21:00:00.000Z", "updated_at": "2026-10-04T21:00:00.000Z"
+    },
+    {
+      "id": "d3000034-0000-4000-8000-000000000034", "type": "verb", "german": "begrüßen", "translation_ru": "приветствовать; здороваться с", "example": "Wir begrüßen die neuen Teilnehmer.; Sie begrüßt ihre Nachbarin.", "created_at": "2026-10-04T21:00:00.000Z", "updated_at": "2026-10-04T21:00:00.000Z"
+    },
+    {
+      "id": "d3000035-0000-4000-8000-000000000035", "type": "noun", "german": "Begrüßung", "translation_ru": "приветствие", "article": "die", "plural": "Begrüßungen", "example": "Hallo ist eine Begrüßung.; Die Begrüßung ist freundlich.", "created_at": "2026-10-04T21:00:00.000Z", "updated_at": "2026-10-04T21:00:00.000Z"
+    },
+    {
+      "id": "d3000036-0000-4000-8000-000000000036", "type": "noun", "german": "Abschied", "translation_ru": "прощание", "article": "der", "plural": "Abschiede", "example": "Zum Abschied sagen wir Tschüs.; Der Abschied ist kurz.", "created_at": "2026-10-04T21:00:00.000Z", "updated_at": "2026-10-04T21:00:00.000Z"
+    },
+    {
+      "id": "d3000037-0000-4000-8000-000000000037", "type": "verb", "german": "reden", "translation_ru": "говорить; разговаривать", "example": "Wir reden über den Kurs.; Du redest mit Lena.", "created_at": "2026-10-04T21:00:00.000Z", "updated_at": "2026-10-04T21:00:00.000Z"
+    },
+    {
+      "id": "d3000038-0000-4000-8000-000000000038", "type": "verb", "german": "tanzen", "translation_ru": "танцевать", "example": "Wir tanzen zusammen.; Du tanzt sehr gut.", "created_at": "2026-10-04T21:00:00.000Z", "updated_at": "2026-10-04T21:00:00.000Z"
+    },
+    {
+      "id": "d3000039-0000-4000-8000-000000000039", "type": "verb", "german": "reisen", "translation_ru": "путешествовать; ехать", "example": "Ich reise nach Deutschland.; Wir reisen im Sommer.", "created_at": "2026-10-04T21:00:00.000Z", "updated_at": "2026-10-04T21:00:00.000Z"
+    },
+    {
+      "id": "d3000040-0000-4000-8000-000000000040", "type": "word", "german": "doch", "translation_ru": "всё-таки; же; наоборот, да", "example": "Lernst du nicht Deutsch? — Doch!; Komm doch mit!", "note": "В ответе на отрицательный вопрос doch возражает отрицанию: Нет, наоборот, это так.", "created_at": "2026-10-04T21:00:00.000Z", "updated_at": "2026-10-04T21:00:00.000Z"
     }
   ]
 }

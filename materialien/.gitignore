@@ -1,8 +1,9 @@
-*.jpg
-*.jpeg
-*.png
-*.webp
-*.heic
-*.pdf
-*.tif
-*.tiff
+# Все пользовательские материалы остаются локальными.
+*
+
+# В Git сохраняются структура папок и памятка.
+!*/
+!.gitignore
+!README.md
+!VERARBEITET.md
+!**/.gitkeep
