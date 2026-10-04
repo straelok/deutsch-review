@@ -412,6 +412,7 @@ void main() {
     tails: _habenTails,
   );
   _addLessonOneSpecialVerbExercises(exercises);
+  _addLessonTwoExercises(exercises);
   _addFoundationExercises(exercises);
   final generatedIds = exercises.map((exercise) => exercise['id']).toSet();
   exercises.addAll(
@@ -448,6 +449,456 @@ List<Map<String, Object?>> _loadCuratedExercises() {
     final id = exercise['id'] as String? ?? '';
     return id.startsWith('reading-') || id.startsWith('verb-first-question-');
   }).toList(growable: false);
+}
+
+void _addLessonTwoExercises(List<Map<String, Object?>> exercises) {
+  const possessives = <({
+    String id,
+    String lemma,
+    String prompt,
+    String answer,
+    List<String> options,
+  })>[
+    (
+      id: 'mein-01',
+      lemma: 'Bruder',
+      prompt: 'Das ist ___ Bruder.',
+      answer: 'mein',
+      options: ['mein', 'meine', 'meinen']
+    ),
+    (
+      id: 'mein-02',
+      lemma: 'Kind',
+      prompt: 'Das ist ___ Kind.',
+      answer: 'mein',
+      options: ['mein', 'meine', 'meinen']
+    ),
+    (
+      id: 'mein-03',
+      lemma: 'Vater',
+      prompt: 'Das ist ___ Vater.',
+      answer: 'mein',
+      options: ['mein', 'meine', 'meinen']
+    ),
+    (
+      id: 'mein-04',
+      lemma: 'Sohn',
+      prompt: 'Das ist ___ Sohn.',
+      answer: 'mein',
+      options: ['mein', 'meine', 'meinen']
+    ),
+    (
+      id: 'meine-01',
+      lemma: 'Tochter',
+      prompt: 'Das ist ___ Tochter.',
+      answer: 'meine',
+      options: ['mein', 'meine', 'meinen']
+    ),
+    (
+      id: 'meine-02',
+      lemma: 'Mutter',
+      prompt: 'Das ist ___ Mutter.',
+      answer: 'meine',
+      options: ['mein', 'meine', 'meinen']
+    ),
+    (
+      id: 'meine-03',
+      lemma: 'Kind',
+      prompt: 'Das sind ___ Kinder.',
+      answer: 'meine',
+      options: ['mein', 'meine', 'meinen']
+    ),
+    (
+      id: 'meine-04',
+      lemma: 'Eltern',
+      prompt: 'Das sind ___ Eltern.',
+      answer: 'meine',
+      options: ['mein', 'meine', 'meinen']
+    ),
+    (
+      id: 'dein-01',
+      lemma: 'Bruder',
+      prompt: 'Ist das ___ Bruder?',
+      answer: 'dein',
+      options: ['dein', 'deine', 'deinen']
+    ),
+    (
+      id: 'dein-02',
+      lemma: 'Kind',
+      prompt: 'Ist das ___ Kind?',
+      answer: 'dein',
+      options: ['dein', 'deine', 'deinen']
+    ),
+    (
+      id: 'dein-03',
+      lemma: 'Mann',
+      prompt: 'Ist das ___ Mann?',
+      answer: 'dein',
+      options: ['dein', 'deine', 'deinen']
+    ),
+    (
+      id: 'dein-04',
+      lemma: 'Opa',
+      prompt: 'Ist das ___ Opa?',
+      answer: 'dein',
+      options: ['dein', 'deine', 'deinen']
+    ),
+    (
+      id: 'deine-01',
+      lemma: 'Schwester',
+      prompt: 'Ist das ___ Schwester?',
+      answer: 'deine',
+      options: ['dein', 'deine', 'deinen']
+    ),
+    (
+      id: 'deine-02',
+      lemma: 'Oma',
+      prompt: 'Ist das ___ Oma?',
+      answer: 'deine',
+      options: ['dein', 'deine', 'deinen']
+    ),
+    (
+      id: 'deine-03',
+      lemma: 'Geschwister',
+      prompt: 'Sind das ___ Geschwister?',
+      answer: 'deine',
+      options: ['dein', 'deine', 'deinen']
+    ),
+    (
+      id: 'deine-04',
+      lemma: 'Großeltern',
+      prompt: 'Sind das ___ Großeltern?',
+      answer: 'deine',
+      options: ['dein', 'deine', 'deinen']
+    ),
+    (
+      id: 'ihr-01',
+      lemma: 'Sohn',
+      prompt: 'Frau Klein, ist das ___ Sohn?',
+      answer: 'Ihr',
+      options: ['Ihr', 'Ihre', 'Ihren']
+    ),
+    (
+      id: 'ihr-02',
+      lemma: 'Kind',
+      prompt: 'Herr Rossi, ist das ___ Kind?',
+      answer: 'Ihr',
+      options: ['Ihr', 'Ihre', 'Ihren']
+    ),
+    (
+      id: 'ihr-03',
+      lemma: 'Mann',
+      prompt: 'Frau Altmann, ist das ___ Mann?',
+      answer: 'Ihr',
+      options: ['Ihr', 'Ihre', 'Ihren']
+    ),
+    (
+      id: 'ihr-04',
+      lemma: 'Bruder',
+      prompt: 'Frau Berg, ist das ___ Bruder?',
+      answer: 'Ihr',
+      options: ['Ihr', 'Ihre', 'Ihren']
+    ),
+    (
+      id: 'ihre-01',
+      lemma: 'Tochter',
+      prompt: 'Herr Klein, ist das ___ Tochter?',
+      answer: 'Ihre',
+      options: ['Ihr', 'Ihre', 'Ihren']
+    ),
+    (
+      id: 'ihre-02',
+      lemma: 'Ehefrau',
+      prompt: 'Herr Peters, ist das ___ Ehefrau?',
+      answer: 'Ihre',
+      options: ['Ihr', 'Ihre', 'Ihren']
+    ),
+    (
+      id: 'ihre-03',
+      lemma: 'Kind',
+      prompt: 'Frau Glück, sind das ___ Kinder?',
+      answer: 'Ihre',
+      options: ['Ihr', 'Ihre', 'Ihren']
+    ),
+    (
+      id: 'ihre-04',
+      lemma: 'Eltern',
+      prompt: 'Herr Bauer, sind das ___ Eltern?',
+      answer: 'Ihre',
+      options: ['Ihr', 'Ihre', 'Ihren']
+    ),
+  ];
+  for (final item in possessives) {
+    _addExercise(
+      exercises,
+      id: 'lesson2-possessive-${item.id}',
+      topicId: 'possessive_articles',
+      lemma: item.lemma,
+      itemType: 'noun',
+      prompt: item.prompt,
+      answer: item.answer,
+      type: 'choice',
+      options: item.options,
+      instructionDe: 'Wähle den passenden Possessivartikel im Nominativ.',
+      instructionRu: 'Выберите подходящее притяжательное слово в Nominativ.',
+    );
+  }
+
+  const addressItems =
+      <({String id, String lemma, String prompt, String answer})>[
+    (
+      id: 'du-01',
+      lemma: 'du',
+      prompt: 'Tom, lernst ___ Deutsch?',
+      answer: 'du'
+    ),
+    (id: 'du-02', lemma: 'du', prompt: 'Anna, wo wohnst ___?', answer: 'du'),
+    (
+      id: 'du-03',
+      lemma: 'du',
+      prompt: 'Peter, kommst ___ aus Wien?',
+      answer: 'du'
+    ),
+    (
+      id: 'ihr-01',
+      lemma: 'ihr',
+      prompt: 'Anna und Maria, lernt ___ Deutsch?',
+      answer: 'ihr'
+    ),
+    (
+      id: 'ihr-02',
+      lemma: 'ihr',
+      prompt: 'Mark und Robert, wo wohnt ___?',
+      answer: 'ihr'
+    ),
+    (
+      id: 'ihr-03',
+      lemma: 'ihr',
+      prompt: 'Kinder, kommt ___ aus Berlin?',
+      answer: 'ihr'
+    ),
+    (
+      id: 'sie-01',
+      lemma: 'Sie',
+      prompt: 'Frau Klein, wohnen ___ in München?',
+      answer: 'Sie'
+    ),
+    (
+      id: 'sie-02',
+      lemma: 'Sie',
+      prompt: 'Herr Berger, lernen ___ Deutsch?',
+      answer: 'Sie'
+    ),
+    (
+      id: 'sie-03',
+      lemma: 'Sie',
+      prompt: 'Herr und Frau Moor, haben ___ Zeit?',
+      answer: 'Sie'
+    ),
+  ];
+  for (final item in addressItems) {
+    _addExercise(
+      exercises,
+      id: 'lesson2-address-${item.id}',
+      topicId: 'regular_present',
+      lemma: item.lemma,
+      itemType: 'word',
+      prompt: item.prompt,
+      answer: item.answer,
+      type: 'choice',
+      options: const ['du', 'ihr', 'Sie'],
+      instructionDe: 'Wähle die passende Anrede.',
+      instructionRu: 'Выберите подходящую форму обращения.',
+    );
+  }
+
+  const plurals = <({
+    String id,
+    String lemma,
+    String prompt,
+    String answer,
+    List<String> options
+  })>[
+    (
+      id: '01',
+      lemma: 'Tisch',
+      prompt: 'der Tisch — die ___',
+      answer: 'Tische',
+      options: ['Tische', 'Tischen', 'Tischs']
+    ),
+    (
+      id: '02',
+      lemma: 'Mann',
+      prompt: 'der Mann — die ___',
+      answer: 'Männer',
+      options: ['Manne', 'Männer', 'Mannen']
+    ),
+    (
+      id: '03',
+      lemma: 'Apfel',
+      prompt: 'der Apfel — die ___',
+      answer: 'Äpfel',
+      options: ['Apfeln', 'Apfels', 'Äpfel']
+    ),
+    (
+      id: '04',
+      lemma: 'Frau',
+      prompt: 'die Frau — die ___',
+      answer: 'Frauen',
+      options: ['Fraue', 'Frauen', 'Fräuer']
+    ),
+    (
+      id: '05',
+      lemma: 'Schule',
+      prompt: 'die Schule — die ___',
+      answer: 'Schulen',
+      options: ['Schule', 'Schulen', 'Schules']
+    ),
+    (
+      id: '06',
+      lemma: 'Lampe',
+      prompt: 'die Lampe — die ___',
+      answer: 'Lampen',
+      options: ['Lampe', 'Lampen', 'Lampes']
+    ),
+    (
+      id: '07',
+      lemma: 'Haus',
+      prompt: 'das Haus — die ___',
+      answer: 'Häuser',
+      options: ['Hausen', 'Hause', 'Häuser']
+    ),
+    (
+      id: '08',
+      lemma: 'Buch',
+      prompt: 'das Buch — die ___',
+      answer: 'Bücher',
+      options: ['Buche', 'Bücher', 'Buchs']
+    ),
+    (
+      id: '09',
+      lemma: 'Kind',
+      prompt: 'das Kind — die ___',
+      answer: 'Kinder',
+      options: ['Kinde', 'Kinder', 'Kinds']
+    ),
+    (
+      id: '10',
+      lemma: 'Auto',
+      prompt: 'das Auto — die ___',
+      answer: 'Autos',
+      options: ['Auto', 'Autos', 'Auten']
+    ),
+    (
+      id: '11',
+      lemma: 'Brot',
+      prompt: 'das Brot — die ___',
+      answer: 'Brote',
+      options: ['Brote', 'Broten', 'Brots']
+    ),
+    (
+      id: '12',
+      lemma: 'Wohnung',
+      prompt: 'die Wohnung — die ___',
+      answer: 'Wohnungen',
+      options: ['Wohnunge', 'Wohnungen', 'Wohnungs']
+    ),
+  ];
+  for (final item in plurals) {
+    _addExercise(
+      exercises,
+      id: 'lesson2-plural-${item.id}',
+      topicId: 'noun_basics',
+      lemma: item.lemma,
+      itemType: 'noun',
+      prompt: item.prompt,
+      answer: item.answer,
+      type: 'choice',
+      options: item.options,
+      instructionDe: 'Wähle die richtige Pluralform.',
+      instructionRu: 'Выберите правильную форму множественного числа.',
+    );
+  }
+
+  const personalData = <({
+    String id,
+    String lemma,
+    String prompt,
+    String answer,
+    List<String> options
+  })>[
+    (
+      id: '01',
+      lemma: 'Telefonnummer',
+      prompt: 'Frage nach der Telefonnummer',
+      answer: 'Wie ist Ihre Telefonnummer?',
+      options: ['Wie', 'ist', 'Ihre', 'Telefonnummer?']
+    ),
+    (
+      id: '02',
+      lemma: 'Geburtsort',
+      prompt: 'Frage nach dem Geburtsort',
+      answer: 'Wo sind Sie geboren?',
+      options: ['Wo', 'sind', 'Sie', 'geboren?']
+    ),
+    (
+      id: '03',
+      lemma: 'Wohnort',
+      prompt: 'Frage nach dem Wohnort',
+      answer: 'Wo wohnen Sie?',
+      options: ['Wo', 'wohnen', 'Sie?']
+    ),
+    (
+      id: '04',
+      lemma: 'Adresse',
+      prompt: 'Frage nach der Adresse',
+      answer: 'Wie ist Ihre Adresse?',
+      options: ['Wie', 'ist', 'Ihre', 'Adresse?']
+    ),
+    (
+      id: '05',
+      lemma: 'Familienstand',
+      prompt: 'Frage nach dem Familienstand',
+      answer: 'Sind Sie verheiratet?',
+      options: ['Sind', 'Sie', 'verheiratet?']
+    ),
+    (
+      id: '06',
+      lemma: 'Kind',
+      prompt: 'Frage nach Kindern',
+      answer: 'Haben Sie Kinder?',
+      options: ['Haben', 'Sie', 'Kinder?']
+    ),
+    (
+      id: '07',
+      lemma: 'Alter',
+      prompt: 'Frage nach dem Alter eines Kindes',
+      answer: 'Wie alt ist Ihr Kind?',
+      options: ['Wie', 'alt', 'ist', 'Ihr', 'Kind?']
+    ),
+    (
+      id: '08',
+      lemma: 'Geburtsdatum',
+      prompt: 'Frage nach dem Geburtsdatum',
+      answer: 'Wie ist Ihr Geburtsdatum?',
+      options: ['Wie', 'ist', 'Ihr', 'Geburtsdatum?']
+    ),
+  ];
+  for (final item in personalData) {
+    _addExercise(
+      exercises,
+      id: 'lesson2-personal-data-${item.id}',
+      topicId: 'w_questions',
+      lemma: item.lemma,
+      itemType: 'noun',
+      prompt: item.prompt,
+      answer: item.answer,
+      type: 'word_order',
+      options: item.options,
+      instructionDe: 'Bilde die passende Frage.',
+      instructionRu: 'Составьте подходящий вопрос.',
+    );
+  }
 }
 
 void _addLessonOneSpecialVerbExercises(

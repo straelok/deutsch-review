@@ -1,6 +1,6 @@
 {
   "format_version": 2,
-  "exported_at": "2026-10-04T21:00:00.000Z",
+  "exported_at": "2026-10-04T22:00:00.000Z",
   "words": [
     {
       "id": "c1000001-0000-4000-8000-000000000001",
@@ -10,7 +10,7 @@
       "article": "der",
       "plural": "Ehemänner",
       "example": "Das ist mein Ehemann.; Ihr Ehemann heißt Walter.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-29T20:10:42.859Z",
       "updated_at": "2026-09-29T20:10:42.859Z"
     },
@@ -22,7 +22,7 @@
       "article": "der",
       "plural": "Prospekte",
       "example": "Sehen Sie den Prospekt an.; Im Prospekt stehen die Angebote.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-29T20:10:42.859Z",
       "updated_at": "2026-09-29T20:10:42.859Z"
     },
@@ -34,7 +34,7 @@
       "article": "das",
       "plural": "Sonderangebote",
       "example": "Die Bananen sind heute im Sonderangebot.; Das ist ein gutes Sonderangebot.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-29T20:10:42.859Z",
       "updated_at": "2026-09-29T21:02:11.151475Z"
     },
@@ -46,7 +46,7 @@
       "article": "das",
       "plural": "Lebensmittel",
       "example": "Brot und Milch sind Lebensmittel.; Wir kaufen Lebensmittel im Supermarkt.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-29T20:10:42.859Z",
       "updated_at": "2026-09-30T05:08:07.326061Z"
     },
@@ -59,7 +59,7 @@
       "plural": "Pfund",
       "example": "Ich möchte ein Pfund Äpfel.; Ein Pfund sind fünfhundert Gramm.",
       "note": "В Германии при покупке продуктов ein Pfund обычно означает 500 граммов.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-29T20:10:42.859Z",
       "updated_at": "2026-09-29T20:10:42.859Z"
     },
@@ -71,7 +71,7 @@
       "article": "der",
       "plural": "Liter",
       "example": "Ein Liter Milch kostet einen Euro.; Ich brauche zwei Liter Wasser.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-29T20:10:42.859Z",
       "updated_at": "2026-09-29T20:10:42.859Z"
     },
@@ -83,7 +83,7 @@
       "article": "die",
       "plural": "Dosen",
       "example": "Ich kaufe eine Dose Tomaten.; Die Dose ist noch zu.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-29T20:10:42.859Z",
       "updated_at": "2026-09-29T20:10:42.859Z"
     },
@@ -95,7 +95,7 @@
       "article": "die",
       "plural": "—",
       "example": "Ich brauche einen Becher Sahne.; Möchten Sie Sahne im Kaffee?",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-29T20:10:42.859Z",
       "updated_at": "2026-09-29T20:10:42.859Z"
     },
@@ -107,7 +107,7 @@
       "article": "das",
       "plural": "—",
       "example": "Ich kaufe ein Kilo Hackfleisch.; Das Hackfleisch ist frisch.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-29T20:10:42.859Z",
       "updated_at": "2026-09-29T20:10:42.859Z"
     },
@@ -118,7 +118,7 @@
       "translation_ru": "весь; вся; всё; все",
       "example": "Das ist alles.; Alle Äpfel sind frisch.",
       "note": "Изменяется перед существительным: alle Äpfel, alles Gemüse.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-29T20:10:42.859Z",
       "updated_at": "2026-09-29T20:10:42.859Z"
     },
@@ -130,7 +130,7 @@
       "article": "der",
       "plural": "Läden",
       "example": "Der Laden ist heute geöffnet.; Wo ist der nächste Laden?",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-29T20:10:42.859Z",
       "updated_at": "2026-09-29T20:10:42.859Z"
     },
@@ -142,7 +142,7 @@
       "article": "das",
       "plural": "Rezepte",
       "example": "Hier ist mein Rezept.; Das Rezept ist einfach.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-29T20:10:42.859Z",
       "updated_at": "2026-09-29T20:10:42.859Z"
     },
@@ -152,7 +152,7 @@
       "german": "für",
       "translation_ru": "для; за; на",
       "example": "Das Rezept ist für einen Kuchen.; Ich kaufe Blumen für meine Mutter.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-29T20:10:42.859Z",
       "updated_at": "2026-09-29T20:10:42.859Z"
     },
@@ -164,7 +164,7 @@
       "article": "der",
       "plural": "—",
       "example": "Sie brauchen Salz und Pfeffer.; Der Pfeffer steht auf dem Tisch.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-29T20:10:42.859Z",
       "updated_at": "2026-09-29T20:10:42.859Z"
     },
@@ -176,7 +176,7 @@
       "article": "die",
       "plural": "—",
       "example": "Ich esse gern Schokolade.; Die Schokolade kostet zwei Euro.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-29T20:10:42.859Z",
       "updated_at": "2026-09-29T20:10:42.859Z"
     },
@@ -188,7 +188,7 @@
       "article": "die",
       "plural": "—",
       "example": "Wir brauchen Butter für den Kuchen.; Die Butter ist im Kühlschrank.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-29T20:10:42.859Z",
       "updated_at": "2026-09-29T20:50:09.500942Z"
     },
@@ -200,7 +200,7 @@
       "article": "das",
       "plural": "Eier",
       "example": "Ich brauche drei Eier.; Das Ei ist frisch.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-29T20:10:42.859Z",
       "updated_at": "2026-09-29T20:10:42.859Z"
     },
@@ -212,7 +212,7 @@
       "article": "der",
       "plural": "Fische",
       "example": "Heute essen wir Fisch.; Der Fisch ist frisch.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-29T20:10:42.859Z",
       "updated_at": "2026-09-29T20:10:42.859Z"
     },
@@ -224,7 +224,7 @@
       "article": "die",
       "plural": "Birnen",
       "example": "Ich kaufe drei Birnen.; Die Birne ist süß.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-29T20:10:42.859Z",
       "updated_at": "2026-09-29T20:10:42.859Z"
     },
@@ -236,7 +236,7 @@
       "article": "der",
       "plural": "Kuchen",
       "example": "Der Kuchen ist lecker.; Ich backe einen Kuchen.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-29T20:10:42.859Z",
       "updated_at": "2026-09-29T20:10:42.859Z"
     },
@@ -248,7 +248,7 @@
       "article": "die",
       "plural": "Orangen",
       "example": "Die Orange ist süß.; Ich kaufe ein Kilo Orangen.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-29T20:10:42.859Z",
       "updated_at": "2026-09-29T20:10:42.859Z"
     },
@@ -260,7 +260,7 @@
       "article": "der",
       "plural": "Säfte",
       "example": "Ich trinke gern Saft.; Eine Flasche Saft kostet zwei Euro.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-29T20:10:42.859Z",
       "updated_at": "2026-09-29T20:10:42.859Z"
     },
@@ -273,7 +273,7 @@
       "plural": "Joghurts",
       "example": "Ich esse jeden Morgen einen Joghurt.; Der Joghurt ist im Kühlschrank.",
       "note": "В Германии обычно der Joghurt; в Австрии также употребляется das Joghurt.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-29T20:10:42.859Z",
       "updated_at": "2026-09-29T20:10:42.859Z"
     },
@@ -285,7 +285,7 @@
       "article": "die",
       "plural": "Zwiebeln",
       "example": "Ich brauche zwei Zwiebeln.; Die Zwiebel ist klein.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-29T20:10:42.859Z",
       "updated_at": "2026-09-29T20:10:42.859Z"
     },
@@ -297,7 +297,7 @@
       "article": "das",
       "plural": "—",
       "example": "Ich möchte eine Flasche Mineralwasser.; Das Mineralwasser kostet einen Euro.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-29T20:10:42.859Z",
       "updated_at": "2026-09-29T20:10:42.859Z"
     },
@@ -309,7 +309,7 @@
       "article": "der",
       "plural": "Radiergummis",
       "example": "Das ist ein Radiergummi.; Ich brauche einen Radiergummi.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-29T20:10:42.859Z",
       "updated_at": "2026-09-30T05:03:16.072456Z"
     },
@@ -321,7 +321,7 @@
       "article": "das",
       "plural": "Mäppchen",
       "example": "Der Bleistift ist im Mäppchen.; Mein Mäppchen ist blau.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-29T20:10:42.859Z",
       "updated_at": "2026-09-29T20:10:42.859Z"
     },
@@ -333,7 +333,7 @@
       "article": "das",
       "plural": "Bücher",
       "example": "Das Buch liegt auf dem Tisch.; Ich lese ein Buch.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-29T20:10:42.859Z",
       "updated_at": "2026-09-29T20:10:42.859Z"
     },
@@ -345,7 +345,7 @@
       "article": "das",
       "plural": "Hefte",
       "example": "Ich schreibe in das Heft.; Das Heft ist grün.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-29T20:10:42.859Z",
       "updated_at": "2026-09-29T20:10:42.859Z"
     },
@@ -357,7 +357,7 @@
       "article": "der",
       "plural": "Ordner",
       "example": "Das Blatt ist im Ordner.; Der Ordner ist rot.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-29T20:10:42.859Z",
       "updated_at": "2026-09-29T20:10:42.859Z"
     },
@@ -369,7 +369,7 @@
       "article": "der",
       "plural": "Spitzer",
       "example": "Das ist ein Spitzer.; Der Spitzer liegt im Mäppchen.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-29T20:10:42.859Z",
       "updated_at": "2026-09-29T20:10:42.859Z"
     },
@@ -381,7 +381,7 @@
       "article": "das",
       "plural": "Lineale",
       "example": "Das Lineal ist dreißig Zentimeter lang.; Ich brauche ein Lineal.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-29T20:10:42.859Z",
       "updated_at": "2026-09-29T20:10:42.859Z"
     },
@@ -393,7 +393,7 @@
       "article": "die",
       "plural": "Schultaschen",
       "example": "Das Buch ist in der Schultasche.; Meine Schultasche ist schwer.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-29T20:10:42.859Z",
       "updated_at": "2026-10-02T05:03:56.112270Z"
     },
@@ -405,7 +405,7 @@
       "article": "der",
       "plural": "Bleistifte",
       "example": "Ich schreibe mit einem Bleistift.; Der Bleistift ist spitz.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-29T20:10:42.859Z",
       "updated_at": "2026-09-29T20:10:42.859Z"
     },
@@ -417,7 +417,7 @@
       "article": "die",
       "plural": "Scheren",
       "example": "Ich schneide das Papier mit der Schere.; Die Schere liegt auf dem Tisch.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-29T20:10:42.859Z",
       "updated_at": "2026-09-29T20:10:42.859Z"
     },
@@ -429,7 +429,7 @@
       "article": "der",
       "plural": "Leuchtstifte",
       "example": "Ich markiere das Wort mit dem Leuchtstift.; Der Leuchtstift ist gelb.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-29T20:10:42.859Z",
       "updated_at": "2026-09-29T21:15:10.698230Z"
     },
@@ -439,7 +439,7 @@
       "german": "grün",
       "translation_ru": "зелёный; зелёного цвета",
       "example": "Das Heft ist grün.; Ich habe einen grünen Ordner.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-29T20:10:42.859Z",
       "updated_at": "2026-09-29T20:10:42.859Z"
     },
@@ -449,7 +449,7 @@
       "german": "rot",
       "translation_ru": "красный; красного цвета",
       "example": "Der Ordner ist rot.; Ich habe einen roten Bleistift.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-29T20:10:42.859Z",
       "updated_at": "2026-09-29T20:10:42.859Z"
     },
@@ -459,7 +459,7 @@
       "german": "blau",
       "translation_ru": "синий; голубой",
       "example": "Das Mäppchen ist blau.; Ich habe eine blaue Schultasche.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-29T20:10:42.859Z",
       "updated_at": "2026-09-29T20:10:42.859Z"
     },
@@ -503,7 +503,7 @@
       "article": "die",
       "plural": "Bäckereien",
       "example": "Die Brötchen sind aus der Bäckerei.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-26T12:20:00.000Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -537,7 +537,7 @@
       "article": "der",
       "plural": "Preise",
       "example": "Der Preis ist niedrig.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-26T12:20:00.000Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -561,7 +561,7 @@
       "article": "der",
       "plural": "Cent",
       "example": "Das kostet neunzig Cent.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-26T12:20:00.000Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -629,7 +629,7 @@
       "article": "das",
       "plural": "Brote",
       "example": "Ich möchte ein Brot, bitte.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-26T12:20:00.000Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -641,7 +641,7 @@
       "article": "das",
       "plural": "Brötchen",
       "example": "Ich nehme drei Brötchen.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-26T12:20:00.000Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -653,7 +653,7 @@
       "article": "die",
       "plural": "—",
       "example": "Wir brauchen noch Milch.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-26T12:20:00.000Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -665,7 +665,7 @@
       "article": "das",
       "plural": "—",
       "example": "Eine Flasche Wasser, bitte.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-26T12:20:00.000Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -699,7 +699,7 @@
       "article": "der",
       "plural": "Äpfel",
       "example": "Ein Kilo Äpfel, bitte.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-26T12:20:00.000Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -711,7 +711,7 @@
       "article": "die",
       "plural": "Bananen",
       "example": "Die Bananen sind billig.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-26T12:20:00.000Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -723,7 +723,7 @@
       "article": "die",
       "plural": "Tomaten",
       "example": "Ich nehme fünf Tomaten.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-26T12:20:00.000Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -735,7 +735,7 @@
       "article": "die",
       "plural": "Kartoffeln",
       "example": "Die Kartoffeln kosten zwei Euro.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-26T12:20:00.000Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -747,7 +747,7 @@
       "article": "der",
       "plural": "—",
       "example": "Ich möchte zweihundert Gramm Käse.; Der Käse liegt im Kühlschrank.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-26T12:20:00.000Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -759,7 +759,7 @@
       "article": "die",
       "plural": "Würste",
       "example": "Die Wurst ist frisch.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-26T12:20:00.000Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -771,7 +771,7 @@
       "article": "das",
       "plural": "—",
       "example": "Wir kaufen heute Fleisch.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-26T12:20:00.000Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -783,7 +783,7 @@
       "article": "das",
       "plural": "—",
       "example": "Das Gemüse ist frisch.; Ich kaufe Gemüse auf dem Markt.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-26T12:20:00.000Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -795,7 +795,7 @@
       "article": "das",
       "plural": "—",
       "example": "Wo ist das Obst?; Wir essen jeden Tag Obst.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-26T12:20:00.000Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -807,7 +807,7 @@
       "article": "die",
       "plural": "Flaschen",
       "example": "Ich brauche zwei Flaschen Wasser.; Die Flasche steht auf dem Tisch.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-26T12:20:00.000Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -831,7 +831,7 @@
       "plural": "Kilos",
       "example": "Ein Kilo Tomaten kostet drei Euro.",
       "note": "Краткая разговорная форма слова Kilogramm; после числа часто без окончания.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-26T12:20:00.000Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -843,7 +843,7 @@
       "article": "das",
       "plural": "Gramm",
       "example": "Ich nehme fünfhundert Gramm Fleisch.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-26T12:20:00.000Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -867,7 +867,7 @@
       "article": "der",
       "plural": "Verkäufer",
       "example": "Der Verkäufer hilft dem Kunden.; Der Verkäufer zeigt mir den Käse.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-26T12:20:00.000Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -879,7 +879,7 @@
       "article": "die",
       "plural": "Verkäuferinnen",
       "example": "Die Verkäuferin sagt den Preis.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-26T12:20:00.000Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -891,7 +891,7 @@
       "article": "der",
       "plural": "Kunden",
       "example": "Der Kunde bezahlt mit Karte.; Der Kunde kauft Brot.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-26T12:20:00.000Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -903,7 +903,7 @@
       "article": "die",
       "plural": "Kundinnen",
       "example": "Die Kundin braucht eine Tüte.; Die Kundin wartet an der Kasse.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-26T12:20:00.000Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -922,7 +922,7 @@
       "german": "kosten",
       "translation_ru": "стоить",
       "example": "Was kostet das Brot?; Die Äpfel kosten drei Euro.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-26T12:20:00.000Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -969,7 +969,7 @@
       "translation_ru": "хотеть; желать",
       "example": "Ich möchte einen Kaffee.",
       "note": "Вежливая форма желания: ich möchte, Sie möchten.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-26T12:20:00.000Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -1006,7 +1006,7 @@
       "german": "noch",
       "translation_ru": "ещё; всё ещё",
       "example": "Brauchen Sie noch etwas?; Er wohnt noch in Berlin.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-26T12:20:00.000Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -1043,7 +1043,7 @@
       "german": "Wie viel",
       "translation_ru": "сколько; как много",
       "example": "Wie viel kostet das?; Wie viel kostet die Milch?",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-26T12:20:00.000Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -1118,7 +1118,7 @@
       "article": "das",
       "plural": "—",
       "example": "Wie alt sind Sie?; Bitte schreiben Sie Ihr Alter auf.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -1175,7 +1175,7 @@
       "german": "verwitwet",
       "translation_ru": "вдовец; вдова",
       "example": "Sie ist verwitwet.; Mein Großvater ist verwitwet.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -1187,7 +1187,7 @@
       "article": "der",
       "plural": "Brüder",
       "example": "Das ist mein Bruder.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -1200,7 +1200,7 @@
       "plural": "Süden",
       "example": "München liegt im Süden Deutschlands.; Im Süden ist es warm.",
       "note": "Сторона света; der Süden.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -1238,7 +1238,7 @@
       "translation_ru": "иметь",
       "example": "Ich habe eine Familie.; Wir haben heute Deutsch.",
       "note": "Неправильный глагол «иметь»; ich habe, du hast, er/sie hat.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -1279,7 +1279,7 @@
       "article": "die",
       "plural": "Hauptstädte",
       "example": "Berlin ist die Hauptstadt von Deutschland.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -1307,7 +1307,7 @@
       "german": "wir",
       "translation_ru": "мы",
       "example": "Wir lernen Deutsch.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -1351,7 +1351,7 @@
       "plural": "Familienstände",
       "example": "Familienstand: ledig.; Bitte nennen Sie Ihren Familienstand.",
       "note": "Семейное положение: ledig, verheiratet, geschieden или verwitwet.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -1381,7 +1381,7 @@
       "german": "sehr",
       "translation_ru": "очень",
       "example": "Danke, sehr gut.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -1393,7 +1393,7 @@
       "article": "der",
       "plural": "Väter",
       "example": "Das ist mein Vater.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -1414,7 +1414,7 @@
       "german": "in",
       "translation_ru": "в; внутри",
       "example": "Ich wohne in München.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -1424,7 +1424,7 @@
       "german": "super",
       "translation_ru": "супер; отлично",
       "example": "Wie geht es? – Super!",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -1443,7 +1443,7 @@
       "german": "leben",
       "translation_ru": "жить",
       "example": "Lara lebt in Poznań.; Meine Großeltern leben in Wien.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -1497,7 +1497,7 @@
       "plural": "Westen",
       "example": "Köln liegt im Westen Deutschlands.",
       "note": "Сторона света; der Westen.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -1507,7 +1507,7 @@
       "german": "finden",
       "translation_ru": "находить",
       "example": "Wo finde ich Spinat?; Ich finde die Antwort.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -1528,7 +1528,7 @@
       "article": "das",
       "plural": "Jahre",
       "example": "Ich bin zwanzig Jahre alt.; Das Jahr hat zwölf Monate.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -1612,7 +1612,7 @@
       "german": "jetzt",
       "translation_ru": "сейчас",
       "example": "Jetzt machen wir eine Pause.; Ich habe jetzt Zeit.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -1651,7 +1651,7 @@
       "german": "gut",
       "translation_ru": "хорошо; хороший",
       "example": "Wie geht es dir? – Gut, danke.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -1706,7 +1706,7 @@
       "german": "falsch",
       "translation_ru": "неправильный; неверно; не правильно; неправильно",
       "example": "Nein, das ist falsch.; Diese Antwort ist falsch.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-29T21:13:37.423500Z"
     },
@@ -1767,7 +1767,7 @@
       "article": "der",
       "plural": "Enkel",
       "example": "Das ist mein Enkel.; Mein Enkel ist fünf Jahre alt.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -1788,7 +1788,7 @@
       "article": "die",
       "plural": "—",
       "example": "Das sind meine Großeltern.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -1818,7 +1818,7 @@
       "article": "die",
       "plural": "Schwestern",
       "example": "Das ist meine Schwester.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -1868,7 +1868,7 @@
       "article": "die",
       "plural": "Enkelinnen",
       "example": "Das ist meine Enkelin.; Seine Enkelin heißt Mia.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -1887,7 +1887,7 @@
       "german": "verheiratet",
       "translation_ru": "женатый; замужняя; женат",
       "example": "Ich bin verheiratet.; Mein Bruder ist verheiratet.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -1924,7 +1924,7 @@
       "german": "ledig",
       "translation_ru": "неженатый; незамужняя; не женат; неженат",
       "example": "Sie ist ledig.; Mein Bruder ist ledig.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-30T05:14:37.244291Z"
     },
@@ -1945,7 +1945,7 @@
       "german": "lernen",
       "translation_ru": "учить; изучать; учиться",
       "example": "Ich lerne Deutsch.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -1955,7 +1955,7 @@
       "german": "so",
       "translation_ru": "так",
       "example": "So ist es richtig.; Bitte machen Sie es so.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -1986,7 +1986,7 @@
       "plural": "Geburtsorte",
       "example": "Mein Geburtsort ist Madrid.; Köln ist sein Geburtsort.",
       "note": "Место рождения, не страна происхождения.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -2016,7 +2016,7 @@
       "article": "der",
       "plural": "Opas",
       "example": "Mein Opa lebt in Berlin.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -2078,7 +2078,7 @@
       "article": "die",
       "plural": "Pausen",
       "example": "Wir machen eine Pause.; Die Pause dauert zehn Minuten.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -2109,7 +2109,7 @@
       "translation_ru": "она; они",
       "example": "Kommt sie aus Polen? / Wo wohnen sie?; Sie arbeitet heute zu Hause.",
       "note": "Строчная форма: «она» или «они»; значение ясно из контекста и формы глагола.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -2236,7 +2236,7 @@
       "article": "die",
       "plural": "Nummern",
       "example": "Wie ist Ihre Telefonnummer?",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -2331,7 +2331,7 @@
       "article": "der",
       "plural": "Männer",
       "example": "Das ist mein Mann.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -2383,7 +2383,7 @@
       "article": "die",
       "plural": "Omas",
       "example": "Meine Oma wohnt in Köln.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -2395,7 +2395,7 @@
       "article": "die",
       "plural": "Töchter",
       "example": "Meine Tochter ist acht Jahre alt.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -2419,7 +2419,7 @@
       "article": "der",
       "plural": "Söhne",
       "example": "Mein Sohn ist fünf Jahre alt.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -2429,7 +2429,7 @@
       "german": "geboren",
       "translation_ru": "рождённый",
       "example": "Ich bin in Polen geboren.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -2451,7 +2451,7 @@
       "plural": "Osten",
       "example": "Berlin liegt im Osten Deutschlands.; Die Sonne geht im Osten auf.",
       "note": "Сторона света; der Osten.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -2464,7 +2464,7 @@
       "plural": "Norden",
       "example": "Hamburg liegt im Norden Deutschlands.",
       "note": "Сторона света; der Norden.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -2513,7 +2513,7 @@
       "translation_ru": "мой; моя; моё",
       "example": "Das ist mein Bruder.; Das ist meine Schwester.",
       "note": "Форма зависит от существительного: mein Vater, meine Mutter.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -2546,7 +2546,7 @@
       "plural": "Wohnorte",
       "example": "Mein Wohnort ist Hamburg.; Berlin ist ihr Wohnort.",
       "note": "Город или место, где человек живёт сейчас.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -2558,7 +2558,7 @@
       "article": "die",
       "plural": "—",
       "example": "Ich habe zwei Geschwister.; Meine Geschwister wohnen in Polen.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -2655,7 +2655,7 @@
       "german": "geschieden",
       "translation_ru": "разведённый",
       "example": "Er ist geschieden.; Meine Eltern sind geschieden.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -2667,7 +2667,7 @@
       "article": "die",
       "plural": "Familien",
       "example": "Das ist meine Familie.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -2689,7 +2689,7 @@
       "article": "der",
       "plural": "Parks",
       "example": "Wir lernen im Park.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -2727,7 +2727,7 @@
       "german": "wo",
       "translation_ru": "где",
       "example": "Wo wohnen Sie?; Wo ist der Bahnhof?",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -2748,7 +2748,7 @@
       "article": "die",
       "plural": "Mütter",
       "example": "Meine Mutter lebt in Wien.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -2835,7 +2835,7 @@
       "article": "die",
       "plural": "Ehefrauen",
       "example": "Das ist meine Ehefrau.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -2896,7 +2896,7 @@
       "article": "die",
       "plural": "Zahlen",
       "example": "Die Zahl ist zehn.; Schreiben Sie die Zahl auf.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -3027,7 +3027,7 @@
       "german": "zusammen",
       "translation_ru": "вместе",
       "example": "Wir lernen zusammen.; Wir wohnen zusammen.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -3069,7 +3069,7 @@
       "translation_ru": "вы (множественное число); её; их; вы",
       "example": "Woher kommt ihr?; Das ist ihr Vater.; Das sind ihre Eltern.",
       "note": "ihr может быть местоимением «вы», а перед существительным — притяжательным словом «её» или «их».",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-30T05:16:26.247403Z"
     },
@@ -3117,7 +3117,7 @@
       "article": "die",
       "plural": "—",
       "example": "Das sind meine Eltern.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -3173,7 +3173,7 @@
       "german": "wohnen",
       "translation_ru": "жить; проживать",
       "example": "Ich wohne in Berlin.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -3192,7 +3192,7 @@
       "german": "ach",
       "translation_ru": "ах",
       "example": "Ach, so ist das!; Ach nein, das ist schade!",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -3213,7 +3213,7 @@
       "german": "na ja",
       "translation_ru": "ну да; ну что ж",
       "example": "Na ja, vielleicht morgen.; Na ja, ich weiß es nicht.",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-29T20:18:25.731965Z"
     },
@@ -3640,6 +3640,198 @@
     },
     {
       "id": "d3000040-0000-4000-8000-000000000040", "type": "word", "german": "doch", "translation_ru": "всё-таки; же; наоборот, да", "example": "Lernst du nicht Deutsch? — Doch!; Komm doch mit!", "note": "В ответе на отрицательный вопрос doch возражает отрицанию: Нет, наоборот, это так.", "created_at": "2026-10-04T21:00:00.000Z", "updated_at": "2026-10-04T21:00:00.000Z"
+    },
+    {
+      "id": "d4000001-0000-4000-8000-000000000001", "type": "word", "german": "Wie geht es dir?", "translation_ru": "Как у тебя дела?; Как ты?", "example": "Hallo, Tim. Wie geht es dir? — Danke, gut.", "note": "Неформальный вопрос одному человеку.", "created_at": "2026-10-04T22:00:00.000Z", "updated_at": "2026-10-04T22:00:00.000Z"
+    },
+    {
+      "id": "d4000002-0000-4000-8000-000000000002", "type": "word", "german": "Wie geht es Ihnen?", "translation_ru": "Как у Вас дела?; Как Вы?", "example": "Guten Tag, Frau Jansen. Wie geht es Ihnen?", "note": "Вежливый вопрос одному или нескольким людям.", "created_at": "2026-10-04T22:00:00.000Z", "updated_at": "2026-10-04T22:00:00.000Z"
+    },
+    {
+      "id": "d4000003-0000-4000-8000-000000000003", "type": "noun", "german": "Telefonnummer", "translation_ru": "номер телефона", "article": "die", "plural": "Telefonnummern", "example": "Wie ist Ihre Telefonnummer?; Meine Telefonnummer ist 23 57 18.", "created_at": "2026-10-04T22:00:00.000Z", "updated_at": "2026-10-04T22:00:00.000Z"
+    },
+    {
+      "id": "d4000004-0000-4000-8000-000000000004", "type": "noun", "german": "Partnerinterview", "translation_ru": "интервью с партнёром; опрос собеседника", "article": "das", "plural": "Partnerinterviews", "example": "Wir machen ein Partnerinterview.; Das Partnerinterview hat fünf Fragen.", "created_at": "2026-10-04T22:00:00.000Z", "updated_at": "2026-10-04T22:00:00.000Z"
+    },
+    {
+      "id": "d4000005-0000-4000-8000-000000000005", "type": "noun", "german": "Stadtbibliothek", "translation_ru": "городская библиотека", "article": "die", "plural": "Stadtbibliotheken", "example": "Die Stadtbibliothek ist heute offen.; Marta ist in der Stadtbibliothek.", "created_at": "2026-10-04T22:00:00.000Z", "updated_at": "2026-10-04T22:00:00.000Z"
+    },
+    {
+      "id": "d4000006-0000-4000-8000-000000000006", "type": "noun", "german": "Zeitschrift", "translation_ru": "журнал", "article": "die", "plural": "Zeitschriften", "example": "Ich lese eine Zeitschrift.; Die Bibliothek hat viele Zeitschriften.", "created_at": "2026-10-04T22:00:00.000Z", "updated_at": "2026-10-04T22:00:00.000Z"
+    },
+    {
+      "id": "d4000007-0000-4000-8000-000000000007", "type": "noun", "german": "Hörbuch", "translation_ru": "аудиокнига", "article": "das", "plural": "Hörbücher", "example": "Das Hörbuch ist auf Deutsch.; Wir leihen zwei Hörbücher aus.", "created_at": "2026-10-04T22:00:00.000Z", "updated_at": "2026-10-04T22:00:00.000Z"
+    },
+    {
+      "id": "d4000008-0000-4000-8000-000000000008", "type": "noun", "german": "Spiel", "translation_ru": "игра", "article": "das", "plural": "Spiele", "example": "Das Spiel ist für Kinder.; Wir spielen ein Spiel.", "created_at": "2026-10-04T22:00:00.000Z", "updated_at": "2026-10-04T22:00:00.000Z"
+    },
+    {
+      "id": "d4000009-0000-4000-8000-000000000009", "type": "noun", "german": "CD", "translation_ru": "компакт-диск", "article": "die", "plural": "CDs", "example": "Die CD ist in der Bibliothek.; Hier sind drei CDs.", "created_at": "2026-10-04T22:00:00.000Z", "updated_at": "2026-10-04T22:00:00.000Z"
+    },
+    {
+      "id": "d4000010-0000-4000-8000-000000000010", "type": "noun", "german": "DVD", "translation_ru": "DVD-диск", "article": "die", "plural": "DVDs", "example": "Die DVD ist neu.; Die Bibliothek hat auch DVDs.", "created_at": "2026-10-04T22:00:00.000Z", "updated_at": "2026-10-04T22:00:00.000Z"
+    },
+    {
+      "id": "d4000011-0000-4000-8000-000000000011", "type": "word", "german": "weiblich", "translation_ru": "женский; женского пола", "example": "Geschlecht: weiblich.; Das Kind ist weiblich.", "created_at": "2026-10-04T22:00:00.000Z", "updated_at": "2026-10-04T22:00:00.000Z"
+    },
+    {
+      "id": "d4000012-0000-4000-8000-000000000012", "type": "word", "german": "männlich", "translation_ru": "мужской; мужского пола", "example": "Geschlecht: männlich.; Der Schüler ist männlich.", "created_at": "2026-10-04T22:00:00.000Z", "updated_at": "2026-10-04T22:00:00.000Z"
+    },
+    {
+      "id": "d4000013-0000-4000-8000-000000000013", "type": "noun", "german": "Nationalität", "translation_ru": "национальность; гражданство", "article": "die", "plural": "Nationalitäten", "example": "Was ist Ihre Nationalität?; Im Formular steht die Nationalität.", "created_at": "2026-10-04T22:00:00.000Z", "updated_at": "2026-10-04T22:00:00.000Z"
+    },
+    {
+      "id": "d4000014-0000-4000-8000-000000000014", "type": "noun", "german": "Geburtsdatum", "translation_ru": "дата рождения", "article": "das", "plural": "Geburtsdaten", "example": "Wie ist Ihr Geburtsdatum?; Das Geburtsdatum steht im Formular.", "created_at": "2026-10-04T22:00:00.000Z", "updated_at": "2026-10-04T22:00:00.000Z"
+    },
+    {
+      "id": "d4000015-0000-4000-8000-000000000015", "type": "noun", "german": "Ort", "translation_ru": "место; населённый пункт", "article": "der", "plural": "Orte", "example": "Ort: Glückstadt.; Dieser Ort liegt im Norden.", "created_at": "2026-10-04T22:00:00.000Z", "updated_at": "2026-10-04T22:00:00.000Z"
+    },
+    {
+      "id": "d4000016-0000-4000-8000-000000000016", "type": "noun", "german": "Medium", "translation_ru": "носитель информации; средство информации", "article": "das", "plural": "Medien", "example": "Ein Buch ist ein Medium.; Die Bibliothek hat verschiedene Medien.", "note": "Форма множественного числа Medien часто используется для книг, журналов, дисков и других носителей.", "created_at": "2026-10-04T22:00:00.000Z", "updated_at": "2026-10-04T22:00:00.000Z"
+    },
+    {
+      "id": "d4000017-0000-4000-8000-000000000017", "type": "verb", "german": "entleihen", "translation_ru": "брать во временное пользование; брать в библиотеке", "example": "Ich entleihe ein Buch.; Sie können Medien aus der Stadtbibliothek entleihen.", "note": "В разговорной речи чаще используется ausleihen.", "created_at": "2026-10-04T22:00:00.000Z", "updated_at": "2026-10-04T22:00:00.000Z"
+    },
+    {
+      "id": "d4000018-0000-4000-8000-000000000018", "type": "noun", "german": "Punkt", "translation_ru": "точка; пункт", "article": "der", "plural": "Punkte", "example": "Sagen Sie Punkt in der E-Mail-Adresse.; Die Aufgabe hat fünf Punkte.", "created_at": "2026-10-04T22:00:00.000Z", "updated_at": "2026-10-04T22:00:00.000Z"
+    },
+    {
+      "id": "d4000019-0000-4000-8000-000000000019", "type": "noun", "german": "Unterstrich", "translation_ru": "нижнее подчёркивание", "article": "der", "plural": "Unterstriche", "example": "Die Adresse enthält einen Unterstrich.; Sagen Sie Unterstrich zwischen den Namen.", "created_at": "2026-10-04T22:00:00.000Z", "updated_at": "2026-10-04T22:00:00.000Z"
+    },
+    {
+      "id": "d4000020-0000-4000-8000-000000000020", "type": "noun", "german": "E-Mail-Adresse", "translation_ru": "адрес электронной почты", "article": "die", "plural": "E-Mail-Adressen", "example": "Wie ist Ihre E-Mail-Adresse?; Meine E-Mail-Adresse hat einen Unterstrich.", "created_at": "2026-10-04T22:00:00.000Z", "updated_at": "2026-10-04T22:00:00.000Z"
+    },
+    {
+      "id": "d4000021-0000-4000-8000-000000000021", "type": "noun", "german": "Hotel", "translation_ru": "отель; гостиница", "article": "das", "plural": "Hotels", "example": "Das Hotel ist in Berlin.; Wir wohnen in einem Hotel.", "created_at": "2026-10-04T22:00:00.000Z", "updated_at": "2026-10-04T22:00:00.000Z"
+    },
+    {
+      "id": "d4000022-0000-4000-8000-000000000022", "type": "noun", "german": "Bier", "translation_ru": "пиво", "article": "das", "plural": "Biere", "example": "Er trinkt Bier.; Die Biere kommen aus verschiedenen Regionen.", "note": "В общем значении обычно употребляется без множественного числа.", "created_at": "2026-10-04T22:00:00.000Z", "updated_at": "2026-10-04T22:00:00.000Z"
+    },
+    {
+      "id": "d4000023-0000-4000-8000-000000000023", "type": "noun", "german": "Orangensaft", "translation_ru": "апельсиновый сок", "article": "der", "plural": "Orangensäfte", "example": "Ich trinke Orangensaft.; Zwei Orangensäfte, bitte.", "created_at": "2026-10-04T22:00:00.000Z", "updated_at": "2026-10-04T22:00:00.000Z"
+    },
+    {
+      "id": "d4000024-0000-4000-8000-000000000024", "type": "noun", "german": "Stift", "translation_ru": "ручка; карандаш; пишущий предмет", "article": "der", "plural": "Stifte", "example": "Der Stift liegt hier.; Ich brauche zwei Stifte.", "created_at": "2026-10-04T22:00:00.000Z", "updated_at": "2026-10-04T22:00:00.000Z"
+    },
+    {
+      "id": "d4000025-0000-4000-8000-000000000025", "type": "noun", "german": "Schule", "translation_ru": "школа", "article": "die", "plural": "Schulen", "example": "Die Schule ist in Passau.; Die Kinder gehen in verschiedene Schulen.", "created_at": "2026-10-04T22:00:00.000Z", "updated_at": "2026-10-04T22:00:00.000Z"
+    },
+    {
+      "id": "d4000026-0000-4000-8000-000000000026", "type": "noun", "german": "Kino", "translation_ru": "кинотеатр; кино", "article": "das", "plural": "Kinos", "example": "Wir gehen ins Kino.; In der Stadt gibt es zwei Kinos.", "created_at": "2026-10-04T22:00:00.000Z", "updated_at": "2026-10-04T22:00:00.000Z"
+    },
+    {
+      "id": "d4000027-0000-4000-8000-000000000027", "type": "noun", "german": "Freund", "translation_ru": "друг; партнёр", "article": "der", "plural": "Freunde", "example": "Mein Freund heißt Peter.; Wir treffen unsere Freunde.", "created_at": "2026-10-04T22:00:00.000Z", "updated_at": "2026-10-04T22:00:00.000Z"
+    },
+    {
+      "id": "d4000028-0000-4000-8000-000000000028", "type": "noun", "german": "Professorin", "translation_ru": "профессор; преподавательница", "article": "die", "plural": "Professorinnen", "example": "Die Professorin wohnt in Köln.; Zwei Professorinnen unterrichten heute.", "created_at": "2026-10-04T22:00:00.000Z", "updated_at": "2026-10-04T22:00:00.000Z"
+    },
+    {
+      "id": "d4000029-0000-4000-8000-000000000029", "type": "noun", "german": "Fenster", "translation_ru": "окно", "article": "das", "plural": "Fenster", "example": "Das Fenster ist offen.; Die Fenster sind neu.", "created_at": "2026-10-04T22:00:00.000Z", "updated_at": "2026-10-04T22:00:00.000Z"
+    },
+    {
+      "id": "d4000030-0000-4000-8000-000000000030", "type": "noun", "german": "Mantel", "translation_ru": "пальто", "article": "der", "plural": "Mäntel", "example": "Der Mantel ist schwarz.; Die Mäntel sind warm.", "created_at": "2026-10-04T22:00:00.000Z", "updated_at": "2026-10-04T22:00:00.000Z"
+    },
+    {
+      "id": "d4000031-0000-4000-8000-000000000031", "type": "noun", "german": "Hand", "translation_ru": "рука; кисть", "article": "die", "plural": "Hände", "example": "Die Hand tut weh.; Die Hände sind kalt.", "created_at": "2026-10-04T22:00:00.000Z", "updated_at": "2026-10-04T22:00:00.000Z"
+    },
+    {
+      "id": "d4000032-0000-4000-8000-000000000032", "type": "noun", "german": "Tasche", "translation_ru": "сумка; карман", "article": "die", "plural": "Taschen", "example": "Die Tasche ist neu.; Die Bücher sind in den Taschen.", "created_at": "2026-10-04T22:00:00.000Z", "updated_at": "2026-10-04T22:00:00.000Z"
+    },
+    {
+      "id": "d4000033-0000-4000-8000-000000000033", "type": "noun", "german": "Ärztin", "translation_ru": "врач; женщина-врач", "article": "die", "plural": "Ärztinnen", "example": "Die Ärztin arbeitet im Krankenhaus.; Zwei Ärztinnen sprechen mit dem Patienten.", "created_at": "2026-10-04T22:00:00.000Z", "updated_at": "2026-10-04T22:00:00.000Z"
+    },
+    {
+      "id": "d4000034-0000-4000-8000-000000000034", "type": "noun", "german": "Auto", "translation_ru": "автомобиль; машина", "article": "das", "plural": "Autos", "example": "Das Auto ist neu.; Vor dem Haus stehen zwei Autos.", "created_at": "2026-10-04T22:00:00.000Z", "updated_at": "2026-10-04T22:00:00.000Z"
+    },
+    {
+      "id": "d4000035-0000-4000-8000-000000000035", "type": "noun", "german": "Lehrer", "translation_ru": "учитель; преподаватель", "article": "der", "plural": "Lehrer", "example": "Der Lehrer erklärt die Aufgabe.; Die Lehrer arbeiten in der Schule.", "created_at": "2026-10-04T22:00:00.000Z", "updated_at": "2026-10-04T22:00:00.000Z"
+    },
+    {
+      "id": "d4000036-0000-4000-8000-000000000036", "type": "noun", "german": "Fahrrad", "translation_ru": "велосипед", "article": "das", "plural": "Fahrräder", "example": "Das Fahrrad ist blau.; Vor der Schule stehen viele Fahrräder.", "created_at": "2026-10-04T22:00:00.000Z", "updated_at": "2026-10-04T22:00:00.000Z"
+    },
+    {
+      "id": "d4000037-0000-4000-8000-000000000037", "type": "noun", "german": "Baum", "translation_ru": "дерево", "article": "der", "plural": "Bäume", "example": "Der Baum ist groß.; Im Park stehen viele Bäume.", "created_at": "2026-10-04T22:00:00.000Z", "updated_at": "2026-10-04T22:00:00.000Z"
+    },
+    {
+      "id": "d4000038-0000-4000-8000-000000000038", "type": "noun", "german": "Beruf", "translation_ru": "профессия", "article": "der", "plural": "Berufe", "example": "Was ist Ihr Beruf?; Es gibt viele Berufe.", "created_at": "2026-10-04T22:00:00.000Z", "updated_at": "2026-10-04T22:00:00.000Z"
+    },
+    {
+      "id": "d4000039-0000-4000-8000-000000000039", "type": "noun", "german": "Stuhl", "translation_ru": "стул", "article": "der", "plural": "Stühle", "example": "Der Stuhl ist frei.; Im Kursraum stehen zwölf Stühle.", "created_at": "2026-10-04T22:00:00.000Z", "updated_at": "2026-10-04T22:00:00.000Z"
+    },
+    {
+      "id": "d4000040-0000-4000-8000-000000000040", "type": "noun", "german": "Haus", "translation_ru": "дом", "article": "das", "plural": "Häuser", "example": "Das Haus ist klein.; In der Straße stehen viele Häuser.", "created_at": "2026-10-04T22:00:00.000Z", "updated_at": "2026-10-04T22:00:00.000Z"
+    },
+    {
+      "id": "d4000041-0000-4000-8000-000000000041", "type": "noun", "german": "Tisch", "translation_ru": "стол", "article": "der", "plural": "Tische", "example": "Der Tisch ist groß.; Im Kursraum stehen vier Tische.", "created_at": "2026-10-04T22:00:00.000Z", "updated_at": "2026-10-04T22:00:00.000Z"
+    },
+    {
+      "id": "d4000042-0000-4000-8000-000000000042", "type": "noun", "german": "Lampe", "translation_ru": "лампа; светильник", "article": "die", "plural": "Lampen", "example": "Die Lampe ist an.; Im Zimmer sind zwei Lampen.", "created_at": "2026-10-04T22:00:00.000Z", "updated_at": "2026-10-04T22:00:00.000Z"
+    },
+    {
+      "id": "d4000043-0000-4000-8000-000000000043", "type": "noun", "german": "Wohnung", "translation_ru": "квартира", "article": "die", "plural": "Wohnungen", "example": "Die Wohnung ist in Hamburg.; Im Haus sind sechs Wohnungen.", "created_at": "2026-10-04T22:00:00.000Z", "updated_at": "2026-10-04T22:00:00.000Z"
+    },
+    {
+      "id": "d4000044-0000-4000-8000-000000000044", "type": "noun", "german": "Deutschlehrer", "translation_ru": "учитель немецкого языка", "article": "der", "plural": "Deutschlehrer", "example": "Das ist mein Deutschlehrer.; Die Deutschlehrer arbeiten zusammen.", "created_at": "2026-10-04T22:00:00.000Z", "updated_at": "2026-10-04T22:00:00.000Z"
+    },
+    {
+      "id": "d4000045-0000-4000-8000-000000000045", "type": "noun", "german": "Lehrerin", "translation_ru": "учительница; преподавательница", "article": "die", "plural": "Lehrerinnen", "example": "Meine Mutter ist Lehrerin.; Die Lehrerinnen sprechen Deutsch.", "created_at": "2026-10-04T22:00:00.000Z", "updated_at": "2026-10-04T22:00:00.000Z"
+    },
+    {
+      "id": "d4000046-0000-4000-8000-000000000046", "type": "noun", "german": "Muttersprache", "translation_ru": "родной язык", "article": "die", "plural": "Muttersprachen", "example": "Polnisch ist meine Muttersprache.; Welche Muttersprachen sprechen Sie?", "created_at": "2026-10-04T22:00:00.000Z", "updated_at": "2026-10-04T22:00:00.000Z"
+    },
+    {
+      "id": "d4000047-0000-4000-8000-000000000047", "type": "noun", "german": "Kontaktliste", "translation_ru": "список контактов", "article": "die", "plural": "Kontaktlisten", "example": "Wir machen eine Kontaktliste.; Die Kontaktliste enthält Telefonnummern.", "created_at": "2026-10-04T22:00:00.000Z", "updated_at": "2026-10-04T22:00:00.000Z"
+    },
+    {
+      "id": "d4000048-0000-4000-8000-000000000048", "type": "noun", "german": "Kursstatistik", "translation_ru": "статистика курса", "article": "die", "plural": "Kursstatistiken", "example": "Wir erstellen eine Kursstatistik.; Die Kursstatistik zeigt die Sprachen.", "created_at": "2026-10-04T22:00:00.000Z", "updated_at": "2026-10-04T22:00:00.000Z"
+    },
+    {
+      "id": "d4000049-0000-4000-8000-000000000049", "type": "noun", "german": "Fragebogen", "translation_ru": "анкета; опросный лист", "article": "der", "plural": "Fragebögen", "example": "Füllen Sie den Fragebogen aus.; Die Fragebögen liegen auf dem Tisch.", "created_at": "2026-10-04T22:00:00.000Z", "updated_at": "2026-10-04T22:00:00.000Z"
+    },
+    {
+      "id": "d4000050-0000-4000-8000-000000000050", "type": "noun", "german": "Schülerausweis", "translation_ru": "ученический билет", "article": "der", "plural": "Schülerausweise", "example": "Der Schülerausweis zeigt das Geburtsdatum.; Marta hat einen Schülerausweis.", "created_at": "2026-10-04T22:00:00.000Z", "updated_at": "2026-10-04T22:00:00.000Z"
+    },
+    {
+      "id": "d4000051-0000-4000-8000-000000000051", "type": "noun", "german": "Klasse", "translation_ru": "класс; учебная группа", "article": "die", "plural": "Klassen", "example": "Marta ist in Klasse 3a.; Die Schule hat viele Klassen.", "created_at": "2026-10-04T22:00:00.000Z", "updated_at": "2026-10-04T22:00:00.000Z"
+    },
+    {
+      "id": "d4000052-0000-4000-8000-000000000052", "type": "noun", "german": "Erziehungsberechtigte", "translation_ru": "законный представитель; лицо, ответственное за ребёнка", "article": "die", "plural": "Erziehungsberechtigten", "example": "Die Erziehungsberechtigte unterschreibt das Formular.; Die Unterschriften der Erziehungsberechtigten fehlen.", "created_at": "2026-10-04T22:00:00.000Z", "updated_at": "2026-10-04T22:00:00.000Z"
+    },
+    {
+      "id": "d4000053-0000-4000-8000-000000000053", "type": "noun", "german": "Geschlecht", "translation_ru": "пол", "article": "das", "plural": "Geschlechter", "example": "Im Formular steht das Geschlecht.; Es gibt ein Feld für das Geschlecht.", "created_at": "2026-10-04T22:00:00.000Z", "updated_at": "2026-10-04T22:00:00.000Z"
+    },
+    {
+      "id": "d4000054-0000-4000-8000-000000000054", "type": "noun", "german": "Datum", "translation_ru": "дата", "article": "das", "plural": "Daten", "example": "Welches Datum ist heute?; Bitte schreiben Sie das Datum.", "note": "Plural Daten может также означать «данные».", "created_at": "2026-10-04T22:00:00.000Z", "updated_at": "2026-10-04T22:00:00.000Z"
+    },
+    {
+      "id": "d4000055-0000-4000-8000-000000000055", "type": "noun", "german": "Unterschrift", "translation_ru": "подпись", "article": "die", "plural": "Unterschriften", "example": "Hier fehlt die Unterschrift.; Das Formular braucht zwei Unterschriften.", "created_at": "2026-10-04T22:00:00.000Z", "updated_at": "2026-10-04T22:00:00.000Z"
+    },
+    {
+      "id": "d4000056-0000-4000-8000-000000000056", "type": "noun", "german": "Team", "translation_ru": "команда; коллектив", "article": "das", "plural": "Teams", "example": "Willkommen im Team.; In der Firma arbeiten drei Teams.", "created_at": "2026-10-04T22:00:00.000Z", "updated_at": "2026-10-04T22:00:00.000Z"
+    },
+    {
+      "id": "d4000057-0000-4000-8000-000000000057", "type": "noun", "german": "Chefarzt", "translation_ru": "главный врач", "article": "der", "plural": "Chefärzte", "example": "Dr. Schneider ist Chefarzt.; Die Chefärzte sprechen mit dem Team.", "created_at": "2026-10-04T22:00:00.000Z", "updated_at": "2026-10-04T22:00:00.000Z"
+    },
+    {
+      "id": "d4000058-0000-4000-8000-000000000058", "type": "noun", "german": "Arbeitstag", "translation_ru": "рабочий день", "article": "der", "plural": "Arbeitstage", "example": "Heute ist mein erster Arbeitstag.; Die Arbeitstage sind lang.", "created_at": "2026-10-04T22:00:00.000Z", "updated_at": "2026-10-04T22:00:00.000Z"
+    },
+    {
+      "id": "d4000059-0000-4000-8000-000000000059", "type": "noun", "german": "Arbeit", "translation_ru": "работа; труд", "article": "die", "plural": "Arbeiten", "example": "Die Arbeit macht Spaß.; Heute habe ich viel Arbeit.", "created_at": "2026-10-04T22:00:00.000Z", "updated_at": "2026-10-04T22:00:00.000Z"
+    },
+    {
+      "id": "d4000060-0000-4000-8000-000000000060", "type": "noun", "german": "Spaß", "translation_ru": "удовольствие; веселье", "article": "der", "plural": "Späße", "example": "Die Arbeit macht Spaß.; Viel Spaß beim Lernen!", "note": "В значении «удовольствие» обычно употребляется в единственном числе.", "created_at": "2026-10-04T22:00:00.000Z", "updated_at": "2026-10-04T22:00:00.000Z"
+    },
+    {
+      "id": "d4000061-0000-4000-8000-000000000061", "type": "word", "german": "offen", "translation_ru": "открытый; открыто", "example": "Das Fenster ist offen.; Die Bibliothek ist heute offen.", "created_at": "2026-10-04T22:00:00.000Z", "updated_at": "2026-10-04T22:00:00.000Z"
+    },
+    {
+      "id": "d4000062-0000-4000-8000-000000000062", "type": "verb", "german": "anmelden", "translation_ru": "регистрировать; записывать; заявлять", "example": "Luisa meldet ihre Tochter in der Stadtbibliothek an.; Ich melde mich für den Kurs an.", "note": "Отделяемый глагол: ich melde ... an.", "created_at": "2026-10-04T22:00:00.000Z", "updated_at": "2026-10-04T22:00:00.000Z"
+    },
+    {
+      "id": "d4000063-0000-4000-8000-000000000063", "type": "verb", "german": "erlauben", "translation_ru": "разрешать", "example": "Ich erlaube meiner Tochter die Nutzung.; Der Lehrer erlaubt eine Pause.", "created_at": "2026-10-04T22:00:00.000Z", "updated_at": "2026-10-04T22:00:00.000Z"
+    },
+    {
+      "id": "d4000064-0000-4000-8000-000000000064", "type": "word", "german": "folgend", "translation_ru": "следующий; нижеследующий", "example": "Bitte lesen Sie den folgenden Text.; Sie können folgende Medien entleihen.", "created_at": "2026-10-04T22:00:00.000Z", "updated_at": "2026-10-04T22:00:00.000Z"
     }
   ]
 }

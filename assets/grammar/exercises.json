@@ -8634,6 +8634,860 @@
       "instruction_ru": "Выберите подходящий ответ на отрицательный вопрос."
     },
     {
+      "id": "lesson2-possessive-mein-01",
+      "topic_id": "possessive_articles",
+      "lemma": "bruder",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Das ist ___ Bruder.",
+      "answer": "mein",
+      "options": [
+        "mein",
+        "meine",
+        "meinen"
+      ],
+      "instruction_de": "Wähle den passenden Possessivartikel im Nominativ.",
+      "instruction_ru": "Выберите подходящее притяжательное слово в Nominativ."
+    },
+    {
+      "id": "lesson2-possessive-mein-02",
+      "topic_id": "possessive_articles",
+      "lemma": "kind",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Das ist ___ Kind.",
+      "answer": "mein",
+      "options": [
+        "mein",
+        "meine",
+        "meinen"
+      ],
+      "instruction_de": "Wähle den passenden Possessivartikel im Nominativ.",
+      "instruction_ru": "Выберите подходящее притяжательное слово в Nominativ."
+    },
+    {
+      "id": "lesson2-possessive-mein-03",
+      "topic_id": "possessive_articles",
+      "lemma": "vater",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Das ist ___ Vater.",
+      "answer": "mein",
+      "options": [
+        "mein",
+        "meine",
+        "meinen"
+      ],
+      "instruction_de": "Wähle den passenden Possessivartikel im Nominativ.",
+      "instruction_ru": "Выберите подходящее притяжательное слово в Nominativ."
+    },
+    {
+      "id": "lesson2-possessive-mein-04",
+      "topic_id": "possessive_articles",
+      "lemma": "sohn",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Das ist ___ Sohn.",
+      "answer": "mein",
+      "options": [
+        "mein",
+        "meine",
+        "meinen"
+      ],
+      "instruction_de": "Wähle den passenden Possessivartikel im Nominativ.",
+      "instruction_ru": "Выберите подходящее притяжательное слово в Nominativ."
+    },
+    {
+      "id": "lesson2-possessive-meine-01",
+      "topic_id": "possessive_articles",
+      "lemma": "tochter",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Das ist ___ Tochter.",
+      "answer": "meine",
+      "options": [
+        "mein",
+        "meine",
+        "meinen"
+      ],
+      "instruction_de": "Wähle den passenden Possessivartikel im Nominativ.",
+      "instruction_ru": "Выберите подходящее притяжательное слово в Nominativ."
+    },
+    {
+      "id": "lesson2-possessive-meine-02",
+      "topic_id": "possessive_articles",
+      "lemma": "mutter",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Das ist ___ Mutter.",
+      "answer": "meine",
+      "options": [
+        "mein",
+        "meine",
+        "meinen"
+      ],
+      "instruction_de": "Wähle den passenden Possessivartikel im Nominativ.",
+      "instruction_ru": "Выберите подходящее притяжательное слово в Nominativ."
+    },
+    {
+      "id": "lesson2-possessive-meine-03",
+      "topic_id": "possessive_articles",
+      "lemma": "kind",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Das sind ___ Kinder.",
+      "answer": "meine",
+      "options": [
+        "mein",
+        "meine",
+        "meinen"
+      ],
+      "instruction_de": "Wähle den passenden Possessivartikel im Nominativ.",
+      "instruction_ru": "Выберите подходящее притяжательное слово в Nominativ."
+    },
+    {
+      "id": "lesson2-possessive-meine-04",
+      "topic_id": "possessive_articles",
+      "lemma": "eltern",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Das sind ___ Eltern.",
+      "answer": "meine",
+      "options": [
+        "mein",
+        "meine",
+        "meinen"
+      ],
+      "instruction_de": "Wähle den passenden Possessivartikel im Nominativ.",
+      "instruction_ru": "Выберите подходящее притяжательное слово в Nominativ."
+    },
+    {
+      "id": "lesson2-possessive-dein-01",
+      "topic_id": "possessive_articles",
+      "lemma": "bruder",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Ist das ___ Bruder?",
+      "answer": "dein",
+      "options": [
+        "dein",
+        "deine",
+        "deinen"
+      ],
+      "instruction_de": "Wähle den passenden Possessivartikel im Nominativ.",
+      "instruction_ru": "Выберите подходящее притяжательное слово в Nominativ."
+    },
+    {
+      "id": "lesson2-possessive-dein-02",
+      "topic_id": "possessive_articles",
+      "lemma": "kind",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Ist das ___ Kind?",
+      "answer": "dein",
+      "options": [
+        "dein",
+        "deine",
+        "deinen"
+      ],
+      "instruction_de": "Wähle den passenden Possessivartikel im Nominativ.",
+      "instruction_ru": "Выберите подходящее притяжательное слово в Nominativ."
+    },
+    {
+      "id": "lesson2-possessive-dein-03",
+      "topic_id": "possessive_articles",
+      "lemma": "mann",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Ist das ___ Mann?",
+      "answer": "dein",
+      "options": [
+        "dein",
+        "deine",
+        "deinen"
+      ],
+      "instruction_de": "Wähle den passenden Possessivartikel im Nominativ.",
+      "instruction_ru": "Выберите подходящее притяжательное слово в Nominativ."
+    },
+    {
+      "id": "lesson2-possessive-dein-04",
+      "topic_id": "possessive_articles",
+      "lemma": "opa",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Ist das ___ Opa?",
+      "answer": "dein",
+      "options": [
+        "dein",
+        "deine",
+        "deinen"
+      ],
+      "instruction_de": "Wähle den passenden Possessivartikel im Nominativ.",
+      "instruction_ru": "Выберите подходящее притяжательное слово в Nominativ."
+    },
+    {
+      "id": "lesson2-possessive-deine-01",
+      "topic_id": "possessive_articles",
+      "lemma": "schwester",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Ist das ___ Schwester?",
+      "answer": "deine",
+      "options": [
+        "dein",
+        "deine",
+        "deinen"
+      ],
+      "instruction_de": "Wähle den passenden Possessivartikel im Nominativ.",
+      "instruction_ru": "Выберите подходящее притяжательное слово в Nominativ."
+    },
+    {
+      "id": "lesson2-possessive-deine-02",
+      "topic_id": "possessive_articles",
+      "lemma": "oma",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Ist das ___ Oma?",
+      "answer": "deine",
+      "options": [
+        "dein",
+        "deine",
+        "deinen"
+      ],
+      "instruction_de": "Wähle den passenden Possessivartikel im Nominativ.",
+      "instruction_ru": "Выберите подходящее притяжательное слово в Nominativ."
+    },
+    {
+      "id": "lesson2-possessive-deine-03",
+      "topic_id": "possessive_articles",
+      "lemma": "geschwister",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Sind das ___ Geschwister?",
+      "answer": "deine",
+      "options": [
+        "dein",
+        "deine",
+        "deinen"
+      ],
+      "instruction_de": "Wähle den passenden Possessivartikel im Nominativ.",
+      "instruction_ru": "Выберите подходящее притяжательное слово в Nominativ."
+    },
+    {
+      "id": "lesson2-possessive-deine-04",
+      "topic_id": "possessive_articles",
+      "lemma": "großeltern",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Sind das ___ Großeltern?",
+      "answer": "deine",
+      "options": [
+        "dein",
+        "deine",
+        "deinen"
+      ],
+      "instruction_de": "Wähle den passenden Possessivartikel im Nominativ.",
+      "instruction_ru": "Выберите подходящее притяжательное слово в Nominativ."
+    },
+    {
+      "id": "lesson2-possessive-ihr-01",
+      "topic_id": "possessive_articles",
+      "lemma": "sohn",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Frau Klein, ist das ___ Sohn?",
+      "answer": "Ihr",
+      "options": [
+        "Ihr",
+        "Ihre",
+        "Ihren"
+      ],
+      "instruction_de": "Wähle den passenden Possessivartikel im Nominativ.",
+      "instruction_ru": "Выберите подходящее притяжательное слово в Nominativ."
+    },
+    {
+      "id": "lesson2-possessive-ihr-02",
+      "topic_id": "possessive_articles",
+      "lemma": "kind",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Herr Rossi, ist das ___ Kind?",
+      "answer": "Ihr",
+      "options": [
+        "Ihr",
+        "Ihre",
+        "Ihren"
+      ],
+      "instruction_de": "Wähle den passenden Possessivartikel im Nominativ.",
+      "instruction_ru": "Выберите подходящее притяжательное слово в Nominativ."
+    },
+    {
+      "id": "lesson2-possessive-ihr-03",
+      "topic_id": "possessive_articles",
+      "lemma": "mann",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Frau Altmann, ist das ___ Mann?",
+      "answer": "Ihr",
+      "options": [
+        "Ihr",
+        "Ihre",
+        "Ihren"
+      ],
+      "instruction_de": "Wähle den passenden Possessivartikel im Nominativ.",
+      "instruction_ru": "Выберите подходящее притяжательное слово в Nominativ."
+    },
+    {
+      "id": "lesson2-possessive-ihr-04",
+      "topic_id": "possessive_articles",
+      "lemma": "bruder",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Frau Berg, ist das ___ Bruder?",
+      "answer": "Ihr",
+      "options": [
+        "Ihr",
+        "Ihre",
+        "Ihren"
+      ],
+      "instruction_de": "Wähle den passenden Possessivartikel im Nominativ.",
+      "instruction_ru": "Выберите подходящее притяжательное слово в Nominativ."
+    },
+    {
+      "id": "lesson2-possessive-ihre-01",
+      "topic_id": "possessive_articles",
+      "lemma": "tochter",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Herr Klein, ist das ___ Tochter?",
+      "answer": "Ihre",
+      "options": [
+        "Ihr",
+        "Ihre",
+        "Ihren"
+      ],
+      "instruction_de": "Wähle den passenden Possessivartikel im Nominativ.",
+      "instruction_ru": "Выберите подходящее притяжательное слово в Nominativ."
+    },
+    {
+      "id": "lesson2-possessive-ihre-02",
+      "topic_id": "possessive_articles",
+      "lemma": "ehefrau",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Herr Peters, ist das ___ Ehefrau?",
+      "answer": "Ihre",
+      "options": [
+        "Ihr",
+        "Ihre",
+        "Ihren"
+      ],
+      "instruction_de": "Wähle den passenden Possessivartikel im Nominativ.",
+      "instruction_ru": "Выберите подходящее притяжательное слово в Nominativ."
+    },
+    {
+      "id": "lesson2-possessive-ihre-03",
+      "topic_id": "possessive_articles",
+      "lemma": "kind",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Frau Glück, sind das ___ Kinder?",
+      "answer": "Ihre",
+      "options": [
+        "Ihr",
+        "Ihre",
+        "Ihren"
+      ],
+      "instruction_de": "Wähle den passenden Possessivartikel im Nominativ.",
+      "instruction_ru": "Выберите подходящее притяжательное слово в Nominativ."
+    },
+    {
+      "id": "lesson2-possessive-ihre-04",
+      "topic_id": "possessive_articles",
+      "lemma": "eltern",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Herr Bauer, sind das ___ Eltern?",
+      "answer": "Ihre",
+      "options": [
+        "Ihr",
+        "Ihre",
+        "Ihren"
+      ],
+      "instruction_de": "Wähle den passenden Possessivartikel im Nominativ.",
+      "instruction_ru": "Выберите подходящее притяжательное слово в Nominativ."
+    },
+    {
+      "id": "lesson2-address-du-01",
+      "topic_id": "regular_present",
+      "lemma": "du",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Tom, lernst ___ Deutsch?",
+      "answer": "du",
+      "options": [
+        "du",
+        "ihr",
+        "Sie"
+      ],
+      "instruction_de": "Wähle die passende Anrede.",
+      "instruction_ru": "Выберите подходящую форму обращения."
+    },
+    {
+      "id": "lesson2-address-du-02",
+      "topic_id": "regular_present",
+      "lemma": "du",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Anna, wo wohnst ___?",
+      "answer": "du",
+      "options": [
+        "du",
+        "ihr",
+        "Sie"
+      ],
+      "instruction_de": "Wähle die passende Anrede.",
+      "instruction_ru": "Выберите подходящую форму обращения."
+    },
+    {
+      "id": "lesson2-address-du-03",
+      "topic_id": "regular_present",
+      "lemma": "du",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Peter, kommst ___ aus Wien?",
+      "answer": "du",
+      "options": [
+        "du",
+        "ihr",
+        "Sie"
+      ],
+      "instruction_de": "Wähle die passende Anrede.",
+      "instruction_ru": "Выберите подходящую форму обращения."
+    },
+    {
+      "id": "lesson2-address-ihr-01",
+      "topic_id": "regular_present",
+      "lemma": "ihr",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Anna und Maria, lernt ___ Deutsch?",
+      "answer": "ihr",
+      "options": [
+        "du",
+        "ihr",
+        "Sie"
+      ],
+      "instruction_de": "Wähle die passende Anrede.",
+      "instruction_ru": "Выберите подходящую форму обращения."
+    },
+    {
+      "id": "lesson2-address-ihr-02",
+      "topic_id": "regular_present",
+      "lemma": "ihr",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Mark und Robert, wo wohnt ___?",
+      "answer": "ihr",
+      "options": [
+        "du",
+        "ihr",
+        "Sie"
+      ],
+      "instruction_de": "Wähle die passende Anrede.",
+      "instruction_ru": "Выберите подходящую форму обращения."
+    },
+    {
+      "id": "lesson2-address-ihr-03",
+      "topic_id": "regular_present",
+      "lemma": "ihr",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Kinder, kommt ___ aus Berlin?",
+      "answer": "ihr",
+      "options": [
+        "du",
+        "ihr",
+        "Sie"
+      ],
+      "instruction_de": "Wähle die passende Anrede.",
+      "instruction_ru": "Выберите подходящую форму обращения."
+    },
+    {
+      "id": "lesson2-address-sie-01",
+      "topic_id": "regular_present",
+      "lemma": "sie",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Frau Klein, wohnen ___ in München?",
+      "answer": "Sie",
+      "options": [
+        "du",
+        "ihr",
+        "Sie"
+      ],
+      "instruction_de": "Wähle die passende Anrede.",
+      "instruction_ru": "Выберите подходящую форму обращения."
+    },
+    {
+      "id": "lesson2-address-sie-02",
+      "topic_id": "regular_present",
+      "lemma": "sie",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Herr Berger, lernen ___ Deutsch?",
+      "answer": "Sie",
+      "options": [
+        "du",
+        "ihr",
+        "Sie"
+      ],
+      "instruction_de": "Wähle die passende Anrede.",
+      "instruction_ru": "Выберите подходящую форму обращения."
+    },
+    {
+      "id": "lesson2-address-sie-03",
+      "topic_id": "regular_present",
+      "lemma": "sie",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Herr und Frau Moor, haben ___ Zeit?",
+      "answer": "Sie",
+      "options": [
+        "du",
+        "ihr",
+        "Sie"
+      ],
+      "instruction_de": "Wähle die passende Anrede.",
+      "instruction_ru": "Выберите подходящую форму обращения."
+    },
+    {
+      "id": "lesson2-plural-01",
+      "topic_id": "noun_basics",
+      "lemma": "tisch",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "der Tisch — die ___",
+      "answer": "Tische",
+      "options": [
+        "Tische",
+        "Tischen",
+        "Tischs"
+      ],
+      "instruction_de": "Wähle die richtige Pluralform.",
+      "instruction_ru": "Выберите правильную форму множественного числа."
+    },
+    {
+      "id": "lesson2-plural-02",
+      "topic_id": "noun_basics",
+      "lemma": "mann",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "der Mann — die ___",
+      "answer": "Männer",
+      "options": [
+        "Manne",
+        "Männer",
+        "Mannen"
+      ],
+      "instruction_de": "Wähle die richtige Pluralform.",
+      "instruction_ru": "Выберите правильную форму множественного числа."
+    },
+    {
+      "id": "lesson2-plural-03",
+      "topic_id": "noun_basics",
+      "lemma": "apfel",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "der Apfel — die ___",
+      "answer": "Äpfel",
+      "options": [
+        "Apfeln",
+        "Apfels",
+        "Äpfel"
+      ],
+      "instruction_de": "Wähle die richtige Pluralform.",
+      "instruction_ru": "Выберите правильную форму множественного числа."
+    },
+    {
+      "id": "lesson2-plural-04",
+      "topic_id": "noun_basics",
+      "lemma": "frau",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "die Frau — die ___",
+      "answer": "Frauen",
+      "options": [
+        "Fraue",
+        "Frauen",
+        "Fräuer"
+      ],
+      "instruction_de": "Wähle die richtige Pluralform.",
+      "instruction_ru": "Выберите правильную форму множественного числа."
+    },
+    {
+      "id": "lesson2-plural-05",
+      "topic_id": "noun_basics",
+      "lemma": "schule",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "die Schule — die ___",
+      "answer": "Schulen",
+      "options": [
+        "Schule",
+        "Schulen",
+        "Schules"
+      ],
+      "instruction_de": "Wähle die richtige Pluralform.",
+      "instruction_ru": "Выберите правильную форму множественного числа."
+    },
+    {
+      "id": "lesson2-plural-06",
+      "topic_id": "noun_basics",
+      "lemma": "lampe",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "die Lampe — die ___",
+      "answer": "Lampen",
+      "options": [
+        "Lampe",
+        "Lampen",
+        "Lampes"
+      ],
+      "instruction_de": "Wähle die richtige Pluralform.",
+      "instruction_ru": "Выберите правильную форму множественного числа."
+    },
+    {
+      "id": "lesson2-plural-07",
+      "topic_id": "noun_basics",
+      "lemma": "haus",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "das Haus — die ___",
+      "answer": "Häuser",
+      "options": [
+        "Hausen",
+        "Hause",
+        "Häuser"
+      ],
+      "instruction_de": "Wähle die richtige Pluralform.",
+      "instruction_ru": "Выберите правильную форму множественного числа."
+    },
+    {
+      "id": "lesson2-plural-08",
+      "topic_id": "noun_basics",
+      "lemma": "buch",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "das Buch — die ___",
+      "answer": "Bücher",
+      "options": [
+        "Buche",
+        "Bücher",
+        "Buchs"
+      ],
+      "instruction_de": "Wähle die richtige Pluralform.",
+      "instruction_ru": "Выберите правильную форму множественного числа."
+    },
+    {
+      "id": "lesson2-plural-09",
+      "topic_id": "noun_basics",
+      "lemma": "kind",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "das Kind — die ___",
+      "answer": "Kinder",
+      "options": [
+        "Kinde",
+        "Kinder",
+        "Kinds"
+      ],
+      "instruction_de": "Wähle die richtige Pluralform.",
+      "instruction_ru": "Выберите правильную форму множественного числа."
+    },
+    {
+      "id": "lesson2-plural-10",
+      "topic_id": "noun_basics",
+      "lemma": "auto",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "das Auto — die ___",
+      "answer": "Autos",
+      "options": [
+        "Auto",
+        "Autos",
+        "Auten"
+      ],
+      "instruction_de": "Wähle die richtige Pluralform.",
+      "instruction_ru": "Выберите правильную форму множественного числа."
+    },
+    {
+      "id": "lesson2-plural-11",
+      "topic_id": "noun_basics",
+      "lemma": "brot",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "das Brot — die ___",
+      "answer": "Brote",
+      "options": [
+        "Brote",
+        "Broten",
+        "Brots"
+      ],
+      "instruction_de": "Wähle die richtige Pluralform.",
+      "instruction_ru": "Выберите правильную форму множественного числа."
+    },
+    {
+      "id": "lesson2-plural-12",
+      "topic_id": "noun_basics",
+      "lemma": "wohnung",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "die Wohnung — die ___",
+      "answer": "Wohnungen",
+      "options": [
+        "Wohnunge",
+        "Wohnungen",
+        "Wohnungs"
+      ],
+      "instruction_de": "Wähle die richtige Pluralform.",
+      "instruction_ru": "Выберите правильную форму множественного числа."
+    },
+    {
+      "id": "lesson2-personal-data-01",
+      "topic_id": "w_questions",
+      "lemma": "telefonnummer",
+      "required_item_type": "noun",
+      "type": "word_order",
+      "prompt": "Frage nach der Telefonnummer",
+      "answer": "Wie ist Ihre Telefonnummer?",
+      "options": [
+        "Wie",
+        "ist",
+        "Ihre",
+        "Telefonnummer?"
+      ],
+      "instruction_de": "Bilde die passende Frage.",
+      "instruction_ru": "Составьте подходящий вопрос."
+    },
+    {
+      "id": "lesson2-personal-data-02",
+      "topic_id": "w_questions",
+      "lemma": "geburtsort",
+      "required_item_type": "noun",
+      "type": "word_order",
+      "prompt": "Frage nach dem Geburtsort",
+      "answer": "Wo sind Sie geboren?",
+      "options": [
+        "Wo",
+        "sind",
+        "Sie",
+        "geboren?"
+      ],
+      "instruction_de": "Bilde die passende Frage.",
+      "instruction_ru": "Составьте подходящий вопрос."
+    },
+    {
+      "id": "lesson2-personal-data-03",
+      "topic_id": "w_questions",
+      "lemma": "wohnort",
+      "required_item_type": "noun",
+      "type": "word_order",
+      "prompt": "Frage nach dem Wohnort",
+      "answer": "Wo wohnen Sie?",
+      "options": [
+        "Wo",
+        "wohnen",
+        "Sie?"
+      ],
+      "instruction_de": "Bilde die passende Frage.",
+      "instruction_ru": "Составьте подходящий вопрос."
+    },
+    {
+      "id": "lesson2-personal-data-04",
+      "topic_id": "w_questions",
+      "lemma": "adresse",
+      "required_item_type": "noun",
+      "type": "word_order",
+      "prompt": "Frage nach der Adresse",
+      "answer": "Wie ist Ihre Adresse?",
+      "options": [
+        "Wie",
+        "ist",
+        "Ihre",
+        "Adresse?"
+      ],
+      "instruction_de": "Bilde die passende Frage.",
+      "instruction_ru": "Составьте подходящий вопрос."
+    },
+    {
+      "id": "lesson2-personal-data-05",
+      "topic_id": "w_questions",
+      "lemma": "familienstand",
+      "required_item_type": "noun",
+      "type": "word_order",
+      "prompt": "Frage nach dem Familienstand",
+      "answer": "Sind Sie verheiratet?",
+      "options": [
+        "Sind",
+        "Sie",
+        "verheiratet?"
+      ],
+      "instruction_de": "Bilde die passende Frage.",
+      "instruction_ru": "Составьте подходящий вопрос."
+    },
+    {
+      "id": "lesson2-personal-data-06",
+      "topic_id": "w_questions",
+      "lemma": "kind",
+      "required_item_type": "noun",
+      "type": "word_order",
+      "prompt": "Frage nach Kindern",
+      "answer": "Haben Sie Kinder?",
+      "options": [
+        "Haben",
+        "Sie",
+        "Kinder?"
+      ],
+      "instruction_de": "Bilde die passende Frage.",
+      "instruction_ru": "Составьте подходящий вопрос."
+    },
+    {
+      "id": "lesson2-personal-data-07",
+      "topic_id": "w_questions",
+      "lemma": "alter",
+      "required_item_type": "noun",
+      "type": "word_order",
+      "prompt": "Frage nach dem Alter eines Kindes",
+      "answer": "Wie alt ist Ihr Kind?",
+      "options": [
+        "Wie",
+        "alt",
+        "ist",
+        "Ihr",
+        "Kind?"
+      ],
+      "instruction_de": "Bilde die passende Frage.",
+      "instruction_ru": "Составьте подходящий вопрос."
+    },
+    {
+      "id": "lesson2-personal-data-08",
+      "topic_id": "w_questions",
+      "lemma": "geburtsdatum",
+      "required_item_type": "noun",
+      "type": "word_order",
+      "prompt": "Frage nach dem Geburtsdatum",
+      "answer": "Wie ist Ihr Geburtsdatum?",
+      "options": [
+        "Wie",
+        "ist",
+        "Ihr",
+        "Geburtsdatum?"
+      ],
+      "instruction_de": "Bilde die passende Frage.",
+      "instruction_ru": "Составьте подходящий вопрос."
+    },
+    {
       "id": "verb-basics-lernen",
       "topic_id": "verb_basics",
       "lemma": "lernen",

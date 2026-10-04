@@ -248,16 +248,18 @@
         "Entferne -en vom Infinitiv und ergänze die passende Endung.",
         "Diese erste Regel enthält noch keine Sonderfälle wie arbeiten oder heißen.",
         "Die Endungen sind -e, -st, -t, -en, -t, -en. wir und sie/Sie sind meistens gleich dem Infinitiv; er/sie/es und ihr haben beide -t.",
-        "Prüfe immer zuerst das Pronomen und erst dann die Endung: du wohnst, aber ihr wohnt. Die Verbform bei sie und Sie ist gleich; Großschreibung und Kontext zeigen den Unterschied."
+        "Prüfe immer zuerst das Pronomen und erst dann die Endung: du wohnst, aber ihr wohnt. Die Verbform bei sie und Sie ist gleich; Großschreibung und Kontext zeigen den Unterschied.",
+        "du ist die vertraute Anrede für eine Person. ihr ist die vertraute Anrede für mehrere Personen. Sie ist die höfliche Anrede für eine oder mehrere Personen: Wo wohnst du? Wo wohnt ihr? Wo wohnen Sie?"
       ],
       "explanation_ru": [
         "Präsens — настоящее время. Единственное число: ich, du, er, sie, es. Множественное: wir, ihr, sie. Sie — вежливое обращение с заглавной буквы.",
         "Уберите -en из инфинива и добавьте подходящее личное окончание.",
         "В это первое правило пока не входят особые случаи вроде arbeiten или heißen.",
         "Окончания: -e, -st, -t, -en, -t, -en. Формы wir и sie/Sie обычно совпадают с инфинитивом, а er/sie/es и ihr обе заканчиваются на -t.",
-        "Сначала определите местоимение и только затем выбирайте окончание: du wohnst, но ihr wohnt. Формы глагола с sie и Sie совпадают; различие видно по заглавной букве и контексту."
+        "Сначала определите местоимение и только затем выбирайте окончание: du wohnst, но ihr wohnt. Формы глагола с sie и Sie совпадают; различие видно по заглавной букве и контексту.",
+        "du — неформальное обращение к одному человеку. ihr — неформальное обращение к нескольким людям. Sie — вежливое обращение к одному или нескольким людям: Wo wohnst du? Wo wohnt ihr? Wo wohnen Sie?"
       ],
-      "table": [["Pronomen / Местоимение", "Endung / Окончание", "Beispiel / Пример"], ["ich — я", "-e", "ich lerne — я учу"], ["du — ты", "-st", "du lernst — ты учишь"], ["er/sie/es — он/она/оно", "-t", "er lernt — он учит"], ["wir — мы", "-en", "wir lernen — мы учим"], ["ihr — вы", "-t", "ihr lernt — вы учите"], ["sie/Sie — они/Вы", "-en", "sie lernen — они учат"]],
+      "table": [["Pronomen / Местоимение", "Endung / Окончание", "Beispiel / Пример"], ["ich — я", "-e", "ich lerne — я учу"], ["du — ты, один человек", "-st", "du lernst — ты учишь"], ["er/sie/es — он/она/оно", "-t", "er lernt — он учит"], ["wir — мы", "-en", "wir lernen — мы учим"], ["ihr — вы, несколько знакомых", "-t", "ihr lernt — вы учите"], ["sie — они / Sie — Вы, вежливо", "-en", "sie/Sie lernen — они учат / Вы учите"]],
       "trainable": true
     },
     {
@@ -383,15 +385,19 @@
         "Ein Nomen bezeichnet zum Beispiel eine Person, einen Ort oder einen Gegenstand.",
         "Nomen beginnen im Deutschen immer mit einem Großbuchstaben und werden meist mit Artikel gelernt.",
         "Lerne auch die Pluralform, weil sie nicht immer sicher vorhergesagt werden kann: der Tisch — die Tische, das Buch — die Bücher.",
+        "Häufige Pluralmuster sind keine feste Regel: keine Endung, Umlaut, -e, Umlaut plus -e, -er, Umlaut plus -er, -(e)n oder -s. Deshalb gehört der Plural zum Lernwort.",
+        "Manche Stoff- und Sammelbezeichnungen haben meistens keinen Plural, zum Beispiel Milch, Wasser oder Musik.",
         "Zusammengesetzte Nomen werden zusammengeschrieben. Das letzte Nomen bestimmt Genus und Artikel: die Haus+tür, weil Tür feminin ist."
       ],
       "explanation_ru": [
         "Существительное по-немецки — das Nomen; также используется название das Substantiv. Оно называет, например, человека, место или предмет.",
         "В немецком существительные всегда начинаются с заглавной буквы и обычно учатся вместе с артиклем.",
         "Учите также форму множественного числа: её не всегда можно предсказать — der Tisch — die Tische, das Buch — die Bücher.",
+        "Частые модели множественного числа — это не жёсткое правило: без окончания, умлаут, -e, умлаут с -e, -er, умлаут с -er, -(e)n или -s. Поэтому множественное число нужно учить вместе со словом.",
+        "У некоторых названий веществ и собирательных понятий обычно нет множественного числа, например Milch, Wasser или Musik.",
         "Сложные существительные пишутся слитно. Последнее существительное определяет род и артикль: die Haus+tür, потому что Tür женского рода."
       ],
-      "table": [["Kategorie / Категория", "Beispiel / Пример"], ["Person / Человек", "die Frau — женщина"], ["Ort / Место", "die Schule — школа"], ["Gegenstand / Предмет", "der Tisch — стол"]],
+      "table": [["Thema / Тема", "Form / Форма", "Beispiel / Пример"], ["Person / Человек", "Nomen mit Artikel / Существительное с артиклем", "die Frau — женщина"], ["Ort / Место", "Nomen mit Artikel / Существительное с артиклем", "die Schule — школа"], ["Plural ohne Endung / Без окончания", "—", "das Fenster — die Fenster"], ["Plural mit Umlaut / С умлаутом", "¨", "der Mantel — die Mäntel"], ["Plural mit -e / С окончанием -e", "-e", "das Brot — die Brote"], ["Plural mit Umlaut und -e / Умлаут и -e", "¨ + -e", "die Hand — die Hände"], ["Plural mit -er / С окончанием -er", "-er", "das Kind — die Kinder"], ["Plural mit Umlaut und -er / Умлаут и -er", "¨ + -er", "das Buch — die Bücher"], ["Plural mit -(e)n / С окончанием -(e)n", "-(e)n", "die Übung — die Übungen"], ["Plural mit -s / С окончанием -s", "-s", "das Auto — die Autos"]],
       "trainable": true
     },
     {
@@ -419,8 +425,32 @@
       "trainable": true
     },
     {
-      "id": "adjectives_adverbs",
+      "id": "possessive_articles",
       "order": 10,
+      "title_de": "Possessivartikel: mein, dein und Ihr",
+      "title_ru": "Притяжательные слова: mein, dein и Ihr",
+      "summary_de": "Die Endung richtet sich nach Genus und Zahl des folgenden Nomens.",
+      "summary_ru": "Окончание зависит от рода и числа следующего существительного.",
+      "explanation_de": [
+        "Possessivartikel zeigen Zugehörigkeit: mein bedeutet «zu mir», dein «zu dir» und Ihr «zu Ihnen».",
+        "Im Nominativ haben maskuline und neutrale Nomen keine Endung: mein Bruder, mein Kind. Feminine Nomen und der Plural bekommen -e: meine Tochter, meine Kinder.",
+        "Dasselbe Muster gilt für dein/deine und Ihr/Ihre: dein Vater, deine Mutter; Ihr Sohn, Ihre Tochter.",
+        "Ihr und Ihre werden großgeschrieben, wenn sie zur höflichen Anrede Sie gehören. Das kleingeschriebene ihr kann dagegen das Pronomen «вы» oder das Possessivwort «её/их» sein.",
+        "Bestimme zuerst das Nomen: Bruder ist maskulin, Kind neutral, Tochter feminin und Kinder Plural. Wähle danach die Form ohne -e oder mit -e."
+      ],
+      "explanation_ru": [
+        "Притяжательные слова по-немецки называются Possessivartikel. Они показывают принадлежность: mein — «мой», dein — «твой», Ihr — вежливое «Ваш».",
+        "В Nominativ (именительном падеже) перед мужским и средним родом окончания нет: mein Bruder, mein Kind. Перед женским родом и множественным числом добавляется -e: meine Tochter, meine Kinder.",
+        "Та же модель действует для dein/deine и Ihr/Ihre: dein Vater, deine Mutter; Ihr Sohn, Ihre Tochter.",
+        "Ihr и Ihre пишутся с заглавной буквы, когда относятся к вежливому Sie. Строчное ihr может быть местоимением «вы» или притяжательным словом «её/их».",
+        "Сначала определите существительное: Bruder — мужской род, Kind — средний, Tochter — женский, Kinder — множественное число. Затем выберите форму без -e или с -e."
+      ],
+      "table": [["Person / Лицо", "Maskulin und Neutrum / Мужской и средний род", "Feminin und Plural / Женский род и множественное число"], ["ich — я", "mein Bruder / mein Kind", "meine Tochter / meine Kinder"], ["du — ты", "dein Bruder / dein Kind", "deine Tochter / deine Kinder"], ["Sie — Вы, вежливо", "Ihr Bruder / Ihr Kind", "Ihre Tochter / Ihre Kinder"]],
+      "trainable": true
+    },
+    {
+      "id": "adjectives_adverbs",
+      "order": 11,
       "title_de": "Adjektive und Adverbien",
       "title_ru": "Прилагательные и наречия",
       "summary_de": "Eigenschaft eines Nomens oder nähere Angabe zur Handlung.",
@@ -442,7 +472,7 @@
     },
     {
       "id": "prepositions",
-      "order": 11,
+      "order": 12,
       "title_de": "Präpositionen",
       "title_ru": "Предлоги",
       "summary_de": "Präpositionen zeigen Beziehungen wie Ort oder Richtung.",
@@ -468,7 +498,7 @@
     },
     {
       "id": "sentence_basics",
-      "order": 12,
+      "order": 13,
       "title_de": "Der einfache Satz",
       "title_ru": "Простое предложение",
       "summary_de": "Im Aussagesatz steht das konjugierte Verb an Position zwei.",
@@ -492,7 +522,7 @@
     },
     {
       "id": "yes_no_questions",
-      "order": 13,
+      "order": 14,
       "title_de": "Fragen mit dem Verb am Anfang",
       "title_ru": "Вопросы с глаголом в начале",
       "summary_de": "In einer Ja-/Nein-Frage steht das konjugierte Verb auf Position eins.",
@@ -520,7 +550,7 @@
     },
     {
       "id": "w_questions",
-      "order": 14,
+      "order": 15,
       "title_de": "W-Fragen",
       "title_ru": "Вопросы с вопросительным словом",
       "summary_de": "Das Fragewort nennt die gesuchte Information.",
@@ -544,7 +574,7 @@
     },
     {
       "id": "negation",
-      "order": 15,
+      "order": 16,
       "title_de": "Negation mit nicht und kein",
       "title_ru": "Отрицание с nicht и kein",
       "summary_de": "kein negiert meist ein Nomen, nicht andere Satzteile.",
@@ -568,7 +598,7 @@
     },
     {
       "id": "cases_intro",
-      "order": 16,
+      "order": 17,
       "title_de": "Kasus: Nominativ und Akkusativ",
       "title_ru": "Падежи: Nominativ (именительный) и Akkusativ (винительный)",
       "summary_de": "Der Kasus zeigt die Aufgabe eines Nomens im Satz.",
