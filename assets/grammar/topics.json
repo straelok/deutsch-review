@@ -152,8 +152,8 @@
     {
       "id": "numbers",
       "order": -1,
-      "title_de": "Zahlen von 0 bis 100",
-      "title_ru": "Числа от 0 до 100",
+      "title_de": "Zahlen von 0 bis 1.000.000",
+      "title_ru": "Числа от 0 до 1 000 000",
       "summary_de": "Grundzahlen lesen und bilden.",
       "summary_ru": "Чтение и образование количественных числительных.",
       "explanation_de": [
@@ -162,6 +162,7 @@
         "Die Zehner enden meistens auf -zig: zwanzig, vierzig, fünfzig, achtzig, neunzig. Ausnahmen sind dreißig mit ß sowie sechzig und siebzig mit verkürztem Stamm.",
         "Von 21 bis 99 nennt man zuerst die Einerzahl, dann und und zuletzt den Zehner: 24 = vier-und-zwanzig. Bei 1 verwendet man ein ohne s: einundzwanzig.",
         "Alle Zahlwörter unter einer Million werden zusammengeschrieben: siebenundvierzig, neunundneunzig. 100 heißt hundert oder einhundert.",
+        "Hunderter und Tausender werden ohne Leerzeichen verbunden: zweihundert, achthundertvierunddreißig, dreitausend. 1.000.000 heißt eine Million und wird getrennt geschrieben.",
         "Die IPA-Transkription zeigt die Standardaussprache. Das Zeichen [ç] am Ende von -zig klingt wie ch in ich; regional hört man auch [k]."
       ],
       "explanation_ru": [
@@ -170,6 +171,7 @@
         "Десятки обычно заканчиваются на -zig: zwanzig, vierzig, fünfzig, achtzig, neunzig. Исключения: dreißig с ß, а также сокращённые sechzig и siebzig.",
         "От 21 до 99 сначала называется единица, затем und и десяток: 24 = vier-und-zwanzig. Для единицы используется ein без s: einundzwanzig.",
         "Все числительные меньше миллиона пишутся слитно: siebenundvierzig, neunundneunzig. Число 100 называется hundert или einhundert.",
+        "Сотни и тысячи соединяются без пробела: zweihundert — двести, achthundertvierunddreißig — 834, dreitausend — 3000. Число 1 000 000 называется eine Million и пишется раздельно.",
         "Транскрипция IPA показывает стандартное произношение. Звук [ç] в окончании -zig произносится как ch в слове ich; в некоторых регионах встречается [k]."
       ],
       "table": [
@@ -188,7 +190,12 @@
         ["80", "achtzig", "[ˈaxtt͡sɪç]"], ["90", "neunzig", "[ˈnɔɪ̯nt͡sɪç]"],
         ["21", "einundzwanzig", "[ˈaɪ̯nʊntˌtsvant͡sɪç]"],
         ["47", "siebenundvierzig", "[ˈziːbn̩ʊntˌfɪʁt͡sɪç]"],
-        ["100", "(ein)hundert", "[ˈaɪ̯nˌhʊndɐt] / [ˈhʊndɐt]"]
+        ["100", "(ein)hundert", "[ˈaɪ̯nˌhʊndɐt] / [ˈhʊndɐt]"],
+        ["200", "zweihundert", "двести"],
+        ["1 000", "(ein)tausend", "тысяча"],
+        ["10 000", "zehntausend", "десять тысяч"],
+        ["100 000", "hunderttausend", "сто тысяч"],
+        ["1 000 000", "eine Million", "один миллион"]
       ],
       "trainable": false
     },
@@ -618,6 +625,72 @@
         "Не каждый глагол требует Akkusativ (винительного падежа). Управление лучше учить вместе с глаголом и примером предложения."
       ],
       "table": [["Kasus / Падеж", "Frage / Вопрос", "Beispiel / Пример"], ["Nominativ / Именительный", "Wer oder was? — кто или что?", "der Mann — мужчина"], ["Akkusativ / Винительный", "Wen oder was? — кого или что?", "den Apfel — яблоко"]],
+      "trainable": true
+    },
+    {
+      "id": "moechten",
+      "order": 18,
+      "title_de": "Das Verb möchten",
+      "title_ru": "Глагол möchten — хотеть, желать",
+      "summary_de": "Mit möchten formuliert man einen höflichen Wunsch.",
+      "summary_ru": "С möchten вежливо выражают желание или заказ.",
+      "explanation_de": [
+        "möchten bedeutet «einen Wunsch haben» und klingt höflicher als wollen: Ich möchte einen Kaffee.",
+        "Die Formen sind ich möchte, du möchtest, er/sie/es möchte, wir möchten, ihr möchtet, sie/Sie möchten.",
+        "Ein zweites Verb steht im Infinitiv am Satzende: Ich möchte Brot kaufen. Möchten Sie etwas trinken?",
+        "Im Café oder Geschäft kann das gewünschte Nomen direkt folgen: Wir möchten zwei Brötchen."
+      ],
+      "explanation_ru": [
+        "möchten означает «хотеть, желать» и звучит вежливее, чем wollen: Ich möchte einen Kaffee. — Я хотел бы кофе.",
+        "Формы: ich möchte, du möchtest, er/sie/es möchte, wir möchten, ihr möchtet, sie/Sie möchten.",
+        "Если есть второй глагол, его инфинитив стоит в конце: Ich möchte Brot kaufen. — Я хотел бы купить хлеб. Möchten Sie etwas trinken? — Хотите что-нибудь выпить?",
+        "В кафе или магазине желаемый предмет можно назвать сразу после möchten: Wir möchten zwei Brötchen. — Мы хотели бы две булочки."
+      ],
+      "table": [["Pronomen / Местоимение", "Form / Форма", "Beispiel / Пример"], ["ich — я", "möchte", "Ich möchte Tee. — Я хотел бы чай."], ["du — ты", "möchtest", "Möchtest du Kaffee? — Ты хочешь кофе?"], ["er/sie/es — он/она/оно", "möchte", "Sie möchte Brot kaufen. — Она хочет купить хлеб."], ["wir — мы", "möchten", "Wir möchten bestellen. — Мы хотели бы сделать заказ."], ["ihr — вы", "möchtet", "Möchtet ihr Saft? — Вы хотите сок?"], ["sie/Sie — они/Вы", "möchten", "Möchten Sie bezahlen? — Вы хотите заплатить?"]],
+      "trainable": true
+    },
+    {
+      "id": "noun_pronouns",
+      "order": 19,
+      "title_de": "Nomen ersetzen: er, es, sie",
+      "title_ru": "Замена существительного: er, es, sie",
+      "summary_de": "Das Genus des Nomens bestimmt das Pronomen.",
+      "summary_ru": "Род существительного определяет заменяющее его местоимение.",
+      "explanation_de": [
+        "Ein bereits genanntes Nomen kann durch ein Personalpronomen ersetzt werden.",
+        "der wird er, das wird es und die wird sie: der Balkon — er, das Bad — es, die Küche — sie.",
+        "Nomen im Plural werden ebenfalls durch sie ersetzt: die Stühle — sie.",
+        "Das Pronomen richtet sich nach dem grammatischen Genus, nicht nach der russischen Übersetzung."
+      ],
+      "explanation_ru": [
+        "Уже названное существительное (das Nomen) можно заменить личным местоимением (das Personalpronomen), чтобы не повторять слово.",
+        "Артикль подсказывает местоимение: der → er, das → es, die → sie. Например: der Balkon — er, das Bad — es, die Küche — sie.",
+        "Существительные во множественном числе тоже заменяются на sie: die Stühle — sie.",
+        "Выбор зависит от немецкого грамматического рода, а не от рода русского перевода."
+      ],
+      "table": [["Artikel und Zahl / Артикль и число", "Pronomen / Местоимение", "Beispiel / Пример"], ["der / мужской род", "er — он", "Der Balkon ist klein. Er ist schön."], ["das / средний род", "es — оно", "Das Bad ist klein. Es ist hell."], ["die / женский род", "sie — она", "Die Küche ist neu. Sie ist groß."], ["die / множественное число", "sie — они", "Die Stühle sind alt. Sie sind billig."]],
+      "trainable": true
+    },
+    {
+      "id": "gefallen",
+      "order": 20,
+      "title_de": "gefallen: gefällt oder gefallen",
+      "title_ru": "Глагол gefallen — нравиться",
+      "summary_de": "Die Sache, die gefällt, bestimmt Singular oder Plural.",
+      "summary_ru": "Форму единственного или множественного числа определяет то, что нравится.",
+      "explanation_de": [
+        "Bei gefallen ist die Sache das Subjekt: Der Tisch gefällt mir. Die Stühle gefallen mir.",
+        "Für eine Sache steht gefällt, für mehrere Sachen gefallen.",
+        "mir bedeutet «мне», dir «тебе» und Ihnen höflich «Вам»: Wie gefällt dir das Sofa?",
+        "Die Antwort kann kurz sein: Sehr gut. Ganz gut. Nicht so gut."
+      ],
+      "explanation_ru": [
+        "gefallen означает «нравиться». Подлежащим является предмет: Der Tisch gefällt mir. — Стол нравится мне. Die Stühle gefallen mir. — Стулья нравятся мне.",
+        "Для одного предмета используется gefällt, для нескольких — gefallen.",
+        "mir значит «мне», dir — «тебе», Ihnen — вежливое «Вам»: Wie gefällt dir das Sofa? — Как тебе диван?",
+        "Можно ответить кратко: Sehr gut — очень хорошо; Ganz gut — довольно хорошо; Nicht so gut — не очень."
+      ],
+      "table": [["Subjekt / Подлежащее", "Form / Форма", "Beispiel / Пример"], ["Singular / единственное число", "gefällt", "Wie gefällt dir der Tisch? — Как тебе стол?"], ["Plural / множественное число", "gefallen", "Wie gefallen Ihnen die Möbel? — Как Вам мебель?"]],
       "trainable": true
     }
   ],

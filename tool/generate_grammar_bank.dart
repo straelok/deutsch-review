@@ -413,6 +413,7 @@ void main() {
   );
   _addLessonOneSpecialVerbExercises(exercises);
   _addLessonTwoExercises(exercises);
+  _addLessonThreeFourExercises(exercises);
   _addFoundationExercises(exercises);
   final generatedIds = exercises.map((exercise) => exercise['id']).toSet();
   exercises.addAll(
@@ -437,6 +438,234 @@ void main() {
   File('assets/grammar/exercises.json')
     ..createSync(recursive: true)
     ..writeAsStringSync('$output\n');
+}
+
+void _addLessonThreeFourExercises(List<Map<String, Object?>> exercises) {
+  const moechtenItems = <({String lemma, String prompt, String answer})>[
+    (lemma: 'möchten', prompt: 'Ich ___ einen Kaffee.', answer: 'möchte'),
+    (lemma: 'möchten', prompt: 'Du ___ Tee trinken.', answer: 'möchtest'),
+    (lemma: 'möchten', prompt: 'Er ___ Brot kaufen.', answer: 'möchte'),
+    (lemma: 'möchten', prompt: 'Sie ___ eine Suppe.', answer: 'möchte'),
+    (lemma: 'möchten', prompt: 'Wir ___ bestellen.', answer: 'möchten'),
+    (lemma: 'möchten', prompt: 'Ihr ___ zwei Brötchen.', answer: 'möchtet'),
+    (lemma: 'möchten', prompt: 'Die Kinder ___ Saft.', answer: 'möchten'),
+    (lemma: 'möchten', prompt: '___ Sie bezahlen?', answer: 'Möchten'),
+    (lemma: 'möchten', prompt: 'Ich ___ ein Kilo Äpfel.', answer: 'möchte'),
+    (lemma: 'möchten', prompt: '___ du etwas essen?', answer: 'Möchtest'),
+    (lemma: 'möchten', prompt: 'Paul ___ Mineralwasser.', answer: 'möchte'),
+    (lemma: 'möchten', prompt: 'Anna ___ Gemüse kaufen.', answer: 'möchte'),
+    (lemma: 'möchten', prompt: 'Wir ___ eine Pizza.', answer: 'möchten'),
+    (lemma: 'möchten', prompt: '___ ihr Kuchen?', answer: 'Möchtet'),
+    (lemma: 'möchten', prompt: 'Meine Eltern ___ Kaffee.', answer: 'möchten'),
+    (lemma: 'möchten', prompt: 'Was ___ Sie trinken?', answer: 'möchten'),
+    (lemma: 'möchten', prompt: 'Ich ___ noch Milch.', answer: 'möchte'),
+    (lemma: 'möchten', prompt: 'Du ___ heute kochen.', answer: 'möchtest'),
+    (lemma: 'möchten', prompt: 'Das Kind ___ ein Eis.', answer: 'möchte'),
+    (lemma: 'möchten', prompt: 'Wir ___ die Rechnung.', answer: 'möchten'),
+    (lemma: 'möchten', prompt: 'Ihr ___ Reis essen.', answer: 'möchtet'),
+    (lemma: 'möchten', prompt: 'Die Kunden ___ bezahlen.', answer: 'möchten'),
+    (
+      lemma: 'möchten',
+      prompt: '___ Sie ein Sonderangebot sehen?',
+      answer: 'Möchten'
+    ),
+    (lemma: 'möchten', prompt: 'Wer ___ noch Tee?', answer: 'möchte'),
+  ];
+  for (var i = 0; i < moechtenItems.length; i++) {
+    final item = moechtenItems[i];
+    _addExercise(exercises,
+        id: 'lesson3-moechten-${i + 1}',
+        topicId: 'moechten',
+        lemma: item.lemma,
+        prompt: item.prompt,
+        answer: item.answer,
+        type: 'choice',
+        options: const [
+          'möchte',
+          'möchtest',
+          'möchten',
+          'möchtet',
+          'Möchte',
+          'Möchten',
+          'Möchtest'
+        ],
+        instructionDe: 'Wähle die passende Form von möchten.',
+        instructionRu: 'Выберите подходящую форму глагола möchten.');
+  }
+
+  const pronounItems = <({String lemma, String prompt, String answer})>[
+    (
+      lemma: 'Balkon',
+      prompt: 'Der Balkon ist klein. ___ ist aber schön.',
+      answer: 'Er'
+    ),
+    (
+      lemma: 'Tisch',
+      prompt: 'Der Tisch ist neu. ___ kostet 80 Euro.',
+      answer: 'Er'
+    ),
+    (
+      lemma: 'Schrank',
+      prompt: 'Der Schrank ist groß. ___ ist weiß.',
+      answer: 'Er'
+    ),
+    (
+      lemma: 'Teppich',
+      prompt: 'Der Teppich ist alt. ___ ist billig.',
+      answer: 'Er'
+    ),
+    (
+      lemma: 'Fernseher',
+      prompt: 'Der Fernseher ist hier. ___ ist neu.',
+      answer: 'Er'
+    ),
+    (
+      lemma: 'Flur',
+      prompt: 'Der Flur ist schmal. ___ ist dunkel.',
+      answer: 'Er'
+    ),
+    (lemma: 'Bad', prompt: 'Das Bad ist dort. ___ ist klein.', answer: 'Es'),
+    (
+      lemma: 'Zimmer',
+      prompt: 'Das Zimmer ist hell. ___ ist schön.',
+      answer: 'Es'
+    ),
+    (
+      lemma: 'Sofa',
+      prompt: 'Das Sofa ist modern. ___ kostet 300 Euro.',
+      answer: 'Es'
+    ),
+    (
+      lemma: 'Bett',
+      prompt: 'Das Bett ist neu. ___ ist sehr breit.',
+      answer: 'Es'
+    ),
+    (
+      lemma: 'Regal',
+      prompt: 'Das Regal ist hoch. ___ ist braun.',
+      answer: 'Es'
+    ),
+    (
+      lemma: 'Haus',
+      prompt: 'Das Haus ist alt. ___ hat einen Garten.',
+      answer: 'Es'
+    ),
+    (
+      lemma: 'Küche',
+      prompt: 'Die Küche ist neu. ___ ist sehr groß.',
+      answer: 'Sie'
+    ),
+    (
+      lemma: 'Wohnung',
+      prompt: 'Die Wohnung ist teuer. ___ ist aber hell.',
+      answer: 'Sie'
+    ),
+    (
+      lemma: 'Lampe',
+      prompt: 'Die Lampe ist gelb. ___ kostet 20 Euro.',
+      answer: 'Sie'
+    ),
+    (
+      lemma: 'Dusche',
+      prompt: 'Die Dusche ist im Bad. ___ ist neu.',
+      answer: 'Sie'
+    ),
+    (
+      lemma: 'Garage',
+      prompt: 'Die Garage ist klein. ___ ist neben dem Haus.',
+      answer: 'Sie'
+    ),
+    (
+      lemma: 'Miete',
+      prompt: 'Die Miete ist hoch. ___ kostet 900 Euro.',
+      answer: 'Sie'
+    ),
+    (
+      lemma: 'Stuhl',
+      prompt: 'Die Stühle sind alt. ___ sind billig.',
+      answer: 'Sie'
+    ),
+    (
+      lemma: 'Möbel',
+      prompt: 'Die Möbel sind modern. ___ gefallen mir.',
+      answer: 'Sie'
+    ),
+    (
+      lemma: 'Zimmer',
+      prompt: 'Die Zimmer sind hell. ___ sind groß.',
+      answer: 'Sie'
+    ),
+    (
+      lemma: 'Lampe',
+      prompt: 'Die Lampen sind weiß. ___ sind schön.',
+      answer: 'Sie'
+    ),
+    (
+      lemma: 'Bett',
+      prompt: 'Die Betten sind hier. ___ sind neu.',
+      answer: 'Sie'
+    ),
+    (
+      lemma: 'Sessel',
+      prompt: 'Die Sessel sind bequem. ___ kosten 100 Euro.',
+      answer: 'Sie'
+    ),
+  ];
+  for (var i = 0; i < pronounItems.length; i++) {
+    final item = pronounItems[i];
+    _addExercise(exercises,
+        id: 'lesson4-pronoun-${i + 1}',
+        topicId: 'noun_pronouns',
+        lemma: item.lemma,
+        itemType: 'noun',
+        prompt: item.prompt,
+        answer: item.answer,
+        type: 'choice',
+        options: const ['Er', 'Es', 'Sie'],
+        instructionDe: 'Ersetze das Nomen durch er, es oder sie.',
+        instructionRu: 'Замените существительное на er, es или sie.');
+  }
+
+  const gefallenItems = <({String lemma, String prompt, String answer})>[
+    (lemma: 'gefallen', prompt: 'Wie ___ dir der Tisch?', answer: 'gefällt'),
+    (lemma: 'gefallen', prompt: 'Wie ___ Ihnen das Sofa?', answer: 'gefällt'),
+    (lemma: 'gefallen', prompt: 'Mir ___ die Lampe.', answer: 'gefällt'),
+    (lemma: 'gefallen', prompt: 'Dir ___ der Teppich.', answer: 'gefällt'),
+    (lemma: 'gefallen', prompt: 'Uns ___ das Zimmer.', answer: 'gefällt'),
+    (lemma: 'gefallen', prompt: 'Wie ___ euch die Wohnung?', answer: 'gefällt'),
+    (lemma: 'gefallen', prompt: 'Ihm ___ der Balkon.', answer: 'gefällt'),
+    (lemma: 'gefallen', prompt: 'Ihr ___ die Küche.', answer: 'gefällt'),
+    (lemma: 'gefallen', prompt: 'Wie ___ dir die Stühle?', answer: 'gefallen'),
+    (lemma: 'gefallen', prompt: 'Wie ___ Ihnen die Möbel?', answer: 'gefallen'),
+    (lemma: 'gefallen', prompt: 'Mir ___ die Betten.', answer: 'gefallen'),
+    (lemma: 'gefallen', prompt: 'Dir ___ die Farben.', answer: 'gefallen'),
+    (lemma: 'gefallen', prompt: 'Uns ___ die Zimmer.', answer: 'gefallen'),
+    (lemma: 'gefallen', prompt: 'Wie ___ euch die Regale?', answer: 'gefallen'),
+    (lemma: 'gefallen', prompt: 'Ihm ___ die Sessel.', answer: 'gefallen'),
+    (lemma: 'gefallen', prompt: 'Ihr ___ die Lampen.', answer: 'gefallen'),
+    (lemma: 'gefallen', prompt: 'Der Schrank ___ mir gut.', answer: 'gefällt'),
+    (
+      lemma: 'gefallen',
+      prompt: 'Die Schränke ___ mir gut.',
+      answer: 'gefallen'
+    ),
+    (lemma: 'gefallen', prompt: 'Das Bad ___ uns nicht.', answer: 'gefällt'),
+    (lemma: 'gefallen', prompt: 'Die Sofas ___ uns sehr.', answer: 'gefallen'),
+  ];
+  for (var i = 0; i < gefallenItems.length; i++) {
+    final item = gefallenItems[i];
+    _addExercise(exercises,
+        id: 'lesson4-gefallen-${i + 1}',
+        topicId: 'gefallen',
+        lemma: item.lemma,
+        prompt: item.prompt,
+        answer: item.answer,
+        type: 'choice',
+        options: const ['gefällt', 'gefallen'],
+        instructionDe: 'Wähle gefällt oder gefallen.',
+        instructionRu:
+            'Выберите gefällt для одного предмета или gefallen для нескольких.');
+  }
 }
 
 List<Map<String, Object?>> _loadCuratedExercises() {

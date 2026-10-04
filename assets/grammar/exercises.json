@@ -9488,6 +9488,1170 @@
       "instruction_ru": "Составьте подходящий вопрос."
     },
     {
+      "id": "lesson3-moechten-1",
+      "topic_id": "moechten",
+      "lemma": "möchten",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Ich ___ einen Kaffee.",
+      "answer": "möchte",
+      "options": [
+        "möchte",
+        "möchtest",
+        "möchten",
+        "möchtet",
+        "Möchte",
+        "Möchten",
+        "Möchtest"
+      ],
+      "instruction_de": "Wähle die passende Form von möchten.",
+      "instruction_ru": "Выберите подходящую форму глагола möchten."
+    },
+    {
+      "id": "lesson3-moechten-2",
+      "topic_id": "moechten",
+      "lemma": "möchten",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Du ___ Tee trinken.",
+      "answer": "möchtest",
+      "options": [
+        "möchte",
+        "möchtest",
+        "möchten",
+        "möchtet",
+        "Möchte",
+        "Möchten",
+        "Möchtest"
+      ],
+      "instruction_de": "Wähle die passende Form von möchten.",
+      "instruction_ru": "Выберите подходящую форму глагола möchten."
+    },
+    {
+      "id": "lesson3-moechten-3",
+      "topic_id": "moechten",
+      "lemma": "möchten",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Er ___ Brot kaufen.",
+      "answer": "möchte",
+      "options": [
+        "möchte",
+        "möchtest",
+        "möchten",
+        "möchtet",
+        "Möchte",
+        "Möchten",
+        "Möchtest"
+      ],
+      "instruction_de": "Wähle die passende Form von möchten.",
+      "instruction_ru": "Выберите подходящую форму глагола möchten."
+    },
+    {
+      "id": "lesson3-moechten-4",
+      "topic_id": "moechten",
+      "lemma": "möchten",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Sie ___ eine Suppe.",
+      "answer": "möchte",
+      "options": [
+        "möchte",
+        "möchtest",
+        "möchten",
+        "möchtet",
+        "Möchte",
+        "Möchten",
+        "Möchtest"
+      ],
+      "instruction_de": "Wähle die passende Form von möchten.",
+      "instruction_ru": "Выберите подходящую форму глагола möchten."
+    },
+    {
+      "id": "lesson3-moechten-5",
+      "topic_id": "moechten",
+      "lemma": "möchten",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Wir ___ bestellen.",
+      "answer": "möchten",
+      "options": [
+        "möchte",
+        "möchtest",
+        "möchten",
+        "möchtet",
+        "Möchte",
+        "Möchten",
+        "Möchtest"
+      ],
+      "instruction_de": "Wähle die passende Form von möchten.",
+      "instruction_ru": "Выберите подходящую форму глагола möchten."
+    },
+    {
+      "id": "lesson3-moechten-6",
+      "topic_id": "moechten",
+      "lemma": "möchten",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Ihr ___ zwei Brötchen.",
+      "answer": "möchtet",
+      "options": [
+        "möchte",
+        "möchtest",
+        "möchten",
+        "möchtet",
+        "Möchte",
+        "Möchten",
+        "Möchtest"
+      ],
+      "instruction_de": "Wähle die passende Form von möchten.",
+      "instruction_ru": "Выберите подходящую форму глагола möchten."
+    },
+    {
+      "id": "lesson3-moechten-7",
+      "topic_id": "moechten",
+      "lemma": "möchten",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Die Kinder ___ Saft.",
+      "answer": "möchten",
+      "options": [
+        "möchte",
+        "möchtest",
+        "möchten",
+        "möchtet",
+        "Möchte",
+        "Möchten",
+        "Möchtest"
+      ],
+      "instruction_de": "Wähle die passende Form von möchten.",
+      "instruction_ru": "Выберите подходящую форму глагола möchten."
+    },
+    {
+      "id": "lesson3-moechten-8",
+      "topic_id": "moechten",
+      "lemma": "möchten",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ Sie bezahlen?",
+      "answer": "Möchten",
+      "options": [
+        "möchte",
+        "möchtest",
+        "möchten",
+        "möchtet",
+        "Möchte",
+        "Möchten",
+        "Möchtest"
+      ],
+      "instruction_de": "Wähle die passende Form von möchten.",
+      "instruction_ru": "Выберите подходящую форму глагола möchten."
+    },
+    {
+      "id": "lesson3-moechten-9",
+      "topic_id": "moechten",
+      "lemma": "möchten",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Ich ___ ein Kilo Äpfel.",
+      "answer": "möchte",
+      "options": [
+        "möchte",
+        "möchtest",
+        "möchten",
+        "möchtet",
+        "Möchte",
+        "Möchten",
+        "Möchtest"
+      ],
+      "instruction_de": "Wähle die passende Form von möchten.",
+      "instruction_ru": "Выберите подходящую форму глагола möchten."
+    },
+    {
+      "id": "lesson3-moechten-10",
+      "topic_id": "moechten",
+      "lemma": "möchten",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ du etwas essen?",
+      "answer": "Möchtest",
+      "options": [
+        "möchte",
+        "möchtest",
+        "möchten",
+        "möchtet",
+        "Möchte",
+        "Möchten",
+        "Möchtest"
+      ],
+      "instruction_de": "Wähle die passende Form von möchten.",
+      "instruction_ru": "Выберите подходящую форму глагола möchten."
+    },
+    {
+      "id": "lesson3-moechten-11",
+      "topic_id": "moechten",
+      "lemma": "möchten",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Paul ___ Mineralwasser.",
+      "answer": "möchte",
+      "options": [
+        "möchte",
+        "möchtest",
+        "möchten",
+        "möchtet",
+        "Möchte",
+        "Möchten",
+        "Möchtest"
+      ],
+      "instruction_de": "Wähle die passende Form von möchten.",
+      "instruction_ru": "Выберите подходящую форму глагола möchten."
+    },
+    {
+      "id": "lesson3-moechten-12",
+      "topic_id": "moechten",
+      "lemma": "möchten",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Anna ___ Gemüse kaufen.",
+      "answer": "möchte",
+      "options": [
+        "möchte",
+        "möchtest",
+        "möchten",
+        "möchtet",
+        "Möchte",
+        "Möchten",
+        "Möchtest"
+      ],
+      "instruction_de": "Wähle die passende Form von möchten.",
+      "instruction_ru": "Выберите подходящую форму глагола möchten."
+    },
+    {
+      "id": "lesson3-moechten-13",
+      "topic_id": "moechten",
+      "lemma": "möchten",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Wir ___ eine Pizza.",
+      "answer": "möchten",
+      "options": [
+        "möchte",
+        "möchtest",
+        "möchten",
+        "möchtet",
+        "Möchte",
+        "Möchten",
+        "Möchtest"
+      ],
+      "instruction_de": "Wähle die passende Form von möchten.",
+      "instruction_ru": "Выберите подходящую форму глагола möchten."
+    },
+    {
+      "id": "lesson3-moechten-14",
+      "topic_id": "moechten",
+      "lemma": "möchten",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ ihr Kuchen?",
+      "answer": "Möchtet",
+      "options": [
+        "möchte",
+        "möchtest",
+        "möchten",
+        "möchtet",
+        "Möchte",
+        "Möchten",
+        "Möchtest"
+      ],
+      "instruction_de": "Wähle die passende Form von möchten.",
+      "instruction_ru": "Выберите подходящую форму глагола möchten."
+    },
+    {
+      "id": "lesson3-moechten-15",
+      "topic_id": "moechten",
+      "lemma": "möchten",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Meine Eltern ___ Kaffee.",
+      "answer": "möchten",
+      "options": [
+        "möchte",
+        "möchtest",
+        "möchten",
+        "möchtet",
+        "Möchte",
+        "Möchten",
+        "Möchtest"
+      ],
+      "instruction_de": "Wähle die passende Form von möchten.",
+      "instruction_ru": "Выберите подходящую форму глагола möchten."
+    },
+    {
+      "id": "lesson3-moechten-16",
+      "topic_id": "moechten",
+      "lemma": "möchten",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Was ___ Sie trinken?",
+      "answer": "möchten",
+      "options": [
+        "möchte",
+        "möchtest",
+        "möchten",
+        "möchtet",
+        "Möchte",
+        "Möchten",
+        "Möchtest"
+      ],
+      "instruction_de": "Wähle die passende Form von möchten.",
+      "instruction_ru": "Выберите подходящую форму глагола möchten."
+    },
+    {
+      "id": "lesson3-moechten-17",
+      "topic_id": "moechten",
+      "lemma": "möchten",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Ich ___ noch Milch.",
+      "answer": "möchte",
+      "options": [
+        "möchte",
+        "möchtest",
+        "möchten",
+        "möchtet",
+        "Möchte",
+        "Möchten",
+        "Möchtest"
+      ],
+      "instruction_de": "Wähle die passende Form von möchten.",
+      "instruction_ru": "Выберите подходящую форму глагола möchten."
+    },
+    {
+      "id": "lesson3-moechten-18",
+      "topic_id": "moechten",
+      "lemma": "möchten",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Du ___ heute kochen.",
+      "answer": "möchtest",
+      "options": [
+        "möchte",
+        "möchtest",
+        "möchten",
+        "möchtet",
+        "Möchte",
+        "Möchten",
+        "Möchtest"
+      ],
+      "instruction_de": "Wähle die passende Form von möchten.",
+      "instruction_ru": "Выберите подходящую форму глагола möchten."
+    },
+    {
+      "id": "lesson3-moechten-19",
+      "topic_id": "moechten",
+      "lemma": "möchten",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Das Kind ___ ein Eis.",
+      "answer": "möchte",
+      "options": [
+        "möchte",
+        "möchtest",
+        "möchten",
+        "möchtet",
+        "Möchte",
+        "Möchten",
+        "Möchtest"
+      ],
+      "instruction_de": "Wähle die passende Form von möchten.",
+      "instruction_ru": "Выберите подходящую форму глагола möchten."
+    },
+    {
+      "id": "lesson3-moechten-20",
+      "topic_id": "moechten",
+      "lemma": "möchten",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Wir ___ die Rechnung.",
+      "answer": "möchten",
+      "options": [
+        "möchte",
+        "möchtest",
+        "möchten",
+        "möchtet",
+        "Möchte",
+        "Möchten",
+        "Möchtest"
+      ],
+      "instruction_de": "Wähle die passende Form von möchten.",
+      "instruction_ru": "Выберите подходящую форму глагола möchten."
+    },
+    {
+      "id": "lesson3-moechten-21",
+      "topic_id": "moechten",
+      "lemma": "möchten",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Ihr ___ Reis essen.",
+      "answer": "möchtet",
+      "options": [
+        "möchte",
+        "möchtest",
+        "möchten",
+        "möchtet",
+        "Möchte",
+        "Möchten",
+        "Möchtest"
+      ],
+      "instruction_de": "Wähle die passende Form von möchten.",
+      "instruction_ru": "Выберите подходящую форму глагола möchten."
+    },
+    {
+      "id": "lesson3-moechten-22",
+      "topic_id": "moechten",
+      "lemma": "möchten",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Die Kunden ___ bezahlen.",
+      "answer": "möchten",
+      "options": [
+        "möchte",
+        "möchtest",
+        "möchten",
+        "möchtet",
+        "Möchte",
+        "Möchten",
+        "Möchtest"
+      ],
+      "instruction_de": "Wähle die passende Form von möchten.",
+      "instruction_ru": "Выберите подходящую форму глагола möchten."
+    },
+    {
+      "id": "lesson3-moechten-23",
+      "topic_id": "moechten",
+      "lemma": "möchten",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ Sie ein Sonderangebot sehen?",
+      "answer": "Möchten",
+      "options": [
+        "möchte",
+        "möchtest",
+        "möchten",
+        "möchtet",
+        "Möchte",
+        "Möchten",
+        "Möchtest"
+      ],
+      "instruction_de": "Wähle die passende Form von möchten.",
+      "instruction_ru": "Выберите подходящую форму глагола möchten."
+    },
+    {
+      "id": "lesson3-moechten-24",
+      "topic_id": "moechten",
+      "lemma": "möchten",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Wer ___ noch Tee?",
+      "answer": "möchte",
+      "options": [
+        "möchte",
+        "möchtest",
+        "möchten",
+        "möchtet",
+        "Möchte",
+        "Möchten",
+        "Möchtest"
+      ],
+      "instruction_de": "Wähle die passende Form von möchten.",
+      "instruction_ru": "Выберите подходящую форму глагола möchten."
+    },
+    {
+      "id": "lesson4-pronoun-1",
+      "topic_id": "noun_pronouns",
+      "lemma": "balkon",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Der Balkon ist klein. ___ ist aber schön.",
+      "answer": "Er",
+      "options": [
+        "Er",
+        "Es",
+        "Sie"
+      ],
+      "instruction_de": "Ersetze das Nomen durch er, es oder sie.",
+      "instruction_ru": "Замените существительное на er, es или sie."
+    },
+    {
+      "id": "lesson4-pronoun-2",
+      "topic_id": "noun_pronouns",
+      "lemma": "tisch",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Der Tisch ist neu. ___ kostet 80 Euro.",
+      "answer": "Er",
+      "options": [
+        "Er",
+        "Es",
+        "Sie"
+      ],
+      "instruction_de": "Ersetze das Nomen durch er, es oder sie.",
+      "instruction_ru": "Замените существительное на er, es или sie."
+    },
+    {
+      "id": "lesson4-pronoun-3",
+      "topic_id": "noun_pronouns",
+      "lemma": "schrank",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Der Schrank ist groß. ___ ist weiß.",
+      "answer": "Er",
+      "options": [
+        "Er",
+        "Es",
+        "Sie"
+      ],
+      "instruction_de": "Ersetze das Nomen durch er, es oder sie.",
+      "instruction_ru": "Замените существительное на er, es или sie."
+    },
+    {
+      "id": "lesson4-pronoun-4",
+      "topic_id": "noun_pronouns",
+      "lemma": "teppich",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Der Teppich ist alt. ___ ist billig.",
+      "answer": "Er",
+      "options": [
+        "Er",
+        "Es",
+        "Sie"
+      ],
+      "instruction_de": "Ersetze das Nomen durch er, es oder sie.",
+      "instruction_ru": "Замените существительное на er, es или sie."
+    },
+    {
+      "id": "lesson4-pronoun-5",
+      "topic_id": "noun_pronouns",
+      "lemma": "fernseher",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Der Fernseher ist hier. ___ ist neu.",
+      "answer": "Er",
+      "options": [
+        "Er",
+        "Es",
+        "Sie"
+      ],
+      "instruction_de": "Ersetze das Nomen durch er, es oder sie.",
+      "instruction_ru": "Замените существительное на er, es или sie."
+    },
+    {
+      "id": "lesson4-pronoun-6",
+      "topic_id": "noun_pronouns",
+      "lemma": "flur",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Der Flur ist schmal. ___ ist dunkel.",
+      "answer": "Er",
+      "options": [
+        "Er",
+        "Es",
+        "Sie"
+      ],
+      "instruction_de": "Ersetze das Nomen durch er, es oder sie.",
+      "instruction_ru": "Замените существительное на er, es или sie."
+    },
+    {
+      "id": "lesson4-pronoun-7",
+      "topic_id": "noun_pronouns",
+      "lemma": "bad",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Das Bad ist dort. ___ ist klein.",
+      "answer": "Es",
+      "options": [
+        "Er",
+        "Es",
+        "Sie"
+      ],
+      "instruction_de": "Ersetze das Nomen durch er, es oder sie.",
+      "instruction_ru": "Замените существительное на er, es или sie."
+    },
+    {
+      "id": "lesson4-pronoun-8",
+      "topic_id": "noun_pronouns",
+      "lemma": "zimmer",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Das Zimmer ist hell. ___ ist schön.",
+      "answer": "Es",
+      "options": [
+        "Er",
+        "Es",
+        "Sie"
+      ],
+      "instruction_de": "Ersetze das Nomen durch er, es oder sie.",
+      "instruction_ru": "Замените существительное на er, es или sie."
+    },
+    {
+      "id": "lesson4-pronoun-9",
+      "topic_id": "noun_pronouns",
+      "lemma": "sofa",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Das Sofa ist modern. ___ kostet 300 Euro.",
+      "answer": "Es",
+      "options": [
+        "Er",
+        "Es",
+        "Sie"
+      ],
+      "instruction_de": "Ersetze das Nomen durch er, es oder sie.",
+      "instruction_ru": "Замените существительное на er, es или sie."
+    },
+    {
+      "id": "lesson4-pronoun-10",
+      "topic_id": "noun_pronouns",
+      "lemma": "bett",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Das Bett ist neu. ___ ist sehr breit.",
+      "answer": "Es",
+      "options": [
+        "Er",
+        "Es",
+        "Sie"
+      ],
+      "instruction_de": "Ersetze das Nomen durch er, es oder sie.",
+      "instruction_ru": "Замените существительное на er, es или sie."
+    },
+    {
+      "id": "lesson4-pronoun-11",
+      "topic_id": "noun_pronouns",
+      "lemma": "regal",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Das Regal ist hoch. ___ ist braun.",
+      "answer": "Es",
+      "options": [
+        "Er",
+        "Es",
+        "Sie"
+      ],
+      "instruction_de": "Ersetze das Nomen durch er, es oder sie.",
+      "instruction_ru": "Замените существительное на er, es или sie."
+    },
+    {
+      "id": "lesson4-pronoun-12",
+      "topic_id": "noun_pronouns",
+      "lemma": "haus",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Das Haus ist alt. ___ hat einen Garten.",
+      "answer": "Es",
+      "options": [
+        "Er",
+        "Es",
+        "Sie"
+      ],
+      "instruction_de": "Ersetze das Nomen durch er, es oder sie.",
+      "instruction_ru": "Замените существительное на er, es или sie."
+    },
+    {
+      "id": "lesson4-pronoun-13",
+      "topic_id": "noun_pronouns",
+      "lemma": "küche",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Die Küche ist neu. ___ ist sehr groß.",
+      "answer": "Sie",
+      "options": [
+        "Er",
+        "Es",
+        "Sie"
+      ],
+      "instruction_de": "Ersetze das Nomen durch er, es oder sie.",
+      "instruction_ru": "Замените существительное на er, es или sie."
+    },
+    {
+      "id": "lesson4-pronoun-14",
+      "topic_id": "noun_pronouns",
+      "lemma": "wohnung",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Die Wohnung ist teuer. ___ ist aber hell.",
+      "answer": "Sie",
+      "options": [
+        "Er",
+        "Es",
+        "Sie"
+      ],
+      "instruction_de": "Ersetze das Nomen durch er, es oder sie.",
+      "instruction_ru": "Замените существительное на er, es или sie."
+    },
+    {
+      "id": "lesson4-pronoun-15",
+      "topic_id": "noun_pronouns",
+      "lemma": "lampe",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Die Lampe ist gelb. ___ kostet 20 Euro.",
+      "answer": "Sie",
+      "options": [
+        "Er",
+        "Es",
+        "Sie"
+      ],
+      "instruction_de": "Ersetze das Nomen durch er, es oder sie.",
+      "instruction_ru": "Замените существительное на er, es или sie."
+    },
+    {
+      "id": "lesson4-pronoun-16",
+      "topic_id": "noun_pronouns",
+      "lemma": "dusche",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Die Dusche ist im Bad. ___ ist neu.",
+      "answer": "Sie",
+      "options": [
+        "Er",
+        "Es",
+        "Sie"
+      ],
+      "instruction_de": "Ersetze das Nomen durch er, es oder sie.",
+      "instruction_ru": "Замените существительное на er, es или sie."
+    },
+    {
+      "id": "lesson4-pronoun-17",
+      "topic_id": "noun_pronouns",
+      "lemma": "garage",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Die Garage ist klein. ___ ist neben dem Haus.",
+      "answer": "Sie",
+      "options": [
+        "Er",
+        "Es",
+        "Sie"
+      ],
+      "instruction_de": "Ersetze das Nomen durch er, es oder sie.",
+      "instruction_ru": "Замените существительное на er, es или sie."
+    },
+    {
+      "id": "lesson4-pronoun-18",
+      "topic_id": "noun_pronouns",
+      "lemma": "miete",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Die Miete ist hoch. ___ kostet 900 Euro.",
+      "answer": "Sie",
+      "options": [
+        "Er",
+        "Es",
+        "Sie"
+      ],
+      "instruction_de": "Ersetze das Nomen durch er, es oder sie.",
+      "instruction_ru": "Замените существительное на er, es или sie."
+    },
+    {
+      "id": "lesson4-pronoun-19",
+      "topic_id": "noun_pronouns",
+      "lemma": "stuhl",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Die Stühle sind alt. ___ sind billig.",
+      "answer": "Sie",
+      "options": [
+        "Er",
+        "Es",
+        "Sie"
+      ],
+      "instruction_de": "Ersetze das Nomen durch er, es oder sie.",
+      "instruction_ru": "Замените существительное на er, es или sie."
+    },
+    {
+      "id": "lesson4-pronoun-20",
+      "topic_id": "noun_pronouns",
+      "lemma": "möbel",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Die Möbel sind modern. ___ gefallen mir.",
+      "answer": "Sie",
+      "options": [
+        "Er",
+        "Es",
+        "Sie"
+      ],
+      "instruction_de": "Ersetze das Nomen durch er, es oder sie.",
+      "instruction_ru": "Замените существительное на er, es или sie."
+    },
+    {
+      "id": "lesson4-pronoun-21",
+      "topic_id": "noun_pronouns",
+      "lemma": "zimmer",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Die Zimmer sind hell. ___ sind groß.",
+      "answer": "Sie",
+      "options": [
+        "Er",
+        "Es",
+        "Sie"
+      ],
+      "instruction_de": "Ersetze das Nomen durch er, es oder sie.",
+      "instruction_ru": "Замените существительное на er, es или sie."
+    },
+    {
+      "id": "lesson4-pronoun-22",
+      "topic_id": "noun_pronouns",
+      "lemma": "lampe",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Die Lampen sind weiß. ___ sind schön.",
+      "answer": "Sie",
+      "options": [
+        "Er",
+        "Es",
+        "Sie"
+      ],
+      "instruction_de": "Ersetze das Nomen durch er, es oder sie.",
+      "instruction_ru": "Замените существительное на er, es или sie."
+    },
+    {
+      "id": "lesson4-pronoun-23",
+      "topic_id": "noun_pronouns",
+      "lemma": "bett",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Die Betten sind hier. ___ sind neu.",
+      "answer": "Sie",
+      "options": [
+        "Er",
+        "Es",
+        "Sie"
+      ],
+      "instruction_de": "Ersetze das Nomen durch er, es oder sie.",
+      "instruction_ru": "Замените существительное на er, es или sie."
+    },
+    {
+      "id": "lesson4-pronoun-24",
+      "topic_id": "noun_pronouns",
+      "lemma": "sessel",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Die Sessel sind bequem. ___ kosten 100 Euro.",
+      "answer": "Sie",
+      "options": [
+        "Er",
+        "Es",
+        "Sie"
+      ],
+      "instruction_de": "Ersetze das Nomen durch er, es oder sie.",
+      "instruction_ru": "Замените существительное на er, es или sie."
+    },
+    {
+      "id": "lesson4-gefallen-1",
+      "topic_id": "gefallen",
+      "lemma": "gefallen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Wie ___ dir der Tisch?",
+      "answer": "gefällt",
+      "options": [
+        "gefällt",
+        "gefallen"
+      ],
+      "instruction_de": "Wähle gefällt oder gefallen.",
+      "instruction_ru": "Выберите gefällt для одного предмета или gefallen для нескольких."
+    },
+    {
+      "id": "lesson4-gefallen-2",
+      "topic_id": "gefallen",
+      "lemma": "gefallen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Wie ___ Ihnen das Sofa?",
+      "answer": "gefällt",
+      "options": [
+        "gefällt",
+        "gefallen"
+      ],
+      "instruction_de": "Wähle gefällt oder gefallen.",
+      "instruction_ru": "Выберите gefällt для одного предмета или gefallen для нескольких."
+    },
+    {
+      "id": "lesson4-gefallen-3",
+      "topic_id": "gefallen",
+      "lemma": "gefallen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Mir ___ die Lampe.",
+      "answer": "gefällt",
+      "options": [
+        "gefällt",
+        "gefallen"
+      ],
+      "instruction_de": "Wähle gefällt oder gefallen.",
+      "instruction_ru": "Выберите gefällt для одного предмета или gefallen для нескольких."
+    },
+    {
+      "id": "lesson4-gefallen-4",
+      "topic_id": "gefallen",
+      "lemma": "gefallen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Dir ___ der Teppich.",
+      "answer": "gefällt",
+      "options": [
+        "gefällt",
+        "gefallen"
+      ],
+      "instruction_de": "Wähle gefällt oder gefallen.",
+      "instruction_ru": "Выберите gefällt для одного предмета или gefallen для нескольких."
+    },
+    {
+      "id": "lesson4-gefallen-5",
+      "topic_id": "gefallen",
+      "lemma": "gefallen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Uns ___ das Zimmer.",
+      "answer": "gefällt",
+      "options": [
+        "gefällt",
+        "gefallen"
+      ],
+      "instruction_de": "Wähle gefällt oder gefallen.",
+      "instruction_ru": "Выберите gefällt для одного предмета или gefallen для нескольких."
+    },
+    {
+      "id": "lesson4-gefallen-6",
+      "topic_id": "gefallen",
+      "lemma": "gefallen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Wie ___ euch die Wohnung?",
+      "answer": "gefällt",
+      "options": [
+        "gefällt",
+        "gefallen"
+      ],
+      "instruction_de": "Wähle gefällt oder gefallen.",
+      "instruction_ru": "Выберите gefällt для одного предмета или gefallen для нескольких."
+    },
+    {
+      "id": "lesson4-gefallen-7",
+      "topic_id": "gefallen",
+      "lemma": "gefallen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Ihm ___ der Balkon.",
+      "answer": "gefällt",
+      "options": [
+        "gefällt",
+        "gefallen"
+      ],
+      "instruction_de": "Wähle gefällt oder gefallen.",
+      "instruction_ru": "Выберите gefällt для одного предмета или gefallen для нескольких."
+    },
+    {
+      "id": "lesson4-gefallen-8",
+      "topic_id": "gefallen",
+      "lemma": "gefallen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Ihr ___ die Küche.",
+      "answer": "gefällt",
+      "options": [
+        "gefällt",
+        "gefallen"
+      ],
+      "instruction_de": "Wähle gefällt oder gefallen.",
+      "instruction_ru": "Выберите gefällt для одного предмета или gefallen для нескольких."
+    },
+    {
+      "id": "lesson4-gefallen-9",
+      "topic_id": "gefallen",
+      "lemma": "gefallen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Wie ___ dir die Stühle?",
+      "answer": "gefallen",
+      "options": [
+        "gefällt",
+        "gefallen"
+      ],
+      "instruction_de": "Wähle gefällt oder gefallen.",
+      "instruction_ru": "Выберите gefällt для одного предмета или gefallen для нескольких."
+    },
+    {
+      "id": "lesson4-gefallen-10",
+      "topic_id": "gefallen",
+      "lemma": "gefallen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Wie ___ Ihnen die Möbel?",
+      "answer": "gefallen",
+      "options": [
+        "gefällt",
+        "gefallen"
+      ],
+      "instruction_de": "Wähle gefällt oder gefallen.",
+      "instruction_ru": "Выберите gefällt для одного предмета или gefallen для нескольких."
+    },
+    {
+      "id": "lesson4-gefallen-11",
+      "topic_id": "gefallen",
+      "lemma": "gefallen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Mir ___ die Betten.",
+      "answer": "gefallen",
+      "options": [
+        "gefällt",
+        "gefallen"
+      ],
+      "instruction_de": "Wähle gefällt oder gefallen.",
+      "instruction_ru": "Выберите gefällt для одного предмета или gefallen для нескольких."
+    },
+    {
+      "id": "lesson4-gefallen-12",
+      "topic_id": "gefallen",
+      "lemma": "gefallen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Dir ___ die Farben.",
+      "answer": "gefallen",
+      "options": [
+        "gefällt",
+        "gefallen"
+      ],
+      "instruction_de": "Wähle gefällt oder gefallen.",
+      "instruction_ru": "Выберите gefällt для одного предмета или gefallen для нескольких."
+    },
+    {
+      "id": "lesson4-gefallen-13",
+      "topic_id": "gefallen",
+      "lemma": "gefallen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Uns ___ die Zimmer.",
+      "answer": "gefallen",
+      "options": [
+        "gefällt",
+        "gefallen"
+      ],
+      "instruction_de": "Wähle gefällt oder gefallen.",
+      "instruction_ru": "Выберите gefällt для одного предмета или gefallen для нескольких."
+    },
+    {
+      "id": "lesson4-gefallen-14",
+      "topic_id": "gefallen",
+      "lemma": "gefallen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Wie ___ euch die Regale?",
+      "answer": "gefallen",
+      "options": [
+        "gefällt",
+        "gefallen"
+      ],
+      "instruction_de": "Wähle gefällt oder gefallen.",
+      "instruction_ru": "Выберите gefällt для одного предмета или gefallen для нескольких."
+    },
+    {
+      "id": "lesson4-gefallen-15",
+      "topic_id": "gefallen",
+      "lemma": "gefallen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Ihm ___ die Sessel.",
+      "answer": "gefallen",
+      "options": [
+        "gefällt",
+        "gefallen"
+      ],
+      "instruction_de": "Wähle gefällt oder gefallen.",
+      "instruction_ru": "Выберите gefällt для одного предмета или gefallen для нескольких."
+    },
+    {
+      "id": "lesson4-gefallen-16",
+      "topic_id": "gefallen",
+      "lemma": "gefallen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Ihr ___ die Lampen.",
+      "answer": "gefallen",
+      "options": [
+        "gefällt",
+        "gefallen"
+      ],
+      "instruction_de": "Wähle gefällt oder gefallen.",
+      "instruction_ru": "Выберите gefällt для одного предмета или gefallen для нескольких."
+    },
+    {
+      "id": "lesson4-gefallen-17",
+      "topic_id": "gefallen",
+      "lemma": "gefallen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Der Schrank ___ mir gut.",
+      "answer": "gefällt",
+      "options": [
+        "gefällt",
+        "gefallen"
+      ],
+      "instruction_de": "Wähle gefällt oder gefallen.",
+      "instruction_ru": "Выберите gefällt для одного предмета или gefallen для нескольких."
+    },
+    {
+      "id": "lesson4-gefallen-18",
+      "topic_id": "gefallen",
+      "lemma": "gefallen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Die Schränke ___ mir gut.",
+      "answer": "gefallen",
+      "options": [
+        "gefällt",
+        "gefallen"
+      ],
+      "instruction_de": "Wähle gefällt oder gefallen.",
+      "instruction_ru": "Выберите gefällt для одного предмета или gefallen для нескольких."
+    },
+    {
+      "id": "lesson4-gefallen-19",
+      "topic_id": "gefallen",
+      "lemma": "gefallen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Das Bad ___ uns nicht.",
+      "answer": "gefällt",
+      "options": [
+        "gefällt",
+        "gefallen"
+      ],
+      "instruction_de": "Wähle gefällt oder gefallen.",
+      "instruction_ru": "Выберите gefällt для одного предмета или gefallen для нескольких."
+    },
+    {
+      "id": "lesson4-gefallen-20",
+      "topic_id": "gefallen",
+      "lemma": "gefallen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Die Sofas ___ uns sehr.",
+      "answer": "gefallen",
+      "options": [
+        "gefällt",
+        "gefallen"
+      ],
+      "instruction_de": "Wähle gefällt oder gefallen.",
+      "instruction_ru": "Выберите gefällt для одного предмета или gefallen для нескольких."
+    },
+    {
       "id": "verb-basics-lernen",
       "topic_id": "verb_basics",
       "lemma": "lernen",
