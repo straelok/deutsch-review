@@ -1,4 +1,4 @@
-const bundledContentVersion = '2026.09.27.1';
+const bundledContentVersion = '2026.10.04.1';
 
 enum DailySessionStatus {
   planned('planned'),

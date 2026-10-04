@@ -13,7 +13,6 @@ final class AndroidReminderGateway implements ReminderGateway {
   static const _channelId = 'daily_lessons';
   static const _firstNotificationId = 3200;
   static const _daysScheduled = 30;
-  static const _times = <(int, int)>[(13, 30), (16, 30), (19, 30)];
 
   final FlutterLocalNotificationsPlugin _plugin;
 
@@ -64,16 +63,17 @@ final class AndroidReminderGateway implements ReminderGateway {
     required DateTime now,
     required bool skipToday,
     required ReminderCopy copy,
+    required List<int> reminderMinutes,
   }) async {
     await _plugin.cancelAllPendingNotifications();
-    if (!await notificationsEnabled()) return;
+    if (reminderMinutes.isEmpty || !await notificationsEnabled()) return;
 
     final exact = await _android?.canScheduleExactNotifications() == true;
     final localNow = tz.TZDateTime.from(now, tz.local);
     var id = _firstNotificationId;
     for (var dayOffset = 0; dayOffset < _daysScheduled; dayOffset++) {
       if (dayOffset == 0 && skipToday) {
-        id += _times.length;
+        id += reminderMinutes.length;
         continue;
       }
       final day = tz.TZDateTime(
@@ -82,7 +82,9 @@ final class AndroidReminderGateway implements ReminderGateway {
         localNow.month,
         localNow.day + dayOffset,
       );
-      for (final (hour, minute) in _times) {
+      for (final minutes in reminderMinutes) {
+        final hour = minutes ~/ 60;
+        final minute = minutes % 60;
         final scheduled = tz.TZDateTime(
           tz.local,
           day.year,

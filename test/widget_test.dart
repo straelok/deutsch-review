@@ -222,6 +222,32 @@ void main() {
     expect(find.text('учить'), findsNothing);
   });
 
+  testWidgets('settings can hide important lesson categories', (tester) async {
+    final database = AppDatabase.inMemory();
+    addTearDown(database.close);
+
+    await tester.pumpWidget(_app(database));
+    await tester.pumpAndSettle();
+    expect(find.text('Wichtige Wörter'), findsOneWidget);
+
+    await tester.tap(find.byKey(const Key('app-settings')));
+    await tester.pumpAndSettle();
+    await tester.tap(find.byKey(const Key('include-important-lessons')));
+    await tester.scrollUntilVisible(
+      find.byKey(const Key('save-settings')),
+      500,
+    );
+    await tester.tap(find.byKey(const Key('save-settings')));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Wichtige Wörter'), findsNothing);
+    expect(
+      (await SqliteSettingsRepository(database).readAppSettings())
+          .includeImportantLessons,
+      isFalse,
+    );
+  });
+
   testWidgets('vocabulary lesson keeps its original remaining queue', (
     tester,
   ) async {
@@ -345,7 +371,11 @@ void main() {
     await tester.pumpWidget(_app(database));
     await tester.pumpAndSettle();
     await _expandCategory(tester, 'vocabulary-to-german');
-    await tester.tap(find.byKey(const Key('start-review')));
+    await tester.tap(
+      find.byKey(
+        const Key('session-category-action-vocabulary-to-german'),
+      ),
+    );
     await tester.pumpAndSettle();
     expect(find.text('учить'), findsOneWidget);
     expect(find.textContaining('Beispiel:'), findsNothing);
@@ -363,7 +393,7 @@ void main() {
     await tester.tap(find.byKey(const Key('back-to-plan')));
     await tester.pumpAndSettle();
     expect(find.textContaining('1 von 20 Antworten'), findsOneWidget);
-    expect(find.text('Fortsetzen'), findsOneWidget);
+    expect(find.text('Lektion fortsetzen'), findsOneWidget);
 
     await tester.pumpWidget(const SizedBox.shrink());
     await tester.pumpWidget(_app(database));
@@ -517,7 +547,11 @@ void main() {
     await tester.pumpWidget(_app(database));
     await tester.pumpAndSettle();
     await _expandCategory(tester, 'vocabulary-to-german');
-    await tester.tap(find.byKey(const Key('start-review')));
+    await tester.tap(
+      find.byKey(
+        const Key('session-category-action-vocabulary-to-german'),
+      ),
+    );
     await tester.pumpAndSettle();
     await tester.tap(find.byKey(const Key('unknown-answer')));
     await tester.pumpAndSettle();
@@ -541,13 +575,11 @@ void main() {
     await tester.pumpWidget(_app(database));
     await tester.pumpAndSettle();
     await _expandCategory(tester, 'vocabulary-to-russian');
-    await tester.scrollUntilVisible(
-      find.text('Wörter auf Russisch · Übung 1'),
-      300,
+    await tester.tap(
+      find.byKey(
+        const Key('session-category-action-vocabulary-to-russian'),
+      ),
     );
-    await tester.ensureVisible(find.byKey(const Key('start-review-4')));
-    await tester.pumpAndSettle();
-    await tester.tap(find.byKey(const Key('start-review-4')));
     await tester.pumpAndSettle();
 
     expect(find.text('lernen'), findsOneWidget);
@@ -571,12 +603,11 @@ void main() {
     await tester.pumpWidget(_app(database));
     await tester.pumpAndSettle();
     await _expandCategory(tester, 'vocabulary-to-russian');
-    await tester.scrollUntilVisible(
-      find.text('Wörter auf Russisch · Übung 1'),
-      300,
+    await tester.tap(
+      find.byKey(
+        const Key('session-category-action-vocabulary-to-russian'),
+      ),
     );
-    await tester.ensureVisible(find.byKey(const Key('start-review-4')));
-    await tester.tap(find.byKey(const Key('start-review-4')));
     await tester.pumpAndSettle();
 
     expect(find.byKey(const Key('vocabulary-help')), findsOneWidget);
@@ -589,7 +620,11 @@ void main() {
     await tester.tap(find.byKey(const Key('back-to-plan')));
     await tester.pumpAndSettle();
     await _expandCategory(tester, 'vocabulary-to-german');
-    await tester.tap(find.byKey(const Key('start-review')));
+    await tester.tap(
+      find.byKey(
+        const Key('session-category-action-vocabulary-to-german'),
+      ),
+    );
     await tester.pumpAndSettle();
     expect(find.byKey(const Key('vocabulary-help')), findsNothing);
   });
@@ -604,13 +639,11 @@ void main() {
     await tester.pumpWidget(_app(database));
     await tester.pumpAndSettle();
     await _expandCategory(tester, 'vocabulary-to-russian');
-    await tester.scrollUntilVisible(
-      find.text('Wörter auf Russisch · Übung 1'),
-      300,
+    await tester.tap(
+      find.byKey(
+        const Key('session-category-action-vocabulary-to-russian'),
+      ),
     );
-    await tester.ensureVisible(find.byKey(const Key('start-review-4')));
-    await tester.pumpAndSettle();
-    await tester.tap(find.byKey(const Key('start-review-4')));
     await tester.pumpAndSettle();
 
     await tester.enterText(
@@ -654,15 +687,14 @@ void main() {
     await tester.pumpWidget(_app(database));
     await tester.pumpAndSettle();
     await _expandCategory(tester, 'numbers');
-    await tester.scrollUntilVisible(find.text('Zahlentraining 1'), 300);
-    await tester.ensureVisible(find.byKey(const Key('start-review-7')));
-    await tester.pumpAndSettle();
-    await tester.tap(find.byKey(const Key('start-review-7')));
+    await tester.tap(
+      find.byKey(const Key('session-category-action-numbers')),
+    );
     await tester.pumpAndSettle();
 
     final queue = (jsonDecode(
       database.connection
-          .select('SELECT queue_json FROM daily_sessions WHERE slot = 7')
+          .select('SELECT queue_json FROM daily_sessions WHERE slot = 21')
           .single['queue_json'] as String,
     ) as List<Object?>)
         .cast<String>();
@@ -723,12 +755,6 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.text('8 von 8 Sitzungen abgeschlossen'), findsOneWidget);
-    await tester.tap(
-      find.byKey(
-        const Key('toggle-session-category-vocabulary-to-german'),
-      ),
-    );
-    await tester.pumpAndSettle();
     await tester.scrollUntilVisible(
       find.byKey(const Key('create-extra-session')),
       300,
@@ -740,7 +766,7 @@ void main() {
     expect(find.byKey(const Key('practice-answer')), findsOneWidget);
   });
 
-  testWidgets('starts the next lesson from a collapsed category header', (
+  testWidgets('starts the next lesson from its category button', (
     tester,
   ) async {
     final database = AppDatabase.inMemory();
@@ -852,19 +878,9 @@ void main() {
     await tester.pumpAndSettle();
     expect(find.text('0 von 10 Sitzungen abgeschlossen'), findsOneWidget);
     await _expandCategory(tester, 'grammar');
-    await tester.scrollUntilVisible(
-      find.text('Gemischte Grammatikübung 1'),
-      300,
+    await tester.tap(
+      find.byKey(const Key('session-category-action-grammar')),
     );
-    expect(find.text('Gemischte Grammatikübung 1'), findsOneWidget);
-    expect(
-      find.textContaining('Regelmäßige Verben im Präsens'),
-      findsNWidgets(2),
-    );
-
-    await tester.ensureVisible(find.byKey(const Key('start-review-9')));
-    await tester.pumpAndSettle();
-    await tester.tap(find.byKey(const Key('start-review-9')));
     await tester.pump();
     await tester.pump(const Duration(milliseconds: 200));
     expect(find.text('lernen'), findsOneWidget);
@@ -1029,13 +1045,9 @@ void main() {
     );
     await tester.pumpAndSettle();
     await _expandCategory(tester, 'grammar');
-    await tester.scrollUntilVisible(
-      find.text('Смешанная практика грамматики №1'),
-      300,
+    await tester.tap(
+      find.byKey(const Key('session-category-action-grammar')),
     );
-    await tester.ensureVisible(find.byKey(const Key('start-review-9')));
-    await tester.pumpAndSettle();
-    await tester.tap(find.byKey(const Key('start-review-9')));
     await tester.pumpAndSettle();
 
     expect(find.text('Определите часть речи.'), findsOneWidget);
@@ -1067,13 +1079,9 @@ void main() {
     await tester.pumpWidget(_app(database, grammarCatalog: catalog));
     await tester.pumpAndSettle();
     await _expandCategory(tester, 'grammar');
-    await tester.scrollUntilVisible(
-      find.text('Gemischte Grammatikübung 1'),
-      300,
+    await tester.tap(
+      find.byKey(const Key('session-category-action-grammar')),
     );
-    await tester.ensureVisible(find.byKey(const Key('start-review-9')));
-    await tester.pumpAndSettle();
-    await tester.tap(find.byKey(const Key('start-review-9')));
     await tester.pump();
     await tester.pump(const Duration(milliseconds: 200));
 
@@ -1082,7 +1090,7 @@ void main() {
       now: DateTime.now().toUtc(),
       includeGrammar: true,
     ))
-        .firstWhere((entry) => entry.slot == 9);
+        .firstWhere((entry) => entry.slot == 31);
     expect(session.queueItemIds.toSet(),
         {'foundation-choice', 'foundation-order'});
 
@@ -1109,10 +1117,8 @@ void main() {
 }
 
 Future<void> _expandCategory(WidgetTester tester, String category) async {
-  final toggle = find.byKey(Key('toggle-session-category-$category'));
-  await tester.scrollUntilVisible(toggle, 300);
-  await tester.pumpAndSettle();
-  await tester.tap(toggle);
+  final action = find.byKey(Key('session-category-action-$category'));
+  await tester.scrollUntilVisible(action, 300);
   await tester.pumpAndSettle();
 }
 

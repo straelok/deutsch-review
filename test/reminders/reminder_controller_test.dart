@@ -1,3 +1,6 @@
+import 'package:deutsch_review/data/database/app_database.dart';
+import 'package:deutsch_review/data/repositories/sqlite_settings_repository.dart';
+import 'package:deutsch_review/domain/app_settings.dart';
 import 'package:deutsch_review/domain/daily_session.dart';
 import 'package:deutsch_review/domain/grammar.dart';
 import 'package:deutsch_review/domain/practice.dart';
@@ -40,11 +43,32 @@ void main() {
 
     expect(controller.openTodayRevision, revision + 1);
   });
+
+  test('uses configured reminder times', () async {
+    final database = AppDatabase.inMemory();
+    addTearDown(database.close);
+    final settings = SqliteSettingsRepository(database);
+    await settings.saveAppSettings(
+      const AppSettings(reminderMinutes: [600, 1140]),
+    );
+    final gateway = _FakeGateway();
+    final controller = ReminderController(
+      sessions: _FakeSessions(),
+      gateway: gateway,
+      settings: settings,
+    );
+    addTearDown(controller.dispose);
+
+    await controller.initialize();
+
+    expect(gateway.reminderMinutes, [600, 1140]);
+  });
 }
 
 final class _FakeGateway implements ReminderGateway {
   late void Function() openToday;
   bool skipToday = false;
+  List<int> reminderMinutes = const [];
 
   @override
   bool get isSupported => true;
@@ -66,8 +90,10 @@ final class _FakeGateway implements ReminderGateway {
     required DateTime now,
     required bool skipToday,
     required ReminderCopy copy,
+    required List<int> reminderMinutes,
   }) async {
     this.skipToday = skipToday;
+    this.reminderMinutes = reminderMinutes;
   }
 }
 

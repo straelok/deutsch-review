@@ -160,12 +160,21 @@ final class SqliteSyncStore {
     final slotValue = session['slot'];
     final kind = _sessionKind(session);
     final rawSlot = slotValue == null ? null : _integer(session, 'slot');
-    final currentPlan = session['planVersion'] == 2;
-    final slot = switch ((kind, rawSlot, currentPlan)) {
+    final planVersion = session['planVersion'] as int? ?? 1;
+    final legacySlot = switch ((kind, rawSlot, planVersion)) {
       ('grammar', 6 || 7, _) => rawSlot! + 3,
-      ('grammar', 8 || 9, false) => rawSlot! + 1,
+      ('grammar', 8 || 9, 1) => rawSlot! + 1,
       _ => rawSlot,
     };
+    final slot = planVersion >= 3 || legacySlot == null
+        ? legacySlot
+        : switch (kind) {
+            'vocabulary_to_german' => legacySlot,
+            'vocabulary_to_russian' => 11 + legacySlot - 4,
+            'numbers' => 21 + legacySlot - 7,
+            'grammar' => 31 + legacySlot - 9,
+            _ => legacySlot,
+          };
     final existing = slot == null
         ? database.connection.select(
             'SELECT id, status, answered_count, updated_at '
@@ -276,7 +285,7 @@ final class SqliteSyncStore {
   }
 
   void _mergeGrammarProgress(Map<String, Object?> progress) {
-    final topicId = _string(progress, 'topicId');
+    final topicId = _normalizedTopicId(_string(progress, 'topicId'));
     final updatedAt = _dateString(progress, 'updatedAt');
     final existing = database.connection.select(
       'SELECT updated_at FROM grammar_topic_progress WHERE topic_id = ?',
@@ -313,7 +322,7 @@ final class SqliteSyncStore {
       ''',
       <Object?>[
         _string(attempt, 'id'),
-        _string(attempt, 'topicId'),
+        _normalizedTopicId(_string(attempt, 'topicId')),
         _string(attempt, 'exerciseId'),
         _string(attempt, 'sessionId'),
         _string(attempt, 'answerText'),
@@ -377,7 +386,7 @@ final class SqliteSyncStore {
         'createdAt': row['created_at'] as String,
         'updatedAt': row['updated_at'] as String,
         'completedAt': row['completed_at'] as String?,
-        'planVersion': 2,
+        'planVersion': 3,
         'contentVersion': row['content_version'] as String,
       };
 
@@ -416,6 +425,9 @@ final class SqliteSyncStore {
     if (value is! String) throw FormatException('$key must be a string.');
     return value;
   }
+
+  static String _normalizedTopicId(String topicId) =>
+      topicId == 'personal_pronouns' ? 'regular_present' : topicId;
 
   static int _integer(Map<String, Object?> map, String key) {
     final value = map[key];

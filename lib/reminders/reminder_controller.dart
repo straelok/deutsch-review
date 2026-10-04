@@ -2,7 +2,9 @@ import 'package:flutter/widgets.dart';
 
 import '../domain/app_language.dart';
 import '../domain/daily_session.dart';
+import '../domain/app_settings.dart';
 import '../domain/repositories/daily_session_repository.dart';
+import '../domain/repositories/settings_repository.dart';
 import 'reminder_gateway.dart';
 
 final class ReminderController extends ChangeNotifier
@@ -10,13 +12,16 @@ final class ReminderController extends ChangeNotifier
   ReminderController({
     required DailySessionRepository sessions,
     required ReminderGateway gateway,
+    SettingsRepository? settings,
     Future<bool> Function()? grammarAvailability,
   })  : _sessions = sessions,
         _gateway = gateway,
+        _settings = settings,
         _grammarAvailability = grammarAvailability;
 
   final DailySessionRepository _sessions;
   final ReminderGateway _gateway;
+  final SettingsRepository? _settings;
   final Future<bool> Function()? _grammarAvailability;
 
   bool _enabled = false;
@@ -27,6 +32,7 @@ final class ReminderController extends ChangeNotifier
   String? _lastDay;
   int? _lastCompleted;
   AppLanguage _language = AppLanguage.german;
+  AppSettings _appSettings = const AppSettings();
 
   bool get isSupported => _gateway.isSupported;
   bool get isEnabled => _enabled;
@@ -44,7 +50,9 @@ final class ReminderController extends ChangeNotifier
     WidgetsBinding.instance.addObserver(this);
     final launchedFromReminder = await _gateway.initialize(_openToday);
     _initialized = true;
-    _enabled = await _gateway.notificationsEnabled();
+    _appSettings = await _settings?.readAppSettings() ?? const AppSettings();
+    _enabled =
+        _appSettings.remindersEnabled && await _gateway.notificationsEnabled();
     if (launchedFromReminder) _openToday();
     await refresh(force: true);
     notifyListeners();
@@ -55,12 +63,25 @@ final class ReminderController extends ChangeNotifier
     _busy = true;
     notifyListeners();
     try {
-      _enabled = await _gateway.requestPermissions();
+      final granted = await _gateway.requestPermissions();
+      _appSettings = _appSettings.copyWith(remindersEnabled: granted);
+      await _settings?.saveAppSettings(_appSettings);
+      _enabled = granted;
       await refresh(force: true);
     } finally {
       _busy = false;
       notifyListeners();
     }
+  }
+
+  Future<void> settingsChanged() async {
+    _appSettings = await _settings?.readAppSettings() ?? const AppSettings();
+    if (_appSettings.remindersEnabled &&
+        !await _gateway.notificationsEnabled()) {
+      await requestPermission();
+      return;
+    }
+    await refresh(force: true);
   }
 
   void setLanguage(AppLanguage language) {
@@ -71,6 +92,7 @@ final class ReminderController extends ChangeNotifier
 
   Future<void> refresh({bool force = false}) async {
     if (!isSupported || !_initialized) return;
+    _appSettings = await _settings?.readAppSettings() ?? const AppSettings();
     final now = DateTime.now();
     final day = localDayKey(now);
     final sessions = await _sessions.ensureDay(
@@ -81,7 +103,8 @@ final class ReminderController extends ChangeNotifier
     final completed = sessions
         .where((session) => session.isRequired && session.isComplete)
         .length;
-    _enabled = await _gateway.notificationsEnabled();
+    _enabled =
+        _appSettings.remindersEnabled && await _gateway.notificationsEnabled();
     if (!force && _lastDay == day && _lastCompleted == completed) return;
     _lastDay = day;
     _lastCompleted = completed;
@@ -98,6 +121,9 @@ final class ReminderController extends ChangeNotifier
               title: 'Worttrieb: heutige Sitzungen',
               body: 'Du hast noch nicht abgeschlossene Sitzungen.',
             ),
+      reminderMinutes: _appSettings.remindersEnabled
+          ? _appSettings.reminderMinutes
+          : const [],
     );
     notifyListeners();
   }

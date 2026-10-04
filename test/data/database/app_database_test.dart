@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:deutsch_review/data/database/app_database.dart';
 import 'package:deutsch_review/data/database/schema.dart';
-import 'package:deutsch_review/domain/daily_session.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:sqlite3/sqlite3.dart';
 
@@ -183,9 +182,9 @@ void main() {
         .single;
 
     expect(word['kind'], 'vocabulary_to_russian');
-    expect(word['slot'], 4);
+    expect(word['slot'], 11);
     expect(grammar['kind'], 'grammar');
-    expect(grammar['slot'], 9);
+    expect(grammar['slot'], 31);
     expect(grammar['answered_count'], 3);
     expect(migrated.integrityCheck(), ['ok']);
   });
@@ -225,9 +224,9 @@ void main() {
         .select("SELECT * FROM daily_sessions WHERE id = 'grammar'")
         .single;
 
-    expect(numbers['slot'], 7);
+    expect(numbers['slot'], 21);
     expect(numbers['target_answers'], 20);
-    expect(grammar['slot'], 9);
+    expect(grammar['slot'], 31);
     expect(grammar['answered_count'], 3);
     expect(migrated.integrityCheck(), ['ok']);
   });
@@ -263,7 +262,7 @@ void main() {
         .select("SELECT * FROM daily_sessions WHERE id = 'grammar'")
         .single;
 
-    expect(session['content_version'], bundledContentVersion);
+    expect(session['content_version'], '2026.09.27.1');
     expect(migrated.integrityCheck(), ['ok']);
   });
 
@@ -317,6 +316,52 @@ void main() {
       '''),
       returnsNormally,
     );
+    expect(migrated.integrityCheck(), ['ok']);
+  });
+
+  test('merges personal pronouns into regular present in version 9', () {
+    final directory = Directory.systemTemp.createTempSync('deutsch_review_');
+    addTearDown(() => directory.deleteSync(recursive: true));
+    final path = '${directory.path}${Platform.pathSeparator}version8.sqlite';
+    final oldDatabase = sqlite3.open(path);
+    oldDatabase
+      ..execute(migrationFrom0To1)
+      ..execute(migrationFrom1To2)
+      ..execute(migrationFrom2To3)
+      ..execute(migrationFrom3To4)
+      ..execute(migrationFrom4To5)
+      ..execute(migrationFrom5To6)
+      ..execute(migrationFrom6To7)
+      ..execute(migrationFrom7To8)
+      ..execute('PRAGMA user_version = 8')
+      ..execute('''
+        INSERT INTO grammar_topic_progress (topic_id, learned, updated_at)
+        VALUES
+          ('regular_present', 0, '2026-09-20T10:00:00.000Z'),
+          ('personal_pronouns', 1, '2026-09-21T10:00:00.000Z')
+      ''')
+      ..execute('''
+        INSERT INTO grammar_attempts (
+          id, topic_id, exercise_id, session_id, answer_text, correct,
+          attempted_at
+        ) VALUES (
+          'attempt-1', 'personal_pronouns', 'pronoun-1', 'session-1', 'ich', 1,
+          '2026-09-21T10:00:00.000Z'
+        )
+      ''')
+      ..close();
+
+    final migrated = AppDatabase.open(path);
+    addTearDown(migrated.close);
+    final progress = migrated.connection
+        .select('SELECT * FROM grammar_topic_progress')
+        .single;
+    final attempt =
+        migrated.connection.select('SELECT * FROM grammar_attempts').single;
+
+    expect(progress['topic_id'], 'regular_present');
+    expect(progress['learned'], 1);
+    expect(attempt['topic_id'], 'regular_present');
     expect(migrated.integrityCheck(), ['ok']);
   });
 

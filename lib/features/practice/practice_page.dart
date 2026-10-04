@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 
 import '../../content/content_controller.dart';
 import '../../domain/answer_checker.dart';
+import '../../domain/app_settings.dart';
 import '../../domain/daily_session.dart';
 import '../../domain/grammar.dart';
 import '../../domain/german_numbers.dart';
@@ -19,7 +20,6 @@ import '../../domain/repositories/practice_repository.dart';
 import '../../domain/word_priority.dart';
 import '../../grammar/grammar_catalog.dart';
 import '../../l10n/ui_strings.dart';
-import '../../reminders/reminder_controller.dart';
 
 class PracticePage extends StatefulWidget {
   const PracticePage({
@@ -34,7 +34,7 @@ class PracticePage extends StatefulWidget {
     required this.onAttemptSaved,
     this.requestedTopicId,
     this.practiceRequestRevision = 0,
-    this.reminders,
+    this.appSettings = const AppSettings(),
     super.key,
   });
 
@@ -49,7 +49,7 @@ class PracticePage extends StatefulWidget {
   final VoidCallback onAttemptSaved;
   final String? requestedTopicId;
   final int practiceRequestRevision;
-  final ReminderController? reminders;
+  final AppSettings appSettings;
 
   @override
   State<PracticePage> createState() => _PracticePageState();
@@ -87,8 +87,6 @@ class _PracticePageState extends State<PracticePage> {
   final Map<String, TextEditingController> _grammarControllers = {};
   String? _selectedGrammarOption;
   List<int> _wordOrderSelection = const [];
-  final Set<DailySessionKind> _collapsedCategories =
-      DailySessionKind.values.toSet();
 
   LearningItem? get _current => _queue.isEmpty ? null : _queue.first;
   String? get _currentGrammar =>
@@ -465,10 +463,6 @@ class _PracticePageState extends State<PracticePage> {
         Text(s.dailyPlan, style: Theme.of(context).textTheme.headlineMedium),
         const SizedBox(height: 8),
         Text(s.dailyProgress(completed, requiredSessions.length)),
-        if (widget.reminders case final reminders?) ...[
-          const SizedBox(height: 16),
-          _reminderCard(reminders),
-        ],
         if (_activeItems.isEmpty) ...[
           const SizedBox(height: 16),
           Card(
@@ -501,48 +495,50 @@ class _PracticePageState extends State<PracticePage> {
           onAdd: () =>
               _createExtraSession(DailySessionKind.vocabularyToRussian),
         ),
-        const SizedBox(height: 20),
-        Text(
-          s.importantWordsCategory,
-          style: Theme.of(context).textTheme.titleLarge,
-        ),
-        const SizedBox(height: 8),
-        if (importantItems.isEmpty &&
-            importantToGerman.every((session) => session.isComplete) &&
-            importantToRussian.every((session) => session.isComplete)) ...[
-          Card(
-            child: ListTile(
-              leading: const Icon(Icons.star_outline),
-              title: Text(s.noImportantWordsHint),
-            ),
+        if (widget.appSettings.includeImportantLessons) ...[
+          const SizedBox(height: 20),
+          Text(
+            s.importantWordsCategory,
+            style: Theme.of(context).textTheme.titleLarge,
           ),
           const SizedBox(height: 8),
+          if (importantItems.isEmpty &&
+              importantToGerman.every((session) => session.isComplete) &&
+              importantToRussian.every((session) => session.isComplete)) ...[
+            Card(
+              child: ListTile(
+                leading: const Icon(Icons.star_outline),
+                title: Text(s.noImportantWordsHint),
+              ),
+            ),
+            const SizedBox(height: 8),
+          ],
+          _sessionCategory(
+            kind: DailySessionKind.importantVocabularyToGerman,
+            icon: Icons.star,
+            title: s.importantToGermanCategory,
+            sessions: importantToGerman,
+            canAdd: true,
+            canStart: importantItems.isNotEmpty,
+            addKey: const Key('create-important-to-german-session'),
+            onAdd: () => _createExtraSession(
+              DailySessionKind.importantVocabularyToGerman,
+            ),
+          ),
+          const SizedBox(height: 12),
+          _sessionCategory(
+            kind: DailySessionKind.importantVocabularyToRussian,
+            icon: Icons.star_border,
+            title: s.importantToRussianCategory,
+            sessions: importantToRussian,
+            canAdd: true,
+            canStart: importantItems.isNotEmpty,
+            addKey: const Key('create-important-to-russian-session'),
+            onAdd: () => _createExtraSession(
+              DailySessionKind.importantVocabularyToRussian,
+            ),
+          ),
         ],
-        _sessionCategory(
-          kind: DailySessionKind.importantVocabularyToGerman,
-          icon: Icons.star,
-          title: s.importantToGermanCategory,
-          sessions: importantToGerman,
-          canAdd: true,
-          canStart: importantItems.isNotEmpty,
-          addKey: const Key('create-important-to-german-session'),
-          onAdd: () => _createExtraSession(
-            DailySessionKind.importantVocabularyToGerman,
-          ),
-        ),
-        const SizedBox(height: 12),
-        _sessionCategory(
-          kind: DailySessionKind.importantVocabularyToRussian,
-          icon: Icons.star_border,
-          title: s.importantToRussianCategory,
-          sessions: importantToRussian,
-          canAdd: true,
-          canStart: importantItems.isNotEmpty,
-          addKey: const Key('create-important-to-russian-session'),
-          onAdd: () => _createExtraSession(
-            DailySessionKind.importantVocabularyToRussian,
-          ),
-        ),
         const SizedBox(height: 20),
         _sessionCategory(
           kind: DailySessionKind.numbers,
@@ -579,7 +575,6 @@ class _PracticePageState extends State<PracticePage> {
     required Key addKey,
     required VoidCallback onAdd,
   }) {
-    final collapsed = _collapsedCategories.contains(kind);
     final completed = sessions.where((session) => session.isComplete).length;
     final inProgress = sessions
         .where((session) => session.status == DailySessionStatus.inProgress)
@@ -616,22 +611,6 @@ class _PracticePageState extends State<PracticePage> {
             padding: const EdgeInsets.fromLTRB(8, 8, 12, 8),
             child: Row(
               children: [
-                IconButton(
-                  key: Key('toggle-session-category-$categoryKey'),
-                  tooltip: collapsed
-                      ? widget.strings.expand
-                      : widget.strings.collapse,
-                  onPressed: () => setState(() {
-                    if (collapsed) {
-                      _collapsedCategories.remove(kind);
-                    } else {
-                      _collapsedCategories.add(kind);
-                    }
-                  }),
-                  icon: Icon(
-                    collapsed ? Icons.expand_more : Icons.expand_less,
-                  ),
-                ),
                 Icon(icon),
                 const SizedBox(width: 10),
                 Expanded(
@@ -650,6 +629,14 @@ class _PracticePageState extends State<PracticePage> {
                         key: Key('session-category-progress-$categoryKey'),
                         style: Theme.of(context).textTheme.bodySmall,
                       ),
+                      if (inProgress != null)
+                        Text(
+                          widget.strings.sessionAnswers(
+                            inProgress.answeredCount,
+                            inProgress.targetAnswers,
+                          ),
+                          style: Theme.of(context).textTheme.bodySmall,
+                        ),
                     ],
                   ),
                 ),
@@ -679,10 +666,6 @@ class _PracticePageState extends State<PracticePage> {
             ),
           ),
         ),
-        if (!collapsed) ...[
-          const SizedBox(height: 8),
-          ...sessions.map(_sessionCard),
-        ],
       ],
     );
   }
@@ -697,39 +680,6 @@ class _PracticePageState extends State<PracticePage> {
               _activeItems.any((item) => item.isImportant),
         _ => _activeItems.isNotEmpty,
       };
-
-  Widget _reminderCard(ReminderController reminders) {
-    final s = widget.strings;
-    return AnimatedBuilder(
-      animation: reminders,
-      builder: (context, _) => Card(
-        child: ListTile(
-          leading: Icon(
-            reminders.isEnabled
-                ? Icons.notifications_active_outlined
-                : Icons.notifications_off_outlined,
-          ),
-          title: Text(s.remindersTitle),
-          subtitle: Text(
-            reminders.isEnabled ? s.remindersEnabled : s.remindersDisabled,
-          ),
-          trailing: reminders.isEnabled
-              ? const Icon(Icons.check)
-              : FilledButton(
-                  key: const Key('enable-reminders'),
-                  onPressed:
-                      reminders.isBusy ? null : reminders.requestPermission,
-                  child: reminders.isBusy
-                      ? const SizedBox.square(
-                          dimension: 18,
-                          child: CircularProgressIndicator(strokeWidth: 2),
-                        )
-                      : Text(s.enableReminders),
-                ),
-        ),
-      ),
-    );
-  }
 
   Widget _numberPractice() {
     final s = widget.strings;
@@ -1160,107 +1110,6 @@ class _PracticePageState extends State<PracticePage> {
         }),
       ],
     );
-  }
-
-  Widget _sessionCard(DailySession session) {
-    final s = widget.strings;
-    final status = switch (session.status) {
-      DailySessionStatus.planned => s.planned,
-      DailySessionStatus.inProgress => s.inProgress,
-      DailySessionStatus.completed => s.completed,
-    };
-    final action = session.isComplete
-        ? const Icon(Icons.check)
-        : FilledButton(
-            key: session.slot == 1
-                ? const Key('start-review')
-                : Key('start-review-${session.slot ?? session.id}'),
-            onPressed:
-                _canOpenSession(session) ? () => _selectSession(session) : null,
-            child: Text(
-              session.status == DailySessionStatus.inProgress
-                  ? s.continueSession
-                  : s.start,
-            ),
-          );
-    return Card(
-      child: ListTile(
-        leading: CircleAvatar(
-          child: session.isComplete
-              ? const Icon(Icons.check)
-              : Text('${session.slot ?? '+'}'),
-        ),
-        title: Text(_sessionTitle(session)),
-        subtitle: Text(
-          [
-            '$status · ${s.sessionAnswers(session.answeredCount, session.targetAnswers)}',
-            if (_grammarSessionDetails(session) case final details?) details,
-          ].join('\n'),
-        ),
-        trailing: action,
-      ),
-    );
-  }
-
-  String _sessionTitle(DailySession session) {
-    final s = widget.strings;
-    final position =
-        _daySessions.indexWhere((candidate) => candidate.id == session.id);
-    final ordinal = _daySessions
-        .take(position < 0 ? _daySessions.length : position + 1)
-        .where((candidate) => candidate.kind == session.kind)
-        .length;
-    return switch (session.kind) {
-      DailySessionKind.vocabularyToGerman =>
-        s.vocabularyToGermanLesson(ordinal),
-      DailySessionKind.vocabularyToRussian =>
-        s.vocabularyToRussianLesson(ordinal),
-      DailySessionKind.importantVocabularyToGerman =>
-        s.importantVocabularyToGermanLesson(ordinal),
-      DailySessionKind.importantVocabularyToRussian =>
-        s.importantVocabularyToRussianLesson(ordinal),
-      DailySessionKind.numbers => s.numbersLesson(ordinal),
-      DailySessionKind.grammar =>
-        _focusedTopicTitle(session) ?? s.grammarLesson(ordinal),
-    };
-  }
-
-  String? _grammarSessionDetails(DailySession session) {
-    if (session.kind != DailySessionKind.grammar) return null;
-    final topicIds = _grammarTopicIds(session.queueItemIds);
-    final planned = topicIds.isEmpty;
-    final resolvedIds = planned ? _availableGrammarTopics : topicIds;
-    final titles = _catalog.topics
-        .where((topic) => resolvedIds.contains(topic.id))
-        .map(
-            (topic) => widget.strings.isRussian ? topic.titleRu : topic.titleDe)
-        .join(', ');
-    if (titles.isEmpty) return null;
-    return planned
-        ? widget.strings.grammarTopicsPlanned(titles)
-        : widget.strings.grammarTopics(titles);
-  }
-
-  Set<String> _grammarTopicIds(Iterable<String> queue) => queue
-      .map((id) {
-        final paradigmParts = id.split(':');
-        if (paradigmParts.length == 3 && paradigmParts.first == 'paradigm') {
-          return paradigmParts[1];
-        }
-        return _catalog.exercise(id)?.topicId;
-      })
-      .whereType<String>()
-      .toSet();
-
-  String? _focusedTopicTitle(DailySession session) {
-    final topicIds = _grammarTopicIds(session.queueItemIds);
-    if (topicIds.length != 1) return null;
-    final topic = _catalog.topics
-        .where((candidate) => candidate.id == topicIds.single)
-        .firstOrNull;
-    if (topic == null) return null;
-    final title = widget.strings.isRussian ? topic.titleRu : topic.titleDe;
-    return widget.strings.topicGrammarLesson(title);
   }
 
   Future<void> _load() async {

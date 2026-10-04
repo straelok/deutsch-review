@@ -1,4 +1,4 @@
-const currentSchemaVersion = 8;
+const currentSchemaVersion = 9;
 
 const migrationFrom0To1 = '''
 CREATE TABLE learning_items (
@@ -411,6 +411,101 @@ SELECT
 FROM daily_sessions_v7;
 
 DROP TABLE daily_sessions_v7;
+
+CREATE UNIQUE INDEX daily_sessions_required_slot_idx
+  ON daily_sessions (local_date, slot)
+  WHERE slot IS NOT NULL;
+CREATE INDEX daily_sessions_date_status_idx
+  ON daily_sessions (local_date, status);
+''';
+
+const migrationFrom8To9 = '''
+DROP TRIGGER grammar_attempts_prevent_update;
+
+INSERT INTO grammar_topic_progress (topic_id, learned, updated_at)
+SELECT
+  'regular_present',
+  MAX(learned),
+  MAX(updated_at)
+FROM grammar_topic_progress
+WHERE topic_id IN ('personal_pronouns', 'regular_present')
+HAVING COUNT(*) > 0
+ON CONFLICT(topic_id) DO UPDATE SET
+  learned = MAX(grammar_topic_progress.learned, excluded.learned),
+  updated_at = MAX(grammar_topic_progress.updated_at, excluded.updated_at);
+
+DELETE FROM grammar_topic_progress WHERE topic_id = 'personal_pronouns';
+UPDATE grammar_attempts
+SET topic_id = 'regular_present'
+WHERE topic_id = 'personal_pronouns';
+
+CREATE TRIGGER grammar_attempts_prevent_update
+BEFORE UPDATE ON grammar_attempts
+BEGIN
+  SELECT RAISE(ABORT, 'grammar attempts are immutable');
+END;
+
+ALTER TABLE daily_sessions RENAME TO daily_sessions_v8;
+
+CREATE TABLE daily_sessions (
+  id TEXT PRIMARY KEY NOT NULL,
+  local_date TEXT NOT NULL,
+  slot INTEGER CHECK (slot IS NULL OR slot BETWEEN 1 AND 40),
+  kind TEXT NOT NULL CHECK (kind IN (
+    'vocabulary_to_german',
+    'vocabulary_to_russian',
+    'important_vocabulary_to_german',
+    'important_vocabulary_to_russian',
+    'grammar',
+    'numbers'
+  )),
+  status TEXT NOT NULL CHECK (status IN ('planned', 'in_progress', 'completed')),
+  target_answers INTEGER NOT NULL CHECK (target_answers > 0),
+  answered_count INTEGER NOT NULL DEFAULT 0
+    CHECK (answered_count >= 0 AND answered_count <= target_answers),
+  queue_json TEXT NOT NULL CHECK (
+    json_valid(queue_json) AND json_type(queue_json) = 'array'
+  ),
+  last_item_id TEXT,
+  created_at TEXT NOT NULL,
+  updated_at TEXT NOT NULL,
+  completed_at TEXT,
+  content_version TEXT NOT NULL DEFAULT '2026.10.04.1',
+  CHECK (
+    (status = 'completed' AND answered_count = target_answers AND completed_at IS NOT NULL)
+    OR
+    (status != 'completed' AND answered_count < target_answers AND completed_at IS NULL)
+  )
+);
+
+INSERT INTO daily_sessions (
+  id, local_date, slot, kind, status, target_answers, answered_count,
+  queue_json, last_item_id, created_at, updated_at, completed_at,
+  content_version
+)
+SELECT
+  d.id,
+  d.local_date,
+  CASE
+    WHEN d.slot IS NULL THEN NULL
+    WHEN d.kind = 'vocabulary_to_german' THEN 1
+    WHEN d.kind = 'vocabulary_to_russian' THEN 11
+    WHEN d.kind = 'numbers' THEN 21
+    WHEN d.kind = 'grammar' THEN 31
+  END + CASE WHEN d.slot IS NULL THEN 0 ELSE (
+    SELECT COUNT(*) - 1
+    FROM daily_sessions_v8 AS prior
+    WHERE prior.local_date = d.local_date
+      AND prior.kind = d.kind
+      AND prior.slot IS NOT NULL
+      AND prior.slot <= d.slot
+  ) END,
+  d.kind, d.status, d.target_answers, d.answered_count,
+  d.queue_json, d.last_item_id, d.created_at, d.updated_at, d.completed_at,
+  d.content_version
+FROM daily_sessions_v8 AS d;
+
+DROP TABLE daily_sessions_v8;
 
 CREATE UNIQUE INDEX daily_sessions_required_slot_idx
   ON daily_sessions (local_date, slot)

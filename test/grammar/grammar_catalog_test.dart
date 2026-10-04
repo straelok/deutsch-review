@@ -5,14 +5,13 @@ import 'package:flutter_test/flutter_test.dart';
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
-  test('loads the static grammar bank with one thousand regular examples',
-      () async {
+  test('loads the merged pronoun and regular-present exercise bank', () async {
     final catalog = await GrammarCatalog.load(rootBundle);
 
     expect(
       catalog.exercises
           .where((exercise) => exercise.topicId == 'regular_present'),
-      hasLength(1000),
+      hasLength(1075),
     );
     expect(
       catalog.exercises.where((exercise) => exercise.topicId == 'sein'),
@@ -41,7 +40,7 @@ void main() {
     expect(numbers.table.expand((row) => row), contains('100'));
     expect(numbers.table.expand((row) => row).join(' '), contains('IPA'));
     final regular = catalog.exercises
-        .where((exercise) => exercise.topicId == 'regular_present')
+        .where((exercise) => exercise.id.startsWith('regular-'))
         .toList();
     expect(regular.map((exercise) => exercise.prompt).toSet(), hasLength(1000));
     expect(
@@ -64,7 +63,15 @@ void main() {
         .where((topic) => topic.trainable)
         .map((topic) => topic.id)
         .toSet();
-    expect(trainableTopics, hasLength(19));
+    expect(trainableTopics, hasLength(18));
+    expect(
+      catalog.topics.any((topic) => topic.id == 'personal_pronouns'),
+      isFalse,
+    );
+    expect(
+      catalog.exercises.any((exercise) => exercise.id.startsWith('pronoun-')),
+      isTrue,
+    );
     for (final topicId in trainableTopics) {
       expect(
         catalog.exercises.where((exercise) => exercise.topicId == topicId),

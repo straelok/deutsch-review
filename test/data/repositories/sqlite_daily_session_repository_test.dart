@@ -1,6 +1,8 @@
 import 'package:deutsch_review/data/database/app_database.dart';
 import 'package:deutsch_review/data/repositories/sqlite_daily_session_repository.dart';
 import 'package:deutsch_review/data/repositories/sqlite_learning_item_repository.dart';
+import 'package:deutsch_review/data/repositories/sqlite_settings_repository.dart';
+import 'package:deutsch_review/domain/app_settings.dart';
 import 'package:deutsch_review/domain/daily_session.dart';
 import 'package:deutsch_review/domain/grammar.dart';
 import 'package:deutsch_review/domain/learning_item.dart';
@@ -119,7 +121,36 @@ void main() {
         sessions.where((session) => session.kind == DailySessionKind.grammar),
         hasLength(2));
     expect(
-        sessions.firstWhere((session) => session.slot == 9).targetAnswers, 10);
+        sessions.firstWhere((session) => session.slot == 31).targetAnswers, 10);
+  });
+
+  test('uses configured lesson and task counts', () async {
+    final database = AppDatabase.inMemory();
+    addTearDown(database.close);
+    final settings = SqliteSettingsRepository(database);
+    await settings.saveAppSettings(const AppSettings(
+      toGermanLessons: 1,
+      toGermanTasks: 7,
+      toRussianLessons: 2,
+      toRussianTasks: 8,
+      numberLessons: 0,
+      grammarLessons: 1,
+      grammarTasks: 6,
+    ));
+    final repository = SqliteDailySessionRepository(
+      database,
+      settings: settings,
+    );
+
+    final sessions = await repository.ensureDay(
+      localDate: '2026-10-04',
+      now: DateTime.utc(2026, 10, 4),
+      includeGrammar: true,
+    );
+
+    expect(sessions, hasLength(4));
+    expect(sessions.map((session) => session.slot), [1, 11, 12, 31]);
+    expect(sessions.map((session) => session.targetAnswers), [7, 8, 8, 6]);
   });
 
   test('pins content version when a planned session starts', () async {
@@ -206,7 +237,7 @@ void main() {
       now: now,
       includeGrammar: true,
     ))
-        .firstWhere((session) => session.slot == 9);
+        .firstWhere((session) => session.slot == 31);
     await repository.start(
       id: planned.id,
       queueItemIds: List.generate(10, (index) => 'grammar-$index'),

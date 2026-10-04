@@ -3,20 +3,24 @@ import 'dart:convert';
 import 'package:sqlite3/sqlite3.dart';
 
 import '../../domain/daily_session.dart';
+import '../../domain/app_settings.dart';
 import '../../domain/id_generator.dart';
 import '../../domain/grammar.dart';
 import '../../domain/practice.dart';
 import '../../domain/repositories/daily_session_repository.dart';
+import '../../domain/repositories/settings_repository.dart';
 import '../database/app_database.dart';
 
 final class SqliteDailySessionRepository implements DailySessionRepository {
   const SqliteDailySessionRepository(
     this.database, {
     String Function()? contentVersion,
+    this.settings,
   }) : _contentVersion = contentVersion ?? _defaultContentVersion;
 
   final AppDatabase database;
   final String Function() _contentVersion;
+  final SettingsRepository? settings;
 
   static String _defaultContentVersion() => bundledContentVersion;
 
@@ -26,71 +30,44 @@ final class SqliteDailySessionRepository implements DailySessionRepository {
     required DateTime now,
     bool includeGrammar = false,
   }) async {
+    final configuration =
+        await settings?.readAppSettings() ?? const AppSettings();
     final timestamp = now.toUtc().toIso8601String();
     database.connection.execute('BEGIN IMMEDIATE');
     try {
-      for (var slot = 1; slot <= 6; slot++) {
-        final kind = slot <= 3
-            ? DailySessionKind.vocabularyToGerman
-            : DailySessionKind.vocabularyToRussian;
-        database.connection.execute(
-          '''
-          INSERT OR IGNORE INTO daily_sessions (
-            id, local_date, slot, kind, status, target_answers, answered_count,
-            queue_json, last_item_id, created_at, updated_at, completed_at,
-            content_version
-          ) VALUES (?, ?, ?, ?, 'planned', 20, 0, '[]', NULL, ?, ?, NULL, ?)
-          ''',
-          <Object?>[
-            newUuidV4(),
-            localDate,
-            slot,
-            kind.wireName,
-            timestamp,
-            timestamp,
-            _contentVersion(),
-          ],
-        );
-      }
-      for (var slot = 7; slot <= 8; slot++) {
-        database.connection.execute(
-          '''
-          INSERT OR IGNORE INTO daily_sessions (
-            id, local_date, slot, kind, status, target_answers, answered_count,
-            queue_json, last_item_id, created_at, updated_at, completed_at,
-            content_version
-          ) VALUES (?, ?, ?, 'numbers', 'planned', 20, 0, '[]', NULL, ?, ?, NULL, ?)
-          ''',
-          <Object?>[
-            newUuidV4(),
-            localDate,
-            slot,
-            timestamp,
-            timestamp,
-            _contentVersion(),
-          ],
-        );
-      }
+      _ensureSlots(
+        localDate: localDate,
+        timestamp: timestamp,
+        firstSlot: 1,
+        count: configuration.toGermanLessons,
+        kind: DailySessionKind.vocabularyToGerman,
+        targetAnswers: configuration.toGermanTasks,
+      );
+      _ensureSlots(
+        localDate: localDate,
+        timestamp: timestamp,
+        firstSlot: 11,
+        count: configuration.toRussianLessons,
+        kind: DailySessionKind.vocabularyToRussian,
+        targetAnswers: configuration.toRussianTasks,
+      );
+      _ensureSlots(
+        localDate: localDate,
+        timestamp: timestamp,
+        firstSlot: 21,
+        count: configuration.numberLessons,
+        kind: DailySessionKind.numbers,
+        targetAnswers: configuration.numberTasks,
+      );
       if (includeGrammar) {
-        for (var slot = 9; slot <= 10; slot++) {
-          database.connection.execute(
-            '''
-            INSERT OR IGNORE INTO daily_sessions (
-              id, local_date, slot, kind, status, target_answers, answered_count,
-              queue_json, last_item_id, created_at, updated_at, completed_at,
-              content_version
-            ) VALUES (?, ?, ?, 'grammar', 'planned', 10, 0, '[]', NULL, ?, ?, NULL, ?)
-            ''',
-            <Object?>[
-              newUuidV4(),
-              localDate,
-              slot,
-              timestamp,
-              timestamp,
-              _contentVersion(),
-            ],
-          );
-        }
+        _ensureSlots(
+          localDate: localDate,
+          timestamp: timestamp,
+          firstSlot: 31,
+          count: configuration.grammarLessons,
+          kind: DailySessionKind.grammar,
+          targetAnswers: configuration.grammarTasks,
+        );
       }
       database.connection.execute('COMMIT');
     } catch (_) {
@@ -115,6 +92,8 @@ final class SqliteDailySessionRepository implements DailySessionRepository {
     required DateTime now,
     DailySessionKind kind = DailySessionKind.vocabularyToGerman,
   }) async {
+    final configuration =
+        await settings?.readAppSettings() ?? const AppSettings();
     final id = newUuidV4();
     final timestamp = now.toUtc().toIso8601String();
     database.connection.execute(
@@ -129,7 +108,7 @@ final class SqliteDailySessionRepository implements DailySessionRepository {
         id,
         localDate,
         kind.wireName,
-        kind == DailySessionKind.grammar ? 10 : 20,
+        _targetAnswers(kind, configuration),
         timestamp,
         timestamp,
         _contentVersion(),
@@ -137,6 +116,47 @@ final class SqliteDailySessionRepository implements DailySessionRepository {
     );
     return (await findById(id))!;
   }
+
+  void _ensureSlots({
+    required String localDate,
+    required String timestamp,
+    required int firstSlot,
+    required int count,
+    required DailySessionKind kind,
+    required int targetAnswers,
+  }) {
+    for (var offset = 0; offset < count; offset++) {
+      database.connection.execute(
+        '''
+        INSERT OR IGNORE INTO daily_sessions (
+          id, local_date, slot, kind, status, target_answers, answered_count,
+          queue_json, last_item_id, created_at, updated_at, completed_at,
+          content_version
+        ) VALUES (?, ?, ?, ?, 'planned', ?, 0, '[]', NULL, ?, ?, NULL, ?)
+        ''',
+        <Object?>[
+          newUuidV4(),
+          localDate,
+          firstSlot + offset,
+          kind.wireName,
+          targetAnswers,
+          timestamp,
+          timestamp,
+          _contentVersion(),
+        ],
+      );
+    }
+  }
+
+  static int _targetAnswers(DailySessionKind kind, AppSettings settings) =>
+      switch (kind) {
+        DailySessionKind.vocabularyToRussian ||
+        DailySessionKind.importantVocabularyToRussian =>
+          settings.toRussianTasks,
+        DailySessionKind.grammar => settings.grammarTasks,
+        DailySessionKind.numbers => settings.numberTasks,
+        _ => settings.toGermanTasks,
+      };
 
   @override
   Future<DailySession> start({

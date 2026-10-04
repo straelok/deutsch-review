@@ -18,5 +18,6 @@ abstract interface class ReminderGateway {
     required DateTime now,
     required bool skipToday,
     required ReminderCopy copy,
+    required List<int> reminderMinutes,
   });
 }

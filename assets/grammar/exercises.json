@@ -8150,7 +8150,7 @@
     },
     {
       "id": "pronoun-lernen-ich",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "lernen",
       "required_item_type": "verb",
       "type": "choice",
@@ -8166,7 +8166,7 @@
     },
     {
       "id": "pronoun-lernen-du",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "lernen",
       "required_item_type": "verb",
       "type": "choice",
@@ -8182,7 +8182,7 @@
     },
     {
       "id": "pronoun-lernen-er-sie-es",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "lernen",
       "required_item_type": "verb",
       "type": "choice",
@@ -8287,7 +8287,7 @@
     },
     {
       "id": "pronoun-machen-ich",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "machen",
       "required_item_type": "verb",
       "type": "choice",
@@ -8303,7 +8303,7 @@
     },
     {
       "id": "pronoun-machen-du",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "machen",
       "required_item_type": "verb",
       "type": "choice",
@@ -8319,7 +8319,7 @@
     },
     {
       "id": "pronoun-machen-er-sie-es",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "machen",
       "required_item_type": "verb",
       "type": "choice",
@@ -8425,7 +8425,7 @@
     },
     {
       "id": "pronoun-wohnen-ich",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "wohnen",
       "required_item_type": "verb",
       "type": "choice",
@@ -8441,7 +8441,7 @@
     },
     {
       "id": "pronoun-wohnen-du",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "wohnen",
       "required_item_type": "verb",
       "type": "choice",
@@ -8457,7 +8457,7 @@
     },
     {
       "id": "pronoun-wohnen-er-sie-es",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "wohnen",
       "required_item_type": "verb",
       "type": "choice",
@@ -8563,7 +8563,7 @@
     },
     {
       "id": "pronoun-kommen-ich",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "kommen",
       "required_item_type": "verb",
       "type": "choice",
@@ -8579,7 +8579,7 @@
     },
     {
       "id": "pronoun-kommen-du",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "kommen",
       "required_item_type": "verb",
       "type": "choice",
@@ -8595,7 +8595,7 @@
     },
     {
       "id": "pronoun-kommen-er-sie-es",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "kommen",
       "required_item_type": "verb",
       "type": "choice",
@@ -8701,7 +8701,7 @@
     },
     {
       "id": "pronoun-leben-ich",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "leben",
       "required_item_type": "verb",
       "type": "choice",
@@ -8717,7 +8717,7 @@
     },
     {
       "id": "pronoun-leben-du",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "leben",
       "required_item_type": "verb",
       "type": "choice",
@@ -8733,7 +8733,7 @@
     },
     {
       "id": "pronoun-leben-er-sie-es",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "leben",
       "required_item_type": "verb",
       "type": "choice",
@@ -8839,7 +8839,7 @@
     },
     {
       "id": "pronoun-kaufen-ich",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "kaufen",
       "required_item_type": "verb",
       "type": "choice",
@@ -8855,7 +8855,7 @@
     },
     {
       "id": "pronoun-kaufen-du",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "kaufen",
       "required_item_type": "verb",
       "type": "choice",
@@ -8871,7 +8871,7 @@
     },
     {
       "id": "pronoun-kaufen-er-sie-es",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "kaufen",
       "required_item_type": "verb",
       "type": "choice",
@@ -8977,7 +8977,7 @@
     },
     {
       "id": "pronoun-spielen-ich",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "spielen",
       "required_item_type": "verb",
       "type": "choice",
@@ -8993,7 +8993,7 @@
     },
     {
       "id": "pronoun-spielen-du",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "spielen",
       "required_item_type": "verb",
       "type": "choice",
@@ -9009,7 +9009,7 @@
     },
     {
       "id": "pronoun-spielen-er-sie-es",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "spielen",
       "required_item_type": "verb",
       "type": "choice",
@@ -9115,7 +9115,7 @@
     },
     {
       "id": "pronoun-hören-ich",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "hören",
       "required_item_type": "verb",
       "type": "choice",
@@ -9131,7 +9131,7 @@
     },
     {
       "id": "pronoun-hören-du",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "hören",
       "required_item_type": "verb",
       "type": "choice",
@@ -9147,7 +9147,7 @@
     },
     {
       "id": "pronoun-hören-er-sie-es",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "hören",
       "required_item_type": "verb",
       "type": "choice",
@@ -9253,7 +9253,7 @@
     },
     {
       "id": "pronoun-fragen-ich",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "fragen",
       "required_item_type": "verb",
       "type": "choice",
@@ -9269,7 +9269,7 @@
     },
     {
       "id": "pronoun-fragen-du",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "fragen",
       "required_item_type": "verb",
       "type": "choice",
@@ -9285,7 +9285,7 @@
     },
     {
       "id": "pronoun-fragen-er-sie-es",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "fragen",
       "required_item_type": "verb",
       "type": "choice",
@@ -9391,7 +9391,7 @@
     },
     {
       "id": "pronoun-sagen-ich",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "sagen",
       "required_item_type": "verb",
       "type": "choice",
@@ -9407,7 +9407,7 @@
     },
     {
       "id": "pronoun-sagen-du",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "sagen",
       "required_item_type": "verb",
       "type": "choice",
@@ -9423,7 +9423,7 @@
     },
     {
       "id": "pronoun-sagen-er-sie-es",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "sagen",
       "required_item_type": "verb",
       "type": "choice",
@@ -9529,7 +9529,7 @@
     },
     {
       "id": "pronoun-glauben-ich",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "glauben",
       "required_item_type": "verb",
       "type": "choice",
@@ -9545,7 +9545,7 @@
     },
     {
       "id": "pronoun-glauben-du",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "glauben",
       "required_item_type": "verb",
       "type": "choice",
@@ -9561,7 +9561,7 @@
     },
     {
       "id": "pronoun-glauben-er-sie-es",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "glauben",
       "required_item_type": "verb",
       "type": "choice",
@@ -9668,7 +9668,7 @@
     },
     {
       "id": "pronoun-brauchen-ich",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "brauchen",
       "required_item_type": "verb",
       "type": "choice",
@@ -9684,7 +9684,7 @@
     },
     {
       "id": "pronoun-brauchen-du",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "brauchen",
       "required_item_type": "verb",
       "type": "choice",
@@ -9700,7 +9700,7 @@
     },
     {
       "id": "pronoun-brauchen-er-sie-es",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "brauchen",
       "required_item_type": "verb",
       "type": "choice",
@@ -9806,7 +9806,7 @@
     },
     {
       "id": "pronoun-kochen-ich",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "kochen",
       "required_item_type": "verb",
       "type": "choice",
@@ -9822,7 +9822,7 @@
     },
     {
       "id": "pronoun-kochen-du",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "kochen",
       "required_item_type": "verb",
       "type": "choice",
@@ -9838,7 +9838,7 @@
     },
     {
       "id": "pronoun-kochen-er-sie-es",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "kochen",
       "required_item_type": "verb",
       "type": "choice",
@@ -9944,7 +9944,7 @@
     },
     {
       "id": "pronoun-grillen-ich",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "grillen",
       "required_item_type": "verb",
       "type": "choice",
@@ -9960,7 +9960,7 @@
     },
     {
       "id": "pronoun-grillen-du",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "grillen",
       "required_item_type": "verb",
       "type": "choice",
@@ -9976,7 +9976,7 @@
     },
     {
       "id": "pronoun-grillen-er-sie-es",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "grillen",
       "required_item_type": "verb",
       "type": "choice",
@@ -10082,7 +10082,7 @@
     },
     {
       "id": "pronoun-frühstücken-ich",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "frühstücken",
       "required_item_type": "verb",
       "type": "choice",
@@ -10098,7 +10098,7 @@
     },
     {
       "id": "pronoun-frühstücken-du",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "frühstücken",
       "required_item_type": "verb",
       "type": "choice",
@@ -10114,7 +10114,7 @@
     },
     {
       "id": "pronoun-frühstücken-er-sie-es",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "frühstücken",
       "required_item_type": "verb",
       "type": "choice",
@@ -10221,7 +10221,7 @@
     },
     {
       "id": "pronoun-fotografieren-ich",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "fotografieren",
       "required_item_type": "verb",
       "type": "choice",
@@ -10237,7 +10237,7 @@
     },
     {
       "id": "pronoun-fotografieren-du",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "fotografieren",
       "required_item_type": "verb",
       "type": "choice",
@@ -10253,7 +10253,7 @@
     },
     {
       "id": "pronoun-fotografieren-er-sie-es",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "fotografieren",
       "required_item_type": "verb",
       "type": "choice",
@@ -10359,7 +10359,7 @@
     },
     {
       "id": "pronoun-telefonieren-ich",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "telefonieren",
       "required_item_type": "verb",
       "type": "choice",
@@ -10375,7 +10375,7 @@
     },
     {
       "id": "pronoun-telefonieren-du",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "telefonieren",
       "required_item_type": "verb",
       "type": "choice",
@@ -10391,7 +10391,7 @@
     },
     {
       "id": "pronoun-telefonieren-er-sie-es",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "telefonieren",
       "required_item_type": "verb",
       "type": "choice",
@@ -10498,7 +10498,7 @@
     },
     {
       "id": "pronoun-studieren-ich",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "studieren",
       "required_item_type": "verb",
       "type": "choice",
@@ -10514,7 +10514,7 @@
     },
     {
       "id": "pronoun-studieren-du",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "studieren",
       "required_item_type": "verb",
       "type": "choice",
@@ -10530,7 +10530,7 @@
     },
     {
       "id": "pronoun-studieren-er-sie-es",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "studieren",
       "required_item_type": "verb",
       "type": "choice",
@@ -10636,7 +10636,7 @@
     },
     {
       "id": "pronoun-suchen-ich",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "suchen",
       "required_item_type": "verb",
       "type": "choice",
@@ -10652,7 +10652,7 @@
     },
     {
       "id": "pronoun-suchen-du",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "suchen",
       "required_item_type": "verb",
       "type": "choice",
@@ -10668,7 +10668,7 @@
     },
     {
       "id": "pronoun-suchen-er-sie-es",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "suchen",
       "required_item_type": "verb",
       "type": "choice",
@@ -10774,7 +10774,7 @@
     },
     {
       "id": "pronoun-besuchen-ich",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "besuchen",
       "required_item_type": "verb",
       "type": "choice",
@@ -10790,7 +10790,7 @@
     },
     {
       "id": "pronoun-besuchen-du",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "besuchen",
       "required_item_type": "verb",
       "type": "choice",
@@ -10806,7 +10806,7 @@
     },
     {
       "id": "pronoun-besuchen-er-sie-es",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "besuchen",
       "required_item_type": "verb",
       "type": "choice",
@@ -10912,7 +10912,7 @@
     },
     {
       "id": "pronoun-lieben-ich",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "lieben",
       "required_item_type": "verb",
       "type": "choice",
@@ -10928,7 +10928,7 @@
     },
     {
       "id": "pronoun-lieben-du",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "lieben",
       "required_item_type": "verb",
       "type": "choice",
@@ -10944,7 +10944,7 @@
     },
     {
       "id": "pronoun-lieben-er-sie-es",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "lieben",
       "required_item_type": "verb",
       "type": "choice",
@@ -11050,7 +11050,7 @@
     },
     {
       "id": "pronoun-zeigen-ich",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "zeigen",
       "required_item_type": "verb",
       "type": "choice",
@@ -11066,7 +11066,7 @@
     },
     {
       "id": "pronoun-zeigen-du",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "zeigen",
       "required_item_type": "verb",
       "type": "choice",
@@ -11082,7 +11082,7 @@
     },
     {
       "id": "pronoun-zeigen-er-sie-es",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "zeigen",
       "required_item_type": "verb",
       "type": "choice",
@@ -11188,7 +11188,7 @@
     },
     {
       "id": "pronoun-erklären-ich",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "erklären",
       "required_item_type": "verb",
       "type": "choice",
@@ -11204,7 +11204,7 @@
     },
     {
       "id": "pronoun-erklären-du",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "erklären",
       "required_item_type": "verb",
       "type": "choice",
@@ -11220,7 +11220,7 @@
     },
     {
       "id": "pronoun-erklären-er-sie-es",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "erklären",
       "required_item_type": "verb",
       "type": "choice",
@@ -11326,7 +11326,7 @@
     },
     {
       "id": "pronoun-üben-ich",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "üben",
       "required_item_type": "verb",
       "type": "choice",
@@ -11342,7 +11342,7 @@
     },
     {
       "id": "pronoun-üben-du",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "üben",
       "required_item_type": "verb",
       "type": "choice",
@@ -11358,7 +11358,7 @@
     },
     {
       "id": "pronoun-üben-er-sie-es",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "üben",
       "required_item_type": "verb",
       "type": "choice",
@@ -11465,7 +11465,7 @@
     },
     {
       "id": "pronoun-bezahlen-ich",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "bezahlen",
       "required_item_type": "verb",
       "type": "choice",
@@ -11481,7 +11481,7 @@
     },
     {
       "id": "pronoun-bezahlen-du",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "bezahlen",
       "required_item_type": "verb",
       "type": "choice",
@@ -11497,7 +11497,7 @@
     },
     {
       "id": "pronoun-bezahlen-er-sie-es",
-      "topic_id": "personal_pronouns",
+      "topic_id": "regular_present",
       "lemma": "bezahlen",
       "required_item_type": "verb",
       "type": "choice",

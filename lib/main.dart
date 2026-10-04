@@ -63,9 +63,11 @@ Future<void> main() async {
       SqliteGrammarRepository(database),
       syncController.scheduleSync,
     );
+    final settings = SqliteSettingsRepository(database);
     final localSessions = SqliteDailySessionRepository(
       database,
       contentVersion: () => contentController.catalog.contentVersion,
+      settings: settings,
     );
     await contentController.pruneVersions(
       localSessions.unfinishedContentVersions(),
@@ -74,6 +76,7 @@ Future<void> main() async {
         ? ReminderController(
             sessions: localSessions,
             gateway: AndroidReminderGateway(),
+            settings: settings,
             grammarAvailability: () async {
               final progress = await grammar.progress();
               final items = await learningItems.findActive();
@@ -103,7 +106,6 @@ Future<void> main() async {
       SqlitePracticeRepository(database),
       syncController.scheduleSync,
     );
-    final settings = SqliteSettingsRepository(database);
     final initialLanguage = await settings.readLanguage();
     runApp(
       DeutschReviewApp(

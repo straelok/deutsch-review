@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'content/content_controller.dart';
 import 'domain/app_language.dart';
+import 'domain/app_settings.dart';
 import 'domain/repositories/daily_session_repository.dart';
 import 'domain/repositories/grammar_repository.dart';
 import 'domain/repositories/learning_item_repository.dart';
@@ -12,6 +13,7 @@ import 'features/content/content_status_dialog.dart';
 import 'features/grammar/grammar_page.dart';
 import 'features/practice/practice_page.dart';
 import 'features/statistics/statistics_page.dart';
+import 'features/settings/settings_page.dart';
 import 'features/sync/sync_dialog.dart';
 import 'l10n/ui_strings.dart';
 import 'grammar/grammar_catalog.dart';
@@ -83,6 +85,7 @@ class _DeutschReviewAppState extends State<DeutschReviewApp> {
       home: HomeScreen(
         learningItems: widget.learningItems,
         sessions: widget.sessions,
+        settings: widget.settings,
         practice: widget.practice,
         grammar: widget.grammar,
         grammarCatalog: _grammarCatalog,
@@ -161,6 +164,7 @@ class HomeScreen extends StatefulWidget {
   const HomeScreen({
     required this.learningItems,
     required this.sessions,
+    required this.settings,
     required this.practice,
     required this.grammar,
     required this.grammarCatalog,
@@ -174,6 +178,7 @@ class HomeScreen extends StatefulWidget {
 
   final LearningItemRepository learningItems;
   final DailySessionRepository sessions;
+  final SettingsRepository settings;
   final PracticeRepository practice;
   final GrammarRepository grammar;
   final GrammarCatalog grammarCatalog;
@@ -194,10 +199,12 @@ class _HomeScreenState extends State<HomeScreen> {
   int _lastReminderRevision = 0;
   int _practiceRequestRevision = 0;
   String? _practiceTopicId;
+  AppSettings _appSettings = const AppSettings();
 
   @override
   void initState() {
     super.initState();
+    _loadSettings();
     final sync = widget.syncController;
     if (sync != null) {
       _lastSyncRevision = sync.dataRevision;
@@ -249,12 +256,12 @@ class _HomeScreenState extends State<HomeScreen> {
         strings: s,
         refreshToken: _statisticsRevision,
         onAttemptSaved: () => setState(() => _statisticsRevision++),
-        reminders: widget.reminders,
         grammar: widget.grammar,
         grammarCatalog: widget.grammarCatalog,
         contentController: widget.contentController,
         requestedTopicId: _practiceTopicId,
         practiceRequestRevision: _practiceRequestRevision,
+        appSettings: _appSettings,
       ),
       DictionaryMaterialPage(
         repository: widget.learningItems,
@@ -341,6 +348,12 @@ class _HomeScreenState extends State<HomeScreen> {
                     icon: Icon(_syncIcon(sync.phase)),
                   ),
                 ),
+              IconButton(
+                key: const Key('app-settings'),
+                tooltip: s.choose('Einstellungen', 'Настройки'),
+                onPressed: _openSettings,
+                icon: const Icon(Icons.settings_outlined),
+              ),
               const SizedBox(width: 8),
             ],
           ),
@@ -426,6 +439,27 @@ class _HomeScreenState extends State<HomeScreen> {
       controller: content,
       language: widget.language,
     );
+  }
+
+  Future<void> _loadSettings() async {
+    final settings = await widget.settings.readAppSettings();
+    if (mounted) setState(() => _appSettings = settings);
+  }
+
+  Future<void> _openSettings() async {
+    final changed = await Navigator.of(context).push<bool>(
+      MaterialPageRoute(
+        builder: (context) => SettingsPage(
+          repository: widget.settings,
+          strings: UiStrings(widget.language),
+          reminders: widget.reminders,
+        ),
+      ),
+    );
+    if (changed == true) {
+      await _loadSettings();
+      if (mounted) setState(() => _statisticsRevision++);
+    }
   }
 
   static IconData _syncIcon(SyncPhase phase) => switch (phase) {
