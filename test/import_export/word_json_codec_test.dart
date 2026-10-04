@@ -167,7 +167,7 @@ void main() {
         )
         .toSet();
 
-    expect(items, hasLength(310));
+    expect(items, hasLength(589));
     expect(keys, hasLength(items.length));
     expect(
       items.any((item) => item.content['german'] == 'Supermarkt'),

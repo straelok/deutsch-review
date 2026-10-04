@@ -11,7 +11,7 @@ void main() {
     expect(
       catalog.exercises
           .where((exercise) => exercise.topicId == 'regular_present'),
-      hasLength(1075),
+      hasLength(1084),
     );
     expect(
       catalog.exercises.where((exercise) => exercise.topicId == 'sein'),
@@ -63,7 +63,7 @@ void main() {
         .where((topic) => topic.trainable)
         .map((topic) => topic.id)
         .toSet();
-    expect(trainableTopics, hasLength(18));
+    expect(trainableTopics, hasLength(23));
     expect(
       catalog.topics.any((topic) => topic.id == 'personal_pronouns'),
       isFalse,

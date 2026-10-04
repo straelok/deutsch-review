@@ -4,10 +4,34 @@ param(
   [ValidatePattern('^\d{4}\.\d{2}\.\d{2}\.\d+$')]
   [string] $Version,
   [string] $SupabaseUrl = 'https://hjihhrcxkpzglgfmfuzs.supabase.co',
-  [string] $InputDirectory = 'assets/content'
+  [string] $InputDirectory = 'assets/content',
+  [switch] $InteractiveChild
 )
 
 $ErrorActionPreference = 'Stop'
+
+$hasEnvironmentKey =
+  -not [string]::IsNullOrWhiteSpace($env:SUPABASE_SECRET_KEY) -or
+  -not [string]::IsNullOrWhiteSpace($env:SUPABASE_SERVICE_ROLE_KEY)
+
+if (-not $hasEnvironmentKey -and -not $InteractiveChild) {
+  $powershell = (Get-Command powershell.exe -ErrorAction Stop).Source
+  $arguments = @(
+    '-NoProfile',
+    '-ExecutionPolicy', 'Bypass',
+    '-File', $PSCommandPath,
+    '-Version', $Version,
+    '-SupabaseUrl', $SupabaseUrl,
+    '-InputDirectory', $InputDirectory,
+    '-InteractiveChild'
+  )
+  $process = Start-Process -FilePath $powershell -ArgumentList $arguments `
+    -WorkingDirectory (Get-Location).Path -WindowStyle Normal -Wait -PassThru
+  if ($process.ExitCode -ne 0) {
+    throw "Visible publication window failed with exit code $($process.ExitCode)."
+  }
+  return
+}
 
 function Read-SecretKey {
   $value = $env:SUPABASE_SECRET_KEY

@@ -487,7 +487,8 @@ void _addLessonThreeFourExercises(List<Map<String, Object?>> exercises) {
           'möchtet',
           'Möchte',
           'Möchten',
-          'Möchtest'
+          'Möchtest',
+          'Möchtet'
         ],
         instructionDe: 'Wähle die passende Form von möchten.',
         instructionRu: 'Выберите подходящую форму глагола möchten.');
