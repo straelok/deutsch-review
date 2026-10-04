@@ -23,22 +23,22 @@
         "При произнесении по буквам умлаут называют явно: Ä, Ö или Ü. Знак ß называется Eszett или scharfes S."
       ],
       "table": [
-        ["Buchstabe", "Name (IPA)", "Beispiel"],
-        ["A a", "[aː]", "Apfel"], ["B b", "[beː]", "Buch"],
-        ["C c", "[tseː]", "Café"], ["D d", "[deː]", "Deutsch"],
-        ["E e", "[eː]", "Elefant"], ["F f", "[ɛf]", "Frau"],
-        ["G g", "[ɡeː]", "Geld"], ["H h", "[haː]", "Haus"],
-        ["I i", "[iː]", "Insel"], ["J j", "[jɔt]", "Jahr"],
-        ["K k", "[kaː]", "Kind"], ["L l", "[ɛl]", "Land"],
-        ["M m", "[ɛm]", "Mann"], ["N n", "[ɛn]", "Name"],
-        ["O o", "[oː]", "Ort"], ["P p", "[peː]", "Post"],
-        ["Q q", "[kuː]", "Quelle"], ["R r", "[ɛʁ]", "rot"],
-        ["S s", "[ɛs]", "Sonne"], ["T t", "[teː]", "Tag"],
-        ["U u", "[uː]", "Uhr"], ["V v", "[faʊ̯]", "Vater"],
-        ["W w", "[veː]", "Wasser"], ["X x", "[ɪks]", "Taxi"],
-        ["Y y", "[ˈʏpsilɔn]", "Typ"], ["Z z", "[tsɛt]", "Zeit"],
-        ["Ä ä", "[ɛː]", "Äpfel"], ["Ö ö", "[øː]", "Öl"],
-        ["Ü ü", "[yː]", "Tür"], ["ß", "[ɛsˈtsɛt]", "Straße"]
+        ["Buchstabe / Буква", "Name / Название (IPA)", "Beispiel / Пример"],
+        ["A a", "[aː]", "Apfel — яблоко"], ["B b", "[beː]", "Buch — книга"],
+        ["C c", "[tseː]", "Café — кафе"], ["D d", "[deː]", "Deutsch — немецкий язык"],
+        ["E e", "[eː]", "Elefant — слон"], ["F f", "[ɛf]", "Frau — женщина"],
+        ["G g", "[ɡeː]", "Geld — деньги"], ["H h", "[haː]", "Haus — дом"],
+        ["I i", "[iː]", "Insel — остров"], ["J j", "[jɔt]", "Jahr — год"],
+        ["K k", "[kaː]", "Kind — ребёнок"], ["L l", "[ɛl]", "Land — страна"],
+        ["M m", "[ɛm]", "Mann — мужчина"], ["N n", "[ɛn]", "Name — имя"],
+        ["O o", "[oː]", "Ort — место"], ["P p", "[peː]", "Post — почта"],
+        ["Q q", "[kuː]", "Quelle — источник"], ["R r", "[ɛʁ]", "rot — красный"],
+        ["S s", "[ɛs]", "Sonne — солнце"], ["T t", "[teː]", "Tag — день"],
+        ["U u", "[uː]", "Uhr — часы"], ["V v", "[faʊ̯]", "Vater — отец"],
+        ["W w", "[veː]", "Wasser — вода"], ["X x", "[ɪks]", "Taxi — такси"],
+        ["Y y", "[ˈʏpsilɔn]", "Typ — тип"], ["Z z", "[tsɛt]", "Zeit — время"],
+        ["Ä ä", "[ɛː]", "Äpfel — яблоки"], ["Ö ö", "[øː]", "Öl — масло"],
+        ["Ü ü", "[yː]", "Tür — дверь"], ["ß", "[ɛsˈtsɛt]", "Straße — улица"]
       ],
       "trainable": false
     },
@@ -66,15 +66,15 @@
         "Безударное e часто ослабляется до [ə]: bitte [ˈbɪtə]. В окончаниях -en и -er нередко слышны [n̩] и [ɐ]: lernen [ˈlɛʁnən], Lehrer [ˈleːʁɐ]."
       ],
       "table": [
-        ["Regel", "Beispiel", "IPA"],
-        ["долгий гласный", "Name", "[ˈnaːmə]"],
-        ["краткий перед 2 согласными", "Mann", "[man]"],
-        ["ie = [iː]", "Liebe", "[ˈliːbə]"],
-        ["ei/ai = [aɪ̯]", "mein / Mai", "[maɪ̯n] / [maɪ̯]"],
-        ["eu/äu = [ɔɪ̯]", "neu / Häuser", "[nɔɪ̯] / [ˈhɔɪ̯zɐ]"],
-        ["ö", "schön", "[ʃøːn]"],
-        ["ü", "Tür", "[tyːɐ̯]"],
-        ["безударное e", "bitte", "[ˈbɪtə]"]
+        ["Regel / Правило", "Beispiel / Пример", "IPA / Транскрипция"],
+        ["долгий гласный", "Name — имя", "[ˈnaːmə]"],
+        ["краткий перед 2 согласными", "Mann — мужчина", "[man]"],
+        ["ie = [iː]", "Liebe — любовь", "[ˈliːbə]"],
+        ["ei/ai = [aɪ̯]", "mein — мой / Mai — май", "[maɪ̯n] / [maɪ̯]"],
+        ["eu/äu = [ɔɪ̯]", "neu — новый / Häuser — дома", "[nɔɪ̯] / [ˈhɔɪ̯zɐ]"],
+        ["ö", "schön — красивый", "[ʃøːn]"],
+        ["ü", "Tür — дверь", "[tyːɐ̯]"],
+        ["безударное e", "bitte — пожалуйста", "[ˈbɪtə]"]
       ],
       "trainable": true
     },
@@ -102,15 +102,15 @@
         "b, d и g в конце слова или слога часто оглушаются: lieb [liːp], Hund [hʊnt], Tag [taːk]. Это правило называется Auslautverhärtung — оглушение в конце."
       ],
       "table": [
-        ["Gruppe", "Laut", "Beispiel"],
-        ["sch", "[ʃ]", "Schule [ˈʃuːlə]"],
-        ["sp / st в начале", "[ʃp] / [ʃt]", "spielen / Straße"],
-        ["ch после a, o, u, au", "[x]", "Bach / Buch"],
-        ["ch после остальных", "[ç]", "ich / Bücher"],
-        ["z / tz", "[ts]", "Zeit / sitzen"],
-        ["w / j", "[v] / [j]", "Wasser / ja"],
-        ["qu", "[kv]", "Quelle"],
-        ["ng / nk", "[ŋ] / [ŋk]", "singen / trinken"]
+        ["Gruppe / Сочетание", "Laut / Звук", "Beispiel / Пример"],
+        ["sch", "[ʃ]", "Schule — школа [ˈʃuːlə]"],
+        ["sp / st в начале", "[ʃp] / [ʃt]", "spielen — играть / Straße — улица"],
+        ["ch после a, o, u, au", "[x]", "Bach — ручей / Buch — книга"],
+        ["ch после остальных", "[ç]", "ich — я / Bücher — книги"],
+        ["z / tz", "[ts]", "Zeit — время / sitzen — сидеть"],
+        ["w / j", "[v] / [j]", "Wasser — вода / ja — да"],
+        ["qu", "[kv]", "Quelle — источник"],
+        ["ng / nk", "[ŋ] / [ŋk]", "singen — петь / trinken — пить"]
       ],
       "trainable": true
     },
@@ -133,19 +133,19 @@
         "Во многих простых немецких словах ударение падает на первый слог корня: lernen [ˈlɛʁnən], Mutter [ˈmʊtɐ]. В IPA знак ˈ ставится непосредственно перед ударным слогом.",
         "Неотделяемые приставки be-, ge-, er-, ver-, zer-, ent- и emp- обычно безударны: bezahlen [bəˈtsaːlən], verstehen [fɛɐ̯ˈʃteːən]. Ударение падает на следующий за ними корень.",
         "Отделяемые приставки an-, auf-, ein-, mit- и vor- обычно ударные: anrufen [ˈanˌʁuːfn̩], einkaufen [ˈaɪ̯nˌkaʊ̯fn̩]. В предложении они могут уходить в конец: Ich rufe dich an.",
-        "В заимствованных глаголах на -ieren ударение обычно стоит непосредственно перед -ieren: studieren [ʃtuˈdiːʁən], telefonieren [telefoˈniːʁən]. Такие глаголы образуют Partizip без ge-.",
+        "В заимствованных глаголах на -ieren ударение обычно стоит непосредственно перед -ieren: studieren [ʃtuˈdiːʁən], telefonieren [telefoˈniːʁən]. Такие глаголы образуют Partizip II — форму причастия прошедшего времени — без ge-.",
         "Окончание -ig в конце слова в стандартном немецком часто произносится [ɪç]: richtig [ˈʁɪçtɪç]. Перед гласной обычно слышится [ɪɡ]: richtige [ˈʁɪçtɪɡə]. Региональные варианты нормальны.",
         "Сложные существительные пишутся слитно, а главное ударение обычно находится в первой части: Haustür [ˈhaʊ̯sˌtyːɐ̯]. Деление на знакомые части облегчает чтение длинных слов."
       ],
       "table": [
-        ["Regel", "Beispiel", "IPA"],
-        ["ударение на корне", "lernen", "[ˈlɛʁnən]"],
-        ["безударная be-", "bezahlen", "[bəˈtsaːlən]"],
-        ["безударная ver-", "verstehen", "[fɛɐ̯ˈʃteːən]"],
-        ["ударная an-", "anrufen", "[ˈanˌʁuːfn̩]"],
-        ["-ieren", "studieren", "[ʃtuˈdiːʁən]"],
-        ["-ig в конце", "richtig", "[ˈʁɪçtɪç]"],
-        ["сложное слово", "Haustür", "[ˈhaʊ̯sˌtyːɐ̯]"]
+        ["Regel / Правило", "Beispiel / Пример", "IPA / Транскрипция"],
+        ["ударение на корне", "lernen — учить", "[ˈlɛʁnən]"],
+        ["безударная be-", "bezahlen — платить", "[bəˈtsaːlən]"],
+        ["безударная ver-", "verstehen — понимать", "[fɛɐ̯ˈʃteːən]"],
+        ["ударная an-", "anrufen — звонить", "[ˈanˌʁuːfn̩]"],
+        ["-ieren", "studieren — учиться в вузе", "[ʃtuˈdiːʁən]"],
+        ["-ig в конце", "richtig — правильный", "[ˈʁɪçtɪç]"],
+        ["сложное слово", "Haustür — входная дверь", "[ˈhaʊ̯sˌtyːɐ̯]"]
       ],
       "trainable": true
     },
@@ -173,7 +173,7 @@
         "Транскрипция IPA показывает стандартное произношение. Звук [ç] в окончании -zig произносится как ch в слове ich; в некоторых регионах встречается [k]."
       ],
       "table": [
-        ["Zahl", "Deutsch", "IPA"],
+        ["Zahl / Число", "Deutsch / По-немецки", "IPA / Транскрипция"],
         ["0", "null", "[nʊl]"], ["1", "eins", "[aɪ̯ns]"],
         ["2", "zwei", "[tsvaɪ̯]"], ["3", "drei", "[dʁaɪ̯]"],
         ["4", "vier", "[fiːɐ̯]"], ["5", "fünf", "[fʏnf]"],
@@ -211,7 +211,7 @@
         "Изменённая форма называется спрягаемой. Она согласуется с подлежащим: ich lerne, du lernst, wir lernen.",
         "В немецком повествовательном предложении спрягаемый глагол обычно занимает вторую позицию."
       ],
-      "table": [["lernen", "учить"], ["wohnen", "жить"], ["sein", "быть"]],
+      "table": [["Verb / Глагол", "Bedeutung / Значение"], ["lernen", "учить"], ["wohnen", "жить"], ["sein", "быть"]],
       "trainable": true
     },
     {
@@ -228,12 +228,12 @@
         "Beim Lernen notierst du am besten Infinitiv, Stamm und ein Beispiel: lernen — lern- — ich lerne. So erkennst du spätere Besonderheiten leichter."
       ],
       "explanation_ru": [
-        "Многие немецкие инфинитивы заканчиваются на -en: lern-en, wohn-en, mach-en.",
-        "К основе добавляется личное окончание.",
+        "Инфинитив (der Infinitiv) — начальная форма глагола. Многие немецкие инфинитивы заканчиваются на -en: lern-en, wohn-en, mach-en.",
+        "К основе слова (der Wortstamm) добавляется личное окончание (die Endung).",
         "Некоторые инфинитивы заканчиваются только на -n, например sammeln. Поэтому основу не всегда можно получить простым удалением -en.",
         "Полезно записывать инфинитив, основу и пример вместе: lernen — lern- — ich lerne. Так позднее легче замечать исключения."
       ],
-      "table": [["lernen", "lern", "-en"], ["wohnen", "wohn", "-en"], ["machen", "mach", "-en"]],
+      "table": [["Infinitiv / Инфинитив", "Wortstamm / Основа", "Endung / Окончание"], ["lernen", "lern", "-en"], ["wohnen", "wohn", "-en"], ["machen", "mach", "-en"]],
       "trainable": true
     },
     {
@@ -251,13 +251,13 @@
         "Prüfe immer zuerst das Pronomen und erst dann die Endung: du wohnst, aber ihr wohnt. Die Verbform bei sie und Sie ist gleich; Großschreibung und Kontext zeigen den Unterschied."
       ],
       "explanation_ru": [
-        "Единственное число: ich, du, er, sie, es. Множественное: wir, ihr, sie. Sie — вежливое обращение с заглавной буквы.",
+        "Präsens — настоящее время. Единственное число: ich, du, er, sie, es. Множественное: wir, ihr, sie. Sie — вежливое обращение с заглавной буквы.",
         "Уберите -en из инфинива и добавьте подходящее личное окончание.",
         "В это первое правило пока не входят особые случаи вроде arbeiten или heißen.",
         "Окончания: -e, -st, -t, -en, -t, -en. Формы wir и sie/Sie обычно совпадают с инфинитивом, а er/sie/es и ihr обе заканчиваются на -t.",
         "Сначала определите местоимение и только затем выбирайте окончание: du wohnst, но ihr wohnt. Формы глагола с sie и Sie совпадают; различие видно по заглавной букве и контексту."
       ],
-      "table": [["ich — я", "-e"], ["du — ты", "-st"], ["er/sie/es — он/она/оно", "-t"], ["wir — мы", "-en"], ["ihr — вы", "-t"], ["sie/Sie — они/Вы", "-en"]],
+      "table": [["Pronomen / Местоимение", "Endung / Окончание", "Beispiel / Пример"], ["ich — я", "-e", "ich lerne — я учу"], ["du — ты", "-st", "du lernst — ты учишь"], ["er/sie/es — он/она/оно", "-t", "er lernt — он учит"], ["wir — мы", "-en", "wir lernen — мы учим"], ["ihr — вы", "-t", "ihr lernt — вы учите"], ["sie/Sie — они/Вы", "-en", "sie lernen — они учат"]],
       "trainable": true
     },
     {
@@ -276,10 +276,10 @@
       "explanation_ru": [
         "Учите каждую форму целиком: обычного окончания здесь недостаточно.",
         "sein часто соединяет подлежащее с профессией, признаком, местом или состоянием: Ich bin Lehrer. Das Buch ist neu. Wir sind hier.",
-        "После sein не используется прямое дополнение в Akkusativ: обе части называют одного человека или предмет — Er ist ein Student.",
+        "После sein не используется прямое дополнение в Akkusativ (винительном падеже): обе части называют одного человека или предмет — Er ist ein Student.",
         "Произношение: ich bin [ɪç bɪn], du bist [duː bɪst], er ist [eːɐ̯ ɪst], wir sind [viːɐ̯ zɪnt]."
       ],
-      "table": [["ich", "bin"], ["du", "bist"], ["er/sie/es", "ist"], ["wir", "sind"], ["ihr", "seid"], ["sie/Sie", "sind"]],
+      "table": [["Pronomen / Местоимение", "Form von sein / Форма sein"], ["ich — я", "bin"], ["du — ты", "bist"], ["er/sie/es — он/она/оно", "ist"], ["wir — мы", "sind"], ["ihr — вы", "seid"], ["sie/Sie — они/Вы", "sind"]],
       "trainable": true
     },
     {
@@ -298,10 +298,10 @@
       "explanation_ru": [
         "Обратите особое внимание на du hast и er/sie/es hat.",
         "haben выражает обладание, отношения или состояние: Ich habe ein Auto. Sie hat zwei Kinder. Wir haben Zeit.",
-        "Существительное после haben часто является дополнением в Akkusativ. Поэтому у мужского рода ein меняется на einen: Er hat einen Bruder.",
+        "Существительное после haben часто является дополнением в Akkusativ (винительном падеже). Поэтому у мужского рода ein меняется на einen: Er hat einen Bruder.",
         "Произношение: ich habe [ɪç ˈhaːbə], du hast [duː hast], er hat [eːɐ̯ hat], wir haben [viːɐ̯ ˈhaːbn̩]."
       ],
-      "table": [["ich", "habe"], ["du", "hast"], ["er/sie/es", "hat"], ["wir", "haben"], ["ihr", "habt"], ["sie/Sie", "haben"]],
+      "table": [["Pronomen / Местоимение", "Form von haben / Форма haben"], ["ich — я", "habe"], ["du — ты", "hast"], ["er/sie/es — он/она/оно", "hat"], ["wir — мы", "haben"], ["ihr — вы", "habt"], ["sie/Sie — они/Вы", "haben"]],
       "trainable": true
     },
     {
@@ -314,23 +314,32 @@
       "explanation_de": [
         "Nomen nennen Personen oder Dinge, Verben beschreiben Handlungen und Adjektive Eigenschaften.",
         "Pronomen ersetzen Nomen, Adverbien ergänzen Umstände und Präpositionen verbinden Wörter.",
+        "Artikel begleiten Nomen, Numeralien nennen Zahlen und Konjunktionen verbinden Wörter oder Sätze.",
+        "Partikeln verändern eine Aussage, und Interjektionen drücken kurze Reaktionen oder Gefühle aus.",
         "Die Wortart erkennt man nicht nur an der Bedeutung, sondern an ihrer Aufgabe: schnell kann vor einem Nomen Adjektiv und bei einem Verb Adverb sein.",
         "Großschreibung ist ein starkes Signal für Nomen. Typische Verbendungen sind -en und -n; Artikel stehen direkt vor Nomen oder ihrer Adjektivgruppe."
       ],
       "explanation_ru": [
         "Существительные (Nomen, ед. ч. das Nomen; также das Substantiv) называют людей и предметы, глаголы (Verben, ед. ч. das Verb) обозначают действия, а прилагательные (Adjektive, ед. ч. das Adjektiv) — признаки.",
         "Местоимения (Pronomen, ед. ч. das Pronomen) заменяют существительные, наречия (Adverbien, ед. ч. das Adverb) уточняют обстоятельства, а предлоги (Präpositionen, ед. ч. die Präposition) связывают слова.",
+        "Артикли (Artikel, ед. ч. der Artikel) сопровождают существительные, числительные (Numeralien или Zahlwörter, ед. ч. das Numerale или das Zahlwort) называют числа, а союзы (Konjunktionen, ед. ч. die Konjunktion) соединяют слова или предложения.",
+        "Частицы (Partikeln, ед. ч. die Partikel) меняют оттенок высказывания, а междометия (Interjektionen, ед. ч. die Interjektion) выражают короткую реакцию или чувство.",
         "Часть речи определяется не только значением, но и ролью: schnell перед существительным может быть прилагательным, а рядом с глаголом — наречием.",
         "Заглавная буква — сильный признак существительного. Типичные окончания инфинитива — -en и -n; артикль стоит перед существительным или его группой с прилагательным."
       ],
       "table": [
         ["Deutsch", "Русский", "Beispiel"],
-        ["Nomen / Substantiv", "существительное", "der Tisch"],
-        ["Verb", "глагол", "lernen"],
-        ["Adjektiv", "прилагательное", "klein"],
-        ["Pronomen", "местоимение", "ich"],
-        ["Adverb", "наречие", "heute"],
-        ["Präposition", "предлог", "in"]
+        ["Nomen / Substantiv", "существительное", "der Tisch — стол"],
+        ["Verb", "глагол", "lernen — учить"],
+        ["Adjektiv", "прилагательное", "klein — маленький"],
+        ["Pronomen", "местоимение", "ich — я"],
+        ["Adverb", "наречие", "heute — сегодня"],
+        ["Präposition", "предлог", "in — в"],
+        ["Artikel", "артикль", "der — определённый артикль"],
+        ["Numerale / Zahlwort", "числительное", "zwei — два"],
+        ["Konjunktion", "союз", "und — и"],
+        ["Partikel", "частица", "nicht — не"],
+        ["Interjektion", "междометие", "hallo — привет"]
       ],
       "trainable": true
     },
@@ -353,7 +362,7 @@
         "Учите также форму множественного числа: её не всегда можно предсказать — der Tisch — die Tische, das Buch — die Bücher.",
         "Сложные существительные пишутся слитно. Последнее существительное определяет род и артикль: die Haus+tür, потому что Tür женского рода."
       ],
-      "table": [["Person", "die Frau"], ["Ort", "die Schule"], ["Gegenstand", "der Tisch"]],
+      "table": [["Kategorie / Категория", "Beispiel / Пример"], ["Person / Человек", "die Frau — женщина"], ["Ort / Место", "die Schule — школа"], ["Gegenstand / Предмет", "der Tisch — стол"]],
       "trainable": true
     },
     {
@@ -377,7 +386,7 @@
         "Во множественном числе определённый артикль всегда die. Неопределённого артикля множественного числа нет: Bücher или einige Bücher.",
         "Грамматический род не всегда совпадает с естественным полом или родом русского слова. Поэтому артикль нужно учить вместе с существительным."
       ],
-      "table": [["maskulin", "der / ein"], ["feminin", "die / eine"], ["neutral", "das / ein"], ["Plural", "die"]],
+      "table": [["Genus / Род", "Artikel / Артикль"], ["maskulin / мужской", "der / ein"], ["feminin / женский", "die / eine"], ["neutral / средний", "das / ein"], ["Plural / множественное число", "die"]],
       "trainable": true
     },
     {
@@ -399,7 +408,7 @@
         "После sein прилагательное остаётся без окончания: Das Haus ist klein. Перед существительным оно получает окончание: ein kleines Haus.",
         "Многие немецкие прилагательные могут употребляться как наречия без изменения формы: Er ist schnell. Er spricht schnell."
       ],
-      "table": [["Adjektiv", "ein kleines Haus"], ["Adverb", "heute lernen / schnell sprechen"]],
+      "table": [["Wortart / Часть речи", "Beispiel / Пример"], ["Adjektiv / Прилагательное", "ein kleines Haus — маленький дом"], ["Adverb / Наречие", "heute lernen — учиться сегодня; schnell sprechen — говорить быстро"]],
       "trainable": true
     },
     {
@@ -423,7 +432,7 @@
         "in может обозначать место или направление. Позднее падеж покажет разницу: in der Schule, in die Schule.",
         "Предлоги полезнее учить в коротких сочетаниях: aus Berlin, mit dem Bus, für meine Mutter."
       ],
-      "table": [["in", "в"], ["aus", "из"], ["mit", "с"], ["für", "для"], ["bei", "у / при"]],
+      "table": [["Präposition / Предлог", "Bedeutung / Значение"], ["in", "в"], ["aus", "из"], ["mit", "с"], ["für", "для"], ["bei", "у / при"]],
       "trainable": true
     },
     {
@@ -447,7 +456,7 @@
         "Если впереди стоит другой элемент, подлежащее обычно следует сразу после глагола. Такая перестановка называется инверсией.",
         "Обстоятельства часто располагаются в порядке «время перед местом»: Ich lerne heute zu Hause. Для начального уровня это надёжная модель."
       ],
-      "table": [["Position 1", "Position 2", "Rest"], ["Ich", "lerne", "Deutsch."], ["Heute", "lerne", "ich Deutsch."]],
+      "table": [["Position 1 / Позиция 1", "Position 2 / Позиция 2", "Rest / Остальное"], ["Ich", "lerne", "Deutsch. — Я учу немецкий."], ["Heute", "lerne", "ich Deutsch. — Сегодня я учу немецкий."]],
       "trainable": true
     },
     {
@@ -473,7 +482,7 @@
         "Глаголы sein и haben тоже ставятся прямо в начало: Bist du müde? Sind Sie verheiratet? Hast du Zeit?",
         "Можно ответить кратко Ja или Nein либо полным предложением: Ja, ich lerne Deutsch. Nein, ich lerne nicht."
       ],
-      "table": [["Aussage", "Du lernst Deutsch."], ["Frage", "Lernst du Deutsch?"], ["Schema", "Verb + Subjekt + Rest?"], ["Ja", "Ja, ich lerne Deutsch."], ["Nein", "Nein, ich lerne nicht."]],
+      "table": [["Deutsch / Термин", "Beispiel und Bedeutung / Пример и смысл"], ["Aussage / Утверждение", "Du lernst Deutsch. — Ты учишь немецкий."], ["Frage / Вопрос", "Lernst du Deutsch? — Ты учишь немецкий?"], ["Schema / Схема", "Verb + Subjekt + Rest? — глагол + подлежащее + остальное?"], ["Ja / Да", "Ja, ich lerne Deutsch. — Да, я учу немецкий."], ["Nein / Нет", "Nein, ich lerne nicht. — Нет, я не учу немецкий."]],
       "trainable": true
     },
     {
@@ -494,10 +503,10 @@
         "Wer спрашивает о человеке, was — о предмете, wo — о месте, wann — о времени, wie — о способе.",
         "После вопросительного слова обычно стоит спрягаемый глагол: Wo wohnst du?",
         "Wo спрашивает о месте, wohin — о направлении, woher — о происхождении: Wo bist du? Wohin gehst du? Woher kommst du?",
-        "Wer может быть самим подлежащим, тогда сразу после него идёт глагол: Wer kommt heute? С wen человек является дополнением в Akkusativ: Wen siehst du?",
+        "Wer может быть самим подлежащим (das Subjekt), тогда сразу после него идёт глагол: Wer kommt heute? С wen человек является дополнением в Akkusativ (винительном падеже): Wen siehst du?",
         "Wie часто соединяется с другими словами: Wie alt? Wie viel? Wie lange? Так вопрос становится точнее."
       ],
-      "table": [["Wer?", "Person"], ["Was?", "Sache"], ["Wo?", "Ort"], ["Wann?", "Zeit"], ["Wie?", "Art"]],
+      "table": [["Fragewort / Вопросительное слово", "Wonach? / О чём спрашивает?"], ["Wer? — кто?", "Person / человек"], ["Was? — что?", "Sache / предмет"], ["Wo? — где?", "Ort / место"], ["Wann? — когда?", "Zeit / время"], ["Wie? — как?", "Art / способ"]],
       "trainable": true
     },
     {
@@ -521,14 +530,14 @@
         "nicht ставится непосредственно перед той частью, которая особенно отрицается: nicht heute, nicht in Berlin, nicht teuer. При общем отрицании оно часто находится ближе к концу.",
         "С определённым артиклем используется nicht, а не kein: Das ist nicht der Tisch."
       ],
-      "table": [["kein", "Ich habe kein Auto."], ["nicht", "Ich komme heute nicht."]],
+      "table": [["Negation / Отрицание", "Beispiel / Пример"], ["kein", "Ich habe kein Auto. — У меня нет машины."], ["nicht", "Ich komme heute nicht. — Я сегодня не приду."]],
       "trainable": true
     },
     {
       "id": "cases_intro",
       "order": 16,
       "title_de": "Kasus: Nominativ und Akkusativ",
-      "title_ru": "Падежи: Nominativ и Akkusativ",
+      "title_ru": "Падежи: Nominativ (именительный) и Akkusativ (винительный)",
       "summary_de": "Der Kasus zeigt die Aufgabe eines Nomens im Satz.",
       "summary_ru": "Падеж показывает роль существительного в предложении.",
       "explanation_de": [
@@ -539,13 +548,13 @@
         "Nicht jedes Verb hat ein Akkusativobjekt. Lerne den Kasus zusammen mit dem Verb und einem Beispielsatz."
       ],
       "explanation_ru": [
-        "Nominativ обычно называет того, кто действует. Akkusativ часто обозначает прямой объект действия.",
+        "Nominativ (именительный падеж) обычно называет того, кто действует. Akkusativ (винительный падеж) часто обозначает прямой объект действия.",
         "У существительных мужского рода der меняется на den: Der Mann kauft den Apfel. Остальные формы будут позже.",
-        "В Akkusativ заметно меняются только артикли мужского рода: der/ein превращаются в den/einen. die/eine, das/ein и множественное die остаются без изменения.",
-        "К подлежащему задавайте вопрос wer или was, к прямому дополнению — wen или was: Wer kauft? Der Mann. Wen kauft er? Den Apfel.",
-        "Не каждый глагол требует Akkusativ. Управление лучше учить вместе с глаголом и примером предложения."
+        "В Akkusativ (винительном падеже) заметно меняются только артикли мужского рода: der/ein превращаются в den/einen. die/eine, das/ein и множественное die остаются без изменения.",
+        "К подлежащему (das Subjekt) задавайте вопрос wer или was, к прямому дополнению (das Objekt) — wen или was: Wer kauft? Der Mann. Wen kauft er? Den Apfel.",
+        "Не каждый глагол требует Akkusativ (винительного падежа). Управление лучше учить вместе с глаголом и примером предложения."
       ],
-      "table": [["Nominativ", "Wer oder was?", "der Mann"], ["Akkusativ", "Wen oder was?", "den Apfel"]],
+      "table": [["Kasus / Падеж", "Frage / Вопрос", "Beispiel / Пример"], ["Nominativ / Именительный", "Wer oder was? — кто или что?", "der Mann — мужчина"], ["Akkusativ / Винительный", "Wen oder was? — кого или что?", "den Apfel — яблоко"]],
       "trainable": true
     }
   ],
