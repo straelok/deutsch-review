@@ -6,9 +6,13 @@ int wordSuccessPercent(List<bool> recentOutcomes) {
   return (correct * 100 / recentOutcomes.length).round();
 }
 
-int wordSelectionWeight(List<bool> recentOutcomes) {
+int wordSelectionWeight(
+  List<bool> recentOutcomes, {
+  int maxWeight = 10,
+}) {
+  final safeMaxWeight = maxWeight.clamp(1, 1000000);
   final success = wordSuccessPercent(recentOutcomes) / 100;
-  return 1 + ((1 - success) * 9).round();
+  return 1 + ((1 - success) * (safeMaxWeight - 1)).round();
 }
 
 List<String> buildWeightedQueue({
@@ -16,6 +20,7 @@ List<String> buildWeightedQueue({
   required Map<String, List<bool>> recentOutcomes,
   required int length,
   required Random random,
+  int maxWeight = 10,
   String? previousItemId,
 }) {
   if (itemIds.isEmpty || length <= 0) return const [];
@@ -27,7 +32,10 @@ List<String> buildWeightedQueue({
         ? itemIds
         : itemIds.where((id) => id != previous).toList(growable: false);
     final weights = candidates
-        .map((id) => wordSelectionWeight(recentOutcomes[id] ?? const []))
+        .map((id) => wordSelectionWeight(
+              recentOutcomes[id] ?? const [],
+              maxWeight: maxWeight,
+            ))
         .toList(growable: false);
     final total = weights.fold<int>(0, (sum, weight) => sum + weight);
     var selection = random.nextInt(total);

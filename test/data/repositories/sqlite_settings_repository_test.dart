@@ -24,6 +24,7 @@ void main() {
       includeImportantLessons: false,
       toGermanLessons: 1,
       toGermanTasks: 12,
+      problemWordMaxWeight: 37,
       reminderMinutes: [540, 1080],
     );
     await repository.saveAppSettings(settings);
@@ -32,6 +33,23 @@ void main() {
     expect(saved.includeImportantLessons, isFalse);
     expect(saved.toGermanLessons, 1);
     expect(saved.toGermanTasks, 12);
+    expect(saved.problemWordMaxWeight, 37);
     expect(saved.reminderMinutes, [540, 1080]);
+  });
+
+  test('uses the previous weight by default and bounds imported values', () {
+    expect(AppSettings.fromJson(const {}).problemWordMaxWeight, 10);
+    expect(
+      AppSettings.fromJson(
+        const {'problemWordMaxWeight': 0},
+      ).problemWordMaxWeight,
+      1,
+    );
+    expect(
+      AppSettings.fromJson(
+        const {'problemWordMaxWeight': 2000000},
+      ).problemWordMaxWeight,
+      1000000,
+    );
   });
 }

@@ -232,6 +232,10 @@ void main() {
 
     await tester.tap(find.byKey(const Key('app-settings')));
     await tester.pumpAndSettle();
+    await tester.enterText(
+      find.byKey(const Key('problem-word-max-weight')),
+      '37',
+    );
     await tester.tap(find.byKey(const Key('include-important-lessons')));
     await tester.scrollUntilVisible(
       find.byKey(const Key('save-settings')),
@@ -245,6 +249,11 @@ void main() {
       (await SqliteSettingsRepository(database).readAppSettings())
           .includeImportantLessons,
       isFalse,
+    );
+    expect(
+      (await SqliteSettingsRepository(database).readAppSettings())
+          .problemWordMaxWeight,
+      37,
     );
   });
 

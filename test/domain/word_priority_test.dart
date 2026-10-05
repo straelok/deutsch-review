@@ -12,6 +12,12 @@ void main() {
     expect(wordSelectionWeight(List<bool>.filled(10, true)), 1);
   });
 
+  test('uses a configurable maximum problem-word weight', () {
+    expect(wordSelectionWeight(const [], maxWeight: 25), 25);
+    expect(wordSelectionWeight(const [true, false], maxWeight: 25), 13);
+    expect(wordSelectionWeight(const [], maxWeight: 1), 1);
+  });
+
   test('builds a queue without immediate repeats when possible', () {
     final queue = buildWeightedQueue(
       itemIds: const ['a', 'b', 'c'],

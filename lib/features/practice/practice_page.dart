@@ -1502,6 +1502,7 @@ class _PracticePageState extends State<PracticePage> {
       recentOutcomes: outcomes,
       length: length,
       random: _random,
+      maxWeight: widget.appSettings.problemWordMaxWeight,
       previousItemId: previousItemId,
     );
     final byId = {for (final item in candidates) item.id: item};

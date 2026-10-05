@@ -9,6 +9,7 @@ final class AppSettings {
     this.numberTasks = 20,
     this.grammarLessons = 2,
     this.grammarTasks = 10,
+    this.problemWordMaxWeight = 10,
     this.remindersEnabled = true,
     this.reminderMinutes = const [810, 990, 1170],
   });
@@ -22,6 +23,7 @@ final class AppSettings {
   final int numberTasks;
   final int grammarLessons;
   final int grammarTasks;
+  final int problemWordMaxWeight;
   final bool remindersEnabled;
   final List<int> reminderMinutes;
 
@@ -35,6 +37,7 @@ final class AppSettings {
     int? numberTasks,
     int? grammarLessons,
     int? grammarTasks,
+    int? problemWordMaxWeight,
     bool? remindersEnabled,
     List<int>? reminderMinutes,
   }) =>
@@ -49,6 +52,7 @@ final class AppSettings {
         numberTasks: numberTasks ?? this.numberTasks,
         grammarLessons: grammarLessons ?? this.grammarLessons,
         grammarTasks: grammarTasks ?? this.grammarTasks,
+        problemWordMaxWeight: problemWordMaxWeight ?? this.problemWordMaxWeight,
         remindersEnabled: remindersEnabled ?? this.remindersEnabled,
         reminderMinutes: reminderMinutes ?? this.reminderMinutes,
       );
@@ -63,6 +67,7 @@ final class AppSettings {
         'numberTasks': numberTasks,
         'grammarLessons': grammarLessons,
         'grammarTasks': grammarTasks,
+        'problemWordMaxWeight': problemWordMaxWeight,
         'remindersEnabled': remindersEnabled,
         'reminderMinutes': reminderMinutes,
       };
@@ -78,6 +83,8 @@ final class AppSettings {
         numberTasks: _bounded(json['numberTasks'], 20, 1, 50),
         grammarLessons: _bounded(json['grammarLessons'], 2, 0, 10),
         grammarTasks: _bounded(json['grammarTasks'], 10, 1, 50),
+        problemWordMaxWeight:
+            _bounded(json['problemWordMaxWeight'], 10, 1, 1000000),
         remindersEnabled: json['remindersEnabled'] as bool? ?? true,
         reminderMinutes: _minutes(json['reminderMinutes']),
       );

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../../domain/app_settings.dart';
 import '../../domain/repositories/settings_repository.dart';
@@ -22,13 +23,21 @@ class SettingsPage extends StatefulWidget {
 }
 
 class _SettingsPageState extends State<SettingsPage> {
+  final _problemWeightController = TextEditingController();
   AppSettings? _settings;
+  String? _problemWeightError;
   bool _saving = false;
 
   @override
   void initState() {
     super.initState();
     _load();
+  }
+
+  @override
+  void dispose() {
+    _problemWeightController.dispose();
+    super.dispose();
   }
 
   @override
@@ -63,6 +72,8 @@ class _SettingsPageState extends State<SettingsPage> {
                     settings.copyWith(includeImportantLessons: value),
                   ),
                 ),
+                const Divider(height: 32),
+                _problemWordWeight(settings),
                 const Divider(height: 32),
                 _lessonGroup(
                   title: s.toGermanCategory,
@@ -209,6 +220,64 @@ class _SettingsPageState extends State<SettingsPage> {
     );
   }
 
+  Widget _problemWordWeight(AppSettings settings) {
+    final s = widget.strings;
+    final mediumWeight =
+        1 + ((settings.problemWordMaxWeight - 1) * 0.5).round();
+    return Card(
+      margin: EdgeInsets.zero,
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Text(
+              s.choose(
+                'Gewicht problematischer Wörter',
+                'Вес проблемных слов',
+              ),
+              style: Theme.of(context).textTheme.titleMedium,
+            ),
+            const SizedBox(height: 6),
+            Text(s.choose(
+              'Der Wert bestimmt, wie viel häufiger Wörter mit Fehlern ausgewählt werden. Er gilt nur für Wortschatzlektionen.',
+              'Значение определяет, насколько чаще выбираются слова с ошибками. Оно действует только в словарных уроках.',
+            )),
+            const SizedBox(height: 12),
+            TextField(
+              key: const Key('problem-word-max-weight'),
+              controller: _problemWeightController,
+              keyboardType: TextInputType.number,
+              inputFormatters: [
+                FilteringTextInputFormatter.digitsOnly,
+                LengthLimitingTextInputFormatter(7),
+              ],
+              decoration: InputDecoration(
+                labelText: s.choose('Maximalgewicht', 'Максимальный вес'),
+                suffixText: '×',
+                errorText: _problemWeightError,
+              ),
+              onChanged: _changeProblemWeight,
+            ),
+            const SizedBox(height: 10),
+            Text(s.choose(
+              'Bei der aktuellen Einstellung: 0 % richtige Antworten = ${settings.problemWordMaxWeight}×, 50 % = $mediumWeight×, 100 % = 1×. Der Wert 10 entspricht dem bisherigen Verhalten; 1 schaltet die Verstärkung aus.',
+              'При текущем значении: 0% правильных ответов = ${settings.problemWordMaxWeight}×, 50% = $mediumWeight×, 100% = 1×. Значение 10 соответствует прежней работе, а 1 отключает усиление.',
+            )),
+            const SizedBox(height: 6),
+            Text(
+              s.choose(
+                'Formel: 1 + runden((1 − Erfolgsquote) × (Maximalgewicht − 1)). Zulässig: ganze Zahl von 1 bis 1 000 000.',
+                'Формула: 1 + округление((1 − успешность) × (максимальный вес − 1)). Допустимо целое число от 1 до 1 000 000.',
+              ),
+              style: Theme.of(context).textTheme.bodySmall,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
   Widget _counter({
     required String label,
     required int value,
@@ -234,10 +303,28 @@ class _SettingsPageState extends State<SettingsPage> {
 
   Future<void> _load() async {
     final settings = await widget.repository.readAppSettings();
-    if (mounted) setState(() => _settings = settings);
+    if (!mounted) return;
+    _problemWeightController.text = '${settings.problemWordMaxWeight}';
+    setState(() => _settings = settings);
   }
 
   void _update(AppSettings settings) => setState(() => _settings = settings);
+
+  void _changeProblemWeight(String value) {
+    final parsed = int.tryParse(value);
+    final valid = parsed != null && parsed >= 1 && parsed <= 1000000;
+    setState(() {
+      _problemWeightError = valid
+          ? null
+          : widget.strings.choose(
+              'Gib eine ganze Zahl von 1 bis 1 000 000 ein.',
+              'Введите целое число от 1 до 1 000 000.',
+            );
+      if (valid) {
+        _settings = _settings!.copyWith(problemWordMaxWeight: parsed);
+      }
+    });
+  }
 
   Future<void> _changeTime(int index) async {
     final value = _settings!.reminderMinutes[index];
@@ -279,6 +366,8 @@ class _SettingsPageState extends State<SettingsPage> {
   }
 
   Future<void> _save() async {
+    _changeProblemWeight(_problemWeightController.text);
+    if (_problemWeightError != null) return;
     setState(() => _saving = true);
     await widget.repository.saveAppSettings(_settings!);
     await widget.reminders?.settingsChanged();
