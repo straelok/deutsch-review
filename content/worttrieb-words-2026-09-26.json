@@ -1,6 +1,6 @@
 {
   "format_version": 2,
-  "exported_at": "2026-10-04T22:00:00.000Z",
+  "exported_at": "2026-10-05T22:00:00.000Z",
   "words": [
     {
       "id": "c1000001-0000-4000-8000-000000000001",
@@ -3988,6 +3988,30 @@
     {"id":"d7000019","type":"verb","german":"gehen","translation_ru":"идти; ходить","example":"Du gehst nach Hause.; Wir gehen in die Küche."},
     {"id":"d7000020","type":"verb","german":"rufen","translation_ru":"звать; звонить","example":"Sie ruft mich an.; Ich rufe den Arzt."},
     {"id":"d7000021","type":"verb","german":"bleiben","translation_ru":"оставаться","example":"Er bleibt hier.; Wir bleiben zu Hause."},
-    {"id":"d7000022","type":"verb","german":"pfeifen","translation_ru":"свистеть","example":"Wir pfeifen eine Melodie.; Er pfeift leise."}
+    {"id":"d7000022","type":"verb","german":"pfeifen","translation_ru":"свистеть","example":"Wir pfeifen eine Melodie.; Er pfeift leise."},
+    {"id":"d8000001","type":"verb","german":"werfen","translation_ru":"бросать; кидать","example":"Du wirfst den Ball.; Er wirft den Brief in den Kasten.","note":"Сильный глагол: du wirfst, er/sie/es wirft."},
+    {"id":"d8000002","type":"verb","german":"treffen","translation_ru":"встречать; встречаться","example":"Du triffst deine Freundin.; Wir treffen uns am Bahnhof.","note":"Сильный глагол: du triffst, er/sie/es trifft."},
+    {"id":"d8000003","type":"verb","german":"laufen","translation_ru":"бежать; ходить пешком","example":"Das Kind läuft schnell.; Wir laufen zum Park.","note":"Сильный глагол: du läufst, er/sie/es läuft."},
+    {"id":"d8000004","type":"verb","german":"schlafen","translation_ru":"спать","example":"Du schläfst lange.; Das Baby schläft schon.","note":"Сильный глагол: du schläfst, er/sie/es schläft."},
+    {"id":"d8000005","type":"verb","german":"fangen","translation_ru":"ловить; поймать","example":"Sie fängt den Ball.; Der Kurs fängt um neun an.","note":"Сильный глагол: du fängst, er/sie/es fängt."},
+    {"id":"d8000006","type":"verb","german":"essen","translation_ru":"есть; кушать","example":"Du isst einen Apfel.; Wir essen zusammen.","note":"Сильный глагол: du isst, er/sie/es isst."},
+    {"id":"d8000007","type":"verb","german":"waschen","translation_ru":"мыть; стирать","example":"Du wäschst die Hände.; Wir waschen die Kleidung.","note":"Сильный глагол: du wäschst, er/sie/es wäscht."},
+    {"id":"d8000008","type":"verb","german":"fahren","translation_ru":"ехать; ездить","example":"Du fährst mit dem Bus.; Wir fahren nach Berlin.","note":"Сильный глагол: du fährst, er/sie/es fährt."},
+    {"id":"d8000009","type":"verb","german":"halten","translation_ru":"держать; останавливаться","example":"Du hältst die Flasche.; Der Bus hält hier.","note":"Сильный глагол: du hältst, er/sie/es hält."},
+    {"id":"d8000010","type":"verb","german":"brechen","translation_ru":"ломать; разбивать","example":"Du brichst das Brot.; Das Glas bricht leicht.","note":"Сильный глагол: du brichst, er/sie/es bricht."},
+    {"id":"d8000011","type":"verb","german":"messen","translation_ru":"измерять","example":"Du misst den Tisch.; Sie misst die Breite.","note":"Сильный глагол: du misst, er/sie/es misst."},
+    {"id":"d8000012","type":"verb","german":"helfen","translation_ru":"помогать","example":"Du hilfst deiner Mutter.; Er hilft im Büro.","note":"Сильный глагол: du hilfst, er/sie/es hilft."},
+    {"id":"d8000013","type":"verb","german":"schlagen","translation_ru":"ударять; бить","example":"Du schlägst den Ball.; Die Uhr schlägt zwölf.","note":"Сильный глагол: du schlägst, er/sie/es schlägt."},
+    {"id":"d8000014","type":"verb","german":"tragen","translation_ru":"нести; носить","example":"Du trägst eine Tasche.; Sie trägt eine Brille.","note":"Сильный глагол: du trägst, er/sie/es trägt."},
+    {"id":"d8000015","type":"verb","german":"fallen","translation_ru":"падать","example":"Das Glas fällt auf den Boden.; Im Herbst fallen die Blätter.","note":"Сильный глагол: du fällst, er/sie/es fällt."},
+    {"id":"d8000016","type":"verb","german":"einkaufen","translation_ru":"делать покупки; закупаться","example":"Ich kaufe am Samstag ein.; Wir kaufen im Supermarkt ein.","note":"Отделяемый глагол: ein + kaufen."},
+    {"id":"d8000017","type":"verb","german":"fernsehen","translation_ru":"смотреть телевизор","example":"Die Kinder sehen am Abend fern.; Siehst du heute fern?","note":"Отделяемый сильный глагол: du siehst fern, er/sie/es sieht fern."},
+    {"id":"d8000018","type":"verb","german":"anrufen","translation_ru":"звонить по телефону","example":"Ich rufe dich später an.; Meine Eltern rufen heute an.","note":"Отделяемый глагол: an + rufen."},
+    {"id":"d8000019","type":"verb","german":"mitkommen","translation_ru":"идти или ехать вместе; присоединяться","example":"Kommst du heute mit?; Meine Schwester kommt auch mit.","note":"Отделяемый глагол: mit + kommen."},
+    {"id":"d8000020","type":"verb","german":"abfahren","translation_ru":"отправляться; отъезжать","example":"Der Zug fährt um acht ab.; Wann fährst du ab?","note":"Отделяемый сильный глагол: du fährst ab, er/sie/es fährt ab."},
+    {"id":"d8000021","type":"verb","german":"anfangen","translation_ru":"начинать; начинаться","example":"Der Unterricht fängt gleich an.; Wann fängst du an?","note":"Отделяемый сильный глагол: du fängst an, er/sie/es fängt an."},
+    {"id":"d8000022","type":"verb","german":"einsteigen","translation_ru":"садиться в транспорт","example":"Wir steigen am Bahnhof ein.; Wo steigt ihr ein?","note":"Отделяемый глагол: ein + steigen."},
+    {"id":"d8000023","type":"verb","german":"ankommen","translation_ru":"прибывать; приезжать","example":"Der Bus kommt pünktlich an.; Wir kommen um zehn an.","note":"Отделяемый глагол: an + kommen."},
+    {"id":"d8000024","type":"verb","german":"mitbringen","translation_ru":"приносить или привозить с собой","example":"Ich bringe Wasser mit.; Bringst du deinen Ausweis mit?","note":"Отделяемый глагол: mit + bringen."}
   ]
 }
