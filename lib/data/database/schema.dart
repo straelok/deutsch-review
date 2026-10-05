@@ -1,4 +1,4 @@
-const currentSchemaVersion = 9;
+const currentSchemaVersion = 10;
 
 const migrationFrom0To1 = '''
 CREATE TABLE learning_items (
@@ -506,6 +506,64 @@ SELECT
 FROM daily_sessions_v8 AS d;
 
 DROP TABLE daily_sessions_v8;
+
+CREATE UNIQUE INDEX daily_sessions_required_slot_idx
+  ON daily_sessions (local_date, slot)
+  WHERE slot IS NOT NULL;
+CREATE INDEX daily_sessions_date_status_idx
+  ON daily_sessions (local_date, status);
+''';
+
+const migrationFrom9To10 = '''
+ALTER TABLE grammar_topic_progress
+ADD COLUMN favorite INTEGER NOT NULL DEFAULT 0 CHECK (favorite IN (0, 1));
+
+ALTER TABLE daily_sessions RENAME TO daily_sessions_v9;
+
+CREATE TABLE daily_sessions (
+  id TEXT PRIMARY KEY NOT NULL,
+  local_date TEXT NOT NULL,
+  slot INTEGER CHECK (slot IS NULL OR slot BETWEEN 1 AND 40),
+  kind TEXT NOT NULL CHECK (kind IN (
+    'vocabulary_to_german',
+    'vocabulary_to_russian',
+    'important_vocabulary_to_german',
+    'important_vocabulary_to_russian',
+    'favorite_grammar',
+    'grammar',
+    'numbers'
+  )),
+  status TEXT NOT NULL CHECK (status IN ('planned', 'in_progress', 'completed')),
+  target_answers INTEGER NOT NULL CHECK (target_answers > 0),
+  answered_count INTEGER NOT NULL DEFAULT 0
+    CHECK (answered_count >= 0 AND answered_count <= target_answers),
+  queue_json TEXT NOT NULL CHECK (
+    json_valid(queue_json) AND json_type(queue_json) = 'array'
+  ),
+  last_item_id TEXT,
+  created_at TEXT NOT NULL,
+  updated_at TEXT NOT NULL,
+  completed_at TEXT,
+  content_version TEXT NOT NULL DEFAULT '2026.10.04.1',
+  CHECK (
+    (status = 'completed' AND answered_count = target_answers AND completed_at IS NOT NULL)
+    OR
+    (status != 'completed' AND answered_count < target_answers AND completed_at IS NULL)
+  )
+);
+
+INSERT INTO daily_sessions (
+  id, local_date, slot, kind, status, target_answers, answered_count,
+  queue_json, last_item_id, created_at, updated_at, completed_at,
+  content_version
+)
+SELECT
+  id, local_date, slot, kind, status, target_answers, answered_count,
+  queue_json, last_item_id, created_at, updated_at, completed_at,
+  content_version
+FROM daily_sessions_v9;
+
+DROP TABLE daily_sessions_v9;
 
 CREATE UNIQUE INDEX daily_sessions_required_slot_idx
   ON daily_sessions (local_date, slot)

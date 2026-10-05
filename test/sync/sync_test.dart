@@ -48,6 +48,11 @@ void main() {
       learned: true,
       now: now,
     );
+    await SqliteGrammarRepository(source).setFavorite(
+      topicId: 'regular_present',
+      favorite: true,
+      now: now.add(const Duration(seconds: 1)),
+    );
 
     final payload = SqliteSyncStore(source).buildPayload();
     final exportedSessions = payload['sessions']! as List<Object?>;
@@ -75,6 +80,11 @@ void main() {
     expect(
       (await SqliteGrammarRepository(target).progress())['regular_present']
           ?.learned,
+      isTrue,
+    );
+    expect(
+      (await SqliteGrammarRepository(target).progress())['regular_present']
+          ?.favorite,
       isTrue,
     );
   });

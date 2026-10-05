@@ -1,6 +1,7 @@
 final class AppSettings {
   const AppSettings({
     this.includeImportantLessons = true,
+    this.includeFavoriteGrammarLessons = true,
     this.toGermanLessons = 3,
     this.toGermanTasks = 20,
     this.toRussianLessons = 3,
@@ -15,6 +16,7 @@ final class AppSettings {
   });
 
   final bool includeImportantLessons;
+  final bool includeFavoriteGrammarLessons;
   final int toGermanLessons;
   final int toGermanTasks;
   final int toRussianLessons;
@@ -29,6 +31,7 @@ final class AppSettings {
 
   AppSettings copyWith({
     bool? includeImportantLessons,
+    bool? includeFavoriteGrammarLessons,
     int? toGermanLessons,
     int? toGermanTasks,
     int? toRussianLessons,
@@ -44,6 +47,8 @@ final class AppSettings {
       AppSettings(
         includeImportantLessons:
             includeImportantLessons ?? this.includeImportantLessons,
+        includeFavoriteGrammarLessons:
+            includeFavoriteGrammarLessons ?? this.includeFavoriteGrammarLessons,
         toGermanLessons: toGermanLessons ?? this.toGermanLessons,
         toGermanTasks: toGermanTasks ?? this.toGermanTasks,
         toRussianLessons: toRussianLessons ?? this.toRussianLessons,
@@ -59,6 +64,7 @@ final class AppSettings {
 
   Map<String, Object?> toJson() => {
         'includeImportantLessons': includeImportantLessons,
+        'includeFavoriteGrammarLessons': includeFavoriteGrammarLessons,
         'toGermanLessons': toGermanLessons,
         'toGermanTasks': toGermanTasks,
         'toRussianLessons': toRussianLessons,
@@ -75,6 +81,8 @@ final class AppSettings {
   factory AppSettings.fromJson(Map<String, Object?> json) => AppSettings(
         includeImportantLessons:
             json['includeImportantLessons'] as bool? ?? true,
+        includeFavoriteGrammarLessons:
+            json['includeFavoriteGrammarLessons'] as bool? ?? true,
         toGermanLessons: _bounded(json['toGermanLessons'], 3, 0, 10),
         toGermanTasks: _bounded(json['toGermanTasks'], 20, 1, 50),
         toRussianLessons: _bounded(json['toRussianLessons'], 3, 0, 10),

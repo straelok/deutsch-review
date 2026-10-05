@@ -168,6 +168,7 @@ class _GrammarPageState extends State<GrammarPage> {
   Widget _topicCard(GrammarTopic topic) {
     final s = widget.strings;
     final learned = _progress[topic.id]?.learned ?? false;
+    final favorite = _progress[topic.id]?.favorite ?? false;
     final available = _hasRequiredMaterial(topic.id);
     final summary =
         _summaries[topic.id] ?? const GrammarSummary(attempts: 0, correct: 0);
@@ -208,7 +209,19 @@ class _GrammarPageState extends State<GrammarPage> {
               ),
           ],
         ),
-        trailing: const Icon(Icons.chevron_right),
+        trailing: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            IconButton(
+              key: Key('toggle-favorite-topic-${topic.id}'),
+              tooltip:
+                  favorite ? s.removeGrammarFavorite : s.addGrammarFavorite,
+              onPressed: () => _toggleFavorite(topic.id, !favorite),
+              icon: Icon(favorite ? Icons.star : Icons.star_border),
+            ),
+            const Icon(Icons.chevron_right),
+          ],
+        ),
         onTap: () => _openTopic(topic),
       ),
     );
@@ -221,6 +234,7 @@ class _GrammarPageState extends State<GrammarPage> {
         topic: topic,
         strings: widget.strings,
         learned: _progress[topic.id]?.learned ?? false,
+        favorite: _progress[topic.id]?.favorite ?? false,
         canLearn: _hasRequiredMaterial(topic.id),
         requiredMaterial: _requiredMaterial(topic.id),
         summary: _summaries[topic.id] ??
@@ -228,6 +242,11 @@ class _GrammarPageState extends State<GrammarPage> {
         onToggle: (learned) => widget.repository.setLearned(
           topicId: topic.id,
           learned: learned,
+          now: DateTime.now().toUtc(),
+        ),
+        onFavorite: (favorite) => widget.repository.setFavorite(
+          topicId: topic.id,
+          favorite: favorite,
           now: DateTime.now().toUtc(),
         ),
         onAddAndLearn:
@@ -240,6 +259,16 @@ class _GrammarPageState extends State<GrammarPage> {
       await _load();
       widget.onChanged();
     }
+  }
+
+  Future<void> _toggleFavorite(String topicId, bool favorite) async {
+    await widget.repository.setFavorite(
+      topicId: topicId,
+      favorite: favorite,
+      now: DateTime.now().toUtc(),
+    );
+    await _load();
+    widget.onChanged();
   }
 
   bool _canPractice(GrammarTopic topic) =>
@@ -366,10 +395,12 @@ class _GrammarTopicDialog extends StatefulWidget {
     required this.topic,
     required this.strings,
     required this.learned,
+    required this.favorite,
     required this.canLearn,
     required this.requiredMaterial,
     required this.summary,
     this.onToggle,
+    this.onFavorite,
     this.onAddAndLearn,
     this.onPractice,
   });
@@ -377,10 +408,12 @@ class _GrammarTopicDialog extends StatefulWidget {
   final GrammarTopic topic;
   final UiStrings strings;
   final bool learned;
+  final bool favorite;
   final bool canLearn;
   final String requiredMaterial;
   final GrammarSummary summary;
   final Future<void> Function(bool learned)? onToggle;
+  final Future<void> Function(bool favorite)? onFavorite;
   final Future<void> Function()? onAddAndLearn;
   final VoidCallback? onPractice;
 
@@ -390,7 +423,9 @@ class _GrammarTopicDialog extends StatefulWidget {
 
 class _GrammarTopicDialogState extends State<_GrammarTopicDialog> {
   late bool _learned = widget.learned;
+  late bool _favorite = widget.favorite;
   bool _busy = false;
+  bool _changed = false;
 
   @override
   Widget build(BuildContext context) {
@@ -452,7 +487,7 @@ class _GrammarTopicDialogState extends State<_GrammarTopicDialog> {
       ),
       actions: [
         TextButton(
-          onPressed: () => Navigator.pop(context, false),
+          onPressed: () => Navigator.pop(context, _changed),
           child: Text(s.close),
         ),
         if (widget.onToggle != null)
@@ -460,6 +495,15 @@ class _GrammarTopicDialogState extends State<_GrammarTopicDialog> {
             key: Key('toggle-topic-${topic.id}'),
             onPressed: _busy ? null : _toggle,
             child: Text(_learned ? s.markNotLearned : s.markLearned),
+          ),
+        if (widget.onFavorite != null)
+          OutlinedButton.icon(
+            key: Key('dialog-toggle-favorite-topic-${topic.id}'),
+            onPressed: _busy ? null : _toggleFavorite,
+            icon: Icon(_favorite ? Icons.star : Icons.star_border),
+            label: Text(
+              _favorite ? s.removeGrammarFavorite : s.addGrammarFavorite,
+            ),
           ),
         if (widget.onPractice != null)
           FilledButton.icon(
@@ -470,6 +514,17 @@ class _GrammarTopicDialogState extends State<_GrammarTopicDialog> {
           ),
       ],
     );
+  }
+
+  Future<void> _toggleFavorite() async {
+    setState(() => _busy = true);
+    await widget.onFavorite!(!_favorite);
+    if (!mounted) return;
+    setState(() {
+      _favorite = !_favorite;
+      _busy = false;
+      _changed = true;
+    });
   }
 
   Future<void> _toggle() async {

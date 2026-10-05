@@ -207,6 +207,15 @@ void main() {
     expect(grammar.kind, DailySessionKind.grammar);
     expect(grammar.targetAnswers, 10);
 
+    final favoriteGrammar = await repository.createExtra(
+      localDate: '2026-09-24',
+      now: now,
+      kind: DailySessionKind.favoriteGrammar,
+    );
+    expect(favoriteGrammar.isRequired, isFalse);
+    expect(favoriteGrammar.kind, DailySessionKind.favoriteGrammar);
+    expect(favoriteGrammar.targetAnswers, 10);
+
     final numbers = await repository.createExtra(
       localDate: '2026-09-24',
       now: now,

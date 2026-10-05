@@ -31,6 +31,7 @@ void main() {
 
     expect(find.text('0 von 8 Sitzungen abgeschlossen'), findsOneWidget);
     expect(find.text('Wörter auf Deutsch · Übung 1'), findsNothing);
+    await _expandCategory(tester, 'vocabulary-to-german');
     expect(
       find.byKey(
         const Key('session-category-action-vocabulary-to-german'),
@@ -222,6 +223,25 @@ void main() {
     expect(find.text('учить'), findsNothing);
   });
 
+  testWidgets('shows important lessons in a highlighted top block', (
+    tester,
+  ) async {
+    final database = AppDatabase.inMemory();
+    addTearDown(database.close);
+
+    await tester.pumpWidget(_app(database));
+    await tester.pumpAndSettle();
+
+    final important = find.byKey(const Key('important-lessons-block'));
+    final regular = find.byKey(
+      const Key('session-category-progress-vocabulary-to-german'),
+    );
+    await _expandCategory(tester, 'vocabulary-to-german');
+    expect(important, findsOneWidget);
+    expect(tester.getTopLeft(important).dy,
+        lessThan(tester.getTopLeft(regular).dy));
+  });
+
   testWidgets('settings can hide important lesson categories', (tester) async {
     final database = AppDatabase.inMemory();
     addTearDown(database.close);
@@ -229,25 +249,39 @@ void main() {
     await tester.pumpWidget(_app(database));
     await tester.pumpAndSettle();
     expect(find.text('Wichtige Wörter'), findsOneWidget);
+    await tester.scrollUntilVisible(find.text('Grammatik-Favoriten'), 300);
+    await tester.pumpAndSettle();
+    expect(find.text('Grammatik-Favoriten'), findsOneWidget);
 
     await tester.tap(find.byKey(const Key('app-settings')));
     await tester.pumpAndSettle();
+    await tester.tap(find.byKey(const Key('include-important-lessons')));
+    await tester.pump();
+    await tester.tap(
+      find.byKey(const Key('include-favorite-grammar-lessons')),
+    );
     await tester.enterText(
       find.byKey(const Key('problem-word-max-weight')),
       '37',
     );
-    await tester.tap(find.byKey(const Key('include-important-lessons')));
     await tester.scrollUntilVisible(
       find.byKey(const Key('save-settings')),
       500,
+      scrollable: find.byType(Scrollable).first,
     );
     await tester.tap(find.byKey(const Key('save-settings')));
     await tester.pumpAndSettle();
 
     expect(find.text('Wichtige Wörter'), findsNothing);
+    expect(find.text('Grammatik-Favoriten'), findsNothing);
     expect(
       (await SqliteSettingsRepository(database).readAppSettings())
           .includeImportantLessons,
+      isFalse,
+    );
+    expect(
+      (await SqliteSettingsRepository(database).readAppSettings())
+          .includeFavoriteGrammarLessons,
       isFalse,
     );
     expect(
@@ -401,6 +435,7 @@ void main() {
 
     await tester.tap(find.byKey(const Key('back-to-plan')));
     await tester.pumpAndSettle();
+    await _expandCategory(tester, 'vocabulary-to-german');
     expect(find.textContaining('1 von 20 Antworten'), findsOneWidget);
     expect(find.text('Lektion fortsetzen'), findsOneWidget);
 
@@ -784,6 +819,7 @@ void main() {
 
     await tester.pumpWidget(_app(database));
     await tester.pumpAndSettle();
+    await _expandCategory(tester, 'vocabulary-to-german');
 
     expect(
       find.byKey(
@@ -825,6 +861,7 @@ void main() {
 
     await tester.pumpWidget(_app(database));
     await tester.pumpAndSettle();
+    await _expandCategory(tester, 'vocabulary-to-german');
 
     expect(find.text('Lektion fortsetzen'), findsOneWidget);
     await tester.tap(
@@ -894,6 +931,53 @@ void main() {
     await tester.pump(const Duration(milliseconds: 200));
     expect(find.text('lernen'), findsOneWidget);
     expect(find.byKey(const Key('grammar-form-ich')), findsOneWidget);
+  });
+
+  testWidgets('marks a grammar favorite and starts its lesson', (
+    tester,
+  ) async {
+    final database = AppDatabase.inMemory();
+    addTearDown(database.close);
+    final catalog = _grammarCatalog();
+    await SqliteLearningItemRepository(database).save(_verb());
+    await SqliteGrammarRepository(database).setLearned(
+      topicId: 'regular_present',
+      learned: true,
+      now: DateTime.now().toUtc(),
+    );
+
+    await tester.pumpWidget(_app(database, grammarCatalog: catalog));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Grammatik'));
+    await tester.pumpAndSettle();
+    await tester.tap(
+      find.byKey(const Key('toggle-favorite-topic-regular_present')),
+    );
+    await tester.pumpAndSettle();
+
+    expect(
+      (await SqliteGrammarRepository(database).progress())['regular_present']
+          ?.favorite,
+      isTrue,
+    );
+
+    await tester.tap(find.text('Heute'));
+    await tester.pumpAndSettle();
+    await tester.scrollUntilVisible(
+      find.byKey(const Key('create-favorite-grammar-session')),
+      300,
+    );
+    await tester.pumpAndSettle();
+    await tester.tap(
+      find.byKey(const Key('create-favorite-grammar-session')),
+    );
+    await tester.pumpAndSettle();
+
+    expect(find.byKey(const Key('grammar-form-ich')), findsOneWidget);
+    final session = database.connection
+        .select("SELECT * FROM daily_sessions WHERE kind = 'favorite_grammar'")
+        .single;
+    expect(session['status'], 'in_progress');
   });
 
   testWidgets('filters grammar topics by learning status', (tester) async {

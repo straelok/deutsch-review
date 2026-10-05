@@ -49,6 +49,16 @@ final class UiStrings {
         'Markiere zuerst wichtige Wörter in deiner Wörterliste.',
         'Сначала отметьте важные слова в словаре.',
       );
+  String get favoriteGrammarCategory =>
+      choose('Grammatik-Favoriten', 'Избранная грамматика');
+  String get noFavoriteGrammarHint => choose(
+        'Markiere zuerst gelernte Grammatikthemen als Favoriten.',
+        'Сначала отметьте изученные темы грамматики как избранные.',
+      );
+  String get favoriteGrammarLesson => choose(
+        'Übung mit Grammatik-Favoriten',
+        'Практика избранной грамматики',
+      );
   String get noLearnedLessons => choose(
         'Noch keine Lektionen als gelernt markiert.',
         'Пока нет уроков, отмеченных как изученные.',
@@ -81,6 +91,10 @@ final class UiStrings {
   String get markLearned =>
       choose('Als gelernt markieren', 'Отметить изученным');
   String get markNotLearned => choose('Nicht mehr gelernt', 'Снять отметку');
+  String get addGrammarFavorite =>
+      choose('Zu Favoriten', 'Добавить в избранное');
+  String get removeGrammarFavorite =>
+      choose('Aus Favoriten', 'Убрать из избранного');
   String get switchLanguage => choose('Sprache wechseln', 'Сменить язык');
   String get dailyPlan => choose('Tagesplan', 'План на сегодня');
   String get remindersTitle => choose('Erinnerungen', 'Напоминания');

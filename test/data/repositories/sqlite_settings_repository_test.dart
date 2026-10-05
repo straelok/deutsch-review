@@ -22,6 +22,7 @@ void main() {
 
     const settings = AppSettings(
       includeImportantLessons: false,
+      includeFavoriteGrammarLessons: false,
       toGermanLessons: 1,
       toGermanTasks: 12,
       problemWordMaxWeight: 37,
@@ -31,6 +32,7 @@ void main() {
 
     final saved = await repository.readAppSettings();
     expect(saved.includeImportantLessons, isFalse);
+    expect(saved.includeFavoriteGrammarLessons, isFalse);
     expect(saved.toGermanLessons, 1);
     expect(saved.toGermanTasks, 12);
     expect(saved.problemWordMaxWeight, 37);

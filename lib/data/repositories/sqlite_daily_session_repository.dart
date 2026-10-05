@@ -153,7 +153,9 @@ final class SqliteDailySessionRepository implements DailySessionRepository {
         DailySessionKind.vocabularyToRussian ||
         DailySessionKind.importantVocabularyToRussian =>
           settings.toRussianTasks,
-        DailySessionKind.grammar => settings.grammarTasks,
+        DailySessionKind.grammar ||
+        DailySessionKind.favoriteGrammar =>
+          settings.grammarTasks,
         DailySessionKind.numbers => settings.numberTasks,
         _ => settings.toGermanTasks,
       };
@@ -249,8 +251,7 @@ final class SqliteDailySessionRepository implements DailySessionRepository {
     final session = await findById(sessionId);
     if (session == null ||
         session.isComplete ||
-        (session.kind != DailySessionKind.grammar &&
-            session.kind != DailySessionKind.numbers) ||
+        (!session.kind.isGrammar && session.kind != DailySessionKind.numbers) ||
         attempts.isEmpty) {
       throw StateError('Cannot record a grammar task for this session.');
     }

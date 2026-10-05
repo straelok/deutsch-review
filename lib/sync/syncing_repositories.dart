@@ -31,6 +31,20 @@ final class SyncingGrammarRepository implements GrammarRepository {
   }
 
   @override
+  Future<void> setFavorite({
+    required String topicId,
+    required bool favorite,
+    required DateTime now,
+  }) async {
+    await _delegate.setFavorite(
+      topicId: topicId,
+      favorite: favorite,
+      now: now,
+    );
+    _onChanged();
+  }
+
+  @override
   Future<GrammarSummary> summary(String topicId) => _delegate.summary(topicId);
 
   @override

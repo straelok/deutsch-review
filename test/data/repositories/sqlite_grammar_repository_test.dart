@@ -22,6 +22,28 @@ void main() {
     expect(summary.attempts, 0);
   });
 
+  test('persists a favorite independently from learned state', () async {
+    final database = AppDatabase.inMemory();
+    addTearDown(database.close);
+    final repository = SqliteGrammarRepository(database);
+    final now = DateTime.utc(2026, 10, 5, 12);
+
+    await repository.setFavorite(
+      topicId: 'sein',
+      favorite: true,
+      now: now,
+    );
+    await repository.setLearned(
+      topicId: 'sein',
+      learned: true,
+      now: now.add(const Duration(minutes: 1)),
+    );
+
+    final progress = (await repository.progress())['sein']!;
+    expect(progress.favorite, isTrue);
+    expect(progress.learned, isTrue);
+  });
+
   test('separates daily number and grammar statistics', () async {
     final database = AppDatabase.inMemory();
     addTearDown(database.close);

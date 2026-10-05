@@ -9,6 +9,12 @@ abstract interface class GrammarRepository {
     required DateTime now,
   });
 
+  Future<void> setFavorite({
+    required String topicId,
+    required bool favorite,
+    required DateTime now,
+  });
+
   Future<GrammarSummary> summary(String topicId);
 
   Future<GrammarSummary> summaryForDay(

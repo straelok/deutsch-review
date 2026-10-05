@@ -30,7 +30,7 @@ final class SqliteSyncStore {
 
   Map<String, Object?> buildPayload() {
     return <String, Object?>{
-      'version': 2,
+      'version': 3,
       'items': database.connection.select('''
         SELECT * FROM learning_items ORDER BY id
       ''').map(_itemToJson).toList(growable: false),
@@ -50,7 +50,9 @@ final class SqliteSyncStore {
   }
 
   void mergePayload(Map<String, Object?> payload) {
-    if (payload['version'] != 1 && payload['version'] != 2) {
+    if (payload['version'] != 1 &&
+        payload['version'] != 2 &&
+        payload['version'] != 3) {
       throw const FormatException('Unsupported sync payload version.');
     }
     final items = _objectList(payload['items'], 'items');
@@ -298,15 +300,17 @@ final class SqliteSyncStore {
     }
     database.connection.execute(
       '''
-      INSERT INTO grammar_topic_progress (topic_id, learned, updated_at)
-      VALUES (?, ?, ?)
+      INSERT INTO grammar_topic_progress (topic_id, learned, favorite, updated_at)
+      VALUES (?, ?, ?, ?)
       ON CONFLICT(topic_id) DO UPDATE SET
         learned = excluded.learned,
+        favorite = excluded.favorite,
         updated_at = excluded.updated_at
       ''',
       <Object?>[
         topicId,
         _bool(progress, 'learned') ? 1 : 0,
+        progress['favorite'] == true ? 1 : 0,
         updatedAt,
       ],
     );
@@ -394,6 +398,7 @@ final class SqliteSyncStore {
       <String, Object?>{
         'topicId': row['topic_id'] as String,
         'learned': (row['learned'] as int) == 1,
+        'favorite': (row['favorite'] as int) == 1,
         'updatedAt': row['updated_at'] as String,
       };
 

@@ -17,9 +17,32 @@ final class SqliteGrammarRepository implements GrammarRepository {
         row['topic_id'] as String: GrammarTopicProgress(
           topicId: row['topic_id'] as String,
           learned: (row['learned'] as int) == 1,
+          favorite: (row['favorite'] as int) == 1,
           updatedAt: DateTime.parse(row['updated_at'] as String).toUtc(),
         ),
     };
+  }
+
+  @override
+  Future<void> setFavorite({
+    required String topicId,
+    required bool favorite,
+    required DateTime now,
+  }) async {
+    database.connection.execute(
+      '''
+      INSERT INTO grammar_topic_progress (topic_id, learned, favorite, updated_at)
+      VALUES (?, 0, ?, ?)
+      ON CONFLICT(topic_id) DO UPDATE SET
+        favorite = excluded.favorite,
+        updated_at = excluded.updated_at
+      ''',
+      <Object?>[
+        topicId,
+        favorite ? 1 : 0,
+        now.toUtc().toIso8601String(),
+      ],
+    );
   }
 
   @override

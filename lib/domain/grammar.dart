@@ -88,11 +88,13 @@ final class GrammarTopicProgress {
   const GrammarTopicProgress({
     required this.topicId,
     required this.learned,
+    this.favorite = false,
     required this.updatedAt,
   });
 
   final String topicId;
   final bool learned;
+  final bool favorite;
   final DateTime updatedAt;
 }
 

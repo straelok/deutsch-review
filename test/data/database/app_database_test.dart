@@ -365,6 +365,52 @@ void main() {
     expect(migrated.integrityCheck(), ['ok']);
   });
 
+  test('adds grammar favorites and favorite sessions in version 10', () {
+    final directory = Directory.systemTemp.createTempSync('deutsch_review_');
+    addTearDown(() => directory.deleteSync(recursive: true));
+    final path = '${directory.path}${Platform.pathSeparator}version9.sqlite';
+    final oldDatabase = sqlite3.open(path);
+    oldDatabase
+      ..execute(migrationFrom0To1)
+      ..execute(migrationFrom1To2)
+      ..execute(migrationFrom2To3)
+      ..execute(migrationFrom3To4)
+      ..execute(migrationFrom4To5)
+      ..execute(migrationFrom5To6)
+      ..execute(migrationFrom6To7)
+      ..execute(migrationFrom7To8)
+      ..execute(migrationFrom8To9)
+      ..execute('PRAGMA user_version = 9')
+      ..execute('''
+        INSERT INTO grammar_topic_progress (topic_id, learned, updated_at)
+        VALUES ('sein', 1, '2026-10-05T10:00:00.000Z')
+      ''')
+      ..close();
+
+    final migrated = AppDatabase.open(path);
+    addTearDown(migrated.close);
+    final progress = migrated.connection
+        .select("SELECT * FROM grammar_topic_progress WHERE topic_id = 'sein'")
+        .single;
+
+    expect(progress['favorite'], 0);
+    expect(
+      () => migrated.connection.execute('''
+        INSERT INTO daily_sessions (
+          id, local_date, slot, kind, status, target_answers, answered_count,
+          queue_json, last_item_id, created_at, updated_at, completed_at,
+          content_version
+        ) VALUES (
+          'favorite', '2026-10-05', NULL, 'favorite_grammar', 'planned',
+          10, 0, '[]', NULL, '2026-10-05T10:00:00.000Z',
+          '2026-10-05T10:00:00.000Z', NULL, '2026.10.04.6'
+        )
+      '''),
+      returnsNormally,
+    );
+    expect(migrated.integrityCheck(), ['ok']);
+  });
+
   test('rejects a database created by a newer application version', () {
     final directory = Directory.systemTemp.createTempSync('deutsch_review_');
     addTearDown(() => directory.deleteSync(recursive: true));
