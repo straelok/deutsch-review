@@ -1,11 +1,11 @@
 {
   "manifest_version": 1,
-  "content_version": "2026.10.05.1",
+  "content_version": "2026.10.06.1",
   "schema_version": 1,
   "minimum_app_content_schema": 1,
-  "bundle_path": "content/versions/2026.10.05.1/catalog.json.gz",
-  "sha256": "ee6a813141166d33acaf510cb0b5c445a4ccb815db4393a2abe590795d86b397",
-  "compressed_size": 52982,
-  "uncompressed_size": 471752,
-  "published_at": "2026-10-05T21:45:44.148292Z"
+  "bundle_path": "content/versions/2026.10.06.1/catalog.json.gz",
+  "sha256": "0be94c15466829f455b5f2498b33b6608f8ec77d5055c0af385375159b197796",
+  "compressed_size": 54811,
+  "uncompressed_size": 481875,
+  "published_at": "2026-10-06T21:02:41.587255Z"
 }

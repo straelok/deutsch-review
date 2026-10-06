@@ -722,30 +722,37 @@
     {
       "id": "separable_verbs_present",
       "order": 22,
-      "title_de": "Trennbare Verben im Präsens",
-      "title_ru": "Отделяемые глаголы в Präsens",
-      "summary_de": "Im Hauptsatz steht die konjugierte Verbform vorn und die trennbare Vorsilbe am Ende.",
-      "summary_ru": "В главном предложении спрягаемая часть стоит ближе к началу, а отделяемая приставка — в конце.",
+      "title_de": "Trennbare und nicht trennbare Verben",
+      "title_ru": "Отделяемые и неотделяемые глаголы",
+      "summary_de": "Trennbare Vorsilben stehen im Hauptsatz am Ende; nicht trennbare Vorsilben bleiben beim Verbstamm.",
+      "summary_ru": "Отделяемая приставка уходит в конец главного предложения, а неотделяемая остаётся с основой глагола.",
       "explanation_de": [
         "Ein trennbares Verb besteht aus einer betonten Vorsilbe und einem Verbstamm: einkaufen = ein + kaufen, anrufen = an + rufen.",
+        "Häufige trennbare Vorsilben sind ab-, an-, auf-, aus-, ein-, mit-, her-, vor-, zu- und zurück-. Sie werden im Hauptsatz abgetrennt: Der Bus kommt gleich an.",
         "Im Aussagesatz wird der Stamm konjugiert und die Vorsilbe steht am Satzende: Ich kaufe heute ein. Meine Mutter ruft mich an.",
         "In einer W-Frage bleibt die Vorsilbe ebenfalls am Ende: Wann fährt der Zug ab? Wo steigt ihr ein?",
         "Die Personalform richtet sich nach dem Stammverb. Ein möglicher Vokalwechsel bleibt erhalten: fernsehen — du siehst fern; abfahren — er fährt ab; anfangen — sie fängt an.",
-        "Im Wörterbuch und nach einem Modalverb schreibt man den Infinitiv zusammen: einkaufen; Ich möchte heute einkaufen."
+        "Im Wörterbuch und nach einem Modalverb schreibt man den Infinitiv zusammen: einkaufen; Ich möchte heute einkaufen.",
+        "Die Vorsilben be-, emp-, ent-, er-, ge-, miss-, ver- und zer- sind normalerweise nicht trennbar. Das ganze Verb bleibt zusammen: Ich verstehe die Erklärung. Nina besucht ihre Großeltern.",
+        "Nicht jedes Verb mit einer ähnlich aussehenden ersten Silbe folgt automatisch der Liste. Lerne neue Verben immer mit einem Beispielsatz."
       ],
       "explanation_ru": [
         "Отделяемый глагол (das trennbare Verb) состоит из ударной приставки и основы: einkaufen = ein + kaufen, anrufen = an + rufen.",
+        "Частые отделяемые приставки (trennbare Vorsilben): ab-, an-, auf-, aus-, ein-, mit-, her-, vor-, zu- и zurück-. В главном предложении они отделяются: Der Bus kommt gleich an. — Автобус скоро прибывает.",
         "В обычном главном предложении основа спрягается, а приставка уходит в конец: Ich kaufe heute ein. — Я сегодня делаю покупки. Meine Mutter ruft mich an. — Моя мама мне звонит.",
         "В вопросе с вопросительным словом приставка тоже остаётся в конце: Wann fährt der Zug ab? — Когда отправляется поезд? Wo steigt ihr ein? — Где вы садитесь?",
         "Форма зависит от основного глагола. Если у него меняется корневая гласная, изменение сохраняется: fernsehen — du siehst fern; abfahren — er fährt ab; anfangen — sie fängt an.",
-        "В словаре и после модального глагола инфинитив пишется слитно: einkaufen; Ich möchte heute einkaufen. — Я хотел бы сегодня сделать покупки."
+        "В словаре и после модального глагола инфинитив пишется слитно: einkaufen; Ich möchte heute einkaufen. — Я хотел бы сегодня сделать покупки.",
+        "Приставки be-, emp-, ent-, er-, ge-, miss-, ver- и zer- обычно не отделяются (nicht trennbare Vorsilben). Глагол остаётся целым: Ich verstehe die Erklärung. — Я понимаю объяснение. Nina besucht ihre Großeltern. — Нина навещает бабушку и дедушку.",
+        "Не определяйте тип глагола только по похожему началу слова. Новый глагол лучше учить вместе с примером предложения."
       ],
       "table": [
-        ["Infinitiv / Инфинитив", "Bestandteile / Части", "Satz / Предложение"],
+        ["Typ / Тип", "Vorsilben / Приставки", "Beispiel / Пример"],
+        ["trennbar / отделяемые", "ab-, an-, auf-, aus-, ein-, mit-, her-, vor-, zu-, zurück-", "Der Zug kommt um neun an. — Поезд прибывает в девять."],
+        ["nicht trennbar / неотделяемые", "be-, emp-, ent-, er-, ge-, miss-, ver-, zer-", "Ich verstehe die Aufgabe. — Я понимаю задание."],
         ["einkaufen — делать покупки", "ein + kaufen", "Ich kaufe im Markt ein."],
-        ["anrufen — звонить", "an + rufen", "Wir rufen dich später an."],
-        ["abfahren — отправляться", "ab + fahren", "Der Zug fährt um neun ab."],
-        ["mitbringen — приносить с собой", "mit + bringen", "Sie bringt Wasser mit."]
+        ["vorlesen — читать вслух", "vor + lesen", "Die Studentin liest den Text vor."],
+        ["besuchen — навещать", "be + suchen; не отделяется", "Nina besucht ihre Großeltern."]
       ],
       "trainable": true
     }
