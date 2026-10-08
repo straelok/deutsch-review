@@ -1,6 +1,6 @@
 {
   "format_version": 2,
-  "exported_at": "2026-10-06T21:30:00.000Z",
+  "exported_at": "2026-10-08T22:19:46.926Z",
   "words": [
     {
       "id": "d8000001",
@@ -22,7 +22,7 @@
       "note": "Сильный глагол: du triffst, er/sie/es trifft.",
       "created_at": "2026-10-05T21:48:18.545709Z",
       "updated_at": "2026-10-05T21:48:18.545709Z",
-      "important": false
+      "important": true
     },
     {
       "id": "d8000003",
@@ -88,7 +88,7 @@
       "note": "Сильный глагол: du fährst, er/sie/es fährt.",
       "created_at": "2026-10-05T21:48:18.545709Z",
       "updated_at": "2026-10-05T21:48:18.545709Z",
-      "important": false
+      "important": true
     },
     {
       "id": "d8000009",
@@ -562,7 +562,7 @@
       "example": "Möchten Sie ein Getränk?; Die Getränke sind kalt.",
       "created_at": "2026-10-04T23:00:00.000Z",
       "updated_at": "2026-10-04T23:00:00.000Z",
-      "important": false
+      "important": true
     },
     {
       "id": "d5000026-0000-4000-8000-000000000026",
@@ -790,7 +790,7 @@
       "example": "Das Spiel ist für Kinder.; Wir spielen ein Spiel.",
       "created_at": "2026-10-04T22:00:00.000Z",
       "updated_at": "2026-10-04T22:00:00.000Z",
-      "important": false
+      "important": true
     },
     {
       "id": "d4000009-0000-4000-8000-000000000009",
@@ -1099,7 +1099,7 @@
       "example": "Das Auto ist neu.; Vor dem Haus stehen zwei Autos.",
       "created_at": "2026-10-04T22:00:00.000Z",
       "updated_at": "2026-10-04T22:00:00.000Z",
-      "important": false
+      "important": true
     },
     {
       "id": "d4000035-0000-4000-8000-000000000035",
@@ -1123,7 +1123,7 @@
       "example": "Das Fahrrad ist blau.; Vor der Schule stehen viele Fahrräder.",
       "created_at": "2026-10-04T22:00:00.000Z",
       "updated_at": "2026-10-04T22:00:00.000Z",
-      "important": false
+      "important": true
     },
     {
       "id": "d4000037-0000-4000-8000-000000000037",
@@ -1147,7 +1147,7 @@
       "example": "Was ist Ihr Beruf?; Es gibt viele Berufe.",
       "created_at": "2026-10-04T22:00:00.000Z",
       "updated_at": "2026-10-04T22:00:00.000Z",
-      "important": false
+      "important": true
     },
     {
       "id": "d4000039-0000-4000-8000-000000000039",
@@ -1413,7 +1413,7 @@
       "note": "В значении «удовольствие» обычно употребляется в единственном числе.",
       "created_at": "2026-10-04T22:00:00.000Z",
       "updated_at": "2026-10-04T22:00:00.000Z",
-      "important": false
+      "important": true
     },
     {
       "id": "d4000061-0000-4000-8000-000000000061",
@@ -1853,7 +1853,7 @@
       "example": "Wir tanzen zusammen.; Du tanzt sehr gut.",
       "created_at": "2026-10-04T21:00:00.000Z",
       "updated_at": "2026-10-04T21:00:00.000Z",
-      "important": false
+      "important": true
     },
     {
       "id": "d3000039-0000-4000-8000-000000000039",
@@ -1874,7 +1874,7 @@
       "note": "В ответе на отрицательный вопрос doch возражает отрицанию: Нет, наоборот, это так.",
       "created_at": "2026-10-04T21:00:00.000Z",
       "updated_at": "2026-10-04T21:00:00.000Z",
-      "important": false
+      "important": true
     },
     {
       "id": "4982f8ea-8f86-4539-97f6-4f107d840ff5",
@@ -3009,7 +3009,7 @@
       "example": "Die Idee ist nicht dumm.; Das war eine dumme Frage.",
       "created_at": "2026-10-04T19:08:53.226945Z",
       "updated_at": "2026-10-04T19:08:53.226945Z",
-      "important": false
+      "important": true
     },
     {
       "id": "d7000010",
@@ -3079,7 +3079,7 @@
       "example": "Die Kinder schwimmen im Wasser.; Ich schwimme gern.",
       "created_at": "2026-10-04T19:08:53.226945Z",
       "updated_at": "2026-10-04T19:08:53.226945Z",
-      "important": false
+      "important": true
     },
     {
       "id": "d7000017",
@@ -3129,7 +3129,7 @@
       "example": "Er bleibt hier.; Wir bleiben zu Hause.",
       "created_at": "2026-10-04T19:08:53.226945Z",
       "updated_at": "2026-10-04T19:08:53.226945Z",
-      "important": false
+      "important": true
     },
     {
       "id": "d7000022",
@@ -4445,7 +4445,7 @@
       "example": "Ich nehme zwei Brötchen.; Wir nehmen den Bus.",
       "created_at": "2026-09-26T12:20:00.000Z",
       "updated_at": "2026-09-28T13:21:11.078934Z",
-      "important": false
+      "important": true
     },
     {
       "id": "b0000043-0000-4000-8000-000000000043",
@@ -4963,7 +4963,7 @@
       "example": "Ich lese die Frage.; Wir lesen einen kurzen Text.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-28T13:21:11.078934Z",
-      "important": false
+      "important": true
     },
     {
       "id": "26d2df6a-8608-42d4-bfff-7b40dcab14ad",
@@ -4983,7 +4983,7 @@
       "example": "Was meinen Sie?; Ich meine meinen Bruder.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-28T13:21:11.078934Z",
-      "important": false
+      "important": true
     },
     {
       "id": "2738956c-659c-4e72-803a-a68b9ac81a66",
@@ -7863,6 +7863,835 @@
       "important": true,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
+    },
+    {
+      "id": "e6000001",
+      "type": "noun",
+      "german": "Ausflug",
+      "translation_ru": "экскурсия; поездка; прогулка",
+      "article": "der",
+      "plural": "Ausflüge",
+      "example": "Am Sonntag machen wir einen Ausflug.; Der Ausflug dauert drei Stunden.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000002",
+      "type": "verb",
+      "german": "wandern",
+      "translation_ru": "ходить в поход; путешествовать пешком",
+      "example": "Wir wandern gern in den Bergen.; Im Sommer wandert die Familie oft.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000003",
+      "type": "noun",
+      "german": "Picknick",
+      "translation_ru": "пикник",
+      "article": "das",
+      "plural": "Picknicks",
+      "example": "Wir machen ein Picknick im Park.; Das Picknick beginnt am Mittag.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000004",
+      "type": "noun",
+      "german": "Gitarre",
+      "translation_ru": "гитара",
+      "article": "die",
+      "plural": "Gitarren",
+      "example": "Sie spielt jeden Abend Gitarre.; Die Gitarre steht im Zimmer.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000005",
+      "type": "verb",
+      "german": "telefonieren",
+      "translation_ru": "разговаривать по телефону; звонить",
+      "example": "Ich telefoniere mit meiner Schwester.; Er telefoniert gerade.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000006",
+      "type": "noun",
+      "german": "Wetter",
+      "translation_ru": "погода",
+      "article": "das",
+      "plural": "—",
+      "example": "Heute ist das Wetter schön.; Wie ist das Wetter morgen?",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000007",
+      "type": "noun",
+      "german": "Sonne",
+      "translation_ru": "солнце",
+      "article": "die",
+      "plural": "—",
+      "example": "Die Sonne scheint heute.; Am Morgen kommt die Sonne.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000008",
+      "type": "verb",
+      "german": "scheinen",
+      "translation_ru": "светить; сиять; казаться",
+      "example": "Heute scheint die Sonne.; Das Licht scheint durch das Fenster.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000009",
+      "type": "verb",
+      "german": "regnen",
+      "translation_ru": "идти о дожде; дождить",
+      "example": "Heute regnet es viel.; Morgen soll es nicht regnen.",
+      "note": "О погоде обычно говорят безлично: Es regnet.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000010",
+      "type": "word",
+      "german": "viel-",
+      "translation_ru": "много; многочисленный",
+      "example": "Heute gibt es viele Wolken.; Wir haben viel Zeit.",
+      "note": "Перед существительным возможны формы viele, vielen и другие окончания.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000011",
+      "type": "noun",
+      "german": "Wolke",
+      "translation_ru": "облако",
+      "article": "die",
+      "plural": "Wolken",
+      "example": "Am Himmel ist eine Wolke.; Heute gibt es viele Wolken.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000012",
+      "type": "verb",
+      "german": "losgehen",
+      "translation_ru": "отправляться; начинаться",
+      "example": "Wir gehen um neun Uhr los.; Der Film geht gleich los.",
+      "note": "Отделяемый глагол: los + gehen.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000013",
+      "type": "noun",
+      "german": "Durst",
+      "translation_ru": "жажда",
+      "article": "der",
+      "plural": "—",
+      "example": "Nach dem Sport habe ich Durst.; Hast du auch Durst?",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000014",
+      "type": "noun",
+      "german": "Grad",
+      "translation_ru": "градус",
+      "article": "das",
+      "plural": "Grad",
+      "example": "Heute sind es zwanzig Grad.; In der Nacht sind es minus zwei Grad.",
+      "note": "После числа форма обычно не меняется: fünf Grad.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000015",
+      "type": "word",
+      "german": "warm",
+      "translation_ru": "тёплый; тепло",
+      "example": "Heute ist es warm.; Das Wasser ist noch warm.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000016",
+      "type": "word",
+      "german": "windig",
+      "translation_ru": "ветреный; ветрено",
+      "example": "An der Küste ist es windig.; Morgen wird es sehr windig.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000017",
+      "type": "word",
+      "german": "kalt",
+      "translation_ru": "холодный; холодно",
+      "example": "Im Winter ist es kalt.; Der Tee ist schon kalt.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000018",
+      "type": "verb",
+      "german": "schneien",
+      "translation_ru": "идти о снеге; снежить",
+      "example": "Im Winter schneit es oft.; Heute soll es nicht schneien.",
+      "note": "О погоде обычно говорят безлично: Es schneit.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000019",
+      "type": "word",
+      "german": "bewölkt",
+      "translation_ru": "облачный; облачно",
+      "example": "Der Himmel ist bewölkt.; Morgen bleibt es bewölkt.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000020",
+      "type": "noun",
+      "german": "Wetterbericht",
+      "translation_ru": "прогноз погоды; сводка погоды",
+      "article": "der",
+      "plural": "Wetterberichte",
+      "example": "Ich höre den Wetterbericht im Radio.; Der Wetterbericht sagt Regen an.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000021",
+      "type": "noun",
+      "german": "Mitte",
+      "translation_ru": "середина; центр",
+      "article": "die",
+      "plural": "—",
+      "example": "In der Mitte steht ein Tisch.; In der Mitte Deutschlands ist es heute sonnig.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000022",
+      "type": "word",
+      "german": "überall",
+      "translation_ru": "везде; повсюду",
+      "example": "Im Park sind überall Menschen.; Heute scheint fast überall die Sonne.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000023",
+      "type": "noun",
+      "german": "Temperatur",
+      "translation_ru": "температура",
+      "article": "die",
+      "plural": "Temperaturen",
+      "example": "Die Temperatur steigt am Mittag.; Die Temperaturen sind heute niedrig.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000024",
+      "type": "verb",
+      "german": "steigen",
+      "translation_ru": "подниматься; повышаться",
+      "example": "Die Temperatur steigt schnell.; Wir steigen die Treppe hinauf.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000025",
+      "type": "word",
+      "german": "sonnig",
+      "translation_ru": "солнечный; солнечно",
+      "example": "Morgen wird es sonnig.; Der Nachmittag ist warm und sonnig.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000026",
+      "type": "word",
+      "german": "leicht",
+      "translation_ru": "лёгкий; слегка; легко",
+      "example": "Es regnet nur leicht.; Die Aufgabe ist leicht.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000027",
+      "type": "noun",
+      "german": "Regen",
+      "translation_ru": "дождь",
+      "article": "der",
+      "plural": "—",
+      "example": "Am Abend kommt Regen.; Wir gehen trotz Regen spazieren.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000028",
+      "type": "noun",
+      "german": "Schnee",
+      "translation_ru": "снег",
+      "article": "der",
+      "plural": "—",
+      "example": "Im Winter liegt hier Schnee.; Die Kinder spielen im Schnee.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000029",
+      "type": "word",
+      "german": "plus",
+      "translation_ru": "плюс; выше нуля",
+      "example": "Heute sind es plus fünf Grad.; Zwei plus drei ist fünf.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000030",
+      "type": "word",
+      "german": "minus",
+      "translation_ru": "минус; ниже нуля",
+      "example": "In der Nacht sind es minus drei Grad.; Zehn minus vier ist sechs.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000031",
+      "type": "noun",
+      "german": "Radio",
+      "translation_ru": "радио; радиоприёмник",
+      "article": "das",
+      "plural": "Radios",
+      "example": "Im Radio kommt Musik.; Das Radio steht in der Küche.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000032",
+      "type": "noun",
+      "german": "Internet",
+      "translation_ru": "интернет",
+      "article": "das",
+      "plural": "—",
+      "example": "Ich lese die Nachrichten im Internet.; Das Internet funktioniert wieder.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000033",
+      "type": "noun",
+      "german": "Sommer",
+      "translation_ru": "лето",
+      "article": "der",
+      "plural": "Sommer",
+      "example": "Im Sommer fahren wir ans Meer.; Dieser Sommer ist sehr warm.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000034",
+      "type": "word",
+      "german": "heiß",
+      "translation_ru": "жаркий; горячий; жарко",
+      "example": "Heute ist es heiß.; Der Kaffee ist noch heiß.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000035",
+      "type": "noun",
+      "german": "Frühling",
+      "translation_ru": "весна",
+      "article": "der",
+      "plural": "Frühlinge",
+      "example": "Im Frühling wird es wärmer.; Der Frühling beginnt im März.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000036",
+      "type": "noun",
+      "german": "Herbst",
+      "translation_ru": "осень",
+      "article": "der",
+      "plural": "Herbste",
+      "example": "Im Herbst regnet es oft.; Der Herbst ist manchmal windig.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000037",
+      "type": "word",
+      "german": "schlecht",
+      "translation_ru": "плохой; плохо",
+      "example": "Das Wetter ist heute schlecht.; Mir geht es nicht schlecht.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000038",
+      "type": "noun",
+      "german": "Winter",
+      "translation_ru": "зима",
+      "article": "der",
+      "plural": "Winter",
+      "example": "Im Winter ist es früh dunkel.; Dieser Winter ist kalt.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000039",
+      "type": "noun",
+      "german": "Wind",
+      "translation_ru": "ветер",
+      "article": "der",
+      "plural": "Winde",
+      "example": "Heute ist der Wind stark.; Der Wind kommt aus dem Norden.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000040",
+      "type": "word",
+      "german": "angenehm",
+      "translation_ru": "приятный; приятно",
+      "example": "Die Temperatur ist angenehm.; Der Wind ist heute angenehm.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000041",
+      "type": "noun",
+      "german": "Speisekarte",
+      "translation_ru": "меню",
+      "article": "die",
+      "plural": "Speisekarten",
+      "example": "Die Speisekarte liegt auf dem Tisch.; Darf ich bitte die Speisekarte haben?",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000042",
+      "type": "noun",
+      "german": "Hamburger",
+      "translation_ru": "гамбургер",
+      "article": "der",
+      "plural": "Hamburger",
+      "example": "Ich bestelle einen Hamburger.; Der Hamburger kostet sechs Euro.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000043",
+      "type": "noun",
+      "german": "Speise",
+      "translation_ru": "блюдо; кушанье",
+      "article": "die",
+      "plural": "Speisen",
+      "example": "Das Restaurant bietet warme Speisen an.; Diese Speise ist vegetarisch.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000044",
+      "type": "noun",
+      "german": "Pommes frites",
+      "translation_ru": "картофель фри",
+      "article": "die",
+      "plural": "—",
+      "example": "Ich nehme Pommes frites zum Salat.; Die Pommes frites sind noch heiß.",
+      "note": "Употребляется только во множественном числе; разговорная форма: Pommes.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000045",
+      "type": "noun",
+      "german": "Portion",
+      "translation_ru": "порция",
+      "article": "die",
+      "plural": "Portionen",
+      "example": "Ich möchte eine kleine Portion.; Zwei Portionen Pommes, bitte.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000046",
+      "type": "noun",
+      "german": "Ketchup",
+      "translation_ru": "кетчуп",
+      "article": "der",
+      "plural": "Ketchups",
+      "example": "Möchtest du Ketchup zu den Pommes?; Der Ketchup steht auf dem Tisch.",
+      "note": "Допустимы оба артикля: der Ketchup и das Ketchup.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000047",
+      "type": "noun",
+      "german": "Salat",
+      "translation_ru": "салат",
+      "article": "der",
+      "plural": "Salate",
+      "example": "Ich bestelle einen Salat.; Der Salat ist frisch.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000048",
+      "type": "noun",
+      "german": "Schinken",
+      "translation_ru": "ветчина",
+      "article": "der",
+      "plural": "Schinken",
+      "example": "Auf der Pizza ist Schinken.; Ich esse kein Brot mit Schinken.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000049",
+      "type": "noun",
+      "german": "Cola",
+      "translation_ru": "кола",
+      "article": "die",
+      "plural": "Colas",
+      "example": "Sie bestellt eine Cola.; Die Cola ist kalt.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000050",
+      "type": "word",
+      "german": "lieber",
+      "translation_ru": "охотнее; лучше предпочту",
+      "example": "Ich trinke lieber Wasser.; Heute bleibe ich lieber zu Hause.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000051",
+      "type": "word",
+      "german": "warum",
+      "translation_ru": "почему",
+      "example": "Warum kommst du heute nicht?; Warum ist das Geschäft geschlossen?",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000052",
+      "type": "noun",
+      "german": "Hund",
+      "translation_ru": "собака; пёс",
+      "article": "der",
+      "plural": "Hunde",
+      "example": "Der Hund spielt im Garten.; Hast du einen Hund?",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000053",
+      "type": "noun",
+      "german": "Eis",
+      "translation_ru": "мороженое; лёд",
+      "article": "das",
+      "plural": "—",
+      "example": "Im Sommer esse ich gern Eis.; Das Eis im Getränk schmilzt.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000054",
+      "type": "verb",
+      "german": "grillen",
+      "translation_ru": "готовить на гриле; жарить на гриле",
+      "example": "Wir grillen am Samstag im Garten.; Er grillt Gemüse und Fleisch.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000055",
+      "type": "noun",
+      "german": "Freizeit",
+      "translation_ru": "свободное время; досуг",
+      "article": "die",
+      "plural": "—",
+      "example": "In meiner Freizeit lese ich viel.; Was machst du in deiner Freizeit?",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000056",
+      "type": "noun",
+      "german": "Hobby",
+      "translation_ru": "хобби; увлечение",
+      "article": "das",
+      "plural": "Hobbys",
+      "example": "Mein Hobby ist Fotografieren.; Welche Hobbys hast du?",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000057",
+      "type": "noun",
+      "german": "Krimi",
+      "translation_ru": "детектив; детективный фильм или роман",
+      "article": "der",
+      "plural": "Krimis",
+      "example": "Am Abend lese ich einen Krimi.; Dieser Krimi ist spannend.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000058",
+      "type": "word",
+      "german": "Lieblings-",
+      "translation_ru": "любимый",
+      "example": "Mein Lieblingsfilm ist eine Komödie.; Was ist dein Lieblingsbuch?",
+      "note": "Используется как первая часть сложного слова: Lieblingsfilm, Lieblingsbuch.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000059",
+      "type": "noun",
+      "german": "Film",
+      "translation_ru": "фильм",
+      "article": "der",
+      "plural": "Filme",
+      "example": "Wir sehen heute einen Film.; Der Film beginnt um acht Uhr.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000060",
+      "type": "word",
+      "german": "wichtig",
+      "translation_ru": "важный; важно",
+      "example": "Meine Familie ist mir wichtig.; Das ist eine wichtige Frage.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000061",
+      "type": "noun",
+      "german": "Grill",
+      "translation_ru": "гриль; мангал",
+      "article": "der",
+      "plural": "Grills",
+      "example": "Der Grill steht im Garten.; Wir brauchen einen neuen Grill.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000062",
+      "type": "verb",
+      "german": "sammeln",
+      "translation_ru": "собирать; коллекционировать",
+      "example": "Sie sammelt alte Fotos.; Wir sammeln Ideen für den Ausflug.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000063",
+      "type": "noun",
+      "german": "Foto",
+      "translation_ru": "фотография; фото",
+      "article": "das",
+      "plural": "Fotos",
+      "example": "Ich mache ein Foto vom See.; Die Fotos sind auf dem Smartphone.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000064",
+      "type": "word",
+      "german": "besonders",
+      "translation_ru": "особенно; особенный",
+      "example": "Ich mag den Frühling besonders gern.; Das ist ein besonderer Tag.",
+      "note": "Наречие: besonders; перед существительным: besonder- с окончанием.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000065",
+      "type": "verb",
+      "german": "fotografieren",
+      "translation_ru": "фотографировать",
+      "example": "Ich fotografiere gern Wolken.; Sie fotografiert die Familie.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000066",
+      "type": "noun",
+      "german": "Smartphone",
+      "translation_ru": "смартфон",
+      "article": "das",
+      "plural": "Smartphones",
+      "example": "Mein Smartphone liegt auf dem Tisch.; Ich fotografiere mit dem Smartphone.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000067",
+      "type": "word",
+      "german": "oft",
+      "translation_ru": "часто",
+      "example": "Im Herbst regnet es oft.; Wir gehen oft ins Kino.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000068",
+      "type": "noun",
+      "german": "Würfel",
+      "translation_ru": "игральная кость; кубик",
+      "article": "der",
+      "plural": "Würfel",
+      "example": "Der Würfel liegt neben dem Spiel.; Wir brauchen zwei Würfel.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000069",
+      "type": "word",
+      "german": "leider",
+      "translation_ru": "к сожалению",
+      "example": "Leider habe ich heute keine Zeit.; Das Wetter ist leider schlecht.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000070",
+      "type": "noun",
+      "german": "Problem",
+      "translation_ru": "проблема",
+      "article": "das",
+      "plural": "Probleme",
+      "example": "Wir haben ein kleines Problem.; Das Problem ist schnell gelöst.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000071",
+      "type": "word",
+      "german": "immer",
+      "translation_ru": "всегда",
+      "example": "Er kommt immer pünktlich.; Im Winter ist es hier immer kalt.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000072",
+      "type": "word",
+      "german": "vielleicht",
+      "translation_ru": "возможно; может быть",
+      "example": "Vielleicht regnet es morgen.; Wir treffen uns vielleicht am Sonntag.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000073",
+      "type": "word",
+      "german": "einfach",
+      "translation_ru": "простой; просто",
+      "example": "Die Aufgabe ist einfach.; Du kannst einfach anrufen.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "id": "e6000074",
+      "type": "word",
+      "german": "schnell",
+      "translation_ru": "быстрый; быстро",
+      "example": "Der Zug ist schnell.; Sie lernt neue Wörter sehr schnell.",
+      "important": true,
+      "created_at": "2026-10-08T22:19:46.926Z",
+      "updated_at": "2026-10-08T22:19:46.926Z"
     }
   ]
 }
