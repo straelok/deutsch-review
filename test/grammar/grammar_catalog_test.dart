@@ -63,7 +63,7 @@ void main() {
         .where((topic) => topic.trainable)
         .map((topic) => topic.id)
         .toSet();
-    expect(trainableTopics, hasLength(23));
+    expect(trainableTopics, hasLength(25));
     expect(
       catalog.topics.any((topic) => topic.id == 'personal_pronouns'),
       isFalse,

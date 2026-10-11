@@ -1877,17 +1877,6 @@
       "important": true
     },
     {
-      "id": "4982f8ea-8f86-4539-97f6-4f107d840ff5",
-      "type": "noun",
-      "german": "Balkon",
-      "translation_ru": "balkon; балкон",
-      "article": "der",
-      "plural": "balkon",
-      "created_at": "2026-10-04T20:54:53.281015Z",
-      "updated_at": "2026-10-06T05:00:39.356902Z",
-      "important": false
-    },
-    {
       "id": "d6000001",
       "type": "noun",
       "german": "Zimmer",

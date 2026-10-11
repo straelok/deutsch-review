@@ -419,14 +419,15 @@ void main() {
       find.byKey(const Key('material-search')),
       'Deutsch',
     );
+    await tester.pumpAndSettle();
 
-    expect(find.text('lernen'), findsNothing);
+    expect(find.byKey(const Key('item-menu-word-1')), findsNothing);
     expect(find.text('Nichts gefunden'), findsOneWidget);
 
     await tester.tap(find.byKey(const Key('material-search-all-fields')));
     await tester.pumpAndSettle();
 
-    expect(find.text('lernen'), findsOneWidget);
+    expect(find.byKey(const Key('item-menu-word-1')), findsOneWidget);
   });
 
   testWidgets('speichert den Fortschritt und zeigt Statistik', (
@@ -660,6 +661,30 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.text('Richtig'), findsOneWidget);
+    expect(
+      find.text('Alle Übersetzungen: учить; изучать; обучаться'),
+      findsOneWidget,
+    );
+  });
+
+  testWidgets('shows compact noun plural in reverse vocabulary practice', (
+    tester,
+  ) async {
+    final database = AppDatabase.inMemory();
+    addTearDown(database.close);
+    await SqliteLearningItemRepository(database).save(_nounWithPlural());
+
+    await tester.pumpWidget(_app(database));
+    await tester.pumpAndSettle();
+    await _expandCategory(tester, 'vocabulary-to-russian');
+    await tester.tap(
+      find.byKey(
+        const Key('session-category-action-vocabulary-to-russian'),
+      ),
+    );
+    await tester.pumpAndSettle();
+
+    expect(find.text('der Wind, -e'), findsOneWidget);
   });
 
   testWidgets('shows usage examples as help only in the reverse lesson', (
@@ -1308,6 +1333,27 @@ LearningItem _importantWord() {
       'german': 'morgen',
       'translation_ru': 'завтра',
       'important': true,
+    },
+  );
+}
+
+LearningItem _nounWithPlural() {
+  final now = DateTime.utc(2026, 10, 11, 10);
+  return LearningItem(
+    id: 'noun-with-plural',
+    type: LearningItemType.noun,
+    level: 'A1.1',
+    lesson: '6',
+    topic: 'Wetter',
+    learned: true,
+    createdAt: now,
+    updatedAt: now,
+    sourceRef: 'test',
+    content: const {
+      'german': 'Wind',
+      'article': 'der',
+      'plural': 'Winde',
+      'translation_ru': 'ветер',
     },
   );
 }

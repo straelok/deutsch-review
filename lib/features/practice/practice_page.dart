@@ -225,7 +225,7 @@ class _PracticePageState extends State<PracticePage> {
                   const SizedBox(height: 24),
                   Text(
                     toRussian
-                        ? learningItemGerman(item)
+                        ? learningItemGermanWithPlural(item)
                         : learningItemMeaning(item),
                     key: const Key('practice-prompt'),
                     textAlign: TextAlign.center,
@@ -297,6 +297,13 @@ class _PracticePageState extends State<PracticePage> {
                               _lastCorrect ? s.correct : s.incorrect,
                               style: Theme.of(context).textTheme.titleMedium,
                             ),
+                            if (_lastCorrect && toRussian) ...[
+                              const SizedBox(height: 6),
+                              Text(
+                                s.allTranslations(expected),
+                                key: const Key('all-translations'),
+                              ),
+                            ],
                             if (!_lastCorrect) ...[
                               const SizedBox(height: 6),
                               Text(s.correctAnswer(expected)),

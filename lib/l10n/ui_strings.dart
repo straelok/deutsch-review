@@ -325,6 +325,10 @@ final class UiStrings {
         'Richtige Antwort: $answer',
         'Правильный ответ: $answer',
       );
+  String allTranslations(String translations) => choose(
+        'Alle Übersetzungen: $translations',
+        'Все варианты перевода: $translations',
+      );
   String get acceptMyTranslation => choose(
         'Meine Antwort ist auch richtig',
         'Мой вариант тоже верный',

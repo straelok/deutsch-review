@@ -145,20 +145,27 @@ class _MaterialPageState extends State<DictionaryMaterialPage> {
             decoration: InputDecoration(
               labelText: s.search,
               prefixIcon: const Icon(Icons.search),
-              suffixIcon: _searchController.text.isEmpty
-                  ? null
-                  : IconButton(
+              suffixIcon: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  if (_searchController.text.isNotEmpty)
+                    IconButton(
                       onPressed: _searchController.clear,
                       icon: const Icon(Icons.clear),
                     ),
+                  Tooltip(
+                    message: s.searchAllFields,
+                    child: Switch.adaptive(
+                      key: const Key('material-search-all-fields'),
+                      value: _searchAllFields,
+                      onChanged: (value) =>
+                          setState(() => _searchAllFields = value),
+                    ),
+                  ),
+                  const SizedBox(width: 8),
+                ],
+              ),
             ),
-          ),
-          SwitchListTile.adaptive(
-            key: const Key('material-search-all-fields'),
-            contentPadding: EdgeInsets.zero,
-            title: Text(s.searchAllFields),
-            value: _searchAllFields,
-            onChanged: (value) => setState(() => _searchAllFields = value),
           ),
           const SizedBox(height: 16),
           Expanded(child: _buildContent()),
