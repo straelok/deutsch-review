@@ -387,7 +387,7 @@ void main() {
     await tester.pumpAndSettle();
     await tester.enterText(
       find.byKey(const Key('material-search')),
-      'Deutsch',
+      'учить',
     );
     expect(find.text('lernen'), findsOneWidget);
 
@@ -401,6 +401,31 @@ void main() {
     expect(find.text('Noch keine Wörter'), findsOneWidget);
     await tester.tap(find.text('Rückgängig'));
     await tester.pumpAndSettle();
+    expect(find.text('lernen'), findsOneWidget);
+  });
+
+  testWidgets('dictionary search includes content only when enabled', (
+    tester,
+  ) async {
+    final database = AppDatabase.inMemory();
+    addTearDown(database.close);
+    await SqliteLearningItemRepository(database).save(_word());
+
+    await tester.pumpWidget(_app(database));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Wörter'));
+    await tester.pumpAndSettle();
+    await tester.enterText(
+      find.byKey(const Key('material-search')),
+      'Deutsch',
+    );
+
+    expect(find.text('lernen'), findsNothing);
+    expect(find.text('Nichts gefunden'), findsOneWidget);
+
+    await tester.tap(find.byKey(const Key('material-search-all-fields')));
+    await tester.pumpAndSettle();
+
     expect(find.text('lernen'), findsOneWidget);
   });
 

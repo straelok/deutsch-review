@@ -228,6 +228,10 @@ final class UiStrings {
         'Добавьте уже изученный материал из курса.',
       );
   String get search => choose('Wörter durchsuchen', 'Поиск по словам');
+  String get searchAllFields => choose(
+        'Auch in Beispielen und Notizen suchen',
+        'Искать также в примерах и заметках',
+      );
   String get noSearchResults => choose('Nichts gefunden', 'Ничего не найдено');
   String get edit => choose('Bearbeiten', 'Редактировать');
   String get delete => choose('Löschen', 'Удалить');

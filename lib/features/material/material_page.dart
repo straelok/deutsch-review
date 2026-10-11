@@ -39,6 +39,7 @@ class _MaterialPageState extends State<DictionaryMaterialPage> {
   Object? _loadError;
   bool _loading = true;
   bool _fileBusy = false;
+  bool _searchAllFields = false;
 
   List<LearningItem> get _filteredItems {
     final query = _searchController.text.trim().toLowerCase();
@@ -47,8 +48,11 @@ class _MaterialPageState extends State<DictionaryMaterialPage> {
       final values = <String>[
         learningItemGerman(item),
         learningItemMeaning(item),
-        learningItemNote(item) ?? '',
-        learningItemExample(item) ?? '',
+        if (item.content['plural'] case final String plural) plural,
+        if (_searchAllFields) ...[
+          learningItemNote(item) ?? '',
+          learningItemExample(item) ?? '',
+        ],
       ];
       return values.any((value) => value.toLowerCase().contains(query));
     }).toList(growable: false);
@@ -149,6 +153,13 @@ class _MaterialPageState extends State<DictionaryMaterialPage> {
                     ),
             ),
           ),
+          SwitchListTile.adaptive(
+            key: const Key('material-search-all-fields'),
+            contentPadding: EdgeInsets.zero,
+            title: Text(s.searchAllFields),
+            value: _searchAllFields,
+            onChanged: (value) => setState(() => _searchAllFields = value),
+          ),
           const SizedBox(height: 16),
           Expanded(child: _buildContent()),
         ],
@@ -223,9 +234,8 @@ class _MaterialPageState extends State<DictionaryMaterialPage> {
               children: [
                 IconButton(
                   key: Key('toggle-important-${item.id}'),
-                  tooltip: item.isImportant
-                      ? s.removeImportant
-                      : s.markImportant,
+                  tooltip:
+                      item.isImportant ? s.removeImportant : s.markImportant,
                   onPressed: () => _toggleImportant(item),
                   icon: Icon(
                     item.isImportant ? Icons.star : Icons.star_border,
