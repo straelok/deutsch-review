@@ -446,7 +446,8 @@ void main() {
     addTearDown(migrated.close);
     expect(
       migrated.connection
-          .select("SELECT answered_count FROM daily_sessions WHERE id = 'existing'")
+          .select(
+              "SELECT answered_count FROM daily_sessions WHERE id = 'existing'")
           .single['answered_count'],
       1,
     );
@@ -460,6 +461,46 @@ void main() {
           'easy', '2026-10-12', NULL, 'easy_vocabulary_to_german', 'planned',
           20, 0, '[]', NULL, '2026-10-12T10:00:00.000Z',
           '2026-10-12T10:00:00.000Z', NULL, '2026.10.04.1'
+        )
+      '''),
+      returnsNormally,
+    );
+    expect(migrated.integrityCheck(), ['ok']);
+  });
+
+  test('adds important easy vocabulary sessions in version 12', () {
+    final directory = Directory.systemTemp.createTempSync('deutsch_review_');
+    addTearDown(() => directory.deleteSync(recursive: true));
+    final path = '${directory.path}${Platform.pathSeparator}version11.sqlite';
+    final oldDatabase = sqlite3.open(path);
+    oldDatabase
+      ..execute(migrationFrom0To1)
+      ..execute(migrationFrom1To2)
+      ..execute(migrationFrom2To3)
+      ..execute(migrationFrom3To4)
+      ..execute(migrationFrom4To5)
+      ..execute(migrationFrom5To6)
+      ..execute(migrationFrom6To7)
+      ..execute(migrationFrom7To8)
+      ..execute(migrationFrom8To9)
+      ..execute(migrationFrom9To10)
+      ..execute(migrationFrom10To11)
+      ..execute('PRAGMA user_version = 11')
+      ..close();
+
+    final migrated = AppDatabase.open(path);
+    addTearDown(migrated.close);
+    expect(
+      () => migrated.connection.execute('''
+        INSERT INTO daily_sessions (
+          id, local_date, slot, kind, status, target_answers, answered_count,
+          queue_json, last_item_id, created_at, updated_at, completed_at,
+          content_version
+        ) VALUES (
+          'important-easy', '2026-10-12', NULL,
+          'important_easy_vocabulary_to_german', 'planned', 20, 0, '[]', NULL,
+          '2026-10-12T10:00:00.000Z', '2026-10-12T10:00:00.000Z', NULL,
+          '2026.10.04.1'
         )
       '''),
       returnsNormally,

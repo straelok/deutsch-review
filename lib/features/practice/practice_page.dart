@@ -416,6 +416,7 @@ class _PracticePageState extends State<PracticePage> {
       DailySessionKind.easyVocabularyToGerman ||
       DailySessionKind.vocabularyToRussian ||
       DailySessionKind.importantVocabularyToGerman ||
+      DailySessionKind.importantEasyVocabularyToGerman ||
       DailySessionKind.importantVocabularyToRussian =>
         _unknownAnswer(),
     };
@@ -475,6 +476,11 @@ class _PracticePageState extends State<PracticePage> {
             !session.isRequired &&
             session.kind == DailySessionKind.importantVocabularyToRussian)
         .toList();
+    final importantEasyToGerman = _daySessions
+        .where((session) =>
+            !session.isRequired &&
+            session.kind == DailySessionKind.importantEasyVocabularyToGerman)
+        .toList();
     final importantItems =
         _activeItems.where((item) => item.isImportant).toList();
     final completed =
@@ -526,6 +532,21 @@ class _PracticePageState extends State<PracticePage> {
                 addKey: const Key('create-important-to-german-session'),
                 onAdd: () => _createExtraSession(
                   DailySessionKind.importantVocabularyToGerman,
+                ),
+              ),
+              const SizedBox(height: 12),
+              _sessionCategory(
+                kind: DailySessionKind.importantEasyVocabularyToGerman,
+                icon: Icons.edit_note,
+                title: s.importantEasyToGermanCategory,
+                sessions: importantEasyToGerman,
+                canAdd: true,
+                canStart: importantItems.isNotEmpty,
+                addKey: const Key(
+                  'create-important-easy-to-german-session',
+                ),
+                onAdd: () => _createExtraSession(
+                  DailySessionKind.importantEasyVocabularyToGerman,
                 ),
               ),
               const SizedBox(height: 12),
@@ -789,6 +810,7 @@ class _PracticePageState extends State<PracticePage> {
           _favoriteGrammarTopics.isNotEmpty || session.queueItemIds.isNotEmpty,
         DailySessionKind.numbers => true,
         DailySessionKind.importantVocabularyToGerman ||
+        DailySessionKind.importantEasyVocabularyToGerman ||
         DailySessionKind.importantVocabularyToRussian =>
           session.queueItemIds.isNotEmpty ||
               _activeItems.any((item) => item.isImportant),

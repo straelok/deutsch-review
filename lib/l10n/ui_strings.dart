@@ -49,6 +49,10 @@ final class UiStrings {
         'Wichtig: Russisch → Deutsch',
         'Важные: с русского на немецкий',
       );
+  String get importantEasyToGermanCategory => choose(
+        'Wichtig einfach: Russisch → Deutsch',
+        'Важные, лёгкий режим: с русского на немецкий',
+      );
   String get importantToRussianCategory => choose(
         'Wichtig: Deutsch → Russisch',
         'Важные: с немецкого на русский',

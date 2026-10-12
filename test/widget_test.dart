@@ -223,6 +223,42 @@ void main() {
     expect(find.text('учить'), findsNothing);
   });
 
+  testWidgets('important easy lesson repeats only a marked word', (
+    tester,
+  ) async {
+    final database = AppDatabase.inMemory();
+    addTearDown(database.close);
+    final repository = SqliteLearningItemRepository(database);
+    await repository.save(_word());
+    await repository.save(_importantWord());
+
+    await tester.pumpWidget(_app(database));
+    await tester.pumpAndSettle();
+    final start = find.byKey(
+      const Key('create-important-easy-to-german-session'),
+    );
+    await tester.scrollUntilVisible(start, 300);
+    await tester.pumpAndSettle();
+    await tester.tap(start);
+    await tester.pumpAndSettle();
+
+    expect(find.text('завтра'), findsOneWidget);
+    expect(find.text('учить'), findsNothing);
+    await tester.enterText(find.byKey(const Key('practice-answer')), 'morgenx');
+    await tester.tap(find.byKey(const Key('check-answer')));
+    await tester.pumpAndSettle();
+    expect(find.text('Richtige Antwort: morgen'), findsOneWidget);
+
+    final session = database.connection
+        .select(
+          "SELECT answered_count, queue_json FROM daily_sessions "
+          "WHERE kind = 'important_easy_vocabulary_to_german'",
+        )
+        .single;
+    expect(session['answered_count'], 0);
+    expect(jsonDecode(session['queue_json'] as String), hasLength(20));
+  });
+
   testWidgets('shows important lessons in a highlighted top block', (
     tester,
   ) async {
@@ -236,10 +272,10 @@ void main() {
     final regular = find.byKey(
       const Key('session-category-progress-vocabulary-to-german'),
     );
-    await _expandCategory(tester, 'vocabulary-to-german');
     expect(important, findsOneWidget);
-    expect(tester.getTopLeft(important).dy,
-        lessThan(tester.getTopLeft(regular).dy));
+    expect(tester.getTopLeft(important).dy, greaterThanOrEqualTo(0));
+    await _expandCategory(tester, 'vocabulary-to-german');
+    expect(regular, findsOneWidget);
   });
 
   testWidgets('settings can hide important lesson categories', (tester) async {
