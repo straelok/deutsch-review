@@ -447,7 +447,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Future<void> _openSettings() async {
-    final changed = await Navigator.of(context).push<bool>(
+    await Navigator.of(context).push<void>(
       MaterialPageRoute(
         builder: (context) => SettingsPage(
           repository: widget.settings,
@@ -456,10 +456,8 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
     );
-    if (changed == true) {
-      await _loadSettings();
-      if (mounted) setState(() => _statisticsRevision++);
-    }
+    await _loadSettings();
+    if (mounted) setState(() => _statisticsRevision++);
   }
 
   static IconData _syncIcon(SyncPhase phase) => switch (phase) {

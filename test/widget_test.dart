@@ -118,7 +118,7 @@ void main() {
     await tester.tap(find.byKey(const Key('save-material')));
     await tester.pumpAndSettle();
 
-    expect(find.text('der Tisch'), findsOneWidget);
+    expect(find.text('der Tisch, -e'), findsOneWidget);
     expect(find.textContaining('стол'), findsOneWidget);
   });
 
@@ -300,12 +300,11 @@ void main() {
       find.byKey(const Key('problem-word-max-weight')),
       '37',
     );
-    await tester.scrollUntilVisible(
-      find.byKey(const Key('save-settings')),
-      500,
-      scrollable: find.byType(Scrollable).first,
-    );
-    await tester.tap(find.byKey(const Key('save-settings')));
+    await tester.pumpAndSettle();
+    expect(find.byKey(const Key('save-settings')), findsNothing);
+    expect(find.text('Änderungen werden automatisch gespeichert.'),
+        findsOneWidget);
+    await tester.pageBack();
     await tester.pumpAndSettle();
 
     expect(find.text('Wichtige Wörter'), findsNothing);
@@ -464,6 +463,41 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.byKey(const Key('item-menu-word-1')), findsOneWidget);
+  });
+
+  testWidgets('opens a word card without entering edit mode', (tester) async {
+    final database = AppDatabase.inMemory();
+    addTearDown(database.close);
+    await SqliteLearningItemRepository(database).save(_word());
+
+    await tester.pumpWidget(_app(database));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Wörter'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.byKey(const Key('word-card-word-1')));
+    await tester.pumpAndSettle();
+
+    final details = find.byKey(const Key('word-details-word-1'));
+    expect(details, findsOneWidget);
+    expect(
+      find.descendant(of: details, matching: find.text('Niveau: A1.1')),
+      findsOneWidget,
+    );
+    expect(
+      find.descendant(
+        of: details,
+        matching: find.text('Beispiel: Ich lerne Deutsch.'),
+      ),
+      findsOneWidget,
+    );
+    expect(
+      find.descendant(
+        of: details,
+        matching: find.text('Notiz: Wort aus Lektion 1'),
+      ),
+      findsOneWidget,
+    );
+    expect(find.byKey(const Key('save-material')), findsNothing);
   });
 
   testWidgets('speichert den Fortschritt und zeigt Statistik', (

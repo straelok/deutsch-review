@@ -113,12 +113,12 @@ final class SyncController extends ChangeNotifier with WidgetsBindingObserver {
         nickname: nickname,
         localPayload: localPayload,
       );
-      _localStore.mergePayload(mergedPayload);
+      final dataChanged = _localStore.mergePayload(mergedPayload);
       final now = DateTime.now().toUtc();
       _localStore.saveLastSuccess(now);
       _lastSuccess = now;
       _phase = SyncPhase.synced;
-      _dataRevision++;
+      if (dataChanged) _dataRevision++;
     } catch (error) {
       _phase = SyncPhase.error;
       _errorMessage = error.toString();

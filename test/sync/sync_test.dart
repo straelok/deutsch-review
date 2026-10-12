@@ -60,7 +60,9 @@ void main() {
       (exportedSessions.first! as Map<String, Object?>)['contentVersion'],
       '2026.09.27.2',
     );
-    SqliteSyncStore(target).mergePayload(payload);
+    final targetStore = SqliteSyncStore(target);
+    expect(targetStore.mergePayload(payload), isTrue);
+    expect(targetStore.mergePayload(payload), isFalse);
 
     final item = await SqliteLearningItemRepository(target).findById('word-1');
     expect(item, isNotNull);
@@ -141,6 +143,7 @@ void main() {
     expect(controller.phase, SyncPhase.synced);
     expect(controller.lastSuccess, isNotNull);
     expect(gateway.calls, 1);
+    expect(controller.dataRevision, 0);
     expect(SqliteSyncStore(database).readNickname(), 'test_user');
 
     await controller.disconnect();

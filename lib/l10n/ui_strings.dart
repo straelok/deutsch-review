@@ -269,6 +269,7 @@ final class UiStrings {
   String get saveAnyway => choose('Trotzdem speichern', 'Сохранить');
   String get addMaterial => choose('Wort hinzufügen', 'Добавить слово');
   String get editMaterial => choose('Wort bearbeiten', 'Редактировать слово');
+  String get importantWord => choose('Wichtiges Wort', 'Важное слово');
   String get type => choose('Typ', 'Тип');
   String get word => choose('Wort', 'Слово');
   String get noun => choose('Nomen', 'Существительное');
@@ -285,6 +286,11 @@ final class UiStrings {
   String get note => choose('Notiz (optional)', 'Заметка (необязательно)');
   String get usageExample =>
       choose('Beispiel (optional)', 'Пример использования (необязательно)');
+  String get noteLabel => choose('Notiz', 'Заметка');
+  String get usageExampleLabel => choose('Beispiel', 'Пример использования');
+  String get level => choose('Niveau', 'Уровень');
+  String get lesson => choose('Lektion', 'Урок');
+  String get topic => choose('Thema', 'Тема');
   String noteValue(String value) => choose('Notiz: $value', 'Заметка: $value');
   String exampleValue(String value) =>
       choose('Beispiel: $value', 'Пример: $value');

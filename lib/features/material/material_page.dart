@@ -34,12 +34,14 @@ class DictionaryMaterialPage extends StatefulWidget {
 
 class _MaterialPageState extends State<DictionaryMaterialPage> {
   final _searchController = TextEditingController();
+  final _scrollController = ScrollController();
   List<LearningItem> _items = const [];
   Map<String, WordPracticeStatistics> _statistics = const {};
   Object? _loadError;
   bool _loading = true;
   bool _fileBusy = false;
   bool _searchAllFields = false;
+  int _loadRevision = 0;
 
   List<LearningItem> get _filteredItems {
     final query = _searchController.text.trim().toLowerCase();
@@ -76,6 +78,7 @@ class _MaterialPageState extends State<DictionaryMaterialPage> {
     _searchController
       ..removeListener(_searchChanged)
       ..dispose();
+    _scrollController.dispose();
     super.dispose();
   }
 
@@ -186,7 +189,10 @@ class _MaterialPageState extends State<DictionaryMaterialPage> {
             const SizedBox(height: 12),
             Text(s.loadError),
             const SizedBox(height: 12),
-            OutlinedButton(onPressed: _reload, child: Text(s.retry)),
+            OutlinedButton(
+              onPressed: () => _reload(showLoading: true),
+              child: Text(s.retry),
+            ),
           ],
         ),
       );
@@ -200,6 +206,8 @@ class _MaterialPageState extends State<DictionaryMaterialPage> {
     }
 
     return ListView.separated(
+      key: const PageStorageKey('dictionary-words'),
+      controller: _scrollController,
       itemCount: filtered.length,
       separatorBuilder: (context, index) => const SizedBox(height: 8),
       itemBuilder: (context, index) {
@@ -209,6 +217,8 @@ class _MaterialPageState extends State<DictionaryMaterialPage> {
         final statistics = _statistics[item.id];
         return Card(
           child: ListTile(
+            key: Key('word-card-${item.id}'),
+            onTap: () => _openDetails(item),
             contentPadding:
                 const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
             leading: CircleAvatar(
@@ -220,7 +230,7 @@ class _MaterialPageState extends State<DictionaryMaterialPage> {
                 },
               ),
             ),
-            title: Text(learningItemGerman(item)),
+            title: Text(learningItemGermanWithPlural(item)),
             subtitle: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
@@ -272,29 +282,50 @@ class _MaterialPageState extends State<DictionaryMaterialPage> {
 
   void _searchChanged() => setState(() {});
 
-  Future<void> _reload() async {
-    setState(() {
-      _loading = true;
-      _loadError = null;
-    });
+  Future<void> _reload({bool showLoading = false}) async {
+    final loadRevision = ++_loadRevision;
+    final replaceContent = showLoading || _items.isEmpty;
+    if (replaceContent) {
+      setState(() {
+        _loading = true;
+        _loadError = null;
+      });
+    }
     try {
       final itemsFuture = widget.repository.findActive();
       final statisticsFuture = widget.practice.statisticsByItem();
       final items = await itemsFuture;
       final statistics = await statisticsFuture;
-      if (!mounted) return;
+      if (!mounted || loadRevision != _loadRevision) return;
       setState(() {
         _items = items;
         _statistics = statistics;
         _loading = false;
+        _loadError = null;
       });
     } catch (error) {
-      if (!mounted) return;
+      if (!mounted || loadRevision != _loadRevision) return;
       setState(() {
-        _loadError = error;
+        if (replaceContent) _loadError = error;
         _loading = false;
       });
+      if (!replaceContent) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text(widget.strings.loadError)),
+        );
+      }
     }
+  }
+
+  Future<void> _openDetails(LearningItem item) async {
+    await showDialog<void>(
+      context: context,
+      builder: (context) => _LearningItemDetails(
+        item: item,
+        statistics: _statistics[item.id],
+        strings: widget.strings,
+      ),
+    );
   }
 
   Future<void> _importJson() async {
@@ -859,6 +890,93 @@ class _LearningItemEditorState extends State<_LearningItemEditor> {
       ),
     );
   }
+}
+
+class _LearningItemDetails extends StatelessWidget {
+  const _LearningItemDetails({
+    required this.item,
+    required this.statistics,
+    required this.strings,
+  });
+
+  final LearningItem item;
+  final WordPracticeStatistics? statistics;
+  final UiStrings strings;
+
+  @override
+  Widget build(BuildContext context) {
+    final note = learningItemNote(item);
+    final example = learningItemExample(item);
+    return AlertDialog(
+      key: Key('word-details-${item.id}'),
+      title: Text(learningItemGermanWithPlural(item)),
+      content: SizedBox(
+        width: 520,
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                learningItemMeaning(item),
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
+              const SizedBox(height: 16),
+              _detail(
+                  strings.type,
+                  switch (item.type) {
+                    LearningItemType.noun => strings.noun,
+                    LearningItemType.verb => strings.verb,
+                    _ => strings.word,
+                  }),
+              if (item.level.isNotEmpty) _detail(strings.level, item.level),
+              if (item.lesson.isNotEmpty) _detail(strings.lesson, item.lesson),
+              if (item.topic.isNotEmpty) _detail(strings.topic, item.topic),
+              if (example != null) _detail(strings.usageExampleLabel, example),
+              if (note != null) _detail(strings.noteLabel, note),
+              if (item.isImportant)
+                Padding(
+                  padding: const EdgeInsets.only(top: 10),
+                  child: Row(
+                    children: [
+                      Icon(
+                        Icons.star,
+                        size: 18,
+                        color: Theme.of(context).colorScheme.tertiary,
+                      ),
+                      const SizedBox(width: 6),
+                      Text(strings.importantWord),
+                    ],
+                  ),
+                ),
+              const SizedBox(height: 16),
+              _DictionaryWordStatistics(
+                statistics: statistics,
+                strings: strings,
+                itemId: item.id,
+              ),
+              const SizedBox(height: 8),
+              Text(
+                strings.addedAt(item.createdAt),
+                style: Theme.of(context).textTheme.bodySmall,
+              ),
+            ],
+          ),
+        ),
+      ),
+      actions: [
+        TextButton(
+          onPressed: () => Navigator.pop(context),
+          child: Text(strings.close),
+        ),
+      ],
+    );
+  }
+
+  Widget _detail(String label, String value) => Padding(
+        padding: const EdgeInsets.only(bottom: 8),
+        child: Text('$label: $value'),
+      );
 }
 
 class _DictionaryWordStatistics extends StatelessWidget {

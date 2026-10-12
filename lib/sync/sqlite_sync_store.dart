@@ -49,7 +49,7 @@ final class SqliteSyncStore {
     };
   }
 
-  void mergePayload(Map<String, Object?> payload) {
+  bool mergePayload(Map<String, Object?> payload) {
     if (payload['version'] != 1 &&
         payload['version'] != 2 &&
         payload['version'] != 3) {
@@ -65,6 +65,7 @@ final class SqliteSyncStore {
         ? const <Map<String, Object?>>[]
         : _objectList(payload['grammarAttempts'], 'grammarAttempts');
 
+    final payloadBeforeMerge = jsonEncode(buildPayload());
     database.connection.execute('BEGIN IMMEDIATE');
     try {
       for (final item in items) {
@@ -87,6 +88,7 @@ final class SqliteSyncStore {
       database.connection.execute('ROLLBACK');
       rethrow;
     }
+    return jsonEncode(buildPayload()) != payloadBeforeMerge;
   }
 
   void _mergeItem(Map<String, Object?> item) {

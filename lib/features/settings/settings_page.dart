@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -27,6 +29,9 @@ class _SettingsPageState extends State<SettingsPage> {
   AppSettings? _settings;
   String? _problemWeightError;
   bool _saving = false;
+  bool _savedOnce = false;
+  Object? _saveError;
+  int _saveRevision = 0;
 
   @override
   void initState() {
@@ -45,12 +50,53 @@ class _SettingsPageState extends State<SettingsPage> {
     final s = widget.strings;
     final settings = _settings;
     return Scaffold(
-      appBar: AppBar(title: Text(s.choose('Einstellungen', 'Настройки'))),
+      appBar: AppBar(
+        title: Text(s.choose('Einstellungen', 'Настройки')),
+        actions: [
+          if (_saving)
+            const Padding(
+              padding: EdgeInsets.all(16),
+              child: SizedBox.square(
+                dimension: 20,
+                child: CircularProgressIndicator(strokeWidth: 2),
+              ),
+            )
+          else if (_saveError != null)
+            IconButton(
+              tooltip: s.choose(
+                'Speichern fehlgeschlagen',
+                'Не удалось сохранить',
+              ),
+              onPressed: _settings == null
+                  ? null
+                  : () => unawaited(
+                        _persist(_settings!, refreshReminders: true),
+                      ),
+              icon: const Icon(Icons.sync_problem_outlined),
+            )
+          else if (_savedOnce)
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Tooltip(
+                message: s.choose('Gespeichert', 'Сохранено'),
+                child: const Icon(Icons.cloud_done_outlined),
+              ),
+            ),
+        ],
+      ),
       body: settings == null
           ? const Center(child: CircularProgressIndicator())
           : ListView(
               padding: const EdgeInsets.all(24),
               children: [
+                Text(
+                  s.choose(
+                    'Änderungen werden automatisch gespeichert.',
+                    'Изменения сохраняются автоматически.',
+                  ),
+                  style: Theme.of(context).textTheme.bodySmall,
+                ),
+                const SizedBox(height: 16),
                 Text(
                   s.choose('Tagesplan', 'План занятий'),
                   style: Theme.of(context).textTheme.titleLarge,
@@ -159,6 +205,7 @@ class _SettingsPageState extends State<SettingsPage> {
                   value: settings.remindersEnabled,
                   onChanged: (value) => _update(
                     settings.copyWith(remindersEnabled: value),
+                    refreshReminders: true,
                   ),
                 ),
                 if (settings.remindersEnabled) ...[
@@ -189,13 +236,6 @@ class _SettingsPageState extends State<SettingsPage> {
                       ),
                     ),
                 ],
-                const SizedBox(height: 24),
-                FilledButton.icon(
-                  key: const Key('save-settings'),
-                  onPressed: _saving ? null : _save,
-                  icon: const Icon(Icons.save_outlined),
-                  label: Text(s.save),
-                ),
               ],
             ),
     );
@@ -326,7 +366,13 @@ class _SettingsPageState extends State<SettingsPage> {
     setState(() => _settings = settings);
   }
 
-  void _update(AppSettings settings) => setState(() => _settings = settings);
+  void _update(
+    AppSettings settings, {
+    bool refreshReminders = false,
+  }) {
+    setState(() => _settings = settings);
+    unawaited(_persist(settings, refreshReminders: refreshReminders));
+  }
 
   void _changeProblemWeight(String value) {
     final parsed = int.tryParse(value);
@@ -342,6 +388,7 @@ class _SettingsPageState extends State<SettingsPage> {
         _settings = _settings!.copyWith(problemWordMaxWeight: parsed);
       }
     });
+    if (valid) unawaited(_persist(_settings!));
   }
 
   Future<void> _changeTime(int index) async {
@@ -353,7 +400,10 @@ class _SettingsPageState extends State<SettingsPage> {
     if (selected == null || !mounted) return;
     final times = [..._settings!.reminderMinutes];
     times[index] = selected.hour * 60 + selected.minute;
-    _update(_settings!.copyWith(reminderMinutes: _sorted(times)));
+    _update(
+      _settings!.copyWith(reminderMinutes: _sorted(times)),
+      refreshReminders: true,
+    );
   }
 
   Future<void> _addTime() async {
@@ -366,12 +416,18 @@ class _SettingsPageState extends State<SettingsPage> {
       ..._settings!.reminderMinutes,
       selected.hour * 60 + selected.minute,
     ];
-    _update(_settings!.copyWith(reminderMinutes: _sorted(times)));
+    _update(
+      _settings!.copyWith(reminderMinutes: _sorted(times)),
+      refreshReminders: true,
+    );
   }
 
   void _removeTime(int index) {
     final times = [..._settings!.reminderMinutes]..removeAt(index);
-    _update(_settings!.copyWith(reminderMinutes: times));
+    _update(
+      _settings!.copyWith(reminderMinutes: times),
+      refreshReminders: true,
+    );
   }
 
   static List<int> _sorted(List<int> values) =>
@@ -383,12 +439,37 @@ class _SettingsPageState extends State<SettingsPage> {
     return '$hour:$minute';
   }
 
-  Future<void> _save() async {
-    _changeProblemWeight(_problemWeightController.text);
-    if (_problemWeightError != null) return;
-    setState(() => _saving = true);
-    await widget.repository.saveAppSettings(_settings!);
-    await widget.reminders?.settingsChanged();
-    if (mounted) Navigator.of(context).pop(true);
+  Future<void> _persist(
+    AppSettings settings, {
+    bool refreshReminders = false,
+  }) async {
+    final revision = ++_saveRevision;
+    setState(() {
+      _saving = true;
+      _saveError = null;
+    });
+    try {
+      await widget.repository.saveAppSettings(settings);
+      if (refreshReminders) await widget.reminders?.settingsChanged();
+      if (!mounted || revision != _saveRevision) return;
+      setState(() {
+        _saving = false;
+        _savedOnce = true;
+      });
+    } catch (error) {
+      if (!mounted || revision != _saveRevision) return;
+      setState(() {
+        _saving = false;
+        _saveError = error;
+      });
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(switch (widget.strings.isRussian) {
+            true => 'Не удалось сохранить настройки.',
+            false => 'Die Einstellungen konnten nicht gespeichert werden.',
+          }),
+        ),
+      );
+    }
   }
 }
