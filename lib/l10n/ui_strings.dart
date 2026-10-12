@@ -31,6 +31,14 @@ final class UiStrings {
         'Russisch → Deutsch',
         'С русского на немецкий',
       );
+  String get easyToGermanCategory => choose(
+        'Einfach: Russisch → Deutsch',
+        'Лёгкий режим: с русского на немецкий',
+      );
+  String get easyModeHint => choose(
+        'Das Wort zählt erst nach der richtigen Schreibweise.',
+        'Слово засчитывается только после правильного написания.',
+      );
   String get toRussianCategory => choose(
         'Deutsch → Russisch',
         'С немецкого на русский',
@@ -346,6 +354,7 @@ final class UiStrings {
         'Не удалось сохранить ответ. Попробуйте ещё раз.',
       );
   String get next => choose('Weiter', 'Далее');
+  String get tryAgain => choose('Noch einmal', 'Попробовать ещё раз');
   String progress(int answered, int target) => choose(
         'Antwort ${answered + 1} von $target',
         'Ответ ${answered + 1} из $target',

@@ -19,6 +19,7 @@ enum DailySessionStatus {
 
 enum DailySessionKind {
   vocabularyToGerman('vocabulary_to_german'),
+  easyVocabularyToGerman('easy_vocabulary_to_german'),
   vocabularyToRussian('vocabulary_to_russian'),
   importantVocabularyToGerman('important_vocabulary_to_german'),
   importantVocabularyToRussian('important_vocabulary_to_russian'),
@@ -40,6 +41,7 @@ enum DailySessionKind {
 
   bool get isVocabulary => switch (this) {
         vocabularyToGerman ||
+        easyVocabularyToGerman ||
         vocabularyToRussian ||
         importantVocabularyToGerman ||
         importantVocabularyToRussian =>
@@ -56,6 +58,8 @@ enum DailySessionKind {
         importantVocabularyToGerman || importantVocabularyToRussian => true,
         _ => false,
       };
+
+  bool get isEasyVocabulary => this == easyVocabularyToGerman;
 
   bool get isGrammar => this == grammar || this == favoriteGrammar;
 }

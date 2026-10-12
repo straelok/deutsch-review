@@ -222,6 +222,14 @@ class _PracticePageState extends State<PracticePage> {
                     ),
                     style: Theme.of(context).textTheme.labelLarge,
                   ),
+                  if (_session!.kind.isEasyVocabulary) ...[
+                    const SizedBox(height: 6),
+                    Text(
+                      s.easyModeHint,
+                      key: const Key('easy-mode-hint'),
+                      style: Theme.of(context).textTheme.bodySmall,
+                    ),
+                  ],
                   const SizedBox(height: 24),
                   Text(
                     toRussian
@@ -348,7 +356,11 @@ class _PracticePageState extends State<PracticePage> {
                       key: const Key('next-answer'),
                       focusNode: _nextFocus,
                       onPressed: _savingVocabularyAnswer ? null : _next,
-                      child: Text(s.next),
+                      child: Text(
+                        _session!.kind.isEasyVocabulary && !_lastCorrect
+                            ? s.tryAgain
+                            : s.next,
+                      ),
                     )
                   else ...[
                     FilledButton(
@@ -401,6 +413,7 @@ class _PracticePageState extends State<PracticePage> {
         _unknownGrammarAnswer(),
       DailySessionKind.numbers => _unknownNumber(),
       DailySessionKind.vocabularyToGerman ||
+      DailySessionKind.easyVocabularyToGerman ||
       DailySessionKind.vocabularyToRussian ||
       DailySessionKind.importantVocabularyToGerman ||
       DailySessionKind.importantVocabularyToRussian =>
@@ -430,6 +443,11 @@ class _PracticePageState extends State<PracticePage> {
         .where((session) =>
             !session.isRequired &&
             session.kind == DailySessionKind.vocabularyToGerman)
+        .toList();
+    final easyToGerman = _daySessions
+        .where((session) =>
+            !session.isRequired &&
+            session.kind == DailySessionKind.easyVocabularyToGerman)
         .toList();
     final extraToRussian = _daySessions
         .where((session) =>
@@ -559,6 +577,17 @@ class _PracticePageState extends State<PracticePage> {
           canAdd: toGermanComplete,
           addKey: const Key('create-extra-session'),
           onAdd: () => _createExtraSession(DailySessionKind.vocabularyToGerman),
+        ),
+        const SizedBox(height: 20),
+        _sessionCategory(
+          kind: DailySessionKind.easyVocabularyToGerman,
+          icon: Icons.edit_note,
+          title: s.easyToGermanCategory,
+          sessions: easyToGerman,
+          canAdd: true,
+          addKey: const Key('create-easy-to-german-session'),
+          onAdd: () =>
+              _createExtraSession(DailySessionKind.easyVocabularyToGerman),
         ),
         const SizedBox(height: 20),
         _sessionCategory(
@@ -1637,6 +1666,28 @@ class _PracticePageState extends State<PracticePage> {
 
     setState(() => _savingVocabularyAnswer = true);
     try {
+      if (_session!.kind.isEasyVocabulary && !correct) {
+        await widget.practice.saveAttempt(
+          PracticeAttempt(
+            id: newUuidV4(),
+            itemId: item.id,
+            sessionId: _session!.id,
+            answerText: answer,
+            correct: false,
+            attemptedAt: DateTime.now().toUtc(),
+          ),
+        );
+        widget.onAttemptSaved();
+        if (!mounted) return;
+        setState(() {
+          _answered = true;
+          _lastCorrect = false;
+          _pendingVocabularyAnswer = null;
+          _savingVocabularyAnswer = false;
+        });
+        _focusNextButton();
+        return;
+      }
       final result = await _recordVocabularyAnswer(
         item: item,
         answer: answer,
@@ -1933,6 +1984,15 @@ class _PracticePageState extends State<PracticePage> {
   }
 
   Future<void> _next() async {
+    if (_session!.kind.isEasyVocabulary && !_lastCorrect) {
+      setState(() {
+        _answerController.clear();
+        _answered = false;
+        _showVocabularyHelp = false;
+      });
+      _focusAnswerField();
+      return;
+    }
     if (!await _recordPendingVocabularyError()) return;
     setState(() {
       _answerController.clear();

@@ -483,6 +483,60 @@ void main() {
     expect(find.text('0/1'), findsOneWidget);
   });
 
+  testWidgets('easy lesson repeats a word until the answer is correct', (
+    tester,
+  ) async {
+    final database = AppDatabase.inMemory();
+    addTearDown(database.close);
+    await SqliteLearningItemRepository(database).save(_word());
+
+    await tester.pumpWidget(_app(database));
+    await tester.pumpAndSettle();
+    final start = find.byKey(const Key('create-easy-to-german-session'));
+    await tester.scrollUntilVisible(start, 300);
+    await tester.pumpAndSettle();
+    await tester.tap(start);
+    await tester.pumpAndSettle();
+
+    expect(find.byKey(const Key('easy-mode-hint')), findsOneWidget);
+    expect(find.text('учить'), findsOneWidget);
+    await tester.enterText(find.byKey(const Key('practice-answer')), 'leren');
+    await tester.tap(find.byKey(const Key('check-answer')));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Richtige Antwort: lernen'), findsOneWidget);
+    expect(find.text('Noch einmal'), findsOneWidget);
+    var session = database.connection
+        .select(
+          "SELECT answered_count, queue_json FROM daily_sessions "
+          "WHERE kind = 'easy_vocabulary_to_german'",
+        )
+        .single;
+    expect(session['answered_count'], 0);
+    expect(jsonDecode(session['queue_json'] as String), hasLength(20));
+
+    await tester.tap(find.byKey(const Key('next-answer')));
+    await tester.pumpAndSettle();
+    expect(find.text('учить'), findsOneWidget);
+    expect(find.text('Antwort 1 von 20'), findsOneWidget);
+    await tester.enterText(find.byKey(const Key('practice-answer')), 'lernen');
+    await tester.tap(find.byKey(const Key('check-answer')));
+    await tester.pumpAndSettle();
+    expect(find.text('Richtig'), findsOneWidget);
+
+    session = database.connection
+        .select(
+          "SELECT answered_count, queue_json FROM daily_sessions "
+          "WHERE kind = 'easy_vocabulary_to_german'",
+        )
+        .single;
+    expect(session['answered_count'], 1);
+    expect(jsonDecode(session['queue_json'] as String), hasLength(19));
+    final summary = await SqlitePracticeRepository(database).summary();
+    expect(summary.attempts, 2);
+    expect(summary.correct, 1);
+  });
+
   testWidgets('shows separate daily statistics for each practice category', (
     tester,
   ) async {
