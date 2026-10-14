@@ -101,41 +101,6 @@ class _SettingsPageState extends State<SettingsPage> {
                   s.choose('Tagesplan', 'План занятий'),
                   style: Theme.of(context).textTheme.titleLarge,
                 ),
-                const SizedBox(height: 8),
-                SwitchListTile(
-                  key: const Key('include-important-lessons'),
-                  contentPadding: EdgeInsets.zero,
-                  title: Text(s.choose(
-                    'Lektionen mit wichtigen Wörtern',
-                    'Уроки с важными словами',
-                  )),
-                  subtitle: Text(s.choose(
-                    'Zeigt die beiden zusätzlichen Kategorien im Tagesplan.',
-                    'Показывает две дополнительные категории в плане.',
-                  )),
-                  value: settings.includeImportantLessons,
-                  onChanged: (value) => _update(
-                    settings.copyWith(includeImportantLessons: value),
-                  ),
-                ),
-                SwitchListTile(
-                  key: const Key('include-favorite-grammar-lessons'),
-                  contentPadding: EdgeInsets.zero,
-                  title: Text(s.choose(
-                    'Lektionen mit Grammatik-Favoriten',
-                    'Уроки с избранной грамматикой',
-                  )),
-                  subtitle: Text(s.choose(
-                    'Zeigt die zusätzliche Kategorie im Tagesplan.',
-                    'Показывает дополнительную категорию в плане.',
-                  )),
-                  value: settings.includeFavoriteGrammarLessons,
-                  onChanged: (value) => _update(
-                    settings.copyWith(
-                      includeFavoriteGrammarLessons: value,
-                    ),
-                  ),
-                ),
                 const Divider(height: 32),
                 _problemWordWeight(settings),
                 const Divider(height: 32),

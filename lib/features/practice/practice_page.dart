@@ -21,6 +21,8 @@ import '../../domain/word_priority.dart';
 import '../../grammar/grammar_catalog.dart';
 import '../../l10n/ui_strings.dart';
 
+enum _LessonGroup { toGerman, toRussian, grammar, other }
+
 class PracticePage extends StatefulWidget {
   const PracticePage({
     required this.learningItems,
@@ -88,6 +90,7 @@ class _PracticePageState extends State<PracticePage> {
   final Map<String, TextEditingController> _grammarControllers = {};
   String? _selectedGrammarOption;
   List<int> _wordOrderSelection = const [];
+  final Set<_LessonGroup> _expandedLessonGroups = <_LessonGroup>{};
 
   LearningItem? get _current => _queue.isEmpty ? null : _queue.first;
   String? get _currentGrammar =>
@@ -512,138 +515,305 @@ class _PracticePageState extends State<PracticePage> {
         const SizedBox(height: 16),
         Text(s.chooseSession),
         const SizedBox(height: 16),
-        if (widget.appSettings.includeImportantLessons) ...[
-          _featuredBlock(
-            key: const Key('important-lessons-block'),
-            title: s.importantWordsCategory,
-            icon: Icons.star,
-            children: [
-              if (importantItems.isEmpty &&
-                  importantToGerman.every((session) => session.isComplete) &&
-                  importantToRussian.every((session) => session.isComplete))
-                _featuredHint(Icons.star_outline, s.noImportantWordsHint),
-              _sessionCategory(
-                kind: DailySessionKind.importantVocabularyToGerman,
-                icon: Icons.arrow_forward,
-                title: s.importantToGermanCategory,
-                sessions: importantToGerman,
-                canAdd: true,
-                canStart: importantItems.isNotEmpty,
-                addKey: const Key('create-important-to-german-session'),
-                onAdd: () => _createExtraSession(
-                  DailySessionKind.importantVocabularyToGerman,
-                ),
-              ),
-              const SizedBox(height: 12),
-              _sessionCategory(
-                kind: DailySessionKind.importantEasyVocabularyToGerman,
-                icon: Icons.edit_note,
-                title: s.importantEasyToGermanCategory,
-                sessions: importantEasyToGerman,
-                canAdd: true,
-                canStart: importantItems.isNotEmpty,
-                addKey: const Key(
-                  'create-important-easy-to-german-session',
-                ),
-                onAdd: () => _createExtraSession(
-                  DailySessionKind.importantEasyVocabularyToGerman,
-                ),
-              ),
-              const SizedBox(height: 12),
-              _sessionCategory(
-                kind: DailySessionKind.importantVocabularyToRussian,
-                icon: Icons.arrow_back,
-                title: s.importantToRussianCategory,
-                sessions: importantToRussian,
-                canAdd: true,
-                canStart: importantItems.isNotEmpty,
-                addKey: const Key('create-important-to-russian-session'),
-                onAdd: () => _createExtraSession(
-                  DailySessionKind.importantVocabularyToRussian,
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 20),
-        ],
-        if (widget.appSettings.includeFavoriteGrammarLessons) ...[
-          _featuredBlock(
-            key: const Key('favorite-grammar-lessons-block'),
-            title: s.favoriteGrammarCategory,
-            icon: Icons.auto_awesome,
-            children: [
-              if (_favoriteGrammarTopics.isEmpty &&
-                  favoriteGrammar.every((session) => session.isComplete))
-                _featuredHint(Icons.star_outline, s.noFavoriteGrammarHint),
-              _sessionCategory(
-                kind: DailySessionKind.favoriteGrammar,
-                icon: Icons.school_outlined,
-                title: s.favoriteGrammarLesson,
-                sessions: favoriteGrammar,
-                canAdd: true,
-                canStart: _favoriteGrammarTopics.isNotEmpty,
-                addKey: const Key('create-favorite-grammar-session'),
-                onAdd: () =>
-                    _createExtraSession(DailySessionKind.favoriteGrammar),
-              ),
-            ],
-          ),
-          const SizedBox(height: 20),
-        ],
-        _sessionCategory(
+        _lessonGroup(
+          group: _LessonGroup.toGerman,
           kind: DailySessionKind.vocabularyToGerman,
           icon: Icons.arrow_forward,
           title: s.toGermanCategory,
           sessions: [...toGermanSessions, ...extraToGerman],
-          canAdd: toGermanComplete,
+          canAdd: toGermanComplete || toGermanSessions.isEmpty,
           addKey: const Key('create-extra-session'),
           onAdd: () => _createExtraSession(DailySessionKind.vocabularyToGerman),
+          children: [
+            _sessionCategory(
+              kind: DailySessionKind.easyVocabularyToGerman,
+              icon: Icons.edit_note,
+              title: s.easyToGermanCategory,
+              sessions: easyToGerman,
+              canAdd: true,
+              addKey: const Key('create-easy-to-german-session'),
+              onAdd: () =>
+                  _createExtraSession(DailySessionKind.easyVocabularyToGerman),
+            ),
+            const SizedBox(height: 12),
+            _featuredBlock(
+              key: const Key('important-to-german-lessons-block'),
+              title: s.importantWordsCategory,
+              icon: Icons.star,
+              children: [
+                if (importantItems.isEmpty &&
+                    importantToGerman.every((session) => session.isComplete))
+                  _featuredHint(Icons.star_outline, s.noImportantWordsHint),
+                _sessionCategory(
+                  kind: DailySessionKind.importantVocabularyToGerman,
+                  icon: Icons.arrow_forward,
+                  title: s.importantToGermanCategory,
+                  sessions: importantToGerman,
+                  canAdd: true,
+                  canStart: importantItems.isNotEmpty,
+                  addKey: const Key('create-important-to-german-session'),
+                  onAdd: () => _createExtraSession(
+                    DailySessionKind.importantVocabularyToGerman,
+                  ),
+                ),
+                const SizedBox(height: 12),
+                _sessionCategory(
+                  kind: DailySessionKind.importantEasyVocabularyToGerman,
+                  icon: Icons.edit_note,
+                  title: s.importantEasyToGermanCategory,
+                  sessions: importantEasyToGerman,
+                  canAdd: true,
+                  canStart: importantItems.isNotEmpty,
+                  addKey: const Key(
+                    'create-important-easy-to-german-session',
+                  ),
+                  onAdd: () => _createExtraSession(
+                    DailySessionKind.importantEasyVocabularyToGerman,
+                  ),
+                ),
+              ],
+            ),
+          ],
         ),
-        const SizedBox(height: 20),
-        _sessionCategory(
-          kind: DailySessionKind.easyVocabularyToGerman,
-          icon: Icons.edit_note,
-          title: s.easyToGermanCategory,
-          sessions: easyToGerman,
-          canAdd: true,
-          addKey: const Key('create-easy-to-german-session'),
-          onAdd: () =>
-              _createExtraSession(DailySessionKind.easyVocabularyToGerman),
-        ),
-        const SizedBox(height: 20),
-        _sessionCategory(
+        const SizedBox(height: 16),
+        _lessonGroup(
+          group: _LessonGroup.toRussian,
           kind: DailySessionKind.vocabularyToRussian,
           icon: Icons.arrow_back,
           title: s.toRussianCategory,
           sessions: [...toRussianSessions, ...extraToRussian],
-          canAdd: toRussianComplete,
+          canAdd: toRussianComplete || toRussianSessions.isEmpty,
           addKey: const Key('create-extra-to-russian-session'),
           onAdd: () =>
               _createExtraSession(DailySessionKind.vocabularyToRussian),
+          children: [
+            _featuredBlock(
+              key: const Key('important-to-russian-lessons-block'),
+              title: s.importantWordsCategory,
+              icon: Icons.star,
+              children: [
+                if (importantItems.isEmpty &&
+                    importantToRussian.every((session) => session.isComplete))
+                  _featuredHint(Icons.star_outline, s.noImportantWordsHint),
+                _sessionCategory(
+                  kind: DailySessionKind.importantVocabularyToRussian,
+                  icon: Icons.arrow_back,
+                  title: s.importantToRussianCategory,
+                  sessions: importantToRussian,
+                  canAdd: true,
+                  canStart: importantItems.isNotEmpty,
+                  addKey: const Key('create-important-to-russian-session'),
+                  onAdd: () => _createExtraSession(
+                    DailySessionKind.importantVocabularyToRussian,
+                  ),
+                ),
+              ],
+            ),
+          ],
         ),
-        const SizedBox(height: 20),
-        _sessionCategory(
+        const SizedBox(height: 16),
+        _lessonGroup(
+          group: _LessonGroup.grammar,
+          kind: DailySessionKind.grammar,
+          icon: Icons.school_outlined,
+          title: s.grammarCategory,
+          sessions: [...grammarSessions, ...extraGrammar],
+          canAdd: grammarComplete || grammarSessions.isEmpty,
+          canStart: _availableGrammarTopics.isNotEmpty,
+          addKey: const Key('create-extra-grammar-session'),
+          onAdd: () => _createExtraSession(DailySessionKind.grammar),
+          children: [
+            _featuredBlock(
+              key: const Key('favorite-grammar-lessons-block'),
+              title: s.favoriteGrammarCategory,
+              icon: Icons.auto_awesome,
+              children: [
+                if (_favoriteGrammarTopics.isEmpty &&
+                    favoriteGrammar.every((session) => session.isComplete))
+                  _featuredHint(Icons.star_outline, s.noFavoriteGrammarHint),
+                _sessionCategory(
+                  kind: DailySessionKind.favoriteGrammar,
+                  icon: Icons.school_outlined,
+                  title: s.favoriteGrammarLesson,
+                  sessions: favoriteGrammar,
+                  canAdd: true,
+                  canStart: _favoriteGrammarTopics.isNotEmpty,
+                  addKey: const Key('create-favorite-grammar-session'),
+                  onAdd: () =>
+                      _createExtraSession(DailySessionKind.favoriteGrammar),
+                ),
+              ],
+            ),
+          ],
+        ),
+        const SizedBox(height: 16),
+        _lessonGroup(
+          group: _LessonGroup.other,
           kind: DailySessionKind.numbers,
-          icon: Icons.pin_outlined,
-          title: s.numbersCategory,
+          icon: Icons.grid_view_outlined,
+          title: s.otherCategory,
           sessions: [...numberSessions, ...extraNumbers],
-          canAdd: numbersComplete,
+          canAdd: numbersComplete || numberSessions.isEmpty,
           addKey: const Key('create-extra-number-session'),
           onAdd: () => _createExtraSession(DailySessionKind.numbers),
+          children: [
+            _sessionCategory(
+              kind: DailySessionKind.numbers,
+              icon: Icons.pin_outlined,
+              title: s.numbersCategory,
+              sessions: [...numberSessions, ...extraNumbers],
+              canAdd: numbersComplete || numberSessions.isEmpty,
+              addKey: const Key('create-extra-number-session-expanded'),
+              onAdd: () => _createExtraSession(DailySessionKind.numbers),
+            ),
+          ],
         ),
-        if (grammarSessions.isNotEmpty) ...[
-          const SizedBox(height: 20),
-          _sessionCategory(
-            kind: DailySessionKind.grammar,
-            icon: Icons.school_outlined,
-            title: s.grammarCategory,
-            sessions: [...grammarSessions, ...extraGrammar],
-            canAdd: grammarComplete,
-            addKey: const Key('create-extra-grammar-session'),
-            onAdd: () => _createExtraSession(DailySessionKind.grammar),
-          ),
-        ],
       ],
+    );
+  }
+
+  Widget _lessonGroup({
+    required _LessonGroup group,
+    required DailySessionKind kind,
+    required IconData icon,
+    required String title,
+    required List<DailySession> sessions,
+    required bool canAdd,
+    bool canStart = true,
+    required Key addKey,
+    required VoidCallback onAdd,
+    required List<Widget> children,
+  }) {
+    final expanded = _expandedLessonGroups.contains(group);
+    final completed = sessions.where((session) => session.isComplete).length;
+    final inProgress = sessions
+        .where((session) => session.status == DailySessionStatus.inProgress)
+        .firstOrNull;
+    final next = sessions
+        .where((session) => session.status == DailySessionStatus.planned)
+        .firstOrNull;
+    final actionEnabled = inProgress != null
+        ? _canOpenSession(inProgress)
+        : canAdd
+            ? canStart
+            : next != null && _canOpenSession(next);
+    final actionLabel = inProgress != null
+        ? widget.strings.continueLesson
+        : canAdd
+            ? sessions.isEmpty
+                ? widget.strings.start
+                : widget.strings.addLesson
+            : widget.strings.nextLesson;
+    final actionIcon = inProgress != null
+        ? Icons.play_arrow
+        : canAdd
+            ? Icons.add
+            : Icons.skip_next;
+    final groupKey = group.name.replaceAll(RegExp(r'(?=[A-Z])'), '-').toLowerCase();
+
+    return Card(
+      key: Key('lesson-group-$groupKey'),
+      margin: EdgeInsets.zero,
+      clipBehavior: Clip.antiAlias,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Padding(
+            padding: const EdgeInsets.fromLTRB(8, 8, 12, 8),
+            child: Row(
+              children: [
+                IconButton(
+                  key: Key('toggle-lesson-group-$groupKey'),
+                  tooltip: expanded
+                      ? widget.strings.collapse
+                      : widget.strings.expand,
+                  onPressed: () => setState(() {
+                    if (expanded) {
+                      _expandedLessonGroups.remove(group);
+                    } else {
+                      _expandedLessonGroups.add(group);
+                    }
+                  }),
+                  icon: Icon(
+                    expanded ? Icons.expand_less : Icons.expand_more,
+                  ),
+                ),
+                Icon(icon),
+                const SizedBox(width: 10),
+                Expanded(
+                  child: InkWell(
+                    onTap: () => setState(() {
+                      if (expanded) {
+                        _expandedLessonGroups.remove(group);
+                      } else {
+                        _expandedLessonGroups.add(group);
+                      }
+                    }),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          title,
+                          style: Theme.of(context).textTheme.titleMedium,
+                        ),
+                        Text(
+                          widget.strings.categoryProgress(
+                            completed,
+                            sessions.length,
+                          ),
+                          style: Theme.of(context).textTheme.bodySmall,
+                        ),
+                        if (inProgress != null)
+                          Text(
+                            widget.strings.sessionAnswers(
+                              inProgress.answeredCount,
+                              inProgress.targetAnswers,
+                            ),
+                            style: Theme.of(context).textTheme.bodySmall,
+                          ),
+                      ],
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 8),
+                FilledButton.tonalIcon(
+                  key: inProgress == null && canAdd
+                      ? addKey
+                      : Key(
+                          'session-category-action-${kind.wireName.replaceAll('_', '-')}',
+                        ),
+                  onPressed: actionEnabled
+                      ? () {
+                          if (inProgress != null) {
+                            _selectSession(inProgress);
+                          } else if (canAdd) {
+                            onAdd();
+                          } else if (next != null) {
+                            _selectSession(next);
+                          }
+                        }
+                      : null,
+                  icon: Icon(actionIcon, size: 18),
+                  label: Text(actionLabel),
+                  style: const ButtonStyle(
+                    visualDensity: VisualDensity.compact,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          if (expanded) ...[
+            const Divider(height: 1),
+            Padding(
+              padding: const EdgeInsets.all(12),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: children,
+              ),
+            ),
+          ],
+        ],
+      ),
     );
   }
 

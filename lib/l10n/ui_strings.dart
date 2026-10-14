@@ -26,6 +26,7 @@ final class UiStrings {
   String get alphabetCategory => choose('Alphabet', 'Алфавит');
   String get numbersCategory => choose('Zahlen', 'Цифры');
   String get grammarCategory => choose('Grammatik', 'Грамматика');
+  String get otherCategory => choose('Sonstiges', 'Прочее');
   String get wordsCategory => choose('Wortschatz', 'Слова');
   String get toGermanCategory => choose(
         'Russisch → Deutsch',
