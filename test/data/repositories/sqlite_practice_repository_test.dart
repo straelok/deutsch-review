@@ -144,41 +144,46 @@ void main() {
       ),
     );
     final sessions = SqliteDailySessionRepository(database);
-    final session = await sessions.createExtra(
-      localDate: '2026-10-14',
-      now: now,
-      kind: DailySessionKind.easyVocabularyToGerman,
-    );
     final practice = SqlitePracticeRepository(database);
-    await practice.saveAttempt(
-      PracticeAttempt(
-        id: 'wrong',
-        itemId: 'item-1',
-        sessionId: session.id,
-        answerText: 'leren',
-        correct: false,
-        attemptedAt: now,
-      ),
-    );
-    await practice.saveAttempt(
-      PracticeAttempt(
-        id: 'correct',
-        itemId: 'item-1',
-        sessionId: session.id,
-        answerText: 'lernen',
-        correct: true,
-        attemptedAt: now.add(const Duration(minutes: 1)),
-      ),
-    );
+    for (final (index, kind) in <DailySessionKind>[
+      DailySessionKind.easyVocabularyToGerman,
+      DailySessionKind.multipleChoice,
+    ].indexed) {
+      final session = await sessions.createExtra(
+        localDate: '2026-10-14',
+        now: now,
+        kind: kind,
+      );
+      await practice.saveAttempt(
+        PracticeAttempt(
+          id: 'wrong-$index',
+          itemId: 'item-1',
+          sessionId: session.id,
+          answerText: 'leren',
+          correct: false,
+          attemptedAt: now.add(Duration(minutes: index * 2)),
+        ),
+      );
+      await practice.saveAttempt(
+        PracticeAttempt(
+          id: 'correct-$index',
+          itemId: 'item-1',
+          sessionId: session.id,
+          answerText: 'lernen',
+          correct: true,
+          attemptedAt: now.add(Duration(minutes: index * 2 + 1)),
+        ),
+      );
+    }
 
     final summary = await practice.summary();
     final statistics = (await practice.statisticsByItem())['item-1']!;
-    expect(summary.attempts, 1);
+    expect(summary.attempts, 2);
     expect(summary.correct, 0);
-    expect(statistics.allTime.attempts, 1);
+    expect(statistics.allTime.attempts, 2);
     expect(statistics.allTime.correct, 0);
     expect(await practice.recentOutcomes(), {
-      'item-1': <bool>[false],
+      'item-1': <bool>[false, false],
     });
   });
 

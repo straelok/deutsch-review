@@ -28,6 +28,7 @@ enum DailySessionKind {
   grammar('grammar'),
   numbers('numbers'),
   matching('matching'),
+  multipleChoice('multiple_choice'),
   marathonToGerman('marathon_to_german'),
   marathonToRussian('marathon_to_russian');
 
@@ -51,6 +52,7 @@ enum DailySessionKind {
         importantEasyVocabularyToGerman ||
         importantVocabularyToRussian ||
         matching ||
+        multipleChoice ||
         marathonToGerman ||
         marathonToRussian =>
           true,

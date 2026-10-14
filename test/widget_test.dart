@@ -962,6 +962,67 @@ void main() {
     expect(find.text('Richtig'), findsOneWidget);
   });
 
+  testWidgets('alternates multiple choice translation direction', (
+    tester,
+  ) async {
+    final database = AppDatabase.inMemory();
+    addTearDown(database.close);
+    final items = SqliteLearningItemRepository(database);
+    final now = DateTime.utc(2026, 10, 14, 10);
+    for (var index = 0; index < 20; index++) {
+      await items.save(
+        LearningItem(
+          id: 'choice-$index',
+          type: LearningItemType.word,
+          level: 'A1.1',
+          lesson: '1',
+          topic: 'Test',
+          learned: true,
+          createdAt: now,
+          updatedAt: now,
+          sourceRef: 'test',
+          content: {
+            'german': 'Wort $index',
+            'translation_ru': 'перевод $index',
+          },
+        ),
+      );
+    }
+
+    await tester.pumpWidget(_app(database));
+    await tester.pumpAndSettle();
+    await _expandCategory(tester, 'multiple-choice');
+    await tester.tap(find.byKey(const Key('create-multiple-choice-session')));
+    await tester.pumpAndSettle();
+
+    final session = database.connection
+        .select(
+          "SELECT id, queue_json FROM daily_sessions WHERE kind = 'multiple_choice'",
+        )
+        .single;
+    final queue = (jsonDecode(session['queue_json'] as String) as List<Object?>)
+        .cast<String>();
+    final firstIndex = int.parse(queue[0].split('-').last);
+    final secondIndex = int.parse(queue[1].split('-').last);
+    expect(find.text('Wort $firstIndex'), findsOneWidget);
+    expect(find.byKey(const Key('multiple-choice-option-1')), findsOneWidget);
+    expect(find.byKey(const Key('multiple-choice-option-4')), findsOneWidget);
+
+    await tester.tap(find.byKey(const Key('multiple-choice-option-1')));
+    await tester.pumpAndSettle();
+    await tester.tap(find.byKey(const Key('multiple-choice-next')));
+    await tester.pumpAndSettle();
+
+    expect(find.text('перевод $secondIndex'), findsOneWidget);
+    expect(
+      database.connection.select(
+        'SELECT * FROM practice_attempts WHERE session_id = ?',
+        <Object?>[session['id']],
+      ),
+      hasLength(1),
+    );
+  });
+
   testWidgets('bietet nach fünf Sitzungen einen neuen Unterricht an', (
     tester,
   ) async {
@@ -1400,7 +1461,7 @@ Future<void> _expandCategory(WidgetTester tester, String category) async {
     'vocabulary-to-german' || 'easy-vocabulary-to-german' => 'to-german',
     'vocabulary-to-russian' => 'to-russian',
     'grammar' || 'favorite-grammar' => 'grammar',
-    'numbers' || 'matching' => 'other',
+    'numbers' || 'matching' || 'multiple-choice' => 'other',
     _ => null,
   };
   if (group != null) {

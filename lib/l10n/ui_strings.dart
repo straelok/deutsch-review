@@ -41,6 +41,16 @@ final class UiStrings {
         'Für diese Übung werden mindestens 24 eindeutige Wortpaare benötigt.',
         'Для этого режима нужно не менее 24 уникальных пар слов.',
       );
+  String get multipleChoiceCategory =>
+      choose('Übersetzung wählen', 'Выбор перевода');
+  String get multipleChoiceHint => choose(
+        'Wähle die richtige Übersetzung. Die Richtung wechselt nach jeder Frage.',
+        'Выберите правильный перевод. Направление меняется после каждого вопроса.',
+      );
+  String get multipleChoiceNeedsWords => choose(
+        'Für diese Übung werden mindestens 20 eindeutige Wortpaare benötigt.',
+        'Для этого режима нужно не менее 20 уникальных пар слов.',
+      );
   String get marathonToGermanCategory => choose(
         'Marathon: Russisch → Deutsch',
         'Марафон: с русского на немецкий',

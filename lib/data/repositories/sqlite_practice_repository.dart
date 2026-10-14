@@ -19,7 +19,8 @@ final class SqlitePracticeRepository implements PracticeRepository {
         AND daily_sessions.kind IN (
           'easy_vocabulary_to_german',
           'important_easy_vocabulary_to_german',
-          'matching'
+          'matching',
+          'multiple_choice'
         )
     )
   )''';

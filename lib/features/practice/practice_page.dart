@@ -76,6 +76,9 @@ class _PracticePageState extends State<PracticePage> {
   String? _selectedMatchingItemId;
   (String, String)? _wrongMatchingPair;
   List<String> _matchingRussianOrder = const [];
+  List<LearningItem> _choiceOptions = const [];
+  String? _selectedChoiceItemId;
+  bool _choiceToRussian = true;
   Set<String> _availableGrammarTopics = const {};
   Set<String> _favoriteGrammarTopics = const {};
   DailySession? _session;
@@ -188,6 +191,9 @@ class _PracticePageState extends State<PracticePage> {
     }
     if (_session!.kind == DailySessionKind.matching) {
       return _matchingPractice();
+    }
+    if (_session!.kind == DailySessionKind.multipleChoice) {
+      return _withMultipleChoiceShortcuts(_multipleChoicePractice());
     }
 
     final item = _current;
@@ -427,6 +433,7 @@ class _PracticePageState extends State<PracticePage> {
         _unknownGrammarAnswer(),
       DailySessionKind.numbers => _unknownNumber(),
       DailySessionKind.matching => Future<void>.value(),
+      DailySessionKind.multipleChoice => _answerMultipleChoice(null),
       DailySessionKind.marathonToGerman ||
       DailySessionKind.marathonToRussian =>
         _unknownAnswer(),
@@ -486,6 +493,9 @@ class _PracticePageState extends State<PracticePage> {
         .toList();
     final matchingSessions = _daySessions
         .where((session) => session.kind == DailySessionKind.matching)
+        .toList();
+    final multipleChoiceSessions = _daySessions
+        .where((session) => session.kind == DailySessionKind.multipleChoice)
         .toList();
     final marathonToGerman = _persistentSessions
         .where((session) => session.kind == DailySessionKind.marathonToGerman)
@@ -705,6 +715,24 @@ class _PracticePageState extends State<PracticePage> {
               const SizedBox(height: 8),
               Text(
                 s.matchingNeedsWords,
+                style: Theme.of(context).textTheme.bodySmall,
+              ),
+            ],
+            const SizedBox(height: 12),
+            _sessionCategory(
+              kind: DailySessionKind.multipleChoice,
+              icon: Icons.checklist_outlined,
+              title: s.multipleChoiceCategory,
+              sessions: multipleChoiceSessions,
+              canAdd: true,
+              canStart: _matchingCandidates().length >= 20,
+              addKey: const Key('create-multiple-choice-session'),
+              onAdd: () => _createExtraSession(DailySessionKind.multipleChoice),
+            ),
+            if (_matchingCandidates().length < 20) ...[
+              const SizedBox(height: 8),
+              Text(
+                s.multipleChoiceNeedsWords,
                 style: Theme.of(context).textTheme.bodySmall,
               ),
             ],
@@ -1153,6 +1181,246 @@ class _PracticePageState extends State<PracticePage> {
               _activeItems.any((item) => item.isImportant),
         _ => _activeItems.isNotEmpty,
       };
+
+  Widget _withMultipleChoiceShortcuts(Widget child) {
+    return CallbackShortcuts(
+      bindings: <ShortcutActivator, VoidCallback>{
+        const SingleActivator(LogicalKeyboardKey.escape): () =>
+            _answerMultipleChoice(null),
+        const SingleActivator(LogicalKeyboardKey.digit1): () =>
+            _selectChoiceByIndex(0),
+        const SingleActivator(LogicalKeyboardKey.digit2): () =>
+            _selectChoiceByIndex(1),
+        const SingleActivator(LogicalKeyboardKey.digit3): () =>
+            _selectChoiceByIndex(2),
+        const SingleActivator(LogicalKeyboardKey.digit4): () =>
+            _selectChoiceByIndex(3),
+        const SingleActivator(LogicalKeyboardKey.enter): _nextMultipleChoice,
+      },
+      child: Focus(autofocus: true, child: child),
+    );
+  }
+
+  Widget _multipleChoicePractice() {
+    final s = widget.strings;
+    final item = _current;
+    if (item == null) {
+      return _CenteredPanel(
+        icon: Icons.checklist_outlined,
+        title: s.multipleChoiceCategory,
+        message: s.reviewEmpty,
+      );
+    }
+    final prompt = _choiceToRussian
+        ? learningItemGermanWithPlural(item)
+        : _primaryTranslation(item);
+    return Center(
+      child: SingleChildScrollView(
+        padding: const EdgeInsets.all(24),
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 680),
+          child: Card(
+            child: Padding(
+              padding: const EdgeInsets.all(24),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: TextButton.icon(
+                      key: const Key('back-to-plan'),
+                      onPressed: _savingVocabularyAnswer ? null : _load,
+                      icon: const Icon(Icons.arrow_back),
+                      label: Text(s.dailyPlan),
+                    ),
+                  ),
+                  Text(
+                    s.progress(
+                      _session!.answeredCount,
+                      _session!.targetAnswers,
+                    ),
+                    style: Theme.of(context).textTheme.labelLarge,
+                  ),
+                  const SizedBox(height: 8),
+                  Text(s.multipleChoiceHint),
+                  const SizedBox(height: 20),
+                  Text(
+                    prompt,
+                    textAlign: TextAlign.center,
+                    style: Theme.of(context).textTheme.headlineSmall,
+                  ),
+                  const SizedBox(height: 24),
+                  for (var index = 0;
+                      index < _choiceOptions.length;
+                      index++) ...[
+                    _multipleChoiceButton(
+                      item: _choiceOptions[index],
+                      index: index,
+                      correctItemId: item.id,
+                    ),
+                    if (index != _choiceOptions.length - 1)
+                      const SizedBox(height: 10),
+                  ],
+                  if (_answered) ...[
+                    const SizedBox(height: 20),
+                    Text(
+                      _lastCorrect ? s.correct : s.incorrect,
+                      textAlign: TextAlign.center,
+                      style: Theme.of(context).textTheme.titleMedium,
+                    ),
+                    const SizedBox(height: 12),
+                    FilledButton.icon(
+                      key: const Key('multiple-choice-next'),
+                      onPressed: _nextMultipleChoice,
+                      icon: const Icon(Icons.arrow_forward),
+                      label: Text(s.next),
+                    ),
+                  ],
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _multipleChoiceButton({
+    required LearningItem item,
+    required int index,
+    required String correctItemId,
+  }) {
+    final colors = Theme.of(context).colorScheme;
+    final isCorrect = item.id == correctItemId;
+    final selected = item.id == _selectedChoiceItemId;
+    final revealCorrect = _answered && isCorrect;
+    final revealWrong = _answered && selected && !isCorrect;
+    final label = _choiceToRussian
+        ? _primaryTranslation(item)
+        : learningItemGermanWithPlural(item);
+    return OutlinedButton(
+      key: Key('multiple-choice-option-${index + 1}'),
+      onPressed: _answered || _savingVocabularyAnswer
+          ? null
+          : () => _answerMultipleChoice(item),
+      style: OutlinedButton.styleFrom(
+        minimumSize: const Size.fromHeight(54),
+        foregroundColor: revealCorrect
+            ? colors.onPrimaryContainer
+            : revealWrong
+                ? colors.onErrorContainer
+                : null,
+        backgroundColor: revealCorrect
+            ? colors.primaryContainer
+            : revealWrong
+                ? colors.errorContainer
+                : null,
+      ),
+      child: Text('${index + 1}. $label', textAlign: TextAlign.center),
+    );
+  }
+
+  void _selectChoiceByIndex(int index) {
+    if (_answered ||
+        _savingVocabularyAnswer ||
+        index >= _choiceOptions.length) {
+      return;
+    }
+    _answerMultipleChoice(_choiceOptions[index]);
+  }
+
+  Future<void> _answerMultipleChoice(LearningItem? selected) async {
+    final item = _current;
+    if (item == null || _answered || _savingVocabularyAnswer) return;
+    final correct = selected?.id == item.id;
+    final answer = selected == null
+        ? ''
+        : _choiceToRussian
+            ? _primaryTranslation(selected)
+            : learningItemGermanWithPlural(selected);
+    setState(() => _savingVocabularyAnswer = true);
+    try {
+      final remaining = _queue.skip(1).toList(growable: false);
+      final updated = await widget.sessions.recordAnswer(
+        attempt: PracticeAttempt(
+          id: newUuidV4(),
+          itemId: item.id,
+          sessionId: _session!.id,
+          answerText: answer,
+          correct: correct,
+          attemptedAt: DateTime.now().toUtc(),
+        ),
+        remainingQueueItemIds:
+            remaining.map((entry) => entry.id).toList(growable: false),
+        now: DateTime.now().toUtc(),
+      );
+      widget.onAttemptSaved();
+      if (!mounted) return;
+      setState(() {
+        _session = updated;
+        _nextQueue = remaining;
+        _selectedChoiceItemId = selected?.id;
+        _lastCorrect = correct;
+        _answered = true;
+        _savingVocabularyAnswer = false;
+      });
+    } catch (_) {
+      if (!mounted) return;
+      setState(() => _savingVocabularyAnswer = false);
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(widget.strings.answerSaveFailed)),
+      );
+    }
+  }
+
+  void _nextMultipleChoice() {
+    if (!_answered) return;
+    setState(() {
+      _queue = _nextQueue;
+      _nextQueue = const [];
+      _selectedChoiceItemId = null;
+      _answered = false;
+      _complete = _session!.isComplete;
+    });
+    if (!_complete) _prepareMultipleChoiceOptions();
+  }
+
+  void _prepareMultipleChoiceOptions() {
+    final item = _current;
+    if (item == null || _session == null) return;
+    final toRussian = _session!.answeredCount.isEven;
+    final candidates = _matchingCandidates()
+        .where((candidate) => candidate.id != item.id)
+        .toList()
+      ..shuffle(_random);
+    final options = <LearningItem>[item];
+    final labels = <String>{
+      _multipleChoiceLabelKey(item, toRussian: toRussian),
+    };
+    for (final candidate in candidates) {
+      if (labels.add(
+        _multipleChoiceLabelKey(candidate, toRussian: toRussian),
+      )) {
+        options.add(candidate);
+      }
+      if (options.length == 4) break;
+    }
+    options.shuffle(_random);
+    setState(() {
+      _choiceToRussian = toRussian;
+      _choiceOptions = options;
+    });
+  }
+
+  String _multipleChoiceLabelKey(
+    LearningItem item, {
+    required bool toRussian,
+  }) =>
+      toRussian
+          ? normalizeRussianPracticeAnswer(_primaryTranslation(item))
+          : normalizePracticeAnswer(
+              learningItemGermanWithPlural(item),
+            ).toLowerCase();
 
   Widget _matchingPractice() {
     final s = widget.strings;
@@ -1888,6 +2156,8 @@ class _PracticePageState extends State<PracticePage> {
       _queue = const [];
       _grammarQueue = const [];
       _numberQueue = const [];
+      _choiceOptions = const [];
+      _selectedChoiceItemId = null;
       _focusedGrammarTopicId = null;
       _answered = false;
       _showVocabularyHelp = false;
@@ -1984,6 +2254,10 @@ class _PracticePageState extends State<PracticePage> {
       await _openMatchingSession(session);
       return;
     }
+    if (session.kind == DailySessionKind.multipleChoice) {
+      await _openMultipleChoiceSession(session);
+      return;
+    }
     var queue = _itemsForIds(session.queueItemIds);
     if (session.status == DailySessionStatus.planned ||
         queue.length != session.remaining) {
@@ -2051,6 +2325,37 @@ class _PracticePageState extends State<PracticePage> {
       _complete = session.isComplete;
       _loading = false;
     });
+  }
+
+  Future<void> _openMultipleChoiceSession(DailySession session) async {
+    var queue = _itemsForIds(session.queueItemIds);
+    if (session.status == DailySessionStatus.planned ||
+        queue.length != session.remaining) {
+      final candidates = _matchingCandidates()..shuffle(_random);
+      queue = candidates.take(20).toList(growable: false);
+      if (queue.length < 20) {
+        await _load();
+        return;
+      }
+      session = await widget.sessions.start(
+        id: session.id,
+        queueItemIds: queue.map((item) => item.id).toList(growable: false),
+        now: DateTime.now().toUtc(),
+      );
+    }
+    if (!mounted) return;
+    setState(() {
+      _session = session;
+      _queue = queue;
+      _nextQueue = const [];
+      _choiceOptions = const [];
+      _selectedChoiceItemId = null;
+      _answered = false;
+      _savingVocabularyAnswer = false;
+      _complete = session.isComplete;
+      _loading = false;
+    });
+    if (!session.isComplete) _prepareMultipleChoiceOptions();
   }
 
   Future<void> _openNumberSession(DailySession session) async {
