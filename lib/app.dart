@@ -240,7 +240,10 @@ class _HomeScreenState extends State<HomeScreen> {
         label: s.material,
       ),
       NavigationDestination(
-        icon: const Icon(Icons.school_outlined),
+        icon: const Icon(
+          Icons.school_outlined,
+          key: Key('navigation-grammar'),
+        ),
         label: s.grammar,
       ),
       NavigationDestination(

@@ -1142,7 +1142,7 @@ class _PracticePageState extends State<PracticePage> {
                 FilledButton.tonalIcon(
                   key: canAdd && inProgress == null
                       ? addKey
-                      : Key('session-category-action-$categoryKey'),
+                      : Key('session-row-action-$categoryKey'),
                   onPressed: actionEnabled
                       ? () {
                           if (inProgress != null) {

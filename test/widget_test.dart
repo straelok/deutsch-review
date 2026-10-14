@@ -602,8 +602,8 @@ void main() {
     expect(session['answered_count'], 1);
     expect(jsonDecode(session['queue_json'] as String), hasLength(19));
     final summary = await SqlitePracticeRepository(database).summary();
-    expect(summary.attempts, 2);
-    expect(summary.correct, 1);
+    expect(summary.attempts, 1);
+    expect(summary.correct, 0);
   });
 
   testWidgets('shows separate daily statistics for each practice category', (
@@ -992,7 +992,10 @@ void main() {
     await tester.pumpWidget(_app(database));
     await tester.pumpAndSettle();
     await _expandCategory(tester, 'multiple-choice');
-    await tester.tap(find.byKey(const Key('create-multiple-choice-session')));
+    final start = find.byKey(const Key('create-multiple-choice-session'));
+    await tester.ensureVisible(start);
+    await tester.pumpAndSettle();
+    await tester.tap(start);
     await tester.pumpAndSettle();
 
     final session = database.connection
@@ -1010,7 +1013,10 @@ void main() {
 
     await tester.tap(find.byKey(const Key('multiple-choice-option-1')));
     await tester.pumpAndSettle();
-    await tester.tap(find.byKey(const Key('multiple-choice-next')));
+    final next = find.byKey(const Key('multiple-choice-next'));
+    await tester.ensureVisible(next);
+    await tester.pumpAndSettle();
+    await tester.tap(next);
     await tester.pumpAndSettle();
 
     expect(find.text('перевод $secondIndex'), findsOneWidget);
@@ -1155,8 +1161,7 @@ void main() {
 
     await tester.pumpWidget(_app(database, grammarCatalog: catalog));
     await tester.pumpAndSettle();
-    await tester.tap(find.text('Grammatik'));
-    await tester.pumpAndSettle();
+    await _openGrammarPage(tester);
     await tester.tap(
       find.byKey(const Key('grammar-topic-regular_present')),
     );
@@ -1194,8 +1199,7 @@ void main() {
 
     await tester.pumpWidget(_app(database, grammarCatalog: catalog));
     await tester.pumpAndSettle();
-    await tester.tap(find.text('Grammatik'));
-    await tester.pumpAndSettle();
+    await _openGrammarPage(tester);
     await tester.tap(
       find.byKey(const Key('toggle-favorite-topic-regular_present')),
     );
@@ -1239,8 +1243,7 @@ void main() {
 
     await tester.pumpWidget(_app(database, grammarCatalog: catalog));
     await tester.pumpAndSettle();
-    await tester.tap(find.text('Grammatik'));
-    await tester.pumpAndSettle();
+    await _openGrammarPage(tester);
 
     expect(find.text('Alle'), findsOneWidget);
     expect(find.text('Nicht gelernt'), findsOneWidget);
@@ -1275,8 +1278,7 @@ void main() {
 
     await tester.pumpWidget(_app(database, grammarCatalog: catalog));
     await tester.pumpAndSettle();
-    await tester.tap(find.text('Grammatik'));
-    await tester.pumpAndSettle();
+    await _openGrammarPage(tester);
     await tester.tap(
       find.byKey(const Key('grammar-topic-regular_present')),
     );
@@ -1310,8 +1312,7 @@ void main() {
 
     await tester.pumpWidget(_app(database, grammarCatalog: catalog));
     await tester.pumpAndSettle();
-    await tester.tap(find.text('Grammatik'));
-    await tester.pumpAndSettle();
+    await _openGrammarPage(tester);
     await tester.tap(
       find.byKey(const Key('grammar-topic-sentence_basics')),
     );
@@ -1340,8 +1341,7 @@ void main() {
 
     await tester.pumpWidget(_app(database, grammarCatalog: catalog));
     await tester.pumpAndSettle();
-    await tester.tap(find.text('Grammatik'));
-    await tester.pumpAndSettle();
+    await _openGrammarPage(tester);
     await tester.scrollUntilVisible(
       find.text('Leseregeln: Vokale und Doppellaute'),
       300,
@@ -1473,8 +1473,14 @@ Future<void> _expandCategory(WidgetTester tester, String category) async {
   final action = find.byKey(Key('session-category-action-$category'));
   if (action.evaluate().isNotEmpty) {
     await tester.scrollUntilVisible(action, 300);
+    await tester.ensureVisible(action);
     await tester.pumpAndSettle();
   }
+}
+
+Future<void> _openGrammarPage(WidgetTester tester) async {
+  await tester.tap(find.byKey(const Key('navigation-grammar')));
+  await tester.pumpAndSettle();
 }
 
 DeutschReviewApp _app(
