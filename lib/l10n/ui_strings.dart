@@ -31,6 +31,16 @@ final class UiStrings {
   String get numbersCategory => choose('Zahlen', 'Цифры');
   String get grammarCategory => choose('Grammatik', 'Грамматика');
   String get otherCategory => choose('Sonstiges', 'Прочее');
+  String get matchingCategory =>
+      choose('Karten zuordnen', 'Соединение карточек');
+  String get matchingHint => choose(
+        'Wähle links ein deutsches Wort und rechts seine Übersetzung.',
+        'Выберите немецкое слово слева, затем его перевод справа.',
+      );
+  String get matchingNeedsWords => choose(
+        'Für diese Übung werden mindestens 24 eindeutige Wortpaare benötigt.',
+        'Для этого режима нужно не менее 24 уникальных пар слов.',
+      );
   String get wordsCategory => choose('Wortschatz', 'Слова');
   String get toGermanCategory => choose(
         'Russisch → Deutsch',

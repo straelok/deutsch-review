@@ -26,7 +26,8 @@ enum DailySessionKind {
   importantVocabularyToRussian('important_vocabulary_to_russian'),
   favoriteGrammar('favorite_grammar'),
   grammar('grammar'),
-  numbers('numbers');
+  numbers('numbers'),
+  matching('matching');
 
   const DailySessionKind(this.wireName);
 
@@ -46,7 +47,8 @@ enum DailySessionKind {
         vocabularyToRussian ||
         importantVocabularyToGerman ||
         importantEasyVocabularyToGerman ||
-        importantVocabularyToRussian =>
+        importantVocabularyToRussian ||
+        matching =>
           true,
         favoriteGrammar || grammar || numbers => false,
       };

@@ -69,6 +69,12 @@ class _PracticePageState extends State<PracticePage> {
   List<String> _nextGrammarQueue = const [];
   List<String> _numberQueue = const [];
   List<String> _nextNumberQueue = const [];
+  List<LearningItem> _matchingBoard = const [];
+  Set<String> _matchedItemIds = const {};
+  Set<String> _matchingFailedItemIds = const {};
+  String? _selectedMatchingItemId;
+  (String, String)? _wrongMatchingPair;
+  List<String> _matchingRussianOrder = const [];
   Set<String> _availableGrammarTopics = const {};
   Set<String> _favoriteGrammarTopics = const {};
   DailySession? _session;
@@ -178,6 +184,9 @@ class _PracticePageState extends State<PracticePage> {
     }
     if (_session!.kind == DailySessionKind.numbers) {
       return _withUnknownShortcut(_numberPractice());
+    }
+    if (_session!.kind == DailySessionKind.matching) {
+      return _matchingPractice();
     }
 
     final item = _current;
@@ -416,6 +425,7 @@ class _PracticePageState extends State<PracticePage> {
       DailySessionKind.favoriteGrammar =>
         _unknownGrammarAnswer(),
       DailySessionKind.numbers => _unknownNumber(),
+      DailySessionKind.matching => Future<void>.value(),
       DailySessionKind.vocabularyToGerman ||
       DailySessionKind.easyVocabularyToGerman ||
       DailySessionKind.vocabularyToRussian ||
@@ -469,6 +479,9 @@ class _PracticePageState extends State<PracticePage> {
     final extraNumbers = _daySessions
         .where((session) =>
             !session.isRequired && session.kind == DailySessionKind.numbers)
+        .toList();
+    final matchingSessions = _daySessions
+        .where((session) => session.kind == DailySessionKind.matching)
         .toList();
     final importantToGerman = _daySessions
         .where((session) =>
@@ -667,6 +680,24 @@ class _PracticePageState extends State<PracticePage> {
               addKey: const Key('create-extra-number-session-expanded'),
               onAdd: () => _createExtraSession(DailySessionKind.numbers),
             ),
+            const SizedBox(height: 12),
+            _sessionCategory(
+              kind: DailySessionKind.matching,
+              icon: Icons.compare_arrows,
+              title: s.matchingCategory,
+              sessions: matchingSessions,
+              canAdd: true,
+              canStart: _matchingCandidates().length >= 24,
+              addKey: const Key('create-matching-session'),
+              onAdd: () => _createExtraSession(DailySessionKind.matching),
+            ),
+            if (_matchingCandidates().length < 24) ...[
+              const SizedBox(height: 8),
+              Text(
+                s.matchingNeedsWords,
+                style: Theme.of(context).textTheme.bodySmall,
+              ),
+            ],
           ],
         ),
       ],
@@ -710,7 +741,8 @@ class _PracticePageState extends State<PracticePage> {
         : canAdd
             ? Icons.add
             : Icons.skip_next;
-    final groupKey = group.name.replaceAll(RegExp(r'(?=[A-Z])'), '-').toLowerCase();
+    final groupKey =
+        group.name.replaceAll(RegExp(r'(?=[A-Z])'), '-').toLowerCase();
 
     return Card(
       key: Key('lesson-group-$groupKey'),
@@ -987,6 +1019,253 @@ class _PracticePageState extends State<PracticePage> {
               _activeItems.any((item) => item.isImportant),
         _ => _activeItems.isNotEmpty,
       };
+
+  Widget _matchingPractice() {
+    final s = widget.strings;
+    final byId = {for (final item in _matchingBoard) item.id: item};
+    final russianItems = _matchingRussianOrder
+        .map((id) => byId[id])
+        .whereType<LearningItem>()
+        .toList(growable: false);
+    return Center(
+      child: SingleChildScrollView(
+        padding: const EdgeInsets.all(24),
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 820),
+          child: Card(
+            child: Padding(
+              padding: const EdgeInsets.all(24),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: TextButton.icon(
+                      key: const Key('back-to-plan'),
+                      onPressed: _savingVocabularyAnswer ? null : _load,
+                      icon: const Icon(Icons.arrow_back),
+                      label: Text(s.dailyPlan),
+                    ),
+                  ),
+                  Text(
+                    s.progress(
+                      _session!.answeredCount,
+                      _session!.targetAnswers,
+                    ),
+                    style: Theme.of(context).textTheme.labelLarge,
+                  ),
+                  const SizedBox(height: 8),
+                  Text(s.matchingHint),
+                  const SizedBox(height: 20),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: [
+                            for (final item in _matchingBoard)
+                              Padding(
+                                padding: const EdgeInsets.only(bottom: 8),
+                                child: _matchingCard(
+                                  key: Key('matching-german-${item.id}'),
+                                  label: learningItemGermanWithPlural(item),
+                                  selected: _selectedMatchingItemId == item.id,
+                                  matched: _matchedItemIds.contains(item.id),
+                                  wrong: _wrongMatchingPair?.$1 == item.id,
+                                  onPressed:
+                                      _matchedItemIds.contains(item.id) ||
+                                              _savingVocabularyAnswer
+                                          ? null
+                                          : () => setState(
+                                                () => _selectedMatchingItemId =
+                                                    item.id,
+                                              ),
+                                ),
+                              ),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(width: 16),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: [
+                            for (final item in russianItems)
+                              Padding(
+                                padding: const EdgeInsets.only(bottom: 8),
+                                child: _matchingCard(
+                                  key: Key('matching-russian-${item.id}'),
+                                  label: _primaryTranslation(item),
+                                  selected: false,
+                                  matched: _matchedItemIds.contains(item.id),
+                                  wrong: _wrongMatchingPair?.$2 == item.id,
+                                  onPressed: _matchedItemIds
+                                              .contains(item.id) ||
+                                          _selectedMatchingItemId == null ||
+                                          _savingVocabularyAnswer
+                                      ? null
+                                      : () => _selectMatchingTranslation(item),
+                                ),
+                              ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _matchingCard({
+    required Key key,
+    required String label,
+    required bool selected,
+    required bool matched,
+    required bool wrong,
+    required VoidCallback? onPressed,
+  }) {
+    final colors = Theme.of(context).colorScheme;
+    return OutlinedButton(
+      key: key,
+      onPressed: onPressed,
+      style: OutlinedButton.styleFrom(
+        minimumSize: const Size.fromHeight(52),
+        foregroundColor: matched
+            ? colors.onPrimaryContainer
+            : wrong
+                ? colors.onErrorContainer
+                : null,
+        backgroundColor: matched
+            ? colors.primaryContainer
+            : wrong
+                ? colors.errorContainer
+                : selected
+                    ? colors.secondaryContainer
+                    : null,
+        side: selected ? BorderSide(color: colors.secondary, width: 2) : null,
+      ),
+      child: Text(label, textAlign: TextAlign.center),
+    );
+  }
+
+  String _primaryTranslation(LearningItem item) => learningItemMeaning(item)
+      .split(';')
+      .map((value) => value.trim())
+      .firstWhere((value) => value.isNotEmpty, orElse: () => '—');
+
+  List<LearningItem> _matchingCandidates() {
+    final german = <String>{};
+    final russian = <String>{};
+    final result = <LearningItem>[];
+    for (final item in _activeItems) {
+      final germanKey = normalizePracticeAnswer(
+        learningItemGermanWithPlural(item),
+      ).toLowerCase();
+      final russianKey = normalizeRussianPracticeAnswer(
+        _primaryTranslation(item),
+      );
+      if (germanKey.isEmpty || russianKey.isEmpty || russianKey == '—') {
+        continue;
+      }
+      if (german.add(germanKey) && russian.add(russianKey)) result.add(item);
+    }
+    return result;
+  }
+
+  Future<void> _selectMatchingTranslation(LearningItem russianItem) async {
+    final germanItemId = _selectedMatchingItemId;
+    if (germanItemId == null || _savingVocabularyAnswer) return;
+    final germanItem =
+        _matchingBoard.where((item) => item.id == germanItemId).firstOrNull;
+    if (germanItem == null) return;
+    if (germanItem.id != russianItem.id) {
+      if (!_matchingFailedItemIds.contains(germanItem.id)) {
+        await widget.practice.saveAttempt(
+          PracticeAttempt(
+            id: newUuidV4(),
+            itemId: germanItem.id,
+            sessionId: _session!.id,
+            answerText: _primaryTranslation(russianItem),
+            correct: false,
+            attemptedAt: DateTime.now().toUtc(),
+          ),
+        );
+        widget.onAttemptSaved();
+      }
+      if (!mounted) return;
+      setState(() {
+        _matchingFailedItemIds = {
+          ..._matchingFailedItemIds,
+          germanItem.id,
+        };
+        _wrongMatchingPair = (germanItem.id, russianItem.id);
+        _selectedMatchingItemId = null;
+      });
+      await Future<void>.delayed(const Duration(milliseconds: 550));
+      if (mounted && _wrongMatchingPair == (germanItem.id, russianItem.id)) {
+        setState(() => _wrongMatchingPair = null);
+      }
+      return;
+    }
+
+    setState(() => _savingVocabularyAnswer = true);
+    try {
+      final remaining = _queue
+          .where((item) => item.id != germanItem.id)
+          .toList(growable: false);
+      final updated = await widget.sessions.recordAnswer(
+        attempt: PracticeAttempt(
+          id: newUuidV4(),
+          itemId: germanItem.id,
+          sessionId: _session!.id,
+          answerText: _primaryTranslation(russianItem),
+          correct: true,
+          attemptedAt: DateTime.now().toUtc(),
+        ),
+        remainingQueueItemIds:
+            remaining.map((item) => item.id).toList(growable: false),
+        now: DateTime.now().toUtc(),
+      );
+      widget.onAttemptSaved();
+      if (!mounted) return;
+      final matched = {..._matchedItemIds, germanItem.id};
+      final boardComplete =
+          _matchingBoard.every((item) => matched.contains(item.id));
+      setState(() {
+        _session = updated;
+        _queue = remaining;
+        _matchedItemIds = matched;
+        _selectedMatchingItemId = null;
+        _savingVocabularyAnswer = false;
+        _complete = updated.isComplete;
+        if (boardComplete && !updated.isComplete) {
+          _prepareMatchingBoard(remaining);
+        }
+      });
+    } catch (_) {
+      if (!mounted) return;
+      setState(() => _savingVocabularyAnswer = false);
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(widget.strings.answerSaveFailed)),
+      );
+    }
+  }
+
+  void _prepareMatchingBoard(List<LearningItem> remaining) {
+    _matchingBoard = remaining.take(8).toList(growable: false);
+    _matchingRussianOrder = _matchingBoard.map((item) => item.id).toList()
+      ..shuffle(_random);
+    _matchedItemIds = <String>{};
+    _matchingFailedItemIds = <String>{};
+    _selectedMatchingItemId = null;
+    _wrongMatchingPair = null;
+  }
 
   Widget _numberPractice() {
     final s = widget.strings;
@@ -1554,6 +1833,10 @@ class _PracticePageState extends State<PracticePage> {
       await _openNumberSession(session);
       return;
     }
+    if (session.kind == DailySessionKind.matching) {
+      await _openMatchingSession(session);
+      return;
+    }
     var queue = _itemsForIds(session.queueItemIds);
     if (session.status == DailySessionStatus.planned ||
         queue.length != session.remaining) {
@@ -1594,6 +1877,33 @@ class _PracticePageState extends State<PracticePage> {
     return widget.contentController?.catalogForVersion(
       session.contentVersion,
     );
+  }
+
+  Future<void> _openMatchingSession(DailySession session) async {
+    var queue = _itemsForIds(session.queueItemIds);
+    if (session.status == DailySessionStatus.planned ||
+        queue.length != session.remaining) {
+      final candidates = _matchingCandidates()..shuffle(_random);
+      queue = candidates.take(24).toList(growable: false);
+      if (queue.length < 24) {
+        await _load();
+        return;
+      }
+      session = await widget.sessions.start(
+        id: session.id,
+        queueItemIds: queue.map((item) => item.id).toList(growable: false),
+        now: DateTime.now().toUtc(),
+      );
+    }
+    if (!mounted) return;
+    setState(() {
+      _session = session;
+      _queue = queue;
+      _prepareMatchingBoard(queue);
+      _savingVocabularyAnswer = false;
+      _complete = session.isComplete;
+      _loading = false;
+    });
   }
 
   Future<void> _openNumberSession(DailySession session) async {

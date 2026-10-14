@@ -157,6 +157,7 @@ final class SqliteDailySessionRepository implements DailySessionRepository {
         DailySessionKind.favoriteGrammar =>
           settings.grammarTasks,
         DailySessionKind.numbers => settings.numberTasks,
+        DailySessionKind.matching => 24,
         DailySessionKind.vocabularyToGerman ||
         DailySessionKind.easyVocabularyToGerman ||
         DailySessionKind.importantVocabularyToGerman ||
