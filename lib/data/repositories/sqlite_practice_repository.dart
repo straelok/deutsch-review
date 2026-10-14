@@ -88,6 +88,74 @@ final class SqlitePracticeRepository implements PracticeRepository {
   }
 
   @override
+  Future<VocabularyDirectionStatistics> directionSummary({
+    DateTime? localDay,
+  }) async {
+    final parameters = <Object?>[];
+    var dayFilter = '';
+    if (localDay != null) {
+      final start = DateTime(
+        localDay.year,
+        localDay.month,
+        localDay.day,
+      ).toUtc();
+      final end = DateTime(
+        localDay.year,
+        localDay.month,
+        localDay.day + 1,
+      ).toUtc();
+      dayFilter = 'AND attempted_at >= ? AND attempted_at < ?';
+      parameters
+        ..add(start.toIso8601String())
+        ..add(end.toIso8601String());
+    }
+    final rows = database.connection.select(
+      '''
+      SELECT direction, COUNT(*) AS attempts, COALESCE(SUM(correct), 0) AS correct
+      FROM (
+        SELECT
+          practice_attempts.correct,
+          CASE
+            WHEN daily_sessions.kind IN (
+              'vocabulary',
+              'vocabulary_to_german',
+              'easy_vocabulary_to_german',
+              'important_vocabulary_to_german',
+              'important_easy_vocabulary_to_german',
+              'marathon_to_german'
+            ) THEN 'to_german'
+            WHEN daily_sessions.kind IN (
+              'vocabulary_to_russian',
+              'important_vocabulary_to_russian',
+              'marathon_to_russian'
+            ) THEN 'to_russian'
+          END AS direction
+        FROM practice_attempts
+        LEFT JOIN daily_sessions
+          ON daily_sessions.id = practice_attempts.session_id
+        WHERE $_masteryAttemptFilter
+          $dayFilter
+      ) AS directional_attempts
+      WHERE direction IS NOT NULL
+      GROUP BY direction
+      ''',
+      parameters,
+    );
+    const empty = PracticeSummary(attempts: 0, correct: 0);
+    final summaries = <String, PracticeSummary>{
+      for (final row in rows)
+        row['direction'] as String: PracticeSummary(
+          attempts: row['attempts'] as int,
+          correct: row['correct'] as int,
+        ),
+    };
+    return VocabularyDirectionStatistics(
+      toGerman: summaries['to_german'] ?? empty,
+      toRussian: summaries['to_russian'] ?? empty,
+    );
+  }
+
+  @override
   Future<Map<String, WordPracticeStatistics>> statisticsByItem({
     int recentLimit = 10,
   }) async {

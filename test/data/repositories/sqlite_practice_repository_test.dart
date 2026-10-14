@@ -181,4 +181,62 @@ void main() {
       'item-1': <bool>[false],
     });
   });
+
+  test('groups mastery statistics by translation direction', () async {
+    final database = AppDatabase.inMemory();
+    addTearDown(database.close);
+    final now = DateTime.utc(2026, 10, 14, 10);
+    await SqliteLearningItemRepository(database).save(
+      LearningItem(
+        id: 'item-1',
+        type: LearningItemType.word,
+        level: '',
+        lesson: '',
+        topic: '',
+        learned: true,
+        createdAt: now,
+        updatedAt: now,
+        sourceRef: 'test',
+        content: const {'german': 'lernen', 'translation_ru': 'учить'},
+      ),
+    );
+    final sessions = SqliteDailySessionRepository(database);
+    final toGerman = await sessions.createExtra(
+      localDate: '2026-10-14',
+      now: now,
+      kind: DailySessionKind.marathonToGerman,
+    );
+    final toRussian = await sessions.createExtra(
+      localDate: '2026-10-14',
+      now: now,
+      kind: DailySessionKind.marathonToRussian,
+    );
+    final practice = SqlitePracticeRepository(database);
+    await practice.saveAttempt(
+      PracticeAttempt(
+        id: 'to-german-error',
+        itemId: 'item-1',
+        sessionId: toGerman.id,
+        answerText: '',
+        correct: false,
+        attemptedAt: now,
+      ),
+    );
+    await practice.saveAttempt(
+      PracticeAttempt(
+        id: 'to-russian-correct',
+        itemId: 'item-1',
+        sessionId: toRussian.id,
+        answerText: 'учить',
+        correct: true,
+        attemptedAt: now,
+      ),
+    );
+
+    final summary = await practice.directionSummary(localDay: now.toLocal());
+    expect(summary.toGerman.attempts, 1);
+    expect(summary.toGerman.correct, 0);
+    expect(summary.toRussian.attempts, 1);
+    expect(summary.toRussian.correct, 1);
+  });
 }

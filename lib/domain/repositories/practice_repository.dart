@@ -7,6 +7,8 @@ abstract interface class PracticeRepository {
 
   Future<PracticeSummary> summaryForDay(DateTime localDay);
 
+  Future<VocabularyDirectionStatistics> directionSummary({DateTime? localDay});
+
   Future<Map<String, WordPracticeStatistics>> statisticsByItem({
     int recentLimit = 10,
   });

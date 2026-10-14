@@ -29,11 +29,11 @@ class StatisticsPage extends StatefulWidget {
 }
 
 class _StatisticsPageState extends State<StatisticsPage> {
-  PracticeSummary? _summary;
   List<ItemPracticeSummary> _problems = const [];
   int? _completedToday;
   int? _requiredToday;
-  PracticeSummary? _wordsToday;
+  VocabularyDirectionStatistics? _wordsToday;
+  VocabularyDirectionStatistics? _wordsAllTime;
   PracticeSummary? _numbersToday;
   PracticeSummary? _grammarToday;
   PracticeSummary? _numbersAllTime;
@@ -54,12 +54,11 @@ class _StatisticsPageState extends State<StatisticsPage> {
 
   @override
   Widget build(BuildContext context) {
-    final summary = _summary;
     final s = widget.strings;
-    if (summary == null ||
-        _completedToday == null ||
+    if (_completedToday == null ||
         _requiredToday == null ||
         _wordsToday == null ||
+        _wordsAllTime == null ||
         _numbersToday == null ||
         _grammarToday == null ||
         _numbersAllTime == null ||
@@ -105,7 +104,8 @@ class _StatisticsPageState extends State<StatisticsPage> {
           const SizedBox(height: 12),
           _CategoryStatisticsGrid(
             keyPrefix: 'daily-statistics',
-            words: _wordsToday!,
+            wordsToGerman: _wordsToday!.toGerman,
+            wordsToRussian: _wordsToday!.toRussian,
             numbers: _numbersToday!,
             grammar: _grammarToday!,
             strings: s,
@@ -113,7 +113,8 @@ class _StatisticsPageState extends State<StatisticsPage> {
         ] else ...[
           _CategoryStatisticsGrid(
             keyPrefix: 'all-time-statistics',
-            words: summary,
+            wordsToGerman: _wordsAllTime!.toGerman,
+            wordsToRussian: _wordsAllTime!.toRussian,
             numbers: _numbersAllTime!,
             grammar: _grammarAllTime!,
             strings: s,
@@ -143,9 +144,9 @@ class _StatisticsPageState extends State<StatisticsPage> {
 
   Future<void> _reload() async {
     final now = DateTime.now();
-    final summaryFuture = widget.repository.summary();
     final problemsFuture = widget.repository.problemItems();
-    final wordsTodayFuture = widget.repository.summaryForDay(now);
+    final wordsTodayFuture = widget.repository.directionSummary(localDay: now);
+    final wordsAllTimeFuture = widget.repository.directionSummary();
     final numbersTodayFuture = widget.grammar.summaryForDay(
       now,
       numbers: true,
@@ -160,18 +161,18 @@ class _StatisticsPageState extends State<StatisticsPage> {
       localDate: localDayKey(now),
       now: now.toUtc(),
     );
-    final summary = await summaryFuture;
     final problems = await problemsFuture;
     final wordsToday = await wordsTodayFuture;
+    final wordsAllTime = await wordsAllTimeFuture;
     final numbersToday = await numbersTodayFuture;
     final grammarToday = await grammarTodayFuture;
     final numbersAllTime = await numbersAllTimeFuture;
     final grammarAllTime = await grammarAllTimeFuture;
     if (!mounted) return;
     setState(() {
-      _summary = summary;
       _problems = problems;
       _wordsToday = wordsToday;
+      _wordsAllTime = wordsAllTime;
       _numbersToday = PracticeSummary(
         attempts: numbersToday.attempts,
         correct: numbersToday.correct,
@@ -202,14 +203,16 @@ enum _StatisticsPeriod { today, allTime }
 class _CategoryStatisticsGrid extends StatelessWidget {
   const _CategoryStatisticsGrid({
     required this.keyPrefix,
-    required this.words,
+    required this.wordsToGerman,
+    required this.wordsToRussian,
     required this.numbers,
     required this.grammar,
     required this.strings,
   });
 
   final String keyPrefix;
-  final PracticeSummary words;
+  final PracticeSummary wordsToGerman;
+  final PracticeSummary wordsToRussian;
   final PracticeSummary numbers;
   final PracticeSummary grammar;
   final UiStrings strings;
@@ -221,10 +224,17 @@ class _CategoryStatisticsGrid extends StatelessWidget {
       runSpacing: 12,
       children: [
         _CategoryStatistics(
-          key: Key('$keyPrefix-words'),
-          icon: Icons.translate,
-          title: strings.wordsCategory,
-          summary: words,
+          key: Key('$keyPrefix-to-german'),
+          icon: Icons.arrow_forward,
+          title: strings.toGermanCategory,
+          summary: wordsToGerman,
+          strings: strings,
+        ),
+        _CategoryStatistics(
+          key: Key('$keyPrefix-to-russian'),
+          icon: Icons.arrow_back,
+          title: strings.toRussianCategory,
+          summary: wordsToRussian,
           strings: strings,
         ),
         _CategoryStatistics(

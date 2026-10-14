@@ -685,11 +685,17 @@ void main() {
       }
     }
 
-    expectCategory('daily-statistics-words', <String>[
+    expectCategory('daily-statistics-to-german', <String>[
       'Versuche: 2',
       'Richtig: 1',
       'Fehler: 1',
       'Genauigkeit: 50 %',
+    ]);
+    expectCategory('daily-statistics-to-russian', <String>[
+      'Versuche: 0',
+      'Richtig: 0',
+      'Fehler: 0',
+      'Genauigkeit: 0 %',
     ]);
     expectCategory('daily-statistics-numbers', <String>[
       'Versuche: 2',
@@ -707,11 +713,17 @@ void main() {
 
     await tester.tap(find.text('Gesamt'));
     await tester.pumpAndSettle();
-    expectCategory('all-time-statistics-words', <String>[
+    expectCategory('all-time-statistics-to-german', <String>[
       'Versuche: 3',
       'Richtig: 2',
       'Fehler: 1',
       'Genauigkeit: 67 %',
+    ]);
+    expectCategory('all-time-statistics-to-russian', <String>[
+      'Versuche: 0',
+      'Richtig: 0',
+      'Fehler: 0',
+      'Genauigkeit: 0 %',
     ]);
     expectCategory('all-time-statistics-numbers', <String>[
       'Versuche: 3',

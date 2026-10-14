@@ -31,6 +31,16 @@ final class PracticeSummary {
   double get accuracy => attempts == 0 ? 0 : correct / attempts;
 }
 
+final class VocabularyDirectionStatistics {
+  const VocabularyDirectionStatistics({
+    required this.toGerman,
+    required this.toRussian,
+  });
+
+  final PracticeSummary toGerman;
+  final PracticeSummary toRussian;
+}
+
 final class WordPracticeStatistics {
   const WordPracticeStatistics({
     required this.recent,

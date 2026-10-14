@@ -242,6 +242,12 @@ final class SyncingPracticeRepository implements PracticeRepository {
       _delegate.summaryForDay(localDay);
 
   @override
+  Future<VocabularyDirectionStatistics> directionSummary({
+    DateTime? localDay,
+  }) =>
+      _delegate.directionSummary(localDay: localDay);
+
+  @override
   Future<Map<String, WordPracticeStatistics>> statisticsByItem({
     int recentLimit = 10,
   }) =>
