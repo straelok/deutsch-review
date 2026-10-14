@@ -79,6 +79,7 @@ class _PracticePageState extends State<PracticePage> {
   bool _savingVocabularyAnswer = false;
   bool _unknownShortcutPending = false;
   bool _showVocabularyHelp = false;
+  bool _assistedFailureRecorded = false;
   bool _complete = false;
   String? _pendingVocabularyAnswer;
   int _loadRevision = 0;
@@ -1464,6 +1465,7 @@ class _PracticePageState extends State<PracticePage> {
       _focusedGrammarTopicId = null;
       _answered = false;
       _showVocabularyHelp = false;
+      _assistedFailureRecorded = false;
       _pendingVocabularyAnswer = null;
       _savingVocabularyAnswer = false;
       _complete = false;
@@ -1575,6 +1577,7 @@ class _PracticePageState extends State<PracticePage> {
       _queue = queue;
       _answered = false;
       _showVocabularyHelp = false;
+      _assistedFailureRecorded = false;
       _pendingVocabularyAnswer = null;
       _savingVocabularyAnswer = false;
       _complete = resolvedSession.isComplete;
@@ -1859,21 +1862,24 @@ class _PracticePageState extends State<PracticePage> {
     setState(() => _savingVocabularyAnswer = true);
     try {
       if (_session!.kind.isEasyVocabulary && !correct) {
-        await widget.practice.saveAttempt(
-          PracticeAttempt(
-            id: newUuidV4(),
-            itemId: item.id,
-            sessionId: _session!.id,
-            answerText: answer,
-            correct: false,
-            attemptedAt: DateTime.now().toUtc(),
-          ),
-        );
-        widget.onAttemptSaved();
+        if (!_assistedFailureRecorded) {
+          await widget.practice.saveAttempt(
+            PracticeAttempt(
+              id: newUuidV4(),
+              itemId: item.id,
+              sessionId: _session!.id,
+              answerText: answer,
+              correct: false,
+              attemptedAt: DateTime.now().toUtc(),
+            ),
+          );
+          widget.onAttemptSaved();
+        }
         if (!mounted) return;
         setState(() {
           _answered = true;
           _lastCorrect = false;
+          _assistedFailureRecorded = true;
           _pendingVocabularyAnswer = null;
           _savingVocabularyAnswer = false;
         });
@@ -2181,6 +2187,7 @@ class _PracticePageState extends State<PracticePage> {
         _answerController.clear();
         _answered = false;
         _showVocabularyHelp = false;
+        _assistedFailureRecorded = false;
       });
       _focusAnswerField();
       return;
@@ -2193,6 +2200,7 @@ class _PracticePageState extends State<PracticePage> {
       _answered = false;
       _pendingVocabularyAnswer = null;
       _showVocabularyHelp = false;
+      _assistedFailureRecorded = false;
       _complete = _session!.isComplete;
     });
     if (!_complete) _focusAnswerField();

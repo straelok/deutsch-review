@@ -14,6 +14,10 @@ final class UiStrings {
   String get material => choose('Wörter', 'Слова');
   String get grammar => choose('Grammatik', 'Грамматика');
   String get statistics => choose('Statistik', 'Статистика');
+  String get masteryStatisticsHint => choose(
+        'Erfolge in unterstützten Übungen verändern die Wortstatistik nicht; Fehler werden einmal gezählt.',
+        'Успехи в упражнениях с подсказкой не улучшают статистику слова; ошибка учитывается один раз.',
+      );
   String get todayStatistics => choose('Heute', 'За сегодня');
   String get grammarIntro => choose(
         'Lies eine bereits gelernte Regel und markiere sie danach als gelernt.',

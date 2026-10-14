@@ -71,6 +71,11 @@ class _StatisticsPageState extends State<StatisticsPage> {
       padding: const EdgeInsets.all(24),
       children: [
         Text(s.statistics, style: Theme.of(context).textTheme.headlineMedium),
+        const SizedBox(height: 8),
+        Text(
+          s.masteryStatisticsHint,
+          style: Theme.of(context).textTheme.bodySmall,
+        ),
         const SizedBox(height: 16),
         SegmentedButton<_StatisticsPeriod>(
           key: const Key('statistics-period'),
