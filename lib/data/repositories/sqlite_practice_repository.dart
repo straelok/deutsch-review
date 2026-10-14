@@ -12,16 +12,17 @@ final class SqlitePracticeRepository implements PracticeRepository {
 
   final AppDatabase database;
 
-  static const _masteryAttemptFilter = '''
-    NOT (
-      practice_attempts.correct = 1
-      AND daily_sessions.kind IN (
-        'easy_vocabulary_to_german',
-        'important_easy_vocabulary_to_german',
-        'matching'
-      )
+  static const _masteryAttemptFilter = '''(
+    daily_sessions.kind IS NULL
+    OR NOT (
+        practice_attempts.correct = 1
+        AND daily_sessions.kind IN (
+          'easy_vocabulary_to_german',
+          'important_easy_vocabulary_to_german',
+          'matching'
+        )
     )
-  ''';
+  )''';
 
   @override
   Future<void> saveAttempt(PracticeAttempt attempt) async {
@@ -47,7 +48,8 @@ final class SqlitePracticeRepository implements PracticeRepository {
     final row = database.connection.select('''
       SELECT COUNT(*) AS attempts, COALESCE(SUM(correct), 0) AS correct
       FROM practice_attempts
-      JOIN daily_sessions ON daily_sessions.id = practice_attempts.session_id
+      LEFT JOIN daily_sessions
+        ON daily_sessions.id = practice_attempts.session_id
       WHERE $_masteryAttemptFilter
     ''').single;
     return PracticeSummary(
@@ -72,7 +74,8 @@ final class SqlitePracticeRepository implements PracticeRepository {
       '''
       SELECT COUNT(*) AS attempts, COALESCE(SUM(correct), 0) AS correct
       FROM practice_attempts
-      JOIN daily_sessions ON daily_sessions.id = practice_attempts.session_id
+      LEFT JOIN daily_sessions
+        ON daily_sessions.id = practice_attempts.session_id
       WHERE attempted_at >= ? AND attempted_at < ?
         AND $_masteryAttemptFilter
       ''',
@@ -91,7 +94,8 @@ final class SqlitePracticeRepository implements PracticeRepository {
     final allTimeRows = database.connection.select('''
       SELECT item_id, COUNT(*) AS attempts, COALESCE(SUM(correct), 0) AS correct
       FROM practice_attempts
-      JOIN daily_sessions ON daily_sessions.id = practice_attempts.session_id
+      LEFT JOIN daily_sessions
+        ON daily_sessions.id = practice_attempts.session_id
       WHERE $_masteryAttemptFilter
       GROUP BY item_id
     ''');
@@ -107,7 +111,8 @@ final class SqlitePracticeRepository implements PracticeRepository {
               practice_attempts.id DESC
           ) AS position
         FROM practice_attempts
-        JOIN daily_sessions ON daily_sessions.id = practice_attempts.session_id
+        LEFT JOIN daily_sessions
+          ON daily_sessions.id = practice_attempts.session_id
         WHERE $_masteryAttemptFilter
       )
       SELECT item_id, COUNT(*) AS attempts, COALESCE(SUM(correct), 0) AS correct
@@ -144,7 +149,8 @@ final class SqlitePracticeRepository implements PracticeRepository {
     final rows = database.connection.select('''
       SELECT item_id, correct
       FROM practice_attempts
-      JOIN daily_sessions ON daily_sessions.id = practice_attempts.session_id
+      LEFT JOIN daily_sessions
+        ON daily_sessions.id = practice_attempts.session_id
       WHERE $_masteryAttemptFilter
       ORDER BY practice_attempts.attempted_at DESC,
         practice_attempts.id DESC
@@ -169,7 +175,8 @@ final class SqlitePracticeRepository implements PracticeRepository {
         COUNT(practice_attempts.id) AS attempt_count,
         COALESCE(SUM(practice_attempts.correct), 0) AS correct_count
       FROM practice_attempts
-      JOIN daily_sessions ON daily_sessions.id = practice_attempts.session_id
+      LEFT JOIN daily_sessions
+        ON daily_sessions.id = practice_attempts.session_id
       JOIN learning_items ON learning_items.id = practice_attempts.item_id
       WHERE learning_items.deleted_at IS NULL
         AND $_masteryAttemptFilter

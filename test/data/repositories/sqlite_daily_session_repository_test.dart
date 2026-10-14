@@ -291,6 +291,35 @@ void main() {
       hasLength(2),
     );
   });
+
+  test('keeps and resets persistent marathon progress', () async {
+    final database = AppDatabase.inMemory();
+    addTearDown(database.close);
+    final repository = SqliteDailySessionRepository(database);
+    final now = DateTime.utc(2026, 10, 14, 10);
+    final created = await repository.resetPersistent(
+      kind: DailySessionKind.marathonToGerman,
+      queueItemIds: const ['one', 'two', 'three'],
+      now: now,
+    );
+    expect(created.localDate, 'persistent');
+    expect(created.targetAnswers, 3);
+    expect(created.queueItemIds, const ['one', 'two', 'three']);
+
+    final reset = await repository.resetPersistent(
+      kind: DailySessionKind.marathonToGerman,
+      queueItemIds: const ['four', 'five'],
+      now: now.add(const Duration(hours: 1)),
+    );
+    expect(reset.id, created.id);
+    expect(reset.targetAnswers, 2);
+    expect(reset.answeredCount, 0);
+    expect(reset.queueItemIds, const ['four', 'five']);
+    expect(
+      await repository.findPersistent(DailySessionKind.marathonToGerman),
+      isNotNull,
+    );
+  });
 }
 
 LearningItem _word(DateTime now) {

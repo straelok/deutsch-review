@@ -198,6 +198,7 @@ final class SqliteSyncStore {
     );
     if (existing.isNotEmpty &&
         _localSessionIsNewer(
+          allowReset: localDate == 'persistent',
           status: existing.single['status'] as String,
           answeredCount: existing.single['answered_count'] as int,
           updatedAt: DateTime.parse(
@@ -256,6 +257,7 @@ final class SqliteSyncStore {
   }
 
   static bool _localSessionIsNewer({
+    required bool allowReset,
     required String status,
     required int answeredCount,
     required DateTime updatedAt,
@@ -263,6 +265,7 @@ final class SqliteSyncStore {
     required int incomingAnsweredCount,
     required DateTime incomingUpdatedAt,
   }) {
+    if (allowReset) return updatedAt.isAfter(incomingUpdatedAt);
     final localRank = _sessionStatusRank(status);
     final incomingRank = _sessionStatusRank(incomingStatus);
     if (localRank != incomingRank) return localRank > incomingRank;

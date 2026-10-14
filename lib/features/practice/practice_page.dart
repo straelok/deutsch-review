@@ -65,6 +65,7 @@ class _PracticePageState extends State<PracticePage> {
   List<LearningItem> _activeItems = const [];
   List<LearningItem> _queue = const [];
   List<DailySession> _daySessions = const [];
+  List<DailySession> _persistentSessions = const [];
   List<String> _grammarQueue = const [];
   List<String> _nextGrammarQueue = const [];
   List<String> _numberQueue = const [];
@@ -426,6 +427,9 @@ class _PracticePageState extends State<PracticePage> {
         _unknownGrammarAnswer(),
       DailySessionKind.numbers => _unknownNumber(),
       DailySessionKind.matching => Future<void>.value(),
+      DailySessionKind.marathonToGerman ||
+      DailySessionKind.marathonToRussian =>
+        _unknownAnswer(),
       DailySessionKind.vocabularyToGerman ||
       DailySessionKind.easyVocabularyToGerman ||
       DailySessionKind.vocabularyToRussian ||
@@ -483,6 +487,12 @@ class _PracticePageState extends State<PracticePage> {
     final matchingSessions = _daySessions
         .where((session) => session.kind == DailySessionKind.matching)
         .toList();
+    final marathonToGerman = _persistentSessions
+        .where((session) => session.kind == DailySessionKind.marathonToGerman)
+        .firstOrNull;
+    final marathonToRussian = _persistentSessions
+        .where((session) => session.kind == DailySessionKind.marathonToRussian)
+        .firstOrNull;
     final importantToGerman = _daySessions
         .where((session) =>
             !session.isRequired &&
@@ -698,6 +708,20 @@ class _PracticePageState extends State<PracticePage> {
                 style: Theme.of(context).textTheme.bodySmall,
               ),
             ],
+            const SizedBox(height: 12),
+            _marathonCategory(
+              kind: DailySessionKind.marathonToGerman,
+              icon: Icons.flag_outlined,
+              title: s.marathonToGermanCategory,
+              session: marathonToGerman,
+            ),
+            const SizedBox(height: 12),
+            _marathonCategory(
+              kind: DailySessionKind.marathonToRussian,
+              icon: Icons.outlined_flag,
+              title: s.marathonToRussianCategory,
+              session: marathonToRussian,
+            ),
           ],
         ),
       ],
@@ -794,6 +818,9 @@ class _PracticePageState extends State<PracticePage> {
                             completed,
                             sessions.length,
                           ),
+                          key: Key(
+                            'session-category-progress-${kind.wireName.replaceAll('_', '-')}',
+                          ),
                           style: Theme.of(context).textTheme.bodySmall,
                         ),
                         if (inProgress != null)
@@ -848,6 +875,113 @@ class _PracticePageState extends State<PracticePage> {
         ],
       ),
     );
+  }
+
+  Widget _marathonCategory({
+    required DailySessionKind kind,
+    required IconData icon,
+    required String title,
+    required DailySession? session,
+  }) {
+    final inProgress = session?.status == DailySessionStatus.inProgress;
+    final completed = session?.isComplete ?? false;
+    final categoryKey = kind.wireName.replaceAll('_', '-');
+    return Card(
+      margin: EdgeInsets.zero,
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(12, 10, 12, 10),
+        child: Row(
+          children: [
+            Icon(icon),
+            const SizedBox(width: 10),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(title, style: Theme.of(context).textTheme.titleMedium),
+                  Text(
+                    session == null
+                        ? widget.strings
+                            .categoryProgress(0, _activeItems.length)
+                        : widget.strings.categoryProgress(
+                            session.answeredCount,
+                            session.targetAnswers,
+                          ),
+                    key: Key('marathon-progress-$categoryKey'),
+                    style: Theme.of(context).textTheme.bodySmall,
+                  ),
+                ],
+              ),
+            ),
+            if (session != null)
+              IconButton(
+                key: Key('reset-marathon-$categoryKey'),
+                tooltip: widget.strings.resetMarathon,
+                onPressed: () => _confirmResetMarathon(kind),
+                icon: const Icon(Icons.restart_alt),
+              ),
+            FilledButton.tonalIcon(
+              key: Key('open-marathon-$categoryKey'),
+              onPressed: _activeItems.isEmpty
+                  ? null
+                  : () {
+                      if (inProgress) {
+                        _openSession(session!.id);
+                      } else {
+                        _confirmResetMarathon(kind, confirm: completed);
+                      }
+                    },
+              icon: Icon(
+                inProgress ? Icons.play_arrow : Icons.flag_outlined,
+                size: 18,
+              ),
+              label: Text(
+                inProgress
+                    ? widget.strings.continueLesson
+                    : completed
+                        ? widget.strings.restartMarathon
+                        : widget.strings.start,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Future<void> _confirmResetMarathon(
+    DailySessionKind kind, {
+    bool confirm = true,
+  }) async {
+    if (confirm) {
+      final accepted = await showDialog<bool>(
+            context: context,
+            builder: (context) => AlertDialog(
+              title: Text(widget.strings.resetMarathonTitle),
+              content: Text(widget.strings.resetMarathonMessage),
+              actions: [
+                TextButton(
+                  onPressed: () => Navigator.pop(context, false),
+                  child: Text(widget.strings.cancel),
+                ),
+                FilledButton(
+                  key: const Key('confirm-reset-marathon'),
+                  onPressed: () => Navigator.pop(context, true),
+                  child: Text(widget.strings.resetMarathon),
+                ),
+              ],
+            ),
+          ) ??
+          false;
+      if (!accepted || !mounted) return;
+    }
+    final items = [..._activeItems]..shuffle(_random);
+    final session = await widget.sessions.resetPersistent(
+      kind: kind,
+      queueItemIds: items.map((item) => item.id).toList(growable: false),
+      now: DateTime.now().toUtc(),
+    );
+    await _openSession(session.id);
   }
 
   Widget _featuredBlock({
@@ -1720,6 +1854,18 @@ class _PracticePageState extends State<PracticePage> {
       now: now.toUtc(),
       includeGrammar: availableTopics.isNotEmpty,
     );
+    final persistentSessions = <DailySession>[
+      if (await widget.sessions.findPersistent(
+        DailySessionKind.marathonToGerman,
+      )
+          case final session?)
+        session,
+      if (await widget.sessions.findPersistent(
+        DailySessionKind.marathonToRussian,
+      )
+          case final session?)
+        session,
+    ];
     if (!mounted || revision != _loadRevision) return;
     setState(() {
       _activeItems = items
@@ -1737,6 +1883,7 @@ class _PracticePageState extends State<PracticePage> {
           .where(availableTopics.contains)
           .toSet();
       _daySessions = sessions;
+      _persistentSessions = persistentSessions;
       _session = null;
       _queue = const [];
       _grammarQueue = const [];

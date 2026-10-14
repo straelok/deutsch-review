@@ -141,6 +141,17 @@ final class _FakeSessions implements DailySessionRepository {
   Future<DailySession?> findById(String id) => throw UnimplementedError();
 
   @override
+  Future<DailySession?> findPersistent(DailySessionKind kind) async => null;
+
+  @override
+  Future<DailySession> resetPersistent({
+    required DailySessionKind kind,
+    required List<String> queueItemIds,
+    required DateTime now,
+  }) =>
+      throw UnimplementedError();
+
+  @override
   Future<DailySession> recordAnswer({
     required PracticeAttempt attempt,
     required List<String> remainingQueueItemIds,

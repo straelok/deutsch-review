@@ -87,6 +87,63 @@ final class SqliteDailySessionRepository implements DailySessionRepository {
   }
 
   @override
+  Future<DailySession?> findPersistent(DailySessionKind kind) async {
+    final rows = database.connection.select(
+      '''
+      SELECT * FROM daily_sessions
+      WHERE local_date = 'persistent' AND kind = ?
+      ORDER BY updated_at DESC
+      LIMIT 1
+      ''',
+      <Object?>[kind.wireName],
+    );
+    return rows.isEmpty ? null : _mapRow(rows.single);
+  }
+
+  @override
+  Future<DailySession> resetPersistent({
+    required DailySessionKind kind,
+    required List<String> queueItemIds,
+    required DateTime now,
+  }) async {
+    if (!kind.isMarathon || queueItemIds.isEmpty) {
+      throw ArgumentError('Persistent sessions require a non-empty marathon.');
+    }
+    final id = 'persistent-${kind.wireName}';
+    final timestamp = now.toUtc().toIso8601String();
+    database.connection.execute(
+      '''
+      INSERT INTO daily_sessions (
+        id, local_date, slot, kind, status, target_answers, answered_count,
+        queue_json, last_item_id, created_at, updated_at, completed_at,
+        content_version
+      ) VALUES (?, 'persistent', NULL, ?, 'in_progress', ?, 0, ?, NULL, ?, ?,
+        NULL, ?)
+      ON CONFLICT(id) DO UPDATE SET
+        kind = excluded.kind,
+        status = 'in_progress',
+        target_answers = excluded.target_answers,
+        answered_count = 0,
+        queue_json = excluded.queue_json,
+        last_item_id = NULL,
+        updated_at = excluded.updated_at,
+        completed_at = NULL,
+        content_version = excluded.content_version
+      ''',
+      <Object?>[
+        id,
+        kind.wireName,
+        queueItemIds.length,
+        jsonEncode(queueItemIds),
+        timestamp,
+        timestamp,
+        _contentVersion(),
+      ],
+    );
+    return (await findById(id))!;
+  }
+
+  @override
   Future<DailySession> createExtra({
     required String localDate,
     required DateTime now,
@@ -158,6 +215,8 @@ final class SqliteDailySessionRepository implements DailySessionRepository {
           settings.grammarTasks,
         DailySessionKind.numbers => settings.numberTasks,
         DailySessionKind.matching => 24,
+        DailySessionKind.marathonToGerman => settings.toGermanTasks,
+        DailySessionKind.marathonToRussian => settings.toRussianTasks,
         DailySessionKind.vocabularyToGerman ||
         DailySessionKind.easyVocabularyToGerman ||
         DailySessionKind.importantVocabularyToGerman ||

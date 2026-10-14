@@ -11,6 +11,14 @@ abstract interface class DailySessionRepository {
 
   Future<DailySession?> findById(String id);
 
+  Future<DailySession?> findPersistent(DailySessionKind kind);
+
+  Future<DailySession> resetPersistent({
+    required DailySessionKind kind,
+    required List<String> queueItemIds,
+    required DateTime now,
+  });
+
   Future<DailySession> createExtra({
     required String localDate,
     required DateTime now,

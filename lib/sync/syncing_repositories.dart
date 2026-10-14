@@ -131,6 +131,25 @@ final class SyncingDailySessionRepository implements DailySessionRepository {
   Future<DailySession?> findById(String id) => _delegate.findById(id);
 
   @override
+  Future<DailySession?> findPersistent(DailySessionKind kind) =>
+      _delegate.findPersistent(kind);
+
+  @override
+  Future<DailySession> resetPersistent({
+    required DailySessionKind kind,
+    required List<String> queueItemIds,
+    required DateTime now,
+  }) async {
+    final session = await _delegate.resetPersistent(
+      kind: kind,
+      queueItemIds: queueItemIds,
+      now: now,
+    );
+    _onChanged();
+    return session;
+  }
+
+  @override
   Future<DailySession> createExtra({
     required String localDate,
     required DateTime now,

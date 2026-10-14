@@ -27,7 +27,9 @@ enum DailySessionKind {
   favoriteGrammar('favorite_grammar'),
   grammar('grammar'),
   numbers('numbers'),
-  matching('matching');
+  matching('matching'),
+  marathonToGerman('marathon_to_german'),
+  marathonToRussian('marathon_to_russian');
 
   const DailySessionKind(this.wireName);
 
@@ -48,13 +50,18 @@ enum DailySessionKind {
         importantVocabularyToGerman ||
         importantEasyVocabularyToGerman ||
         importantVocabularyToRussian ||
-        matching =>
+        matching ||
+        marathonToGerman ||
+        marathonToRussian =>
           true,
         favoriteGrammar || grammar || numbers => false,
       };
 
   bool get isToRussian => switch (this) {
-        vocabularyToRussian || importantVocabularyToRussian => true,
+        vocabularyToRussian ||
+        importantVocabularyToRussian ||
+        marathonToRussian =>
+          true,
         _ => false,
       };
 
@@ -68,6 +75,8 @@ enum DailySessionKind {
 
   bool get isEasyVocabulary =>
       this == easyVocabularyToGerman || this == importantEasyVocabularyToGerman;
+
+  bool get isMarathon => this == marathonToGerman || this == marathonToRussian;
 
   bool get isGrammar => this == grammar || this == favoriteGrammar;
 }

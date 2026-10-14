@@ -210,6 +210,7 @@ void main() {
 
     await tester.pumpWidget(_app(database));
     await tester.pumpAndSettle();
+    await _expandCategory(tester, 'vocabulary-to-german');
     final start = find.byKey(
       const Key('create-important-to-german-session'),
     );
@@ -234,6 +235,7 @@ void main() {
 
     await tester.pumpWidget(_app(database));
     await tester.pumpAndSettle();
+    await _expandCategory(tester, 'vocabulary-to-german');
     final start = find.byKey(
       const Key('create-important-easy-to-german-session'),
     );
@@ -259,7 +261,7 @@ void main() {
     expect(jsonDecode(session['queue_json'] as String), hasLength(20));
   });
 
-  testWidgets('shows important lessons in a highlighted top block', (
+  testWidgets('shows important lessons inside the translation category', (
     tester,
   ) async {
     final database = AppDatabase.inMemory();
@@ -268,33 +270,40 @@ void main() {
     await tester.pumpWidget(_app(database));
     await tester.pumpAndSettle();
 
-    final important = find.byKey(const Key('important-lessons-block'));
+    expect(
+      find.byKey(const Key('important-to-german-lessons-block')),
+      findsNothing,
+    );
+    await _expandCategory(tester, 'vocabulary-to-german');
+    final important =
+        find.byKey(const Key('important-to-german-lessons-block'));
     final regular = find.byKey(
       const Key('session-category-progress-vocabulary-to-german'),
     );
     expect(important, findsOneWidget);
     expect(tester.getTopLeft(important).dy, greaterThanOrEqualTo(0));
-    await _expandCategory(tester, 'vocabulary-to-german');
     expect(regular, findsOneWidget);
   });
 
-  testWidgets('settings can hide important lesson categories', (tester) async {
+  testWidgets('lesson groups are collapsed and visibility toggles are removed',
+      (
+    tester,
+  ) async {
     final database = AppDatabase.inMemory();
     addTearDown(database.close);
 
     await tester.pumpWidget(_app(database));
     await tester.pumpAndSettle();
-    expect(find.text('Wichtige Wörter'), findsOneWidget);
-    await tester.scrollUntilVisible(find.text('Grammatik-Favoriten'), 300);
-    await tester.pumpAndSettle();
-    expect(find.text('Grammatik-Favoriten'), findsOneWidget);
+    expect(find.text('Wichtige Wörter'), findsNothing);
+    expect(find.byKey(const Key('lesson-group-to-german')), findsOneWidget);
+    expect(find.byKey(const Key('lesson-group-to-russian')), findsOneWidget);
 
     await tester.tap(find.byKey(const Key('app-settings')));
     await tester.pumpAndSettle();
-    await tester.tap(find.byKey(const Key('include-important-lessons')));
-    await tester.pump();
-    await tester.tap(
+    expect(find.byKey(const Key('include-important-lessons')), findsNothing);
+    expect(
       find.byKey(const Key('include-favorite-grammar-lessons')),
+      findsNothing,
     );
     await tester.enterText(
       find.byKey(const Key('problem-word-max-weight')),
@@ -307,18 +316,6 @@ void main() {
     await tester.pageBack();
     await tester.pumpAndSettle();
 
-    expect(find.text('Wichtige Wörter'), findsNothing);
-    expect(find.text('Grammatik-Favoriten'), findsNothing);
-    expect(
-      (await SqliteSettingsRepository(database).readAppSettings())
-          .includeImportantLessons,
-      isFalse,
-    );
-    expect(
-      (await SqliteSettingsRepository(database).readAppSettings())
-          .includeFavoriteGrammarLessons,
-      isFalse,
-    );
     expect(
       (await SqliteSettingsRepository(database).readAppSettings())
           .problemWordMaxWeight,
@@ -356,6 +353,7 @@ void main() {
 
     await tester.pumpWidget(_app(database));
     await tester.pumpAndSettle();
+    await _expandCategory(tester, 'vocabulary-to-german');
     final start = find.byKey(
       const Key('create-important-to-german-session'),
     );
@@ -562,6 +560,7 @@ void main() {
 
     await tester.pumpWidget(_app(database));
     await tester.pumpAndSettle();
+    await _expandCategory(tester, 'vocabulary-to-german');
     final start = find.byKey(const Key('create-easy-to-german-session'));
     await tester.scrollUntilVisible(start, 300);
     await tester.pumpAndSettle();
@@ -1137,6 +1136,7 @@ void main() {
 
     await tester.tap(find.text('Heute'));
     await tester.pumpAndSettle();
+    await _expandCategory(tester, 'grammar');
     await tester.scrollUntilVisible(
       find.byKey(const Key('create-favorite-grammar-session')),
       300,
@@ -1384,9 +1384,24 @@ void main() {
 }
 
 Future<void> _expandCategory(WidgetTester tester, String category) async {
+  final group = switch (category) {
+    'vocabulary-to-german' || 'easy-vocabulary-to-german' => 'to-german',
+    'vocabulary-to-russian' => 'to-russian',
+    'grammar' || 'favorite-grammar' => 'grammar',
+    'numbers' || 'matching' => 'other',
+    _ => null,
+  };
+  if (group != null) {
+    final toggle = find.byKey(Key('toggle-lesson-group-$group'));
+    await tester.scrollUntilVisible(toggle, 300);
+    await tester.tap(toggle);
+    await tester.pumpAndSettle();
+  }
   final action = find.byKey(Key('session-category-action-$category'));
-  await tester.scrollUntilVisible(action, 300);
-  await tester.pumpAndSettle();
+  if (action.evaluate().isNotEmpty) {
+    await tester.scrollUntilVisible(action, 300);
+    await tester.pumpAndSettle();
+  }
 }
 
 DeutschReviewApp _app(

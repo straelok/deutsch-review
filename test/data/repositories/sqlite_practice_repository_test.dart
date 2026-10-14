@@ -1,6 +1,8 @@
 import 'package:deutsch_review/data/database/app_database.dart';
 import 'package:deutsch_review/data/repositories/sqlite_learning_item_repository.dart';
 import 'package:deutsch_review/data/repositories/sqlite_practice_repository.dart';
+import 'package:deutsch_review/data/repositories/sqlite_daily_session_repository.dart';
+import 'package:deutsch_review/domain/daily_session.dart';
 import 'package:deutsch_review/domain/learning_item.dart';
 import 'package:deutsch_review/domain/practice.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -121,5 +123,62 @@ void main() {
     expect(summary.attempts, 2);
     expect(summary.correct, 1);
     expect(summary.errors, 1);
+  });
+
+  test('ignores assisted successes but keeps assisted failures', () async {
+    final database = AppDatabase.inMemory();
+    addTearDown(database.close);
+    final now = DateTime.utc(2026, 10, 14, 10);
+    await SqliteLearningItemRepository(database).save(
+      LearningItem(
+        id: 'item-1',
+        type: LearningItemType.word,
+        level: '',
+        lesson: '',
+        topic: '',
+        learned: true,
+        createdAt: now,
+        updatedAt: now,
+        sourceRef: 'test',
+        content: const {'german': 'lernen', 'translation_ru': 'учить'},
+      ),
+    );
+    final sessions = SqliteDailySessionRepository(database);
+    final session = await sessions.createExtra(
+      localDate: '2026-10-14',
+      now: now,
+      kind: DailySessionKind.easyVocabularyToGerman,
+    );
+    final practice = SqlitePracticeRepository(database);
+    await practice.saveAttempt(
+      PracticeAttempt(
+        id: 'wrong',
+        itemId: 'item-1',
+        sessionId: session.id,
+        answerText: 'leren',
+        correct: false,
+        attemptedAt: now,
+      ),
+    );
+    await practice.saveAttempt(
+      PracticeAttempt(
+        id: 'correct',
+        itemId: 'item-1',
+        sessionId: session.id,
+        answerText: 'lernen',
+        correct: true,
+        attemptedAt: now.add(const Duration(minutes: 1)),
+      ),
+    );
+
+    final summary = await practice.summary();
+    final statistics = (await practice.statisticsByItem())['item-1']!;
+    expect(summary.attempts, 1);
+    expect(summary.correct, 0);
+    expect(statistics.allTime.attempts, 1);
+    expect(statistics.allTime.correct, 0);
+    expect(await practice.recentOutcomes(), {
+      'item-1': <bool>[false],
+    });
   });
 }

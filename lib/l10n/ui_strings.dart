@@ -41,6 +41,24 @@ final class UiStrings {
         'Für diese Übung werden mindestens 24 eindeutige Wortpaare benötigt.',
         'Для этого режима нужно не менее 24 уникальных пар слов.',
       );
+  String get marathonToGermanCategory => choose(
+        'Marathon: Russisch → Deutsch',
+        'Марафон: с русского на немецкий',
+      );
+  String get marathonToRussianCategory => choose(
+        'Marathon: Deutsch → Russisch',
+        'Марафон: с немецкого на русский',
+      );
+  String get resetMarathon => choose('Marathon zurücksetzen', 'Сбросить');
+  String get restartMarathon => choose('Neu starten', 'Начать заново');
+  String get resetMarathonTitle => choose(
+        'Marathon neu starten?',
+        'Сбросить прогресс марафона?',
+      );
+  String get resetMarathonMessage => choose(
+        'Der aktuelle Fortschritt wird gelöscht. Die Antwortstatistik bleibt erhalten.',
+        'Текущий прогресс будет сброшен. История ответов и статистика сохранятся.',
+      );
   String get wordsCategory => choose('Wortschatz', 'Слова');
   String get toGermanCategory => choose(
         'Russisch → Deutsch',
