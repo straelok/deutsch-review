@@ -1,6 +1,6 @@
 {
   "format_version": 2,
-  "exported_at": "2026-10-08T22:19:46.926Z",
+  "exported_at": "2026-10-14T22:00:00Z",
   "words": [
     {
       "id": "d8000001",
@@ -44,7 +44,7 @@
       "note": "Сильный глагол: du schläfst, er/sie/es schläft.",
       "created_at": "2026-10-05T21:48:18.545709Z",
       "updated_at": "2026-10-05T21:48:18.545709Z",
-      "important": true
+      "important": false
     },
     {
       "id": "d8000005",
@@ -66,7 +66,7 @@
       "note": "Сильный глагол: du isst, er/sie/es isst.",
       "created_at": "2026-10-05T21:48:18.545709Z",
       "updated_at": "2026-10-05T21:48:18.545709Z",
-      "important": true
+      "important": false
     },
     {
       "id": "d8000007",
@@ -176,7 +176,7 @@
       "note": "Отделяемый глагол: ein + kaufen.",
       "created_at": "2026-10-05T21:48:18.545709Z",
       "updated_at": "2026-10-05T21:48:18.545709Z",
-      "important": true
+      "important": false
     },
     {
       "id": "d8000017",
@@ -187,7 +187,7 @@
       "note": "Отделяемый сильный глагол: du siehst fern, er/sie/es sieht fern.",
       "created_at": "2026-10-05T21:48:18.545709Z",
       "updated_at": "2026-10-05T21:48:18.545709Z",
-      "important": true
+      "important": false
     },
     {
       "id": "d8000018",
@@ -198,7 +198,7 @@
       "note": "Отделяемый глагол: an + rufen.",
       "created_at": "2026-10-05T21:48:18.545709Z",
       "updated_at": "2026-10-05T21:48:18.545709Z",
-      "important": true
+      "important": false
     },
     {
       "id": "d8000019",
@@ -209,7 +209,7 @@
       "note": "Отделяемый глагол: mit + kommen.",
       "created_at": "2026-10-05T21:48:18.545709Z",
       "updated_at": "2026-10-05T21:48:18.545709Z",
-      "important": false
+      "important": true
     },
     {
       "id": "d8000020",
@@ -231,7 +231,7 @@
       "note": "Отделяемый сильный глагол: du fängst an, er/sie/es fängt an.",
       "created_at": "2026-10-05T21:48:18.545709Z",
       "updated_at": "2026-10-05T21:48:18.545709Z",
-      "important": true
+      "important": false
     },
     {
       "id": "d8000022",
@@ -991,7 +991,7 @@
       "example": "Die Schule ist in Passau.; Die Kinder gehen in verschiedene Schulen.",
       "created_at": "2026-10-04T22:00:00.000Z",
       "updated_at": "2026-10-04T22:00:00.000Z",
-      "important": false
+      "important": true
     },
     {
       "id": "d4000026-0000-4000-8000-000000000026",
@@ -1003,7 +1003,7 @@
       "example": "Wir gehen ins Kino.; In der Stadt gibt es zwei Kinos.",
       "created_at": "2026-10-04T22:00:00.000Z",
       "updated_at": "2026-10-04T22:00:00.000Z",
-      "important": true
+      "important": false
     },
     {
       "id": "d4000027-0000-4000-8000-000000000027",
@@ -1015,7 +1015,7 @@
       "example": "Mein Freund heißt Peter.; Wir treffen unsere Freunde.",
       "created_at": "2026-10-04T22:00:00.000Z",
       "updated_at": "2026-10-04T22:00:00.000Z",
-      "important": true
+      "important": false
     },
     {
       "id": "d4000028-0000-4000-8000-000000000028",
@@ -1087,7 +1087,7 @@
       "example": "Die Ärztin arbeitet im Krankenhaus.; Zwei Ärztinnen sprechen mit dem Patienten.",
       "created_at": "2026-10-04T22:00:00.000Z",
       "updated_at": "2026-10-04T22:00:00.000Z",
-      "important": false
+      "important": true
     },
     {
       "id": "d4000034-0000-4000-8000-000000000034",
@@ -1303,7 +1303,7 @@
       "example": "Marta ist in Klasse 3a.; Die Schule hat viele Klassen.",
       "created_at": "2026-10-04T22:00:00.000Z",
       "updated_at": "2026-10-04T22:00:00.000Z",
-      "important": false
+      "important": true
     },
     {
       "id": "d4000052-0000-4000-8000-000000000052",
@@ -1364,7 +1364,7 @@
       "example": "Willkommen im Team.; In der Firma arbeiten drei Teams.",
       "created_at": "2026-10-04T22:00:00.000Z",
       "updated_at": "2026-10-04T22:00:00.000Z",
-      "important": false
+      "important": true
     },
     {
       "id": "d4000057-0000-4000-8000-000000000057",
@@ -1696,7 +1696,7 @@
       "example": "Ich schreibe einen Brief.; Der Brief kommt morgen.",
       "created_at": "2026-10-04T21:00:00.000Z",
       "updated_at": "2026-10-04T21:00:00.000Z",
-      "important": false
+      "important": true
     },
     {
       "id": "d3000025-0000-4000-8000-000000000025",
@@ -1739,7 +1739,7 @@
       "example": "Wir üben Deutsch.; Ich übe die Aussprache.",
       "created_at": "2026-10-04T21:00:00.000Z",
       "updated_at": "2026-10-04T21:00:00.000Z",
-      "important": false
+      "important": true
     },
     {
       "id": "d3000029-0000-4000-8000-000000000029",
@@ -3008,7 +3008,7 @@
       "example": "Ich bin müde.; Die Kinder sind heute müde.",
       "created_at": "2026-10-04T19:08:53.226945Z",
       "updated_at": "2026-10-04T19:08:53.226945Z",
-      "important": true
+      "important": false
     },
     {
       "id": "d7000011",
@@ -3018,7 +3018,7 @@
       "example": "Er ist krank.; Das kranke Kind bleibt zu Hause.",
       "created_at": "2026-10-04T19:08:53.226945Z",
       "updated_at": "2026-10-04T19:08:53.226945Z",
-      "important": false
+      "important": true
     },
     {
       "id": "d7000012",
@@ -3058,7 +3058,7 @@
       "example": "Ich singe ein Lied.; Die Kinder singen zusammen.",
       "created_at": "2026-10-04T19:08:53.226945Z",
       "updated_at": "2026-10-04T19:08:53.226945Z",
-      "important": false
+      "important": true
     },
     {
       "id": "d7000016",
@@ -3078,7 +3078,7 @@
       "example": "Du trinkst Milch.; Wir trinken Wasser.",
       "created_at": "2026-10-04T19:08:53.226945Z",
       "updated_at": "2026-10-04T19:08:53.226945Z",
-      "important": true
+      "important": false
     },
     {
       "id": "d7000018",
@@ -3098,7 +3098,7 @@
       "example": "Du gehst nach Hause.; Wir gehen in die Küche.",
       "created_at": "2026-10-04T19:08:53.226945Z",
       "updated_at": "2026-10-04T19:08:53.226945Z",
-      "important": true
+      "important": false
     },
     {
       "id": "d7000020",
@@ -3141,7 +3141,7 @@
       "note": "Часто встречается в выражении zum Beispiel — например.",
       "created_at": "2026-10-04T12:30:00.000Z",
       "updated_at": "2026-10-04T12:30:00.000Z",
-      "important": true
+      "important": false
     },
     {
       "id": "d2000002-0000-4000-8000-000000000002",
@@ -3152,7 +3152,7 @@
       "note": "Произношение: [tsʊm ˈbaɪ̯ʃpiːl]. Частое сокращение на письме: z. B.",
       "created_at": "2026-10-04T12:30:00.000Z",
       "updated_at": "2026-10-04T12:30:00.000Z",
-      "important": true
+      "important": false
     },
     {
       "id": "d2000003-0000-4000-8000-000000000003",
@@ -3360,7 +3360,7 @@
       "note": "Учебное упражнение или процесс тренировки навыка.",
       "created_at": "2026-10-04T12:30:00.000Z",
       "updated_at": "2026-10-04T12:30:00.000Z",
-      "important": false
+      "important": true
     },
     {
       "id": "d2000019-0000-4000-8000-000000000019",
@@ -3799,7 +3799,7 @@
       "example": "Das Buch liegt auf dem Tisch.; Ich lese ein Buch.",
       "created_at": "2026-09-29T20:10:42.859Z",
       "updated_at": "2026-10-04T19:08:53.237470Z",
-      "important": false
+      "important": true
     },
     {
       "id": "c1000029-0000-4000-8000-000000000029",
@@ -3948,7 +3948,7 @@
       "example": "Das Geschäft ist heute geöffnet.; Das Geschäft schließt um acht Uhr.",
       "created_at": "2026-09-26T12:20:00.000Z",
       "updated_at": "2026-09-28T13:21:11.078934Z",
-      "important": true
+      "important": false
     },
     {
       "id": "b0000002-0000-4000-8000-000000000002",
@@ -3960,7 +3960,7 @@
       "example": "Ich kaufe im Supermarkt ein.",
       "created_at": "2026-09-26T12:20:00.000Z",
       "updated_at": "2026-09-26T12:20:00.000Z",
-      "important": true
+      "important": false
     },
     {
       "id": "b0000003-0000-4000-8000-000000000003",
@@ -4595,7 +4595,7 @@
       "example": "Ich brauche mehr Wasser.; Möchten Sie noch mehr Kaffee?",
       "created_at": "2026-09-26T12:20:00.000Z",
       "updated_at": "2026-09-28T13:21:11.078934Z",
-      "important": true
+      "important": false
     },
     {
       "id": "b0000059-0000-4000-8000-000000000059",
@@ -4714,7 +4714,7 @@
       "example": "Ich antworte auf die Frage.; Bitte antworten Sie auf die Frage.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-28T13:21:11.078934Z",
-      "important": true
+      "important": false
     },
     {
       "id": "115c0303-3814-4665-9c1f-4bd8ea49357f",
@@ -5290,7 +5290,7 @@
       "example": "Ich mache eine Pause.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z",
-      "important": true
+      "important": false
     },
     {
       "id": "4bc3ccee-e91a-4e40-89e6-9a52a5bc743e",
@@ -6416,7 +6416,7 @@
       "example": "Ich frage: Wie heißen Sie?; Darf ich etwas fragen?",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-28T13:21:11.078934Z",
-      "important": true
+      "important": false
     },
     {
       "id": "ce5f5308-a726-4d73-92f5-ad711696e919",
@@ -6553,10 +6553,11 @@
       "type": "verb",
       "german": "schreiben",
       "translation_ru": "писать",
-      "example": "Ich schreibe meinen Namen.",
+      "example": "Ich schreibe heute einen Brief.; Wir haben gestern einen Test geschrieben.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-09-24T22:53:37.149057Z",
-      "important": false
+      "updated_at": "2026-10-14T22:00:00Z",
+      "important": true,
+      "note": "Partizip II: geschrieben."
     },
     {
       "id": "e7dff5cc-44e3-43e9-8d35-18b789c03b04",
@@ -6628,7 +6629,7 @@
       "example": "Wir spielen ein Spiel.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z",
-      "important": true
+      "important": false
     },
     {
       "id": "ead7375b-ea03-4f6a-bd61-e73f6583b006",
@@ -6648,7 +6649,7 @@
       "example": "Hören Sie gut zu.; Ich höre gern Musik.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-28T13:21:11.078934Z",
-      "important": true
+      "important": false
     },
     {
       "id": "ebf4cf92-e9d1-4554-bddb-0d3f1ee50e50",
@@ -6775,7 +6776,7 @@
       "example": "Wir arbeiten zu zweit.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-09-24T22:53:37.149057Z",
-      "important": true
+      "important": false
     },
     {
       "id": "f61186a1-82f5-406a-9462-74217e5d63d5",
@@ -6877,7 +6878,7 @@
       "translation_ru": "получать",
       "example": "Ich bekomme morgen Besuch.; Peter bekommt ein Schnitzel.",
       "note": "Неотделяемая приставка be-: ich bekomme, du bekommst, er/sie/es bekommt.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:00:00.000Z",
       "updated_at": "2026-10-06T21:00:00.000Z"
     },
@@ -6888,7 +6889,7 @@
       "translation_ru": "навещать; посещать",
       "example": "Max besucht am Wochenende seine Tante.; Wir besuchen heute das Museum.",
       "note": "Неотделяемая приставка be-: ich besuche, du besuchst, er/sie/es besucht.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:00:00.000Z",
       "updated_at": "2026-10-06T21:00:00.000Z"
     },
@@ -6899,7 +6900,7 @@
       "translation_ru": "начинать; начинаться",
       "example": "Der Kurs beginnt am Montag.; Wir beginnen mit der Übung.",
       "note": "Неотделяемый глагол: ich beginne, du beginnst, er/sie/es beginnt.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:00:00.000Z",
       "updated_at": "2026-10-06T21:00:00.000Z"
     },
@@ -6910,7 +6911,7 @@
       "translation_ru": "рекомендовать; советовать",
       "example": "Die Kellnerin empfiehlt das Tagesgericht.; Was empfiehlst du?",
       "note": "Неотделяемая приставка emp-; сильный глагол: du empfiehlst, er/sie/es empfiehlt.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:00:00.000Z",
       "updated_at": "2026-10-06T21:00:00.000Z"
     },
@@ -6921,7 +6922,7 @@
       "translation_ru": "увольнять; отпускать",
       "example": "Die Firma entlässt mehrere Mitarbeiter.; Der Arzt entlässt den Patienten nach Hause.",
       "note": "Неотделяемая приставка ent-; сильный глагол: du entlässt, er/sie/es entlässt.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:00:00.000Z",
       "updated_at": "2026-10-06T21:00:00.000Z"
     },
@@ -6932,7 +6933,7 @@
       "translation_ru": "объяснять",
       "example": "Die Lehrerin erklärt die neue Regel.; Kannst du mir das erklären?",
       "note": "Неотделяемая приставка er-: ich erkläre, du erklärst, er/sie/es erklärt.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:00:00.000Z",
       "updated_at": "2026-10-06T21:00:00.000Z"
     },
@@ -6943,7 +6944,7 @@
       "translation_ru": "наслаждаться; получать удовольствие",
       "example": "Wir genießen den freien Nachmittag.; Sie genießt ihren Urlaub.",
       "note": "Неотделяемая приставка ge-: ich genieße, du genießt, er/sie/es genießt.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:00:00.000Z",
       "updated_at": "2026-10-06T21:00:00.000Z"
     },
@@ -6954,7 +6955,7 @@
       "translation_ru": "понимать",
       "example": "Ich verstehe die Frage.; Verstehst du das Problem?",
       "note": "Неотделяемая приставка ver-: ich verstehe, du verstehst, er/sie/es versteht.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:00:00.000Z",
       "updated_at": "2026-10-06T21:00:00.000Z"
     },
@@ -6976,7 +6977,7 @@
       "translation_ru": "зарабатывать",
       "example": "Karl verdient genug Geld.; Wie viel verdienst du?",
       "note": "Неотделяемая приставка ver-: ich verdiene, du verdienst, er/sie/es verdient.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:00:00.000Z",
       "updated_at": "2026-10-06T21:00:00.000Z"
     },
@@ -6987,7 +6988,7 @@
       "translation_ru": "разрывать; рвать",
       "example": "Maria zerreißt den alten Zettel.; Bitte zerreiß den Brief nicht.",
       "note": "Неотделяемая приставка zer-: ich zerreiße, du zerreißt, er/sie/es zerreißt.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:00:00.000Z",
       "updated_at": "2026-10-06T21:00:00.000Z"
     },
@@ -6998,7 +6999,7 @@
       "translation_ru": "запирать; завершать",
       "example": "Du schließt am Abend die Tür ab.; Wir schließen den Kurs im Juni ab.",
       "note": "Отделяемый глагол: ab + schließen; du schließt ab, er/sie/es schließt ab.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:00:00.000Z",
       "updated_at": "2026-10-06T21:00:00.000Z"
     },
@@ -7009,7 +7010,7 @@
       "translation_ru": "вставать; подниматься",
       "example": "Milan steht jeden Morgen früh auf.; Wann stehst du auf?",
       "note": "Отделяемый глагол: auf + stehen.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:00:00.000Z",
       "updated_at": "2026-10-06T21:00:00.000Z"
     },
@@ -7020,7 +7021,7 @@
       "translation_ru": "выходить из транспорта",
       "example": "Wir steigen am Hauptbahnhof aus.; Steigst du hier aus?",
       "note": "Отделяемый глагол: aus + steigen.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:00:00.000Z",
       "updated_at": "2026-10-06T21:00:00.000Z"
     },
@@ -7031,7 +7032,7 @@
       "translation_ru": "приглашать",
       "example": "Ich lade meine Nachbarn zum Essen ein.; Wen lädt sie ein?",
       "note": "Отделяемый сильный глагол: du lädst ein, er/sie/es lädt ein.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:00:00.000Z",
       "updated_at": "2026-10-06T21:00:00.000Z"
     },
@@ -7042,7 +7043,7 @@
       "translation_ru": "производить; изготавливать",
       "example": "Die Firma stellt Fahrräder her.; Wo stellt man dieses Produkt her?",
       "note": "Отделяемый глагол: her + stellen.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:00:00.000Z",
       "updated_at": "2026-10-06T21:00:00.000Z"
     },
@@ -7053,7 +7054,7 @@
       "translation_ru": "читать вслух",
       "example": "Die Studentin liest eine Geschichte vor.; Liest du den Kindern etwas vor?",
       "note": "Отделяемый сильный глагол: du liest vor, er/sie/es liest vor.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:00:00.000Z",
       "updated_at": "2026-10-06T21:00:00.000Z"
     },
@@ -7064,7 +7065,7 @@
       "translation_ru": "закрывать",
       "example": "Du machst vor dem Gehen das Fenster zu.; Mach bitte die Tür zu.",
       "note": "Отделяемый глагол: zu + machen.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:00:00.000Z",
       "updated_at": "2026-10-06T21:00:00.000Z"
     },
@@ -7075,7 +7076,7 @@
       "translation_ru": "возвращать; отдавать обратно",
       "example": "Er gibt das Buch morgen zurück.; Wann gibst du mir den Schlüssel zurück?",
       "note": "Отделяемый сильный глагол: du gibst zurück, er/sie/es gibt zurück.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:00:00.000Z",
       "updated_at": "2026-10-06T21:00:00.000Z"
     },
@@ -7086,7 +7087,7 @@
       "translation_ru": "ехать вместе; поехать с кем-либо",
       "example": "Meine Schwester fährt heute mit.; Fährst du nach Berlin mit?",
       "note": "Отделяемый сильный глагол: du fährst mit, er/sie/es fährt mit.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:00:00.000Z",
       "updated_at": "2026-10-06T21:00:00.000Z"
     },
@@ -7108,7 +7109,7 @@
       "translation_ru": "слушать; внимательно слушать",
       "example": "Die Kinder hören dem Lehrer aufmerksam zu.; Hörst du mir bitte zu?",
       "note": "Отделяемый глагол: zu + hören; употребляется с Dativ: jemandem zuhören.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:00:00.000Z",
       "updated_at": "2026-10-06T21:00:00.000Z"
     },
@@ -7120,7 +7121,7 @@
       "article": "die",
       "plural": "Präsentationen",
       "example": "Lara macht heute eine Präsentation.; Die Präsentation beginnt um zehn Uhr.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
     },
@@ -7130,7 +7131,7 @@
       "german": "frühstücken",
       "translation_ru": "завтракать",
       "example": "Wir frühstücken zusammen.; Sofia frühstückt um acht Uhr.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
     },
@@ -7140,7 +7141,7 @@
       "german": "kochen",
       "translation_ru": "готовить; варить",
       "example": "Ich koche heute das Abendessen.; Am Sonntag kochen wir zusammen.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
     },
@@ -7151,7 +7152,7 @@
       "translation_ru": "гулять; ходить на прогулку",
       "example": "Wir gehen am Abend spazieren.; Gehst du heute spazieren?",
       "note": "Устойчивое сочетание: gehen спрягается, spazieren стоит в конце.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
     },
@@ -7162,7 +7163,7 @@
       "translation_ru": "убирать; наводить порядок",
       "example": "Lara räumt die Küche auf.; Ich räume am Samstag mein Zimmer auf.",
       "note": "Отделяемый глагол: auf + räumen.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
     },
@@ -7172,7 +7173,7 @@
       "german": "oder",
       "translation_ru": "или",
       "example": "Möchtest du Tee oder Kaffee?; Gehst du spazieren oder bleibst du zu Hause?",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
     },
@@ -7182,7 +7183,7 @@
       "german": "früh",
       "translation_ru": "рано; ранний",
       "example": "Lara steht früh auf.; Der Kurs beginnt früh.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
     },
@@ -7192,7 +7193,7 @@
       "german": "mit",
       "translation_ru": "с; вместе с",
       "example": "Ich frühstücke mit meiner Familie.; Fährst du mit dem Bus?",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
     },
@@ -7202,7 +7203,7 @@
       "german": "lange",
       "translation_ru": "долго; длительное время",
       "example": "Sofia arbeitet lange.; Wie lange dauert der Kurs?",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
     },
@@ -7212,7 +7213,7 @@
       "german": "gern",
       "translation_ru": "охотно; с удовольствием; любить что-либо делать",
       "example": "Ich koche gern.; Stehst du gern früh auf?",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
     },
@@ -7222,7 +7223,7 @@
       "german": "spät",
       "translation_ru": "поздно; поздний",
       "example": "Wie spät ist es?; Am Freitag komme ich spät nach Hause.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
     },
@@ -7232,7 +7233,7 @@
       "german": "schon",
       "translation_ru": "уже",
       "example": "Es ist schon zwölf Uhr.; Bist du schon zu Hause?",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
     },
@@ -7242,7 +7243,7 @@
       "german": "erst",
       "translation_ru": "только; лишь; не раньше чем",
       "example": "Es ist erst elf Uhr.; Der Kurs beginnt erst am Dienstag.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
     },
@@ -7254,7 +7255,7 @@
       "article": "das",
       "plural": "Viertel",
       "example": "Es ist Viertel nach eins.; Wir treffen uns um Viertel vor neun.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
     },
@@ -7264,7 +7265,7 @@
       "german": "vor",
       "translation_ru": "до; перед",
       "example": "Es ist Viertel vor zwölf.; Vor dem Kurs trinke ich Kaffee.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
     },
@@ -7274,7 +7275,7 @@
       "german": "nach",
       "translation_ru": "после; через; по истечении",
       "example": "Es ist Viertel nach eins.; Nach dem Kurs gehe ich nach Hause.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
     },
@@ -7285,7 +7286,7 @@
       "translation_ru": "половина; половина следующего часа",
       "example": "Es ist halb zwei.; Der Kurs beginnt um halb neun.",
       "note": "В указании времени halb zwei означает 1:30.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
     },
@@ -7297,7 +7298,7 @@
       "article": "die",
       "plural": "Uhren",
       "example": "Die Uhr zeigt zwölf.; Der Termin ist um 17 Uhr.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
     },
@@ -7307,7 +7308,7 @@
       "german": "kurz",
       "translation_ru": "короткий; незадолго до",
       "example": "Es ist kurz vor zwölf.; Wir machen eine kurze Pause.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
     },
@@ -7317,7 +7318,7 @@
       "german": "gleich",
       "translation_ru": "сейчас; скоро; одинаковый",
       "example": "Der Bus kommt gleich.; Es ist gleich zwölf Uhr.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
     },
@@ -7329,7 +7330,7 @@
       "article": "der",
       "plural": "Intensivkurse",
       "example": "Ich mache einen Intensivkurs.; Der Intensivkurs beginnt am Montag.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
     },
@@ -7340,7 +7341,7 @@
       "translation_ru": "в; по; на",
       "example": "Am Montag beginnt der Kurs.; Am Abend bin ich zu Hause.",
       "note": "am = an dem; часто употребляется с днями недели и частями дня.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
     },
@@ -7352,7 +7353,7 @@
       "article": "der",
       "plural": "Montage",
       "example": "Am Montag arbeite ich.; Der nächste Montag ist frei.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
     },
@@ -7364,7 +7365,7 @@
       "article": "der",
       "plural": "Freitage",
       "example": "Am Freitag endet der Kurs.; Freitags gehe ich ins Kino.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
     },
@@ -7376,7 +7377,7 @@
       "article": "der",
       "plural": "Donnerstage",
       "example": "Was machst du am Donnerstag?; Der Termin ist nächsten Donnerstag.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
     },
@@ -7388,7 +7389,7 @@
       "article": "der",
       "plural": "Mittwoche",
       "example": "Am Mittwoch habe ich Deutschkurs.; Mittwochs spiele ich Fußball.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
     },
@@ -7400,7 +7401,7 @@
       "article": "der",
       "plural": "Dienstage",
       "example": "Der Kurs beginnt am Dienstag.; Dienstags arbeite ich lange.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
     },
@@ -7410,7 +7411,7 @@
       "german": "wann",
       "translation_ru": "когда",
       "example": "Wann beginnt der Kurs?; Wann kommst du zurück?",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
     },
@@ -7420,7 +7421,7 @@
       "german": "um",
       "translation_ru": "в; около; вокруг",
       "example": "Der Kurs beginnt um neun Uhr.; Wir gehen um den See.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
     },
@@ -7430,7 +7431,7 @@
       "german": "enden",
       "translation_ru": "заканчиваться; завершаться",
       "example": "Wann endet der Kurs?; Der Film endet um zehn Uhr.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
     },
@@ -7440,7 +7441,7 @@
       "german": "von ... bis ...",
       "translation_ru": "с ... до ...; от ... до ...",
       "example": "Der Kurs ist von neun bis zwölf.; Ich arbeite von Montag bis Freitag.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
     },
@@ -7452,7 +7453,7 @@
       "article": "die",
       "plural": "Partys",
       "example": "Am Freitag machen wir eine Party.; Die Party beginnt um acht.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
     },
@@ -7465,7 +7466,7 @@
       "plural": "—",
       "example": "Hast du heute Zeit?; Ich brauche mehr Zeit.",
       "note": "В значении свободного времени обычно употребляется в единственном числе.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
     },
@@ -7478,7 +7479,7 @@
       "plural": "—",
       "example": "Ich spiele am Samstag Fußball.; Der Fußball liegt im Garten.",
       "note": "Название вида спорта обычно употребляется без артикля.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
     },
@@ -7490,7 +7491,7 @@
       "article": "der",
       "plural": "Samstage",
       "example": "Heute ist Samstag.; Am Samstag ist das Geschäft geöffnet.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
     },
@@ -7502,7 +7503,7 @@
       "article": "der",
       "plural": "Sonntage",
       "example": "Am Sonntag schlafe ich lange.; Sonntags ist die Praxis geschlossen.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
     },
@@ -7514,7 +7515,7 @@
       "article": "die",
       "plural": "Hausaufgaben",
       "example": "Sina macht ihre Hausaufgaben.; Ich vergesse die Hausaufgabe nicht.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
     },
@@ -7526,7 +7527,7 @@
       "article": "die",
       "plural": "Mamas",
       "example": "Wann ruft Tim seine Mama an?; Meine Mama kocht gern.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
     },
@@ -7538,7 +7539,7 @@
       "article": "das",
       "plural": "Wochenenden",
       "example": "Am Wochenende stehe ich spät auf.; Wir fahren am Wochenende weg.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
     },
@@ -7549,7 +7550,7 @@
       "translation_ru": "следующий; ближайший",
       "example": "Nächste Woche beginnt der Kurs.; Wir treffen uns nächsten Montag.",
       "note": "Окончание меняется: nächste Woche, nächsten Montag, nächstes Wochenende.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
     },
@@ -7561,7 +7562,7 @@
       "article": "die",
       "plural": "Wochen",
       "example": "Nächste Woche habe ich Urlaub.; Die Woche hat sieben Tage.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
     },
@@ -7574,7 +7575,7 @@
       "plural": "Morgen",
       "example": "Am Morgen frühstücke ich.; Der Morgen ist ruhig.",
       "note": "Не путать с morgen — завтра.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
     },
@@ -7586,7 +7587,7 @@
       "article": "der",
       "plural": "Mittage",
       "example": "Am Mittag esse ich mit Nina.; Wir treffen uns gegen Mittag.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
     },
@@ -7598,7 +7599,7 @@
       "article": "der",
       "plural": "Abende",
       "example": "Am Abend spielt er Fußball.; Der Abend ist frei.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
     },
@@ -7610,7 +7611,7 @@
       "article": "der",
       "plural": "Nachmittage",
       "example": "Am Nachmittag mache ich Sport.; Der Nachmittag ist schon verplant.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
     },
@@ -7622,7 +7623,7 @@
       "article": "der",
       "plural": "Vormittage",
       "example": "Am Vormittag räume ich auf.; Der Termin ist am Vormittag.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
     },
@@ -7634,7 +7635,7 @@
       "article": "die",
       "plural": "Nächte",
       "example": "In der Nacht ist es ruhig.; Sie arbeitet drei Nächte.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
     },
@@ -7646,7 +7647,7 @@
       "article": "der",
       "plural": "—",
       "example": "Am Nachmittag mache ich Sport.; Sport ist gesund.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
     },
@@ -7658,7 +7659,7 @@
       "article": "die",
       "plural": "Pizzen",
       "example": "Am Abend essen wir eine Pizza.; Zwei Pizzen sind schon fertig.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
     },
@@ -7668,7 +7669,7 @@
       "german": "chatten",
       "translation_ru": "общаться в чате; переписываться",
       "example": "Robert chattet am Abend.; Ich chatte mit meiner Freundin.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
     },
@@ -7679,7 +7680,7 @@
       "translation_ru": "открыт; открыто",
       "example": "Das Geschäft ist bis 18 Uhr geöffnet.; Ist die Bibliothek heute geöffnet?",
       "note": "Partizip II от öffnen; здесь употребляется как состояние.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
     },
@@ -7691,7 +7692,7 @@
       "article": "der",
       "plural": "Termine",
       "example": "Der Termin ist um 17 Uhr.; Ich habe morgen einen Termin.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
     },
@@ -7703,7 +7704,7 @@
       "article": "der",
       "plural": "Kindergärten",
       "example": "Der Kindergarten ist bis 17 Uhr geöffnet.; Die Kinder gehen in den Kindergarten.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
     },
@@ -7715,7 +7716,7 @@
       "article": "die",
       "plural": "Bibliotheken",
       "example": "Die Bibliothek ist am Sonntag geschlossen.; Ich lerne in der Bibliothek.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
     },
@@ -7726,7 +7727,7 @@
       "translation_ru": "закрыт; закрыто",
       "example": "Die Praxis ist schon geschlossen.; Sonntags bleibt das Geschäft geschlossen.",
       "note": "Partizip II от schließen; здесь употребляется как состояние.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
     },
@@ -7736,7 +7737,7 @@
       "german": "öffnen",
       "translation_ru": "открывать",
       "example": "Die Bibliothek öffnet um neun Uhr.; Bitte öffne das Fenster.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
     },
@@ -7747,7 +7748,7 @@
       "translation_ru": "закрывать; запирать",
       "example": "Die Praxis schließt um 16 Uhr.; Du schließt die Tür.",
       "note": "Сильный глагол: du schließt, er/sie/es schließt.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
     },
@@ -7759,7 +7760,7 @@
       "article": "die",
       "plural": "Praxen",
       "example": "Die Praxis schließt um 16 Uhr.; Ich habe einen Termin in der Praxis.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
     },
@@ -7771,7 +7772,7 @@
       "article": "der",
       "plural": "Tage",
       "example": "Ich arbeite den ganzen Tag.; Die Woche hat sieben Tage.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
     },
@@ -7782,7 +7783,7 @@
       "translation_ru": "каждый",
       "example": "Ich lerne jeden Tag.; Sie arbeitet jede Woche.",
       "note": "Окончание зависит от рода и падежа: jeder, jede, jedes, jeden.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
     },
@@ -7795,7 +7796,7 @@
       "plural": "Kitas",
       "example": "Die Kinder gehen in die Kita.; Die Kita öffnet um sieben Uhr.",
       "note": "Сокращение от Kindertagesstätte.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
     },
@@ -7806,7 +7807,7 @@
       "translation_ru": "приносить; привозить; отводить",
       "example": "Vera bringt die Kinder in die Kita.; Bringst du bitte Wasser mit?",
       "note": "Особая форма прошедшего времени: brachte; в Präsens спрягается регулярно.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
     },
@@ -7817,7 +7818,7 @@
       "translation_ru": "забирать; встречать",
       "example": "Sie holt die Kinder um 17 Uhr ab.; Ich hole dich am Bahnhof ab.",
       "note": "Отделяемый глагол: ab + holen.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
     },
@@ -7827,7 +7828,7 @@
       "german": "wieder",
       "translation_ru": "снова; опять",
       "example": "Ich gehe wieder ins Kino.; Wann kommst du wieder?",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
     },
@@ -7839,7 +7840,7 @@
       "article": "die",
       "plural": "Freundinnen",
       "example": "Meine Freundin heißt Vera.; Ich treffe meine Freundinnen am Samstag.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
     },
@@ -7849,7 +7850,7 @@
       "german": "total",
       "translation_ru": "совсем; совершенно; очень",
       "example": "Ich bin heute total müde.; Der Film ist total interessant.",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-06T21:30:00.000Z"
     },
@@ -8681,6 +8682,416 @@
       "important": true,
       "created_at": "2026-10-08T22:19:46.926Z",
       "updated_at": "2026-10-08T22:19:46.926Z"
+    },
+    {
+      "type": "word",
+      "german": "prima",
+      "translation_ru": "отлично; замечательно",
+      "example": "Das klappt prima.; Prima, dann treffen wir uns um acht.",
+      "id": "e7000001",
+      "created_at": "2026-10-14T22:00:00Z",
+      "updated_at": "2026-10-14T22:00:00Z",
+      "important": true
+    },
+    {
+      "type": "verb",
+      "german": "wecken",
+      "translation_ru": "будить",
+      "example": "Kannst du mich morgen um sieben wecken?; Der Wecker weckt das Kind.",
+      "id": "e7000002",
+      "created_at": "2026-10-14T22:00:00Z",
+      "updated_at": "2026-10-14T22:00:00Z",
+      "important": true
+    },
+    {
+      "type": "noun",
+      "german": "Frühstück",
+      "translation_ru": "завтрак",
+      "article": "das",
+      "plural": "Frühstücke",
+      "example": "Das Frühstück ist schon fertig.; Am Sonntag machen wir ein langes Frühstück.",
+      "note": "Во множественном числе употребляется редко.",
+      "id": "e7000003",
+      "created_at": "2026-10-14T22:00:00Z",
+      "updated_at": "2026-10-14T22:00:00Z",
+      "important": true
+    },
+    {
+      "type": "word",
+      "german": "fertig",
+      "translation_ru": "готовый; законченный",
+      "example": "Das Essen ist fertig.; Bist du mit der Übung fertig?",
+      "note": "Часто употребляется с sein: fertig sein — быть готовым.",
+      "id": "e7000004",
+      "created_at": "2026-10-14T22:00:00Z",
+      "updated_at": "2026-10-14T22:00:00Z",
+      "important": true
+    },
+    {
+      "type": "word",
+      "german": "los sein",
+      "translation_ru": "происходить; случиться",
+      "example": "Was ist denn los?; In der Schule ist heute viel los.",
+      "note": "Устойчивое выражение с sein.",
+      "id": "e7000005",
+      "created_at": "2026-10-14T22:00:00Z",
+      "updated_at": "2026-10-14T22:00:00Z",
+      "important": true
+    },
+    {
+      "type": "noun",
+      "german": "Mathematik",
+      "translation_ru": "математика",
+      "article": "die",
+      "plural": "—",
+      "example": "Mathematik ist heute interessant.; Wir schreiben morgen einen Test in Mathematik.",
+      "note": "Разговорное сокращение: Mathe.",
+      "id": "e7000006",
+      "created_at": "2026-10-14T22:00:00Z",
+      "updated_at": "2026-10-14T22:00:00Z",
+      "important": true
+    },
+    {
+      "type": "noun",
+      "german": "Test",
+      "translation_ru": "тест; контрольная работа",
+      "article": "der",
+      "plural": "Tests",
+      "example": "Morgen schreiben wir einen Test.; Der Test beginnt um neun.",
+      "id": "e7000007",
+      "created_at": "2026-10-14T22:00:00Z",
+      "updated_at": "2026-10-14T22:00:00Z",
+      "important": true
+    },
+    {
+      "type": "word",
+      "german": "pünktlich",
+      "translation_ru": "вовремя; пунктуальный",
+      "example": "Bitte komm pünktlich.; Der Bus ist heute pünktlich.",
+      "id": "e7000008",
+      "created_at": "2026-10-14T22:00:00Z",
+      "updated_at": "2026-10-14T22:00:00Z",
+      "important": true
+    },
+    {
+      "type": "word",
+      "german": "auf jeden/keinen Fall",
+      "translation_ru": "в любом случае / ни в коем случае",
+      "example": "Ich komme auf jeden Fall.; Das darfst du auf keinen Fall vergessen.",
+      "note": "Два устойчивых выражения с противоположным значением.",
+      "id": "e7000009",
+      "created_at": "2026-10-14T22:00:00Z",
+      "updated_at": "2026-10-14T22:00:00Z",
+      "important": true
+    },
+    {
+      "type": "verb",
+      "german": "schmecken",
+      "translation_ru": "быть вкусным; нравиться на вкус",
+      "example": "Die Suppe schmeckt gut.; Wie schmeckt dir der Kuchen?",
+      "note": "То, что имеет вкус, является подлежащим: Der Kuchen schmeckt mir.",
+      "id": "e7000010",
+      "created_at": "2026-10-14T22:00:00Z",
+      "updated_at": "2026-10-14T22:00:00Z",
+      "important": true
+    },
+    {
+      "type": "word",
+      "german": "nach Hause",
+      "translation_ru": "домой",
+      "example": "Ich fahre nach Hause.; Wann kommt ihr nach Hause?",
+      "note": "Направление: nach Hause. Место: zu Hause.",
+      "id": "e7000011",
+      "created_at": "2026-10-14T22:00:00Z",
+      "updated_at": "2026-10-14T22:00:00Z",
+      "important": true
+    },
+    {
+      "type": "verb",
+      "german": "können",
+      "translation_ru": "мочь; уметь",
+      "example": "Ich kann gut schwimmen.; Können Sie morgen kommen?",
+      "note": "Модальный глагол: ich/er kann, du kannst, wir/sie können, ihr könnt.",
+      "id": "e7000012",
+      "created_at": "2026-10-14T22:00:00Z",
+      "updated_at": "2026-10-14T22:00:00Z",
+      "important": true
+    },
+    {
+      "type": "noun",
+      "german": "Arzt",
+      "translation_ru": "врач",
+      "article": "der",
+      "plural": "Ärzte",
+      "example": "Ich muss heute zum Arzt.; Die Ärzte arbeiten im Krankenhaus.",
+      "id": "e7000013",
+      "created_at": "2026-10-14T22:00:00Z",
+      "updated_at": "2026-10-14T22:00:00Z",
+      "important": true
+    },
+    {
+      "type": "verb",
+      "german": "backen",
+      "translation_ru": "печь; выпекать",
+      "example": "Wir backen einen Kuchen.; Meine Schwester hat Brot gebacken.",
+      "note": "Partizip II: gebacken.",
+      "id": "e7000014",
+      "created_at": "2026-10-14T22:00:00Z",
+      "updated_at": "2026-10-14T22:00:00Z",
+      "important": true
+    },
+    {
+      "type": "verb",
+      "german": "reiten",
+      "translation_ru": "ездить верхом",
+      "example": "Das Mädchen reitet gern.; Am Wochenende sind wir geritten.",
+      "note": "Präsens: du reitest. Partizip II: geritten.",
+      "id": "e7000015",
+      "created_at": "2026-10-14T22:00:00Z",
+      "updated_at": "2026-10-14T22:00:00Z",
+      "important": true
+    },
+    {
+      "type": "noun",
+      "german": "Klavier",
+      "translation_ru": "пианино; рояль",
+      "article": "das",
+      "plural": "Klaviere",
+      "example": "Sie spielt jeden Tag Klavier.; Im Raum stehen zwei Klaviere.",
+      "id": "e7000016",
+      "created_at": "2026-10-14T22:00:00Z",
+      "updated_at": "2026-10-14T22:00:00Z",
+      "important": true
+    },
+    {
+      "type": "verb",
+      "german": "malen",
+      "translation_ru": "рисовать красками; писать картину",
+      "example": "Das Kind malt ein Bild.; Wir haben zusammen gemalt.",
+      "id": "e7000017",
+      "created_at": "2026-10-14T22:00:00Z",
+      "updated_at": "2026-10-14T22:00:00Z",
+      "important": true
+    },
+    {
+      "type": "noun",
+      "german": "Ski",
+      "translation_ru": "лыжа",
+      "article": "der",
+      "plural": "Skier",
+      "example": "Im Winter fahre ich Ski.; Die Skier stehen im Keller.",
+      "id": "e7000018",
+      "created_at": "2026-10-14T22:00:00Z",
+      "updated_at": "2026-10-14T22:00:00Z",
+      "important": true
+    },
+    {
+      "type": "noun",
+      "german": "Tennis",
+      "translation_ru": "теннис",
+      "article": "das",
+      "plural": "—",
+      "example": "Spielst du gern Tennis?; Am Sonntag haben wir Tennis gespielt.",
+      "note": "Обычно в сочетании Tennis spielen.",
+      "id": "e7000019",
+      "created_at": "2026-10-14T22:00:00Z",
+      "updated_at": "2026-10-14T22:00:00Z",
+      "important": true
+    },
+    {
+      "type": "verb",
+      "german": "wollen",
+      "translation_ru": "хотеть; намереваться",
+      "example": "Wir wollen heute lernen.; Willst du mitkommen?",
+      "note": "Модальный глагол: ich/er will, du willst, wir/sie wollen, ihr wollt.",
+      "id": "e7000020",
+      "created_at": "2026-10-14T22:00:00Z",
+      "updated_at": "2026-10-14T22:00:00Z",
+      "important": true
+    },
+    {
+      "type": "word",
+      "german": "endlich",
+      "translation_ru": "наконец",
+      "example": "Der Bus kommt endlich.; Endlich sind die Hausaufgaben fertig.",
+      "id": "e7000021",
+      "created_at": "2026-10-14T22:00:00Z",
+      "updated_at": "2026-10-14T22:00:00Z",
+      "important": true
+    },
+    {
+      "type": "noun",
+      "german": "Lied",
+      "translation_ru": "песня",
+      "article": "das",
+      "plural": "Lieder",
+      "example": "Wir singen ein Lied.; Kennst du diese Lieder?",
+      "id": "e7000022",
+      "created_at": "2026-10-14T22:00:00Z",
+      "updated_at": "2026-10-14T22:00:00Z",
+      "important": true
+    },
+    {
+      "type": "noun",
+      "german": "Text",
+      "translation_ru": "текст",
+      "article": "der",
+      "plural": "Texte",
+      "example": "Bitte lesen Sie den Text.; Die Texte sind kurz.",
+      "id": "e7000023",
+      "created_at": "2026-10-14T22:00:00Z",
+      "updated_at": "2026-10-14T22:00:00Z",
+      "important": true
+    },
+    {
+      "type": "noun",
+      "german": "Diktat",
+      "translation_ru": "диктант",
+      "article": "das",
+      "plural": "Diktate",
+      "example": "Die Kinder schreiben ein Diktat.; Wir haben zwei Diktate geschrieben.",
+      "id": "e7000024",
+      "created_at": "2026-10-14T22:00:00Z",
+      "updated_at": "2026-10-14T22:00:00Z",
+      "important": true
+    },
+    {
+      "type": "word",
+      "german": "schade",
+      "translation_ru": "жаль; досадно",
+      "example": "Schade, heute habe ich keine Zeit.; Das ist wirklich schade.",
+      "id": "e7000025",
+      "created_at": "2026-10-14T22:00:00Z",
+      "updated_at": "2026-10-14T22:00:00Z",
+      "important": true
+    },
+    {
+      "type": "noun",
+      "german": "Kilometer",
+      "translation_ru": "километр",
+      "article": "der",
+      "plural": "Kilometer",
+      "example": "Wir wandern zehn Kilometer.; Der Bahnhof ist zwei Kilometer entfernt.",
+      "id": "e7000026",
+      "created_at": "2026-10-14T22:00:00Z",
+      "updated_at": "2026-10-14T22:00:00Z",
+      "important": true
+    },
+    {
+      "type": "noun",
+      "german": "Kommunikation",
+      "translation_ru": "общение; коммуникация",
+      "article": "die",
+      "plural": "—",
+      "example": "Gute Kommunikation ist wichtig.; Die Kommunikation mit der Schule klappt gut.",
+      "id": "e7000027",
+      "created_at": "2026-10-14T22:00:00Z",
+      "updated_at": "2026-10-14T22:00:00Z",
+      "important": true
+    },
+    {
+      "type": "word",
+      "german": "lieb",
+      "translation_ru": "милый; добрый",
+      "example": "Das ist sehr lieb von dir.; Liebe Frau Berger, vielen Dank.",
+      "id": "e7000028",
+      "created_at": "2026-10-14T22:00:00Z",
+      "updated_at": "2026-10-14T22:00:00Z",
+      "important": true
+    },
+    {
+      "type": "noun",
+      "german": "Mädchen",
+      "translation_ru": "девочка; девушка",
+      "article": "das",
+      "plural": "Mädchen",
+      "example": "Das Mädchen malt ein Bild.; Die Mädchen spielen Tennis.",
+      "id": "e7000029",
+      "created_at": "2026-10-14T22:00:00Z",
+      "updated_at": "2026-10-14T22:00:00Z",
+      "important": true
+    },
+    {
+      "type": "noun",
+      "german": "Junge",
+      "translation_ru": "мальчик; юноша",
+      "article": "der",
+      "plural": "Jungen",
+      "example": "Der Junge fährt Fahrrad.; Zwei Jungen spielen im Park.",
+      "id": "e7000030",
+      "created_at": "2026-10-14T22:00:00Z",
+      "updated_at": "2026-10-14T22:00:00Z",
+      "important": true
+    },
+    {
+      "type": "noun",
+      "german": "Schwimmbad",
+      "translation_ru": "бассейн",
+      "article": "das",
+      "plural": "Schwimmbäder",
+      "example": "Wir treffen uns im Schwimmbad.; Die Schwimmbäder öffnen um acht.",
+      "id": "e7000031",
+      "created_at": "2026-10-14T22:00:00Z",
+      "updated_at": "2026-10-14T22:00:00Z",
+      "important": true
+    },
+    {
+      "type": "noun",
+      "german": "Eintritt",
+      "translation_ru": "вход; входная плата",
+      "article": "der",
+      "plural": "—",
+      "example": "Der Eintritt kostet fünf Euro.; Für Kinder ist der Eintritt frei.",
+      "id": "e7000032",
+      "created_at": "2026-10-14T22:00:00Z",
+      "updated_at": "2026-10-14T22:00:00Z",
+      "important": true
+    },
+    {
+      "type": "verb",
+      "german": "losfahren",
+      "translation_ru": "отправляться; выезжать",
+      "example": "Wir fahren um acht los.; Wann seid ihr losgefahren?",
+      "note": "Отделяемый глагол; Perfekt с sein: ist losgefahren.",
+      "id": "e7000033",
+      "created_at": "2026-10-14T22:00:00Z",
+      "updated_at": "2026-10-14T22:00:00Z",
+      "important": true
+    },
+    {
+      "type": "noun",
+      "german": "Grundschule",
+      "translation_ru": "начальная школа",
+      "article": "die",
+      "plural": "Grundschulen",
+      "example": "Meine Tochter geht in die Grundschule.; Im Ort gibt es zwei Grundschulen.",
+      "id": "e7000034",
+      "created_at": "2026-10-14T22:00:00Z",
+      "updated_at": "2026-10-14T22:00:00Z",
+      "important": true
+    },
+    {
+      "type": "noun",
+      "german": "Unterricht",
+      "translation_ru": "занятия; урок",
+      "article": "der",
+      "plural": "—",
+      "example": "Der Unterricht beginnt um neun.; Heute kann ich nicht zum Unterricht kommen.",
+      "id": "e7000035",
+      "created_at": "2026-10-14T22:00:00Z",
+      "updated_at": "2026-10-14T22:00:00Z",
+      "important": true
+    },
+    {
+      "type": "verb",
+      "german": "leidtun",
+      "translation_ru": "быть жаль; сожалеть",
+      "example": "Das tut mir leid.; Es tut uns sehr leid.",
+      "note": "Отделяемый глагол: es tut mir leid. Infinitiv: leidtun.",
+      "id": "e7000036",
+      "created_at": "2026-10-14T22:00:00Z",
+      "updated_at": "2026-10-14T22:00:00Z",
+      "important": true
     }
   ]
 }

@@ -18731,64 +18731,2880 @@
       "instruction_de": "Welche Frage mit haben ist richtig?",
       "instruction_ru": "Какой вопрос с haben построен правильно?"
     },
-    {"id":"stem-change-werfen-01","topic_id":"stem_vowel_change_present","lemma":"werfen","required_item_type":"verb","type":"choice","prompt":"Du ___ den Ball zu Mia.","answer":"wirfst","options":["werfst","wirfst","wirft"],"instruction_de":"Wähle die richtige Form für du.","instruction_ru":"Выберите правильную форму для du."},
-    {"id":"stem-change-treffen-01","topic_id":"stem_vowel_change_present","lemma":"treffen","required_item_type":"verb","type":"choice","prompt":"Er ___ seinen Bruder vor dem Kino.","answer":"trifft","options":["trefft","trifft","treffen"],"instruction_de":"Wähle die richtige Verbform.","instruction_ru":"Выберите правильную форму глагола."},
-    {"id":"stem-change-laufen-01","topic_id":"stem_vowel_change_present","lemma":"laufen","required_item_type":"verb","type":"choice","prompt":"Das Kind ___ schnell nach Hause.","answer":"läuft","options":["lauft","läuft","laufen"],"instruction_de":"Achte auf a → ä.","instruction_ru":"Учтите изменение a → ä."},
-    {"id":"stem-change-schlafen-01","topic_id":"stem_vowel_change_present","lemma":"schlafen","required_item_type":"verb","type":"choice","prompt":"Du ___ am Sonntag lange.","answer":"schläfst","options":["schlafst","schläfst","schläft"],"instruction_de":"Wähle die Form für du.","instruction_ru":"Выберите форму для du."},
-    {"id":"stem-change-sehen-01","topic_id":"stem_vowel_change_present","lemma":"sehen","required_item_type":"verb","type":"choice","prompt":"Sie ___ den Bus schon.","answer":"sieht","options":["seht","sieht","sehen"],"instruction_de":"Achte auf e → ie.","instruction_ru":"Учтите изменение e → ie."},
-    {"id":"stem-change-lesen-01","topic_id":"stem_vowel_change_present","lemma":"lesen","required_item_type":"verb","type":"choice","prompt":"Was ___ du gerade?","answer":"liest","options":["lest","liest","lesest"],"instruction_de":"Wähle die Form für du.","instruction_ru":"Выберите форму для du."},
-    {"id":"stem-change-fangen-01","topic_id":"stem_vowel_change_present","lemma":"fangen","required_item_type":"verb","type":"choice","prompt":"Der Torwart ___ den Ball.","answer":"fängt","options":["fangt","fängt","fangen"],"instruction_de":"Achte auf a → ä.","instruction_ru":"Учтите изменение a → ä."},
-    {"id":"stem-change-essen-01","topic_id":"stem_vowel_change_present","lemma":"essen","required_item_type":"verb","type":"choice","prompt":"Du ___ heute eine Suppe.","answer":"isst","options":["esst","isst","issst"],"instruction_de":"Die du-Form lautet isst.","instruction_ru":"Форма с du — isst."},
-    {"id":"stem-change-geben-01","topic_id":"stem_vowel_change_present","lemma":"geben","required_item_type":"verb","type":"choice","prompt":"Der Lehrer ___ uns eine Aufgabe.","answer":"gibt","options":["gebt","gibt","geben"],"instruction_de":"Achte auf e → i.","instruction_ru":"Учтите изменение e → i."},
-    {"id":"stem-change-waschen-01","topic_id":"stem_vowel_change_present","lemma":"waschen","required_item_type":"verb","type":"choice","prompt":"Du ___ dir die Hände.","answer":"wäschst","options":["waschst","wäschst","wäscht"],"instruction_de":"Wähle die Form für du.","instruction_ru":"Выберите форму для du."},
-    {"id":"stem-change-fahren-01","topic_id":"stem_vowel_change_present","lemma":"fahren","required_item_type":"verb","type":"choice","prompt":"Wann ___ er nach Hamburg?","answer":"fährt","options":["fahrt","fährt","fahren"],"instruction_de":"Achte auf a → ä.","instruction_ru":"Учтите изменение a → ä."},
-    {"id":"stem-change-nehmen-01","topic_id":"stem_vowel_change_present","lemma":"nehmen","required_item_type":"verb","type":"choice","prompt":"Du ___ heute den Zug.","answer":"nimmst","options":["nehmst","nimmst","nimmt"],"instruction_de":"Achte auf e → i und den Doppelkonsonanten.","instruction_ru":"Учтите изменение e → i и удвоенную согласную."},
-    {"id":"stem-change-halten-01","topic_id":"stem_vowel_change_present","lemma":"halten","required_item_type":"verb","type":"choice","prompt":"Der Bus ___ an dieser Haltestelle.","answer":"hält","options":["haltet","hält","halten"],"instruction_de":"Wähle die Form für er.","instruction_ru":"Выберите форму для er."},
-    {"id":"stem-change-brechen-01","topic_id":"stem_vowel_change_present","lemma":"brechen","required_item_type":"verb","type":"choice","prompt":"Du ___ das Brot in zwei Teile.","answer":"brichst","options":["brechst","brichst","bricht"],"instruction_de":"Achte auf e → i.","instruction_ru":"Учтите изменение e → i."},
-    {"id":"stem-change-messen-01","topic_id":"stem_vowel_change_present","lemma":"messen","required_item_type":"verb","type":"choice","prompt":"Mia ___ die Höhe des Schranks.","answer":"misst","options":["messt","misst","misstst"],"instruction_de":"Die Form für sie Singular lautet misst.","instruction_ru":"Форма для sie в единственном числе — misst."},
-    {"id":"stem-change-helfen-01","topic_id":"stem_vowel_change_present","lemma":"helfen","required_item_type":"verb","type":"choice","prompt":"Du ___ deinem Kollegen.","answer":"hilfst","options":["helfst","hilfst","hilft"],"instruction_de":"Achte auf e → i.","instruction_ru":"Учтите изменение e → i."},
-    {"id":"stem-change-schlagen-01","topic_id":"stem_vowel_change_present","lemma":"schlagen","required_item_type":"verb","type":"choice","prompt":"Die Uhr ___ Mitternacht.","answer":"schlägt","options":["schlagt","schlägt","schlagen"],"instruction_de":"Achte auf a → ä.","instruction_ru":"Учтите изменение a → ä."},
-    {"id":"stem-change-tragen-01","topic_id":"stem_vowel_change_present","lemma":"tragen","required_item_type":"verb","type":"choice","prompt":"Er ___ einen schweren Koffer.","answer":"trägt","options":["tragt","trägt","tragen"],"instruction_de":"Wähle die Form für er.","instruction_ru":"Выберите форму для er."},
-    {"id":"stem-change-fallen-01","topic_id":"stem_vowel_change_present","lemma":"fallen","required_item_type":"verb","type":"choice","prompt":"Das Glas ___ vom Tisch.","answer":"fällt","options":["fallt","fällt","fallen"],"instruction_de":"Achte auf a → ä.","instruction_ru":"Учтите изменение a → ä."},
-    {"id":"separable-einkaufen-01","topic_id":"separable_verbs_present","lemma":"einkaufen","required_item_type":"verb","type":"choice","prompt":"Wir ___ am Freitag im Markt ___.","answer":"kaufen ... ein","options":["einkaufen","kaufen ... ein","kauft ... ein"],"instruction_de":"Trenne Vorsilbe und Verbstamm.","instruction_ru":"Отделите приставку от основы глагола."},
-    {"id":"separable-einkaufen-02","topic_id":"separable_verbs_present","lemma":"einkaufen","required_item_type":"verb","type":"word_order","prompt":"Aussage mit ich: heute im Supermarkt","answer":"Ich kaufe heute im Supermarkt ein.","options":["Ich","kaufe","heute","im Supermarkt","ein."],"instruction_de":"Bilde einen Satz mit einkaufen.","instruction_ru":"Составьте предложение с einkaufen."},
-    {"id":"separable-fernsehen-01","topic_id":"separable_verbs_present","lemma":"fernsehen","required_item_type":"verb","type":"choice","prompt":"Das Kind ___ am Abend ___.","answer":"sieht ... fern","options":["seht ... fern","sieht ... fern","sehen ... fern"],"instruction_de":"Beachte Trennung und Vokalwechsel.","instruction_ru":"Учтите отделение приставки и изменение гласной."},
-    {"id":"separable-fernsehen-02","topic_id":"separable_verbs_present","lemma":"fernsehen","required_item_type":"verb","type":"word_order","prompt":"Frage mit du: heute","answer":"Siehst du heute fern?","options":["Siehst","du","heute","fern?"],"instruction_de":"Bilde eine Ja/Nein-Frage.","instruction_ru":"Составьте общий вопрос."},
-    {"id":"separable-anrufen-01","topic_id":"separable_verbs_present","lemma":"anrufen","required_item_type":"verb","type":"choice","prompt":"Meine Schwester ___ mich später ___.","answer":"ruft ... an","options":["rufst ... an","ruft ... an","anruft"],"instruction_de":"Wähle die richtige Satzform.","instruction_ru":"Выберите правильную форму в предложении."},
-    {"id":"separable-anrufen-02","topic_id":"separable_verbs_present","lemma":"anrufen","required_item_type":"verb","type":"word_order","prompt":"Aussage mit wir: morgen den Arzt","answer":"Wir rufen morgen den Arzt an.","options":["Wir","rufen","morgen","den Arzt","an."],"instruction_de":"Bilde einen Satz mit anrufen.","instruction_ru":"Составьте предложение с anrufen."},
-    {"id":"separable-mitkommen-01","topic_id":"separable_verbs_present","lemma":"mitkommen","required_item_type":"verb","type":"choice","prompt":"___ ihr heute ins Café ___?","answer":"Kommt ... mit","options":["Kommen ... mit","Kommt ... mit","Mitkommt"],"instruction_de":"Wähle die richtige Frageform.","instruction_ru":"Выберите правильную форму вопроса."},
-    {"id":"separable-mitkommen-02","topic_id":"separable_verbs_present","lemma":"mitkommen","required_item_type":"verb","type":"word_order","prompt":"Aussage mit er: auch","answer":"Er kommt auch mit.","options":["Er","kommt","auch","mit."],"instruction_de":"Bilde einen Satz mit mitkommen.","instruction_ru":"Составьте предложение с mitkommen."},
-    {"id":"separable-abfahren-01","topic_id":"separable_verbs_present","lemma":"abfahren","required_item_type":"verb","type":"choice","prompt":"Der Zug ___ um 7 Uhr ___.","answer":"fährt ... ab","options":["fahrt ... ab","fährt ... ab","abfährt"],"instruction_de":"Beachte Trennung und Vokalwechsel.","instruction_ru":"Учтите отделение приставки и изменение гласной."},
-    {"id":"separable-abfahren-02","topic_id":"separable_verbs_present","lemma":"abfahren","required_item_type":"verb","type":"word_order","prompt":"W-Frage: der Bus / wann","answer":"Wann fährt der Bus ab?","options":["Wann","fährt","der Bus","ab?"],"instruction_de":"Bilde eine W-Frage.","instruction_ru":"Составьте вопрос с вопросительным словом."},
-    {"id":"separable-anfangen-01","topic_id":"separable_verbs_present","lemma":"anfangen","required_item_type":"verb","type":"choice","prompt":"Der Film ___ gleich ___.","answer":"fängt ... an","options":["fangt ... an","fängt ... an","anfängt"],"instruction_de":"Beachte Trennung und Vokalwechsel.","instruction_ru":"Учтите отделение приставки и изменение гласной."},
-    {"id":"separable-anfangen-02","topic_id":"separable_verbs_present","lemma":"anfangen","required_item_type":"verb","type":"word_order","prompt":"W-Frage mit du: wann","answer":"Wann fängst du an?","options":["Wann","fängst","du","an?"],"instruction_de":"Bilde eine W-Frage.","instruction_ru":"Составьте вопрос с вопросительным словом."},
-    {"id":"separable-einsteigen-01","topic_id":"separable_verbs_present","lemma":"einsteigen","required_item_type":"verb","type":"choice","prompt":"Die Fahrgäste ___ vorne ___.","answer":"steigen ... ein","options":["steigt ... ein","steigen ... ein","einsteigen"],"instruction_de":"Wähle die Form für den Plural.","instruction_ru":"Выберите форму множественного числа."},
-    {"id":"separable-einsteigen-02","topic_id":"separable_verbs_present","lemma":"einsteigen","required_item_type":"verb","type":"word_order","prompt":"W-Frage mit ihr: wo","answer":"Wo steigt ihr ein?","options":["Wo","steigt","ihr","ein?"],"instruction_de":"Bilde eine W-Frage.","instruction_ru":"Составьте вопрос с вопросительным словом."},
-    {"id":"separable-ankommen-01","topic_id":"separable_verbs_present","lemma":"ankommen","required_item_type":"verb","type":"choice","prompt":"Meine Mutter ___ am Abend ___.","answer":"kommt ... an","options":["kommst ... an","kommt ... an","ankommt"],"instruction_de":"Wähle die richtige Satzform.","instruction_ru":"Выберите правильную форму в предложении."},
-    {"id":"separable-ankommen-02","topic_id":"separable_verbs_present","lemma":"ankommen","required_item_type":"verb","type":"word_order","prompt":"Aussage mit wir: pünktlich","answer":"Wir kommen pünktlich an.","options":["Wir","kommen","pünktlich","an."],"instruction_de":"Bilde einen Satz mit ankommen.","instruction_ru":"Составьте предложение с ankommen."},
-    {"id":"separable-mitbringen-01","topic_id":"separable_verbs_present","lemma":"mitbringen","required_item_type":"verb","type":"choice","prompt":"Ich ___ eine Flasche Wasser ___.","answer":"bringe ... mit","options":["bringe ... mit","bringst ... mit","mitbringe"],"instruction_de":"Wähle die richtige Satzform.","instruction_ru":"Выберите правильную форму в предложении."},
-    {"id":"separable-mitbringen-02","topic_id":"separable_verbs_present","lemma":"mitbringen","required_item_type":"verb","type":"word_order","prompt":"Frage mit du: deinen Ausweis","answer":"Bringst du deinen Ausweis mit?","options":["Bringst","du","deinen Ausweis","mit?"],"instruction_de":"Bilde eine Ja/Nein-Frage.","instruction_ru":"Составьте общий вопрос."},
-    {"id":"prefix-bekommen-01","topic_id":"separable_verbs_present","lemma":"bekommen","required_item_type":"verb","type":"choice","prompt":"Lena ___ morgen Besuch.","answer":"bekommt","options":["kommt ... be","bekommt","kommt ... an"],"instruction_de":"be- ist nicht trennbar.","instruction_ru":"Приставка be- не отделяется."},
-    {"id":"prefix-besuchen-01","topic_id":"separable_verbs_present","lemma":"besuchen","required_item_type":"verb","type":"choice","prompt":"Max ___ am Wochenende seine Tante.","answer":"besucht","options":["sucht ... be","besucht","sucht ... an"],"instruction_de":"be- bleibt beim Verbstamm.","instruction_ru":"Приставка be- остаётся с основой глагола."},
-    {"id":"prefix-beginnen-01","topic_id":"separable_verbs_present","lemma":"beginnen","required_item_type":"verb","type":"choice","prompt":"Der Sprachkurs ___ am Montag.","answer":"beginnt","options":["ginnt ... be","beginnt","fängt ... be"],"instruction_de":"beginnen ist nicht trennbar.","instruction_ru":"Глагол beginnen не разделяется."},
-    {"id":"prefix-empfehlen-01","topic_id":"separable_verbs_present","lemma":"empfehlen","required_item_type":"verb","type":"choice","prompt":"Die Kellnerin ___ das Tagesgericht.","answer":"empfiehlt","options":["fiehlt ... emp","empfiehlt","empfehlt"],"instruction_de":"emp- ist nicht trennbar; beachte e → ie.","instruction_ru":"Приставка emp- не отделяется; учтите e → ie."},
-    {"id":"prefix-entlassen-01","topic_id":"separable_verbs_present","lemma":"entlassen","required_item_type":"verb","type":"choice","prompt":"Die Firma ___ mehrere Mitarbeiter.","answer":"entlässt","options":["lässt ... ent","entlässt","entlassen"],"instruction_de":"ent- ist nicht trennbar.","instruction_ru":"Приставка ent- не отделяется."},
-    {"id":"prefix-erklaeren-01","topic_id":"separable_verbs_present","lemma":"erklären","required_item_type":"verb","type":"choice","prompt":"Die Lehrerin ___ die neue Regel.","answer":"erklärt","options":["klärt ... er","erklärt","erklären"],"instruction_de":"er- ist nicht trennbar.","instruction_ru":"Приставка er- не отделяется."},
-    {"id":"prefix-geniessen-01","topic_id":"separable_verbs_present","lemma":"genießen","required_item_type":"verb","type":"choice","prompt":"Wir ___ den freien Nachmittag.","answer":"genießen","options":["nießen ... ge","genießen","genießt"],"instruction_de":"ge- bleibt hier beim Verbstamm.","instruction_ru":"В этом глаголе ge- остаётся с основой."},
-    {"id":"prefix-verstehen-01","topic_id":"separable_verbs_present","lemma":"verstehen","required_item_type":"verb","type":"choice","prompt":"Ich ___ die Frage jetzt.","answer":"verstehe","options":["stehe ... ver","verstehe","stehe ... auf"],"instruction_de":"ver- ist nicht trennbar.","instruction_ru":"Приставка ver- не отделяется."},
-    {"id":"prefix-vergessen-01","topic_id":"separable_verbs_present","lemma":"vergessen","required_item_type":"verb","type":"choice","prompt":"Paul ___ oft seine Hausaufgaben.","answer":"vergisst","options":["gisst ... ver","vergisst","vergesst"],"instruction_de":"ver- ist nicht trennbar; beachte e → i.","instruction_ru":"Приставка ver- не отделяется; учтите e → i."},
-    {"id":"prefix-verdienen-01","topic_id":"separable_verbs_present","lemma":"verdienen","required_item_type":"verb","type":"choice","prompt":"Karl ___ genug Geld.","answer":"verdient","options":["dient ... ver","verdient","verdienen"],"instruction_de":"ver- ist nicht trennbar.","instruction_ru":"Приставка ver- не отделяется."},
-    {"id":"prefix-zerreissen-01","topic_id":"separable_verbs_present","lemma":"zerreißen","required_item_type":"verb","type":"choice","prompt":"Maria ___ den alten Zettel.","answer":"zerreißt","options":["reißt ... zer","zerreißt","zerreißen"],"instruction_de":"zer- ist nicht trennbar.","instruction_ru":"Приставка zer- не отделяется."},
-    {"id":"separable-abschliessen-01","topic_id":"separable_verbs_present","lemma":"abschließen","required_item_type":"verb","type":"choice","prompt":"Du ___ am Abend die Tür ___.","answer":"schließt ... ab","options":["abschließt","schließt ... ab","schließen ... ab"],"instruction_de":"ab- steht am Satzende.","instruction_ru":"Приставка ab- стоит в конце предложения."},
-    {"id":"separable-aufstehen-01","topic_id":"separable_verbs_present","lemma":"aufstehen","required_item_type":"verb","type":"choice","prompt":"Milan ___ jeden Morgen früh ___.","answer":"steht ... auf","options":["aufsteht","steht ... auf","stehen ... auf"],"instruction_de":"Trenne auf- im Hauptsatz ab.","instruction_ru":"В главном предложении отделите приставку auf-."},
-    {"id":"separable-aussteigen-01","topic_id":"separable_verbs_present","lemma":"aussteigen","required_item_type":"verb","type":"choice","prompt":"Wir ___ am Hauptbahnhof ___.","answer":"steigen ... aus","options":["aussteigen","steigen ... aus","steigt ... aus"],"instruction_de":"aus- steht am Satzende.","instruction_ru":"Приставка aus- стоит в конце предложения."},
-    {"id":"separable-einladen-01","topic_id":"separable_verbs_present","lemma":"einladen","required_item_type":"verb","type":"choice","prompt":"Ich ___ meine Nachbarn zum Essen ___.","answer":"lade ... ein","options":["einlade","lade ... ein","lädt ... ein"],"instruction_de":"Trenne ein- ab und wähle die Form für ich.","instruction_ru":"Отделите ein- и выберите форму для ich."},
-    {"id":"separable-herstellen-01","topic_id":"separable_verbs_present","lemma":"herstellen","required_item_type":"verb","type":"choice","prompt":"Diese Firma ___ Fahrräder ___.","answer":"stellt ... her","options":["herstellt","stellt ... her","stellen ... her"],"instruction_de":"her- ist hier trennbar.","instruction_ru":"В этом глаголе приставка her- отделяется."},
-    {"id":"separable-vorlesen-01","topic_id":"separable_verbs_present","lemma":"vorlesen","required_item_type":"verb","type":"choice","prompt":"Die Studentin ___ eine kurze Geschichte ___.","answer":"liest ... vor","options":["vorliest","liest ... vor","lest ... vor"],"instruction_de":"Trenne vor- ab und beachte e → ie.","instruction_ru":"Отделите vor- и учтите e → ie."},
-    {"id":"separable-zumachen-01","topic_id":"separable_verbs_present","lemma":"zumachen","required_item_type":"verb","type":"choice","prompt":"Du ___ vor dem Gehen das Fenster ___.","answer":"machst ... zu","options":["zumachst","machst ... zu","macht ... zu"],"instruction_de":"zu- steht am Satzende.","instruction_ru":"Приставка zu- стоит в конце предложения."},
-    {"id":"separable-zurueckgeben-01","topic_id":"separable_verbs_present","lemma":"zurückgeben","required_item_type":"verb","type":"choice","prompt":"Er ___ das Buch morgen ___.","answer":"gibt ... zurück","options":["zurückgibt","gibt ... zurück","gebt ... zurück"],"instruction_de":"Trenne zurück- ab und beachte e → i.","instruction_ru":"Отделите zurück- и учтите e → i."},
-    {"id":"separable-mitfahren-01","topic_id":"separable_verbs_present","lemma":"mitfahren","required_item_type":"verb","type":"choice","prompt":"Meine Schwester ___ heute ___.","answer":"fährt ... mit","options":["mitfährt","fährt ... mit","fahrt ... mit"],"instruction_de":"Trenne mit- ab und beachte a → ä.","instruction_ru":"Отделите mit- и учтите a → ä."},
-    {"id":"separable-zurueckkommen-01","topic_id":"separable_verbs_present","lemma":"zurückkommen","required_item_type":"verb","type":"choice","prompt":"Wann ___ ihr aus dem Urlaub ___?","answer":"kommt ... zurück","options":["zurückkommt","kommt ... zurück","kommen ... zurück"],"instruction_de":"zurück- steht am Satzende.","instruction_ru":"Приставка zurück- стоит в конце предложения."},
-    {"id":"separable-zuhoeren-01","topic_id":"separable_verbs_present","lemma":"zuhören","required_item_type":"verb","type":"choice","prompt":"Die Kinder ___ dem Lehrer aufmerksam ___.","answer":"hören ... zu","options":["zuhören","hören ... zu","hört ... zu"],"instruction_de":"Trenne zu- im Hauptsatz ab.","instruction_ru":"В главном предложении отделите приставку zu-."}
+    {
+      "id": "stem-change-werfen-01",
+      "topic_id": "stem_vowel_change_present",
+      "lemma": "werfen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Du ___ den Ball zu Mia.",
+      "answer": "wirfst",
+      "options": [
+        "werfst",
+        "wirfst",
+        "wirft"
+      ],
+      "instruction_de": "Wähle die richtige Form für du.",
+      "instruction_ru": "Выберите правильную форму для du."
+    },
+    {
+      "id": "stem-change-treffen-01",
+      "topic_id": "stem_vowel_change_present",
+      "lemma": "treffen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Er ___ seinen Bruder vor dem Kino.",
+      "answer": "trifft",
+      "options": [
+        "trefft",
+        "trifft",
+        "treffen"
+      ],
+      "instruction_de": "Wähle die richtige Verbform.",
+      "instruction_ru": "Выберите правильную форму глагола."
+    },
+    {
+      "id": "stem-change-laufen-01",
+      "topic_id": "stem_vowel_change_present",
+      "lemma": "laufen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Das Kind ___ schnell nach Hause.",
+      "answer": "läuft",
+      "options": [
+        "lauft",
+        "läuft",
+        "laufen"
+      ],
+      "instruction_de": "Achte auf a → ä.",
+      "instruction_ru": "Учтите изменение a → ä."
+    },
+    {
+      "id": "stem-change-schlafen-01",
+      "topic_id": "stem_vowel_change_present",
+      "lemma": "schlafen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Du ___ am Sonntag lange.",
+      "answer": "schläfst",
+      "options": [
+        "schlafst",
+        "schläfst",
+        "schläft"
+      ],
+      "instruction_de": "Wähle die Form für du.",
+      "instruction_ru": "Выберите форму для du."
+    },
+    {
+      "id": "stem-change-sehen-01",
+      "topic_id": "stem_vowel_change_present",
+      "lemma": "sehen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Sie ___ den Bus schon.",
+      "answer": "sieht",
+      "options": [
+        "seht",
+        "sieht",
+        "sehen"
+      ],
+      "instruction_de": "Achte auf e → ie.",
+      "instruction_ru": "Учтите изменение e → ie."
+    },
+    {
+      "id": "stem-change-lesen-01",
+      "topic_id": "stem_vowel_change_present",
+      "lemma": "lesen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Was ___ du gerade?",
+      "answer": "liest",
+      "options": [
+        "lest",
+        "liest",
+        "lesest"
+      ],
+      "instruction_de": "Wähle die Form für du.",
+      "instruction_ru": "Выберите форму для du."
+    },
+    {
+      "id": "stem-change-fangen-01",
+      "topic_id": "stem_vowel_change_present",
+      "lemma": "fangen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Der Torwart ___ den Ball.",
+      "answer": "fängt",
+      "options": [
+        "fangt",
+        "fängt",
+        "fangen"
+      ],
+      "instruction_de": "Achte auf a → ä.",
+      "instruction_ru": "Учтите изменение a → ä."
+    },
+    {
+      "id": "stem-change-essen-01",
+      "topic_id": "stem_vowel_change_present",
+      "lemma": "essen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Du ___ heute eine Suppe.",
+      "answer": "isst",
+      "options": [
+        "esst",
+        "isst",
+        "issst"
+      ],
+      "instruction_de": "Die du-Form lautet isst.",
+      "instruction_ru": "Форма с du — isst."
+    },
+    {
+      "id": "stem-change-geben-01",
+      "topic_id": "stem_vowel_change_present",
+      "lemma": "geben",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Der Lehrer ___ uns eine Aufgabe.",
+      "answer": "gibt",
+      "options": [
+        "gebt",
+        "gibt",
+        "geben"
+      ],
+      "instruction_de": "Achte auf e → i.",
+      "instruction_ru": "Учтите изменение e → i."
+    },
+    {
+      "id": "stem-change-waschen-01",
+      "topic_id": "stem_vowel_change_present",
+      "lemma": "waschen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Du ___ dir die Hände.",
+      "answer": "wäschst",
+      "options": [
+        "waschst",
+        "wäschst",
+        "wäscht"
+      ],
+      "instruction_de": "Wähle die Form für du.",
+      "instruction_ru": "Выберите форму для du."
+    },
+    {
+      "id": "stem-change-fahren-01",
+      "topic_id": "stem_vowel_change_present",
+      "lemma": "fahren",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Wann ___ er nach Hamburg?",
+      "answer": "fährt",
+      "options": [
+        "fahrt",
+        "fährt",
+        "fahren"
+      ],
+      "instruction_de": "Achte auf a → ä.",
+      "instruction_ru": "Учтите изменение a → ä."
+    },
+    {
+      "id": "stem-change-nehmen-01",
+      "topic_id": "stem_vowel_change_present",
+      "lemma": "nehmen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Du ___ heute den Zug.",
+      "answer": "nimmst",
+      "options": [
+        "nehmst",
+        "nimmst",
+        "nimmt"
+      ],
+      "instruction_de": "Achte auf e → i und den Doppelkonsonanten.",
+      "instruction_ru": "Учтите изменение e → i и удвоенную согласную."
+    },
+    {
+      "id": "stem-change-halten-01",
+      "topic_id": "stem_vowel_change_present",
+      "lemma": "halten",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Der Bus ___ an dieser Haltestelle.",
+      "answer": "hält",
+      "options": [
+        "haltet",
+        "hält",
+        "halten"
+      ],
+      "instruction_de": "Wähle die Form für er.",
+      "instruction_ru": "Выберите форму для er."
+    },
+    {
+      "id": "stem-change-brechen-01",
+      "topic_id": "stem_vowel_change_present",
+      "lemma": "brechen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Du ___ das Brot in zwei Teile.",
+      "answer": "brichst",
+      "options": [
+        "brechst",
+        "brichst",
+        "bricht"
+      ],
+      "instruction_de": "Achte auf e → i.",
+      "instruction_ru": "Учтите изменение e → i."
+    },
+    {
+      "id": "stem-change-messen-01",
+      "topic_id": "stem_vowel_change_present",
+      "lemma": "messen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Mia ___ die Höhe des Schranks.",
+      "answer": "misst",
+      "options": [
+        "messt",
+        "misst",
+        "misstst"
+      ],
+      "instruction_de": "Die Form für sie Singular lautet misst.",
+      "instruction_ru": "Форма для sie в единственном числе — misst."
+    },
+    {
+      "id": "stem-change-helfen-01",
+      "topic_id": "stem_vowel_change_present",
+      "lemma": "helfen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Du ___ deinem Kollegen.",
+      "answer": "hilfst",
+      "options": [
+        "helfst",
+        "hilfst",
+        "hilft"
+      ],
+      "instruction_de": "Achte auf e → i.",
+      "instruction_ru": "Учтите изменение e → i."
+    },
+    {
+      "id": "stem-change-schlagen-01",
+      "topic_id": "stem_vowel_change_present",
+      "lemma": "schlagen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Die Uhr ___ Mitternacht.",
+      "answer": "schlägt",
+      "options": [
+        "schlagt",
+        "schlägt",
+        "schlagen"
+      ],
+      "instruction_de": "Achte auf a → ä.",
+      "instruction_ru": "Учтите изменение a → ä."
+    },
+    {
+      "id": "stem-change-tragen-01",
+      "topic_id": "stem_vowel_change_present",
+      "lemma": "tragen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Er ___ einen schweren Koffer.",
+      "answer": "trägt",
+      "options": [
+        "tragt",
+        "trägt",
+        "tragen"
+      ],
+      "instruction_de": "Wähle die Form für er.",
+      "instruction_ru": "Выберите форму для er."
+    },
+    {
+      "id": "stem-change-fallen-01",
+      "topic_id": "stem_vowel_change_present",
+      "lemma": "fallen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Das Glas ___ vom Tisch.",
+      "answer": "fällt",
+      "options": [
+        "fallt",
+        "fällt",
+        "fallen"
+      ],
+      "instruction_de": "Achte auf a → ä.",
+      "instruction_ru": "Учтите изменение a → ä."
+    },
+    {
+      "id": "separable-einkaufen-01",
+      "topic_id": "separable_verbs_present",
+      "lemma": "einkaufen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Wir ___ am Freitag im Markt ___.",
+      "answer": "kaufen ... ein",
+      "options": [
+        "einkaufen",
+        "kaufen ... ein",
+        "kauft ... ein"
+      ],
+      "instruction_de": "Trenne Vorsilbe und Verbstamm.",
+      "instruction_ru": "Отделите приставку от основы глагола."
+    },
+    {
+      "id": "separable-einkaufen-02",
+      "topic_id": "separable_verbs_present",
+      "lemma": "einkaufen",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "Aussage mit ich: heute im Supermarkt",
+      "answer": "Ich kaufe heute im Supermarkt ein.",
+      "options": [
+        "Ich",
+        "kaufe",
+        "heute",
+        "im Supermarkt",
+        "ein."
+      ],
+      "instruction_de": "Bilde einen Satz mit einkaufen.",
+      "instruction_ru": "Составьте предложение с einkaufen."
+    },
+    {
+      "id": "separable-fernsehen-01",
+      "topic_id": "separable_verbs_present",
+      "lemma": "fernsehen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Das Kind ___ am Abend ___.",
+      "answer": "sieht ... fern",
+      "options": [
+        "seht ... fern",
+        "sieht ... fern",
+        "sehen ... fern"
+      ],
+      "instruction_de": "Beachte Trennung und Vokalwechsel.",
+      "instruction_ru": "Учтите отделение приставки и изменение гласной."
+    },
+    {
+      "id": "separable-fernsehen-02",
+      "topic_id": "separable_verbs_present",
+      "lemma": "fernsehen",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "Frage mit du: heute",
+      "answer": "Siehst du heute fern?",
+      "options": [
+        "Siehst",
+        "du",
+        "heute",
+        "fern?"
+      ],
+      "instruction_de": "Bilde eine Ja/Nein-Frage.",
+      "instruction_ru": "Составьте общий вопрос."
+    },
+    {
+      "id": "separable-anrufen-01",
+      "topic_id": "separable_verbs_present",
+      "lemma": "anrufen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Meine Schwester ___ mich später ___.",
+      "answer": "ruft ... an",
+      "options": [
+        "rufst ... an",
+        "ruft ... an",
+        "anruft"
+      ],
+      "instruction_de": "Wähle die richtige Satzform.",
+      "instruction_ru": "Выберите правильную форму в предложении."
+    },
+    {
+      "id": "separable-anrufen-02",
+      "topic_id": "separable_verbs_present",
+      "lemma": "anrufen",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "Aussage mit wir: morgen den Arzt",
+      "answer": "Wir rufen morgen den Arzt an.",
+      "options": [
+        "Wir",
+        "rufen",
+        "morgen",
+        "den Arzt",
+        "an."
+      ],
+      "instruction_de": "Bilde einen Satz mit anrufen.",
+      "instruction_ru": "Составьте предложение с anrufen."
+    },
+    {
+      "id": "separable-mitkommen-01",
+      "topic_id": "separable_verbs_present",
+      "lemma": "mitkommen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ ihr heute ins Café ___?",
+      "answer": "Kommt ... mit",
+      "options": [
+        "Kommen ... mit",
+        "Kommt ... mit",
+        "Mitkommt"
+      ],
+      "instruction_de": "Wähle die richtige Frageform.",
+      "instruction_ru": "Выберите правильную форму вопроса."
+    },
+    {
+      "id": "separable-mitkommen-02",
+      "topic_id": "separable_verbs_present",
+      "lemma": "mitkommen",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "Aussage mit er: auch",
+      "answer": "Er kommt auch mit.",
+      "options": [
+        "Er",
+        "kommt",
+        "auch",
+        "mit."
+      ],
+      "instruction_de": "Bilde einen Satz mit mitkommen.",
+      "instruction_ru": "Составьте предложение с mitkommen."
+    },
+    {
+      "id": "separable-abfahren-01",
+      "topic_id": "separable_verbs_present",
+      "lemma": "abfahren",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Der Zug ___ um 7 Uhr ___.",
+      "answer": "fährt ... ab",
+      "options": [
+        "fahrt ... ab",
+        "fährt ... ab",
+        "abfährt"
+      ],
+      "instruction_de": "Beachte Trennung und Vokalwechsel.",
+      "instruction_ru": "Учтите отделение приставки и изменение гласной."
+    },
+    {
+      "id": "separable-abfahren-02",
+      "topic_id": "separable_verbs_present",
+      "lemma": "abfahren",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "W-Frage: der Bus / wann",
+      "answer": "Wann fährt der Bus ab?",
+      "options": [
+        "Wann",
+        "fährt",
+        "der Bus",
+        "ab?"
+      ],
+      "instruction_de": "Bilde eine W-Frage.",
+      "instruction_ru": "Составьте вопрос с вопросительным словом."
+    },
+    {
+      "id": "separable-anfangen-01",
+      "topic_id": "separable_verbs_present",
+      "lemma": "anfangen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Der Film ___ gleich ___.",
+      "answer": "fängt ... an",
+      "options": [
+        "fangt ... an",
+        "fängt ... an",
+        "anfängt"
+      ],
+      "instruction_de": "Beachte Trennung und Vokalwechsel.",
+      "instruction_ru": "Учтите отделение приставки и изменение гласной."
+    },
+    {
+      "id": "separable-anfangen-02",
+      "topic_id": "separable_verbs_present",
+      "lemma": "anfangen",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "W-Frage mit du: wann",
+      "answer": "Wann fängst du an?",
+      "options": [
+        "Wann",
+        "fängst",
+        "du",
+        "an?"
+      ],
+      "instruction_de": "Bilde eine W-Frage.",
+      "instruction_ru": "Составьте вопрос с вопросительным словом."
+    },
+    {
+      "id": "separable-einsteigen-01",
+      "topic_id": "separable_verbs_present",
+      "lemma": "einsteigen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Die Fahrgäste ___ vorne ___.",
+      "answer": "steigen ... ein",
+      "options": [
+        "steigt ... ein",
+        "steigen ... ein",
+        "einsteigen"
+      ],
+      "instruction_de": "Wähle die Form für den Plural.",
+      "instruction_ru": "Выберите форму множественного числа."
+    },
+    {
+      "id": "separable-einsteigen-02",
+      "topic_id": "separable_verbs_present",
+      "lemma": "einsteigen",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "W-Frage mit ihr: wo",
+      "answer": "Wo steigt ihr ein?",
+      "options": [
+        "Wo",
+        "steigt",
+        "ihr",
+        "ein?"
+      ],
+      "instruction_de": "Bilde eine W-Frage.",
+      "instruction_ru": "Составьте вопрос с вопросительным словом."
+    },
+    {
+      "id": "separable-ankommen-01",
+      "topic_id": "separable_verbs_present",
+      "lemma": "ankommen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Meine Mutter ___ am Abend ___.",
+      "answer": "kommt ... an",
+      "options": [
+        "kommst ... an",
+        "kommt ... an",
+        "ankommt"
+      ],
+      "instruction_de": "Wähle die richtige Satzform.",
+      "instruction_ru": "Выберите правильную форму в предложении."
+    },
+    {
+      "id": "separable-ankommen-02",
+      "topic_id": "separable_verbs_present",
+      "lemma": "ankommen",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "Aussage mit wir: pünktlich",
+      "answer": "Wir kommen pünktlich an.",
+      "options": [
+        "Wir",
+        "kommen",
+        "pünktlich",
+        "an."
+      ],
+      "instruction_de": "Bilde einen Satz mit ankommen.",
+      "instruction_ru": "Составьте предложение с ankommen."
+    },
+    {
+      "id": "separable-mitbringen-01",
+      "topic_id": "separable_verbs_present",
+      "lemma": "mitbringen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Ich ___ eine Flasche Wasser ___.",
+      "answer": "bringe ... mit",
+      "options": [
+        "bringe ... mit",
+        "bringst ... mit",
+        "mitbringe"
+      ],
+      "instruction_de": "Wähle die richtige Satzform.",
+      "instruction_ru": "Выберите правильную форму в предложении."
+    },
+    {
+      "id": "separable-mitbringen-02",
+      "topic_id": "separable_verbs_present",
+      "lemma": "mitbringen",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "Frage mit du: deinen Ausweis",
+      "answer": "Bringst du deinen Ausweis mit?",
+      "options": [
+        "Bringst",
+        "du",
+        "deinen Ausweis",
+        "mit?"
+      ],
+      "instruction_de": "Bilde eine Ja/Nein-Frage.",
+      "instruction_ru": "Составьте общий вопрос."
+    },
+    {
+      "id": "prefix-bekommen-01",
+      "topic_id": "separable_verbs_present",
+      "lemma": "bekommen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Lena ___ morgen Besuch.",
+      "answer": "bekommt",
+      "options": [
+        "kommt ... be",
+        "bekommt",
+        "kommt ... an"
+      ],
+      "instruction_de": "be- ist nicht trennbar.",
+      "instruction_ru": "Приставка be- не отделяется."
+    },
+    {
+      "id": "prefix-besuchen-01",
+      "topic_id": "separable_verbs_present",
+      "lemma": "besuchen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Max ___ am Wochenende seine Tante.",
+      "answer": "besucht",
+      "options": [
+        "sucht ... be",
+        "besucht",
+        "sucht ... an"
+      ],
+      "instruction_de": "be- bleibt beim Verbstamm.",
+      "instruction_ru": "Приставка be- остаётся с основой глагола."
+    },
+    {
+      "id": "prefix-beginnen-01",
+      "topic_id": "separable_verbs_present",
+      "lemma": "beginnen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Der Sprachkurs ___ am Montag.",
+      "answer": "beginnt",
+      "options": [
+        "ginnt ... be",
+        "beginnt",
+        "fängt ... be"
+      ],
+      "instruction_de": "beginnen ist nicht trennbar.",
+      "instruction_ru": "Глагол beginnen не разделяется."
+    },
+    {
+      "id": "prefix-empfehlen-01",
+      "topic_id": "separable_verbs_present",
+      "lemma": "empfehlen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Die Kellnerin ___ das Tagesgericht.",
+      "answer": "empfiehlt",
+      "options": [
+        "fiehlt ... emp",
+        "empfiehlt",
+        "empfehlt"
+      ],
+      "instruction_de": "emp- ist nicht trennbar; beachte e → ie.",
+      "instruction_ru": "Приставка emp- не отделяется; учтите e → ie."
+    },
+    {
+      "id": "prefix-entlassen-01",
+      "topic_id": "separable_verbs_present",
+      "lemma": "entlassen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Die Firma ___ mehrere Mitarbeiter.",
+      "answer": "entlässt",
+      "options": [
+        "lässt ... ent",
+        "entlässt",
+        "entlassen"
+      ],
+      "instruction_de": "ent- ist nicht trennbar.",
+      "instruction_ru": "Приставка ent- не отделяется."
+    },
+    {
+      "id": "prefix-erklaeren-01",
+      "topic_id": "separable_verbs_present",
+      "lemma": "erklären",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Die Lehrerin ___ die neue Regel.",
+      "answer": "erklärt",
+      "options": [
+        "klärt ... er",
+        "erklärt",
+        "erklären"
+      ],
+      "instruction_de": "er- ist nicht trennbar.",
+      "instruction_ru": "Приставка er- не отделяется."
+    },
+    {
+      "id": "prefix-geniessen-01",
+      "topic_id": "separable_verbs_present",
+      "lemma": "genießen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Wir ___ den freien Nachmittag.",
+      "answer": "genießen",
+      "options": [
+        "nießen ... ge",
+        "genießen",
+        "genießt"
+      ],
+      "instruction_de": "ge- bleibt hier beim Verbstamm.",
+      "instruction_ru": "В этом глаголе ge- остаётся с основой."
+    },
+    {
+      "id": "prefix-verstehen-01",
+      "topic_id": "separable_verbs_present",
+      "lemma": "verstehen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Ich ___ die Frage jetzt.",
+      "answer": "verstehe",
+      "options": [
+        "stehe ... ver",
+        "verstehe",
+        "stehe ... auf"
+      ],
+      "instruction_de": "ver- ist nicht trennbar.",
+      "instruction_ru": "Приставка ver- не отделяется."
+    },
+    {
+      "id": "prefix-vergessen-01",
+      "topic_id": "separable_verbs_present",
+      "lemma": "vergessen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Paul ___ oft seine Hausaufgaben.",
+      "answer": "vergisst",
+      "options": [
+        "gisst ... ver",
+        "vergisst",
+        "vergesst"
+      ],
+      "instruction_de": "ver- ist nicht trennbar; beachte e → i.",
+      "instruction_ru": "Приставка ver- не отделяется; учтите e → i."
+    },
+    {
+      "id": "prefix-verdienen-01",
+      "topic_id": "separable_verbs_present",
+      "lemma": "verdienen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Karl ___ genug Geld.",
+      "answer": "verdient",
+      "options": [
+        "dient ... ver",
+        "verdient",
+        "verdienen"
+      ],
+      "instruction_de": "ver- ist nicht trennbar.",
+      "instruction_ru": "Приставка ver- не отделяется."
+    },
+    {
+      "id": "prefix-zerreissen-01",
+      "topic_id": "separable_verbs_present",
+      "lemma": "zerreißen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Maria ___ den alten Zettel.",
+      "answer": "zerreißt",
+      "options": [
+        "reißt ... zer",
+        "zerreißt",
+        "zerreißen"
+      ],
+      "instruction_de": "zer- ist nicht trennbar.",
+      "instruction_ru": "Приставка zer- не отделяется."
+    },
+    {
+      "id": "separable-abschliessen-01",
+      "topic_id": "separable_verbs_present",
+      "lemma": "abschließen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Du ___ am Abend die Tür ___.",
+      "answer": "schließt ... ab",
+      "options": [
+        "abschließt",
+        "schließt ... ab",
+        "schließen ... ab"
+      ],
+      "instruction_de": "ab- steht am Satzende.",
+      "instruction_ru": "Приставка ab- стоит в конце предложения."
+    },
+    {
+      "id": "separable-aufstehen-01",
+      "topic_id": "separable_verbs_present",
+      "lemma": "aufstehen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Milan ___ jeden Morgen früh ___.",
+      "answer": "steht ... auf",
+      "options": [
+        "aufsteht",
+        "steht ... auf",
+        "stehen ... auf"
+      ],
+      "instruction_de": "Trenne auf- im Hauptsatz ab.",
+      "instruction_ru": "В главном предложении отделите приставку auf-."
+    },
+    {
+      "id": "separable-aussteigen-01",
+      "topic_id": "separable_verbs_present",
+      "lemma": "aussteigen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Wir ___ am Hauptbahnhof ___.",
+      "answer": "steigen ... aus",
+      "options": [
+        "aussteigen",
+        "steigen ... aus",
+        "steigt ... aus"
+      ],
+      "instruction_de": "aus- steht am Satzende.",
+      "instruction_ru": "Приставка aus- стоит в конце предложения."
+    },
+    {
+      "id": "separable-einladen-01",
+      "topic_id": "separable_verbs_present",
+      "lemma": "einladen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Ich ___ meine Nachbarn zum Essen ___.",
+      "answer": "lade ... ein",
+      "options": [
+        "einlade",
+        "lade ... ein",
+        "lädt ... ein"
+      ],
+      "instruction_de": "Trenne ein- ab und wähle die Form für ich.",
+      "instruction_ru": "Отделите ein- и выберите форму для ich."
+    },
+    {
+      "id": "separable-herstellen-01",
+      "topic_id": "separable_verbs_present",
+      "lemma": "herstellen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Diese Firma ___ Fahrräder ___.",
+      "answer": "stellt ... her",
+      "options": [
+        "herstellt",
+        "stellt ... her",
+        "stellen ... her"
+      ],
+      "instruction_de": "her- ist hier trennbar.",
+      "instruction_ru": "В этом глаголе приставка her- отделяется."
+    },
+    {
+      "id": "separable-vorlesen-01",
+      "topic_id": "separable_verbs_present",
+      "lemma": "vorlesen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Die Studentin ___ eine kurze Geschichte ___.",
+      "answer": "liest ... vor",
+      "options": [
+        "vorliest",
+        "liest ... vor",
+        "lest ... vor"
+      ],
+      "instruction_de": "Trenne vor- ab und beachte e → ie.",
+      "instruction_ru": "Отделите vor- и учтите e → ie."
+    },
+    {
+      "id": "separable-zumachen-01",
+      "topic_id": "separable_verbs_present",
+      "lemma": "zumachen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Du ___ vor dem Gehen das Fenster ___.",
+      "answer": "machst ... zu",
+      "options": [
+        "zumachst",
+        "machst ... zu",
+        "macht ... zu"
+      ],
+      "instruction_de": "zu- steht am Satzende.",
+      "instruction_ru": "Приставка zu- стоит в конце предложения."
+    },
+    {
+      "id": "separable-zurueckgeben-01",
+      "topic_id": "separable_verbs_present",
+      "lemma": "zurückgeben",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Er ___ das Buch morgen ___.",
+      "answer": "gibt ... zurück",
+      "options": [
+        "zurückgibt",
+        "gibt ... zurück",
+        "gebt ... zurück"
+      ],
+      "instruction_de": "Trenne zurück- ab und beachte e → i.",
+      "instruction_ru": "Отделите zurück- и учтите e → i."
+    },
+    {
+      "id": "separable-mitfahren-01",
+      "topic_id": "separable_verbs_present",
+      "lemma": "mitfahren",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Meine Schwester ___ heute ___.",
+      "answer": "fährt ... mit",
+      "options": [
+        "mitfährt",
+        "fährt ... mit",
+        "fahrt ... mit"
+      ],
+      "instruction_de": "Trenne mit- ab und beachte a → ä.",
+      "instruction_ru": "Отделите mit- и учтите a → ä."
+    },
+    {
+      "id": "separable-zurueckkommen-01",
+      "topic_id": "separable_verbs_present",
+      "lemma": "zurückkommen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Wann ___ ihr aus dem Urlaub ___?",
+      "answer": "kommt ... zurück",
+      "options": [
+        "zurückkommt",
+        "kommt ... zurück",
+        "kommen ... zurück"
+      ],
+      "instruction_de": "zurück- steht am Satzende.",
+      "instruction_ru": "Приставка zurück- стоит в конце предложения."
+    },
+    {
+      "id": "separable-zuhoeren-01",
+      "topic_id": "separable_verbs_present",
+      "lemma": "zuhören",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Die Kinder ___ dem Lehrer aufmerksam ___.",
+      "answer": "hören ... zu",
+      "options": [
+        "zuhören",
+        "hören ... zu",
+        "hört ... zu"
+      ],
+      "instruction_de": "Trenne zu- im Hauptsatz ab.",
+      "instruction_ru": "В главном предложении отделите приставку zu-."
+    },
+    {
+      "id": "lesson5-time-1",
+      "topic_id": "time_expressions",
+      "lemma": "montag",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Der Kurs beginnt ___ Montag.",
+      "answer": "am",
+      "options": [
+        "am",
+        "um",
+        "von"
+      ],
+      "instruction_de": "Wähle die passende Zeitangabe.",
+      "instruction_ru": "Выберите подходящее обозначение времени."
+    },
+    {
+      "id": "lesson5-time-2",
+      "topic_id": "time_expressions",
+      "lemma": "morgen",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Ich lerne ___ Morgen.",
+      "answer": "am",
+      "options": [
+        "am",
+        "um",
+        "in"
+      ],
+      "instruction_de": "Wähle die passende Zeitangabe.",
+      "instruction_ru": "Выберите подходящее обозначение времени."
+    },
+    {
+      "id": "lesson5-time-3",
+      "topic_id": "time_expressions",
+      "lemma": "abend",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Wir telefonieren ___ Abend.",
+      "answer": "am",
+      "options": [
+        "am",
+        "um",
+        "bis"
+      ],
+      "instruction_de": "Wähle die passende Zeitangabe.",
+      "instruction_ru": "Выберите подходящее обозначение времени."
+    },
+    {
+      "id": "lesson5-time-4",
+      "topic_id": "time_expressions",
+      "lemma": "nacht",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Das Kind schläft ___ Nacht.",
+      "answer": "in der",
+      "options": [
+        "am",
+        "in der",
+        "um"
+      ],
+      "instruction_de": "Wähle die passende Zeitangabe.",
+      "instruction_ru": "Выберите подходящее обозначение времени."
+    },
+    {
+      "id": "lesson5-time-5",
+      "topic_id": "time_expressions",
+      "lemma": "uhr",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Der Bus fährt ___ 8 Uhr.",
+      "answer": "um",
+      "options": [
+        "am",
+        "um",
+        "von"
+      ],
+      "instruction_de": "Wähle die passende Zeitangabe.",
+      "instruction_ru": "Выберите подходящее обозначение времени."
+    },
+    {
+      "id": "lesson5-time-6",
+      "topic_id": "time_expressions",
+      "lemma": "dienstag",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Das Schwimmbad ist ___ Dienstag geschlossen.",
+      "answer": "am",
+      "options": [
+        "am",
+        "um",
+        "bis"
+      ],
+      "instruction_de": "Wähle die passende Zeitangabe.",
+      "instruction_ru": "Выберите подходящее обозначение времени."
+    },
+    {
+      "id": "lesson5-time-7",
+      "topic_id": "time_expressions",
+      "lemma": "freitag",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Wir treffen uns ___ Freitag.",
+      "answer": "am",
+      "options": [
+        "am",
+        "um",
+        "von"
+      ],
+      "instruction_de": "Wähle die passende Zeitangabe.",
+      "instruction_ru": "Выберите подходящее обозначение времени."
+    },
+    {
+      "id": "lesson5-time-8",
+      "topic_id": "time_expressions",
+      "lemma": "mittag",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Sie kocht ___ Mittag.",
+      "answer": "am",
+      "options": [
+        "am",
+        "um",
+        "in der"
+      ],
+      "instruction_de": "Wähle die passende Zeitangabe.",
+      "instruction_ru": "Выберите подходящее обозначение времени."
+    },
+    {
+      "id": "lesson5-time-9",
+      "topic_id": "time_expressions",
+      "lemma": "wochenende",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "___ Wochenende wandern wir.",
+      "answer": "Am",
+      "options": [
+        "Am",
+        "Um",
+        "Von"
+      ],
+      "instruction_de": "Wähle die passende Zeitangabe.",
+      "instruction_ru": "Выберите подходящее обозначение времени."
+    },
+    {
+      "id": "lesson5-time-10",
+      "topic_id": "time_expressions",
+      "lemma": "uhr",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Der Unterricht dauert ___ neun ___ zwölf Uhr.",
+      "answer": "von ... bis",
+      "options": [
+        "am ... um",
+        "von ... bis",
+        "in ... nach"
+      ],
+      "instruction_de": "Wähle die passende Zeitangabe.",
+      "instruction_ru": "Выберите подходящее обозначение времени."
+    },
+    {
+      "id": "lesson5-time-11",
+      "topic_id": "time_expressions",
+      "lemma": "uhr",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "8:30 Uhr heißt in der Alltagssprache ___.",
+      "answer": "halb neun",
+      "options": [
+        "halb acht",
+        "halb neun",
+        "Viertel vor acht"
+      ],
+      "instruction_de": "Wähle die passende Zeitangabe.",
+      "instruction_ru": "Выберите подходящее обозначение времени."
+    },
+    {
+      "id": "lesson5-time-12",
+      "topic_id": "time_expressions",
+      "lemma": "uhr",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "8:15 Uhr heißt ___.",
+      "answer": "Viertel nach acht",
+      "options": [
+        "Viertel nach acht",
+        "Viertel vor acht",
+        "halb acht"
+      ],
+      "instruction_de": "Wähle die passende Zeitangabe.",
+      "instruction_ru": "Выберите подходящее обозначение времени."
+    },
+    {
+      "id": "lesson5-time-13",
+      "topic_id": "time_expressions",
+      "lemma": "uhr",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "8:45 Uhr heißt ___.",
+      "answer": "Viertel vor neun",
+      "options": [
+        "Viertel nach neun",
+        "Viertel vor neun",
+        "halb neun"
+      ],
+      "instruction_de": "Wähle die passende Zeitangabe.",
+      "instruction_ru": "Выберите подходящее обозначение времени."
+    },
+    {
+      "id": "lesson5-time-14",
+      "topic_id": "time_expressions",
+      "lemma": "samstag",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "___ Samstag fährt Lara nach Köln.",
+      "answer": "Am",
+      "options": [
+        "Am",
+        "Um",
+        "Bis"
+      ],
+      "instruction_de": "Wähle die passende Zeitangabe.",
+      "instruction_ru": "Выберите подходящее обозначение времени."
+    },
+    {
+      "id": "lesson5-time-15",
+      "topic_id": "time_expressions",
+      "lemma": "uhr",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Wir fahren ___ Viertel nach zehn los.",
+      "answer": "um",
+      "options": [
+        "am",
+        "um",
+        "von"
+      ],
+      "instruction_de": "Wähle die passende Zeitangabe.",
+      "instruction_ru": "Выберите подходящее обозначение времени."
+    },
+    {
+      "id": "lesson5-time-16",
+      "topic_id": "time_expressions",
+      "lemma": "vormittag",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Die Sonne scheint ___ Vormittag.",
+      "answer": "am",
+      "options": [
+        "am",
+        "um",
+        "in der"
+      ],
+      "instruction_de": "Wähle die passende Zeitangabe.",
+      "instruction_ru": "Выберите подходящее обозначение времени."
+    },
+    {
+      "id": "lesson5-time-17",
+      "topic_id": "time_expressions",
+      "lemma": "nachmittag",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "___ Nachmittag regnet es.",
+      "answer": "Am",
+      "options": [
+        "Am",
+        "Um",
+        "Von"
+      ],
+      "instruction_de": "Wähle die passende Zeitangabe.",
+      "instruction_ru": "Выберите подходящее обозначение времени."
+    },
+    {
+      "id": "lesson5-time-18",
+      "topic_id": "time_expressions",
+      "lemma": "sonntag",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Das Café ist ___ Sonntag geöffnet.",
+      "answer": "am",
+      "options": [
+        "am",
+        "um",
+        "bis"
+      ],
+      "instruction_de": "Wähle die passende Zeitangabe.",
+      "instruction_ru": "Выберите подходящее обозначение времени."
+    },
+    {
+      "id": "lesson5-time-19",
+      "topic_id": "time_expressions",
+      "lemma": "uhr",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Die Pause ist ___ 10:00 ___ 10:15 Uhr.",
+      "answer": "von ... bis",
+      "options": [
+        "von ... bis",
+        "am ... um",
+        "in ... nach"
+      ],
+      "instruction_de": "Wähle die passende Zeitangabe.",
+      "instruction_ru": "Выберите подходящее обозначение времени."
+    },
+    {
+      "id": "lesson5-time-20",
+      "topic_id": "time_expressions",
+      "lemma": "morgen",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "___ Morgen fährt der Zug pünktlich ab.",
+      "answer": "Am",
+      "options": [
+        "Am",
+        "Um",
+        "In der"
+      ],
+      "instruction_de": "Wähle die passende Zeitangabe.",
+      "instruction_ru": "Выберите подходящее обозначение времени."
+    },
+    {
+      "id": "lesson6-acc-1",
+      "topic_id": "cases_intro",
+      "lemma": "hamburger",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Ich nehme ___ Hamburger.",
+      "answer": "einen",
+      "options": [
+        "ein",
+        "einen",
+        "eine"
+      ],
+      "instruction_de": "Wähle den richtigen Artikel im Akkusativ.",
+      "instruction_ru": "Выберите правильный артикль в Akkusativ."
+    },
+    {
+      "id": "lesson6-acc-2",
+      "topic_id": "cases_intro",
+      "lemma": "salat",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Möchtest du ___ Salat?",
+      "answer": "einen",
+      "options": [
+        "ein",
+        "einen",
+        "eine"
+      ],
+      "instruction_de": "Wähle den richtigen Artikel im Akkusativ.",
+      "instruction_ru": "Выберите правильный артикль в Akkusativ."
+    },
+    {
+      "id": "lesson6-acc-3",
+      "topic_id": "cases_intro",
+      "lemma": "hund",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Sie hat ___ Hund.",
+      "answer": "einen",
+      "options": [
+        "ein",
+        "einen",
+        "eine"
+      ],
+      "instruction_de": "Wähle den richtigen Artikel im Akkusativ.",
+      "instruction_ru": "Выберите правильный артикль в Akkusativ."
+    },
+    {
+      "id": "lesson6-acc-4",
+      "topic_id": "cases_intro",
+      "lemma": "film",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Wir sehen ___ Film.",
+      "answer": "den",
+      "options": [
+        "der",
+        "den",
+        "das"
+      ],
+      "instruction_de": "Wähle den richtigen Artikel im Akkusativ.",
+      "instruction_ru": "Выберите правильный артикль в Akkusativ."
+    },
+    {
+      "id": "lesson6-acc-5",
+      "topic_id": "cases_intro",
+      "lemma": "grill",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Paul kauft ___ Grill.",
+      "answer": "einen",
+      "options": [
+        "ein",
+        "einen",
+        "eine"
+      ],
+      "instruction_de": "Wähle den richtigen Artikel im Akkusativ.",
+      "instruction_ru": "Выберите правильный артикль в Akkusativ."
+    },
+    {
+      "id": "lesson6-acc-6",
+      "topic_id": "cases_intro",
+      "lemma": "schinken",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Ich brauche ___ Schinken.",
+      "answer": "den",
+      "options": [
+        "der",
+        "den",
+        "die"
+      ],
+      "instruction_de": "Wähle den richtigen Artikel im Akkusativ.",
+      "instruction_ru": "Выберите правильный артикль в Akkusativ."
+    },
+    {
+      "id": "lesson6-acc-7",
+      "topic_id": "cases_intro",
+      "lemma": "kaffee",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Er trinkt ___ Kaffee.",
+      "answer": "einen",
+      "options": [
+        "ein",
+        "einen",
+        "eine"
+      ],
+      "instruction_de": "Wähle den richtigen Artikel im Akkusativ.",
+      "instruction_ru": "Выберите правильный артикль в Akkusativ."
+    },
+    {
+      "id": "lesson6-acc-8",
+      "topic_id": "cases_intro",
+      "lemma": "kuchen",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Mira backt ___ Kuchen.",
+      "answer": "einen",
+      "options": [
+        "ein",
+        "einen",
+        "eine"
+      ],
+      "instruction_de": "Wähle den richtigen Artikel im Akkusativ.",
+      "instruction_ru": "Выберите правильный артикль в Akkusativ."
+    },
+    {
+      "id": "lesson6-acc-9",
+      "topic_id": "cases_intro",
+      "lemma": "saft",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Wir nehmen ___ Saft.",
+      "answer": "den",
+      "options": [
+        "der",
+        "den",
+        "das"
+      ],
+      "instruction_de": "Wähle den richtigen Artikel im Akkusativ.",
+      "instruction_ru": "Выберите правильный артикль в Akkusativ."
+    },
+    {
+      "id": "lesson6-acc-10",
+      "topic_id": "cases_intro",
+      "lemma": "apfel",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Das Kind isst ___ Apfel.",
+      "answer": "einen",
+      "options": [
+        "ein",
+        "einen",
+        "eine"
+      ],
+      "instruction_de": "Wähle den richtigen Artikel im Akkusativ.",
+      "instruction_ru": "Выберите правильный артикль в Akkusativ."
+    },
+    {
+      "id": "lesson6-acc-11",
+      "topic_id": "cases_intro",
+      "lemma": "salat",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Heute esse ich ___ Salat.",
+      "answer": "keinen",
+      "options": [
+        "kein",
+        "keinen",
+        "keine"
+      ],
+      "instruction_de": "Wähle den richtigen Artikel im Akkusativ.",
+      "instruction_ru": "Выберите правильный артикль в Akkusativ."
+    },
+    {
+      "id": "lesson6-acc-12",
+      "topic_id": "cases_intro",
+      "lemma": "hunger",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Ich habe ___ Hunger.",
+      "answer": "keinen",
+      "options": [
+        "kein",
+        "keinen",
+        "keine"
+      ],
+      "instruction_de": "Wähle den richtigen Artikel im Akkusativ.",
+      "instruction_ru": "Выберите правильный артикль в Akkusativ."
+    },
+    {
+      "id": "lesson6-acc-13",
+      "topic_id": "cases_intro",
+      "lemma": "film",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Wir sehen heute ___ Film.",
+      "answer": "keinen",
+      "options": [
+        "kein",
+        "keinen",
+        "keine"
+      ],
+      "instruction_de": "Wähle den richtigen Artikel im Akkusativ.",
+      "instruction_ru": "Выберите правильный артикль в Akkusativ."
+    },
+    {
+      "id": "lesson6-acc-14",
+      "topic_id": "cases_intro",
+      "lemma": "hund",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Sie hat ___ Hund.",
+      "answer": "keinen",
+      "options": [
+        "kein",
+        "keinen",
+        "keine"
+      ],
+      "instruction_de": "Wähle den richtigen Artikel im Akkusativ.",
+      "instruction_ru": "Выберите правильный артикль в Akkusativ."
+    },
+    {
+      "id": "lesson6-acc-15",
+      "topic_id": "cases_intro",
+      "lemma": "getränk",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Ich bestelle ___ Getränk.",
+      "answer": "ein",
+      "options": [
+        "ein",
+        "einen",
+        "eine"
+      ],
+      "instruction_de": "Wähle den richtigen Artikel im Akkusativ.",
+      "instruction_ru": "Выберите правильный артикль в Akkusativ."
+    },
+    {
+      "id": "lesson6-acc-16",
+      "topic_id": "cases_intro",
+      "lemma": "cola",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Sie nimmt ___ Cola.",
+      "answer": "eine",
+      "options": [
+        "ein",
+        "einen",
+        "eine"
+      ],
+      "instruction_de": "Wähle den richtigen Artikel im Akkusativ.",
+      "instruction_ru": "Выберите правильный артикль в Akkusativ."
+    },
+    {
+      "id": "lesson6-acc-17",
+      "topic_id": "cases_intro",
+      "lemma": "pommes frites",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Wir bestellen ___ Pommes frites.",
+      "answer": "die",
+      "options": [
+        "der",
+        "den",
+        "die"
+      ],
+      "instruction_de": "Wähle den richtigen Artikel im Akkusativ.",
+      "instruction_ru": "Выберите правильный артикль в Akkusativ."
+    },
+    {
+      "id": "lesson6-acc-18",
+      "topic_id": "cases_intro",
+      "lemma": "speisekarte",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Bitte bringen Sie ___ Speisekarte.",
+      "answer": "die",
+      "options": [
+        "der",
+        "den",
+        "die"
+      ],
+      "instruction_de": "Wähle den richtigen Artikel im Akkusativ.",
+      "instruction_ru": "Выберите правильный артикль в Akkusativ."
+    },
+    {
+      "id": "lesson6-acc-19",
+      "topic_id": "cases_intro",
+      "lemma": "eis",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Das Kind möchte ___ Eis.",
+      "answer": "ein",
+      "options": [
+        "ein",
+        "einen",
+        "eine"
+      ],
+      "instruction_de": "Wähle den richtigen Artikel im Akkusativ.",
+      "instruction_ru": "Выберите правильный артикль в Akkusativ."
+    },
+    {
+      "id": "lesson6-acc-20",
+      "topic_id": "cases_intro",
+      "lemma": "portion",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Wir nehmen ___ Portion.",
+      "answer": "eine",
+      "options": [
+        "ein",
+        "einen",
+        "eine"
+      ],
+      "instruction_de": "Wähle den richtigen Artikel im Akkusativ.",
+      "instruction_ru": "Выберите правильный артикль в Akkusativ."
+    },
+    {
+      "id": "lesson6-possessive-1",
+      "topic_id": "possessive_articles",
+      "lemma": "bruder",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Ich treffe ___ Bruder.",
+      "answer": "meinen",
+      "options": [
+        "mein",
+        "meinen",
+        "meine"
+      ],
+      "instruction_de": "Wähle den Possessivartikel im Akkusativ.",
+      "instruction_ru": "Выберите притяжательное слово в Akkusativ."
+    },
+    {
+      "id": "lesson6-possessive-2",
+      "topic_id": "possessive_articles",
+      "lemma": "sohn",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Sie besucht ___ Sohn.",
+      "answer": "ihren",
+      "options": [
+        "ihr",
+        "ihren",
+        "ihre"
+      ],
+      "instruction_de": "Wähle den Possessivartikel im Akkusativ.",
+      "instruction_ru": "Выберите притяжательное слово в Akkusativ."
+    },
+    {
+      "id": "lesson6-possessive-3",
+      "topic_id": "possessive_articles",
+      "lemma": "mann",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Suchst du ___ Mann?",
+      "answer": "deinen",
+      "options": [
+        "dein",
+        "deinen",
+        "deine"
+      ],
+      "instruction_de": "Wähle den Possessivartikel im Akkusativ.",
+      "instruction_ru": "Выберите притяжательное слово в Akkusativ."
+    },
+    {
+      "id": "lesson6-possessive-4",
+      "topic_id": "possessive_articles",
+      "lemma": "vater",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Er ruft ___ Vater an.",
+      "answer": "seinen",
+      "options": [
+        "sein",
+        "seinen",
+        "seine"
+      ],
+      "instruction_de": "Wähle den Possessivartikel im Akkusativ.",
+      "instruction_ru": "Выберите притяжательное слово в Akkusativ."
+    },
+    {
+      "id": "lesson6-possessive-5",
+      "topic_id": "possessive_articles",
+      "lemma": "schrank",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Ich verkaufe ___ Schrank.",
+      "answer": "meinen",
+      "options": [
+        "mein",
+        "meinen",
+        "meine"
+      ],
+      "instruction_de": "Wähle den Possessivartikel im Akkusativ.",
+      "instruction_ru": "Выберите притяжательное слово в Akkusativ."
+    },
+    {
+      "id": "lesson6-possessive-6",
+      "topic_id": "possessive_articles",
+      "lemma": "bruder",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Besuchst du ___ Bruder?",
+      "answer": "deinen",
+      "options": [
+        "dein",
+        "deinen",
+        "deine"
+      ],
+      "instruction_de": "Wähle den Possessivartikel im Akkusativ.",
+      "instruction_ru": "Выберите притяжательное слово в Akkusativ."
+    },
+    {
+      "id": "lesson6-possessive-7",
+      "topic_id": "possessive_articles",
+      "lemma": "sohn",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Frau Klein weckt ___ Sohn.",
+      "answer": "ihren",
+      "options": [
+        "ihr",
+        "ihren",
+        "ihre"
+      ],
+      "instruction_de": "Wähle den Possessivartikel im Akkusativ.",
+      "instruction_ru": "Выберите притяжательное слово в Akkusativ."
+    },
+    {
+      "id": "lesson6-possessive-8",
+      "topic_id": "possessive_articles",
+      "lemma": "mann",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Anna trifft ___ Mann.",
+      "answer": "ihren",
+      "options": [
+        "ihr",
+        "ihren",
+        "ihre"
+      ],
+      "instruction_de": "Wähle den Possessivartikel im Akkusativ.",
+      "instruction_ru": "Выберите притяжательное слово в Akkusativ."
+    },
+    {
+      "id": "lesson7-modal-1",
+      "topic_id": "modal_verbs_koennen_wollen",
+      "lemma": "können",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Ich ___ gut schwimmen.",
+      "answer": "kann",
+      "options": [
+        "kann",
+        "kannst",
+        "können"
+      ],
+      "instruction_de": "Wähle die richtige Form des Modalverbs.",
+      "instruction_ru": "Выберите правильную форму модального глагола."
+    },
+    {
+      "id": "lesson7-modal-2",
+      "topic_id": "modal_verbs_koennen_wollen",
+      "lemma": "können",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Du ___ Klavier spielen.",
+      "answer": "kannst",
+      "options": [
+        "kann",
+        "kannst",
+        "könnt"
+      ],
+      "instruction_de": "Wähle die richtige Form des Modalverbs.",
+      "instruction_ru": "Выберите правильную форму модального глагола."
+    },
+    {
+      "id": "lesson7-modal-3",
+      "topic_id": "modal_verbs_koennen_wollen",
+      "lemma": "können",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Mira ___ heute nicht kommen.",
+      "answer": "kann",
+      "options": [
+        "kann",
+        "kannst",
+        "können"
+      ],
+      "instruction_de": "Wähle die richtige Form des Modalverbs.",
+      "instruction_ru": "Выберите правильную форму модального глагола."
+    },
+    {
+      "id": "lesson7-modal-4",
+      "topic_id": "modal_verbs_koennen_wollen",
+      "lemma": "können",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Wir ___ morgen lernen.",
+      "answer": "können",
+      "options": [
+        "kann",
+        "könnt",
+        "können"
+      ],
+      "instruction_de": "Wähle die richtige Form des Modalverbs.",
+      "instruction_ru": "Выберите правильную форму модального глагола."
+    },
+    {
+      "id": "lesson7-modal-5",
+      "topic_id": "modal_verbs_koennen_wollen",
+      "lemma": "können",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Ihr ___ hier Tennis spielen.",
+      "answer": "könnt",
+      "options": [
+        "kann",
+        "könnt",
+        "können"
+      ],
+      "instruction_de": "Wähle die richtige Form des Modalverbs.",
+      "instruction_ru": "Выберите правильную форму модального глагола."
+    },
+    {
+      "id": "lesson7-modal-6",
+      "topic_id": "modal_verbs_koennen_wollen",
+      "lemma": "können",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Die Kinder ___ schon lesen.",
+      "answer": "können",
+      "options": [
+        "kann",
+        "könnt",
+        "können"
+      ],
+      "instruction_de": "Wähle die richtige Form des Modalverbs.",
+      "instruction_ru": "Выберите правильную форму модального глагола."
+    },
+    {
+      "id": "lesson7-modal-7",
+      "topic_id": "modal_verbs_koennen_wollen",
+      "lemma": "wollen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Ich ___ einen Brief schreiben.",
+      "answer": "will",
+      "options": [
+        "will",
+        "willst",
+        "wollen"
+      ],
+      "instruction_de": "Wähle die richtige Form des Modalverbs.",
+      "instruction_ru": "Выберите правильную форму модального глагола."
+    },
+    {
+      "id": "lesson7-modal-8",
+      "topic_id": "modal_verbs_koennen_wollen",
+      "lemma": "wollen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Du ___ heute backen.",
+      "answer": "willst",
+      "options": [
+        "will",
+        "willst",
+        "wollt"
+      ],
+      "instruction_de": "Wähle die richtige Form des Modalverbs.",
+      "instruction_ru": "Выберите правильную форму модального глагола."
+    },
+    {
+      "id": "lesson7-modal-9",
+      "topic_id": "modal_verbs_koennen_wollen",
+      "lemma": "wollen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Er ___ pünktlich kommen.",
+      "answer": "will",
+      "options": [
+        "will",
+        "willst",
+        "wollen"
+      ],
+      "instruction_de": "Wähle die richtige Form des Modalverbs.",
+      "instruction_ru": "Выберите правильную форму модального глагола."
+    },
+    {
+      "id": "lesson7-modal-10",
+      "topic_id": "modal_verbs_koennen_wollen",
+      "lemma": "wollen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Wir ___ um acht losfahren.",
+      "answer": "wollen",
+      "options": [
+        "will",
+        "wollt",
+        "wollen"
+      ],
+      "instruction_de": "Wähle die richtige Form des Modalverbs.",
+      "instruction_ru": "Выберите правильную форму модального глагола."
+    },
+    {
+      "id": "lesson7-modal-11",
+      "topic_id": "modal_verbs_koennen_wollen",
+      "lemma": "wollen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Ihr ___ ein Lied singen.",
+      "answer": "wollt",
+      "options": [
+        "will",
+        "wollt",
+        "wollen"
+      ],
+      "instruction_de": "Wähle die richtige Form des Modalverbs.",
+      "instruction_ru": "Выберите правильную форму модального глагола."
+    },
+    {
+      "id": "lesson7-modal-12",
+      "topic_id": "modal_verbs_koennen_wollen",
+      "lemma": "wollen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Sie ___ für den Test üben.",
+      "answer": "wollen",
+      "options": [
+        "will",
+        "wollt",
+        "wollen"
+      ],
+      "instruction_de": "Wähle die richtige Form des Modalverbs.",
+      "instruction_ru": "Выберите правильную форму модального глагола."
+    },
+    {
+      "id": "lesson7-modal-13",
+      "topic_id": "modal_verbs_koennen_wollen",
+      "lemma": "können",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Ich ___ gut schwimmen. Welche Form passt?",
+      "answer": "kann",
+      "options": [
+        "kann",
+        "kannst",
+        "können"
+      ],
+      "instruction_de": "Wähle die richtige Form des Modalverbs.",
+      "instruction_ru": "Выберите правильную форму модального глагола."
+    },
+    {
+      "id": "lesson7-modal-14",
+      "topic_id": "modal_verbs_koennen_wollen",
+      "lemma": "können",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Du ___ Klavier spielen. Welche Form passt?",
+      "answer": "kannst",
+      "options": [
+        "kann",
+        "kannst",
+        "könnt"
+      ],
+      "instruction_de": "Wähle die richtige Form des Modalverbs.",
+      "instruction_ru": "Выберите правильную форму модального глагола."
+    },
+    {
+      "id": "lesson7-modal-15",
+      "topic_id": "modal_verbs_koennen_wollen",
+      "lemma": "können",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Mira ___ heute nicht kommen. Welche Form passt?",
+      "answer": "kann",
+      "options": [
+        "kann",
+        "kannst",
+        "können"
+      ],
+      "instruction_de": "Wähle die richtige Form des Modalverbs.",
+      "instruction_ru": "Выберите правильную форму модального глагола."
+    },
+    {
+      "id": "lesson7-modal-16",
+      "topic_id": "modal_verbs_koennen_wollen",
+      "lemma": "können",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Wir ___ morgen lernen. Welche Form passt?",
+      "answer": "können",
+      "options": [
+        "kann",
+        "könnt",
+        "können"
+      ],
+      "instruction_de": "Wähle die richtige Form des Modalverbs.",
+      "instruction_ru": "Выберите правильную форму модального глагола."
+    },
+    {
+      "id": "lesson7-modal-17",
+      "topic_id": "modal_verbs_koennen_wollen",
+      "lemma": "können",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Ihr ___ hier Tennis spielen. Welche Form passt?",
+      "answer": "könnt",
+      "options": [
+        "kann",
+        "könnt",
+        "können"
+      ],
+      "instruction_de": "Wähle die richtige Form des Modalverbs.",
+      "instruction_ru": "Выберите правильную форму модального глагола."
+    },
+    {
+      "id": "lesson7-modal-18",
+      "topic_id": "modal_verbs_koennen_wollen",
+      "lemma": "können",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Die Kinder ___ schon lesen. Welche Form passt?",
+      "answer": "können",
+      "options": [
+        "kann",
+        "könnt",
+        "können"
+      ],
+      "instruction_de": "Wähle die richtige Form des Modalverbs.",
+      "instruction_ru": "Выберите правильную форму модального глагола."
+    },
+    {
+      "id": "lesson7-modal-19",
+      "topic_id": "modal_verbs_koennen_wollen",
+      "lemma": "wollen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Ich ___ einen Brief schreiben. Welche Form passt?",
+      "answer": "will",
+      "options": [
+        "will",
+        "willst",
+        "wollen"
+      ],
+      "instruction_de": "Wähle die richtige Form des Modalverbs.",
+      "instruction_ru": "Выберите правильную форму модального глагола."
+    },
+    {
+      "id": "lesson7-modal-20",
+      "topic_id": "modal_verbs_koennen_wollen",
+      "lemma": "wollen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Du ___ heute backen. Welche Form passt?",
+      "answer": "willst",
+      "options": [
+        "will",
+        "willst",
+        "wollt"
+      ],
+      "instruction_de": "Wähle die richtige Form des Modalverbs.",
+      "instruction_ru": "Выберите правильную форму модального глагола."
+    },
+    {
+      "id": "lesson7-modal-21",
+      "topic_id": "modal_verbs_koennen_wollen",
+      "lemma": "wollen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Er ___ pünktlich kommen. Welche Form passt?",
+      "answer": "will",
+      "options": [
+        "will",
+        "willst",
+        "wollen"
+      ],
+      "instruction_de": "Wähle die richtige Form des Modalverbs.",
+      "instruction_ru": "Выберите правильную форму модального глагола."
+    },
+    {
+      "id": "lesson7-modal-22",
+      "topic_id": "modal_verbs_koennen_wollen",
+      "lemma": "wollen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Wir ___ um acht losfahren. Welche Form passt?",
+      "answer": "wollen",
+      "options": [
+        "will",
+        "wollt",
+        "wollen"
+      ],
+      "instruction_de": "Wähle die richtige Form des Modalverbs.",
+      "instruction_ru": "Выберите правильную форму модального глагола."
+    },
+    {
+      "id": "lesson7-modal-23",
+      "topic_id": "modal_verbs_koennen_wollen",
+      "lemma": "wollen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Ihr ___ ein Lied singen. Welche Form passt?",
+      "answer": "wollt",
+      "options": [
+        "will",
+        "wollt",
+        "wollen"
+      ],
+      "instruction_de": "Wähle die richtige Form des Modalverbs.",
+      "instruction_ru": "Выберите правильную форму модального глагола."
+    },
+    {
+      "id": "lesson7-modal-24",
+      "topic_id": "modal_verbs_koennen_wollen",
+      "lemma": "wollen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Sie ___ für den Test üben. Welche Form passt?",
+      "answer": "wollen",
+      "options": [
+        "will",
+        "wollt",
+        "wollen"
+      ],
+      "instruction_de": "Wähle die richtige Form des Modalverbs.",
+      "instruction_ru": "Выберите правильную форму модального глагола."
+    },
+    {
+      "id": "lesson7-perfect-haben-1",
+      "topic_id": "perfect_haben",
+      "lemma": "schreiben",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Wir haben einen Test ___.",
+      "answer": "geschrieben",
+      "options": [
+        "geschreibt",
+        "geschrieben",
+        "schreiben"
+      ],
+      "instruction_de": "Wähle das richtige Partizip II.",
+      "instruction_ru": "Выберите правильную форму Partizip II."
+    },
+    {
+      "id": "lesson7-perfect-haben-2",
+      "topic_id": "perfect_haben",
+      "lemma": "backen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Mira hat einen Kuchen ___.",
+      "answer": "gebacken",
+      "options": [
+        "gebackt",
+        "gebacken",
+        "backen"
+      ],
+      "instruction_de": "Wähle das richtige Partizip II.",
+      "instruction_ru": "Выберите правильную форму Partizip II."
+    },
+    {
+      "id": "lesson7-perfect-haben-3",
+      "topic_id": "perfect_haben",
+      "lemma": "singen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Die Kinder haben ein Lied ___.",
+      "answer": "gesungen",
+      "options": [
+        "gesingt",
+        "gesungen",
+        "singen"
+      ],
+      "instruction_de": "Wähle das richtige Partizip II.",
+      "instruction_ru": "Выберите правильную форму Partizip II."
+    },
+    {
+      "id": "lesson7-perfect-haben-4",
+      "topic_id": "perfect_haben",
+      "lemma": "malen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Das Mädchen hat ein Bild ___.",
+      "answer": "gemalt",
+      "options": [
+        "gemalen",
+        "gemalt",
+        "malt"
+      ],
+      "instruction_de": "Wähle das richtige Partizip II.",
+      "instruction_ru": "Выберите правильную форму Partizip II."
+    },
+    {
+      "id": "lesson7-perfect-haben-5",
+      "topic_id": "perfect_haben",
+      "lemma": "üben",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Ich habe lange ___.",
+      "answer": "geübt",
+      "options": [
+        "geüben",
+        "geübt",
+        "übt"
+      ],
+      "instruction_de": "Wähle das richtige Partizip II.",
+      "instruction_ru": "Выберите правильную форму Partizip II."
+    },
+    {
+      "id": "lesson7-perfect-haben-6",
+      "topic_id": "perfect_haben",
+      "lemma": "lesen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Du hast den Text ___.",
+      "answer": "gelesen",
+      "options": [
+        "geliest",
+        "gelesen",
+        "lesen"
+      ],
+      "instruction_de": "Wähle das richtige Partizip II.",
+      "instruction_ru": "Выберите правильную форму Partizip II."
+    },
+    {
+      "id": "lesson7-perfect-haben-7",
+      "topic_id": "perfect_haben",
+      "lemma": "treffen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Wir haben Freunde ___.",
+      "answer": "getroffen",
+      "options": [
+        "getrefft",
+        "getroffen",
+        "treffen"
+      ],
+      "instruction_de": "Wähle das richtige Partizip II.",
+      "instruction_ru": "Выберите правильную форму Partizip II."
+    },
+    {
+      "id": "lesson7-perfect-haben-8",
+      "topic_id": "perfect_haben",
+      "lemma": "grillen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Am Sonntag haben wir ___.",
+      "answer": "gegrillt",
+      "options": [
+        "gegrillen",
+        "gegrillt",
+        "grillt"
+      ],
+      "instruction_de": "Wähle das richtige Partizip II.",
+      "instruction_ru": "Выберите правильную форму Partizip II."
+    },
+    {
+      "id": "lesson7-perfect-haben-9",
+      "topic_id": "perfect_haben",
+      "lemma": "telefonieren",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Sie hat mit dem Arzt ___.",
+      "answer": "telefoniert",
+      "options": [
+        "getelefoniert",
+        "telefoniert",
+        "telefonieren"
+      ],
+      "instruction_de": "Wähle das richtige Partizip II.",
+      "instruction_ru": "Выберите правильную форму Partizip II."
+    },
+    {
+      "id": "lesson7-perfect-haben-10",
+      "topic_id": "perfect_haben",
+      "lemma": "fotografieren",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Er hat das Schwimmbad ___.",
+      "answer": "fotografiert",
+      "options": [
+        "gefotografiert",
+        "fotografiert",
+        "fotografieren"
+      ],
+      "instruction_de": "Wähle das richtige Partizip II.",
+      "instruction_ru": "Выберите правильную форму Partizip II."
+    },
+    {
+      "id": "lesson7-perfect-haben-11",
+      "topic_id": "perfect_haben",
+      "lemma": "vergessen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Ich habe das Buch ___.",
+      "answer": "vergessen",
+      "options": [
+        "gevergessen",
+        "vergessen",
+        "vergesst"
+      ],
+      "instruction_de": "Wähle das richtige Partizip II.",
+      "instruction_ru": "Выберите правильную форму Partizip II."
+    },
+    {
+      "id": "lesson7-perfect-haben-12",
+      "topic_id": "perfect_haben",
+      "lemma": "schmecken",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Das Essen hat gut ___.",
+      "answer": "geschmeckt",
+      "options": [
+        "geschmecken",
+        "geschmeckt",
+        "schmeckt"
+      ],
+      "instruction_de": "Wähle das richtige Partizip II.",
+      "instruction_ru": "Выберите правильную форму Partizip II."
+    },
+    {
+      "id": "lesson7-perfect-haben-13",
+      "topic_id": "perfect_haben",
+      "lemma": "wecken",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Der Vater hat das Kind ___.",
+      "answer": "geweckt",
+      "options": [
+        "gewecken",
+        "geweckt",
+        "weckt"
+      ],
+      "instruction_de": "Wähle das richtige Partizip II.",
+      "instruction_ru": "Выберите правильную форму Partizip II."
+    },
+    {
+      "id": "lesson7-perfect-haben-14",
+      "topic_id": "perfect_haben",
+      "lemma": "reiten",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Lara hat am Samstag ___.",
+      "answer": "geritten",
+      "options": [
+        "gereitet",
+        "geritten",
+        "reiten"
+      ],
+      "instruction_de": "Wähle das richtige Partizip II.",
+      "instruction_ru": "Выберите правильную форму Partizip II."
+    },
+    {
+      "id": "lesson7-perfect-haben-15",
+      "topic_id": "perfect_haben",
+      "lemma": "meinen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Das habe ich nicht so ___.",
+      "answer": "gemeint",
+      "options": [
+        "gemeinen",
+        "gemeint",
+        "meint"
+      ],
+      "instruction_de": "Wähle das richtige Partizip II.",
+      "instruction_ru": "Выберите правильную форму Partizip II."
+    },
+    {
+      "id": "lesson7-perfect-haben-16",
+      "topic_id": "perfect_haben",
+      "lemma": "sammeln",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Tim hat Fotos ___.",
+      "answer": "gesammelt",
+      "options": [
+        "gesammeln",
+        "gesammelt",
+        "sammelt"
+      ],
+      "instruction_de": "Wähle das richtige Partizip II.",
+      "instruction_ru": "Выберите правильную форму Partizip II."
+    },
+    {
+      "id": "lesson7-perfect-haben-17",
+      "topic_id": "perfect_haben",
+      "lemma": "schreiben",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Wir haben einen Test ___. Wähle das Partizip II.",
+      "answer": "geschrieben",
+      "options": [
+        "geschreibt",
+        "geschrieben",
+        "schreiben"
+      ],
+      "instruction_de": "Wähle das richtige Partizip II.",
+      "instruction_ru": "Выберите правильную форму Partizip II."
+    },
+    {
+      "id": "lesson7-perfect-haben-18",
+      "topic_id": "perfect_haben",
+      "lemma": "backen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Mira hat einen Kuchen ___. Wähle das Partizip II.",
+      "answer": "gebacken",
+      "options": [
+        "gebackt",
+        "gebacken",
+        "backen"
+      ],
+      "instruction_de": "Wähle das richtige Partizip II.",
+      "instruction_ru": "Выберите правильную форму Partizip II."
+    },
+    {
+      "id": "lesson7-perfect-haben-19",
+      "topic_id": "perfect_haben",
+      "lemma": "singen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Die Kinder haben ein Lied ___. Wähle das Partizip II.",
+      "answer": "gesungen",
+      "options": [
+        "gesingt",
+        "gesungen",
+        "singen"
+      ],
+      "instruction_de": "Wähle das richtige Partizip II.",
+      "instruction_ru": "Выберите правильную форму Partizip II."
+    },
+    {
+      "id": "lesson7-perfect-haben-20",
+      "topic_id": "perfect_haben",
+      "lemma": "malen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Das Mädchen hat ein Bild ___. Wähle das Partizip II.",
+      "answer": "gemalt",
+      "options": [
+        "gemalen",
+        "gemalt",
+        "malt"
+      ],
+      "instruction_de": "Wähle das richtige Partizip II.",
+      "instruction_ru": "Выберите правильную форму Partizip II."
+    },
+    {
+      "id": "lesson7-perfect-haben-21",
+      "topic_id": "perfect_haben",
+      "lemma": "üben",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Ich habe lange ___. Wähle das Partizip II.",
+      "answer": "geübt",
+      "options": [
+        "geüben",
+        "geübt",
+        "übt"
+      ],
+      "instruction_de": "Wähle das richtige Partizip II.",
+      "instruction_ru": "Выберите правильную форму Partizip II."
+    },
+    {
+      "id": "lesson7-perfect-haben-22",
+      "topic_id": "perfect_haben",
+      "lemma": "lesen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Du hast den Text ___. Wähle das Partizip II.",
+      "answer": "gelesen",
+      "options": [
+        "geliest",
+        "gelesen",
+        "lesen"
+      ],
+      "instruction_de": "Wähle das richtige Partizip II.",
+      "instruction_ru": "Выберите правильную форму Partizip II."
+    },
+    {
+      "id": "lesson7-perfect-haben-23",
+      "topic_id": "perfect_haben",
+      "lemma": "treffen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Wir haben Freunde ___. Wähle das Partizip II.",
+      "answer": "getroffen",
+      "options": [
+        "getrefft",
+        "getroffen",
+        "treffen"
+      ],
+      "instruction_de": "Wähle das richtige Partizip II.",
+      "instruction_ru": "Выберите правильную форму Partizip II."
+    },
+    {
+      "id": "lesson7-perfect-haben-24",
+      "topic_id": "perfect_haben",
+      "lemma": "grillen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Am Sonntag haben wir ___. Wähle das Partizip II.",
+      "answer": "gegrillt",
+      "options": [
+        "gegrillen",
+        "gegrillt",
+        "grillt"
+      ],
+      "instruction_de": "Wähle das richtige Partizip II.",
+      "instruction_ru": "Выберите правильную форму Partizip II."
+    },
+    {
+      "id": "lesson7-perfect-haben-25",
+      "topic_id": "perfect_haben",
+      "lemma": "telefonieren",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Sie hat mit dem Arzt ___. Wähle das Partizip II.",
+      "answer": "telefoniert",
+      "options": [
+        "getelefoniert",
+        "telefoniert",
+        "telefonieren"
+      ],
+      "instruction_de": "Wähle das richtige Partizip II.",
+      "instruction_ru": "Выберите правильную форму Partizip II."
+    },
+    {
+      "id": "lesson7-perfect-haben-26",
+      "topic_id": "perfect_haben",
+      "lemma": "fotografieren",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Er hat das Schwimmbad ___. Wähle das Partizip II.",
+      "answer": "fotografiert",
+      "options": [
+        "gefotografiert",
+        "fotografiert",
+        "fotografieren"
+      ],
+      "instruction_de": "Wähle das richtige Partizip II.",
+      "instruction_ru": "Выберите правильную форму Partizip II."
+    },
+    {
+      "id": "lesson7-perfect-haben-27",
+      "topic_id": "perfect_haben",
+      "lemma": "vergessen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Ich habe das Buch ___. Wähle das Partizip II.",
+      "answer": "vergessen",
+      "options": [
+        "gevergessen",
+        "vergessen",
+        "vergesst"
+      ],
+      "instruction_de": "Wähle das richtige Partizip II.",
+      "instruction_ru": "Выберите правильную форму Partizip II."
+    },
+    {
+      "id": "lesson7-perfect-haben-28",
+      "topic_id": "perfect_haben",
+      "lemma": "schmecken",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Das Essen hat gut ___. Wähle das Partizip II.",
+      "answer": "geschmeckt",
+      "options": [
+        "geschmecken",
+        "geschmeckt",
+        "schmeckt"
+      ],
+      "instruction_de": "Wähle das richtige Partizip II.",
+      "instruction_ru": "Выберите правильную форму Partizip II."
+    },
+    {
+      "id": "lesson7-perfect-haben-29",
+      "topic_id": "perfect_haben",
+      "lemma": "wecken",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Der Vater hat das Kind ___. Wähle das Partizip II.",
+      "answer": "geweckt",
+      "options": [
+        "gewecken",
+        "geweckt",
+        "weckt"
+      ],
+      "instruction_de": "Wähle das richtige Partizip II.",
+      "instruction_ru": "Выберите правильную форму Partizip II."
+    },
+    {
+      "id": "lesson7-perfect-haben-30",
+      "topic_id": "perfect_haben",
+      "lemma": "reiten",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Lara hat am Samstag ___. Wähle das Partizip II.",
+      "answer": "geritten",
+      "options": [
+        "gereitet",
+        "geritten",
+        "reiten"
+      ],
+      "instruction_de": "Wähle das richtige Partizip II.",
+      "instruction_ru": "Выберите правильную форму Partizip II."
+    },
+    {
+      "id": "lesson7-perfect-haben-31",
+      "topic_id": "perfect_haben",
+      "lemma": "meinen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Das habe ich nicht so ___. Wähle das Partizip II.",
+      "answer": "gemeint",
+      "options": [
+        "gemeinen",
+        "gemeint",
+        "meint"
+      ],
+      "instruction_de": "Wähle das richtige Partizip II.",
+      "instruction_ru": "Выберите правильную форму Partizip II."
+    },
+    {
+      "id": "lesson7-perfect-haben-32",
+      "topic_id": "perfect_haben",
+      "lemma": "sammeln",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Tim hat Fotos ___. Wähle das Partizip II.",
+      "answer": "gesammelt",
+      "options": [
+        "gesammeln",
+        "gesammelt",
+        "sammelt"
+      ],
+      "instruction_de": "Wähle das richtige Partizip II.",
+      "instruction_ru": "Выберите правильную форму Partizip II."
+    },
+    {
+      "id": "lesson7-perfect-sein-1",
+      "topic_id": "perfect_sein",
+      "lemma": "fahren",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Wir ___ nach Berlin gefahren.",
+      "answer": "sind",
+      "options": [
+        "haben",
+        "sind",
+        "seid"
+      ],
+      "instruction_de": "Wähle die richtige Form von sein.",
+      "instruction_ru": "Выберите правильную форму глагола sein."
+    },
+    {
+      "id": "lesson7-perfect-sein-2",
+      "topic_id": "perfect_sein",
+      "lemma": "losfahren",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Der Bus ___ pünktlich losgefahren.",
+      "answer": "ist",
+      "options": [
+        "hat",
+        "ist",
+        "sind"
+      ],
+      "instruction_de": "Wähle die richtige Form von sein.",
+      "instruction_ru": "Выберите правильную форму глагола sein."
+    },
+    {
+      "id": "lesson7-perfect-sein-3",
+      "topic_id": "perfect_sein",
+      "lemma": "zurückkommen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Mira ___ am Sonntag zurückgekommen.",
+      "answer": "ist",
+      "options": [
+        "hat",
+        "ist",
+        "sind"
+      ],
+      "instruction_de": "Wähle die richtige Form von sein.",
+      "instruction_ru": "Выберите правильную форму глагола sein."
+    },
+    {
+      "id": "lesson7-perfect-sein-4",
+      "topic_id": "perfect_sein",
+      "lemma": "mitkommen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Ihr ___ gestern mitgekommen.",
+      "answer": "seid",
+      "options": [
+        "habt",
+        "seid",
+        "sind"
+      ],
+      "instruction_de": "Wähle die richtige Form von sein.",
+      "instruction_ru": "Выберите правильную форму глагола sein."
+    },
+    {
+      "id": "lesson7-perfect-sein-5",
+      "topic_id": "perfect_sein",
+      "lemma": "fahren",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Ich ___ mit dem Fahrrad gefahren.",
+      "answer": "bin",
+      "options": [
+        "habe",
+        "bin",
+        "ist"
+      ],
+      "instruction_de": "Wähle die richtige Form von sein.",
+      "instruction_ru": "Выберите правильную форму глагола sein."
+    },
+    {
+      "id": "lesson7-perfect-sein-6",
+      "topic_id": "perfect_sein",
+      "lemma": "losfahren",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Du ___ früh losgefahren.",
+      "answer": "bist",
+      "options": [
+        "hast",
+        "bist",
+        "seid"
+      ],
+      "instruction_de": "Wähle die richtige Form von sein.",
+      "instruction_ru": "Выберите правильную форму глагола sein."
+    },
+    {
+      "id": "lesson7-perfect-sein-7",
+      "topic_id": "perfect_sein",
+      "lemma": "zurückkommen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Wir ___ spät zurückgekommen.",
+      "answer": "sind",
+      "options": [
+        "haben",
+        "seid",
+        "sind"
+      ],
+      "instruction_de": "Wähle die richtige Form von sein.",
+      "instruction_ru": "Выберите правильную форму глагола sein."
+    },
+    {
+      "id": "lesson7-perfect-sein-8",
+      "topic_id": "perfect_sein",
+      "lemma": "mitkommen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Die Kinder ___ ins Schwimmbad mitgekommen.",
+      "answer": "sind",
+      "options": [
+        "haben",
+        "ist",
+        "sind"
+      ],
+      "instruction_de": "Wähle die richtige Form von sein.",
+      "instruction_ru": "Выберите правильную форму глагола sein."
+    },
+    {
+      "id": "lesson7-perfect-sein-9",
+      "topic_id": "perfect_sein",
+      "lemma": "fahren",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Wir ___ nach Berlin gefahren. Wähle das Hilfsverb.",
+      "answer": "sind",
+      "options": [
+        "haben",
+        "sind",
+        "seid"
+      ],
+      "instruction_de": "Wähle die richtige Form von sein.",
+      "instruction_ru": "Выберите правильную форму глагола sein."
+    },
+    {
+      "id": "lesson7-perfect-sein-10",
+      "topic_id": "perfect_sein",
+      "lemma": "losfahren",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Der Bus ___ pünktlich losgefahren. Wähle das Hilfsverb.",
+      "answer": "ist",
+      "options": [
+        "hat",
+        "ist",
+        "sind"
+      ],
+      "instruction_de": "Wähle die richtige Form von sein.",
+      "instruction_ru": "Выберите правильную форму глагола sein."
+    },
+    {
+      "id": "lesson7-perfect-sein-11",
+      "topic_id": "perfect_sein",
+      "lemma": "zurückkommen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Mira ___ am Sonntag zurückgekommen. Wähle das Hilfsverb.",
+      "answer": "ist",
+      "options": [
+        "hat",
+        "ist",
+        "sind"
+      ],
+      "instruction_de": "Wähle die richtige Form von sein.",
+      "instruction_ru": "Выберите правильную форму глагола sein."
+    },
+    {
+      "id": "lesson7-perfect-sein-12",
+      "topic_id": "perfect_sein",
+      "lemma": "mitkommen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Ihr ___ gestern mitgekommen. Wähle das Hilfsverb.",
+      "answer": "seid",
+      "options": [
+        "habt",
+        "seid",
+        "sind"
+      ],
+      "instruction_de": "Wähle die richtige Form von sein.",
+      "instruction_ru": "Выберите правильную форму глагола sein."
+    },
+    {
+      "id": "lesson7-perfect-sein-13",
+      "topic_id": "perfect_sein",
+      "lemma": "fahren",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Ich ___ mit dem Fahrrad gefahren. Wähle das Hilfsverb.",
+      "answer": "bin",
+      "options": [
+        "habe",
+        "bin",
+        "ist"
+      ],
+      "instruction_de": "Wähle die richtige Form von sein.",
+      "instruction_ru": "Выберите правильную форму глагола sein."
+    },
+    {
+      "id": "lesson7-perfect-sein-14",
+      "topic_id": "perfect_sein",
+      "lemma": "losfahren",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Du ___ früh losgefahren. Wähle das Hilfsverb.",
+      "answer": "bist",
+      "options": [
+        "hast",
+        "bist",
+        "seid"
+      ],
+      "instruction_de": "Wähle die richtige Form von sein.",
+      "instruction_ru": "Выберите правильную форму глагола sein."
+    },
+    {
+      "id": "lesson7-perfect-sein-15",
+      "topic_id": "perfect_sein",
+      "lemma": "zurückkommen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Wir ___ spät zurückgekommen. Wähle das Hilfsverb.",
+      "answer": "sind",
+      "options": [
+        "haben",
+        "seid",
+        "sind"
+      ],
+      "instruction_de": "Wähle die richtige Form von sein.",
+      "instruction_ru": "Выберите правильную форму глагола sein."
+    },
+    {
+      "id": "lesson7-perfect-sein-16",
+      "topic_id": "perfect_sein",
+      "lemma": "mitkommen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Die Kinder ___ ins Schwimmbad mitgekommen. Wähle das Hilfsverb.",
+      "answer": "sind",
+      "options": [
+        "haben",
+        "ist",
+        "sind"
+      ],
+      "instruction_de": "Wähle die richtige Form von sein.",
+      "instruction_ru": "Выберите правильную форму глагола sein."
+    }
   ]
 }
