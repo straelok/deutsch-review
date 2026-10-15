@@ -84,125 +84,130 @@ class _SettingsPageState extends State<SettingsPage> {
             ),
         ],
       ),
-      body: settings == null
-          ? const Center(child: CircularProgressIndicator())
-          : ListView(
-              padding: const EdgeInsets.all(24),
-              children: [
-                Text(
-                  s.choose(
-                    'Änderungen werden automatisch gespeichert.',
-                    'Изменения сохраняются автоматически.',
+      body: SafeArea(
+        key: const Key('settings-safe-area'),
+        top: false,
+        minimum: const EdgeInsets.only(bottom: 16),
+        child: settings == null
+            ? const Center(child: CircularProgressIndicator())
+            : ListView(
+                padding: const EdgeInsets.fromLTRB(24, 24, 24, 32),
+                children: [
+                  Text(
+                    s.choose(
+                      'Änderungen werden automatisch gespeichert.',
+                      'Изменения сохраняются автоматически.',
+                    ),
+                    style: Theme.of(context).textTheme.bodySmall,
                   ),
-                  style: Theme.of(context).textTheme.bodySmall,
-                ),
-                const SizedBox(height: 16),
-                Text(
-                  s.choose('Tagesplan', 'План занятий'),
-                  style: Theme.of(context).textTheme.titleLarge,
-                ),
-                const Divider(height: 32),
-                _problemWordWeight(settings),
-                const Divider(height: 32),
-                _lessonGroup(
-                  title: s.toGermanCategory,
-                  lessons: settings.toGermanLessons,
-                  tasks: settings.toGermanTasks,
-                  onLessons: (value) => _update(
-                    settings.copyWith(toGermanLessons: value),
+                  const SizedBox(height: 16),
+                  Text(
+                    s.choose('Tagesplan', 'План занятий'),
+                    style: Theme.of(context).textTheme.titleLarge,
                   ),
-                  onTasks: (value) => _update(
-                    settings.copyWith(toGermanTasks: value),
-                  ),
-                ),
-                _lessonGroup(
-                  title: s.toRussianCategory,
-                  lessons: settings.toRussianLessons,
-                  tasks: settings.toRussianTasks,
-                  onLessons: (value) => _update(
-                    settings.copyWith(toRussianLessons: value),
-                  ),
-                  onTasks: (value) => _update(
-                    settings.copyWith(toRussianTasks: value),
-                  ),
-                ),
-                _lessonGroup(
-                  title: s.numbersCategory,
-                  lessons: settings.numberLessons,
-                  tasks: settings.numberTasks,
-                  onLessons: (value) => _update(
-                    settings.copyWith(numberLessons: value),
-                  ),
-                  onTasks: (value) => _update(
-                    settings.copyWith(numberTasks: value),
-                  ),
-                ),
-                _lessonGroup(
-                  title: s.grammarCategory,
-                  lessons: settings.grammarLessons,
-                  tasks: settings.grammarTasks,
-                  onLessons: (value) => _update(
-                    settings.copyWith(grammarLessons: value),
-                  ),
-                  onTasks: (value) => _update(
-                    settings.copyWith(grammarTasks: value),
-                  ),
-                ),
-                const SizedBox(height: 16),
-                Text(
-                  s.remindersTitle,
-                  style: Theme.of(context).textTheme.titleLarge,
-                ),
-                const SizedBox(height: 8),
-                SwitchListTile(
-                  key: const Key('reminders-enabled'),
-                  contentPadding: EdgeInsets.zero,
-                  title: Text(s.choose(
-                    'Benachrichtigungen verwenden',
-                    'Использовать уведомления',
-                  )),
-                  subtitle: widget.reminders == null
-                      ? Text(s.choose(
-                          'Benachrichtigungen werden derzeit nur auf Android unterstützt.',
-                          'Уведомления пока поддерживаются только на Android.',
-                        ))
-                      : null,
-                  value: settings.remindersEnabled,
-                  onChanged: (value) => _update(
-                    settings.copyWith(remindersEnabled: value),
-                    refreshReminders: true,
-                  ),
-                ),
-                if (settings.remindersEnabled) ...[
-                  ...settings.reminderMinutes.indexed.map(
-                    (entry) => ListTile(
-                      contentPadding: EdgeInsets.zero,
-                      leading: const Icon(Icons.schedule_outlined),
-                      title: Text(_formatTime(entry.$2)),
-                      onTap: () => _changeTime(entry.$1),
-                      trailing: IconButton(
-                        tooltip: s.choose('Entfernen', 'Удалить'),
-                        onPressed: () => _removeTime(entry.$1),
-                        icon: const Icon(Icons.delete_outline),
-                      ),
+                  const Divider(height: 32),
+                  _problemWordWeight(settings),
+                  const Divider(height: 32),
+                  _lessonGroup(
+                    title: s.toGermanCategory,
+                    lessons: settings.toGermanLessons,
+                    tasks: settings.toGermanTasks,
+                    onLessons: (value) => _update(
+                      settings.copyWith(toGermanLessons: value),
+                    ),
+                    onTasks: (value) => _update(
+                      settings.copyWith(toGermanTasks: value),
                     ),
                   ),
-                  if (settings.reminderMinutes.length < 5)
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: TextButton.icon(
-                        key: const Key('add-reminder-time'),
-                        onPressed: _addTime,
-                        icon: const Icon(Icons.add),
-                        label: Text(s.choose(
-                          'Erinnerungszeit hinzufügen',
-                          'Добавить время напоминания',
-                        )),
+                  _lessonGroup(
+                    title: s.toRussianCategory,
+                    lessons: settings.toRussianLessons,
+                    tasks: settings.toRussianTasks,
+                    onLessons: (value) => _update(
+                      settings.copyWith(toRussianLessons: value),
+                    ),
+                    onTasks: (value) => _update(
+                      settings.copyWith(toRussianTasks: value),
+                    ),
+                  ),
+                  _lessonGroup(
+                    title: s.numbersCategory,
+                    lessons: settings.numberLessons,
+                    tasks: settings.numberTasks,
+                    onLessons: (value) => _update(
+                      settings.copyWith(numberLessons: value),
+                    ),
+                    onTasks: (value) => _update(
+                      settings.copyWith(numberTasks: value),
+                    ),
+                  ),
+                  _lessonGroup(
+                    title: s.grammarCategory,
+                    lessons: settings.grammarLessons,
+                    tasks: settings.grammarTasks,
+                    onLessons: (value) => _update(
+                      settings.copyWith(grammarLessons: value),
+                    ),
+                    onTasks: (value) => _update(
+                      settings.copyWith(grammarTasks: value),
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                  Text(
+                    s.remindersTitle,
+                    style: Theme.of(context).textTheme.titleLarge,
+                  ),
+                  const SizedBox(height: 8),
+                  SwitchListTile(
+                    key: const Key('reminders-enabled'),
+                    contentPadding: EdgeInsets.zero,
+                    title: Text(s.choose(
+                      'Benachrichtigungen verwenden',
+                      'Использовать уведомления',
+                    )),
+                    subtitle: widget.reminders == null
+                        ? Text(s.choose(
+                            'Benachrichtigungen werden derzeit nur auf Android unterstützt.',
+                            'Уведомления пока поддерживаются только на Android.',
+                          ))
+                        : null,
+                    value: settings.remindersEnabled,
+                    onChanged: (value) => _update(
+                      settings.copyWith(remindersEnabled: value),
+                      refreshReminders: true,
+                    ),
+                  ),
+                  if (settings.remindersEnabled) ...[
+                    ...settings.reminderMinutes.indexed.map(
+                      (entry) => ListTile(
+                        contentPadding: EdgeInsets.zero,
+                        leading: const Icon(Icons.schedule_outlined),
+                        title: Text(_formatTime(entry.$2)),
+                        onTap: () => _changeTime(entry.$1),
+                        trailing: IconButton(
+                          tooltip: s.choose('Entfernen', 'Удалить'),
+                          onPressed: () => _removeTime(entry.$1),
+                          icon: const Icon(Icons.delete_outline),
+                        ),
                       ),
                     ),
+                    if (settings.reminderMinutes.length < 5)
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: TextButton.icon(
+                          key: const Key('add-reminder-time'),
+                          onPressed: _addTime,
+                          icon: const Icon(Icons.add),
+                          label: Text(s.choose(
+                            'Erinnerungszeit hinzufügen',
+                            'Добавить время напоминания',
+                          )),
+                        ),
+                      ),
+                  ],
                 ],
-              ],
-            ),
+              ),
+      ),
     );
   }
 

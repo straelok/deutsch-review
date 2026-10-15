@@ -32,6 +32,7 @@ void main() {
     expect(find.text('0 von 8 Sitzungen abgeschlossen'), findsOneWidget);
     expect(find.text('Wörter auf Deutsch · Übung 1'), findsNothing);
     await _expandCategory(tester, 'vocabulary-to-german');
+    expect(find.text('Standardmodus'), findsOneWidget);
     expect(
       find.byKey(
         const Key('session-category-action-vocabulary-to-german'),
@@ -285,6 +286,54 @@ void main() {
     expect(regular, findsOneWidget);
   });
 
+  testWidgets('shows each marathon inside its translation direction', (
+    tester,
+  ) async {
+    final database = AppDatabase.inMemory();
+    addTearDown(database.close);
+
+    await tester.pumpWidget(_app(database));
+    await tester.pumpAndSettle();
+
+    await _expandCategory(tester, 'vocabulary-to-german');
+    expect(
+      find.byKey(const Key('open-marathon-marathon-to-german')),
+      findsOneWidget,
+    );
+    expect(
+      find.byKey(const Key('open-marathon-marathon-to-russian')),
+      findsNothing,
+    );
+
+    final toGermanToggle =
+        find.byKey(const Key('toggle-lesson-group-to-german'));
+    await tester.ensureVisible(toGermanToggle);
+    await tester.pumpAndSettle();
+    await tester.tap(toGermanToggle);
+    await tester.pumpAndSettle();
+    await _expandCategory(tester, 'vocabulary-to-russian');
+    expect(
+      find.byKey(const Key('open-marathon-marathon-to-russian')),
+      findsOneWidget,
+    );
+    expect(
+      find.byKey(const Key('open-marathon-marathon-to-german')),
+      findsNothing,
+    );
+
+    final toRussianToggle =
+        find.byKey(const Key('toggle-lesson-group-to-russian'));
+    await tester.ensureVisible(toRussianToggle);
+    await tester.pumpAndSettle();
+    await tester.tap(toRussianToggle);
+    await tester.pumpAndSettle();
+    await _expandCategory(tester, 'numbers');
+    expect(find.byKey(const Key('open-marathon-marathon-to-german')),
+        findsNothing);
+    expect(find.byKey(const Key('open-marathon-marathon-to-russian')),
+        findsNothing);
+  });
+
   testWidgets('lesson groups are collapsed and visibility toggles are removed',
       (
     tester,
@@ -297,9 +346,24 @@ void main() {
     expect(find.text('Wichtige Wörter'), findsNothing);
     expect(find.byKey(const Key('lesson-group-to-german')), findsOneWidget);
     expect(find.byKey(const Key('lesson-group-to-russian')), findsOneWidget);
+    expect(
+      find.byKey(
+        const Key('session-category-action-vocabulary-to-german'),
+      ),
+      findsNothing,
+    );
+
+    await _expandCategory(tester, 'vocabulary-to-german');
+    expect(
+      find.byKey(
+        const Key('session-category-action-vocabulary-to-german'),
+      ),
+      findsOneWidget,
+    );
 
     await tester.tap(find.byKey(const Key('app-settings')));
     await tester.pumpAndSettle();
+    expect(find.byKey(const Key('settings-safe-area')), findsOneWidget);
     expect(find.byKey(const Key('include-important-lessons')), findsNothing);
     expect(
       find.byKey(const Key('include-favorite-grammar-lessons')),
@@ -1051,6 +1115,7 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.text('8 von 8 Sitzungen abgeschlossen'), findsOneWidget);
+    await _expandCategory(tester, 'vocabulary-to-german');
     await tester.scrollUntilVisible(
       find.byKey(const Key('create-extra-session')),
       300,
@@ -1062,7 +1127,7 @@ void main() {
     expect(find.byKey(const Key('practice-answer')), findsOneWidget);
   });
 
-  testWidgets('starts the next lesson from its category button', (
+  testWidgets('starts the next lesson from its lesson card', (
     tester,
   ) async {
     final database = AppDatabase.inMemory();
@@ -1092,7 +1157,7 @@ void main() {
     expect(find.byKey(const Key('practice-answer')), findsOneWidget);
   });
 
-  testWidgets('continues an unfinished lesson from its category header', (
+  testWidgets('continues an unfinished lesson from its lesson card', (
     tester,
   ) async {
     final database = AppDatabase.inMemory();
@@ -1465,10 +1530,13 @@ Future<void> _expandCategory(WidgetTester tester, String category) async {
     _ => null,
   };
   if (group != null) {
-    final toggle = find.byKey(Key('toggle-lesson-group-$group'));
-    await tester.scrollUntilVisible(toggle, 300);
-    await tester.tap(toggle);
-    await tester.pumpAndSettle();
+    final content = find.byKey(Key('session-category-progress-$category'));
+    if (content.evaluate().isEmpty) {
+      final toggle = find.byKey(Key('toggle-lesson-group-$group'));
+      await tester.scrollUntilVisible(toggle, 300);
+      await tester.tap(toggle);
+      await tester.pumpAndSettle();
+    }
   }
   final action = find.byKey(Key('session-category-action-$category'));
   if (action.evaluate().isNotEmpty) {

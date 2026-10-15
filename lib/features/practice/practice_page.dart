@@ -551,14 +551,28 @@ class _PracticePageState extends State<PracticePage> {
         const SizedBox(height: 16),
         _lessonGroup(
           group: _LessonGroup.toGerman,
-          kind: DailySessionKind.vocabularyToGerman,
           icon: Icons.arrow_forward,
           title: s.toGermanCategory,
-          sessions: [...toGermanSessions, ...extraToGerman],
-          canAdd: toGermanComplete || toGermanSessions.isEmpty,
-          addKey: const Key('create-extra-session'),
-          onAdd: () => _createExtraSession(DailySessionKind.vocabularyToGerman),
+          sessions: [
+            ...toGermanSessions,
+            ...extraToGerman,
+            ...easyToGerman,
+            ...importantToGerman,
+            ...importantEasyToGerman,
+            if (marathonToGerman != null) marathonToGerman,
+          ],
           children: [
+            _sessionCategory(
+              kind: DailySessionKind.vocabularyToGerman,
+              icon: Icons.arrow_forward,
+              title: s.standardMode,
+              sessions: [...toGermanSessions, ...extraToGerman],
+              canAdd: toGermanComplete || toGermanSessions.isEmpty,
+              addKey: const Key('create-extra-session'),
+              onAdd: () =>
+                  _createExtraSession(DailySessionKind.vocabularyToGerman),
+            ),
+            const SizedBox(height: 12),
             _sessionCategory(
               kind: DailySessionKind.easyVocabularyToGerman,
               icon: Icons.edit_note,
@@ -607,20 +621,38 @@ class _PracticePageState extends State<PracticePage> {
                 ),
               ],
             ),
+            const SizedBox(height: 12),
+            _marathonCategory(
+              kind: DailySessionKind.marathonToGerman,
+              icon: Icons.flag_outlined,
+              title: s.marathonToGermanCategory,
+              session: marathonToGerman,
+            ),
           ],
         ),
         const SizedBox(height: 16),
         _lessonGroup(
           group: _LessonGroup.toRussian,
-          kind: DailySessionKind.vocabularyToRussian,
           icon: Icons.arrow_back,
           title: s.toRussianCategory,
-          sessions: [...toRussianSessions, ...extraToRussian],
-          canAdd: toRussianComplete || toRussianSessions.isEmpty,
-          addKey: const Key('create-extra-to-russian-session'),
-          onAdd: () =>
-              _createExtraSession(DailySessionKind.vocabularyToRussian),
+          sessions: [
+            ...toRussianSessions,
+            ...extraToRussian,
+            ...importantToRussian,
+            if (marathonToRussian != null) marathonToRussian,
+          ],
           children: [
+            _sessionCategory(
+              kind: DailySessionKind.vocabularyToRussian,
+              icon: Icons.arrow_back,
+              title: s.standardMode,
+              sessions: [...toRussianSessions, ...extraToRussian],
+              canAdd: toRussianComplete || toRussianSessions.isEmpty,
+              addKey: const Key('create-extra-to-russian-session'),
+              onAdd: () =>
+                  _createExtraSession(DailySessionKind.vocabularyToRussian),
+            ),
+            const SizedBox(height: 12),
             _featuredBlock(
               key: const Key('important-to-russian-lessons-block'),
               title: s.importantWordsCategory,
@@ -643,20 +675,37 @@ class _PracticePageState extends State<PracticePage> {
                 ),
               ],
             ),
+            const SizedBox(height: 12),
+            _marathonCategory(
+              kind: DailySessionKind.marathonToRussian,
+              icon: Icons.outlined_flag,
+              title: s.marathonToRussianCategory,
+              session: marathonToRussian,
+            ),
           ],
         ),
         const SizedBox(height: 16),
         _lessonGroup(
           group: _LessonGroup.grammar,
-          kind: DailySessionKind.grammar,
           icon: Icons.school_outlined,
           title: s.grammarCategory,
-          sessions: [...grammarSessions, ...extraGrammar],
-          canAdd: grammarComplete || grammarSessions.isEmpty,
-          canStart: _availableGrammarTopics.isNotEmpty,
-          addKey: const Key('create-extra-grammar-session'),
-          onAdd: () => _createExtraSession(DailySessionKind.grammar),
+          sessions: [
+            ...grammarSessions,
+            ...extraGrammar,
+            ...favoriteGrammar,
+          ],
           children: [
+            _sessionCategory(
+              kind: DailySessionKind.grammar,
+              icon: Icons.school_outlined,
+              title: s.standardMode,
+              sessions: [...grammarSessions, ...extraGrammar],
+              canAdd: grammarComplete || grammarSessions.isEmpty,
+              canStart: _availableGrammarTopics.isNotEmpty,
+              addKey: const Key('create-extra-grammar-session'),
+              onAdd: () => _createExtraSession(DailySessionKind.grammar),
+            ),
+            const SizedBox(height: 12),
             _featuredBlock(
               key: const Key('favorite-grammar-lessons-block'),
               title: s.favoriteGrammarCategory,
@@ -683,13 +732,14 @@ class _PracticePageState extends State<PracticePage> {
         const SizedBox(height: 16),
         _lessonGroup(
           group: _LessonGroup.other,
-          kind: DailySessionKind.numbers,
           icon: Icons.grid_view_outlined,
           title: s.otherCategory,
-          sessions: [...numberSessions, ...extraNumbers],
-          canAdd: numbersComplete || numberSessions.isEmpty,
-          addKey: const Key('create-extra-number-session'),
-          onAdd: () => _createExtraSession(DailySessionKind.numbers),
+          sessions: [
+            ...numberSessions,
+            ...extraNumbers,
+            ...matchingSessions,
+            ...multipleChoiceSessions,
+          ],
           children: [
             _sessionCategory(
               kind: DailySessionKind.numbers,
@@ -736,20 +786,6 @@ class _PracticePageState extends State<PracticePage> {
                 style: Theme.of(context).textTheme.bodySmall,
               ),
             ],
-            const SizedBox(height: 12),
-            _marathonCategory(
-              kind: DailySessionKind.marathonToGerman,
-              icon: Icons.flag_outlined,
-              title: s.marathonToGermanCategory,
-              session: marathonToGerman,
-            ),
-            const SizedBox(height: 12),
-            _marathonCategory(
-              kind: DailySessionKind.marathonToRussian,
-              icon: Icons.outlined_flag,
-              title: s.marathonToRussianCategory,
-              session: marathonToRussian,
-            ),
           ],
         ),
       ],
@@ -758,41 +794,13 @@ class _PracticePageState extends State<PracticePage> {
 
   Widget _lessonGroup({
     required _LessonGroup group,
-    required DailySessionKind kind,
     required IconData icon,
     required String title,
     required List<DailySession> sessions,
-    required bool canAdd,
-    bool canStart = true,
-    required Key addKey,
-    required VoidCallback onAdd,
     required List<Widget> children,
   }) {
     final expanded = _expandedLessonGroups.contains(group);
     final completed = sessions.where((session) => session.isComplete).length;
-    final inProgress = sessions
-        .where((session) => session.status == DailySessionStatus.inProgress)
-        .firstOrNull;
-    final next = sessions
-        .where((session) => session.status == DailySessionStatus.planned)
-        .firstOrNull;
-    final actionEnabled = inProgress != null
-        ? _canOpenSession(inProgress)
-        : canAdd
-            ? canStart
-            : next != null && _canOpenSession(next);
-    final actionLabel = inProgress != null
-        ? widget.strings.continueLesson
-        : canAdd
-            ? sessions.isEmpty
-                ? widget.strings.start
-                : widget.strings.addLesson
-            : widget.strings.nextLesson;
-    final actionIcon = inProgress != null
-        ? Icons.play_arrow
-        : canAdd
-            ? Icons.add
-            : Icons.skip_next;
     final groupKey =
         group.name.replaceAll(RegExp(r'(?=[A-Z])'), '-').toLowerCase();
 
@@ -847,44 +855,12 @@ class _PracticePageState extends State<PracticePage> {
                             sessions.length,
                           ),
                           key: Key(
-                            'session-category-progress-${kind.wireName.replaceAll('_', '-')}',
+                            'lesson-group-progress-$groupKey',
                           ),
                           style: Theme.of(context).textTheme.bodySmall,
                         ),
-                        if (inProgress != null)
-                          Text(
-                            widget.strings.sessionAnswers(
-                              inProgress.answeredCount,
-                              inProgress.targetAnswers,
-                            ),
-                            style: Theme.of(context).textTheme.bodySmall,
-                          ),
                       ],
                     ),
-                  ),
-                ),
-                const SizedBox(width: 8),
-                FilledButton.tonalIcon(
-                  key: inProgress == null && canAdd
-                      ? addKey
-                      : Key(
-                          'session-category-action-${kind.wireName.replaceAll('_', '-')}',
-                        ),
-                  onPressed: actionEnabled
-                      ? () {
-                          if (inProgress != null) {
-                            _selectSession(inProgress);
-                          } else if (canAdd) {
-                            onAdd();
-                          } else if (next != null) {
-                            _selectSession(next);
-                          }
-                        }
-                      : null,
-                  icon: Icon(actionIcon, size: 18),
-                  label: Text(actionLabel),
-                  style: const ButtonStyle(
-                    visualDensity: VisualDensity.compact,
                   ),
                 ),
               ],
@@ -1142,7 +1118,7 @@ class _PracticePageState extends State<PracticePage> {
                 FilledButton.tonalIcon(
                   key: canAdd && inProgress == null
                       ? addKey
-                      : Key('session-row-action-$categoryKey'),
+                      : Key('session-category-action-$categoryKey'),
                   onPressed: actionEnabled
                       ? () {
                           if (inProgress != null) {

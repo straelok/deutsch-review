@@ -63,7 +63,7 @@ void main() {
         .where((topic) => topic.trainable)
         .map((topic) => topic.id)
         .toSet();
-    expect(trainableTopics, hasLength(25));
+    expect(trainableTopics, hasLength(29));
     expect(
       catalog.topics.any((topic) => topic.id == 'personal_pronouns'),
       isFalse,
@@ -122,6 +122,55 @@ void main() {
         hasLength(20),
       );
     }
+  });
+
+  test('covers the complete seven-lesson course through Perfekt', () async {
+    final catalog = await GrammarCatalog.load(rootBundle);
+    final topicIds = catalog.topics.map((topic) => topic.id).toSet();
+
+    expect(topicIds, {
+      'alphabet',
+      'reading_vowels',
+      'reading_consonants',
+      'reading_stress',
+      'numbers',
+      'verb_basics',
+      'infinitive_stem',
+      'regular_present',
+      'lesson1_special_verbs',
+      'sein',
+      'haben',
+      'parts_of_speech',
+      'noun_basics',
+      'articles',
+      'possessive_articles',
+      'adjectives_adverbs',
+      'prepositions',
+      'sentence_basics',
+      'yes_no_questions',
+      'w_questions',
+      'negation',
+      'cases_intro',
+      'moechten',
+      'noun_pronouns',
+      'gefallen',
+      'stem_vowel_change_present',
+      'separable_verbs_present',
+      'time_expressions',
+      'modal_verbs_koennen_wollen',
+      'perfect_haben',
+      'perfect_sein',
+    });
+    expect(catalog.exercises, hasLength(2005));
+
+    int exerciseCount(String topicId) => catalog.exercises
+        .where((exercise) => exercise.topicId == topicId)
+        .length;
+
+    expect(exerciseCount('time_expressions'), 20);
+    expect(exerciseCount('modal_verbs_koennen_wollen'), 24);
+    expect(exerciseCount('perfect_haben'), 32);
+    expect(exerciseCount('perfect_sein'), 20);
   });
 
   test('activates only learned topics with a matching active verb', () async {

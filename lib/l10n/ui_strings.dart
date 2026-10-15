@@ -31,6 +31,7 @@ final class UiStrings {
   String get numbersCategory => choose('Zahlen', 'Цифры');
   String get grammarCategory => choose('Grammatik', 'Грамматика');
   String get otherCategory => choose('Sonstiges', 'Прочее');
+  String get standardMode => choose('Standardmodus', 'Обычный режим');
   String get matchingCategory =>
       choose('Karten zuordnen', 'Соединение карточек');
   String get matchingHint => choose(

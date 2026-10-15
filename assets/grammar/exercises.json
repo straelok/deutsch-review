@@ -21605,6 +21605,74 @@
       ],
       "instruction_de": "Wähle die richtige Form von sein.",
       "instruction_ru": "Выберите правильную форму глагола sein."
+    },
+    {
+      "id": "lesson7-perfect-sein-17",
+      "topic_id": "perfect_sein",
+      "lemma": "fahren",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "Perfekt: Fahrt nach München",
+      "answer": "Wir sind nach München gefahren.",
+      "options": [
+        "Wir",
+        "sind",
+        "nach München",
+        "gefahren."
+      ],
+      "instruction_de": "Bilde einen Satz im Perfekt.",
+      "instruction_ru": "Составьте предложение в Perfekt."
+    },
+    {
+      "id": "lesson7-perfect-sein-18",
+      "topic_id": "perfect_sein",
+      "lemma": "losfahren",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "Perfekt: Abfahrt des Zuges",
+      "answer": "Der Zug ist um neun losgefahren.",
+      "options": [
+        "Der Zug",
+        "ist",
+        "um neun",
+        "losgefahren."
+      ],
+      "instruction_de": "Bilde einen Satz im Perfekt.",
+      "instruction_ru": "Составьте предложение в Perfekt."
+    },
+    {
+      "id": "lesson7-perfect-sein-19",
+      "topic_id": "perfect_sein",
+      "lemma": "zurückkommen",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "Perfekt: Rückkehr gestern",
+      "answer": "Lena ist gestern zurückgekommen.",
+      "options": [
+        "Lena",
+        "ist",
+        "gestern",
+        "zurückgekommen."
+      ],
+      "instruction_de": "Bilde einen Satz im Perfekt.",
+      "instruction_ru": "Составьте предложение в Perfekt."
+    },
+    {
+      "id": "lesson7-perfect-sein-20",
+      "topic_id": "perfect_sein",
+      "lemma": "mitkommen",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "Perfekt: Gemeinsam ins Kino",
+      "answer": "Ihr seid ins Kino mitgekommen.",
+      "options": [
+        "Ihr",
+        "seid",
+        "ins Kino",
+        "mitgekommen."
+      ],
+      "instruction_de": "Bilde einen Satz im Perfekt.",
+      "instruction_ru": "Составьте предложение в Perfekt."
     }
   ]
 }
