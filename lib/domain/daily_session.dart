@@ -28,6 +28,7 @@ enum DailySessionKind {
   grammar('grammar'),
   numbers('numbers'),
   matching('matching'),
+  importantMatching('important_matching'),
   multipleChoice('multiple_choice'),
   marathonToGerman('marathon_to_german'),
   marathonToRussian('marathon_to_russian');
@@ -52,6 +53,7 @@ enum DailySessionKind {
         importantEasyVocabularyToGerman ||
         importantVocabularyToRussian ||
         matching ||
+        importantMatching ||
         multipleChoice ||
         marathonToGerman ||
         marathonToRussian =>
@@ -70,7 +72,8 @@ enum DailySessionKind {
   bool get isImportantVocabulary => switch (this) {
         importantVocabularyToGerman ||
         importantEasyVocabularyToGerman ||
-        importantVocabularyToRussian =>
+        importantVocabularyToRussian ||
+        importantMatching =>
           true,
         _ => false,
       };

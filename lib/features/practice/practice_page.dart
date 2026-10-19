@@ -189,7 +189,8 @@ class _PracticePageState extends State<PracticePage> {
     if (_session!.kind == DailySessionKind.numbers) {
       return _withUnknownShortcut(_numberPractice());
     }
-    if (_session!.kind == DailySessionKind.matching) {
+    if (_session!.kind == DailySessionKind.matching ||
+        _session!.kind == DailySessionKind.importantMatching) {
       return _matchingPractice();
     }
     if (_session!.kind == DailySessionKind.multipleChoice) {
@@ -432,7 +433,9 @@ class _PracticePageState extends State<PracticePage> {
       DailySessionKind.favoriteGrammar =>
         _unknownGrammarAnswer(),
       DailySessionKind.numbers => _unknownNumber(),
-      DailySessionKind.matching => Future<void>.value(),
+      DailySessionKind.matching ||
+      DailySessionKind.importantMatching =>
+        Future<void>.value(),
       DailySessionKind.multipleChoice => _answerMultipleChoice(null),
       DailySessionKind.marathonToGerman ||
       DailySessionKind.marathonToRussian =>
@@ -493,6 +496,9 @@ class _PracticePageState extends State<PracticePage> {
         .toList();
     final matchingSessions = _daySessions
         .where((session) => session.kind == DailySessionKind.matching)
+        .toList();
+    final importantMatchingSessions = _daySessions
+        .where((session) => session.kind == DailySessionKind.importantMatching)
         .toList();
     final multipleChoiceSessions = _daySessions
         .where((session) => session.kind == DailySessionKind.multipleChoice)
@@ -738,6 +744,7 @@ class _PracticePageState extends State<PracticePage> {
             ...numberSessions,
             ...extraNumbers,
             ...matchingSessions,
+            ...importantMatchingSessions,
             ...multipleChoiceSessions,
           ],
           children: [
@@ -757,11 +764,11 @@ class _PracticePageState extends State<PracticePage> {
               title: s.matchingCategory,
               sessions: matchingSessions,
               canAdd: true,
-              canStart: _matchingCandidates().length >= 24,
+              canStart: _matchingCandidates().length >= 2,
               addKey: const Key('create-matching-session'),
               onAdd: () => _createExtraSession(DailySessionKind.matching),
             ),
-            if (_matchingCandidates().length < 24) ...[
+            if (_matchingCandidates().length < 2) ...[
               const SizedBox(height: 8),
               Text(
                 s.matchingNeedsWords,
@@ -769,17 +776,44 @@ class _PracticePageState extends State<PracticePage> {
               ),
             ],
             const SizedBox(height: 12),
+            _featuredBlock(
+              key: const Key('important-matching-lessons-block'),
+              title: s.importantWordsCategory,
+              icon: Icons.star,
+              children: [
+                _sessionCategory(
+                  kind: DailySessionKind.importantMatching,
+                  icon: Icons.compare_arrows,
+                  title: s.importantMatchingCategory,
+                  sessions: importantMatchingSessions,
+                  canAdd: true,
+                  canStart:
+                      _matchingCandidates(importantOnly: true).length >= 2,
+                  addKey: const Key('create-important-matching-session'),
+                  onAdd: () =>
+                      _createExtraSession(DailySessionKind.importantMatching),
+                ),
+                if (_matchingCandidates(importantOnly: true).length < 2) ...[
+                  const SizedBox(height: 8),
+                  Text(
+                    s.importantMatchingNeedsWords,
+                    style: Theme.of(context).textTheme.bodySmall,
+                  ),
+                ],
+              ],
+            ),
+            const SizedBox(height: 12),
             _sessionCategory(
               kind: DailySessionKind.multipleChoice,
               icon: Icons.checklist_outlined,
               title: s.multipleChoiceCategory,
               sessions: multipleChoiceSessions,
               canAdd: true,
-              canStart: _matchingCandidates().length >= 20,
+              canStart: _matchingCandidates().length >= 4,
               addKey: const Key('create-multiple-choice-session'),
               onAdd: () => _createExtraSession(DailySessionKind.multipleChoice),
             ),
-            if (_matchingCandidates().length < 20) ...[
+            if (_matchingCandidates().length < 4) ...[
               const SizedBox(height: 8),
               Text(
                 s.multipleChoiceNeedsWords,
@@ -1150,6 +1184,8 @@ class _PracticePageState extends State<PracticePage> {
         DailySessionKind.favoriteGrammar =>
           _favoriteGrammarTopics.isNotEmpty || session.queueItemIds.isNotEmpty,
         DailySessionKind.numbers => true,
+        DailySessionKind.importantMatching => session.queueItemIds.isNotEmpty ||
+            _matchingCandidates(importantOnly: true).length >= 2,
         DailySessionKind.importantVocabularyToGerman ||
         DailySessionKind.importantEasyVocabularyToGerman ||
         DailySessionKind.importantVocabularyToRussian =>
@@ -1537,11 +1573,12 @@ class _PracticePageState extends State<PracticePage> {
       .map((value) => value.trim())
       .firstWhere((value) => value.isNotEmpty, orElse: () => '—');
 
-  List<LearningItem> _matchingCandidates() {
+  List<LearningItem> _matchingCandidates({bool importantOnly = false}) {
     final german = <String>{};
     final russian = <String>{};
     final result = <LearningItem>[];
     for (final item in _activeItems) {
+      if (importantOnly && !item.isImportant) continue;
       final germanKey = normalizePracticeAnswer(
         learningItemGermanWithPlural(item),
       ).toLowerCase();
@@ -1636,7 +1673,9 @@ class _PracticePageState extends State<PracticePage> {
   }
 
   void _prepareMatchingBoard(List<LearningItem> remaining) {
-    _matchingBoard = remaining.take(8).toList(growable: false);
+    _matchingBoard = remaining
+        .take(widget.appSettings.matchingPairsPerBoard)
+        .toList(growable: false);
     _matchingRussianOrder = _matchingBoard.map((item) => item.id).toList()
       ..shuffle(_random);
     _matchedItemIds = <String>{};
@@ -2226,7 +2265,8 @@ class _PracticePageState extends State<PracticePage> {
       await _openNumberSession(session);
       return;
     }
-    if (session.kind == DailySessionKind.matching) {
+    if (session.kind == DailySessionKind.matching ||
+        session.kind == DailySessionKind.importantMatching) {
       await _openMatchingSession(session);
       return;
     }
@@ -2235,8 +2275,7 @@ class _PracticePageState extends State<PracticePage> {
       return;
     }
     var queue = _itemsForIds(session.queueItemIds);
-    if (session.status == DailySessionStatus.planned ||
-        queue.length != session.remaining) {
+    if (session.status == DailySessionStatus.planned) {
       queue = await _buildQueue(
         length: session.remaining,
         previousItemId: session.lastItemId,
@@ -2244,6 +2283,12 @@ class _PracticePageState extends State<PracticePage> {
             ? _activeItems.where((item) => item.isImportant).toList()
             : null,
       );
+      session = await widget.sessions.start(
+        id: session.id,
+        queueItemIds: queue.map((item) => item.id).toList(),
+        now: DateTime.now().toUtc(),
+      );
+    } else if (queue.isNotEmpty && queue.length != session.remaining) {
       session = await widget.sessions.start(
         id: session.id,
         queueItemIds: queue.map((item) => item.id).toList(),
@@ -2278,14 +2323,21 @@ class _PracticePageState extends State<PracticePage> {
 
   Future<void> _openMatchingSession(DailySession session) async {
     var queue = _itemsForIds(session.queueItemIds);
-    if (session.status == DailySessionStatus.planned ||
-        queue.length != session.remaining) {
-      final candidates = _matchingCandidates()..shuffle(_random);
+    if (session.status == DailySessionStatus.planned) {
+      final candidates = _matchingCandidates(
+        importantOnly: session.kind == DailySessionKind.importantMatching,
+      )..shuffle(_random);
       queue = candidates.take(24).toList(growable: false);
-      if (queue.length < 24) {
+      if (queue.length < 2) {
         await _load();
         return;
       }
+      session = await widget.sessions.start(
+        id: session.id,
+        queueItemIds: queue.map((item) => item.id).toList(growable: false),
+        now: DateTime.now().toUtc(),
+      );
+    } else if (queue.isNotEmpty && queue.length != session.remaining) {
       session = await widget.sessions.start(
         id: session.id,
         queueItemIds: queue.map((item) => item.id).toList(growable: false),
@@ -2305,14 +2357,19 @@ class _PracticePageState extends State<PracticePage> {
 
   Future<void> _openMultipleChoiceSession(DailySession session) async {
     var queue = _itemsForIds(session.queueItemIds);
-    if (session.status == DailySessionStatus.planned ||
-        queue.length != session.remaining) {
+    if (session.status == DailySessionStatus.planned) {
       final candidates = _matchingCandidates()..shuffle(_random);
       queue = candidates.take(20).toList(growable: false);
-      if (queue.length < 20) {
+      if (queue.length < 4) {
         await _load();
         return;
       }
+      session = await widget.sessions.start(
+        id: session.id,
+        queueItemIds: queue.map((item) => item.id).toList(growable: false),
+        now: DateTime.now().toUtc(),
+      );
+    } else if (queue.isNotEmpty && queue.length != session.remaining) {
       session = await widget.sessions.start(
         id: session.id,
         queueItemIds: queue.map((item) => item.id).toList(growable: false),
@@ -2544,7 +2601,12 @@ class _PracticePageState extends State<PracticePage> {
 
   List<LearningItem> _itemsForIds(List<String> ids) {
     final byId = {for (final item in _activeItems) item.id: item};
-    return ids.map((id) => byId[id]).whereType<LearningItem>().toList();
+    final seen = <String>{};
+    return ids
+        .where(seen.add)
+        .map((id) => byId[id])
+        .whereType<LearningItem>()
+        .toList();
   }
 
   Future<List<LearningItem>> _buildQueue({
@@ -2554,7 +2616,7 @@ class _PracticePageState extends State<PracticePage> {
   }) async {
     final outcomes = await widget.practice.recentOutcomes();
     final candidates = items ?? _activeItems;
-    final ids = buildWeightedQueue(
+    final ids = buildWeightedUniqueQueue(
       itemIds: candidates.map((item) => item.id).toList(growable: false),
       recentOutcomes: outcomes,
       length: length,

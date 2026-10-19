@@ -152,6 +152,7 @@ class _SettingsPageState extends State<SettingsPage> {
                       settings.copyWith(grammarTasks: value),
                     ),
                   ),
+                  _matchingDifficulty(settings),
                   const SizedBox(height: 16),
                   Text(
                     s.remindersTitle,
@@ -306,7 +307,41 @@ class _SettingsPageState extends State<SettingsPage> {
     );
   }
 
+  Widget _matchingDifficulty(AppSettings settings) {
+    final s = widget.strings;
+    return Card(
+      key: const Key('matching-difficulty-settings'),
+      margin: const EdgeInsets.only(bottom: 12),
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Text(
+              s.matchingCategory,
+              style: Theme.of(context).textTheme.titleMedium,
+            ),
+            const SizedBox(height: 6),
+            Text(s.matchingBoardSizeHint),
+            const SizedBox(height: 8),
+            _counter(
+              key: const Key('matching-pairs-per-board'),
+              label: s.matchingBoardSize,
+              value: settings.matchingPairsPerBoard,
+              min: 2,
+              max: 12,
+              onChanged: (value) => _update(
+                settings.copyWith(matchingPairsPerBoard: value),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
   Widget _counter({
+    Key? key,
     required String label,
     required int value,
     required int min,
@@ -314,6 +349,7 @@ class _SettingsPageState extends State<SettingsPage> {
     required ValueChanged<int> onChanged,
   }) =>
       Row(
+        key: key,
         children: [
           Expanded(child: Text(label)),
           IconButton(

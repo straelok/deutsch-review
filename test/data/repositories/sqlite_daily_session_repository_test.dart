@@ -59,9 +59,10 @@ void main() {
       now: now,
     ))
         .first;
+    final queue = List.generate(20, (index) => 'word-$index');
     await sessions.start(
       id: planned.id,
-      queueItemIds: List<String>.filled(20, 'word-1'),
+      queueItemIds: queue,
       now: now,
     );
 
@@ -74,7 +75,7 @@ void main() {
         correct: true,
         attemptedAt: now,
       ),
-      remainingQueueItemIds: List<String>.filled(19, 'word-1'),
+      remainingQueueItemIds: queue.skip(1).toList(),
       now: now,
     );
 
@@ -94,7 +95,7 @@ void main() {
           correct: true,
           attemptedAt: now.add(Duration(minutes: index)),
         ),
-        remainingQueueItemIds: List<String>.filled(20 - index, 'word-1'),
+        remainingQueueItemIds: queue.skip(index).toList(),
         now: now.add(Duration(minutes: index)),
       );
     }
@@ -234,6 +235,53 @@ void main() {
       important.kind,
       DailySessionKind.importantVocabularyToGerman,
     );
+
+    final importantMatching = await repository.createExtra(
+      localDate: '2026-09-24',
+      now: now,
+      kind: DailySessionKind.importantMatching,
+    );
+    expect(importantMatching.targetAnswers, 24);
+  });
+
+  test('adjusts a lesson target to its unique queue size', () async {
+    final database = AppDatabase.inMemory();
+    addTearDown(database.close);
+    final repository = SqliteDailySessionRepository(database);
+    final now = DateTime.utc(2026, 10, 19, 10);
+    final planned = await repository.createExtra(
+      localDate: '2026-10-19',
+      now: now,
+    );
+
+    final started = await repository.start(
+      id: planned.id,
+      queueItemIds: const ['word-1', 'word-2'],
+      now: now,
+    );
+
+    expect(started.targetAnswers, 2);
+    expect(started.queueItemIds, const ['word-1', 'word-2']);
+  });
+
+  test('removes duplicate words when a lesson starts', () async {
+    final database = AppDatabase.inMemory();
+    addTearDown(database.close);
+    final repository = SqliteDailySessionRepository(database);
+    final now = DateTime.utc(2026, 10, 19, 10);
+    final planned = await repository.createExtra(
+      localDate: '2026-10-19',
+      now: now,
+    );
+
+    final started = await repository.start(
+      id: planned.id,
+      queueItemIds: const ['word-1', 'word-2', 'word-1', 'word-2'],
+      now: now,
+    );
+
+    expect(started.targetAnswers, 2);
+    expect(started.queueItemIds, const ['word-1', 'word-2']);
   });
 
   test('records a grammar task atomically with all field attempts', () async {

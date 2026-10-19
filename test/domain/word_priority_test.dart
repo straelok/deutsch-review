@@ -49,4 +49,37 @@ void main() {
       greaterThan(queue.where((id) => id == 'known').length),
     );
   });
+
+  test('builds a weighted queue without repeated words', () {
+    final queue = buildWeightedUniqueQueue(
+      itemIds: const ['a', 'b', 'c'],
+      recentOutcomes: const {},
+      length: 20,
+      random: Random(7),
+    );
+
+    expect(queue, hasLength(3));
+    expect(queue.toSet(), hasLength(3));
+  });
+
+  test('keeps priority when selecting a unique subset', () {
+    var problemSelections = 0;
+    var knownSelections = 0;
+    for (var seed = 0; seed < 200; seed++) {
+      final queue = buildWeightedUniqueQueue(
+        itemIds: const ['problem', 'known', 'neutral'],
+        recentOutcomes: {
+          'problem': List<bool>.filled(10, false),
+          'known': List<bool>.filled(10, true),
+          'neutral': const [true, false],
+        },
+        length: 1,
+        random: Random(seed),
+      );
+      if (queue.single == 'problem') problemSelections++;
+      if (queue.single == 'known') knownSelections++;
+    }
+
+    expect(problemSelections, greaterThan(knownSelections));
+  });
 }

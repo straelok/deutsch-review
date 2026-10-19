@@ -8,6 +8,7 @@ import 'package:deutsch_review/data/repositories/sqlite_daily_session_repository
 import 'package:deutsch_review/data/repositories/sqlite_practice_repository.dart';
 import 'package:deutsch_review/data/repositories/sqlite_settings_repository.dart';
 import 'package:deutsch_review/domain/app_language.dart';
+import 'package:deutsch_review/domain/app_settings.dart';
 import 'package:deutsch_review/domain/daily_session.dart';
 import 'package:deutsch_review/domain/german_numbers.dart';
 import 'package:deutsch_review/domain/grammar.dart';
@@ -225,7 +226,83 @@ void main() {
     expect(find.text('учить'), findsNothing);
   });
 
-  testWidgets('important easy lesson repeats only a marked word', (
+  testWidgets('important matching uses configured board size and unique words',
+      (
+    tester,
+  ) async {
+    final database = AppDatabase.inMemory();
+    addTearDown(database.close);
+    final repository = SqliteLearningItemRepository(database);
+    final now = DateTime.utc(2026, 10, 19, 10);
+    for (var index = 0; index < 4; index++) {
+      await repository.save(
+        LearningItem(
+          id: 'important-matching-$index',
+          type: LearningItemType.word,
+          level: 'A1.1',
+          lesson: '7',
+          topic: 'test',
+          learned: true,
+          createdAt: now,
+          updatedAt: now,
+          sourceRef: 'test',
+          content: {
+            'german': 'Deutsch$index',
+            'translation_ru': 'русский$index',
+            'important': true,
+          },
+        ),
+      );
+    }
+    await repository.save(_word());
+    await SqliteSettingsRepository(database).saveAppSettings(
+      const AppSettings(matchingPairsPerBoard: 3),
+    );
+
+    await tester.pumpWidget(_app(database));
+    await tester.pumpAndSettle();
+    await _expandCategory(tester, 'important-matching');
+    final start = find.byKey(
+      const Key('create-important-matching-session'),
+    );
+    await tester.scrollUntilVisible(start, 300, maxScrolls: 20);
+    await tester.ensureVisible(start);
+    await tester.pumpAndSettle();
+    await tester.tap(start);
+    await tester.pumpAndSettle();
+
+    bool hasKeyPrefix(Widget widget, String prefix) {
+      final key = widget.key;
+      return key is ValueKey<String> && key.value.startsWith(prefix);
+    }
+
+    expect(
+      find.byWidgetPredicate(
+        (widget) => hasKeyPrefix(widget, 'matching-german-'),
+      ),
+      findsNWidgets(3),
+    );
+    expect(
+      find.byWidgetPredicate(
+        (widget) => hasKeyPrefix(widget, 'matching-russian-'),
+      ),
+      findsNWidgets(3),
+    );
+    final session = database.connection
+        .select(
+          "SELECT target_answers, queue_json FROM daily_sessions "
+          "WHERE kind = 'important_matching'",
+        )
+        .single;
+    final queue =
+        (jsonDecode(session['queue_json'] as String) as List).cast<String>();
+    expect(session['target_answers'], 4);
+    expect(queue, hasLength(4));
+    expect(queue.toSet(), hasLength(4));
+    expect(queue.every((id) => id.startsWith('important-matching-')), isTrue);
+  });
+
+  testWidgets('important easy lesson shrinks to its unique marked words', (
     tester,
   ) async {
     final database = AppDatabase.inMemory();
@@ -254,12 +331,14 @@ void main() {
 
     final session = database.connection
         .select(
-          "SELECT answered_count, queue_json FROM daily_sessions "
+          "SELECT answered_count, target_answers, queue_json "
+          "FROM daily_sessions "
           "WHERE kind = 'important_easy_vocabulary_to_german'",
         )
         .single;
     expect(session['answered_count'], 0);
-    expect(jsonDecode(session['queue_json'] as String), hasLength(20));
+    expect(session['target_answers'], 1);
+    expect(jsonDecode(session['queue_json'] as String), ['important-word']);
   });
 
   testWidgets('shows important lessons inside the translation category', (
@@ -338,6 +417,10 @@ void main() {
       (
     tester,
   ) async {
+    tester.view.physicalSize = const Size(800, 1400);
+    tester.view.devicePixelRatio = 1;
+    addTearDown(tester.view.resetPhysicalSize);
+    addTearDown(tester.view.resetDevicePixelRatio);
     final database = AppDatabase.inMemory();
     addTearDown(database.close);
 
@@ -369,22 +452,27 @@ void main() {
       find.byKey(const Key('include-favorite-grammar-lessons')),
       findsNothing,
     );
+    final matchingCounter = find.byKey(
+      const Key('matching-pairs-per-board'),
+    );
+    await tester.ensureVisible(matchingCounter);
+    await tester.tap(
+      find.descendant(of: matchingCounter, matching: find.byIcon(Icons.add)),
+    );
+    await tester.pumpAndSettle();
     await tester.enterText(
       find.byKey(const Key('problem-word-max-weight')),
       '37',
     );
     await tester.pumpAndSettle();
     expect(find.byKey(const Key('save-settings')), findsNothing);
-    expect(find.text('Änderungen werden automatisch gespeichert.'),
-        findsOneWidget);
     await tester.pageBack();
     await tester.pumpAndSettle();
 
-    expect(
-      (await SqliteSettingsRepository(database).readAppSettings())
-          .problemWordMaxWeight,
-      37,
-    );
+    final savedSettings =
+        await SqliteSettingsRepository(database).readAppSettings();
+    expect(savedSettings.problemWordMaxWeight, 37);
+    expect(savedSettings.matchingPairsPerBoard, 9);
   });
 
   testWidgets('vocabulary lesson keeps its original remaining queue', (
@@ -591,17 +679,33 @@ void main() {
     await tester.tap(find.byKey(const Key('next-answer')));
     await tester.pumpAndSettle();
 
-    await tester.tap(find.byKey(const Key('back-to-plan')));
+    expect(find.text('Sitzung abgeschlossen'), findsOneWidget);
+    await tester.tap(find.text('Tagesplan'));
     await tester.pumpAndSettle();
-    await _expandCategory(tester, 'vocabulary-to-german');
-    expect(find.textContaining('1 von 20 Antworten'), findsOneWidget);
-    expect(find.text('Lektion fortsetzen'), findsOneWidget);
+    var storedSession = database.connection
+        .select(
+          "SELECT status, answered_count, target_answers "
+          "FROM daily_sessions WHERE kind = 'vocabulary_to_german' "
+          "ORDER BY slot LIMIT 1",
+        )
+        .single;
+    expect(storedSession['status'], 'completed');
+    expect(storedSession['answered_count'], 1);
+    expect(storedSession['target_answers'], 1);
 
     await tester.pumpWidget(const SizedBox.shrink());
     await tester.pumpWidget(_app(database));
     await tester.pumpAndSettle();
-    await _expandCategory(tester, 'vocabulary-to-german');
-    expect(find.textContaining('1 von 20 Antworten'), findsOneWidget);
+    storedSession = database.connection
+        .select(
+          "SELECT status, answered_count, target_answers "
+          "FROM daily_sessions WHERE kind = 'vocabulary_to_german' "
+          "ORDER BY slot LIMIT 1",
+        )
+        .single;
+    expect(storedSession['status'], 'completed');
+    expect(storedSession['answered_count'], 1);
+    expect(storedSession['target_answers'], 1);
 
     await tester.tap(find.text('Statistik'));
     await tester.pumpAndSettle();
@@ -641,17 +745,19 @@ void main() {
     expect(find.text('Noch einmal'), findsOneWidget);
     var session = database.connection
         .select(
-          "SELECT answered_count, queue_json FROM daily_sessions "
+          "SELECT answered_count, target_answers, queue_json "
+          "FROM daily_sessions "
           "WHERE kind = 'easy_vocabulary_to_german'",
         )
         .single;
     expect(session['answered_count'], 0);
-    expect(jsonDecode(session['queue_json'] as String), hasLength(20));
+    expect(session['target_answers'], 1);
+    expect(jsonDecode(session['queue_json'] as String), ['word-1']);
 
     await tester.tap(find.byKey(const Key('next-answer')));
     await tester.pumpAndSettle();
     expect(find.text('учить'), findsOneWidget);
-    expect(find.text('Antwort 1 von 20'), findsOneWidget);
+    expect(find.text('Antwort 1 von 1'), findsOneWidget);
     await tester.enterText(find.byKey(const Key('practice-answer')), 'lernen');
     await tester.tap(find.byKey(const Key('check-answer')));
     await tester.pumpAndSettle();
@@ -664,7 +770,7 @@ void main() {
         )
         .single;
     expect(session['answered_count'], 1);
-    expect(jsonDecode(session['queue_json'] as String), hasLength(19));
+    expect(jsonDecode(session['queue_json'] as String), isEmpty);
     final summary = await SqlitePracticeRepository(database).summary();
     expect(summary.attempts, 1);
     expect(summary.correct, 0);
@@ -1526,7 +1632,11 @@ Future<void> _expandCategory(WidgetTester tester, String category) async {
     'vocabulary-to-german' || 'easy-vocabulary-to-german' => 'to-german',
     'vocabulary-to-russian' => 'to-russian',
     'grammar' || 'favorite-grammar' => 'grammar',
-    'numbers' || 'matching' || 'multiple-choice' => 'other',
+    'numbers' ||
+    'matching' ||
+    'important-matching' ||
+    'multiple-choice' =>
+      'other',
     _ => null,
   };
   if (group != null) {

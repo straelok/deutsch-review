@@ -25,6 +25,7 @@ void main() {
       includeFavoriteGrammarLessons: false,
       toGermanLessons: 1,
       toGermanTasks: 12,
+      matchingPairsPerBoard: 11,
       problemWordMaxWeight: 37,
       reminderMinutes: [540, 1080],
     );
@@ -35,6 +36,7 @@ void main() {
     expect(saved.includeFavoriteGrammarLessons, isFalse);
     expect(saved.toGermanLessons, 1);
     expect(saved.toGermanTasks, 12);
+    expect(saved.matchingPairsPerBoard, 11);
     expect(saved.problemWordMaxWeight, 37);
     expect(saved.reminderMinutes, [540, 1080]);
   });
@@ -52,6 +54,22 @@ void main() {
         const {'problemWordMaxWeight': 2000000},
       ).problemWordMaxWeight,
       1000000,
+    );
+  });
+
+  test('uses eight matching pairs by default and bounds imported values', () {
+    expect(AppSettings.fromJson(const {}).matchingPairsPerBoard, 8);
+    expect(
+      AppSettings.fromJson(
+        const {'matchingPairsPerBoard': 1},
+      ).matchingPairsPerBoard,
+      2,
+    );
+    expect(
+      AppSettings.fromJson(
+        const {'matchingPairsPerBoard': 20},
+      ).matchingPairsPerBoard,
+      12,
     );
   });
 }

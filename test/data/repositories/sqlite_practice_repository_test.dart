@@ -147,6 +147,8 @@ void main() {
     final practice = SqlitePracticeRepository(database);
     for (final (index, kind) in <DailySessionKind>[
       DailySessionKind.easyVocabularyToGerman,
+      DailySessionKind.matching,
+      DailySessionKind.importantMatching,
       DailySessionKind.multipleChoice,
     ].indexed) {
       final session = await sessions.createExtra(
@@ -178,12 +180,12 @@ void main() {
 
     final summary = await practice.summary();
     final statistics = (await practice.statisticsByItem())['item-1']!;
-    expect(summary.attempts, 2);
+    expect(summary.attempts, 4);
     expect(summary.correct, 0);
-    expect(statistics.allTime.attempts, 2);
+    expect(statistics.allTime.attempts, 4);
     expect(statistics.allTime.correct, 0);
     expect(await practice.recentOutcomes(), {
-      'item-1': <bool>[false, false],
+      'item-1': <bool>[false, false, false, false],
     });
   });
 

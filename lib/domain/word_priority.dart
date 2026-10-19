@@ -54,3 +54,45 @@ List<String> buildWeightedQueue({
   }
   return queue;
 }
+
+List<String> buildWeightedUniqueQueue({
+  required List<String> itemIds,
+  required Map<String, List<bool>> recentOutcomes,
+  required int length,
+  required Random random,
+  int maxWeight = 10,
+  String? previousItemId,
+}) {
+  if (itemIds.isEmpty || length <= 0) return const [];
+  final available = itemIds.toSet().toList(growable: true);
+  final queue = <String>[];
+  var previous = previousItemId;
+
+  while (available.isNotEmpty && queue.length < length) {
+    final candidates = available.length == 1
+        ? available
+        : available.where((id) => id != previous).toList(growable: false);
+    final weights = candidates
+        .map((id) => wordSelectionWeight(
+              recentOutcomes[id] ?? const [],
+              maxWeight: maxWeight,
+            ))
+        .toList(growable: false);
+    final total = weights.fold<int>(0, (sum, weight) => sum + weight);
+    var selection = random.nextInt(total);
+    var selected = candidates.last;
+    for (var candidateIndex = 0;
+        candidateIndex < candidates.length;
+        candidateIndex++) {
+      selection -= weights[candidateIndex];
+      if (selection < 0) {
+        selected = candidates[candidateIndex];
+        break;
+      }
+    }
+    queue.add(selected);
+    available.remove(selected);
+    previous = selected;
+  }
+  return queue;
+}

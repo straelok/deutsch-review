@@ -34,13 +34,29 @@ final class UiStrings {
   String get standardMode => choose('Standardmodus', 'Обычный режим');
   String get matchingCategory =>
       choose('Karten zuordnen', 'Соединение карточек');
+  String get importantMatchingCategory => choose(
+        'Wichtige Karten zuordnen',
+        'Соединение важных карточек',
+      );
+  String get matchingBoardSize => choose(
+        'Wortpaare gleichzeitig',
+        'Пар слов одновременно',
+      );
+  String get matchingBoardSizeHint => choose(
+        'Mehr Paare machen die Zuordnung schwieriger. Sind weniger Wörter verfügbar, wird die Tafel automatisch kleiner.',
+        'Чем больше пар, тем сложнее соединение. Если слов недостаточно, доска автоматически уменьшится.',
+      );
   String get matchingHint => choose(
         'Wähle links ein deutsches Wort und rechts seine Übersetzung.',
         'Выберите немецкое слово слева, затем его перевод справа.',
       );
   String get matchingNeedsWords => choose(
-        'Für diese Übung werden mindestens 24 eindeutige Wortpaare benötigt.',
-        'Для этого режима нужно не менее 24 уникальных пар слов.',
+        'Für diese Übung werden mindestens zwei eindeutige Wortpaare benötigt.',
+        'Для этого режима нужно минимум две уникальные пары слов.',
+      );
+  String get importantMatchingNeedsWords => choose(
+        'Markiere mindestens zwei eindeutige Wortpaare als wichtig.',
+        'Отметьте важными минимум две уникальные пары слов.',
       );
   String get multipleChoiceCategory =>
       choose('Übersetzung wählen', 'Выбор перевода');
@@ -49,8 +65,8 @@ final class UiStrings {
         'Выберите правильный перевод. Направление меняется после каждого вопроса.',
       );
   String get multipleChoiceNeedsWords => choose(
-        'Für diese Übung werden mindestens 20 eindeutige Wortpaare benötigt.',
-        'Для этого режима нужно не менее 20 уникальных пар слов.',
+        'Für diese Übung werden mindestens vier eindeutige Wortpaare benötigt.',
+        'Для этого режима нужно минимум четыре уникальные пары слов.',
       );
   String get marathonToGermanCategory => choose(
         'Marathon: Russisch → Deutsch',

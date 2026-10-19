@@ -20,6 +20,7 @@ final class SqlitePracticeRepository implements PracticeRepository {
           'easy_vocabulary_to_german',
           'important_easy_vocabulary_to_german',
           'matching',
+          'important_matching',
           'multiple_choice'
         )
     )

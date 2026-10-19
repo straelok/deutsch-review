@@ -106,7 +106,8 @@ final class SqliteDailySessionRepository implements DailySessionRepository {
     required List<String> queueItemIds,
     required DateTime now,
   }) async {
-    if (!kind.isMarathon || queueItemIds.isEmpty) {
+    final uniqueQueueItemIds = queueItemIds.toSet().toList(growable: false);
+    if (!kind.isMarathon || uniqueQueueItemIds.isEmpty) {
       throw ArgumentError('Persistent sessions require a non-empty marathon.');
     }
     final id = 'persistent-${kind.wireName}';
@@ -133,8 +134,8 @@ final class SqliteDailySessionRepository implements DailySessionRepository {
       <Object?>[
         id,
         kind.wireName,
-        queueItemIds.length,
-        jsonEncode(queueItemIds),
+        uniqueQueueItemIds.length,
+        jsonEncode(uniqueQueueItemIds),
         timestamp,
         timestamp,
         _contentVersion(),
@@ -214,7 +215,7 @@ final class SqliteDailySessionRepository implements DailySessionRepository {
         DailySessionKind.favoriteGrammar =>
           settings.grammarTasks,
         DailySessionKind.numbers => settings.numberTasks,
-        DailySessionKind.matching => 24,
+        DailySessionKind.matching || DailySessionKind.importantMatching => 24,
         DailySessionKind.multipleChoice => 20,
         DailySessionKind.marathonToGerman => settings.toGermanTasks,
         DailySessionKind.marathonToRussian => settings.toRussianTasks,
@@ -231,16 +232,19 @@ final class SqliteDailySessionRepository implements DailySessionRepository {
     required List<String> queueItemIds,
     required DateTime now,
   }) async {
+    final uniqueQueueItemIds = queueItemIds.toSet().toList(growable: false);
     database.connection.execute(
       '''
       UPDATE daily_sessions
-      SET status = 'in_progress', queue_json = ?, updated_at = ?,
+      SET status = 'in_progress', queue_json = ?,
+          target_answers = answered_count + ?, updated_at = ?,
           content_version = CASE
             WHEN status = 'planned' THEN ? ELSE content_version END
       WHERE id = ? AND status != 'completed'
       ''',
       <Object?>[
-        jsonEncode(queueItemIds),
+        jsonEncode(uniqueQueueItemIds),
+        uniqueQueueItemIds.length,
         now.toUtc().toIso8601String(),
         _contentVersion(),
         id,
