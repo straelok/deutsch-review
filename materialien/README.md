@@ -5,9 +5,9 @@
 
 ## Структура
 
-- `Arbeitsbuch/Lektion-1`–`Lektion-4` — рабочая тетрадь.
-- `Kursbuch/Lektion-1`–`Lektion-4` — учебник.
-- `Woerterbuch/Lektion-1`–`Lektion-5` — страницы словаря и списки слов.
+- `Arbeitsbuch/Lektion-1`–`Lektion-7` — рабочая тетрадь.
+- `Kursbuch/Lektion-1`–`Lektion-7` — учебник.
+- `Woerterbuch/Lektion-1`–`Lektion-7` — страницы словаря и списки слов.
 - `Zusaetzlich` — дополнительные листки и материалы без разделения по лекциям.
 - `Verarbeitet/<источник>/<лекция>` — уже перенесённые в приложение материалы
   с сохранением исходной иерархии.
