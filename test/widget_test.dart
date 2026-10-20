@@ -341,7 +341,7 @@ void main() {
     expect(jsonDecode(session['queue_json'] as String), ['important-word']);
   });
 
-  testWidgets('shows important lessons inside the translation category', (
+  testWidgets('shows important actions on their regular lesson cards', (
     tester,
   ) async {
     final database = AppDatabase.inMemory();
@@ -350,19 +350,29 @@ void main() {
     await tester.pumpWidget(_app(database));
     await tester.pumpAndSettle();
 
+    await _expandCategory(tester, 'vocabulary-to-german');
+    expect(
+      find.byKey(const Key('create-important-to-german-session')),
+      findsOneWidget,
+    );
+    expect(
+      find.byKey(const Key('create-important-easy-to-german-session')),
+      findsOneWidget,
+    );
     expect(
       find.byKey(const Key('important-to-german-lessons-block')),
       findsNothing,
     );
-    await _expandCategory(tester, 'vocabulary-to-german');
-    final important =
-        find.byKey(const Key('important-to-german-lessons-block'));
-    final regular = find.byKey(
-      const Key('session-category-progress-vocabulary-to-german'),
+
+    await _expandCategory(tester, 'matching');
+    expect(
+      find.byKey(const Key('create-important-matching-session')),
+      findsOneWidget,
     );
-    expect(important, findsOneWidget);
-    expect(tester.getTopLeft(important).dy, greaterThanOrEqualTo(0));
-    expect(regular, findsOneWidget);
+    expect(
+      find.byKey(const Key('important-matching-lessons-block')),
+      findsNothing,
+    );
   });
 
   testWidgets('shows each marathon inside its translation direction', (
@@ -535,7 +545,9 @@ void main() {
     final remainingQueue =
         (jsonDecode(after['queue_json'] as String) as List).cast<String>();
     expect(after['answered_count'], 1);
-    expect(remainingQueue, originalQueue.skip(1));
+    expect(remainingQueue, hasLength(originalQueue.length));
+    expect(remainingQueue.first, isNot(originalQueue.first));
+    expect(remainingQueue.skip(3), contains(originalQueue.first));
   });
 
   testWidgets('wechselt die Sprache und behält sie nach einem Neustart', (
@@ -679,6 +691,14 @@ void main() {
     await tester.tap(find.byKey(const Key('next-answer')));
     await tester.pumpAndSettle();
 
+    expect(find.text('учить'), findsOneWidget);
+    expect(find.text('Antwort 2 von 2'), findsOneWidget);
+    await tester.enterText(find.byKey(const Key('practice-answer')), 'lernen');
+    await tester.tap(find.byKey(const Key('check-answer')));
+    await tester.pumpAndSettle();
+    await tester.tap(find.byKey(const Key('next-answer')));
+    await tester.pumpAndSettle();
+
     expect(find.text('Sitzung abgeschlossen'), findsOneWidget);
     await tester.tap(find.text('Tagesplan'));
     await tester.pumpAndSettle();
@@ -690,8 +710,8 @@ void main() {
         )
         .single;
     expect(storedSession['status'], 'completed');
-    expect(storedSession['answered_count'], 1);
-    expect(storedSession['target_answers'], 1);
+    expect(storedSession['answered_count'], 2);
+    expect(storedSession['target_answers'], 2);
 
     await tester.pumpWidget(const SizedBox.shrink());
     await tester.pumpWidget(_app(database));
@@ -704,8 +724,8 @@ void main() {
         )
         .single;
     expect(storedSession['status'], 'completed');
-    expect(storedSession['answered_count'], 1);
-    expect(storedSession['target_answers'], 1);
+    expect(storedSession['answered_count'], 2);
+    expect(storedSession['target_answers'], 2);
 
     await tester.tap(find.text('Statistik'));
     await tester.pumpAndSettle();
@@ -715,8 +735,8 @@ void main() {
     await tester.pumpAndSettle();
     expect(find.text('Problemwörter'), findsOneWidget);
     expect(find.text('lernen'), findsOneWidget);
-    expect(find.text('1 Fehler · Genauigkeit: 0 %'), findsOneWidget);
-    expect(find.text('0/1'), findsOneWidget);
+    expect(find.text('1 Fehler · Genauigkeit: 50 %'), findsOneWidget);
+    expect(find.text('1/2'), findsOneWidget);
   });
 
   testWidgets('easy lesson repeats a word until the answer is correct', (

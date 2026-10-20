@@ -105,6 +105,41 @@ void main() {
     expect(current.completedAt, isNotNull);
   });
 
+  test('extends a lesson target when an incorrect word is deferred', () async {
+    final database = AppDatabase.inMemory();
+    addTearDown(database.close);
+    final sessions = SqliteDailySessionRepository(database);
+    final now = DateTime.utc(2026, 10, 20, 10);
+    await SqliteLearningItemRepository(database).save(_word(now));
+    final planned = await sessions.createExtra(
+      localDate: '2026-10-20',
+      now: now,
+    );
+    final started = await sessions.start(
+      id: planned.id,
+      queueItemIds: const ['word-1', 'word-2', 'word-3'],
+      now: now,
+    );
+
+    final updated = await sessions.recordAnswer(
+      attempt: PracticeAttempt(
+        id: 'failed-attempt',
+        itemId: 'word-1',
+        sessionId: started.id,
+        answerText: 'falsch',
+        correct: false,
+        attemptedAt: now,
+      ),
+      remainingQueueItemIds: const ['word-2', 'word-3', 'word-1'],
+      now: now,
+    );
+
+    expect(updated.answeredCount, 1);
+    expect(updated.targetAnswers, 4);
+    expect(updated.queueItemIds, const ['word-2', 'word-3', 'word-1']);
+    expect(updated.status, DailySessionStatus.inProgress);
+  });
+
   test('adds two grammar sessions only when grammar is available', () async {
     final database = AppDatabase.inMemory();
     addTearDown(database.close);

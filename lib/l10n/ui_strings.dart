@@ -105,6 +105,10 @@ final class UiStrings {
       );
   String get importantWordsCategory =>
       choose('Wichtige Wörter', 'Важные слова');
+  String get continueImportantWords => choose(
+        'Wichtige fortsetzen',
+        'Продолжить важные',
+      );
   String get importantToGermanCategory => choose(
         'Wichtig: Russisch → Deutsch',
         'Важные: с русского на немецкий',

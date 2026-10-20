@@ -577,6 +577,14 @@ class _PracticePageState extends State<PracticePage> {
               addKey: const Key('create-extra-session'),
               onAdd: () =>
                   _createExtraSession(DailySessionKind.vocabularyToGerman),
+              secondaryAction: _SessionSecondaryAction(
+                sessions: importantToGerman,
+                canStart: importantItems.isNotEmpty,
+                key: const Key('create-important-to-german-session'),
+                onAdd: () => _createExtraSession(
+                  DailySessionKind.importantVocabularyToGerman,
+                ),
+              ),
             ),
             const SizedBox(height: 12),
             _sessionCategory(
@@ -588,44 +596,14 @@ class _PracticePageState extends State<PracticePage> {
               addKey: const Key('create-easy-to-german-session'),
               onAdd: () =>
                   _createExtraSession(DailySessionKind.easyVocabularyToGerman),
-            ),
-            const SizedBox(height: 12),
-            _featuredBlock(
-              key: const Key('important-to-german-lessons-block'),
-              title: s.importantWordsCategory,
-              icon: Icons.star,
-              children: [
-                if (importantItems.isEmpty &&
-                    importantToGerman.every((session) => session.isComplete))
-                  _featuredHint(Icons.star_outline, s.noImportantWordsHint),
-                _sessionCategory(
-                  kind: DailySessionKind.importantVocabularyToGerman,
-                  icon: Icons.arrow_forward,
-                  title: s.importantToGermanCategory,
-                  sessions: importantToGerman,
-                  canAdd: true,
-                  canStart: importantItems.isNotEmpty,
-                  addKey: const Key('create-important-to-german-session'),
-                  onAdd: () => _createExtraSession(
-                    DailySessionKind.importantVocabularyToGerman,
-                  ),
+              secondaryAction: _SessionSecondaryAction(
+                sessions: importantEasyToGerman,
+                canStart: importantItems.isNotEmpty,
+                key: const Key('create-important-easy-to-german-session'),
+                onAdd: () => _createExtraSession(
+                  DailySessionKind.importantEasyVocabularyToGerman,
                 ),
-                const SizedBox(height: 12),
-                _sessionCategory(
-                  kind: DailySessionKind.importantEasyVocabularyToGerman,
-                  icon: Icons.edit_note,
-                  title: s.importantEasyToGermanCategory,
-                  sessions: importantEasyToGerman,
-                  canAdd: true,
-                  canStart: importantItems.isNotEmpty,
-                  addKey: const Key(
-                    'create-important-easy-to-german-session',
-                  ),
-                  onAdd: () => _createExtraSession(
-                    DailySessionKind.importantEasyVocabularyToGerman,
-                  ),
-                ),
-              ],
+              ),
             ),
             const SizedBox(height: 12),
             _marathonCategory(
@@ -657,29 +635,14 @@ class _PracticePageState extends State<PracticePage> {
               addKey: const Key('create-extra-to-russian-session'),
               onAdd: () =>
                   _createExtraSession(DailySessionKind.vocabularyToRussian),
-            ),
-            const SizedBox(height: 12),
-            _featuredBlock(
-              key: const Key('important-to-russian-lessons-block'),
-              title: s.importantWordsCategory,
-              icon: Icons.star,
-              children: [
-                if (importantItems.isEmpty &&
-                    importantToRussian.every((session) => session.isComplete))
-                  _featuredHint(Icons.star_outline, s.noImportantWordsHint),
-                _sessionCategory(
-                  kind: DailySessionKind.importantVocabularyToRussian,
-                  icon: Icons.arrow_back,
-                  title: s.importantToRussianCategory,
-                  sessions: importantToRussian,
-                  canAdd: true,
-                  canStart: importantItems.isNotEmpty,
-                  addKey: const Key('create-important-to-russian-session'),
-                  onAdd: () => _createExtraSession(
-                    DailySessionKind.importantVocabularyToRussian,
-                  ),
+              secondaryAction: _SessionSecondaryAction(
+                sessions: importantToRussian,
+                canStart: importantItems.isNotEmpty,
+                key: const Key('create-important-to-russian-session'),
+                onAdd: () => _createExtraSession(
+                  DailySessionKind.importantVocabularyToRussian,
                 ),
-              ],
+              ),
             ),
             const SizedBox(height: 12),
             _marathonCategory(
@@ -767,6 +730,14 @@ class _PracticePageState extends State<PracticePage> {
               canStart: _matchingCandidates().length >= 2,
               addKey: const Key('create-matching-session'),
               onAdd: () => _createExtraSession(DailySessionKind.matching),
+              secondaryAction: _SessionSecondaryAction(
+                sessions: importantMatchingSessions,
+                canStart:
+                    _matchingCandidates(importantOnly: true).length >= 2,
+                key: const Key('create-important-matching-session'),
+                onAdd: () =>
+                    _createExtraSession(DailySessionKind.importantMatching),
+              ),
             ),
             if (_matchingCandidates().length < 2) ...[
               const SizedBox(height: 8),
@@ -775,33 +746,6 @@ class _PracticePageState extends State<PracticePage> {
                 style: Theme.of(context).textTheme.bodySmall,
               ),
             ],
-            const SizedBox(height: 12),
-            _featuredBlock(
-              key: const Key('important-matching-lessons-block'),
-              title: s.importantWordsCategory,
-              icon: Icons.star,
-              children: [
-                _sessionCategory(
-                  kind: DailySessionKind.importantMatching,
-                  icon: Icons.compare_arrows,
-                  title: s.importantMatchingCategory,
-                  sessions: importantMatchingSessions,
-                  canAdd: true,
-                  canStart:
-                      _matchingCandidates(importantOnly: true).length >= 2,
-                  addKey: const Key('create-important-matching-session'),
-                  onAdd: () =>
-                      _createExtraSession(DailySessionKind.importantMatching),
-                ),
-                if (_matchingCandidates(importantOnly: true).length < 2) ...[
-                  const SizedBox(height: 8),
-                  Text(
-                    s.importantMatchingNeedsWords,
-                    style: Theme.of(context).textTheme.bodySmall,
-                  ),
-                ],
-              ],
-            ),
             const SizedBox(height: 12),
             _sessionCategory(
               kind: DailySessionKind.multipleChoice,
@@ -1082,6 +1026,7 @@ class _PracticePageState extends State<PracticePage> {
     bool canStart = true,
     required Key addKey,
     required VoidCallback onAdd,
+    _SessionSecondaryAction? secondaryAction,
   }) {
     final completed = sessions.where((session) => session.isComplete).length;
     final inProgress = sessions
@@ -1109,6 +1054,16 @@ class _PracticePageState extends State<PracticePage> {
             ? Icons.add
             : Icons.skip_next;
     final categoryKey = kind.wireName.replaceAll('_', '-');
+    final secondaryInProgress = secondaryAction?.sessions
+        .where((session) => session.status == DailySessionStatus.inProgress)
+        .firstOrNull;
+    final secondaryNext = secondaryAction?.sessions
+        .where((session) => session.status == DailySessionStatus.planned)
+        .firstOrNull;
+    final secondaryEnabled = secondaryAction != null &&
+        (secondaryInProgress != null
+            ? _canOpenSession(secondaryInProgress)
+            : secondaryAction.canStart);
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -1117,58 +1072,116 @@ class _PracticePageState extends State<PracticePage> {
           margin: EdgeInsets.zero,
           child: Padding(
             padding: const EdgeInsets.fromLTRB(8, 8, 12, 8),
-            child: Row(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Icon(icon),
-                const SizedBox(width: 10),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        title,
-                        style: Theme.of(context).textTheme.titleMedium,
-                      ),
-                      Text(
-                        widget.strings.categoryProgress(
-                          completed,
-                          sessions.length,
-                        ),
-                        key: Key('session-category-progress-$categoryKey'),
-                        style: Theme.of(context).textTheme.bodySmall,
-                      ),
-                      if (inProgress != null)
-                        Text(
-                          widget.strings.sessionAnswers(
-                            inProgress.answeredCount,
-                            inProgress.targetAnswers,
+                Row(
+                  children: [
+                    Icon(icon),
+                    const SizedBox(width: 10),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            title,
+                            style: Theme.of(context).textTheme.titleMedium,
                           ),
-                          style: Theme.of(context).textTheme.bodySmall,
-                        ),
-                    ],
-                  ),
+                          Text(
+                            widget.strings.categoryProgress(
+                              completed,
+                              sessions.length,
+                            ),
+                            key: Key(
+                              'session-category-progress-$categoryKey',
+                            ),
+                            style: Theme.of(context).textTheme.bodySmall,
+                          ),
+                          if (inProgress != null)
+                            Text(
+                              widget.strings.sessionAnswers(
+                                inProgress.answeredCount,
+                                inProgress.targetAnswers,
+                              ),
+                              style: Theme.of(context).textTheme.bodySmall,
+                            ),
+                          if (secondaryInProgress != null)
+                            Text(
+                              '${widget.strings.importantWordsCategory}: '
+                              '${widget.strings.sessionAnswers(secondaryInProgress.answeredCount, secondaryInProgress.targetAnswers)}',
+                              style: Theme.of(context).textTheme.bodySmall,
+                            ),
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
-                const SizedBox(width: 8),
-                FilledButton.tonalIcon(
-                  key: canAdd && inProgress == null
-                      ? addKey
-                      : Key('session-category-action-$categoryKey'),
-                  onPressed: actionEnabled
-                      ? () {
-                          if (inProgress != null) {
-                            _selectSession(inProgress);
-                          } else if (canAdd) {
-                            onAdd();
-                          } else if (next != null) {
-                            _selectSession(next);
-                          }
-                        }
-                      : null,
-                  icon: Icon(actionIcon, size: 18),
-                  label: Text(actionLabel),
-                  style: const ButtonStyle(
-                    visualDensity: VisualDensity.compact,
-                  ),
+                const SizedBox(height: 8),
+                Wrap(
+                  alignment: WrapAlignment.end,
+                  spacing: 8,
+                  runSpacing: 8,
+                  children: [
+                    if (secondaryAction != null)
+                      Tooltip(
+                        message: secondaryAction.canStart
+                            ? widget.strings.importantWordsCategory
+                            : widget.strings.noImportantWordsHint,
+                        child: OutlinedButton.icon(
+                          key: secondaryInProgress == null
+                              ? secondaryAction.key
+                              : Key(
+                                  'continue-${secondaryInProgress.kind.wireName}',
+                                ),
+                          onPressed: secondaryEnabled
+                              ? () {
+                                  if (secondaryInProgress != null) {
+                                    _selectSession(secondaryInProgress);
+                                  } else if (secondaryNext != null) {
+                                    _selectSession(secondaryNext);
+                                  } else {
+                                    secondaryAction.onAdd();
+                                  }
+                                }
+                              : null,
+                          icon: Icon(
+                            secondaryInProgress != null
+                                ? Icons.play_arrow
+                                : Icons.star_outline,
+                            size: 18,
+                          ),
+                          label: Text(
+                            secondaryInProgress != null
+                                ? widget.strings.continueImportantWords
+                                : widget.strings.importantWordsCategory,
+                          ),
+                          style: const ButtonStyle(
+                            visualDensity: VisualDensity.compact,
+                          ),
+                        ),
+                      ),
+                    FilledButton.tonalIcon(
+                      key: canAdd && inProgress == null
+                          ? addKey
+                          : Key('session-category-action-$categoryKey'),
+                      onPressed: actionEnabled
+                          ? () {
+                              if (inProgress != null) {
+                                _selectSession(inProgress);
+                              } else if (canAdd) {
+                                onAdd();
+                              } else if (next != null) {
+                                _selectSession(next);
+                              }
+                            }
+                          : null,
+                      icon: Icon(actionIcon, size: 18),
+                      label: Text(actionLabel),
+                      style: const ButtonStyle(
+                        visualDensity: VisualDensity.compact,
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
@@ -2715,7 +2728,11 @@ class _PracticePageState extends State<PracticePage> {
     required String answer,
     required bool correct,
   }) async {
-    final nextQueue = _queue.skip(1).toList(growable: false);
+    final nextQueue = _queue.skip(1).toList(growable: true);
+    if (!correct && !_session!.kind.isEasyVocabulary) {
+      final delay = min(nextQueue.length, 3 + _random.nextInt(3));
+      nextQueue.insert(delay, item);
+    }
     final updatedSession = await widget.sessions.recordAnswer(
       attempt: PracticeAttempt(
         id: newUuidV4(),
@@ -2730,7 +2747,7 @@ class _PracticePageState extends State<PracticePage> {
       now: DateTime.now().toUtc(),
     );
     widget.onAttemptSaved();
-    return (updatedSession, nextQueue);
+    return (updatedSession, nextQueue.toList(growable: false));
   }
 
   Future<void> _acceptRussianTranslation() async {
@@ -3034,6 +3051,20 @@ class _PracticePageState extends State<PracticePage> {
       return false;
     }
   }
+}
+
+final class _SessionSecondaryAction {
+  const _SessionSecondaryAction({
+    required this.sessions,
+    required this.canStart,
+    required this.key,
+    required this.onAdd,
+  });
+
+  final List<DailySession> sessions;
+  final bool canStart;
+  final Key key;
+  final VoidCallback onAdd;
 }
 
 class _CenteredPanel extends StatelessWidget {
