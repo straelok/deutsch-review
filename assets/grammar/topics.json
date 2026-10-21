@@ -1944,6 +1944,249 @@
         ]
       ],
       "trainable": true
+    },
+    {
+      "id": "profession_feminine_nouns",
+      "order": 27,
+      "title_de": "Berufe: männliche und weibliche Formen",
+      "title_ru": "Профессии: мужские и женские формы",
+      "summary_de": "Viele weibliche Berufsbezeichnungen entstehen mit -in.",
+      "summary_ru": "Многие женские названия профессий образуются при помощи -in.",
+      "explanation_de": [
+        "Bei vielen Berufen kommt an die männliche Form die Endung -in: Lehrer — Lehrerin, Polizist — Polizistin.",
+        "Im Plural endet die weibliche Form meistens auf -innen: Ärztinnen, Studentinnen, Kolleginnen.",
+        "Manchmal verändert sich der Stamm oder ein Umlaut kommt hinzu: Arzt — Ärztin, Koch — Köchin.",
+        "Einige Paare werden nicht mit -in gebildet und müssen zusammen gelernt werden: Hausmann — Hausfrau, Krankenpfleger — Krankenschwester."
+      ],
+      "explanation_ru": [
+        "У многих профессий женская форма получается добавлением -in к мужской: Lehrer — Lehrerin, Polizist — Polizistin.",
+        "Во множественном числе женская форма обычно заканчивается на -innen: Ärztinnen, Studentinnen, Kolleginnen.",
+        "Иногда меняется основа или появляется умлаут: Arzt — Ärztin, Koch — Köchin.",
+        "Некоторые пары не образуются через -in, их нужно учить вместе: Hausmann — Hausfrau, Krankenpfleger — Krankenschwester."
+      ],
+      "table": [
+        [
+          "männlich / мужская форма",
+          "weiblich / женская форма",
+          "Plural feminin / жен. мн. ч."
+        ],
+        [
+          "Polizist",
+          "Polizistin",
+          "Polizistinnen"
+        ],
+        [
+          "Arzt",
+          "Ärztin",
+          "Ärztinnen"
+        ],
+        [
+          "Koch",
+          "Köchin",
+          "Köchinnen"
+        ],
+        [
+          "Hausmann",
+          "Hausfrau",
+          "Hausfrauen"
+        ]
+      ],
+      "trainable": true
+    },
+    {
+      "id": "work_prepositions_als_bei",
+      "order": 28,
+      "title_de": "Beruf und Arbeitsplatz: als und bei",
+      "title_ru": "Профессия и место работы: als и bei",
+      "summary_de": "als nennt die Funktion, bei nennt Arbeitgeber oder Institution.",
+      "summary_ru": "als называет профессию или роль, bei — работодателя или учреждение.",
+      "explanation_de": [
+        "Mit als nennt man Beruf, Funktion oder Rolle: Sie arbeitet als Ärztin. Nach als steht hier kein Artikel.",
+        "Mit bei nennt man einen Arbeitgeber, eine Firma oder Institution: Er arbeitet bei einer Zeitung.",
+        "bei verlangt den Dativ: bei einem Café, bei einer Firma, beim Fernsehen. beim ist die Kurzform von bei dem.",
+        "Für den Ort innerhalb eines Gebäudes verwendet man häufig in: Sie arbeitet in einem Krankenhaus."
+      ],
+      "explanation_ru": [
+        "С als называют профессию, функцию или роль: Sie arbeitet als Ärztin. В такой конструкции после als артикль не ставится.",
+        "С bei называют работодателя, компанию или учреждение: Er arbeitet bei einer Zeitung.",
+        "После bei нужен Dativ: bei einem Café, bei einer Firma, beim Fernsehen. beim — сокращение от bei dem.",
+        "Для места внутри здания часто используется in: Sie arbeitet in einem Krankenhaus."
+      ],
+      "table": [
+        [
+          "Bedeutung / Значение",
+          "Form / Форма",
+          "Beispiel / Пример"
+        ],
+        [
+          "Beruf / профессия",
+          "als + Nomen ohne Artikel",
+          "als Sekretärin"
+        ],
+        [
+          "Arbeitgeber / работодатель",
+          "bei + Dativ",
+          "bei einer Zeitung"
+        ],
+        [
+          "bei dem / у, в",
+          "beim",
+          "beim Fernsehen"
+        ],
+        [
+          "Ort / место",
+          "in + Dativ",
+          "in einem Krankenhaus"
+        ]
+      ],
+      "trainable": true
+    },
+    {
+      "id": "temporal_prepositions_vor_seit_fuer",
+      "order": 29,
+      "title_de": "Zeiträume: vor, seit und für",
+      "title_ru": "Периоды времени: vor, seit и für",
+      "summary_de": "vor nennt einen vergangenen Zeitpunkt, seit einen Beginn und für eine Dauer.",
+      "summary_ru": "vor указывает момент в прошлом, seit — начало продолжающегося периода, für — длительность.",
+      "explanation_de": [
+        "vor + Dativ sagt, wie lange etwas zurückliegt: vor einem Jahr, vor zwei Monaten.",
+        "seit + Dativ nennt den Beginn eines Zustands, der bis jetzt dauert: Ich arbeite seit einem Jahr hier.",
+        "Mit seit steht im Deutschen meistens Präsens, wenn die Handlung noch weitergeht.",
+        "für + Akkusativ nennt eine geplante oder begrenzte Dauer: eine Stelle für ein Jahr, Urlaub für zwei Wochen.",
+        "Die Frage Wie lange? passt zu seit und für; Seit wann? fragt nach dem Anfang."
+      ],
+      "explanation_ru": [
+        "vor + Dativ показывает, сколько времени назад произошло событие: vor einem Jahr, vor zwei Monaten.",
+        "seit + Dativ называет начало состояния, которое продолжается до настоящего момента: Ich arbeite seit einem Jahr hier.",
+        "Если действие продолжается, с seit в немецком обычно используется Präsens, хотя по-русски часто требуется прошедшее время.",
+        "für + Akkusativ обозначает запланированную или ограниченную длительность: eine Stelle für ein Jahr, Urlaub für zwei Wochen.",
+        "Вопрос Wie lange? подходит для seit и für, а Seit wann? спрашивает о начальном моменте."
+      ],
+      "table": [
+        [
+          "Präposition / Предлог",
+          "Kasus / Падеж",
+          "Beispiel / Пример"
+        ],
+        [
+          "vor",
+          "Dativ",
+          "vor einem Jahr"
+        ],
+        [
+          "seit",
+          "Dativ",
+          "seit zwei Monaten"
+        ],
+        [
+          "für",
+          "Akkusativ",
+          "für ein Jahr"
+        ]
+      ],
+      "trainable": true
+    },
+    {
+      "id": "sein_preterite",
+      "order": 30,
+      "title_de": "Präteritum von sein",
+      "title_ru": "Präteritum глагола sein",
+      "summary_de": "war und waren beschreiben Zustände in der Vergangenheit.",
+      "summary_ru": "Формы war и waren описывают состояния в прошлом.",
+      "explanation_de": [
+        "sein wird in Erzählungen und Gesprächen oft im Präteritum verwendet: Heute bin ich im Büro. Gestern war ich zu Hause.",
+        "Die Singularformen sind ich war, du warst, er/sie/es war.",
+        "Die Pluralformen sind wir waren, ihr wart, sie/Sie waren.",
+        "Das Präteritum von sein steht allein; ein Hilfsverb ist nicht nötig."
+      ],
+      "explanation_ru": [
+        "Глагол sein в рассказах и разговорной речи часто употребляется в Präteritum: Heute bin ich im Büro. Gestern war ich zu Hause.",
+        "Формы единственного числа: ich war, du warst, er/sie/es war.",
+        "Формы множественного числа: wir waren, ihr wart, sie/Sie waren.",
+        "Präteritum глагола sein используется самостоятельно, вспомогательный глагол не нужен."
+      ],
+      "table": [
+        [
+          "Pronomen / Местоимение",
+          "Form / Форма"
+        ],
+        [
+          "ich",
+          "war"
+        ],
+        [
+          "du",
+          "warst"
+        ],
+        [
+          "er/sie/es",
+          "war"
+        ],
+        [
+          "wir",
+          "waren"
+        ],
+        [
+          "ihr",
+          "wart"
+        ],
+        [
+          "sie/Sie",
+          "waren"
+        ]
+      ],
+      "trainable": true
+    },
+    {
+      "id": "haben_preterite",
+      "order": 31,
+      "title_de": "Präteritum von haben",
+      "title_ru": "Präteritum глагола haben",
+      "summary_de": "hatte und hatten beschreiben Besitz oder Zustände in der Vergangenheit.",
+      "summary_ru": "Формы hatte и hatten описывают обладание или состояния в прошлом.",
+      "explanation_de": [
+        "haben wird oft im Präteritum verwendet: Heute habe ich Zeit. Gestern hatte ich keine Zeit.",
+        "Die Singularformen sind ich hatte, du hattest, er/sie/es hatte.",
+        "Die Pluralformen sind wir hatten, ihr hattet, sie/Sie hatten.",
+        "Nach haben steht ein Akkusativobjekt wie im Präsens: Er hatte einen Job."
+      ],
+      "explanation_ru": [
+        "Глагол haben часто используется в Präteritum: Heute habe ich Zeit. Gestern hatte ich keine Zeit.",
+        "Формы единственного числа: ich hatte, du hattest, er/sie/es hatte.",
+        "Формы множественного числа: wir hatten, ihr hattet, sie/Sie hatten.",
+        "После haben дополнение остаётся в Akkusativ, как и в настоящем времени: Er hatte einen Job."
+      ],
+      "table": [
+        [
+          "Pronomen / Местоимение",
+          "Form / Форма"
+        ],
+        [
+          "ich",
+          "hatte"
+        ],
+        [
+          "du",
+          "hattest"
+        ],
+        [
+          "er/sie/es",
+          "hatte"
+        ],
+        [
+          "wir",
+          "hatten"
+        ],
+        [
+          "ihr",
+          "hattet"
+        ],
+        [
+          "sie/Sie",
+          "hatten"
+        ]
+      ],
+      "trainable": true
     }
   ],
   "verbs": [

@@ -21673,6 +21673,1606 @@
       ],
       "instruction_de": "Bilde einen Satz im Perfekt.",
       "instruction_ru": "Составьте предложение в Perfekt."
+    },
+    {
+      "id": "lesson8-profession-feminine-1",
+      "topic_id": "profession_feminine_nouns",
+      "lemma": "Polizist",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Die männliche Form ist „Polizist“. Wie heißt die weibliche Form?",
+      "answer": "Polizistin",
+      "options": [
+        "Polizistin",
+        "Poliziste",
+        "Polizisterin"
+      ],
+      "instruction_de": "Wähle die richtige weibliche Berufsbezeichnung.",
+      "instruction_ru": "Выберите правильное женское название профессии."
+    },
+    {
+      "id": "lesson8-profession-feminine-11",
+      "topic_id": "profession_feminine_nouns",
+      "lemma": "Polizistin",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Welche Form passt? Zwei ___ arbeiten heute.",
+      "answer": "Polizistinnen",
+      "options": [
+        "Polizistinen",
+        "Polizistinnen",
+        "Polizistin"
+      ],
+      "instruction_de": "Wähle die passende Pluralform.",
+      "instruction_ru": "Выберите подходящую форму множественного числа."
+    },
+    {
+      "id": "lesson8-profession-feminine-2",
+      "topic_id": "profession_feminine_nouns",
+      "lemma": "Arzt",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Die männliche Form ist „Arzt“. Wie heißt die weibliche Form?",
+      "answer": "Ärztin",
+      "options": [
+        "Ärztin",
+        "Arzte",
+        "Arzterin"
+      ],
+      "instruction_de": "Wähle die richtige weibliche Berufsbezeichnung.",
+      "instruction_ru": "Выберите правильное женское название профессии."
+    },
+    {
+      "id": "lesson8-profession-feminine-12",
+      "topic_id": "profession_feminine_nouns",
+      "lemma": "Ärztin",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Welche Form passt? Zwei ___ arbeiten heute.",
+      "answer": "Ärztinnen",
+      "options": [
+        "Ärztinen",
+        "Ärztinnen",
+        "Ärztin"
+      ],
+      "instruction_de": "Wähle die passende Pluralform.",
+      "instruction_ru": "Выберите подходящую форму множественного числа."
+    },
+    {
+      "id": "lesson8-profession-feminine-3",
+      "topic_id": "profession_feminine_nouns",
+      "lemma": "Koch",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Die männliche Form ist „Koch“. Wie heißt die weibliche Form?",
+      "answer": "Köchin",
+      "options": [
+        "Köchin",
+        "Koche",
+        "Kocherin"
+      ],
+      "instruction_de": "Wähle die richtige weibliche Berufsbezeichnung.",
+      "instruction_ru": "Выберите правильное женское название профессии."
+    },
+    {
+      "id": "lesson8-profession-feminine-13",
+      "topic_id": "profession_feminine_nouns",
+      "lemma": "Köchin",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Welche Form passt? Zwei ___ arbeiten heute.",
+      "answer": "Köchinnen",
+      "options": [
+        "Köchinen",
+        "Köchinnen",
+        "Köchin"
+      ],
+      "instruction_de": "Wähle die passende Pluralform.",
+      "instruction_ru": "Выберите подходящую форму множественного числа."
+    },
+    {
+      "id": "lesson8-profession-feminine-4",
+      "topic_id": "profession_feminine_nouns",
+      "lemma": "Student",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Die männliche Form ist „Student“. Wie heißt die weibliche Form?",
+      "answer": "Studentin",
+      "options": [
+        "Studentin",
+        "Studente",
+        "Studenterin"
+      ],
+      "instruction_de": "Wähle die richtige weibliche Berufsbezeichnung.",
+      "instruction_ru": "Выберите правильное женское название профессии."
+    },
+    {
+      "id": "lesson8-profession-feminine-14",
+      "topic_id": "profession_feminine_nouns",
+      "lemma": "Studentin",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Welche Form passt? Zwei ___ arbeiten heute.",
+      "answer": "Studentinnen",
+      "options": [
+        "Studentinen",
+        "Studentinnen",
+        "Studentin"
+      ],
+      "instruction_de": "Wähle die passende Pluralform.",
+      "instruction_ru": "Выберите подходящую форму множественного числа."
+    },
+    {
+      "id": "lesson8-profession-feminine-5",
+      "topic_id": "profession_feminine_nouns",
+      "lemma": "Journalist",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Die männliche Form ist „Journalist“. Wie heißt die weibliche Form?",
+      "answer": "Journalistin",
+      "options": [
+        "Journalistin",
+        "Journaliste",
+        "Journalisterin"
+      ],
+      "instruction_de": "Wähle die richtige weibliche Berufsbezeichnung.",
+      "instruction_ru": "Выберите правильное женское название профессии."
+    },
+    {
+      "id": "lesson8-profession-feminine-15",
+      "topic_id": "profession_feminine_nouns",
+      "lemma": "Journalistin",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Welche Form passt? Zwei ___ arbeiten heute.",
+      "answer": "Journalistinnen",
+      "options": [
+        "Journalistinen",
+        "Journalistinnen",
+        "Journalistin"
+      ],
+      "instruction_de": "Wähle die passende Pluralform.",
+      "instruction_ru": "Выберите подходящую форму множественного числа."
+    },
+    {
+      "id": "lesson8-profession-feminine-6",
+      "topic_id": "profession_feminine_nouns",
+      "lemma": "Tourist",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Die männliche Form ist „Tourist“. Wie heißt die weibliche Form?",
+      "answer": "Touristin",
+      "options": [
+        "Touristin",
+        "Touriste",
+        "Touristerin"
+      ],
+      "instruction_de": "Wähle die richtige weibliche Berufsbezeichnung.",
+      "instruction_ru": "Выберите правильное женское название профессии."
+    },
+    {
+      "id": "lesson8-profession-feminine-16",
+      "topic_id": "profession_feminine_nouns",
+      "lemma": "Touristin",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Welche Form passt? Zwei ___ arbeiten heute.",
+      "answer": "Touristinnen",
+      "options": [
+        "Touristinen",
+        "Touristinnen",
+        "Touristin"
+      ],
+      "instruction_de": "Wähle die passende Pluralform.",
+      "instruction_ru": "Выберите подходящую форму множественного числа."
+    },
+    {
+      "id": "lesson8-profession-feminine-7",
+      "topic_id": "profession_feminine_nouns",
+      "lemma": "Architekt",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Die männliche Form ist „Architekt“. Wie heißt die weibliche Form?",
+      "answer": "Architektin",
+      "options": [
+        "Architektin",
+        "Architekte",
+        "Architekterin"
+      ],
+      "instruction_de": "Wähle die richtige weibliche Berufsbezeichnung.",
+      "instruction_ru": "Выберите правильное женское название профессии."
+    },
+    {
+      "id": "lesson8-profession-feminine-17",
+      "topic_id": "profession_feminine_nouns",
+      "lemma": "Architektin",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Welche Form passt? Zwei ___ arbeiten heute.",
+      "answer": "Architektinnen",
+      "options": [
+        "Architektinen",
+        "Architektinnen",
+        "Architektin"
+      ],
+      "instruction_de": "Wähle die passende Pluralform.",
+      "instruction_ru": "Выберите подходящую форму множественного числа."
+    },
+    {
+      "id": "lesson8-profession-feminine-8",
+      "topic_id": "profession_feminine_nouns",
+      "lemma": "Kollege",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Die männliche Form ist „Kollege“. Wie heißt die weibliche Form?",
+      "answer": "Kollegin",
+      "options": [
+        "Kollegin",
+        "Kollegee",
+        "Kollegeerin"
+      ],
+      "instruction_de": "Wähle die richtige weibliche Berufsbezeichnung.",
+      "instruction_ru": "Выберите правильное женское название профессии."
+    },
+    {
+      "id": "lesson8-profession-feminine-18",
+      "topic_id": "profession_feminine_nouns",
+      "lemma": "Kollegin",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Welche Form passt? Zwei ___ arbeiten heute.",
+      "answer": "Kolleginnen",
+      "options": [
+        "Kolleginen",
+        "Kolleginnen",
+        "Kollegin"
+      ],
+      "instruction_de": "Wähle die passende Pluralform.",
+      "instruction_ru": "Выберите подходящую форму множественного числа."
+    },
+    {
+      "id": "lesson8-profession-feminine-9",
+      "topic_id": "profession_feminine_nouns",
+      "lemma": "Sekretär",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Die männliche Form ist „Sekretär“. Wie heißt die weibliche Form?",
+      "answer": "Sekretärin",
+      "options": [
+        "Sekretärin",
+        "Sekretäre",
+        "Sekretärerin"
+      ],
+      "instruction_de": "Wähle die richtige weibliche Berufsbezeichnung.",
+      "instruction_ru": "Выберите правильное женское название профессии."
+    },
+    {
+      "id": "lesson8-profession-feminine-19",
+      "topic_id": "profession_feminine_nouns",
+      "lemma": "Sekretärin",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Welche Form passt? Zwei ___ arbeiten heute.",
+      "answer": "Sekretärinnen",
+      "options": [
+        "Sekretärinen",
+        "Sekretärinnen",
+        "Sekretärin"
+      ],
+      "instruction_de": "Wähle die passende Pluralform.",
+      "instruction_ru": "Выберите подходящую форму множественного числа."
+    },
+    {
+      "id": "lesson8-profession-feminine-10",
+      "topic_id": "profession_feminine_nouns",
+      "lemma": "Taxifahrer",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Die männliche Form ist „Taxifahrer“. Wie heißt die weibliche Form?",
+      "answer": "Taxifahrerin",
+      "options": [
+        "Taxifahrerin",
+        "Taxifahrere",
+        "Taxifahrererin"
+      ],
+      "instruction_de": "Wähle die richtige weibliche Berufsbezeichnung.",
+      "instruction_ru": "Выберите правильное женское название профессии."
+    },
+    {
+      "id": "lesson8-profession-feminine-20",
+      "topic_id": "profession_feminine_nouns",
+      "lemma": "Taxifahrerin",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Welche Form passt? Zwei ___ arbeiten heute.",
+      "answer": "Taxifahrerinnen",
+      "options": [
+        "Taxifahrerinen",
+        "Taxifahrerinnen",
+        "Taxifahrerin"
+      ],
+      "instruction_de": "Wähle die passende Pluralform.",
+      "instruction_ru": "Выберите подходящую форму множественного числа."
+    },
+    {
+      "id": "lesson8-work-prepositions-1",
+      "topic_id": "work_prepositions_als_bei",
+      "lemma": "Ärztin",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Sie arbeitet ___ Ärztin.",
+      "answer": "als",
+      "options": [
+        "als",
+        "bei",
+        "seit"
+      ],
+      "instruction_de": "Wähle das passende Wort.",
+      "instruction_ru": "Выберите подходящее слово."
+    },
+    {
+      "id": "lesson8-work-prepositions-2",
+      "topic_id": "work_prepositions_als_bei",
+      "lemma": "Zeitung",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Er arbeitet ___ einer Zeitung.",
+      "answer": "bei",
+      "options": [
+        "als",
+        "bei",
+        "für"
+      ],
+      "instruction_de": "Wähle das passende Wort.",
+      "instruction_ru": "Выберите подходящее слово."
+    },
+    {
+      "id": "lesson8-work-prepositions-3",
+      "topic_id": "work_prepositions_als_bei",
+      "lemma": "Fernsehen",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Die Journalistin arbeitet ___ Fernsehen.",
+      "answer": "beim",
+      "options": [
+        "beim",
+        "als",
+        "vom"
+      ],
+      "instruction_de": "Wähle das passende Wort.",
+      "instruction_ru": "Выберите подходящее слово."
+    },
+    {
+      "id": "lesson8-work-prepositions-4",
+      "topic_id": "work_prepositions_als_bei",
+      "lemma": "Krankenhaus",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Der Krankenpfleger arbeitet ___ einem Krankenhaus.",
+      "answer": "in",
+      "options": [
+        "in",
+        "als",
+        "seit"
+      ],
+      "instruction_de": "Wähle das passende Wort.",
+      "instruction_ru": "Выберите подходящее слово."
+    },
+    {
+      "id": "lesson8-work-prepositions-5",
+      "topic_id": "work_prepositions_als_bei",
+      "lemma": "Sekretärin",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Mila arbeitet ___ Sekretärin.",
+      "answer": "als",
+      "options": [
+        "als",
+        "bei",
+        "vor"
+      ],
+      "instruction_de": "Wähle das passende Wort.",
+      "instruction_ru": "Выберите подходящее слово."
+    },
+    {
+      "id": "lesson8-work-prepositions-6",
+      "topic_id": "work_prepositions_als_bei",
+      "lemma": "Café",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Mein Bruder arbeitet ___ einem Café.",
+      "answer": "bei",
+      "options": [
+        "bei",
+        "als",
+        "für"
+      ],
+      "instruction_de": "Wähle das passende Wort.",
+      "instruction_ru": "Выберите подходящее слово."
+    },
+    {
+      "id": "lesson8-work-prepositions-7",
+      "topic_id": "work_prepositions_als_bei",
+      "lemma": "Koch",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Er hat eine Stelle ___ Koch.",
+      "answer": "als",
+      "options": [
+        "als",
+        "bei",
+        "vor"
+      ],
+      "instruction_de": "Wähle das passende Wort.",
+      "instruction_ru": "Выберите подходящее слово."
+    },
+    {
+      "id": "lesson8-work-prepositions-8",
+      "topic_id": "work_prepositions_als_bei",
+      "lemma": "Universität",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Sie arbeitet ___ der Universität.",
+      "answer": "an",
+      "options": [
+        "an",
+        "als",
+        "für"
+      ],
+      "instruction_de": "Wähle das passende Wort.",
+      "instruction_ru": "Выберите подходящее слово."
+    },
+    {
+      "id": "lesson8-work-prepositions-9",
+      "topic_id": "work_prepositions_als_bei",
+      "lemma": "Taxifahrer",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Tom arbeitet ___ Taxifahrer.",
+      "answer": "als",
+      "options": [
+        "als",
+        "bei",
+        "in"
+      ],
+      "instruction_de": "Wähle das passende Wort.",
+      "instruction_ru": "Выберите подходящее слово."
+    },
+    {
+      "id": "lesson8-work-prepositions-10",
+      "topic_id": "work_prepositions_als_bei",
+      "lemma": "Restaurant",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Die Kellnerin arbeitet ___ einem Restaurant.",
+      "answer": "in",
+      "options": [
+        "in",
+        "als",
+        "seit"
+      ],
+      "instruction_de": "Wähle das passende Wort.",
+      "instruction_ru": "Выберите подходящее слово."
+    },
+    {
+      "id": "lesson8-work-prepositions-11",
+      "topic_id": "work_prepositions_als_bei",
+      "lemma": "Ärztin",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Sie arbeitet ___ Ärztin. Wähle die passende Verbindung.",
+      "answer": "als",
+      "options": [
+        "als",
+        "bei",
+        "seit"
+      ],
+      "instruction_de": "Wähle das passende Wort.",
+      "instruction_ru": "Выберите подходящее слово."
+    },
+    {
+      "id": "lesson8-work-prepositions-12",
+      "topic_id": "work_prepositions_als_bei",
+      "lemma": "Zeitung",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Er arbeitet ___ einer Zeitung. Wähle die passende Verbindung.",
+      "answer": "bei",
+      "options": [
+        "als",
+        "bei",
+        "für"
+      ],
+      "instruction_de": "Wähle das passende Wort.",
+      "instruction_ru": "Выберите подходящее слово."
+    },
+    {
+      "id": "lesson8-work-prepositions-13",
+      "topic_id": "work_prepositions_als_bei",
+      "lemma": "Fernsehen",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Die Journalistin arbeitet ___ Fernsehen. Wähle die passende Verbindung.",
+      "answer": "beim",
+      "options": [
+        "beim",
+        "als",
+        "vom"
+      ],
+      "instruction_de": "Wähle das passende Wort.",
+      "instruction_ru": "Выберите подходящее слово."
+    },
+    {
+      "id": "lesson8-work-prepositions-14",
+      "topic_id": "work_prepositions_als_bei",
+      "lemma": "Krankenhaus",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Der Krankenpfleger arbeitet ___ einem Krankenhaus. Wähle die passende Verbindung.",
+      "answer": "in",
+      "options": [
+        "in",
+        "als",
+        "seit"
+      ],
+      "instruction_de": "Wähle das passende Wort.",
+      "instruction_ru": "Выберите подходящее слово."
+    },
+    {
+      "id": "lesson8-work-prepositions-15",
+      "topic_id": "work_prepositions_als_bei",
+      "lemma": "Sekretärin",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Mila arbeitet ___ Sekretärin. Wähle die passende Verbindung.",
+      "answer": "als",
+      "options": [
+        "als",
+        "bei",
+        "vor"
+      ],
+      "instruction_de": "Wähle das passende Wort.",
+      "instruction_ru": "Выберите подходящее слово."
+    },
+    {
+      "id": "lesson8-work-prepositions-16",
+      "topic_id": "work_prepositions_als_bei",
+      "lemma": "Café",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Mein Bruder arbeitet ___ einem Café. Wähle die passende Verbindung.",
+      "answer": "bei",
+      "options": [
+        "bei",
+        "als",
+        "für"
+      ],
+      "instruction_de": "Wähle das passende Wort.",
+      "instruction_ru": "Выберите подходящее слово."
+    },
+    {
+      "id": "lesson8-work-prepositions-17",
+      "topic_id": "work_prepositions_als_bei",
+      "lemma": "Koch",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Er hat eine Stelle ___ Koch. Wähle die passende Verbindung.",
+      "answer": "als",
+      "options": [
+        "als",
+        "bei",
+        "vor"
+      ],
+      "instruction_de": "Wähle das passende Wort.",
+      "instruction_ru": "Выберите подходящее слово."
+    },
+    {
+      "id": "lesson8-work-prepositions-18",
+      "topic_id": "work_prepositions_als_bei",
+      "lemma": "Universität",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Sie arbeitet ___ der Universität. Wähle die passende Verbindung.",
+      "answer": "an",
+      "options": [
+        "an",
+        "als",
+        "für"
+      ],
+      "instruction_de": "Wähle das passende Wort.",
+      "instruction_ru": "Выберите подходящее слово."
+    },
+    {
+      "id": "lesson8-work-prepositions-19",
+      "topic_id": "work_prepositions_als_bei",
+      "lemma": "Taxifahrer",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Tom arbeitet ___ Taxifahrer. Wähle die passende Verbindung.",
+      "answer": "als",
+      "options": [
+        "als",
+        "bei",
+        "in"
+      ],
+      "instruction_de": "Wähle das passende Wort.",
+      "instruction_ru": "Выберите подходящее слово."
+    },
+    {
+      "id": "lesson8-work-prepositions-20",
+      "topic_id": "work_prepositions_als_bei",
+      "lemma": "Restaurant",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Die Kellnerin arbeitet ___ einem Restaurant. Wähle die passende Verbindung.",
+      "answer": "in",
+      "options": [
+        "in",
+        "als",
+        "seit"
+      ],
+      "instruction_de": "Wähle das passende Wort.",
+      "instruction_ru": "Выберите подходящее слово."
+    },
+    {
+      "id": "lesson8-temporal-prepositions-1",
+      "topic_id": "temporal_prepositions_vor_seit_fuer",
+      "lemma": "dauern",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Ich arbeite ___ einem Jahr hier.",
+      "answer": "seit",
+      "options": [
+        "seit",
+        "vor",
+        "für"
+      ],
+      "instruction_de": "Wähle die richtige Präposition.",
+      "instruction_ru": "Выберите правильный предлог."
+    },
+    {
+      "id": "lesson8-temporal-prepositions-2",
+      "topic_id": "temporal_prepositions_vor_seit_fuer",
+      "lemma": "Ausbildung",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Die Ausbildung begann ___ zwei Monaten.",
+      "answer": "vor",
+      "options": [
+        "vor",
+        "seit",
+        "für"
+      ],
+      "instruction_de": "Wähle die richtige Präposition.",
+      "instruction_ru": "Выберите правильный предлог."
+    },
+    {
+      "id": "lesson8-temporal-prepositions-3",
+      "topic_id": "temporal_prepositions_vor_seit_fuer",
+      "lemma": "Stelle",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Die Stelle ist ___ ein Jahr befristet.",
+      "answer": "für",
+      "options": [
+        "für",
+        "seit",
+        "vor"
+      ],
+      "instruction_de": "Wähle die richtige Präposition.",
+      "instruction_ru": "Выберите правильный предлог."
+    },
+    {
+      "id": "lesson8-temporal-prepositions-4",
+      "topic_id": "temporal_prepositions_vor_seit_fuer",
+      "lemma": "Praktikum",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Sie macht das Praktikum ___ sechs Wochen.",
+      "answer": "für",
+      "options": [
+        "für",
+        "seit",
+        "vor"
+      ],
+      "instruction_de": "Wähle die richtige Präposition.",
+      "instruction_ru": "Выберите правильный предлог."
+    },
+    {
+      "id": "lesson8-temporal-prepositions-5",
+      "topic_id": "temporal_prepositions_vor_seit_fuer",
+      "lemma": "Büro",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Er arbeitet ___ Montag im Büro.",
+      "answer": "seit",
+      "options": [
+        "seit",
+        "vor",
+        "für"
+      ],
+      "instruction_de": "Wähle die richtige Präposition.",
+      "instruction_ru": "Выберите правильный предлог."
+    },
+    {
+      "id": "lesson8-temporal-prepositions-6",
+      "topic_id": "temporal_prepositions_vor_seit_fuer",
+      "lemma": "Bewerbung",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Ich habe die Bewerbung ___ einer Woche geschickt.",
+      "answer": "vor",
+      "options": [
+        "vor",
+        "seit",
+        "für"
+      ],
+      "instruction_de": "Wähle die richtige Präposition.",
+      "instruction_ru": "Выберите правильный предлог."
+    },
+    {
+      "id": "lesson8-temporal-prepositions-7",
+      "topic_id": "temporal_prepositions_vor_seit_fuer",
+      "lemma": "Teilzeit",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Sie arbeitet ___ drei Jahren in Teilzeit.",
+      "answer": "seit",
+      "options": [
+        "seit",
+        "vor",
+        "für"
+      ],
+      "instruction_de": "Wähle die richtige Präposition.",
+      "instruction_ru": "Выберите правильный предлог."
+    },
+    {
+      "id": "lesson8-temporal-prepositions-8",
+      "topic_id": "temporal_prepositions_vor_seit_fuer",
+      "lemma": "Ausland",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Wir gehen ___ zwei Monate ins Ausland.",
+      "answer": "für",
+      "options": [
+        "für",
+        "seit",
+        "vor"
+      ],
+      "instruction_de": "Wähle die richtige Präposition.",
+      "instruction_ru": "Выберите правильный предлог."
+    },
+    {
+      "id": "lesson8-temporal-prepositions-9",
+      "topic_id": "temporal_prepositions_vor_seit_fuer",
+      "lemma": "Job",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Er hat ___ einem Monat einen neuen Job.",
+      "answer": "seit",
+      "options": [
+        "seit",
+        "vor",
+        "für"
+      ],
+      "instruction_de": "Wähle die richtige Präposition.",
+      "instruction_ru": "Выберите правильный предлог."
+    },
+    {
+      "id": "lesson8-temporal-prepositions-10",
+      "topic_id": "temporal_prepositions_vor_seit_fuer",
+      "lemma": "Universität",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Das Studium begann ___ einem Jahr.",
+      "answer": "vor",
+      "options": [
+        "vor",
+        "seit",
+        "für"
+      ],
+      "instruction_de": "Wähle die richtige Präposition.",
+      "instruction_ru": "Выберите правильный предлог."
+    },
+    {
+      "id": "lesson8-temporal-prepositions-11",
+      "topic_id": "temporal_prepositions_vor_seit_fuer",
+      "lemma": "dauern",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Ich arbeite ___ einem Jahr hier. Achte auf die Bedeutung der Zeitangabe.",
+      "answer": "seit",
+      "options": [
+        "seit",
+        "vor",
+        "für"
+      ],
+      "instruction_de": "Wähle die richtige Präposition.",
+      "instruction_ru": "Выберите правильный предлог."
+    },
+    {
+      "id": "lesson8-temporal-prepositions-12",
+      "topic_id": "temporal_prepositions_vor_seit_fuer",
+      "lemma": "Ausbildung",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Die Ausbildung begann ___ zwei Monaten. Achte auf die Bedeutung der Zeitangabe.",
+      "answer": "vor",
+      "options": [
+        "vor",
+        "seit",
+        "für"
+      ],
+      "instruction_de": "Wähle die richtige Präposition.",
+      "instruction_ru": "Выберите правильный предлог."
+    },
+    {
+      "id": "lesson8-temporal-prepositions-13",
+      "topic_id": "temporal_prepositions_vor_seit_fuer",
+      "lemma": "Stelle",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Die Stelle ist ___ ein Jahr befristet. Achte auf die Bedeutung der Zeitangabe.",
+      "answer": "für",
+      "options": [
+        "für",
+        "seit",
+        "vor"
+      ],
+      "instruction_de": "Wähle die richtige Präposition.",
+      "instruction_ru": "Выберите правильный предлог."
+    },
+    {
+      "id": "lesson8-temporal-prepositions-14",
+      "topic_id": "temporal_prepositions_vor_seit_fuer",
+      "lemma": "Praktikum",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Sie macht das Praktikum ___ sechs Wochen. Achte auf die Bedeutung der Zeitangabe.",
+      "answer": "für",
+      "options": [
+        "für",
+        "seit",
+        "vor"
+      ],
+      "instruction_de": "Wähle die richtige Präposition.",
+      "instruction_ru": "Выберите правильный предлог."
+    },
+    {
+      "id": "lesson8-temporal-prepositions-15",
+      "topic_id": "temporal_prepositions_vor_seit_fuer",
+      "lemma": "Büro",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Er arbeitet ___ Montag im Büro. Achte auf die Bedeutung der Zeitangabe.",
+      "answer": "seit",
+      "options": [
+        "seit",
+        "vor",
+        "für"
+      ],
+      "instruction_de": "Wähle die richtige Präposition.",
+      "instruction_ru": "Выберите правильный предлог."
+    },
+    {
+      "id": "lesson8-temporal-prepositions-16",
+      "topic_id": "temporal_prepositions_vor_seit_fuer",
+      "lemma": "Bewerbung",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Ich habe die Bewerbung ___ einer Woche geschickt. Achte auf die Bedeutung der Zeitangabe.",
+      "answer": "vor",
+      "options": [
+        "vor",
+        "seit",
+        "für"
+      ],
+      "instruction_de": "Wähle die richtige Präposition.",
+      "instruction_ru": "Выберите правильный предлог."
+    },
+    {
+      "id": "lesson8-temporal-prepositions-17",
+      "topic_id": "temporal_prepositions_vor_seit_fuer",
+      "lemma": "Teilzeit",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Sie arbeitet ___ drei Jahren in Teilzeit. Achte auf die Bedeutung der Zeitangabe.",
+      "answer": "seit",
+      "options": [
+        "seit",
+        "vor",
+        "für"
+      ],
+      "instruction_de": "Wähle die richtige Präposition.",
+      "instruction_ru": "Выберите правильный предлог."
+    },
+    {
+      "id": "lesson8-temporal-prepositions-18",
+      "topic_id": "temporal_prepositions_vor_seit_fuer",
+      "lemma": "Ausland",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Wir gehen ___ zwei Monate ins Ausland. Achte auf die Bedeutung der Zeitangabe.",
+      "answer": "für",
+      "options": [
+        "für",
+        "seit",
+        "vor"
+      ],
+      "instruction_de": "Wähle die richtige Präposition.",
+      "instruction_ru": "Выберите правильный предлог."
+    },
+    {
+      "id": "lesson8-temporal-prepositions-19",
+      "topic_id": "temporal_prepositions_vor_seit_fuer",
+      "lemma": "Job",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Er hat ___ einem Monat einen neuen Job. Achte auf die Bedeutung der Zeitangabe.",
+      "answer": "seit",
+      "options": [
+        "seit",
+        "vor",
+        "für"
+      ],
+      "instruction_de": "Wähle die richtige Präposition.",
+      "instruction_ru": "Выберите правильный предлог."
+    },
+    {
+      "id": "lesson8-temporal-prepositions-20",
+      "topic_id": "temporal_prepositions_vor_seit_fuer",
+      "lemma": "Universität",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Das Studium begann ___ einem Jahr. Achte auf die Bedeutung der Zeitangabe.",
+      "answer": "vor",
+      "options": [
+        "vor",
+        "seit",
+        "für"
+      ],
+      "instruction_de": "Wähle die richtige Präposition.",
+      "instruction_ru": "Выберите правильный предлог."
+    },
+    {
+      "id": "lesson8-sein-preterite-1",
+      "topic_id": "sein_preterite",
+      "lemma": "sein",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Ich ___ gestern im Büro.",
+      "answer": "war",
+      "options": [
+        "war",
+        "waren",
+        "wart"
+      ],
+      "instruction_de": "Wähle die richtige Präteritumform von sein.",
+      "instruction_ru": "Выберите правильную форму Präteritum глагола sein."
+    },
+    {
+      "id": "lesson8-sein-preterite-2",
+      "topic_id": "sein_preterite",
+      "lemma": "sein",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Du ___ gestern im Büro.",
+      "answer": "warst",
+      "options": [
+        "warst",
+        "war",
+        "wart"
+      ],
+      "instruction_de": "Wähle die richtige Präteritumform von sein.",
+      "instruction_ru": "Выберите правильную форму Präteritum глагола sein."
+    },
+    {
+      "id": "lesson8-sein-preterite-3",
+      "topic_id": "sein_preterite",
+      "lemma": "sein",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Der Chef ___ gestern im Büro.",
+      "answer": "war",
+      "options": [
+        "war",
+        "waren",
+        "wart"
+      ],
+      "instruction_de": "Wähle die richtige Präteritumform von sein.",
+      "instruction_ru": "Выберите правильную форму Präteritum глагола sein."
+    },
+    {
+      "id": "lesson8-sein-preterite-4",
+      "topic_id": "sein_preterite",
+      "lemma": "sein",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Die Ärztin ___ gestern im Büro.",
+      "answer": "war",
+      "options": [
+        "war",
+        "waren",
+        "wart"
+      ],
+      "instruction_de": "Wähle die richtige Präteritumform von sein.",
+      "instruction_ru": "Выберите правильную форму Präteritum глагола sein."
+    },
+    {
+      "id": "lesson8-sein-preterite-5",
+      "topic_id": "sein_preterite",
+      "lemma": "sein",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Wir ___ gestern im Büro.",
+      "answer": "waren",
+      "options": [
+        "waren",
+        "war",
+        "wart"
+      ],
+      "instruction_de": "Wähle die richtige Präteritumform von sein.",
+      "instruction_ru": "Выберите правильную форму Präteritum глагола sein."
+    },
+    {
+      "id": "lesson8-sein-preterite-6",
+      "topic_id": "sein_preterite",
+      "lemma": "sein",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Ihr ___ gestern im Büro.",
+      "answer": "wart",
+      "options": [
+        "wart",
+        "war",
+        "warst"
+      ],
+      "instruction_de": "Wähle die richtige Präteritumform von sein.",
+      "instruction_ru": "Выберите правильную форму Präteritum глагола sein."
+    },
+    {
+      "id": "lesson8-sein-preterite-7",
+      "topic_id": "sein_preterite",
+      "lemma": "sein",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Die Kollegen ___ gestern im Büro.",
+      "answer": "waren",
+      "options": [
+        "waren",
+        "war",
+        "wart"
+      ],
+      "instruction_de": "Wähle die richtige Präteritumform von sein.",
+      "instruction_ru": "Выберите правильную форму Präteritum глагола sein."
+    },
+    {
+      "id": "lesson8-sein-preterite-8",
+      "topic_id": "sein_preterite",
+      "lemma": "sein",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Sie ___ gestern im Büro.",
+      "answer": "waren",
+      "options": [
+        "waren",
+        "war",
+        "wart"
+      ],
+      "instruction_de": "Wähle die richtige Präteritumform von sein.",
+      "instruction_ru": "Выберите правильную форму Präteritum глагола sein."
+    },
+    {
+      "id": "lesson8-sein-preterite-9",
+      "topic_id": "sein_preterite",
+      "lemma": "sein",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Das Praktikum ___ gestern im Büro.",
+      "answer": "war",
+      "options": [
+        "war",
+        "waren",
+        "wart"
+      ],
+      "instruction_de": "Wähle die richtige Präteritumform von sein.",
+      "instruction_ru": "Выберите правильную форму Präteritum глагола sein."
+    },
+    {
+      "id": "lesson8-sein-preterite-10",
+      "topic_id": "sein_preterite",
+      "lemma": "sein",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Die Stellen ___ gestern im Büro.",
+      "answer": "waren",
+      "options": [
+        "waren",
+        "war",
+        "wart"
+      ],
+      "instruction_de": "Wähle die richtige Präteritumform von sein.",
+      "instruction_ru": "Выберите правильную форму Präteritum глагола sein."
+    },
+    {
+      "id": "lesson8-sein-preterite-11",
+      "topic_id": "sein_preterite",
+      "lemma": "sein",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Ich ___ gestern im Büro und heute zu Hause.",
+      "answer": "war",
+      "options": [
+        "war",
+        "waren",
+        "wart"
+      ],
+      "instruction_de": "Wähle die richtige Präteritumform von sein.",
+      "instruction_ru": "Выберите правильную форму Präteritum глагола sein."
+    },
+    {
+      "id": "lesson8-sein-preterite-12",
+      "topic_id": "sein_preterite",
+      "lemma": "sein",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Du ___ gestern im Büro und heute zu Hause.",
+      "answer": "warst",
+      "options": [
+        "warst",
+        "war",
+        "wart"
+      ],
+      "instruction_de": "Wähle die richtige Präteritumform von sein.",
+      "instruction_ru": "Выберите правильную форму Präteritum глагола sein."
+    },
+    {
+      "id": "lesson8-sein-preterite-13",
+      "topic_id": "sein_preterite",
+      "lemma": "sein",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Der Chef ___ gestern im Büro und heute zu Hause.",
+      "answer": "war",
+      "options": [
+        "war",
+        "waren",
+        "wart"
+      ],
+      "instruction_de": "Wähle die richtige Präteritumform von sein.",
+      "instruction_ru": "Выберите правильную форму Präteritum глагола sein."
+    },
+    {
+      "id": "lesson8-sein-preterite-14",
+      "topic_id": "sein_preterite",
+      "lemma": "sein",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Die Ärztin ___ gestern im Büro und heute zu Hause.",
+      "answer": "war",
+      "options": [
+        "war",
+        "waren",
+        "wart"
+      ],
+      "instruction_de": "Wähle die richtige Präteritumform von sein.",
+      "instruction_ru": "Выберите правильную форму Präteritum глагола sein."
+    },
+    {
+      "id": "lesson8-sein-preterite-15",
+      "topic_id": "sein_preterite",
+      "lemma": "sein",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Wir ___ gestern im Büro und heute zu Hause.",
+      "answer": "waren",
+      "options": [
+        "waren",
+        "war",
+        "wart"
+      ],
+      "instruction_de": "Wähle die richtige Präteritumform von sein.",
+      "instruction_ru": "Выберите правильную форму Präteritum глагола sein."
+    },
+    {
+      "id": "lesson8-sein-preterite-16",
+      "topic_id": "sein_preterite",
+      "lemma": "sein",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Ihr ___ gestern im Büro und heute zu Hause.",
+      "answer": "wart",
+      "options": [
+        "wart",
+        "war",
+        "warst"
+      ],
+      "instruction_de": "Wähle die richtige Präteritumform von sein.",
+      "instruction_ru": "Выберите правильную форму Präteritum глагола sein."
+    },
+    {
+      "id": "lesson8-sein-preterite-17",
+      "topic_id": "sein_preterite",
+      "lemma": "sein",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Die Kollegen ___ gestern im Büro und heute zu Hause.",
+      "answer": "waren",
+      "options": [
+        "waren",
+        "war",
+        "wart"
+      ],
+      "instruction_de": "Wähle die richtige Präteritumform von sein.",
+      "instruction_ru": "Выберите правильную форму Präteritum глагола sein."
+    },
+    {
+      "id": "lesson8-sein-preterite-18",
+      "topic_id": "sein_preterite",
+      "lemma": "sein",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Sie ___ gestern im Büro und heute zu Hause.",
+      "answer": "waren",
+      "options": [
+        "waren",
+        "war",
+        "wart"
+      ],
+      "instruction_de": "Wähle die richtige Präteritumform von sein.",
+      "instruction_ru": "Выберите правильную форму Präteritum глагола sein."
+    },
+    {
+      "id": "lesson8-sein-preterite-19",
+      "topic_id": "sein_preterite",
+      "lemma": "sein",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Das Praktikum ___ gestern im Büro und heute zu Hause.",
+      "answer": "war",
+      "options": [
+        "war",
+        "waren",
+        "wart"
+      ],
+      "instruction_de": "Wähle die richtige Präteritumform von sein.",
+      "instruction_ru": "Выберите правильную форму Präteritum глагола sein."
+    },
+    {
+      "id": "lesson8-sein-preterite-20",
+      "topic_id": "sein_preterite",
+      "lemma": "sein",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Die Stellen ___ gestern im Büro und heute zu Hause.",
+      "answer": "waren",
+      "options": [
+        "waren",
+        "war",
+        "wart"
+      ],
+      "instruction_de": "Wähle die richtige Präteritumform von sein.",
+      "instruction_ru": "Выберите правильную форму Präteritum глагола sein."
+    },
+    {
+      "id": "lesson8-haben-preterite-1",
+      "topic_id": "haben_preterite",
+      "lemma": "haben",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Ich ___ gestern viel Arbeit.",
+      "answer": "hatte",
+      "options": [
+        "hatte",
+        "hatten",
+        "hattet"
+      ],
+      "instruction_de": "Wähle die richtige Präteritumform von haben.",
+      "instruction_ru": "Выберите правильную форму Präteritum глагола haben."
+    },
+    {
+      "id": "lesson8-haben-preterite-2",
+      "topic_id": "haben_preterite",
+      "lemma": "haben",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Du ___ gestern viel Arbeit.",
+      "answer": "hattest",
+      "options": [
+        "hattest",
+        "hatte",
+        "hattet"
+      ],
+      "instruction_de": "Wähle die richtige Präteritumform von haben.",
+      "instruction_ru": "Выберите правильную форму Präteritum глагола haben."
+    },
+    {
+      "id": "lesson8-haben-preterite-3",
+      "topic_id": "haben_preterite",
+      "lemma": "haben",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Der Student ___ gestern viel Arbeit.",
+      "answer": "hatte",
+      "options": [
+        "hatte",
+        "hatten",
+        "hattet"
+      ],
+      "instruction_de": "Wähle die richtige Präteritumform von haben.",
+      "instruction_ru": "Выберите правильную форму Präteritum глагола haben."
+    },
+    {
+      "id": "lesson8-haben-preterite-4",
+      "topic_id": "haben_preterite",
+      "lemma": "haben",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Die Chefin ___ gestern viel Arbeit.",
+      "answer": "hatte",
+      "options": [
+        "hatte",
+        "hatten",
+        "hattet"
+      ],
+      "instruction_de": "Wähle die richtige Präteritumform von haben.",
+      "instruction_ru": "Выберите правильную форму Präteritum глагола haben."
+    },
+    {
+      "id": "lesson8-haben-preterite-5",
+      "topic_id": "haben_preterite",
+      "lemma": "haben",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Wir ___ gestern viel Arbeit.",
+      "answer": "hatten",
+      "options": [
+        "hatten",
+        "hatte",
+        "hattet"
+      ],
+      "instruction_de": "Wähle die richtige Präteritumform von haben.",
+      "instruction_ru": "Выберите правильную форму Präteritum глагола haben."
+    },
+    {
+      "id": "lesson8-haben-preterite-6",
+      "topic_id": "haben_preterite",
+      "lemma": "haben",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Ihr ___ gestern viel Arbeit.",
+      "answer": "hattet",
+      "options": [
+        "hattet",
+        "hatte",
+        "hattest"
+      ],
+      "instruction_de": "Wähle die richtige Präteritumform von haben.",
+      "instruction_ru": "Выберите правильную форму Präteritum глагола haben."
+    },
+    {
+      "id": "lesson8-haben-preterite-7",
+      "topic_id": "haben_preterite",
+      "lemma": "haben",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Die Touristen ___ gestern viel Arbeit.",
+      "answer": "hatten",
+      "options": [
+        "hatten",
+        "hatte",
+        "hattet"
+      ],
+      "instruction_de": "Wähle die richtige Präteritumform von haben.",
+      "instruction_ru": "Выберите правильную форму Präteritum глагола haben."
+    },
+    {
+      "id": "lesson8-haben-preterite-8",
+      "topic_id": "haben_preterite",
+      "lemma": "haben",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Sie ___ gestern viel Arbeit.",
+      "answer": "hatten",
+      "options": [
+        "hatten",
+        "hatte",
+        "hattet"
+      ],
+      "instruction_de": "Wähle die richtige Präteritumform von haben.",
+      "instruction_ru": "Выберите правильную форму Präteritum глагола haben."
+    },
+    {
+      "id": "lesson8-haben-preterite-9",
+      "topic_id": "haben_preterite",
+      "lemma": "haben",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Das Café ___ gestern viel Arbeit.",
+      "answer": "hatte",
+      "options": [
+        "hatte",
+        "hatten",
+        "hattet"
+      ],
+      "instruction_de": "Wähle die richtige Präteritumform von haben.",
+      "instruction_ru": "Выберите правильную форму Präteritum глагола haben."
+    },
+    {
+      "id": "lesson8-haben-preterite-10",
+      "topic_id": "haben_preterite",
+      "lemma": "haben",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Die Abteilungen ___ gestern viel Arbeit.",
+      "answer": "hatten",
+      "options": [
+        "hatten",
+        "hatte",
+        "hattet"
+      ],
+      "instruction_de": "Wähle die richtige Präteritumform von haben.",
+      "instruction_ru": "Выберите правильную форму Präteritum глагола haben."
+    },
+    {
+      "id": "lesson8-haben-preterite-11",
+      "topic_id": "haben_preterite",
+      "lemma": "haben",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Ich ___ gestern keine Zeit.",
+      "answer": "hatte",
+      "options": [
+        "hatte",
+        "hatten",
+        "hattet"
+      ],
+      "instruction_de": "Wähle die richtige Präteritumform von haben.",
+      "instruction_ru": "Выберите правильную форму Präteritum глагола haben."
+    },
+    {
+      "id": "lesson8-haben-preterite-12",
+      "topic_id": "haben_preterite",
+      "lemma": "haben",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Du ___ gestern keine Zeit.",
+      "answer": "hattest",
+      "options": [
+        "hattest",
+        "hatte",
+        "hattet"
+      ],
+      "instruction_de": "Wähle die richtige Präteritumform von haben.",
+      "instruction_ru": "Выберите правильную форму Präteritum глагола haben."
+    },
+    {
+      "id": "lesson8-haben-preterite-13",
+      "topic_id": "haben_preterite",
+      "lemma": "haben",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Der Student ___ gestern keine Zeit.",
+      "answer": "hatte",
+      "options": [
+        "hatte",
+        "hatten",
+        "hattet"
+      ],
+      "instruction_de": "Wähle die richtige Präteritumform von haben.",
+      "instruction_ru": "Выберите правильную форму Präteritum глагола haben."
+    },
+    {
+      "id": "lesson8-haben-preterite-14",
+      "topic_id": "haben_preterite",
+      "lemma": "haben",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Die Chefin ___ gestern keine Zeit.",
+      "answer": "hatte",
+      "options": [
+        "hatte",
+        "hatten",
+        "hattet"
+      ],
+      "instruction_de": "Wähle die richtige Präteritumform von haben.",
+      "instruction_ru": "Выберите правильную форму Präteritum глагола haben."
+    },
+    {
+      "id": "lesson8-haben-preterite-15",
+      "topic_id": "haben_preterite",
+      "lemma": "haben",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Wir ___ gestern keine Zeit.",
+      "answer": "hatten",
+      "options": [
+        "hatten",
+        "hatte",
+        "hattet"
+      ],
+      "instruction_de": "Wähle die richtige Präteritumform von haben.",
+      "instruction_ru": "Выберите правильную форму Präteritum глагола haben."
+    },
+    {
+      "id": "lesson8-haben-preterite-16",
+      "topic_id": "haben_preterite",
+      "lemma": "haben",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Ihr ___ gestern keine Zeit.",
+      "answer": "hattet",
+      "options": [
+        "hattet",
+        "hatte",
+        "hattest"
+      ],
+      "instruction_de": "Wähle die richtige Präteritumform von haben.",
+      "instruction_ru": "Выберите правильную форму Präteritum глагола haben."
+    },
+    {
+      "id": "lesson8-haben-preterite-17",
+      "topic_id": "haben_preterite",
+      "lemma": "haben",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Die Touristen ___ gestern keine Zeit.",
+      "answer": "hatten",
+      "options": [
+        "hatten",
+        "hatte",
+        "hattet"
+      ],
+      "instruction_de": "Wähle die richtige Präteritumform von haben.",
+      "instruction_ru": "Выберите правильную форму Präteritum глагола haben."
+    },
+    {
+      "id": "lesson8-haben-preterite-18",
+      "topic_id": "haben_preterite",
+      "lemma": "haben",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Sie ___ gestern keine Zeit.",
+      "answer": "hatten",
+      "options": [
+        "hatten",
+        "hatte",
+        "hattet"
+      ],
+      "instruction_de": "Wähle die richtige Präteritumform von haben.",
+      "instruction_ru": "Выберите правильную форму Präteritum глагола haben."
+    },
+    {
+      "id": "lesson8-haben-preterite-19",
+      "topic_id": "haben_preterite",
+      "lemma": "haben",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Das Café ___ gestern keine Zeit.",
+      "answer": "hatte",
+      "options": [
+        "hatte",
+        "hatten",
+        "hattet"
+      ],
+      "instruction_de": "Wähle die richtige Präteritumform von haben.",
+      "instruction_ru": "Выберите правильную форму Präteritum глагола haben."
+    },
+    {
+      "id": "lesson8-haben-preterite-20",
+      "topic_id": "haben_preterite",
+      "lemma": "haben",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Die Abteilungen ___ gestern keine Zeit.",
+      "answer": "hatten",
+      "options": [
+        "hatten",
+        "hatte",
+        "hattet"
+      ],
+      "instruction_de": "Wähle die richtige Präteritumform von haben.",
+      "instruction_ru": "Выберите правильную форму Präteritum глагола haben."
     }
   ]
 }
