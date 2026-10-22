@@ -63,7 +63,7 @@ void main() {
         .where((topic) => topic.trainable)
         .map((topic) => topic.id)
         .toSet();
-    expect(trainableTopics, hasLength(29));
+    expect(trainableTopics, hasLength(35));
     expect(
       catalog.topics.any((topic) => topic.id == 'personal_pronouns'),
       isFalse,
@@ -124,7 +124,7 @@ void main() {
     }
   });
 
-  test('covers the complete seven-lesson course through Perfekt', () async {
+  test('covers the course through lesson 8 and irregular verb forms', () async {
     final catalog = await GrammarCatalog.load(rootBundle);
     final topicIds = catalog.topics.map((topic) => topic.id).toSet();
 
@@ -160,8 +160,14 @@ void main() {
       'modal_verbs_koennen_wollen',
       'perfect_haben',
       'perfect_sein',
+      'profession_feminine_nouns',
+      'work_prepositions_als_bei',
+      'temporal_prepositions_vor_seit_fuer',
+      'sein_preterite',
+      'haben_preterite',
+      'irregular_verb_forms',
     });
-    expect(catalog.exercises, hasLength(2005));
+    expect(catalog.exercises, hasLength(2132));
 
     int exerciseCount(String topicId) => catalog.exercises
         .where((exercise) => exercise.topicId == topicId)
@@ -171,6 +177,51 @@ void main() {
     expect(exerciseCount('modal_verbs_koennen_wollen'), 24);
     expect(exerciseCount('perfect_haben'), 32);
     expect(exerciseCount('perfect_sein'), 20);
+    expect(exerciseCount('irregular_verb_forms'), 27);
+
+    final irregularForms = catalog.exercises
+        .where((exercise) => exercise.topicId == 'irregular_verb_forms')
+        .toList(growable: false);
+    expect(
+      irregularForms.map((exercise) => exercise.lemma).toSet(),
+      {
+        'bleiben',
+        'essen',
+        'fahren',
+        'finden',
+        'fliegen',
+        'geben',
+        'haben',
+        'helfen',
+        'kommen',
+        'laufen',
+        'lesen',
+        'liegen',
+        'nehmen',
+        'schlafen',
+        'schließen',
+        'schneiden',
+        'schreiben',
+        'schwimmen',
+        'sehen',
+        'sein',
+        'sitzen',
+        'sprechen',
+        'stehen',
+        'tragen',
+        'treffen',
+        'trinken',
+        'waschen',
+      },
+    );
+    expect(
+      catalog.exercise('irregular-forms-bleiben')?.answer,
+      'bleibt ist geblieben',
+    );
+    expect(
+      catalog.exercise('irregular-forms-sitzen')?.answer,
+      'sitzt hat gesessen',
+    );
   });
 
   test('activates only learned topics with a matching active verb', () async {

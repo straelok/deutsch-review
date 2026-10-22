@@ -2187,6 +2187,56 @@
         ]
       ],
       "trainable": true
+    },
+    {
+      "id": "irregular_verb_forms",
+      "order": 32,
+      "title_de": "Unregelmäßige Verben: Präsens und Perfekt",
+      "title_ru": "Неправильные глаголы: Präsens и Perfekt",
+      "summary_de": "Lerne die Form für er/sie/es zusammen mit Hilfsverb und Partizip II.",
+      "summary_ru": "Форма er/sie/es изучается вместе со вспомогательным глаголом и Partizip II.",
+      "explanation_de": [
+        "Unregelmäßige Verben können im Präsens den Stammvokal ändern: lesen — er liest, fahren — er fährt.",
+        "Für jede Karte schreibe drei Formen in dieser Reihenfolge: er/sie/es, Hilfsverb und Partizip II.",
+        "Beispiel: bleiben — bleibt ist geblieben. Satzzeichen sind nicht nötig.",
+        "Die meisten Verben bilden das Perfekt mit haben. Verben der Ortsveränderung in dieser Liste verwenden sein.",
+        "Lerne die drei Formen als eine feste Gruppe, weil sich der Stamm im Präsens und im Partizip unterschiedlich ändern kann."
+      ],
+      "explanation_ru": [
+        "У неправильных глаголов может меняться корневая гласная в Präsens: lesen — er liest, fahren — er fährt.",
+        "Для каждой карточки введите три формы в таком порядке: er/sie/es, вспомогательный глагол и Partizip II.",
+        "Пример: bleiben — bleibt ist geblieben. Знаки препинания вводить не нужно.",
+        "Большинство глаголов образует Perfekt с haben. Глаголы перемещения из этого списка используются с sein.",
+        "Учите три формы как одну устойчивую группу: основа в Präsens и Partizip II может меняться по-разному."
+      ],
+      "table": [
+        [
+          "Infinitiv",
+          "er/sie/es",
+          "Perfekt"
+        ],
+        [
+          "bleiben",
+          "bleibt",
+          "ist geblieben"
+        ],
+        [
+          "essen",
+          "isst",
+          "hat gegessen"
+        ],
+        [
+          "fahren",
+          "fährt",
+          "ist gefahren"
+        ],
+        [
+          "schreiben",
+          "schreibt",
+          "hat geschrieben"
+        ]
+      ],
+      "trainable": true
     }
   ],
   "verbs": [
