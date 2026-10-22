@@ -467,6 +467,12 @@ void main() {
       find.byKey(const Key('include-favorite-grammar-lessons')),
       findsNothing,
     );
+    final problemWeight = find.byKey(
+      const Key('problem-word-max-weight'),
+    );
+    await tester.ensureVisible(problemWeight);
+    await tester.enterText(problemWeight, '37');
+    await tester.pumpAndSettle();
     final immediateCorrection = find.byKey(
       const Key('repeat-incorrect-immediately'),
     );
@@ -479,11 +485,6 @@ void main() {
     await tester.ensureVisible(matchingCounter);
     await tester.tap(
       find.descendant(of: matchingCounter, matching: find.byIcon(Icons.add)),
-    );
-    await tester.pumpAndSettle();
-    await tester.enterText(
-      find.byKey(const Key('problem-word-max-weight')),
-      '37',
     );
     await tester.pumpAndSettle();
     expect(find.byKey(const Key('save-settings')), findsNothing);
@@ -700,6 +701,14 @@ void main() {
     expect(find.text('Richtige Antwort: lernen'), findsOneWidget);
     expect(find.text('Beispiel: Ich lerne Deutsch.'), findsOneWidget);
     expect(find.text('Notiz: Wort aus Lektion 1'), findsOneWidget);
+    await tester.tap(find.byKey(const Key('next-answer')));
+    await tester.pumpAndSettle();
+
+    expect(find.text('учить'), findsOneWidget);
+    expect(find.textContaining('Korrektur'), findsOneWidget);
+    await tester.enterText(find.byKey(const Key('practice-answer')), 'lernen');
+    await tester.tap(find.byKey(const Key('check-answer')));
+    await tester.pumpAndSettle();
     await tester.tap(find.byKey(const Key('next-answer')));
     await tester.pumpAndSettle();
 
@@ -1221,7 +1230,7 @@ void main() {
     expect(find.byKey(const Key('multiple-choice-option-1')), findsOneWidget);
     expect(find.byKey(const Key('multiple-choice-option-4')), findsOneWidget);
 
-    await tester.tap(find.byKey(const Key('multiple-choice-option-1')));
+    await tester.tap(find.textContaining('перевод $firstIndex'));
     await tester.pumpAndSettle();
     final next = find.byKey(const Key('multiple-choice-next'));
     await tester.ensureVisible(next);
