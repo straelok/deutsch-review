@@ -8,6 +8,7 @@ import '../../domain/repositories/grammar_repository.dart';
 import '../../domain/repositories/learning_item_repository.dart';
 import '../../grammar/grammar_catalog.dart';
 import '../../l10n/ui_strings.dart';
+import '../../ui/responsive.dart';
 
 class GrammarPage extends StatefulWidget {
   const GrammarPage({
@@ -82,48 +83,53 @@ class _GrammarPageState extends State<GrammarPage> {
         _TopicFilter.learned => learned,
       };
     }).toList(growable: false);
-    return ListView(
-      padding: const EdgeInsets.all(24),
-      children: [
-        Text(s.grammar, style: Theme.of(context).textTheme.headlineMedium),
-        const SizedBox(height: 8),
-        Text(s.grammarIntro),
-        const SizedBox(height: 16),
-        SegmentedButton<_TopicFilter>(
-          segments: [
-            ButtonSegment(
-              value: _TopicFilter.all,
-              label: Text(s.allLessons),
+    return Center(
+      child: ConstrainedBox(
+        constraints: const BoxConstraints(maxWidth: AppLayout.contentMaxWidth),
+        child: ListView(
+          padding: AppLayout.pagePadding(context),
+          children: [
+            Text(s.grammar, style: Theme.of(context).textTheme.headlineMedium),
+            const SizedBox(height: 8),
+            Text(s.grammarIntro),
+            const SizedBox(height: 16),
+            SegmentedButton<_TopicFilter>(
+              segments: [
+                ButtonSegment(
+                  value: _TopicFilter.all,
+                  label: Text(s.allLessons),
+                ),
+                ButtonSegment(
+                  value: _TopicFilter.notLearned,
+                  label: Text(s.notLearnedLessons),
+                ),
+                ButtonSegment(
+                  value: _TopicFilter.learned,
+                  label: Text(s.learnedLessons),
+                ),
+              ],
+              selected: {_filter},
+              onSelectionChanged: (selection) {
+                setState(() => _filter = selection.single);
+              },
             ),
-            ButtonSegment(
-              value: _TopicFilter.notLearned,
-              label: Text(s.notLearnedLessons),
-            ),
-            ButtonSegment(
-              value: _TopicFilter.learned,
-              label: Text(s.learnedLessons),
-            ),
+            const SizedBox(height: 20),
+            if (visibleTopics.isEmpty)
+              Card(
+                child: ListTile(
+                  leading: const Icon(Icons.info_outline),
+                  title: Text(
+                    _filter == _TopicFilter.learned
+                        ? s.noLearnedLessons
+                        : s.noLessonsForFilter,
+                  ),
+                ),
+              )
+            else
+              ..._categorySections(visibleTopics),
           ],
-          selected: {_filter},
-          onSelectionChanged: (selection) {
-            setState(() => _filter = selection.single);
-          },
         ),
-        const SizedBox(height: 20),
-        if (visibleTopics.isEmpty)
-          Card(
-            child: ListTile(
-              leading: const Icon(Icons.info_outline),
-              title: Text(
-                _filter == _TopicFilter.learned
-                    ? s.noLearnedLessons
-                    : s.noLessonsForFilter,
-              ),
-            ),
-          )
-        else
-          ..._categorySections(visibleTopics),
-      ],
+      ),
     );
   }
 
@@ -434,8 +440,8 @@ class _GrammarTopicDialogState extends State<_GrammarTopicDialog> {
     final explanation = s.isRussian ? topic.explanationRu : topic.explanationDe;
     return AlertDialog(
       title: Text(s.isRussian ? topic.titleRu : topic.titleDe),
-      content: SizedBox(
-        width: 620,
+      content: ConstrainedBox(
+        constraints: const BoxConstraints(maxWidth: 620),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,

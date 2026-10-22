@@ -7,6 +7,7 @@ import '../../domain/repositories/daily_session_repository.dart';
 import '../../domain/repositories/grammar_repository.dart';
 import '../../domain/repositories/practice_repository.dart';
 import '../../l10n/ui_strings.dart';
+import '../../ui/responsive.dart';
 
 class StatisticsPage extends StatefulWidget {
   const StatisticsPage({
@@ -66,79 +67,86 @@ class _StatisticsPageState extends State<StatisticsPage> {
       return const Center(child: CircularProgressIndicator());
     }
 
-    return ListView(
-      padding: const EdgeInsets.all(24),
-      children: [
-        Text(s.statistics, style: Theme.of(context).textTheme.headlineMedium),
-        const SizedBox(height: 8),
-        Text(
-          s.masteryStatisticsHint,
-          style: Theme.of(context).textTheme.bodySmall,
-        ),
-        const SizedBox(height: 16),
-        SegmentedButton<_StatisticsPeriod>(
-          key: const Key('statistics-period'),
-          segments: <ButtonSegment<_StatisticsPeriod>>[
-            ButtonSegment<_StatisticsPeriod>(
-              value: _StatisticsPeriod.today,
-              icon: const Icon(Icons.today_outlined),
-              label: Text(s.todayStatistics),
+    return Center(
+      child: ConstrainedBox(
+        constraints: const BoxConstraints(maxWidth: AppLayout.contentMaxWidth),
+        child: ListView(
+          padding: AppLayout.pagePadding(context),
+          children: [
+            Text(s.statistics,
+                style: Theme.of(context).textTheme.headlineMedium),
+            const SizedBox(height: 8),
+            Text(
+              s.masteryStatisticsHint,
+              style: Theme.of(context).textTheme.bodySmall,
             ),
-            ButtonSegment<_StatisticsPeriod>(
-              value: _StatisticsPeriod.allTime,
-              icon: const Icon(Icons.history),
-              label: Text(s.allTimeStatistics),
-            ),
-          ],
-          selected: <_StatisticsPeriod>{_period},
-          onSelectionChanged: (selected) {
-            setState(() => _period = selected.single);
-          },
-        ),
-        const SizedBox(height: 16),
-        if (_period == _StatisticsPeriod.today) ...[
-          _Metric(
-            label: s.dailyPlan,
-            value: '${_completedToday!}/${_requiredToday!}',
-          ),
-          const SizedBox(height: 12),
-          _CategoryStatisticsGrid(
-            keyPrefix: 'daily-statistics',
-            wordsToGerman: _wordsToday!.toGerman,
-            wordsToRussian: _wordsToday!.toRussian,
-            numbers: _numbersToday!,
-            grammar: _grammarToday!,
-            strings: s,
-          ),
-        ] else ...[
-          _CategoryStatisticsGrid(
-            keyPrefix: 'all-time-statistics',
-            wordsToGerman: _wordsAllTime!.toGerman,
-            wordsToRussian: _wordsAllTime!.toRussian,
-            numbers: _numbersAllTime!,
-            grammar: _grammarAllTime!,
-            strings: s,
-          ),
-          const SizedBox(height: 28),
-          Text(s.problemWords, style: Theme.of(context).textTheme.titleLarge),
-          const SizedBox(height: 8),
-          if (_problems.isEmpty)
-            Text(s.choose('Keine Problemwörter.', 'Проблемных слов нет.'))
-          else
-            ..._problems.map(
-              (problem) => Card(
-                child: ListTile(
-                  title: Text(learningItemGerman(problem.item)),
-                  subtitle: Text(
-                    '${s.errorCount(problem.errors)} · '
-                    '${s.accuracy}: ${(problem.accuracy * 100).round()} %',
-                  ),
-                  trailing: Text('${problem.correct}/${problem.attempts}'),
+            const SizedBox(height: 16),
+            SegmentedButton<_StatisticsPeriod>(
+              key: const Key('statistics-period'),
+              segments: <ButtonSegment<_StatisticsPeriod>>[
+                ButtonSegment<_StatisticsPeriod>(
+                  value: _StatisticsPeriod.today,
+                  icon: const Icon(Icons.today_outlined),
+                  label: Text(s.todayStatistics),
                 ),
-              ),
+                ButtonSegment<_StatisticsPeriod>(
+                  value: _StatisticsPeriod.allTime,
+                  icon: const Icon(Icons.history),
+                  label: Text(s.allTimeStatistics),
+                ),
+              ],
+              selected: <_StatisticsPeriod>{_period},
+              onSelectionChanged: (selected) {
+                setState(() => _period = selected.single);
+              },
             ),
-        ],
-      ],
+            const SizedBox(height: 16),
+            if (_period == _StatisticsPeriod.today) ...[
+              _Metric(
+                label: s.dailyPlan,
+                value: '${_completedToday!}/${_requiredToday!}',
+              ),
+              const SizedBox(height: 12),
+              _CategoryStatisticsGrid(
+                keyPrefix: 'daily-statistics',
+                wordsToGerman: _wordsToday!.toGerman,
+                wordsToRussian: _wordsToday!.toRussian,
+                numbers: _numbersToday!,
+                grammar: _grammarToday!,
+                strings: s,
+              ),
+            ] else ...[
+              _CategoryStatisticsGrid(
+                keyPrefix: 'all-time-statistics',
+                wordsToGerman: _wordsAllTime!.toGerman,
+                wordsToRussian: _wordsAllTime!.toRussian,
+                numbers: _numbersAllTime!,
+                grammar: _grammarAllTime!,
+                strings: s,
+              ),
+              const SizedBox(height: 28),
+              Text(s.problemWords,
+                  style: Theme.of(context).textTheme.titleLarge),
+              const SizedBox(height: 8),
+              if (_problems.isEmpty)
+                Text(s.choose('Keine Problemwörter.', 'Проблемных слов нет.'))
+              else
+                ..._problems.map(
+                  (problem) => Card(
+                    child: ListTile(
+                      title: Text(learningItemGerman(problem.item)),
+                      subtitle: Text(
+                        '${s.errorCount(problem.errors)} · '
+                        '${s.accuracy}: ${(problem.accuracy * 100).round()} %',
+                      ),
+                      trailing: Text('${problem.correct}/${problem.attempts}'),
+                    ),
+                  ),
+                ),
+            ],
+          ],
+        ),
+      ),
     );
   }
 

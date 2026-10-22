@@ -330,7 +330,11 @@ final class SqliteDailySessionRepository implements DailySessionRepository {
       throw StateError('Cannot record a grammar task for this session.');
     }
     final answeredCount = session.answeredCount + 1;
-    final completed = answeredCount >= session.targetAnswers;
+    final completed = remainingQueueItemIds.isEmpty;
+    final requiredTarget = answeredCount + remainingQueueItemIds.length;
+    final targetAnswers = requiredTarget > session.targetAnswers
+        ? requiredTarget
+        : session.targetAnswers;
     final timestamp = now.toUtc().toIso8601String();
 
     database.connection.execute('BEGIN IMMEDIATE');
@@ -357,12 +361,13 @@ final class SqliteDailySessionRepository implements DailySessionRepository {
       database.connection.execute(
         '''
         UPDATE daily_sessions
-        SET status = ?, answered_count = ?, queue_json = ?, last_item_id = ?,
-            updated_at = ?, completed_at = ?
+        SET status = ?, target_answers = ?, answered_count = ?, queue_json = ?,
+            last_item_id = ?, updated_at = ?, completed_at = ?
         WHERE id = ?
         ''',
         <Object?>[
           completed ? 'completed' : 'in_progress',
+          targetAnswers,
           answeredCount,
           jsonEncode(completed ? const <String>[] : remainingQueueItemIds),
           lastExerciseId,

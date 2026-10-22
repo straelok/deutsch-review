@@ -20,8 +20,13 @@ import '../../domain/repositories/practice_repository.dart';
 import '../../domain/word_priority.dart';
 import '../../grammar/grammar_catalog.dart';
 import '../../l10n/ui_strings.dart';
+import '../../ui/responsive.dart';
 
 enum _LessonGroup { toGerman, toRussian, grammar, other }
+
+EdgeInsets _practiceCardPadding(BuildContext context) {
+  return EdgeInsets.all(MediaQuery.sizeOf(context).width < 600 ? 20 : 28);
+}
 
 class PracticePage extends StatefulWidget {
   const PracticePage({
@@ -89,7 +94,7 @@ class _PracticePageState extends State<PracticePage> {
   bool _savingVocabularyAnswer = false;
   bool _unknownShortcutPending = false;
   bool _showVocabularyHelp = false;
-  bool _assistedFailureRecorded = false;
+  bool _isCorrection = false;
   bool _complete = false;
   String? _pendingVocabularyAnswer;
   int _loadRevision = 0;
@@ -98,6 +103,7 @@ class _PracticePageState extends State<PracticePage> {
   bool _sessionContentUnavailable = false;
   String? _unavailableSessionId;
   Map<String, bool> _grammarResults = const {};
+  Set<String> _grammarCorrectionKeys = const {};
   final Map<String, TextEditingController> _grammarControllers = {};
   String? _selectedGrammarOption;
   List<int> _wordOrderSelection = const [];
@@ -109,6 +115,27 @@ class _PracticePageState extends State<PracticePage> {
   String? get _currentNumber =>
       _numberQueue.isEmpty ? null : _numberQueue.first;
   GrammarCatalog get _catalog => _sessionCatalog ?? widget.grammarCatalog;
+  bool get _repeatIncorrectImmediately =>
+      widget.appSettings.repeatIncorrectImmediately;
+
+  String _progressLabel() {
+    final progress = widget.strings.progress(
+      _isCorrection
+          ? max(0, _session!.answeredCount - 1)
+          : _session!.answeredCount,
+      _session!.targetAnswers,
+    );
+    return _isCorrection
+        ? widget.strings.correctionProgress(progress)
+        : progress;
+  }
+
+  List<T> _withDelayedControl<T>(List<T> remaining, T item) {
+    final result = remaining.toList(growable: true);
+    final delay = min(result.length, 3 + _random.nextInt(3));
+    result.insert(delay, item);
+    return result;
+  }
 
   @override
   void initState() {
@@ -217,12 +244,12 @@ class _PracticePageState extends State<PracticePage> {
         .toList(growable: false);
     return _withUnknownShortcut(Center(
       child: SingleChildScrollView(
-        padding: const EdgeInsets.all(24),
+        padding: AppLayout.pagePadding(context),
         child: ConstrainedBox(
           constraints: const BoxConstraints(maxWidth: 680),
           child: Card(
             child: Padding(
-              padding: const EdgeInsets.all(28),
+              padding: _practiceCardPadding(context),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
@@ -237,20 +264,9 @@ class _PracticePageState extends State<PracticePage> {
                   ),
                   const SizedBox(height: 8),
                   Text(
-                    s.progress(
-                      _session!.answeredCount,
-                      _session!.targetAnswers,
-                    ),
+                    _progressLabel(),
                     style: Theme.of(context).textTheme.labelLarge,
                   ),
-                  if (_session!.kind.isEasyVocabulary) ...[
-                    const SizedBox(height: 6),
-                    Text(
-                      s.easyModeHint,
-                      key: const Key('easy-mode-hint'),
-                      style: Theme.of(context).textTheme.bodySmall,
-                    ),
-                  ],
                   const SizedBox(height: 24),
                   Text(
                     toRussian
@@ -378,7 +394,7 @@ class _PracticePageState extends State<PracticePage> {
                       focusNode: _nextFocus,
                       onPressed: _savingVocabularyAnswer ? null : _next,
                       child: Text(
-                        _session!.kind.isEasyVocabulary && !_lastCorrect
+                        _repeatIncorrectImmediately && !_lastCorrect
                             ? s.tryAgain
                             : s.next,
                       ),
@@ -473,7 +489,7 @@ class _PracticePageState extends State<PracticePage> {
             !session.isRequired &&
             session.kind == DailySessionKind.vocabularyToGerman)
         .toList();
-    final easyToGerman = _daySessions
+    final legacyEasyToGerman = _daySessions
         .where((session) =>
             !session.isRequired &&
             session.kind == DailySessionKind.easyVocabularyToGerman)
@@ -519,7 +535,7 @@ class _PracticePageState extends State<PracticePage> {
             !session.isRequired &&
             session.kind == DailySessionKind.importantVocabularyToRussian)
         .toList();
-    final importantEasyToGerman = _daySessions
+    final legacyImportantEasyToGerman = _daySessions
         .where((session) =>
             !session.isRequired &&
             session.kind == DailySessionKind.importantEasyVocabularyToGerman)
@@ -537,236 +553,232 @@ class _PracticePageState extends State<PracticePage> {
     final numbersComplete = numberSessions.isNotEmpty &&
         numberSessions.every((session) => session.isComplete);
 
-    return ListView(
-      padding: const EdgeInsets.all(24),
-      children: [
-        Text(s.dailyPlan, style: Theme.of(context).textTheme.headlineMedium),
-        const SizedBox(height: 8),
-        Text(s.dailyProgress(completed, requiredSessions.length)),
-        if (_activeItems.isEmpty) ...[
-          const SizedBox(height: 16),
-          Card(
-            child: ListTile(
-              leading: const Icon(Icons.info_outline),
-              title: Text(s.reviewEmpty),
-            ),
-          ),
-        ],
-        const SizedBox(height: 16),
-        Text(s.chooseSession),
-        const SizedBox(height: 16),
-        _lessonGroup(
-          group: _LessonGroup.toGerman,
-          icon: Icons.arrow_forward,
-          title: s.toGermanCategory,
-          sessions: [
-            ...toGermanSessions,
-            ...extraToGerman,
-            ...easyToGerman,
-            ...importantToGerman,
-            ...importantEasyToGerman,
-            if (marathonToGerman != null) marathonToGerman,
-          ],
+    return Center(
+      child: ConstrainedBox(
+        constraints: const BoxConstraints(maxWidth: AppLayout.contentMaxWidth),
+        child: ListView(
+          padding: AppLayout.pagePadding(context),
           children: [
-            _sessionCategory(
-              kind: DailySessionKind.vocabularyToGerman,
+            Text(s.dailyPlan,
+                style: Theme.of(context).textTheme.headlineMedium),
+            const SizedBox(height: 8),
+            Text(s.dailyProgress(completed, requiredSessions.length)),
+            if (_activeItems.isEmpty) ...[
+              const SizedBox(height: 16),
+              Card(
+                child: ListTile(
+                  leading: const Icon(Icons.info_outline),
+                  title: Text(s.reviewEmpty),
+                ),
+              ),
+            ],
+            const SizedBox(height: 16),
+            Text(s.chooseSession),
+            const SizedBox(height: 16),
+            _lessonGroup(
+              group: _LessonGroup.toGerman,
               icon: Icons.arrow_forward,
-              title: s.standardMode,
-              sessions: [...toGermanSessions, ...extraToGerman],
-              canAdd: toGermanComplete || toGermanSessions.isEmpty,
-              addKey: const Key('create-extra-session'),
-              onAdd: () =>
-                  _createExtraSession(DailySessionKind.vocabularyToGerman),
-              secondaryAction: _SessionSecondaryAction(
-                sessions: importantToGerman,
-                canStart: importantItems.isNotEmpty,
-                key: const Key('create-important-to-german-session'),
-                onAdd: () => _createExtraSession(
-                  DailySessionKind.importantVocabularyToGerman,
-                ),
-              ),
-            ),
-            const SizedBox(height: 12),
-            _sessionCategory(
-              kind: DailySessionKind.easyVocabularyToGerman,
-              icon: Icons.edit_note,
-              title: s.easyToGermanCategory,
-              sessions: easyToGerman,
-              canAdd: true,
-              addKey: const Key('create-easy-to-german-session'),
-              onAdd: () =>
-                  _createExtraSession(DailySessionKind.easyVocabularyToGerman),
-              secondaryAction: _SessionSecondaryAction(
-                sessions: importantEasyToGerman,
-                canStart: importantItems.isNotEmpty,
-                key: const Key('create-important-easy-to-german-session'),
-                onAdd: () => _createExtraSession(
-                  DailySessionKind.importantEasyVocabularyToGerman,
-                ),
-              ),
-            ),
-            const SizedBox(height: 12),
-            _marathonCategory(
-              kind: DailySessionKind.marathonToGerman,
-              icon: Icons.flag_outlined,
-              title: s.marathonToGermanCategory,
-              session: marathonToGerman,
-            ),
-          ],
-        ),
-        const SizedBox(height: 16),
-        _lessonGroup(
-          group: _LessonGroup.toRussian,
-          icon: Icons.arrow_back,
-          title: s.toRussianCategory,
-          sessions: [
-            ...toRussianSessions,
-            ...extraToRussian,
-            ...importantToRussian,
-            if (marathonToRussian != null) marathonToRussian,
-          ],
-          children: [
-            _sessionCategory(
-              kind: DailySessionKind.vocabularyToRussian,
-              icon: Icons.arrow_back,
-              title: s.standardMode,
-              sessions: [...toRussianSessions, ...extraToRussian],
-              canAdd: toRussianComplete || toRussianSessions.isEmpty,
-              addKey: const Key('create-extra-to-russian-session'),
-              onAdd: () =>
-                  _createExtraSession(DailySessionKind.vocabularyToRussian),
-              secondaryAction: _SessionSecondaryAction(
-                sessions: importantToRussian,
-                canStart: importantItems.isNotEmpty,
-                key: const Key('create-important-to-russian-session'),
-                onAdd: () => _createExtraSession(
-                  DailySessionKind.importantVocabularyToRussian,
-                ),
-              ),
-            ),
-            const SizedBox(height: 12),
-            _marathonCategory(
-              kind: DailySessionKind.marathonToRussian,
-              icon: Icons.outlined_flag,
-              title: s.marathonToRussianCategory,
-              session: marathonToRussian,
-            ),
-          ],
-        ),
-        const SizedBox(height: 16),
-        _lessonGroup(
-          group: _LessonGroup.grammar,
-          icon: Icons.school_outlined,
-          title: s.grammarCategory,
-          sessions: [
-            ...grammarSessions,
-            ...extraGrammar,
-            ...favoriteGrammar,
-          ],
-          children: [
-            _sessionCategory(
-              kind: DailySessionKind.grammar,
-              icon: Icons.school_outlined,
-              title: s.standardMode,
-              sessions: [...grammarSessions, ...extraGrammar],
-              canAdd: grammarComplete || grammarSessions.isEmpty,
-              canStart: _availableGrammarTopics.isNotEmpty,
-              addKey: const Key('create-extra-grammar-session'),
-              onAdd: () => _createExtraSession(DailySessionKind.grammar),
-            ),
-            const SizedBox(height: 12),
-            _featuredBlock(
-              key: const Key('favorite-grammar-lessons-block'),
-              title: s.favoriteGrammarCategory,
-              icon: Icons.auto_awesome,
+              title: s.toGermanCategory,
+              sessions: [
+                ...toGermanSessions,
+                ...extraToGerman,
+                ...legacyEasyToGerman,
+                ...importantToGerman,
+                ...legacyImportantEasyToGerman,
+                if (marathonToGerman != null) marathonToGerman,
+              ],
               children: [
-                if (_favoriteGrammarTopics.isEmpty &&
-                    favoriteGrammar.every((session) => session.isComplete))
-                  _featuredHint(Icons.star_outline, s.noFavoriteGrammarHint),
                 _sessionCategory(
-                  kind: DailySessionKind.favoriteGrammar,
-                  icon: Icons.school_outlined,
-                  title: s.favoriteGrammarLesson,
-                  sessions: favoriteGrammar,
-                  canAdd: true,
-                  canStart: _favoriteGrammarTopics.isNotEmpty,
-                  addKey: const Key('create-favorite-grammar-session'),
+                  kind: DailySessionKind.vocabularyToGerman,
+                  icon: Icons.arrow_forward,
+                  title: s.standardMode,
+                  sessions: [
+                    ...toGermanSessions,
+                    ...extraToGerman,
+                    ...legacyEasyToGerman,
+                  ],
+                  canAdd: toGermanComplete || toGermanSessions.isEmpty,
+                  addKey: const Key('create-extra-session'),
                   onAdd: () =>
-                      _createExtraSession(DailySessionKind.favoriteGrammar),
+                      _createExtraSession(DailySessionKind.vocabularyToGerman),
+                  secondaryAction: _SessionSecondaryAction(
+                    sessions: [
+                      ...importantToGerman,
+                      ...legacyImportantEasyToGerman,
+                    ],
+                    canStart: importantItems.isNotEmpty,
+                    key: const Key('create-important-to-german-session'),
+                    onAdd: () => _createExtraSession(
+                      DailySessionKind.importantVocabularyToGerman,
+                    ),
+                  ),
                 ),
+                const SizedBox(height: 12),
+                _marathonCategory(
+                  kind: DailySessionKind.marathonToGerman,
+                  icon: Icons.flag_outlined,
+                  title: s.marathonToGermanCategory,
+                  session: marathonToGerman,
+                ),
+              ],
+            ),
+            const SizedBox(height: 16),
+            _lessonGroup(
+              group: _LessonGroup.toRussian,
+              icon: Icons.arrow_back,
+              title: s.toRussianCategory,
+              sessions: [
+                ...toRussianSessions,
+                ...extraToRussian,
+                ...importantToRussian,
+                if (marathonToRussian != null) marathonToRussian,
+              ],
+              children: [
+                _sessionCategory(
+                  kind: DailySessionKind.vocabularyToRussian,
+                  icon: Icons.arrow_back,
+                  title: s.standardMode,
+                  sessions: [...toRussianSessions, ...extraToRussian],
+                  canAdd: toRussianComplete || toRussianSessions.isEmpty,
+                  addKey: const Key('create-extra-to-russian-session'),
+                  onAdd: () =>
+                      _createExtraSession(DailySessionKind.vocabularyToRussian),
+                  secondaryAction: _SessionSecondaryAction(
+                    sessions: importantToRussian,
+                    canStart: importantItems.isNotEmpty,
+                    key: const Key('create-important-to-russian-session'),
+                    onAdd: () => _createExtraSession(
+                      DailySessionKind.importantVocabularyToRussian,
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 12),
+                _marathonCategory(
+                  kind: DailySessionKind.marathonToRussian,
+                  icon: Icons.outlined_flag,
+                  title: s.marathonToRussianCategory,
+                  session: marathonToRussian,
+                ),
+              ],
+            ),
+            const SizedBox(height: 16),
+            _lessonGroup(
+              group: _LessonGroup.grammar,
+              icon: Icons.school_outlined,
+              title: s.grammarCategory,
+              sessions: [
+                ...grammarSessions,
+                ...extraGrammar,
+                ...favoriteGrammar,
+              ],
+              children: [
+                _sessionCategory(
+                  kind: DailySessionKind.grammar,
+                  icon: Icons.school_outlined,
+                  title: s.standardMode,
+                  sessions: [...grammarSessions, ...extraGrammar],
+                  canAdd: grammarComplete || grammarSessions.isEmpty,
+                  canStart: _availableGrammarTopics.isNotEmpty,
+                  addKey: const Key('create-extra-grammar-session'),
+                  onAdd: () => _createExtraSession(DailySessionKind.grammar),
+                ),
+                const SizedBox(height: 12),
+                _featuredBlock(
+                  key: const Key('favorite-grammar-lessons-block'),
+                  title: s.favoriteGrammarCategory,
+                  icon: Icons.auto_awesome,
+                  children: [
+                    if (_favoriteGrammarTopics.isEmpty &&
+                        favoriteGrammar.every((session) => session.isComplete))
+                      _featuredHint(
+                          Icons.star_outline, s.noFavoriteGrammarHint),
+                    _sessionCategory(
+                      kind: DailySessionKind.favoriteGrammar,
+                      icon: Icons.school_outlined,
+                      title: s.favoriteGrammarLesson,
+                      sessions: favoriteGrammar,
+                      canAdd: true,
+                      canStart: _favoriteGrammarTopics.isNotEmpty,
+                      addKey: const Key('create-favorite-grammar-session'),
+                      onAdd: () =>
+                          _createExtraSession(DailySessionKind.favoriteGrammar),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            const SizedBox(height: 16),
+            _lessonGroup(
+              group: _LessonGroup.other,
+              icon: Icons.grid_view_outlined,
+              title: s.otherCategory,
+              sessions: [
+                ...numberSessions,
+                ...extraNumbers,
+                ...matchingSessions,
+                ...importantMatchingSessions,
+                ...multipleChoiceSessions,
+              ],
+              children: [
+                _sessionCategory(
+                  kind: DailySessionKind.numbers,
+                  icon: Icons.pin_outlined,
+                  title: s.numbersCategory,
+                  sessions: [...numberSessions, ...extraNumbers],
+                  canAdd: numbersComplete || numberSessions.isEmpty,
+                  addKey: const Key('create-extra-number-session-expanded'),
+                  onAdd: () => _createExtraSession(DailySessionKind.numbers),
+                ),
+                const SizedBox(height: 12),
+                _sessionCategory(
+                  kind: DailySessionKind.matching,
+                  icon: Icons.compare_arrows,
+                  title: s.matchingCategory,
+                  sessions: matchingSessions,
+                  canAdd: true,
+                  canStart: _matchingCandidates().length >= 2,
+                  addKey: const Key('create-matching-session'),
+                  onAdd: () => _createExtraSession(DailySessionKind.matching),
+                  secondaryAction: _SessionSecondaryAction(
+                    sessions: importantMatchingSessions,
+                    canStart:
+                        _matchingCandidates(importantOnly: true).length >= 2,
+                    key: const Key('create-important-matching-session'),
+                    onAdd: () =>
+                        _createExtraSession(DailySessionKind.importantMatching),
+                  ),
+                ),
+                if (_matchingCandidates().length < 2) ...[
+                  const SizedBox(height: 8),
+                  Text(
+                    s.matchingNeedsWords,
+                    style: Theme.of(context).textTheme.bodySmall,
+                  ),
+                ],
+                const SizedBox(height: 12),
+                _sessionCategory(
+                  kind: DailySessionKind.multipleChoice,
+                  icon: Icons.checklist_outlined,
+                  title: s.multipleChoiceCategory,
+                  sessions: multipleChoiceSessions,
+                  canAdd: true,
+                  canStart: _matchingCandidates().length >= 4,
+                  addKey: const Key('create-multiple-choice-session'),
+                  onAdd: () =>
+                      _createExtraSession(DailySessionKind.multipleChoice),
+                ),
+                if (_matchingCandidates().length < 4) ...[
+                  const SizedBox(height: 8),
+                  Text(
+                    s.multipleChoiceNeedsWords,
+                    style: Theme.of(context).textTheme.bodySmall,
+                  ),
+                ],
               ],
             ),
           ],
         ),
-        const SizedBox(height: 16),
-        _lessonGroup(
-          group: _LessonGroup.other,
-          icon: Icons.grid_view_outlined,
-          title: s.otherCategory,
-          sessions: [
-            ...numberSessions,
-            ...extraNumbers,
-            ...matchingSessions,
-            ...importantMatchingSessions,
-            ...multipleChoiceSessions,
-          ],
-          children: [
-            _sessionCategory(
-              kind: DailySessionKind.numbers,
-              icon: Icons.pin_outlined,
-              title: s.numbersCategory,
-              sessions: [...numberSessions, ...extraNumbers],
-              canAdd: numbersComplete || numberSessions.isEmpty,
-              addKey: const Key('create-extra-number-session-expanded'),
-              onAdd: () => _createExtraSession(DailySessionKind.numbers),
-            ),
-            const SizedBox(height: 12),
-            _sessionCategory(
-              kind: DailySessionKind.matching,
-              icon: Icons.compare_arrows,
-              title: s.matchingCategory,
-              sessions: matchingSessions,
-              canAdd: true,
-              canStart: _matchingCandidates().length >= 2,
-              addKey: const Key('create-matching-session'),
-              onAdd: () => _createExtraSession(DailySessionKind.matching),
-              secondaryAction: _SessionSecondaryAction(
-                sessions: importantMatchingSessions,
-                canStart:
-                    _matchingCandidates(importantOnly: true).length >= 2,
-                key: const Key('create-important-matching-session'),
-                onAdd: () =>
-                    _createExtraSession(DailySessionKind.importantMatching),
-              ),
-            ),
-            if (_matchingCandidates().length < 2) ...[
-              const SizedBox(height: 8),
-              Text(
-                s.matchingNeedsWords,
-                style: Theme.of(context).textTheme.bodySmall,
-              ),
-            ],
-            const SizedBox(height: 12),
-            _sessionCategory(
-              kind: DailySessionKind.multipleChoice,
-              icon: Icons.checklist_outlined,
-              title: s.multipleChoiceCategory,
-              sessions: multipleChoiceSessions,
-              canAdd: true,
-              canStart: _matchingCandidates().length >= 4,
-              addKey: const Key('create-multiple-choice-session'),
-              onAdd: () => _createExtraSession(DailySessionKind.multipleChoice),
-            ),
-            if (_matchingCandidates().length < 4) ...[
-              const SizedBox(height: 8),
-              Text(
-                s.multipleChoiceNeedsWords,
-                style: Theme.of(context).textTheme.bodySmall,
-              ),
-            ],
-          ],
-        ),
-      ],
+      ),
     );
   }
 
@@ -1241,12 +1253,12 @@ class _PracticePageState extends State<PracticePage> {
         : _primaryTranslation(item);
     return Center(
       child: SingleChildScrollView(
-        padding: const EdgeInsets.all(24),
+        padding: AppLayout.pagePadding(context),
         child: ConstrainedBox(
           constraints: const BoxConstraints(maxWidth: 680),
           child: Card(
             child: Padding(
-              padding: const EdgeInsets.all(24),
+              padding: _practiceCardPadding(context),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
@@ -1260,10 +1272,7 @@ class _PracticePageState extends State<PracticePage> {
                     ),
                   ),
                   Text(
-                    s.progress(
-                      _session!.answeredCount,
-                      _session!.targetAnswers,
-                    ),
+                    _progressLabel(),
                     style: Theme.of(context).textTheme.labelLarge,
                   ),
                   const SizedBox(height: 8),
@@ -1298,7 +1307,11 @@ class _PracticePageState extends State<PracticePage> {
                       key: const Key('multiple-choice-next'),
                       onPressed: _nextMultipleChoice,
                       icon: const Icon(Icons.arrow_forward),
-                      label: Text(s.next),
+                      label: Text(
+                        _repeatIncorrectImmediately && !_lastCorrect
+                            ? s.tryAgain
+                            : s.next,
+                      ),
                     ),
                   ],
                 ],
@@ -1363,9 +1376,18 @@ class _PracticePageState extends State<PracticePage> {
         : _choiceToRussian
             ? _primaryTranslation(selected)
             : learningItemGermanWithPlural(selected);
+    if (_isCorrection) {
+      setState(() {
+        _selectedChoiceItemId = selected?.id;
+        _lastCorrect = correct;
+        _answered = true;
+      });
+      return;
+    }
     setState(() => _savingVocabularyAnswer = true);
     try {
-      final remaining = _queue.skip(1).toList(growable: false);
+      var remaining = _queue.skip(1).toList(growable: false);
+      if (!correct) remaining = _withDelayedControl(remaining, item);
       final updated = await widget.sessions.recordAnswer(
         attempt: PracticeAttempt(
           id: newUuidV4(),
@@ -1400,11 +1422,20 @@ class _PracticePageState extends State<PracticePage> {
 
   void _nextMultipleChoice() {
     if (!_answered) return;
+    if (_repeatIncorrectImmediately && !_lastCorrect) {
+      setState(() {
+        _selectedChoiceItemId = null;
+        _answered = false;
+        _isCorrection = true;
+      });
+      return;
+    }
     setState(() {
       _queue = _nextQueue;
       _nextQueue = const [];
       _selectedChoiceItemId = null;
       _answered = false;
+      _isCorrection = false;
       _complete = _session!.isComplete;
     });
     if (!_complete) _prepareMultipleChoiceOptions();
@@ -1456,12 +1487,12 @@ class _PracticePageState extends State<PracticePage> {
         .toList(growable: false);
     return Center(
       child: SingleChildScrollView(
-        padding: const EdgeInsets.all(24),
+        padding: AppLayout.pagePadding(context),
         child: ConstrainedBox(
           constraints: const BoxConstraints(maxWidth: 820),
           child: Card(
             child: Padding(
-              padding: const EdgeInsets.all(24),
+              padding: _practiceCardPadding(context),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
@@ -1475,10 +1506,7 @@ class _PracticePageState extends State<PracticePage> {
                     ),
                   ),
                   Text(
-                    s.progress(
-                      _session!.answeredCount,
-                      _session!.targetAnswers,
-                    ),
+                    _progressLabel(),
                     style: Theme.of(context).textTheme.labelLarge,
                   ),
                   const SizedBox(height: 8),
@@ -1644,9 +1672,12 @@ class _PracticePageState extends State<PracticePage> {
 
     setState(() => _savingVocabularyAnswer = true);
     try {
-      final remaining = _queue
+      var remaining = _queue
           .where((item) => item.id != germanItem.id)
           .toList(growable: false);
+      if (_matchingFailedItemIds.contains(germanItem.id)) {
+        remaining = _withDelayedControl(remaining, germanItem);
+      }
       final updated = await widget.sessions.recordAnswer(
         attempt: PracticeAttempt(
           id: newUuidV4(),
@@ -1715,12 +1746,12 @@ class _PracticePageState extends State<PracticePage> {
     final task = _numberTask(taskId);
     return Center(
       child: SingleChildScrollView(
-        padding: const EdgeInsets.all(24),
+        padding: AppLayout.pagePadding(context),
         child: ConstrainedBox(
           constraints: const BoxConstraints(maxWidth: 680),
           child: Card(
             child: Padding(
-              padding: const EdgeInsets.all(28),
+              padding: _practiceCardPadding(context),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
@@ -1734,10 +1765,7 @@ class _PracticePageState extends State<PracticePage> {
                     ),
                   ),
                   Text(
-                    s.progress(
-                      _session!.answeredCount,
-                      _session!.targetAnswers,
-                    ),
+                    _progressLabel(),
                     style: Theme.of(context).textTheme.labelLarge,
                   ),
                   const SizedBox(height: 24),
@@ -1788,7 +1816,11 @@ class _PracticePageState extends State<PracticePage> {
                       key: const Key('next-number-answer'),
                       focusNode: _nextFocus,
                       onPressed: _nextNumber,
-                      child: Text(s.next),
+                      child: Text(
+                        _repeatIncorrectImmediately && !_lastCorrect
+                            ? s.tryAgain
+                            : s.next,
+                      ),
                     )
                   else ...[
                     FilledButton(
@@ -1841,12 +1873,12 @@ class _PracticePageState extends State<PracticePage> {
     }
     return Center(
       child: SingleChildScrollView(
-        padding: const EdgeInsets.all(24),
+        padding: AppLayout.pagePadding(context),
         child: ConstrainedBox(
           constraints: const BoxConstraints(maxWidth: 720),
           child: Card(
             child: Padding(
-              padding: const EdgeInsets.all(28),
+              padding: _practiceCardPadding(context),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
@@ -1860,10 +1892,7 @@ class _PracticePageState extends State<PracticePage> {
                     ),
                   ),
                   Text(
-                    s.progress(
-                      _session!.answeredCount,
-                      _session!.targetAnswers,
-                    ),
+                    _progressLabel(),
                     style: Theme.of(context).textTheme.labelLarge,
                   ),
                   const SizedBox(height: 22),
@@ -1918,7 +1947,11 @@ class _PracticePageState extends State<PracticePage> {
                       key: const Key('next-grammar-answer'),
                       focusNode: _nextFocus,
                       onPressed: _nextGrammar,
-                      child: Text(s.next),
+                      child: Text(
+                        _repeatIncorrectImmediately && !_lastCorrect
+                            ? s.tryAgain
+                            : s.next,
+                      ),
                     )
                   else ...[
                     FilledButton(
@@ -2100,6 +2133,8 @@ class _PracticePageState extends State<PracticePage> {
           final expected =
               regular ? entry.value.substring(verb.stem.length) : entry.value;
           final correct = _grammarResults[entry.key];
+          final editable =
+              !_isCorrection || _grammarCorrectionKeys.contains(entry.key);
           return Padding(
             padding: const EdgeInsets.only(bottom: 10),
             child: Row(
@@ -2111,7 +2146,7 @@ class _PracticePageState extends State<PracticePage> {
                     key: Key('grammar-form-${entry.key}'),
                     controller: controller,
                     focusNode: index == 0 ? _answerFocus : null,
-                    enabled: !_answered,
+                    enabled: !_answered && editable,
                     decoration: InputDecoration(
                       isDense: true,
                       hintText: '_',
@@ -2188,8 +2223,9 @@ class _PracticePageState extends State<PracticePage> {
       _selectedChoiceItemId = null;
       _focusedGrammarTopicId = null;
       _answered = false;
+      _isCorrection = false;
+      _grammarCorrectionKeys = const {};
       _showVocabularyHelp = false;
-      _assistedFailureRecorded = false;
       _pendingVocabularyAnswer = null;
       _savingVocabularyAnswer = false;
       _complete = false;
@@ -2314,8 +2350,8 @@ class _PracticePageState extends State<PracticePage> {
       _session = resolvedSession;
       _queue = queue;
       _answered = false;
+      _isCorrection = false;
       _showVocabularyHelp = false;
-      _assistedFailureRecorded = false;
       _pendingVocabularyAnswer = null;
       _savingVocabularyAnswer = false;
       _complete = resolvedSession.isComplete;
@@ -2362,6 +2398,7 @@ class _PracticePageState extends State<PracticePage> {
       _session = session;
       _queue = queue;
       _prepareMatchingBoard(queue);
+      _isCorrection = false;
       _savingVocabularyAnswer = false;
       _complete = session.isComplete;
       _loading = false;
@@ -2397,6 +2434,7 @@ class _PracticePageState extends State<PracticePage> {
       _choiceOptions = const [];
       _selectedChoiceItemId = null;
       _answered = false;
+      _isCorrection = false;
       _savingVocabularyAnswer = false;
       _complete = session.isComplete;
       _loading = false;
@@ -2422,6 +2460,7 @@ class _PracticePageState extends State<PracticePage> {
       _session = session;
       _numberQueue = queue;
       _answered = false;
+      _isCorrection = false;
       _complete = session.isComplete;
       _loading = false;
     });
@@ -2493,7 +2532,9 @@ class _PracticePageState extends State<PracticePage> {
     setState(() {
       _session = session;
       _grammarQueue = queue;
+      _grammarCorrectionKeys = const {};
       _answered = false;
+      _isCorrection = false;
       _complete = session.isComplete;
       _loading = false;
     });
@@ -2662,6 +2703,16 @@ class _PracticePageState extends State<PracticePage> {
             expected: learningItemGerman(item),
           );
 
+    if (_isCorrection) {
+      setState(() {
+        _answered = true;
+        _lastCorrect = correct;
+        _pendingVocabularyAnswer = null;
+      });
+      _focusNextButton();
+      return;
+    }
+
     if (toRussian && !correct && answer.isNotEmpty && !answer.contains(';')) {
       setState(() {
         _answered = true;
@@ -2674,31 +2725,6 @@ class _PracticePageState extends State<PracticePage> {
 
     setState(() => _savingVocabularyAnswer = true);
     try {
-      if (_session!.kind.isEasyVocabulary && !correct) {
-        if (!_assistedFailureRecorded) {
-          await widget.practice.saveAttempt(
-            PracticeAttempt(
-              id: newUuidV4(),
-              itemId: item.id,
-              sessionId: _session!.id,
-              answerText: answer,
-              correct: false,
-              attemptedAt: DateTime.now().toUtc(),
-            ),
-          );
-          widget.onAttemptSaved();
-        }
-        if (!mounted) return;
-        setState(() {
-          _answered = true;
-          _lastCorrect = false;
-          _assistedFailureRecorded = true;
-          _pendingVocabularyAnswer = null;
-          _savingVocabularyAnswer = false;
-        });
-        _focusNextButton();
-        return;
-      }
       final result = await _recordVocabularyAnswer(
         item: item,
         answer: answer,
@@ -2729,9 +2755,11 @@ class _PracticePageState extends State<PracticePage> {
     required bool correct,
   }) async {
     final nextQueue = _queue.skip(1).toList(growable: true);
-    if (!correct && !_session!.kind.isEasyVocabulary) {
-      final delay = min(nextQueue.length, 3 + _random.nextInt(3));
-      nextQueue.insert(delay, item);
+    if (!correct) {
+      final delayed = _withDelayedControl(nextQueue, item);
+      nextQueue
+        ..clear()
+        ..addAll(delayed);
     }
     final updatedSession = await widget.sessions.recordAnswer(
       attempt: PracticeAttempt(
@@ -2836,7 +2864,16 @@ class _PracticePageState extends State<PracticePage> {
             expectedAlternatives: 'hundert;einhundert',
           )
         : isPracticeAnswerCorrect(answer: answer, expected: task.$2);
-    final remaining = _numberQueue.skip(1).toList(growable: false);
+    if (_isCorrection) {
+      setState(() {
+        _lastCorrect = correct;
+        _answered = true;
+      });
+      _focusNextButton();
+      return;
+    }
+    var remaining = _numberQueue.skip(1).toList(growable: false);
+    if (!correct) remaining = _withDelayedControl(remaining, taskId);
     final updated = await widget.sessions.recordGrammarTask(
       sessionId: _session!.id,
       attempts: [
@@ -2880,6 +2917,10 @@ class _PracticePageState extends State<PracticePage> {
     if (paradigm != null) {
       final regular = paradigm.topicId == 'regular_present';
       for (final entry in paradigm.forms.entries) {
+        if (_isCorrection && !_grammarCorrectionKeys.contains(entry.key)) {
+          results[entry.key] = true;
+          continue;
+        }
         final answer = _grammarControllers[entry.key]?.text.trim() ?? '';
         if (answer.isEmpty && !allowEmpty) return;
         final expected =
@@ -2929,7 +2970,24 @@ class _PracticePageState extends State<PracticePage> {
       );
     }
 
-    final remaining = _grammarQueue.skip(1).toList(growable: false);
+    final allCorrect = results.values.every((value) => value);
+    if (_isCorrection) {
+      if (!mounted) return;
+      setState(() {
+        _grammarResults = results;
+        _grammarCorrectionKeys = results.entries
+            .where((entry) => !entry.value)
+            .map((entry) => entry.key)
+            .toSet();
+        _lastCorrect = allCorrect;
+        _answered = true;
+      });
+      _focusNextButton();
+      return;
+    }
+
+    var remaining = _grammarQueue.skip(1).toList(growable: false);
+    if (!allCorrect) remaining = _withDelayedControl(remaining, taskId);
     final updated = await widget.sessions.recordGrammarTask(
       sessionId: _session!.id,
       attempts: attempts,
@@ -2943,7 +3001,11 @@ class _PracticePageState extends State<PracticePage> {
       _session = updated;
       _nextGrammarQueue = remaining;
       _grammarResults = results;
-      _lastCorrect = results.values.every((value) => value);
+      _grammarCorrectionKeys = results.entries
+          .where((entry) => !entry.value)
+          .map((entry) => entry.key)
+          .toSet();
+      _lastCorrect = allCorrect;
       _answered = true;
     });
     _focusNextButton();
@@ -2962,23 +3024,52 @@ class _PracticePageState extends State<PracticePage> {
   }
 
   void _nextGrammar() {
+    if (_repeatIncorrectImmediately && !_lastCorrect) {
+      final paradigm = _paradigm(_currentGrammar!);
+      if (paradigm == null) {
+        _clearGrammarInput();
+      } else {
+        for (final key in _grammarCorrectionKeys) {
+          _grammarControllers[key]?.clear();
+        }
+      }
+      setState(() {
+        _grammarResults = const {};
+        _answered = false;
+        _isCorrection = true;
+      });
+      _focusAnswerField();
+      return;
+    }
     _clearGrammarInput();
     setState(() {
       _grammarQueue = _nextGrammarQueue;
       _nextGrammarQueue = const [];
       _grammarResults = const {};
+      _grammarCorrectionKeys = const {};
       _answered = false;
+      _isCorrection = false;
       _complete = _session!.isComplete;
     });
     if (!_complete && _grammarQueue.isNotEmpty) _focusAnswerField();
   }
 
   void _nextNumber() {
+    if (_repeatIncorrectImmediately && !_lastCorrect) {
+      setState(() {
+        _answerController.clear();
+        _answered = false;
+        _isCorrection = true;
+      });
+      _focusAnswerField();
+      return;
+    }
     setState(() {
       _answerController.clear();
       _numberQueue = _nextNumberQueue;
       _nextNumberQueue = const [];
       _answered = false;
+      _isCorrection = false;
       _complete = _session!.isComplete;
     });
     if (!_complete) _focusAnswerField();
@@ -2999,25 +3090,25 @@ class _PracticePageState extends State<PracticePage> {
   }
 
   Future<void> _next() async {
-    if (_session!.kind.isEasyVocabulary && !_lastCorrect) {
+    if (!await _recordPendingVocabularyError()) return;
+    if (_repeatIncorrectImmediately && !_lastCorrect) {
       setState(() {
         _answerController.clear();
         _answered = false;
+        _isCorrection = true;
         _showVocabularyHelp = false;
-        _assistedFailureRecorded = false;
       });
       _focusAnswerField();
       return;
     }
-    if (!await _recordPendingVocabularyError()) return;
     setState(() {
       _answerController.clear();
       _queue = _nextQueue;
       _nextQueue = const [];
       _answered = false;
+      _isCorrection = false;
       _pendingVocabularyAnswer = null;
       _showVocabularyHelp = false;
-      _assistedFailureRecorded = false;
       _complete = _session!.isComplete;
     });
     if (!_complete) _focusAnswerField();
@@ -3084,7 +3175,7 @@ class _CenteredPanel extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Padding(
-        padding: const EdgeInsets.all(24),
+        padding: AppLayout.pagePadding(context),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [

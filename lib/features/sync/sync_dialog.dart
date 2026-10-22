@@ -62,8 +62,8 @@ class _SyncDialogState extends State<_SyncDialog> {
               Expanded(child: Text(s.syncTitle)),
             ],
           ),
-          content: SizedBox(
-            width: 440,
+          content: ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 440),
             child: SingleChildScrollView(
               child: Column(
                 mainAxisSize: MainAxisSize.min,

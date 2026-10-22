@@ -13,6 +13,7 @@ import '../../domain/repositories/practice_repository.dart';
 import '../../import_export/word_json_codec.dart';
 import '../../import_export/word_import_planner.dart';
 import '../../l10n/ui_strings.dart';
+import '../../ui/responsive.dart';
 
 class DictionaryMaterialPage extends StatefulWidget {
   const DictionaryMaterialPage({
@@ -85,94 +86,105 @@ class _MaterialPageState extends State<DictionaryMaterialPage> {
   @override
   Widget build(BuildContext context) {
     final s = widget.strings;
-    return Padding(
-      padding: const EdgeInsets.all(24),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Wrap(
-            alignment: WrapAlignment.spaceBetween,
-            crossAxisAlignment: WrapCrossAlignment.center,
-            spacing: 16,
-            runSpacing: 12,
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(s.material,
-                      style: Theme.of(context).textTheme.headlineMedium),
-                  Text(s.entries(_items.length)),
-                ],
-              ),
-              Wrap(
-                spacing: 8,
-                runSpacing: 8,
-                children: [
-                  OutlinedButton.icon(
-                    key: const Key('clear-important-words'),
-                    onPressed: _loading ||
-                            _fileBusy ||
-                            !_items.any((item) => item.isImportant)
-                        ? null
-                        : _clearImportantWords,
-                    icon: const Icon(Icons.star_outline),
-                    label: Text(s.clearImportantWords),
-                  ),
-                  OutlinedButton.icon(
-                    key: const Key('import-json'),
-                    onPressed: _loading || _fileBusy ? null : _importJson,
-                    icon: const Icon(Icons.file_download_outlined),
-                    label: Text(s.importJson),
-                  ),
-                  OutlinedButton.icon(
-                    key: const Key('export-json'),
-                    onPressed: _loading || _fileBusy ? null : _exportJson,
-                    icon: const Icon(Icons.file_upload_outlined),
-                    label: Text(s.exportJson),
-                  ),
-                  FilledButton.icon(
-                    key: const Key('add-material'),
-                    onPressed:
-                        _loading || _fileBusy ? null : () => _openEditor(),
-                    icon: const Icon(Icons.add),
-                    label: Text(s.add),
-                  ),
-                ],
-              ),
-            ],
-          ),
-          const SizedBox(height: 16),
-          TextField(
-            key: const Key('material-search'),
-            controller: _searchController,
-            decoration: InputDecoration(
-              labelText: s.search,
-              prefixIcon: const Icon(Icons.search),
-              suffixIcon: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  if (_searchController.text.isNotEmpty)
-                    IconButton(
-                      onPressed: _searchController.clear,
-                      icon: const Icon(Icons.clear),
+    return LayoutBuilder(
+      builder: (context, constraints) => Center(
+        child: SizedBox(
+          width: constraints.maxWidth > AppLayout.wideContentMaxWidth
+              ? AppLayout.wideContentMaxWidth
+              : constraints.maxWidth,
+          height: constraints.maxHeight,
+          child: Padding(
+            padding: AppLayout.pagePadding(context),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Wrap(
+                  alignment: WrapAlignment.spaceBetween,
+                  crossAxisAlignment: WrapCrossAlignment.center,
+                  spacing: 16,
+                  runSpacing: 12,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(s.material,
+                            style: Theme.of(context).textTheme.headlineMedium),
+                        Text(s.entries(_items.length)),
+                      ],
                     ),
-                  Tooltip(
-                    message: s.searchAllFields,
-                    child: Switch.adaptive(
-                      key: const Key('material-search-all-fields'),
-                      value: _searchAllFields,
-                      onChanged: (value) =>
-                          setState(() => _searchAllFields = value),
+                    Wrap(
+                      spacing: 8,
+                      runSpacing: 8,
+                      children: [
+                        OutlinedButton.icon(
+                          key: const Key('clear-important-words'),
+                          onPressed: _loading ||
+                                  _fileBusy ||
+                                  !_items.any((item) => item.isImportant)
+                              ? null
+                              : _clearImportantWords,
+                          icon: const Icon(Icons.star_outline),
+                          label: Text(s.clearImportantWords),
+                        ),
+                        OutlinedButton.icon(
+                          key: const Key('import-json'),
+                          onPressed: _loading || _fileBusy ? null : _importJson,
+                          icon: const Icon(Icons.file_download_outlined),
+                          label: Text(s.importJson),
+                        ),
+                        OutlinedButton.icon(
+                          key: const Key('export-json'),
+                          onPressed: _loading || _fileBusy ? null : _exportJson,
+                          icon: const Icon(Icons.file_upload_outlined),
+                          label: Text(s.exportJson),
+                        ),
+                        FilledButton.icon(
+                          key: const Key('add-material'),
+                          onPressed: _loading || _fileBusy
+                              ? null
+                              : () => _openEditor(),
+                          icon: const Icon(Icons.add),
+                          label: Text(s.add),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 16),
+                TextField(
+                  key: const Key('material-search'),
+                  controller: _searchController,
+                  decoration: InputDecoration(
+                    labelText: s.search,
+                    prefixIcon: const Icon(Icons.search),
+                    suffixIcon: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        if (_searchController.text.isNotEmpty)
+                          IconButton(
+                            onPressed: _searchController.clear,
+                            icon: const Icon(Icons.clear),
+                          ),
+                        Tooltip(
+                          message: s.searchAllFields,
+                          child: Switch.adaptive(
+                            key: const Key('material-search-all-fields'),
+                            value: _searchAllFields,
+                            onChanged: (value) =>
+                                setState(() => _searchAllFields = value),
+                          ),
+                        ),
+                        const SizedBox(width: 8),
+                      ],
                     ),
                   ),
-                  const SizedBox(width: 8),
-                ],
-              ),
+                ),
+                const SizedBox(height: 16),
+                Expanded(child: _buildContent()),
+              ],
             ),
           ),
-          const SizedBox(height: 16),
-          Expanded(child: _buildContent()),
-        ],
+        ),
       ),
     );
   }
@@ -710,8 +722,8 @@ class _LearningItemEditorState extends State<_LearningItemEditor> {
     final s = widget.strings;
     return AlertDialog(
       title: Text(widget.item == null ? s.addMaterial : s.editMaterial),
-      content: SizedBox(
-        width: 520,
+      content: ConstrainedBox(
+        constraints: const BoxConstraints(maxWidth: 520),
         child: Form(
           key: _formKey,
           child: SingleChildScrollView(
@@ -910,8 +922,8 @@ class _LearningItemDetails extends StatelessWidget {
     return AlertDialog(
       key: Key('word-details-${item.id}'),
       title: Text(learningItemGermanWithPlural(item)),
-      content: SizedBox(
-        width: 520,
+      content: ConstrainedBox(
+        constraints: const BoxConstraints(maxWidth: 520),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

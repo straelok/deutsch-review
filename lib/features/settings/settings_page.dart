@@ -7,6 +7,7 @@ import '../../domain/app_settings.dart';
 import '../../domain/repositories/settings_repository.dart';
 import '../../l10n/ui_strings.dart';
 import '../../reminders/reminder_controller.dart';
+import '../../ui/responsive.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({
@@ -90,124 +91,154 @@ class _SettingsPageState extends State<SettingsPage> {
         minimum: const EdgeInsets.only(bottom: 16),
         child: settings == null
             ? const Center(child: CircularProgressIndicator())
-            : ListView(
-                padding: const EdgeInsets.fromLTRB(24, 24, 24, 32),
-                children: [
-                  Text(
-                    s.choose(
-                      'Änderungen werden automatisch gespeichert.',
-                      'Изменения сохраняются автоматически.',
-                    ),
-                    style: Theme.of(context).textTheme.bodySmall,
-                  ),
-                  const SizedBox(height: 16),
-                  Text(
-                    s.choose('Tagesplan', 'План занятий'),
-                    style: Theme.of(context).textTheme.titleLarge,
-                  ),
-                  const Divider(height: 32),
-                  _problemWordWeight(settings),
-                  const Divider(height: 32),
-                  _lessonGroup(
-                    title: s.toGermanCategory,
-                    lessons: settings.toGermanLessons,
-                    tasks: settings.toGermanTasks,
-                    onLessons: (value) => _update(
-                      settings.copyWith(toGermanLessons: value),
-                    ),
-                    onTasks: (value) => _update(
-                      settings.copyWith(toGermanTasks: value),
-                    ),
-                  ),
-                  _lessonGroup(
-                    title: s.toRussianCategory,
-                    lessons: settings.toRussianLessons,
-                    tasks: settings.toRussianTasks,
-                    onLessons: (value) => _update(
-                      settings.copyWith(toRussianLessons: value),
-                    ),
-                    onTasks: (value) => _update(
-                      settings.copyWith(toRussianTasks: value),
-                    ),
-                  ),
-                  _lessonGroup(
-                    title: s.numbersCategory,
-                    lessons: settings.numberLessons,
-                    tasks: settings.numberTasks,
-                    onLessons: (value) => _update(
-                      settings.copyWith(numberLessons: value),
-                    ),
-                    onTasks: (value) => _update(
-                      settings.copyWith(numberTasks: value),
-                    ),
-                  ),
-                  _lessonGroup(
-                    title: s.grammarCategory,
-                    lessons: settings.grammarLessons,
-                    tasks: settings.grammarTasks,
-                    onLessons: (value) => _update(
-                      settings.copyWith(grammarLessons: value),
-                    ),
-                    onTasks: (value) => _update(
-                      settings.copyWith(grammarTasks: value),
-                    ),
-                  ),
-                  _matchingDifficulty(settings),
-                  const SizedBox(height: 16),
-                  Text(
-                    s.remindersTitle,
-                    style: Theme.of(context).textTheme.titleLarge,
-                  ),
-                  const SizedBox(height: 8),
-                  SwitchListTile(
-                    key: const Key('reminders-enabled'),
-                    contentPadding: EdgeInsets.zero,
-                    title: Text(s.choose(
-                      'Benachrichtigungen verwenden',
-                      'Использовать уведомления',
-                    )),
-                    subtitle: widget.reminders == null
-                        ? Text(s.choose(
-                            'Benachrichtigungen werden derzeit nur auf Android unterstützt.',
-                            'Уведомления пока поддерживаются только на Android.',
-                          ))
-                        : null,
-                    value: settings.remindersEnabled,
-                    onChanged: (value) => _update(
-                      settings.copyWith(remindersEnabled: value),
-                      refreshReminders: true,
-                    ),
-                  ),
-                  if (settings.remindersEnabled) ...[
-                    ...settings.reminderMinutes.indexed.map(
-                      (entry) => ListTile(
+            : Center(
+                child: ConstrainedBox(
+                  constraints: const BoxConstraints(maxWidth: 840),
+                  child: ListView(
+                    padding: AppLayout.pagePadding(context),
+                    children: [
+                      Text(
+                        s.choose(
+                          'Änderungen werden automatisch gespeichert.',
+                          'Изменения сохраняются автоматически.',
+                        ),
+                        style: Theme.of(context).textTheme.bodySmall,
+                      ),
+                      const SizedBox(height: 16),
+                      Text(
+                        s.choose('Tagesplan', 'План занятий'),
+                        style: Theme.of(context).textTheme.titleLarge,
+                      ),
+                      const Divider(height: 32),
+                      _problemWordWeight(settings),
+                      const Divider(height: 32),
+                      _answerBehavior(settings),
+                      const Divider(height: 32),
+                      _lessonGroup(
+                        title: s.toGermanCategory,
+                        lessons: settings.toGermanLessons,
+                        tasks: settings.toGermanTasks,
+                        onLessons: (value) => _update(
+                          settings.copyWith(toGermanLessons: value),
+                        ),
+                        onTasks: (value) => _update(
+                          settings.copyWith(toGermanTasks: value),
+                        ),
+                      ),
+                      _lessonGroup(
+                        title: s.toRussianCategory,
+                        lessons: settings.toRussianLessons,
+                        tasks: settings.toRussianTasks,
+                        onLessons: (value) => _update(
+                          settings.copyWith(toRussianLessons: value),
+                        ),
+                        onTasks: (value) => _update(
+                          settings.copyWith(toRussianTasks: value),
+                        ),
+                      ),
+                      _lessonGroup(
+                        title: s.numbersCategory,
+                        lessons: settings.numberLessons,
+                        tasks: settings.numberTasks,
+                        onLessons: (value) => _update(
+                          settings.copyWith(numberLessons: value),
+                        ),
+                        onTasks: (value) => _update(
+                          settings.copyWith(numberTasks: value),
+                        ),
+                      ),
+                      _lessonGroup(
+                        title: s.grammarCategory,
+                        lessons: settings.grammarLessons,
+                        tasks: settings.grammarTasks,
+                        onLessons: (value) => _update(
+                          settings.copyWith(grammarLessons: value),
+                        ),
+                        onTasks: (value) => _update(
+                          settings.copyWith(grammarTasks: value),
+                        ),
+                      ),
+                      _matchingDifficulty(settings),
+                      const SizedBox(height: 16),
+                      Text(
+                        s.remindersTitle,
+                        style: Theme.of(context).textTheme.titleLarge,
+                      ),
+                      const SizedBox(height: 8),
+                      SwitchListTile(
+                        key: const Key('reminders-enabled'),
                         contentPadding: EdgeInsets.zero,
-                        leading: const Icon(Icons.schedule_outlined),
-                        title: Text(_formatTime(entry.$2)),
-                        onTap: () => _changeTime(entry.$1),
-                        trailing: IconButton(
-                          tooltip: s.choose('Entfernen', 'Удалить'),
-                          onPressed: () => _removeTime(entry.$1),
-                          icon: const Icon(Icons.delete_outline),
+                        title: Text(s.choose(
+                          'Benachrichtigungen verwenden',
+                          'Использовать уведомления',
+                        )),
+                        subtitle: widget.reminders == null
+                            ? Text(s.choose(
+                                'Benachrichtigungen werden derzeit nur auf Android unterstützt.',
+                                'Уведомления пока поддерживаются только на Android.',
+                              ))
+                            : null,
+                        value: settings.remindersEnabled,
+                        onChanged: (value) => _update(
+                          settings.copyWith(remindersEnabled: value),
+                          refreshReminders: true,
                         ),
                       ),
-                    ),
-                    if (settings.reminderMinutes.length < 5)
-                      Align(
-                        alignment: Alignment.centerLeft,
-                        child: TextButton.icon(
-                          key: const Key('add-reminder-time'),
-                          onPressed: _addTime,
-                          icon: const Icon(Icons.add),
-                          label: Text(s.choose(
-                            'Erinnerungszeit hinzufügen',
-                            'Добавить время напоминания',
-                          )),
+                      if (settings.remindersEnabled) ...[
+                        ...settings.reminderMinutes.indexed.map(
+                          (entry) => ListTile(
+                            contentPadding: EdgeInsets.zero,
+                            leading: const Icon(Icons.schedule_outlined),
+                            title: Text(_formatTime(entry.$2)),
+                            onTap: () => _changeTime(entry.$1),
+                            trailing: IconButton(
+                              tooltip: s.choose('Entfernen', 'Удалить'),
+                              onPressed: () => _removeTime(entry.$1),
+                              icon: const Icon(Icons.delete_outline),
+                            ),
+                          ),
                         ),
-                      ),
-                  ],
-                ],
+                        if (settings.reminderMinutes.length < 5)
+                          Align(
+                            alignment: Alignment.centerLeft,
+                            child: TextButton.icon(
+                              key: const Key('add-reminder-time'),
+                              onPressed: _addTime,
+                              icon: const Icon(Icons.add),
+                              label: Text(s.choose(
+                                'Erinnerungszeit hinzufügen',
+                                'Добавить время напоминания',
+                              )),
+                            ),
+                          ),
+                      ],
+                    ],
+                  ),
+                ),
               ),
+      ),
+    );
+  }
+
+  Widget _answerBehavior(AppSettings settings) {
+    final s = widget.strings;
+    return Card(
+      child: SwitchListTile(
+        key: const Key('repeat-incorrect-immediately'),
+        contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+        secondary: const Icon(Icons.replay),
+        title: Text(s.choose(
+          'Fehler sofort korrigieren',
+          'Исправлять ошибку сразу',
+        )),
+        subtitle: Text(s.choose(
+          'Nach einer falschen Antwort wird dieselbe Karte bis zur richtigen Korrektur wiederholt. Später folgt eine Kontrollwiederholung.',
+          'После ошибки эта же карточка повторяется до правильного ответа, а затем возвращается ещё раз для контрольной проверки.',
+        )),
+        value: settings.repeatIncorrectImmediately,
+        onChanged: (value) => _update(
+          settings.copyWith(repeatIncorrectImmediately: value),
+        ),
       ),
     );
   }

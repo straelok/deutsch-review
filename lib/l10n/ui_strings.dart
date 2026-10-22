@@ -433,6 +433,10 @@ final class UiStrings {
         'Antwort ${answered + 1} von $target',
         'Ответ ${answered + 1} из $target',
       );
+  String correctionProgress(String progress) => choose(
+        'Korrektur · $progress',
+        'Исправление · $progress',
+      );
   String get sessionComplete => choose(
         'Sitzung abgeschlossen',
         'Повторение завершено',

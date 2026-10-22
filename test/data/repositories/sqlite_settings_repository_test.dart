@@ -27,6 +27,7 @@ void main() {
       toGermanTasks: 12,
       matchingPairsPerBoard: 11,
       problemWordMaxWeight: 37,
+      repeatIncorrectImmediately: false,
       reminderMinutes: [540, 1080],
     );
     await repository.saveAppSettings(settings);
@@ -38,6 +39,7 @@ void main() {
     expect(saved.toGermanTasks, 12);
     expect(saved.matchingPairsPerBoard, 11);
     expect(saved.problemWordMaxWeight, 37);
+    expect(saved.repeatIncorrectImmediately, isFalse);
     expect(saved.reminderMinutes, [540, 1080]);
   });
 
@@ -55,6 +57,10 @@ void main() {
       ).problemWordMaxWeight,
       1000000,
     );
+  });
+
+  test('enables immediate correction for existing settings by default', () {
+    expect(AppSettings.fromJson(const {}).repeatIncorrectImmediately, isTrue);
   });
 
   test('uses eight matching pairs by default and bounds imported values', () {

@@ -20,6 +20,7 @@ import 'grammar/grammar_catalog.dart';
 import 'reminders/reminder_controller.dart';
 import 'sync/sync_controller.dart';
 import 'sync/sync_models.dart';
+import 'ui/app_theme.dart';
 
 class DeutschReviewApp extends StatefulWidget {
   const DeutschReviewApp({
@@ -71,17 +72,7 @@ class _DeutschReviewAppState extends State<DeutschReviewApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Worttrieb',
-      theme: ThemeData(
-        brightness: Brightness.dark,
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color(0xFF7FB3A4),
-          brightness: Brightness.dark,
-        ),
-        inputDecorationTheme: const InputDecorationTheme(
-          border: OutlineInputBorder(),
-        ),
-        useMaterial3: true,
-      ),
+      theme: WorttriebTheme.dark(),
       home: HomeScreen(
         learningItems: widget.learningItems,
         sessions: widget.sessions,
@@ -326,8 +317,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     const Icon(Icons.language),
-                    const SizedBox(width: 4),
-                    Text(widget.language.code.toUpperCase()),
+                    if (useRail) ...[
+                      const SizedBox(width: 4),
+                      Text(widget.language.code.toUpperCase()),
+                    ],
                   ],
                 ),
                 itemBuilder: (context) => const [
@@ -357,7 +350,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 onPressed: _openSettings,
                 icon: const Icon(Icons.settings_outlined),
               ),
-              const SizedBox(width: 8),
+              if (useRail) const SizedBox(width: 8),
             ],
           ),
           body: useRail

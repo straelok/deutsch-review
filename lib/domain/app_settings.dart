@@ -12,6 +12,7 @@ final class AppSettings {
     this.grammarTasks = 10,
     this.matchingPairsPerBoard = 8,
     this.problemWordMaxWeight = 10,
+    this.repeatIncorrectImmediately = true,
     this.remindersEnabled = true,
     this.reminderMinutes = const [810, 990, 1170],
   });
@@ -28,6 +29,7 @@ final class AppSettings {
   final int grammarTasks;
   final int matchingPairsPerBoard;
   final int problemWordMaxWeight;
+  final bool repeatIncorrectImmediately;
   final bool remindersEnabled;
   final List<int> reminderMinutes;
 
@@ -44,6 +46,7 @@ final class AppSettings {
     int? grammarTasks,
     int? matchingPairsPerBoard,
     int? problemWordMaxWeight,
+    bool? repeatIncorrectImmediately,
     bool? remindersEnabled,
     List<int>? reminderMinutes,
   }) =>
@@ -63,6 +66,8 @@ final class AppSettings {
         matchingPairsPerBoard:
             matchingPairsPerBoard ?? this.matchingPairsPerBoard,
         problemWordMaxWeight: problemWordMaxWeight ?? this.problemWordMaxWeight,
+        repeatIncorrectImmediately:
+            repeatIncorrectImmediately ?? this.repeatIncorrectImmediately,
         remindersEnabled: remindersEnabled ?? this.remindersEnabled,
         reminderMinutes: reminderMinutes ?? this.reminderMinutes,
       );
@@ -80,6 +85,7 @@ final class AppSettings {
         'grammarTasks': grammarTasks,
         'matchingPairsPerBoard': matchingPairsPerBoard,
         'problemWordMaxWeight': problemWordMaxWeight,
+        'repeatIncorrectImmediately': repeatIncorrectImmediately,
         'remindersEnabled': remindersEnabled,
         'reminderMinutes': reminderMinutes,
       };
@@ -101,6 +107,8 @@ final class AppSettings {
             _bounded(json['matchingPairsPerBoard'], 8, 2, 12),
         problemWordMaxWeight:
             _bounded(json['problemWordMaxWeight'], 10, 1, 1000000),
+        repeatIncorrectImmediately:
+            json['repeatIncorrectImmediately'] as bool? ?? true,
         remindersEnabled: json['remindersEnabled'] as bool? ?? true,
         reminderMinutes: _minutes(json['reminderMinutes']),
       );

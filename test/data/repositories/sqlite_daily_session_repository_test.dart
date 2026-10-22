@@ -375,6 +375,46 @@ void main() {
     );
   });
 
+  test('extends a grammar lesson for a delayed control task', () async {
+    final database = AppDatabase.inMemory();
+    addTearDown(database.close);
+    final repository = SqliteDailySessionRepository(database);
+    final now = DateTime.utc(2026, 10, 22, 10);
+    final planned = await repository.createExtra(
+      localDate: '2026-10-22',
+      now: now,
+      kind: DailySessionKind.grammar,
+    );
+    await repository.start(
+      id: planned.id,
+      queueItemIds: const ['grammar-1', 'grammar-2'],
+      now: now,
+    );
+
+    final updated = await repository.recordGrammarTask(
+      sessionId: planned.id,
+      attempts: [
+        GrammarAttempt(
+          id: 'failed-grammar-attempt',
+          topicId: 'verb_basics',
+          exerciseId: 'grammar-1',
+          sessionId: planned.id,
+          answerText: 'falsch',
+          correct: false,
+          attemptedAt: now,
+        ),
+      ],
+      remainingQueueItemIds: const ['grammar-2', 'grammar-1'],
+      lastExerciseId: 'grammar-1',
+      now: now,
+    );
+
+    expect(updated.answeredCount, 1);
+    expect(updated.targetAnswers, 3);
+    expect(updated.queueItemIds, const ['grammar-2', 'grammar-1']);
+    expect(updated.status, DailySessionStatus.inProgress);
+  });
+
   test('keeps and resets persistent marathon progress', () async {
     final database = AppDatabase.inMemory();
     addTearDown(database.close);
