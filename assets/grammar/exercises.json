@@ -23570,6 +23570,966 @@
       "answer": "wäscht hat gewaschen",
       "instruction_de": "Schreibe: er/sie/es, Hilfsverb, Partizip II.",
       "instruction_ru": "Введите: er/es/sie, hat/ist, Partizip II."
+    },
+    {
+      "id": "lesson9-modal-1",
+      "topic_id": "modal_verbs_muessen_duerfen",
+      "lemma": "müssen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Ich ___ den Antrag ausfüllen.",
+      "answer": "muss",
+      "options": [
+        "muss",
+        "musst",
+        "müssen"
+      ],
+      "instruction_de": "Wähle die richtige Form des Modalverbs.",
+      "instruction_ru": "Выберите правильную форму модального глагола."
+    },
+    {
+      "id": "lesson9-modal-2",
+      "topic_id": "modal_verbs_muessen_duerfen",
+      "lemma": "müssen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Du ___ deinen Ausweis mitbringen.",
+      "answer": "musst",
+      "options": [
+        "muss",
+        "musst",
+        "müsst"
+      ],
+      "instruction_de": "Wähle die richtige Form des Modalverbs.",
+      "instruction_ru": "Выберите правильную форму модального глагола."
+    },
+    {
+      "id": "lesson9-modal-3",
+      "topic_id": "modal_verbs_muessen_duerfen",
+      "lemma": "müssen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Die Mitarbeiterin ___ das Dokument prüfen.",
+      "answer": "muss",
+      "options": [
+        "muss",
+        "müssen",
+        "müsst"
+      ],
+      "instruction_de": "Wähle die richtige Form des Modalverbs.",
+      "instruction_ru": "Выберите правильную форму модального глагола."
+    },
+    {
+      "id": "lesson9-modal-4",
+      "topic_id": "modal_verbs_muessen_duerfen",
+      "lemma": "müssen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Wir ___ an der Kasse bezahlen.",
+      "answer": "müssen",
+      "options": [
+        "muss",
+        "müssen",
+        "müsst"
+      ],
+      "instruction_de": "Wähle die richtige Form des Modalverbs.",
+      "instruction_ru": "Выберите правильную форму модального глагола."
+    },
+    {
+      "id": "lesson9-modal-5",
+      "topic_id": "modal_verbs_muessen_duerfen",
+      "lemma": "müssen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Ihr ___ hier unterschreiben.",
+      "answer": "müsst",
+      "options": [
+        "musst",
+        "müsst",
+        "müssen"
+      ],
+      "instruction_de": "Wähle die richtige Form des Modalverbs.",
+      "instruction_ru": "Выберите правильную форму модального глагола."
+    },
+    {
+      "id": "lesson9-modal-6",
+      "topic_id": "modal_verbs_muessen_duerfen",
+      "lemma": "müssen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Sie ___ zuerst das Ziel wählen.",
+      "answer": "müssen",
+      "options": [
+        "muss",
+        "müsst",
+        "müssen"
+      ],
+      "instruction_de": "Wähle die richtige Form des Modalverbs.",
+      "instruction_ru": "Выберите правильную форму модального глагола."
+    },
+    {
+      "id": "lesson9-modal-7",
+      "topic_id": "modal_verbs_muessen_duerfen",
+      "lemma": "dürfen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Ich ___ mein Fahrrad mitnehmen.",
+      "answer": "darf",
+      "options": [
+        "darf",
+        "darfst",
+        "dürfen"
+      ],
+      "instruction_de": "Wähle die richtige Form des Modalverbs.",
+      "instruction_ru": "Выберите правильную форму модального глагола."
+    },
+    {
+      "id": "lesson9-modal-8",
+      "topic_id": "modal_verbs_muessen_duerfen",
+      "lemma": "dürfen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Du ___ hier nicht rauchen.",
+      "answer": "darfst",
+      "options": [
+        "darf",
+        "darfst",
+        "dürft"
+      ],
+      "instruction_de": "Wähle die richtige Form des Modalverbs.",
+      "instruction_ru": "Выберите правильную форму модального глагола."
+    },
+    {
+      "id": "lesson9-modal-9",
+      "topic_id": "modal_verbs_muessen_duerfen",
+      "lemma": "dürfen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Man ___ vor dem Amt nicht parken.",
+      "answer": "darf",
+      "options": [
+        "darf",
+        "dürfen",
+        "dürft"
+      ],
+      "instruction_de": "Wähle die richtige Form des Modalverbs.",
+      "instruction_ru": "Выберите правильную форму модального глагола."
+    },
+    {
+      "id": "lesson9-modal-10",
+      "topic_id": "modal_verbs_muessen_duerfen",
+      "lemma": "dürfen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Wir ___ in der EU Auto fahren.",
+      "answer": "dürfen",
+      "options": [
+        "darf",
+        "dürfen",
+        "dürft"
+      ],
+      "instruction_de": "Wähle die richtige Form des Modalverbs.",
+      "instruction_ru": "Выберите правильную форму модального глагола."
+    },
+    {
+      "id": "lesson9-modal-11",
+      "topic_id": "modal_verbs_muessen_duerfen",
+      "lemma": "dürfen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Ihr ___ im Wartezimmer leise sprechen.",
+      "answer": "dürft",
+      "options": [
+        "darfst",
+        "dürft",
+        "dürfen"
+      ],
+      "instruction_de": "Wähle die richtige Form des Modalverbs.",
+      "instruction_ru": "Выберите правильную форму модального глагола."
+    },
+    {
+      "id": "lesson9-modal-12",
+      "topic_id": "modal_verbs_muessen_duerfen",
+      "lemma": "dürfen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Die Besucher ___ hier warten.",
+      "answer": "dürfen",
+      "options": [
+        "darf",
+        "dürft",
+        "dürfen"
+      ],
+      "instruction_de": "Wähle die richtige Form des Modalverbs.",
+      "instruction_ru": "Выберите правильную форму модального глагола."
+    },
+    {
+      "id": "lesson9-modal-13",
+      "topic_id": "modal_verbs_muessen_duerfen",
+      "lemma": "müssen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ ich eine Gebühr bezahlen?",
+      "answer": "Muss",
+      "options": [
+        "Muss",
+        "Musst",
+        "Müssen"
+      ],
+      "instruction_de": "Wähle die richtige Form des Modalverbs.",
+      "instruction_ru": "Выберите правильную форму модального глагола."
+    },
+    {
+      "id": "lesson9-modal-14",
+      "topic_id": "modal_verbs_muessen_duerfen",
+      "lemma": "dürfen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ wir hier fotografieren?",
+      "answer": "Dürfen",
+      "options": [
+        "Darf",
+        "Dürft",
+        "Dürfen"
+      ],
+      "instruction_de": "Wähle die richtige Form des Modalverbs.",
+      "instruction_ru": "Выберите правильную форму модального глагола."
+    },
+    {
+      "id": "lesson9-modal-15",
+      "topic_id": "modal_verbs_muessen_duerfen",
+      "lemma": "müssen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Der Pass ist nicht gültig. Sie ___ einen neuen beantragen.",
+      "answer": "müssen",
+      "options": [
+        "muss",
+        "müssen",
+        "dürfen"
+      ],
+      "instruction_de": "Wähle die richtige Form des Modalverbs.",
+      "instruction_ru": "Выберите правильную форму модального глагола."
+    },
+    {
+      "id": "lesson9-modal-16",
+      "topic_id": "modal_verbs_muessen_duerfen",
+      "lemma": "dürfen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Das Parken ist verboten. Hier ___ man nicht parken.",
+      "answer": "darf",
+      "options": [
+        "darf",
+        "muss",
+        "dürfen"
+      ],
+      "instruction_de": "Wähle die richtige Form des Modalverbs.",
+      "instruction_ru": "Выберите правильную форму модального глагола."
+    },
+    {
+      "id": "lesson9-modal-17",
+      "topic_id": "modal_verbs_muessen_duerfen",
+      "lemma": "müssen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Zuerst ___ man den Antrag ausfüllen.",
+      "answer": "muss",
+      "options": [
+        "muss",
+        "darf",
+        "müssen"
+      ],
+      "instruction_de": "Wähle die richtige Form des Modalverbs.",
+      "instruction_ru": "Выберите правильную форму модального глагола."
+    },
+    {
+      "id": "lesson9-modal-18",
+      "topic_id": "modal_verbs_muessen_duerfen",
+      "lemma": "dürfen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Mit diesem Ticket ___ Sie zwei Stunden fahren.",
+      "answer": "dürfen",
+      "options": [
+        "darf",
+        "dürfen",
+        "müssen"
+      ],
+      "instruction_de": "Wähle die richtige Form des Modalverbs.",
+      "instruction_ru": "Выберите правильную форму модального глагола."
+    },
+    {
+      "id": "lesson9-modal-19",
+      "topic_id": "modal_verbs_muessen_duerfen",
+      "lemma": "müssen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Warum ___ ihr so lange warten?",
+      "answer": "müsst",
+      "options": [
+        "musst",
+        "müsst",
+        "müssen"
+      ],
+      "instruction_de": "Wähle die richtige Form des Modalverbs.",
+      "instruction_ru": "Выберите правильную форму модального глагола."
+    },
+    {
+      "id": "lesson9-modal-20",
+      "topic_id": "modal_verbs_muessen_duerfen",
+      "lemma": "dürfen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Wann ___ du den Pass abholen?",
+      "answer": "darfst",
+      "options": [
+        "darf",
+        "darfst",
+        "dürft"
+      ],
+      "instruction_de": "Wähle die richtige Form des Modalverbs.",
+      "instruction_ru": "Выберите правильную форму модального глагола."
+    },
+    {
+      "id": "lesson9-man-1",
+      "topic_id": "pronoun_man",
+      "lemma": "man",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Hier ___ man Tickets kaufen.",
+      "answer": "kann",
+      "options": [
+        "kann",
+        "können",
+        "könnt"
+      ],
+      "instruction_de": "Wähle die Verbform für man.",
+      "instruction_ru": "Выберите форму глагола для man."
+    },
+    {
+      "id": "lesson9-man-2",
+      "topic_id": "pronoun_man",
+      "lemma": "man",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Zuerst ___ man das Ziel.",
+      "answer": "wählt",
+      "options": [
+        "wähle",
+        "wählt",
+        "wählen"
+      ],
+      "instruction_de": "Wähle die Verbform für man.",
+      "instruction_ru": "Выберите форму глагола для man."
+    },
+    {
+      "id": "lesson9-man-3",
+      "topic_id": "pronoun_man",
+      "lemma": "man",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Im Bus ___ man nicht rauchen.",
+      "answer": "darf",
+      "options": [
+        "darf",
+        "dürfen",
+        "dürft"
+      ],
+      "instruction_de": "Wähle die Verbform für man.",
+      "instruction_ru": "Выберите форму глагола для man."
+    },
+    {
+      "id": "lesson9-man-4",
+      "topic_id": "pronoun_man",
+      "lemma": "man",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Danach ___ man die Fahrkarte.",
+      "answer": "bezahlt",
+      "options": [
+        "bezahle",
+        "bezahlt",
+        "bezahlen"
+      ],
+      "instruction_de": "Wähle die Verbform für man.",
+      "instruction_ru": "Выберите форму глагола для man."
+    },
+    {
+      "id": "lesson9-man-5",
+      "topic_id": "pronoun_man",
+      "lemma": "man",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Beim Amt ___ man oft warten.",
+      "answer": "muss",
+      "options": [
+        "muss",
+        "musst",
+        "müssen"
+      ],
+      "instruction_de": "Wähle die Verbform für man.",
+      "instruction_ru": "Выберите форму глагола для man."
+    },
+    {
+      "id": "lesson9-man-6",
+      "topic_id": "pronoun_man",
+      "lemma": "man",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Wie ___ man das Wort?",
+      "answer": "schreibt",
+      "options": [
+        "schreibst",
+        "schreibt",
+        "schreiben"
+      ],
+      "instruction_de": "Wähle die Verbform für man.",
+      "instruction_ru": "Выберите форму глагола для man."
+    },
+    {
+      "id": "lesson9-man-7",
+      "topic_id": "pronoun_man",
+      "lemma": "man",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Wo ___ man den Antrag ab?",
+      "answer": "gibt",
+      "options": [
+        "gibst",
+        "gibt",
+        "geben"
+      ],
+      "instruction_de": "Wähle die Verbform für man.",
+      "instruction_ru": "Выберите форму глагола для man."
+    },
+    {
+      "id": "lesson9-man-8",
+      "topic_id": "pronoun_man",
+      "lemma": "man",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Mit einem Visum ___ man einreisen.",
+      "answer": "darf",
+      "options": [
+        "darf",
+        "dürfen",
+        "dürft"
+      ],
+      "instruction_de": "Wähle die Verbform für man.",
+      "instruction_ru": "Выберите форму глагола для man."
+    },
+    {
+      "id": "lesson9-man-9",
+      "topic_id": "pronoun_man",
+      "lemma": "man",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Am Schalter ___ man eine Auskunft.",
+      "answer": "bekommt",
+      "options": [
+        "bekomme",
+        "bekommt",
+        "bekommen"
+      ],
+      "instruction_de": "Wähle die Verbform für man.",
+      "instruction_ru": "Выберите форму глагола для man."
+    },
+    {
+      "id": "lesson9-man-10",
+      "topic_id": "pronoun_man",
+      "lemma": "man",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Für die Reise ___ man einen Pass.",
+      "answer": "braucht",
+      "options": [
+        "brauchst",
+        "braucht",
+        "brauchen"
+      ],
+      "instruction_de": "Wähle die Verbform für man.",
+      "instruction_ru": "Выберите форму глагола для man."
+    },
+    {
+      "id": "lesson9-man-11",
+      "topic_id": "pronoun_man",
+      "lemma": "man",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Hier ___ man das Gepäck abgeben.",
+      "answer": "muss",
+      "options": [
+        "muss",
+        "müssen",
+        "müsst"
+      ],
+      "instruction_de": "Wähle die Verbform für man.",
+      "instruction_ru": "Выберите форму глагола для man."
+    },
+    {
+      "id": "lesson9-man-12",
+      "topic_id": "pronoun_man",
+      "lemma": "man",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Danach ___ man alle Dokumente mit.",
+      "answer": "nimmt",
+      "options": [
+        "nimmst",
+        "nimmt",
+        "nehmen"
+      ],
+      "instruction_de": "Wähle die Verbform für man.",
+      "instruction_ru": "Выберите форму глагола для man."
+    },
+    {
+      "id": "lesson9-man-13",
+      "topic_id": "pronoun_man",
+      "lemma": "man",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Bei Rot ___ man nicht fahren.",
+      "answer": "darf",
+      "options": [
+        "darf",
+        "dürfen",
+        "dürft"
+      ],
+      "instruction_de": "Wähle die Verbform für man.",
+      "instruction_ru": "Выберите форму глагола для man."
+    },
+    {
+      "id": "lesson9-man-14",
+      "topic_id": "pronoun_man",
+      "lemma": "man",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "An der Kasse ___ man bar bezahlen.",
+      "answer": "kann",
+      "options": [
+        "kann",
+        "können",
+        "könnt"
+      ],
+      "instruction_de": "Wähle die Verbform für man.",
+      "instruction_ru": "Выберите форму глагола для man."
+    },
+    {
+      "id": "lesson9-man-15",
+      "topic_id": "pronoun_man",
+      "lemma": "man",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Das Formular ___ man allein aus.",
+      "answer": "füllt",
+      "options": [
+        "füllst",
+        "füllt",
+        "füllen"
+      ],
+      "instruction_de": "Wähle die Verbform für man.",
+      "instruction_ru": "Выберите форму глагола для man."
+    },
+    {
+      "id": "lesson9-man-16",
+      "topic_id": "pronoun_man",
+      "lemma": "man",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Bei Fragen ___ man die Mitarbeiterin.",
+      "answer": "fragt",
+      "options": [
+        "fragst",
+        "fragt",
+        "fragen"
+      ],
+      "instruction_de": "Wähle die Verbform für man.",
+      "instruction_ru": "Выберите форму глагола для man."
+    },
+    {
+      "id": "lesson9-man-17",
+      "topic_id": "pronoun_man",
+      "lemma": "man",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Den Ausweis ___ man immer mit.",
+      "answer": "bringt",
+      "options": [
+        "bringst",
+        "bringt",
+        "bringen"
+      ],
+      "instruction_de": "Wähle die Verbform für man.",
+      "instruction_ru": "Выберите форму глагола для man."
+    },
+    {
+      "id": "lesson9-man-18",
+      "topic_id": "pronoun_man",
+      "lemma": "man",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Zum Schluss ___ man den Antrag.",
+      "answer": "unterschreibt",
+      "options": [
+        "unterschreibst",
+        "unterschreibt",
+        "unterschreiben"
+      ],
+      "instruction_de": "Wähle die Verbform für man.",
+      "instruction_ru": "Выберите форму глагола для man."
+    },
+    {
+      "id": "lesson9-man-19",
+      "topic_id": "pronoun_man",
+      "lemma": "man",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "In Deutschland ___ man viele Formulare online.",
+      "answer": "findet",
+      "options": [
+        "findest",
+        "findet",
+        "finden"
+      ],
+      "instruction_de": "Wähle die Verbform für man.",
+      "instruction_ru": "Выберите форму глагола для man."
+    },
+    {
+      "id": "lesson9-man-20",
+      "topic_id": "pronoun_man",
+      "lemma": "man",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Eine fremde Sprache ___ man nicht sofort.",
+      "answer": "versteht",
+      "options": [
+        "verstehst",
+        "versteht",
+        "verstehen"
+      ],
+      "instruction_de": "Wähle die Verbform für man.",
+      "instruction_ru": "Выберите форму глагола для man."
+    },
+    {
+      "id": "lesson9-imperative-1",
+      "topic_id": "imperative",
+      "lemma": "warten",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "du: einen Moment warten",
+      "answer": "Warte einen Moment!",
+      "options": [
+        "Warte",
+        "einen Moment!"
+      ],
+      "instruction_de": "Bilde einen richtigen Satz.",
+      "instruction_ru": "Составьте правильное предложение."
+    },
+    {
+      "id": "lesson9-imperative-2",
+      "topic_id": "imperative",
+      "lemma": "warten",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "ihr: hier warten",
+      "answer": "Wartet hier!",
+      "options": [
+        "Wartet",
+        "hier!"
+      ],
+      "instruction_de": "Bilde einen richtigen Satz.",
+      "instruction_ru": "Составьте правильное предложение."
+    },
+    {
+      "id": "lesson9-imperative-3",
+      "topic_id": "imperative",
+      "lemma": "warten",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "Sie: bitte draußen warten",
+      "answer": "Warten Sie bitte draußen!",
+      "options": [
+        "Warten",
+        "Sie",
+        "bitte",
+        "draußen!"
+      ],
+      "instruction_de": "Bilde einen richtigen Satz.",
+      "instruction_ru": "Составьте правильное предложение."
+    },
+    {
+      "id": "lesson9-imperative-4",
+      "topic_id": "imperative",
+      "lemma": "ausmachen",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "du: das Handy ausmachen",
+      "answer": "Mach das Handy aus!",
+      "options": [
+        "Mach",
+        "das Handy",
+        "aus!"
+      ],
+      "instruction_de": "Bilde einen richtigen Satz.",
+      "instruction_ru": "Составьте правильное предложение."
+    },
+    {
+      "id": "lesson9-imperative-5",
+      "topic_id": "imperative",
+      "lemma": "ausmachen",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "ihr: die Handys ausmachen",
+      "answer": "Macht die Handys aus!",
+      "options": [
+        "Macht",
+        "die Handys",
+        "aus!"
+      ],
+      "instruction_de": "Bilde einen richtigen Satz.",
+      "instruction_ru": "Составьте правильное предложение."
+    },
+    {
+      "id": "lesson9-imperative-6",
+      "topic_id": "imperative",
+      "lemma": "ausfüllen",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "Sie: den Antrag ausfüllen",
+      "answer": "Füllen Sie den Antrag aus!",
+      "options": [
+        "Füllen",
+        "Sie",
+        "den Antrag",
+        "aus!"
+      ],
+      "instruction_de": "Bilde einen richtigen Satz.",
+      "instruction_ru": "Составьте правильное предложение."
+    },
+    {
+      "id": "lesson9-imperative-7",
+      "topic_id": "imperative",
+      "lemma": "mitbringen",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "du: den Pass mitbringen",
+      "answer": "Bring den Pass mit!",
+      "options": [
+        "Bring",
+        "den Pass",
+        "mit!"
+      ],
+      "instruction_de": "Bilde einen richtigen Satz.",
+      "instruction_ru": "Составьте правильное предложение."
+    },
+    {
+      "id": "lesson9-imperative-8",
+      "topic_id": "imperative",
+      "lemma": "mitbringen",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "ihr: alle Papiere mitbringen",
+      "answer": "Bringt alle Papiere mit!",
+      "options": [
+        "Bringt",
+        "alle Papiere",
+        "mit!"
+      ],
+      "instruction_de": "Bilde einen richtigen Satz.",
+      "instruction_ru": "Составьте правильное предложение."
+    },
+    {
+      "id": "lesson9-imperative-9",
+      "topic_id": "imperative",
+      "lemma": "unterschreiben",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "Sie: hier unterschreiben",
+      "answer": "Unterschreiben Sie hier!",
+      "options": [
+        "Unterschreiben",
+        "Sie",
+        "hier!"
+      ],
+      "instruction_de": "Bilde einen richtigen Satz.",
+      "instruction_ru": "Составьте правильное предложение."
+    },
+    {
+      "id": "lesson9-imperative-10",
+      "topic_id": "imperative",
+      "lemma": "zuhören",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "du: gut zuhören",
+      "answer": "Hör gut zu!",
+      "options": [
+        "Hör",
+        "gut",
+        "zu!"
+      ],
+      "instruction_de": "Bilde einen richtigen Satz.",
+      "instruction_ru": "Составьте правильное предложение."
+    },
+    {
+      "id": "lesson9-imperative-11",
+      "topic_id": "imperative",
+      "lemma": "zuhören",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "ihr: bitte zuhören",
+      "answer": "Hört bitte zu!",
+      "options": [
+        "Hört",
+        "bitte",
+        "zu!"
+      ],
+      "instruction_de": "Bilde einen richtigen Satz.",
+      "instruction_ru": "Составьте правильное предложение."
+    },
+    {
+      "id": "lesson9-imperative-12",
+      "topic_id": "imperative",
+      "lemma": "helfen",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "du: mir helfen",
+      "answer": "Hilf mir!",
+      "options": [
+        "Hilf",
+        "mir!"
+      ],
+      "instruction_de": "Bilde einen richtigen Satz.",
+      "instruction_ru": "Составьте правильное предложение."
+    },
+    {
+      "id": "lesson9-imperative-13",
+      "topic_id": "imperative",
+      "lemma": "helfen",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "ihr: der Frau helfen",
+      "answer": "Helft der Frau!",
+      "options": [
+        "Helft",
+        "der Frau!"
+      ],
+      "instruction_de": "Bilde einen richtigen Satz.",
+      "instruction_ru": "Составьте правильное предложение."
+    },
+    {
+      "id": "lesson9-imperative-14",
+      "topic_id": "imperative",
+      "lemma": "erklären",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "Sie: das Wort erklären",
+      "answer": "Erklären Sie das Wort!",
+      "options": [
+        "Erklären",
+        "Sie",
+        "das Wort!"
+      ],
+      "instruction_de": "Bilde einen richtigen Satz.",
+      "instruction_ru": "Составьте правильное предложение."
+    },
+    {
+      "id": "lesson9-imperative-15",
+      "topic_id": "imperative",
+      "lemma": "wiederholen",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "Sie: das bitte wiederholen",
+      "answer": "Wiederholen Sie das bitte!",
+      "options": [
+        "Wiederholen",
+        "Sie",
+        "das",
+        "bitte!"
+      ],
+      "instruction_de": "Bilde einen richtigen Satz.",
+      "instruction_ru": "Составьте правильное предложение."
+    },
+    {
+      "id": "lesson9-imperative-16",
+      "topic_id": "imperative",
+      "lemma": "aufstehen",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "du: bitte aufstehen",
+      "answer": "Steh bitte auf!",
+      "options": [
+        "Steh",
+        "bitte",
+        "auf!"
+      ],
+      "instruction_de": "Bilde einen richtigen Satz.",
+      "instruction_ru": "Составьте правильное предложение."
+    },
+    {
+      "id": "lesson9-imperative-17",
+      "topic_id": "imperative",
+      "lemma": "aufstehen",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "ihr: jetzt aufstehen",
+      "answer": "Steht jetzt auf!",
+      "options": [
+        "Steht",
+        "jetzt",
+        "auf!"
+      ],
+      "instruction_de": "Bilde einen richtigen Satz.",
+      "instruction_ru": "Составьте правильное предложение."
+    },
+    {
+      "id": "lesson9-imperative-18",
+      "topic_id": "imperative",
+      "lemma": "wählen",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "du: zuerst das Ziel wählen",
+      "answer": "Wähle zuerst das Ziel!",
+      "options": [
+        "Wähle",
+        "zuerst",
+        "das Ziel!"
+      ],
+      "instruction_de": "Bilde einen richtigen Satz.",
+      "instruction_ru": "Составьте правильное предложение."
+    },
+    {
+      "id": "lesson9-imperative-19",
+      "topic_id": "imperative",
+      "lemma": "abgeben",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "Sie: das Gepäck abgeben",
+      "answer": "Geben Sie das Gepäck ab!",
+      "options": [
+        "Geben",
+        "Sie",
+        "das Gepäck",
+        "ab!"
+      ],
+      "instruction_de": "Bilde einen richtigen Satz.",
+      "instruction_ru": "Составьте правильное предложение."
+    },
+    {
+      "id": "lesson9-imperative-20",
+      "topic_id": "imperative",
+      "lemma": "mitnehmen",
+      "required_item_type": "verb",
+      "type": "word_order",
+      "prompt": "du: den Ausweis mitnehmen",
+      "answer": "Nimm den Ausweis mit!",
+      "options": [
+        "Nimm",
+        "den Ausweis",
+        "mit!"
+      ],
+      "instruction_de": "Bilde einen richtigen Satz.",
+      "instruction_ru": "Составьте правильное предложение."
     }
   ]
 }

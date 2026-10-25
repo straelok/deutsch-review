@@ -1,6 +1,6 @@
 {
   "format_version": 2,
-  "exported_at": "2026-10-21T20:00:00.000Z",
+  "exported_at": "2026-10-25T10:00:00.000Z",
   "words": [
     {
       "id": "e7000001",
@@ -1994,15 +1994,15 @@
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
     {
-      "id": "d9000002",
       "type": "verb",
       "german": "besuchen",
-      "translation_ru": "навещать; посещать",
-      "example": "Max besucht am Wochenende seine Tante.; Wir besuchen heute das Museum.",
-      "note": "Неотделяемая приставка be-: ich besuche, du besuchst, er/sie/es besucht.",
+      "translation_ru": "посещать; навещать",
+      "example": "Ich besuche einen Deutschkurs.; Wir haben unsere Freunde besucht.",
+      "note": "Неотделяемый глагол; Partizip II: besucht.",
+      "id": "d9000002",
+      "important": false,
       "created_at": "2026-10-06T21:00:00.000Z",
-      "updated_at": "2026-10-14T21:58:30.635729Z",
-      "important": false
+      "updated_at": "2026-10-25T10:00:00.000Z"
     },
     {
       "id": "d9000003",
@@ -2038,15 +2038,15 @@
       "important": false
     },
     {
-      "id": "d9000006",
       "type": "verb",
       "german": "erklären",
       "translation_ru": "объяснять",
-      "example": "Die Lehrerin erklärt die neue Regel.; Kannst du mir das erklären?",
-      "note": "Неотделяемая приставка er-: ich erkläre, du erklärst, er/sie/es erklärt.",
+      "example": "Können Sie mir das Wort erklären?; Die Lehrerin hat die Regel erklärt.",
+      "note": "Partizip II: erklärt.",
+      "id": "d9000006",
+      "important": false,
       "created_at": "2026-10-06T21:00:00.000Z",
-      "updated_at": "2026-10-14T21:58:30.635729Z",
-      "important": false
+      "updated_at": "2026-10-25T10:00:00.000Z"
     },
     {
       "id": "d9000007",
@@ -2060,15 +2060,15 @@
       "important": false
     },
     {
-      "id": "d9000008",
       "type": "verb",
       "german": "verstehen",
       "translation_ru": "понимать",
-      "example": "Ich verstehe die Frage.; Verstehst du das Problem?",
-      "note": "Неотделяемая приставка ver-: ich verstehe, du verstehst, er/sie/es versteht.",
+      "example": "Ich verstehe das Formular nicht.; Haben Sie die Frage verstanden?",
+      "note": "Неотделяемый глагол; Partizip II: verstanden.",
+      "id": "d9000008",
+      "important": false,
       "created_at": "2026-10-06T21:00:00.000Z",
-      "updated_at": "2026-10-14T21:58:30.635729Z",
-      "important": false
+      "updated_at": "2026-10-25T10:00:00.000Z"
     },
     {
       "id": "d9000009",
@@ -2082,15 +2082,15 @@
       "updated_at": "2026-10-06T21:00:00.000Z"
     },
     {
-      "id": "d9000010",
       "type": "verb",
       "german": "verdienen",
       "translation_ru": "зарабатывать",
-      "example": "Karl verdient genug Geld.; Wie viel verdienst du?",
-      "note": "Неотделяемая приставка ver-: ich verdiene, du verdienst, er/sie/es verdient.",
+      "example": "Wie viel verdienen Sie?; Er hat im letzten Monat gut verdient.",
+      "note": "Partizip II без ge-: verdient.",
+      "id": "d9000010",
+      "important": false,
       "created_at": "2026-10-06T21:00:00.000Z",
-      "updated_at": "2026-10-14T21:58:30.635729Z",
-      "important": false
+      "updated_at": "2026-10-25T10:00:00.000Z"
     },
     {
       "id": "d9000011",
@@ -2115,15 +2115,15 @@
       "important": false
     },
     {
-      "id": "d9000013",
       "type": "verb",
       "german": "aufstehen",
       "translation_ru": "вставать; подниматься",
-      "example": "Milan steht jeden Morgen früh auf.; Wann stehst du auf?",
-      "note": "Отделяемый глагол: auf + stehen.",
+      "example": "Steh bitte auf!; Ich bin heute früh aufgestanden.",
+      "note": "Отделяемый глагол; du stehst auf, er steht auf; Perfekt с sein: ist aufgestanden.",
+      "id": "d9000013",
+      "important": false,
       "created_at": "2026-10-06T21:00:00.000Z",
-      "updated_at": "2026-10-14T21:58:30.635729Z",
-      "important": false
+      "updated_at": "2026-10-25T10:00:00.000Z"
     },
     {
       "id": "d9000014",
@@ -2214,15 +2214,15 @@
       "updated_at": "2026-10-06T21:00:00.000Z"
     },
     {
-      "id": "d9000022",
       "type": "verb",
       "german": "zuhören",
       "translation_ru": "слушать; внимательно слушать",
-      "example": "Die Kinder hören dem Lehrer aufmerksam zu.; Hörst du mir bitte zu?",
-      "note": "Отделяемый глагол: zu + hören; употребляется с Dativ: jemandem zuhören.",
+      "example": "Hört bitte gut zu!; Die Schüler haben der Lehrerin zugehört.",
+      "note": "Отделяемый глагол; управление: jemandem zuhören.",
+      "id": "d9000022",
+      "important": false,
       "created_at": "2026-10-06T21:00:00.000Z",
-      "updated_at": "2026-10-14T21:58:30.635729Z",
-      "important": false
+      "updated_at": "2026-10-25T10:00:00.000Z"
     },
     {
       "id": "d8000001",
@@ -2346,15 +2346,15 @@
       "important": false
     },
     {
-      "id": "d8000012",
       "type": "verb",
       "german": "helfen",
       "translation_ru": "помогать",
-      "example": "Du hilfst deiner Mutter.; Er hilft im Büro.",
-      "note": "Сильный глагол: du hilfst, er/sie/es hilft.",
+      "example": "Können Sie mir helfen?; Die Mitarbeiterin hat mir geholfen.",
+      "note": "Управление с Dativ; du hilfst, er hilft; Partizip II: geholfen.",
+      "id": "d8000012",
+      "important": false,
       "created_at": "2026-10-05T21:48:18.545709Z",
-      "updated_at": "2026-10-06T21:23:15.489415Z",
-      "important": false
+      "updated_at": "2026-10-25T10:00:00.000Z"
     },
     {
       "id": "d8000013",
@@ -2478,15 +2478,15 @@
       "important": false
     },
     {
-      "id": "d8000024",
       "type": "verb",
       "german": "mitbringen",
-      "translation_ru": "приносить или привозить с собой",
-      "example": "Ich bringe Wasser mit.; Bringst du deinen Ausweis mit?",
-      "note": "Отделяемый глагол: mit + bringen.",
+      "translation_ru": "приносить с собой; привозить",
+      "example": "Bringen Sie bitte Ihren Pass mit.; Sie hat alle Dokumente mitgebracht.",
+      "note": "Отделяемый глагол; Partizip II: mitgebracht.",
+      "id": "d8000024",
+      "important": false,
       "created_at": "2026-10-05T21:48:18.545709Z",
-      "updated_at": "2026-10-06T21:23:15.489415Z",
-      "important": false
+      "updated_at": "2026-10-25T10:00:00.000Z"
     },
     {
       "id": "d5000001-0000-4000-8000-000000000001",
@@ -3039,24 +3039,24 @@
       "important": false
     },
     {
-      "id": "d4000011-0000-4000-8000-000000000011",
       "type": "word",
       "german": "weiblich",
       "translation_ru": "женский; женского пола",
-      "example": "Geschlecht: weiblich.; Das Kind ist weiblich.",
+      "example": "Im Formular steht „weiblich“.; Die Person ist weiblich.",
+      "id": "d4000011-0000-4000-8000-000000000011",
+      "important": false,
       "created_at": "2026-10-04T22:00:00.000Z",
-      "updated_at": "2026-10-06T21:23:15.489415Z",
-      "important": false
+      "updated_at": "2026-10-25T10:00:00.000Z"
     },
     {
-      "id": "d4000012-0000-4000-8000-000000000012",
       "type": "word",
       "german": "männlich",
       "translation_ru": "мужской; мужского пола",
-      "example": "Geschlecht: männlich.; Der Schüler ist männlich.",
+      "example": "Im Formular steht „männlich“.; Das Wort „Mann“ ist männlich.",
+      "id": "d4000012-0000-4000-8000-000000000012",
+      "important": false,
       "created_at": "2026-10-04T22:00:00.000Z",
-      "updated_at": "2026-10-06T21:23:15.489415Z",
-      "important": false
+      "updated_at": "2026-10-25T10:00:00.000Z"
     },
     {
       "id": "d4000013-0000-4000-8000-000000000013",
@@ -3540,16 +3540,16 @@
       "important": false
     },
     {
-      "id": "d4000053-0000-4000-8000-000000000053",
       "type": "noun",
       "german": "Geschlecht",
       "translation_ru": "пол",
       "article": "das",
       "plural": "Geschlechter",
-      "example": "Im Formular steht das Geschlecht.; Es gibt ein Feld für das Geschlecht.",
+      "example": "Bitte geben Sie Ihr Geschlecht an.; Im Formular stehen mehrere Angaben zum Geschlecht.",
+      "id": "d4000053-0000-4000-8000-000000000053",
+      "important": false,
       "created_at": "2026-10-04T22:00:00.000Z",
-      "updated_at": "2026-10-06T21:23:15.489415Z",
-      "important": false
+      "updated_at": "2026-10-25T10:00:00.000Z"
     },
     {
       "id": "d4000054-0000-4000-8000-000000000054",
@@ -3964,16 +3964,16 @@
       "updated_at": "2026-10-14T21:58:30.635729Z"
     },
     {
-      "id": "d3000029-0000-4000-8000-000000000029",
       "type": "noun",
       "german": "Moment",
       "translation_ru": "момент; мгновение",
       "article": "der",
       "plural": "Momente",
-      "example": "Einen Moment, bitte.; Das war ein schöner Moment.",
+      "example": "Warten Sie bitte einen Moment.; Das war ein schöner Moment.",
+      "id": "d3000029-0000-4000-8000-000000000029",
+      "important": false,
       "created_at": "2026-10-04T21:00:00.000Z",
-      "updated_at": "2026-10-06T21:23:15.489415Z",
-      "important": false
+      "updated_at": "2026-10-25T10:00:00.000Z"
     },
     {
       "id": "d3000030-0000-4000-8000-000000000030",
@@ -4000,16 +4000,16 @@
       "important": false
     },
     {
-      "id": "d3000032-0000-4000-8000-000000000032",
       "type": "noun",
       "german": "Person",
-      "translation_ru": "человек; персона",
+      "translation_ru": "человек; лицо",
       "article": "die",
       "plural": "Personen",
-      "example": "Wer ist diese Person?; Drei Personen warten hier.",
+      "example": "Die Anmeldung gilt für eine Person.; Im Wartezimmer sitzen fünf Personen.",
+      "id": "d3000032-0000-4000-8000-000000000032",
+      "important": false,
       "created_at": "2026-10-04T21:00:00.000Z",
-      "updated_at": "2026-10-06T21:23:15.489415Z",
-      "important": false
+      "updated_at": "2026-10-25T10:00:00.000Z"
     },
     {
       "id": "d3000033-0000-4000-8000-000000000033",
@@ -4078,14 +4078,15 @@
       "updated_at": "2026-10-08T22:26:36.416523Z"
     },
     {
-      "id": "d3000039-0000-4000-8000-000000000039",
       "type": "verb",
       "german": "reisen",
-      "translation_ru": "путешествовать; ехать",
-      "example": "Ich reise nach Deutschland.; Wir reisen im Sommer.",
+      "translation_ru": "путешествовать; ездить",
+      "example": "Wir reisen im Sommer nach Deutschland.; Sie ist allein nach Berlin gereist.",
+      "note": "Perfekt обычно с sein: ist gereist.",
+      "id": "d3000039-0000-4000-8000-000000000039",
+      "important": false,
       "created_at": "2026-10-04T21:00:00.000Z",
-      "updated_at": "2026-10-06T21:23:15.489415Z",
-      "important": false
+      "updated_at": "2026-10-25T10:00:00.000Z"
     },
     {
       "id": "d3000040-0000-4000-8000-000000000040",
@@ -6209,16 +6210,16 @@
       "important": false
     },
     {
-      "id": "b0000005-0000-4000-8000-000000000005",
       "type": "noun",
       "german": "Kasse",
       "translation_ru": "касса",
       "article": "die",
       "plural": "Kassen",
-      "example": "Ich bezahle an der Kasse.",
+      "example": "Bezahlen Sie bitte an der Kasse.; Im Supermarkt sind drei Kassen geöffnet.",
+      "id": "b0000005-0000-4000-8000-000000000005",
+      "important": false,
       "created_at": "2026-09-26T12:20:00.000Z",
-      "updated_at": "2026-10-06T21:23:15.489415Z",
-      "important": false
+      "updated_at": "2026-10-25T10:00:00.000Z"
     },
     {
       "id": "b0000006-0000-4000-8000-000000000006",
@@ -6258,17 +6259,16 @@
       "important": false
     },
     {
-      "id": "b0000009-0000-4000-8000-000000000009",
       "type": "noun",
       "german": "Geld",
       "translation_ru": "деньги",
       "article": "das",
       "plural": "—",
-      "example": "Ich habe genug Geld.; Das Geld liegt auf dem Tisch.",
-      "note": "Обычно употребляется без формы множественного числа.",
+      "example": "Ich habe genug Geld dabei.; Geld allein macht nicht glücklich.",
+      "id": "b0000009-0000-4000-8000-000000000009",
+      "important": false,
       "created_at": "2026-09-26T12:20:00.000Z",
-      "updated_at": "2026-10-06T21:23:15.489415Z",
-      "important": false
+      "updated_at": "2026-10-25T10:00:00.000Z"
     },
     {
       "id": "b0000010-0000-4000-8000-000000000010",
@@ -6730,14 +6730,14 @@
       "important": false
     },
     {
-      "id": "b0000050-0000-4000-8000-000000000050",
       "type": "word",
       "german": "bar",
-      "translation_ru": "наличными; за наличные",
-      "example": "Ich bezahle bar.; Wir zahlen heute bar.",
+      "translation_ru": "наличными; наличный",
+      "example": "Kann ich bar bezahlen?; Sie hat nur zehn Euro bar dabei.",
+      "id": "b0000050-0000-4000-8000-000000000050",
+      "important": false,
       "created_at": "2026-09-26T12:20:00.000Z",
-      "updated_at": "2026-10-06T21:23:15.489415Z",
-      "important": false
+      "updated_at": "2026-10-25T10:00:00.000Z"
     },
     {
       "id": "b0000051-0000-4000-8000-000000000051",
@@ -8384,14 +8384,15 @@
       "important": false
     },
     {
-      "id": "afa7f551-59fa-4691-bb7d-7fd3686b9ed6",
       "type": "verb",
       "german": "ausfüllen",
       "translation_ru": "заполнять",
-      "example": "Ich fülle das Formular aus.; Bitte füllen Sie dieses Blatt aus.",
+      "example": "Bitte füllen Sie das Formular aus.; Ich habe den Antrag ausgefüllt.",
+      "note": "Отделяемый глагол; Partizip II: ausgefüllt.",
+      "id": "afa7f551-59fa-4691-bb7d-7fd3686b9ed6",
+      "important": false,
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-10-06T21:23:15.489415Z",
-      "important": false
+      "updated_at": "2026-10-25T10:00:00.000Z"
     },
     {
       "id": "b0f0bbd4-da4a-4ab1-92fa-c3360880ce08",
@@ -8470,14 +8471,15 @@
       "important": false
     },
     {
-      "id": "b813a0ef-45f5-4503-98a2-2a976b918519",
       "type": "verb",
       "german": "auswählen",
       "translation_ru": "выбирать; отбирать",
-      "example": "Wählen Sie die richtige Antwort aus.; Du kannst ein Bild auswählen.",
+      "example": "Wählen Sie „Erwachsener“ oder „Kind“ aus.; Ich habe das richtige Ticket ausgewählt.",
+      "note": "Отделяемый глагол; Partizip II: ausgewählt.",
+      "id": "b813a0ef-45f5-4503-98a2-2a976b918519",
+      "important": false,
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-10-06T21:23:15.489415Z",
-      "important": false
+      "updated_at": "2026-10-25T10:00:00.000Z"
     },
     {
       "id": "b81950c2-b34b-4e53-b614-24145c73a965",
@@ -10340,6 +10342,815 @@
       "important": true,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
+    },
+    {
+      "id": "e9000001",
+      "type": "noun",
+      "german": "Führerschein",
+      "translation_ru": "водительское удостоверение; права",
+      "article": "der",
+      "plural": "Führerscheine",
+      "example": "Haben Sie einen Führerschein?; Mein Führerschein ist noch gültig.",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000002",
+      "type": "noun",
+      "german": "Ticket",
+      "translation_ru": "билет",
+      "article": "das",
+      "plural": "Tickets",
+      "example": "Ich kaufe ein Ticket am Automaten.; Die Tickets liegen auf dem Tisch.",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000003",
+      "type": "noun",
+      "german": "Amt",
+      "translation_ru": "ведомство; учреждение",
+      "article": "das",
+      "plural": "Ämter",
+      "example": "Heute muss ich zum Amt gehen.; Die Ämter öffnen um acht Uhr.",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000004",
+      "type": "word",
+      "german": "gültig",
+      "translation_ru": "действительный; имеющий силу",
+      "example": "Der Ausweis ist noch gültig.; Wie lange ist das Ticket gültig?",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000005",
+      "type": "verb",
+      "german": "mieten",
+      "translation_ru": "арендовать; снимать",
+      "example": "Wir mieten ein Auto für drei Tage.; Sie hat eine Wohnung gemietet.",
+      "note": "Partizip II: gemietet.",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000006",
+      "type": "word",
+      "german": "ausländisch",
+      "translation_ru": "иностранный; зарубежный",
+      "example": "Er hat einen ausländischen Führerschein.; Die Botschaft hilft ausländischen Besuchern.",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000007",
+      "type": "word",
+      "german": "europäisch",
+      "translation_ru": "европейский",
+      "example": "Sie hat einen europäischen Führerschein.; Viele europäische Länder gehören zur EU.",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000008",
+      "type": "noun",
+      "german": "Europäische Union",
+      "translation_ru": "Европейский союз",
+      "article": "die",
+      "plural": "—",
+      "example": "Deutschland gehört zur Europäischen Union.; In der Europäischen Union gelten gemeinsame Regeln.",
+      "note": "Сокращение: die EU.",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000009",
+      "type": "word",
+      "german": "jung",
+      "translation_ru": "молодой; юный",
+      "example": "Sie ist noch sehr jung.; Der junge Mann wartet vor dem Amt.",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000010",
+      "type": "noun",
+      "german": "Fahrt",
+      "translation_ru": "поездка; рейс",
+      "article": "die",
+      "plural": "Fahrten",
+      "example": "Die Fahrt dauert zwei Stunden.; Am Wochenende machen wir zwei Fahrten.",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000011",
+      "type": "noun",
+      "german": "Fahrkarte",
+      "translation_ru": "проездной билет; билет на транспорт",
+      "article": "die",
+      "plural": "Fahrkarten",
+      "example": "Wo kann ich eine Fahrkarte kaufen?; Bitte zeigen Sie Ihre Fahrkarten.",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000012",
+      "type": "noun",
+      "german": "Antrag",
+      "translation_ru": "заявление; заявка",
+      "article": "der",
+      "plural": "Anträge",
+      "example": "Sie müssen einen Antrag ausfüllen.; Das Amt bearbeitet viele Anträge.",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000013",
+      "type": "verb",
+      "german": "müssen",
+      "translation_ru": "быть должным; быть вынужденным; нужно",
+      "example": "Ich muss heute zum Amt gehen.; Wir müssen den Antrag unterschreiben.",
+      "note": "Модальный глагол: ich/er muss, du musst, wir/sie müssen, ihr müsst.",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000014",
+      "type": "noun",
+      "german": "Ausweis",
+      "translation_ru": "удостоверение личности; документ",
+      "article": "der",
+      "plural": "Ausweise",
+      "example": "Bitte bringen Sie Ihren Ausweis mit.; Die Ausweise sind noch gültig.",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000015",
+      "type": "noun",
+      "german": "Papiere",
+      "translation_ru": "документы; бумаги",
+      "article": "die",
+      "plural": "—",
+      "example": "Sie müssen alle Papiere mitbringen.; Wo sind meine Papiere?",
+      "note": "Употребляется во множественном числе.",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000016",
+      "type": "verb",
+      "german": "unterschreiben",
+      "translation_ru": "подписывать",
+      "example": "Bitte unterschreiben Sie hier.; Er hat den Antrag unterschrieben.",
+      "note": "Неотделяемый глагол; Partizip II: unterschrieben.",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000017",
+      "type": "noun",
+      "german": "Automat",
+      "translation_ru": "автомат; устройство самообслуживания",
+      "article": "der",
+      "plural": "Automaten",
+      "example": "Der Automat funktioniert nicht.; Am Bahnhof stehen zwei Fahrkartenautomaten.",
+      "note": "Слабое существительное: der Automat, den Automaten.",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000018",
+      "type": "verb",
+      "german": "funktionieren",
+      "translation_ru": "работать; функционировать",
+      "example": "Der Fahrkartenautomat funktioniert.; Mein Handy hat gestern nicht funktioniert.",
+      "note": "Partizip II без ge-: funktioniert.",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000019",
+      "type": "noun",
+      "german": "Ziel",
+      "translation_ru": "цель; пункт назначения",
+      "article": "das",
+      "plural": "Ziele",
+      "example": "Wählen Sie zuerst das Ziel.; Unsere Ziele sind München und Salzburg.",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000020",
+      "type": "verb",
+      "german": "wählen",
+      "translation_ru": "выбирать; набирать номер; голосовать",
+      "example": "Wählen Sie bitte ein Ziel.; Sie hat die richtige Nummer gewählt.",
+      "note": "Partizip II: gewählt.",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000021",
+      "type": "noun",
+      "german": "Erwachsene",
+      "translation_ru": "взрослый человек",
+      "article": "der",
+      "plural": "Erwachsenen",
+      "example": "Ein Erwachsener muss zehn Euro bezahlen.; Die Erwachsenen warten am Automaten.",
+      "note": "Женская форма: die Erwachsene; множественное число: die Erwachsenen.",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000022",
+      "type": "word",
+      "german": "man",
+      "translation_ru": "неопределённо-личное местоимение: люди; кто-то; принято",
+      "example": "Hier darf man nicht rauchen.; Zuerst muss man das Ziel wählen.",
+      "note": "Согласуется с глаголом как er/sie/es.",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000023",
+      "type": "word",
+      "german": "zuerst",
+      "translation_ru": "сначала; сперва",
+      "example": "Zuerst füllen Sie den Antrag aus.; Wir wählen zuerst das Ziel.",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000024",
+      "type": "word",
+      "german": "danach",
+      "translation_ru": "после этого; затем",
+      "example": "Danach bezahlen Sie das Ticket.; Wir gehen zum Amt und danach zur Arbeit.",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000025",
+      "type": "word",
+      "german": "dann",
+      "translation_ru": "тогда; затем",
+      "example": "Dann nehmen Sie die Fahrkarte.; Was muss ich dann machen?",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000026",
+      "type": "noun",
+      "german": "Schluss",
+      "translation_ru": "конец; завершение",
+      "article": "der",
+      "plural": "Schlüsse",
+      "example": "Zum Schluss unterschreiben Sie den Antrag.; Jetzt ist Schluss für heute.",
+      "note": "В последовательности действий часто: zum Schluss — в заключение.",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000027",
+      "type": "word",
+      "german": "leise",
+      "translation_ru": "тихий; тихо",
+      "example": "Sei bitte leise!; Die Kinder sprechen leise.",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000028",
+      "type": "word",
+      "german": "laut",
+      "translation_ru": "громкий; громко",
+      "example": "Seid bitte nicht so laut!; Die Musik ist zu laut.",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000029",
+      "type": "verb",
+      "german": "ausmachen",
+      "translation_ru": "выключать; договариваться",
+      "example": "Mach bitte das Handy aus.; Wir haben einen Termin ausgemacht.",
+      "note": "Отделяемый глагол; Partizip II: ausgemacht.",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000030",
+      "type": "verb",
+      "german": "warten",
+      "translation_ru": "ждать",
+      "example": "Warten Sie bitte einen Moment.; Wir haben lange auf den Bus gewartet.",
+      "note": "Ожидать кого-либо или что-либо: auf + Akkusativ.",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000031",
+      "type": "noun",
+      "german": "Gebühr",
+      "translation_ru": "сбор; пошлина; плата",
+      "article": "die",
+      "plural": "Gebühren",
+      "example": "Die Gebühr beträgt zwanzig Euro.; Bezahlen Sie die Gebühren an der Kasse.",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000032",
+      "type": "verb",
+      "german": "lachen",
+      "translation_ru": "смеяться",
+      "example": "Lachen Sie bitte!; Wir haben zusammen viel gelacht.",
+      "note": "Partizip II: gelacht.",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000033",
+      "type": "verb",
+      "german": "beantragen",
+      "translation_ru": "подавать заявление; ходатайствовать",
+      "example": "Sie muss ein Visum beantragen.; Ich habe einen neuen Pass beantragt.",
+      "note": "Неотделяемый глагол; Partizip II: beantragt.",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000034",
+      "type": "verb",
+      "german": "dürfen",
+      "translation_ru": "мочь; иметь разрешение",
+      "example": "Hier darf man fotografieren.; Ihr dürft heute früher gehen.",
+      "note": "Модальный глагол: ich/er darf, du darfst, wir/sie dürfen, ihr dürft.",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000035",
+      "type": "word",
+      "german": "Achtung",
+      "translation_ru": "внимание; осторожно",
+      "example": "Achtung, hier darf man nicht parken!; Achtung, der Bus fährt ab!",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000036",
+      "type": "noun",
+      "german": "Zigarette",
+      "translation_ru": "сигарета",
+      "article": "die",
+      "plural": "Zigaretten",
+      "example": "Hier darf man keine Zigarette rauchen.; Die Zigaretten liegen auf dem Tisch.",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000037",
+      "type": "verb",
+      "german": "rauchen",
+      "translation_ru": "курить",
+      "example": "Im Bus darf man nicht rauchen.; Er hat früher viel geraucht.",
+      "note": "Partizip II: geraucht.",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000038",
+      "type": "word",
+      "german": "langsam",
+      "translation_ru": "медленный; медленно",
+      "example": "Fahren Sie bitte langsam.; Der Automat arbeitet sehr langsam.",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000039",
+      "type": "noun",
+      "german": "Parkplatz",
+      "translation_ru": "парковочное место; парковка",
+      "article": "der",
+      "plural": "Parkplätze",
+      "example": "Wir suchen einen Parkplatz.; Vor dem Amt gibt es wenige Parkplätze.",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000040",
+      "type": "verb",
+      "german": "parken",
+      "translation_ru": "парковать; парковаться",
+      "example": "Hier darf man nicht parken.; Wir haben hinter dem Haus geparkt.",
+      "note": "Partizip II: geparkt.",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000041",
+      "type": "word",
+      "german": "erlaubt",
+      "translation_ru": "разрешённый; разрешено",
+      "example": "Fotografieren ist hier erlaubt.; Ist das Parken vor dem Haus erlaubt?",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000042",
+      "type": "word",
+      "german": "verboten",
+      "translation_ru": "запрещённый; запрещено",
+      "example": "Rauchen ist hier verboten.; Das Parken vor der Tür ist verboten.",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000043",
+      "type": "noun",
+      "german": "Gepäck",
+      "translation_ru": "багаж",
+      "article": "das",
+      "plural": "—",
+      "example": "Man muss das Gepäck abgeben.; Mein Gepäck ist sehr schwer.",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000044",
+      "type": "verb",
+      "german": "abgeben",
+      "translation_ru": "сдавать; отдавать",
+      "example": "Geben Sie das Formular am Schalter ab.; Ich habe mein Gepäck abgegeben.",
+      "note": "Отделяемый глагол; du gibst ab, er gibt ab; Partizip II: abgegeben.",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000045",
+      "type": "verb",
+      "german": "mitnehmen",
+      "translation_ru": "брать с собой; забирать",
+      "example": "Darf ich mein Fahrrad mitnehmen?; Er hat seinen Pass mitgenommen.",
+      "note": "Отделяемый глагол; du nimmst mit, er nimmt mit; Partizip II: mitgenommen.",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000046",
+      "type": "word",
+      "german": "allein",
+      "translation_ru": "один; одна; самостоятельно",
+      "example": "Sie wohnt allein.; Ich kann das Formular allein ausfüllen.",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000047",
+      "type": "noun",
+      "german": "Behörde",
+      "translation_ru": "ведомство; государственный орган",
+      "article": "die",
+      "plural": "Behörden",
+      "example": "Die Behörde prüft den Antrag.; Viele Behörden bieten Formulare online an.",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000048",
+      "type": "noun",
+      "german": "Geburtsname",
+      "translation_ru": "фамилия при рождении",
+      "article": "der",
+      "plural": "Geburtsnamen",
+      "example": "Wie ist Ihr Geburtsname?; Bitte tragen Sie Ihren Geburtsnamen ein.",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000049",
+      "type": "noun",
+      "german": "Ausländer",
+      "translation_ru": "иностранец",
+      "article": "der",
+      "plural": "Ausländer",
+      "example": "Der Ausländer braucht eine Auskunft.; Viele Ausländer besuchen den Sprachkurs.",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000050",
+      "type": "noun",
+      "german": "Ausländerin",
+      "translation_ru": "иностранка",
+      "article": "die",
+      "plural": "Ausländerinnen",
+      "example": "Die Ausländerin lebt seit einem Jahr hier.; Zwei Ausländerinnen warten vor der Behörde.",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000051",
+      "type": "word",
+      "german": "getrennt",
+      "translation_ru": "раздельно; живущий отдельно",
+      "example": "Sie leben getrennt.; Bitte schreiben Sie Vorname und Nachname getrennt.",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000052",
+      "type": "noun",
+      "german": "Angehörige",
+      "translation_ru": "родственник; близкий человек",
+      "article": "der",
+      "plural": "Angehörigen",
+      "example": "Ein Angehöriger hilft beim Formular.; Die Angehörigen warten draußen.",
+      "note": "Женская форма: die Angehörige; множественное число: die Angehörigen.",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000053",
+      "type": "verb",
+      "german": "bedeuten",
+      "translation_ru": "означать; значить",
+      "example": "Was bedeutet dieses Wort?; Das Zeichen hat „verboten“ bedeutet.",
+      "note": "Partizip II: bedeutet.",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000054",
+      "type": "verb",
+      "german": "wiederholen",
+      "translation_ru": "повторять",
+      "example": "Können Sie das bitte wiederholen?; Wir haben die Wörter wiederholt.",
+      "note": "Неотделяемый глагол; Partizip II: wiederholt.",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000055",
+      "type": "noun",
+      "german": "Sprachenschule",
+      "translation_ru": "языковая школа",
+      "article": "die",
+      "plural": "Sprachenschulen",
+      "example": "Sie besucht eine Sprachenschule.; In der Stadt gibt es zwei Sprachenschulen.",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000056",
+      "type": "noun",
+      "german": "Auskunft",
+      "translation_ru": "справка; информация; ответ на запрос",
+      "article": "die",
+      "plural": "Auskünfte",
+      "example": "Ich brauche eine Auskunft.; Am Schalter bekommen Sie Auskünfte.",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000057",
+      "type": "noun",
+      "german": "Erlaubnis",
+      "translation_ru": "разрешение",
+      "article": "die",
+      "plural": "Erlaubnisse",
+      "example": "Sie hat eine Einreiseerlaubnis.; Ohne Erlaubnis darf man hier nicht parken.",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000058",
+      "type": "noun",
+      "german": "Erklärung",
+      "translation_ru": "объяснение; заявление",
+      "article": "die",
+      "plural": "Erklärungen",
+      "example": "Ich brauche eine Erklärung.; Bitte unterschreiben Sie die Erklärung.",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000059",
+      "type": "noun",
+      "german": "Dokument",
+      "translation_ru": "документ",
+      "article": "das",
+      "plural": "Dokumente",
+      "example": "Sie müssen das Dokument unterschreiben.; Bringen Sie alle Dokumente mit.",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000060",
+      "type": "word",
+      "german": "genug",
+      "translation_ru": "достаточно",
+      "example": "Ich habe genug Zeit.; Haben Sie genug Geld für die Reise?",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000061",
+      "type": "noun",
+      "german": "Einkommen",
+      "translation_ru": "доход",
+      "article": "das",
+      "plural": "Einkommen",
+      "example": "Die Behörde braucht einen Nachweis über das Einkommen.; Beide Einkommen stehen im Formular.",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000062",
+      "type": "noun",
+      "german": "Reise",
+      "translation_ru": "поездка; путешествие",
+      "article": "die",
+      "plural": "Reisen",
+      "example": "Für die Reise brauche ich ein Visum.; Wir planen zwei Reisen im Sommer.",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000063",
+      "type": "noun",
+      "german": "Versicherung",
+      "translation_ru": "страхование; страховка",
+      "article": "die",
+      "plural": "Versicherungen",
+      "example": "Für die Reise brauche ich eine Versicherung.; Die Versicherungen kosten unterschiedlich viel.",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000064",
+      "type": "noun",
+      "german": "Botschaft",
+      "translation_ru": "посольство",
+      "article": "die",
+      "plural": "Botschaften",
+      "example": "Sie geht zur deutschen Botschaft.; In Berlin gibt es viele Botschaften.",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000065",
+      "type": "noun",
+      "german": "Visum",
+      "translation_ru": "виза",
+      "article": "das",
+      "plural": "Visa",
+      "example": "Für die Reise brauche ich ein Visum.; Die Visa sind drei Monate gültig.",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000066",
+      "type": "verb",
+      "german": "holen",
+      "translation_ru": "забирать; приносить; сходить за",
+      "example": "Ich hole morgen meinen Pass.; Sie hat eine Dolmetscherin geholt.",
+      "note": "Partizip II: geholt.",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000067",
+      "type": "noun",
+      "german": "Mitarbeiter",
+      "translation_ru": "сотрудник",
+      "article": "der",
+      "plural": "Mitarbeiter",
+      "example": "Der Mitarbeiter erklärt den Antrag.; Die Mitarbeiter helfen den Besuchern.",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000068",
+      "type": "noun",
+      "german": "Mitarbeiterin",
+      "translation_ru": "сотрудница",
+      "article": "die",
+      "plural": "Mitarbeiterinnen",
+      "example": "Die Mitarbeiterin arbeitet in der Botschaft.; Zwei Mitarbeiterinnen prüfen die Dokumente.",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000069",
+      "type": "noun",
+      "german": "Beamte",
+      "translation_ru": "государственный служащий; чиновник",
+      "article": "der",
+      "plural": "Beamten",
+      "example": "Der Beamte prüft den Ausweis.; Die Beamten arbeiten bei der Behörde.",
+      "note": "Слабое склонение: der Beamte, den Beamten.",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000070",
+      "type": "noun",
+      "german": "Beamtin",
+      "translation_ru": "государственная служащая; чиновница",
+      "article": "die",
+      "plural": "Beamtinnen",
+      "example": "Die Beamtin hilft beim Antrag.; Zwei Beamtinnen sitzen am Schalter.",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e9000071",
+      "type": "noun",
+      "german": "Pass",
+      "translation_ru": "паспорт",
+      "article": "der",
+      "plural": "Pässe",
+      "example": "Bitte zeigen Sie Ihren Pass.; Die Pässe sind noch gültig.",
+      "important": false,
+      "created_at": "2026-10-25T10:00:00.000Z",
+      "updated_at": "2026-10-25T10:00:00.000Z"
     }
   ]
 }

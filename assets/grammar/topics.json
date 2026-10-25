@@ -2237,6 +2237,158 @@
         ]
       ],
       "trainable": true
+    },
+    {
+      "id": "modal_verbs_muessen_duerfen",
+      "order": 33,
+      "title_de": "Modalverben müssen und dürfen",
+      "title_ru": "Модальные глаголы müssen и dürfen",
+      "summary_de": "müssen bezeichnet eine Pflicht, dürfen eine Erlaubnis.",
+      "summary_ru": "müssen обозначает необходимость, dürfen — разрешение.",
+      "explanation_de": [
+        "müssen drückt eine Pflicht oder Notwendigkeit aus: Ich muss den Antrag ausfüllen.",
+        "dürfen drückt eine Erlaubnis aus: Sie dürfen hier warten. dürfen + nicht bedeutet ein Verbot: Hier darf man nicht rauchen.",
+        "Im Singular ändern sich die Formen: ich/er muss, du musst; ich/er darf, du darfst. Im Plural stehen müssen/müsst und dürfen/dürft.",
+        "Das Modalverb steht konjugiert auf Position zwei, der zweite Infinitiv am Satzende: Wir müssen den Ausweis mitbringen.",
+        "In Fragen steht das Modalverb zuerst: Darf ich hier parken? Muss ich unterschreiben?"
+      ],
+      "explanation_ru": [
+        "müssen выражает обязанность или необходимость: Ich muss den Antrag ausfüllen. — Я должен заполнить заявление.",
+        "dürfen выражает разрешение: Sie dürfen hier warten. Сочетание dürfen + nicht означает запрет: Hier darf man nicht rauchen.",
+        "В единственном числе формы меняются: ich/er muss, du musst; ich/er darf, du darfst. Во множественном: müssen/müsst и dürfen/dürft.",
+        "Спрягаемый модальный глагол стоит на второй позиции, второй инфинитив — в конце: Wir müssen den Ausweis mitbringen.",
+        "В вопросе модальный глагол занимает первое место: Darf ich hier parken? Muss ich unterschreiben?"
+      ],
+      "table": [
+        [
+          "Pronomen",
+          "müssen",
+          "dürfen"
+        ],
+        [
+          "ich",
+          "muss",
+          "darf"
+        ],
+        [
+          "du",
+          "musst",
+          "darfst"
+        ],
+        [
+          "er/sie/es/man",
+          "muss",
+          "darf"
+        ],
+        [
+          "wir",
+          "müssen",
+          "dürfen"
+        ],
+        [
+          "ihr",
+          "müsst",
+          "dürft"
+        ],
+        [
+          "sie/Sie",
+          "müssen",
+          "dürfen"
+        ]
+      ],
+      "trainable": true
+    },
+    {
+      "id": "pronoun_man",
+      "order": 34,
+      "title_de": "Das Pronomen man",
+      "title_ru": "Местоимение man",
+      "summary_de": "man spricht allgemein über Menschen und steht mit der Verbform für er/sie/es.",
+      "summary_ru": "man обозначает людей вообще и требует формы глагола как для er/sie/es.",
+      "explanation_de": [
+        "man verwendet man, wenn keine bestimmte Person gemeint ist: In Deutschland spricht man Deutsch.",
+        "Das Verb steht in der Form für er/sie/es: man muss, man darf, man kann, man fährt.",
+        "man schreibt man klein. Es bedeutet je nach Kontext „jemand“, „die Leute“ oder eine unpersönliche Regel.",
+        "Im Akkusativ wird man zu einen, im Dativ zu einem: Das macht einen müde. Das hilft einem."
+      ],
+      "explanation_ru": [
+        "man используется, когда речь идёт не о конкретном человеке: In Deutschland spricht man Deutsch.",
+        "Глагол получает форму как с er/sie/es: man muss, man darf, man kann, man fährt.",
+        "man пишется со строчной буквы. В зависимости от контекста переводится как «кто-то», «люди», «можно», «нужно» или безличной конструкцией.",
+        "В Akkusativ man меняется на einen, в Dativ — на einem: Das macht einen müde. Das hilft einem."
+      ],
+      "table": [
+        [
+          "Funktion / Функция",
+          "Beispiel / Пример"
+        ],
+        [
+          "allgemeine Regel / общее правило",
+          "Hier darf man nicht parken."
+        ],
+        [
+          "notwendiger Schritt / необходимое действие",
+          "Zuerst muss man das Ziel wählen."
+        ],
+        [
+          "Möglichkeit / возможность",
+          "Am Automaten kann man Tickets kaufen."
+        ]
+      ],
+      "trainable": true
+    },
+    {
+      "id": "imperative",
+      "order": 35,
+      "title_de": "Imperativ: du, ihr und Sie",
+      "title_ru": "Повелительное наклонение: du, ihr и Sie",
+      "summary_de": "Der Imperativ gibt Aufforderungen, Hinweise und Bitten.",
+      "summary_ru": "Imperativ используется для указаний, просьб и побуждений.",
+      "explanation_de": [
+        "Bei du steht meistens nur der Verbstamm ohne Pronomen: du wartest — Warte! Bei trennbaren Verben steht die Vorsilbe am Ende: Mach das Handy aus!",
+        "Bei Verben mit Stammvokalwechsel e → i/ie bleibt der Wechsel erhalten: du liest — Lies! du hilfst — Hilf! Der Umlaut a → ä fällt dagegen weg: du fährst — Fahr!",
+        "Der Imperativ für ihr ist die normale ihr-Form ohne Pronomen: ihr wartet — Wartet! ihr seid — Seid!",
+        "Die höfliche Form besteht aus Verb + Sie: Warten Sie! Seien Sie bitte leise! Das Wort bitte macht eine Aufforderung freundlicher."
+      ],
+      "explanation_ru": [
+        "Для du обычно используется основа глагола без местоимения: du wartest — Warte! У отделяемого глагола приставка уходит в конец: Mach das Handy aus!",
+        "У глаголов с чередованием e → i/ie оно сохраняется: du liest — Lies! du hilfst — Hilf! Умлаут a → ä, наоборот, исчезает: du fährst — Fahr!",
+        "Форма для ihr совпадает с обычной формой глагола без местоимения: ihr wartet — Wartet! ihr seid — Seid!",
+        "Вежливая форма строится как глагол + Sie: Warten Sie! Seien Sie bitte leise! Слово bitte делает просьбу мягче."
+      ],
+      "table": [
+        [
+          "Infinitiv",
+          "du",
+          "ihr",
+          "Sie"
+        ],
+        [
+          "warten",
+          "Warte!",
+          "Wartet!",
+          "Warten Sie!"
+        ],
+        [
+          "ausmachen",
+          "Mach aus!",
+          "Macht aus!",
+          "Machen Sie aus!"
+        ],
+        [
+          "lesen",
+          "Lies!",
+          "Lest!",
+          "Lesen Sie!"
+        ],
+        [
+          "sein",
+          "Sei!",
+          "Seid!",
+          "Seien Sie!"
+        ]
+      ],
+      "trainable": true
     }
   ],
   "verbs": [
@@ -3044,6 +3196,32 @@
         "wir": "wollen",
         "ihr": "wollt",
         "sie/Sie": "wollen"
+      }
+    },
+    {
+      "lemma": "müssen",
+      "topic_id": "modal_verbs_muessen_duerfen",
+      "stem": "müss",
+      "forms": {
+        "ich": "muss",
+        "du": "musst",
+        "er/sie/es": "muss",
+        "wir": "müssen",
+        "ihr": "müsst",
+        "sie/Sie": "müssen"
+      }
+    },
+    {
+      "lemma": "dürfen",
+      "topic_id": "modal_verbs_muessen_duerfen",
+      "stem": "dürf",
+      "forms": {
+        "ich": "darf",
+        "du": "darfst",
+        "er/sie/es": "darf",
+        "wir": "dürfen",
+        "ihr": "dürft",
+        "sie/Sie": "dürfen"
       }
     }
   ]
