@@ -63,8 +63,8 @@ content/versions/<content-version>/catalog.json.gz
 {
   "manifest_version": 1,
   "content_version": "2026.09.27.1",
-  "schema_version": 1,
-  "minimum_app_content_schema": 1,
+  "schema_version": 2,
+  "minimum_app_content_schema": 2,
   "bundle_path": "content/versions/2026.09.27.1/catalog.json.gz",
   "sha256": "<64 lowercase hex characters>",
   "compressed_size": 39000,
@@ -84,7 +84,7 @@ JSON. Клиент принимает только известную струк
 
 ```json
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "content_version": "2026.09.27.1",
   "topics": [],
   "verbs": [],

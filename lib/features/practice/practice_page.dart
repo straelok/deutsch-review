@@ -24,6 +24,8 @@ import '../../ui/responsive.dart';
 
 enum _LessonGroup { toGerman, toRussian, grammar, other }
 
+const _irregularVerbTopicId = 'irregular_verb_forms';
+
 EdgeInsets _practiceCardPadding(BuildContext context) {
   return EdgeInsets.all(MediaQuery.sizeOf(context).width < 600 ? 20 : 28);
 }
@@ -117,6 +119,22 @@ class _PracticePageState extends State<PracticePage> {
   GrammarCatalog get _catalog => _sessionCatalog ?? widget.grammarCatalog;
   bool get _repeatIncorrectImmediately =>
       widget.appSettings.repeatIncorrectImmediately;
+
+  Set<String> get _standardGrammarTopicIds => _availableGrammarTopics
+      .where(
+        (id) =>
+            _catalog.topics
+                .where((topic) => topic.id == id)
+                .firstOrNull
+                ?.practiceSection ==
+            'grammar',
+      )
+      .toSet();
+
+  List<GrammarExercise> get _irregularVerbExercises => _catalog.exercisesFor(
+        topicId: _irregularVerbTopicId,
+        activeItemKeys: _activeItemKeys(_activeItems),
+      );
 
   String _progressLabel() {
     final progress = widget.strings.progress(
@@ -479,7 +497,14 @@ class _PracticePageState extends State<PracticePage> {
             (session) => session.kind == DailySessionKind.vocabularyToRussian)
         .toList();
     final grammarSessions = requiredSessions
-        .where((session) => session.kind == DailySessionKind.grammar)
+        .where((session) =>
+            session.kind == DailySessionKind.grammar &&
+            !_isTopicSession(session, _irregularVerbTopicId))
+        .toList();
+    final irregularVerbSessions = _daySessions
+        .where((session) =>
+            session.kind == DailySessionKind.grammar &&
+            _isTopicSession(session, _irregularVerbTopicId))
         .toList();
     final numberSessions = requiredSessions
         .where((session) => session.kind == DailySessionKind.numbers)
@@ -501,7 +526,9 @@ class _PracticePageState extends State<PracticePage> {
         .toList();
     final extraGrammar = _daySessions
         .where((session) =>
-            !session.isRequired && session.kind == DailySessionKind.grammar)
+            !session.isRequired &&
+            session.kind == DailySessionKind.grammar &&
+            !_isTopicSession(session, _irregularVerbTopicId))
         .toList();
     final favoriteGrammar = _daySessions
         .where((session) => session.kind == DailySessionKind.favoriteGrammar)
@@ -542,8 +569,6 @@ class _PracticePageState extends State<PracticePage> {
         .toList();
     final importantItems =
         _activeItems.where((item) => item.isImportant).toList();
-    final completed =
-        requiredSessions.where((session) => session.isComplete).length;
     final toGermanComplete = toGermanSessions.isNotEmpty &&
         toGermanSessions.every((session) => session.isComplete);
     final toRussianComplete = toRussianSessions.isNotEmpty &&
@@ -561,8 +586,6 @@ class _PracticePageState extends State<PracticePage> {
           children: [
             Text(s.dailyPlan,
                 style: Theme.of(context).textTheme.headlineMedium),
-            const SizedBox(height: 8),
-            Text(s.dailyProgress(completed, requiredSessions.length)),
             if (_activeItems.isEmpty) ...[
               const SizedBox(height: 16),
               Card(
@@ -715,11 +738,35 @@ class _PracticePageState extends State<PracticePage> {
               sessions: [
                 ...numberSessions,
                 ...extraNumbers,
+                ...irregularVerbSessions,
                 ...matchingSessions,
                 ...importantMatchingSessions,
                 ...multipleChoiceSessions,
               ],
               children: [
+                _sessionCategory(
+                  kind: DailySessionKind.grammar,
+                  icon: Icons.schema_outlined,
+                  title: s.irregularVerbFormsLesson,
+                  sessions: irregularVerbSessions,
+                  canAdd: true,
+                  canStart:
+                      _availableGrammarTopics.contains(_irregularVerbTopicId) &&
+                          _irregularVerbExercises.length == 27,
+                  addKey: const Key('create-irregular-verbs-session'),
+                  categoryKeyOverride: 'irregular-verb-forms',
+                  onAdd: _createIrregularVerbSession,
+                ),
+                if (_irregularVerbExercises.length != 27) ...[
+                  const SizedBox(height: 8),
+                  Text(
+                    s.irregularVerbFormsNeedsWords(
+                      _irregularVerbExercises.length,
+                    ),
+                    style: Theme.of(context).textTheme.bodySmall,
+                  ),
+                ],
+                const SizedBox(height: 12),
                 _sessionCategory(
                   kind: DailySessionKind.numbers,
                   icon: Icons.pin_outlined,
@@ -790,76 +837,56 @@ class _PracticePageState extends State<PracticePage> {
     required List<Widget> children,
   }) {
     final expanded = _expandedLessonGroups.contains(group);
-    final completed = sessions.where((session) => session.isComplete).length;
     final groupKey =
         group.name.replaceAll(RegExp(r'(?=[A-Z])'), '-').toLowerCase();
 
-    return Card(
+    return Container(
       key: Key('lesson-group-$groupKey'),
-      margin: EdgeInsets.zero,
-      clipBehavior: Clip.antiAlias,
+      decoration: BoxDecoration(
+        color: Theme.of(context).colorScheme.surfaceContainerLow,
+        borderRadius: BorderRadius.circular(18),
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Padding(
-            padding: const EdgeInsets.fromLTRB(8, 8, 12, 8),
-            child: Row(
-              children: [
-                IconButton(
-                  key: Key('toggle-lesson-group-$groupKey'),
-                  tooltip: expanded
-                      ? widget.strings.collapse
-                      : widget.strings.expand,
-                  onPressed: () => setState(() {
-                    if (expanded) {
-                      _expandedLessonGroups.remove(group);
-                    } else {
-                      _expandedLessonGroups.add(group);
-                    }
-                  }),
-                  icon: Icon(
-                    expanded ? Icons.expand_less : Icons.expand_more,
-                  ),
+          Material(
+            color: Colors.transparent,
+            child: InkWell(
+              key: Key('toggle-lesson-group-$groupKey'),
+              borderRadius: BorderRadius.circular(18),
+              onTap: () => setState(() {
+                if (expanded) {
+                  _expandedLessonGroups.remove(group);
+                } else {
+                  _expandedLessonGroups.add(group);
+                }
+              }),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 16,
+                  vertical: 14,
                 ),
-                Icon(icon),
-                const SizedBox(width: 10),
-                Expanded(
-                  child: InkWell(
-                    onTap: () => setState(() {
-                      if (expanded) {
-                        _expandedLessonGroups.remove(group);
-                      } else {
-                        _expandedLessonGroups.add(group);
-                      }
-                    }),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          title,
-                          style: Theme.of(context).textTheme.titleMedium,
-                        ),
-                        Text(
-                          widget.strings.categoryProgress(
-                            completed,
-                            sessions.length,
-                          ),
-                          key: Key(
-                            'lesson-group-progress-$groupKey',
-                          ),
-                          style: Theme.of(context).textTheme.bodySmall,
-                        ),
-                      ],
+                child: Row(
+                  children: [
+                    Icon(icon),
+                    const SizedBox(width: 12),
+                    Expanded(
+                      child: Text(
+                        title,
+                        style: Theme.of(context).textTheme.titleLarge,
+                      ),
                     ),
-                  ),
+                    Icon(expanded ? Icons.expand_less : Icons.expand_more),
+                  ],
                 ),
-              ],
+              ),
             ),
           ),
           if (expanded) ...[
             const Divider(height: 1),
             Padding(
-              padding: const EdgeInsets.all(12),
+              key: Key('lesson-group-content-$groupKey'),
+              padding: const EdgeInsets.fromLTRB(12, 12, 12, 14),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: children,
@@ -880,65 +907,104 @@ class _PracticePageState extends State<PracticePage> {
     final inProgress = session?.status == DailySessionStatus.inProgress;
     final completed = session?.isComplete ?? false;
     final categoryKey = kind.wireName.replaceAll('_', '-');
-    return Card(
-      margin: EdgeInsets.zero,
-      child: Padding(
-        padding: const EdgeInsets.fromLTRB(12, 10, 12, 10),
-        child: Row(
-          children: [
-            Icon(icon),
-            const SizedBox(width: 10),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(title, style: Theme.of(context).textTheme.titleMedium),
-                  Text(
-                    session == null
-                        ? widget.strings
-                            .categoryProgress(0, _activeItems.length)
-                        : widget.strings.categoryProgress(
-                            session.answeredCount,
-                            session.targetAnswers,
-                          ),
-                    key: Key('marathon-progress-$categoryKey'),
-                    style: Theme.of(context).textTheme.bodySmall,
-                  ),
-                ],
-              ),
-            ),
-            if (session != null)
-              IconButton(
-                key: Key('reset-marathon-$categoryKey'),
-                tooltip: widget.strings.resetMarathon,
-                onPressed: () => _confirmResetMarathon(kind),
-                icon: const Icon(Icons.restart_alt),
-              ),
-            FilledButton.tonalIcon(
-              key: Key('open-marathon-$categoryKey'),
-              onPressed: _activeItems.isEmpty
-                  ? null
-                  : () {
-                      if (inProgress) {
-                        _openSession(session!.id);
-                      } else {
-                        _confirmResetMarathon(kind, confirm: completed);
-                      }
-                    },
-              icon: Icon(
-                inProgress ? Icons.play_arrow : Icons.flag_outlined,
-                size: 18,
-              ),
-              label: Text(
-                inProgress
-                    ? widget.strings.continueLesson
-                    : completed
-                        ? widget.strings.restartMarathon
-                        : widget.strings.start,
-              ),
-            ),
-          ],
+    return Container(
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: Theme.of(context).colorScheme.surface,
+        border: Border.all(
+          color: Theme.of(context).colorScheme.outlineVariant,
         ),
+        borderRadius: BorderRadius.circular(16),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Row(
+            children: [
+              Icon(icon),
+              const SizedBox(width: 12),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      title,
+                      style: Theme.of(context).textTheme.titleMedium,
+                    ),
+                    if (session != null)
+                      Text(
+                        widget.strings.sessionAnswers(
+                          session.answeredCount,
+                          session.targetAnswers,
+                        ),
+                        key: Key('marathon-progress-$categoryKey'),
+                        style: Theme.of(context).textTheme.bodySmall,
+                      ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 14),
+          LayoutBuilder(
+            builder: (context, constraints) {
+              final reset = OutlinedButton.icon(
+                key: Key('reset-marathon-$categoryKey'),
+                onPressed:
+                    session == null ? null : () => _confirmResetMarathon(kind),
+                icon: const Icon(Icons.restart_alt),
+                label: Text(widget.strings.resetMarathon),
+                style: const ButtonStyle(
+                  minimumSize: WidgetStatePropertyAll(Size(0, 48)),
+                ),
+              );
+              final open = FilledButton.tonalIcon(
+                key: Key('open-marathon-$categoryKey'),
+                onPressed: _activeItems.isEmpty
+                    ? null
+                    : () {
+                        if (inProgress) {
+                          _openSession(session!.id);
+                        } else {
+                          _confirmResetMarathon(kind, confirm: completed);
+                        }
+                      },
+                icon: Icon(
+                  inProgress ? Icons.play_arrow : Icons.flag_outlined,
+                ),
+                label: Text(
+                  inProgress
+                      ? widget.strings.continueLesson
+                      : completed
+                          ? widget.strings.restartMarathon
+                          : widget.strings.start,
+                ),
+                style: const ButtonStyle(
+                  minimumSize: WidgetStatePropertyAll(Size(0, 48)),
+                ),
+              );
+              if (constraints.maxWidth < 520) {
+                return Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    open,
+                    if (session != null) ...[
+                      const SizedBox(height: 8),
+                      reset,
+                    ],
+                  ],
+                );
+              }
+              return Row(
+                children: [
+                  if (session != null) Expanded(child: reset),
+                  if (session != null) const SizedBox(width: 8),
+                  Expanded(child: open),
+                ],
+              );
+            },
+          ),
+        ],
       ),
     );
   }
@@ -1039,8 +1105,8 @@ class _PracticePageState extends State<PracticePage> {
     required Key addKey,
     required VoidCallback onAdd,
     _SessionSecondaryAction? secondaryAction,
+    String? categoryKeyOverride,
   }) {
-    final completed = sessions.where((session) => session.isComplete).length;
     final inProgress = sessions
         .where((session) => session.status == DailySessionStatus.inProgress)
         .firstOrNull;
@@ -1065,7 +1131,8 @@ class _PracticePageState extends State<PracticePage> {
         : canAdd
             ? Icons.add
             : Icons.skip_next;
-    final categoryKey = kind.wireName.replaceAll('_', '-');
+    final categoryKey =
+        categoryKeyOverride ?? kind.wireName.replaceAll('_', '-');
     final secondaryInProgress = secondaryAction?.sessions
         .where((session) => session.status == DailySessionStatus.inProgress)
         .firstOrNull;
@@ -1077,129 +1144,134 @@ class _PracticePageState extends State<PracticePage> {
             ? _canOpenSession(secondaryInProgress)
             : secondaryAction.canStart);
 
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        Card(
-          margin: EdgeInsets.zero,
-          child: Padding(
-            padding: const EdgeInsets.fromLTRB(8, 8, 12, 8),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Row(
+    return Container(
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: Theme.of(context).colorScheme.surface,
+        border: Border.all(
+          color: Theme.of(context).colorScheme.outlineVariant,
+        ),
+        borderRadius: BorderRadius.circular(16),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Row(
+            children: [
+              Icon(icon),
+              const SizedBox(width: 12),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Icon(icon),
-                    const SizedBox(width: 10),
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            title,
-                            style: Theme.of(context).textTheme.titleMedium,
-                          ),
-                          Text(
-                            widget.strings.categoryProgress(
-                              completed,
-                              sessions.length,
-                            ),
-                            key: Key(
-                              'session-category-progress-$categoryKey',
-                            ),
-                            style: Theme.of(context).textTheme.bodySmall,
-                          ),
-                          if (inProgress != null)
-                            Text(
-                              widget.strings.sessionAnswers(
-                                inProgress.answeredCount,
-                                inProgress.targetAnswers,
-                              ),
-                              style: Theme.of(context).textTheme.bodySmall,
-                            ),
-                          if (secondaryInProgress != null)
-                            Text(
-                              '${widget.strings.importantWordsCategory}: '
-                              '${widget.strings.sessionAnswers(secondaryInProgress.answeredCount, secondaryInProgress.targetAnswers)}',
-                              style: Theme.of(context).textTheme.bodySmall,
-                            ),
-                        ],
-                      ),
+                    Text(
+                      title,
+                      style: Theme.of(context).textTheme.titleMedium,
                     ),
+                    if (inProgress != null)
+                      Text(
+                        widget.strings.sessionAnswers(
+                          inProgress.answeredCount,
+                          inProgress.targetAnswers,
+                        ),
+                        style: Theme.of(context).textTheme.bodySmall,
+                      ),
+                    if (secondaryInProgress != null)
+                      Text(
+                        '${widget.strings.importantWordsCategory}: '
+                        '${widget.strings.sessionAnswers(secondaryInProgress.answeredCount, secondaryInProgress.targetAnswers)}',
+                        style: Theme.of(context).textTheme.bodySmall,
+                      ),
                   ],
                 ),
-                const SizedBox(height: 8),
-                Wrap(
-                  alignment: WrapAlignment.end,
-                  spacing: 8,
-                  runSpacing: 8,
-                  children: [
-                    if (secondaryAction != null)
-                      Tooltip(
-                        message: secondaryAction.canStart
-                            ? widget.strings.importantWordsCategory
-                            : widget.strings.noImportantWordsHint,
-                        child: OutlinedButton.icon(
-                          key: secondaryInProgress == null
-                              ? secondaryAction.key
-                              : Key(
-                                  'continue-${secondaryInProgress.kind.wireName}',
-                                ),
-                          onPressed: secondaryEnabled
-                              ? () {
-                                  if (secondaryInProgress != null) {
-                                    _selectSession(secondaryInProgress);
-                                  } else if (secondaryNext != null) {
-                                    _selectSession(secondaryNext);
-                                  } else {
-                                    secondaryAction.onAdd();
-                                  }
+              ),
+            ],
+          ),
+          const SizedBox(height: 14),
+          LayoutBuilder(
+            builder: (context, constraints) {
+              final primary = FilledButton.tonalIcon(
+                key: canAdd && inProgress == null
+                    ? addKey
+                    : Key('session-category-action-$categoryKey'),
+                onPressed: actionEnabled
+                    ? () {
+                        if (inProgress != null) {
+                          _selectSession(inProgress);
+                        } else if (canAdd) {
+                          onAdd();
+                        } else if (next != null) {
+                          _selectSession(next);
+                        }
+                      }
+                    : null,
+                icon: Icon(actionIcon),
+                label: Text(actionLabel),
+                style: const ButtonStyle(
+                  minimumSize: WidgetStatePropertyAll(Size(0, 48)),
+                ),
+              );
+              final secondary = secondaryAction == null
+                  ? null
+                  : Tooltip(
+                      message: secondaryAction.canStart
+                          ? widget.strings.importantWordsCategory
+                          : widget.strings.noImportantWordsHint,
+                      child: OutlinedButton.icon(
+                        key: secondaryInProgress == null
+                            ? secondaryAction.key
+                            : Key(
+                                'continue-${secondaryInProgress.kind.wireName}',
+                              ),
+                        onPressed: secondaryEnabled
+                            ? () {
+                                if (secondaryInProgress != null) {
+                                  _selectSession(secondaryInProgress);
+                                } else if (secondaryNext != null) {
+                                  _selectSession(secondaryNext);
+                                } else {
+                                  secondaryAction.onAdd();
                                 }
-                              : null,
-                          icon: Icon(
-                            secondaryInProgress != null
-                                ? Icons.play_arrow
-                                : Icons.star_outline,
-                            size: 18,
-                          ),
-                          label: Text(
-                            secondaryInProgress != null
-                                ? widget.strings.continueImportantWords
-                                : widget.strings.importantWordsCategory,
-                          ),
-                          style: const ButtonStyle(
-                            visualDensity: VisualDensity.compact,
-                          ),
+                              }
+                            : null,
+                        icon: Icon(
+                          secondaryInProgress != null
+                              ? Icons.play_arrow
+                              : Icons.star_outline,
+                        ),
+                        label: Text(
+                          secondaryInProgress != null
+                              ? widget.strings.continueImportantWords
+                              : widget.strings.importantWordsCategory,
+                        ),
+                        style: const ButtonStyle(
+                          minimumSize: WidgetStatePropertyAll(Size(0, 48)),
                         ),
                       ),
-                    FilledButton.tonalIcon(
-                      key: canAdd && inProgress == null
-                          ? addKey
-                          : Key('session-category-action-$categoryKey'),
-                      onPressed: actionEnabled
-                          ? () {
-                              if (inProgress != null) {
-                                _selectSession(inProgress);
-                              } else if (canAdd) {
-                                onAdd();
-                              } else if (next != null) {
-                                _selectSession(next);
-                              }
-                            }
-                          : null,
-                      icon: Icon(actionIcon, size: 18),
-                      label: Text(actionLabel),
-                      style: const ButtonStyle(
-                        visualDensity: VisualDensity.compact,
-                      ),
-                    ),
+                    );
+              if (constraints.maxWidth < 520) {
+                return Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    primary,
+                    if (secondary != null) ...[
+                      const SizedBox(height: 8),
+                      secondary,
+                    ],
                   ],
-                ),
-              ],
-            ),
+                );
+              }
+              return Row(
+                children: [
+                  if (secondary != null) Expanded(child: secondary),
+                  if (secondary != null) const SizedBox(width: 8),
+                  Expanded(child: primary),
+                ],
+              );
+            },
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 
@@ -1931,8 +2003,18 @@ class _PracticePageState extends State<PracticePage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(_lastCorrect ? s.correct : s.incorrect),
-                          if (!_lastCorrect && exercise != null)
+                          if (!_lastCorrect &&
+                              exercise != null &&
+                              exercise.type != GrammarExerciseType.forms)
                             Text(s.correctAnswer(exercise.answer)),
+                          if (!_lastCorrect &&
+                              exercise?.type == GrammarExerciseType.forms)
+                            ...exercise!.formAnswers.entries.map(
+                              (entry) => Text(
+                                '${s.grammarFormLabel(entry.key)}: '
+                                '${entry.value.first}',
+                              ),
+                            ),
                           if (!_lastCorrect && paradigm != null)
                             ...paradigm.forms.entries.map(
                               (entry) => Text('${entry.key}: ${entry.value}'),
@@ -2072,7 +2154,69 @@ class _PracticePageState extends State<PracticePage> {
             ),
           ],
         );
+      case GrammarExerciseType.forms:
+        return _grammarFormFields(exercise);
     }
+  }
+
+  Widget _grammarFormFields(GrammarExercise exercise) {
+    final entries = exercise.formAnswers.entries.toList(growable: false);
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        for (final indexedEntry in entries.indexed)
+          Padding(
+            padding: const EdgeInsets.only(bottom: 12),
+            child: LayoutBuilder(
+              builder: (context, constraints) {
+                final index = indexedEntry.$1;
+                final entry = indexedEntry.$2;
+                final controller = _grammarControllers.putIfAbsent(
+                  entry.key,
+                  TextEditingController.new,
+                );
+                final correct = _grammarResults[entry.key];
+                final editable = !_isCorrection ||
+                    _grammarCorrectionKeys.contains(entry.key);
+                final field = TextField(
+                  key: Key('grammar-form-${entry.key}'),
+                  controller: controller,
+                  focusNode: index == 0 ? _answerFocus : null,
+                  enabled: !_answered && editable,
+                  decoration: InputDecoration(
+                    isDense: true,
+                    errorText: _answered && correct == false
+                        ? entry.value.first
+                        : null,
+                  ),
+                );
+                final label = Text(
+                  widget.strings.grammarFormLabel(entry.key),
+                  style: Theme.of(context).textTheme.labelLarge,
+                );
+                if (constraints.maxWidth < 520) {
+                  return Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      label,
+                      const SizedBox(height: 6),
+                      field,
+                    ],
+                  );
+                }
+                return Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(width: 180, child: label),
+                    const SizedBox(width: 12),
+                    Expanded(child: field),
+                  ],
+                );
+              },
+            ),
+          ),
+      ],
+    );
   }
 
   String _exerciseInstruction(GrammarExercise exercise) =>
@@ -2180,10 +2324,18 @@ class _PracticePageState extends State<PracticePage> {
           .toSet(),
       activeItemKeys: activeItemKeys,
     );
+    final standardTopics = availableTopics.where(
+      (id) =>
+          _catalog.topics
+              .where((topic) => topic.id == id)
+              .firstOrNull
+              ?.practiceSection ==
+          'grammar',
+    );
     final sessions = await widget.sessions.ensureDay(
       localDate: localDayKey(now),
       now: now.toUtc(),
-      includeGrammar: availableTopics.isNotEmpty,
+      includeGrammar: standardTopics.isNotEmpty,
     );
     final persistentSessions = <DailySession>[
       if (await widget.sessions.findPersistent(
@@ -2212,6 +2364,14 @@ class _PracticePageState extends State<PracticePage> {
           .where((entry) => entry.favorite)
           .map((entry) => entry.topicId)
           .where(availableTopics.contains)
+          .where(
+            (id) =>
+                _catalog.topics
+                    .where((topic) => topic.id == id)
+                    .firstOrNull
+                    ?.practiceSection ==
+                'grammar',
+          )
           .toSet();
       _daySessions = sessions;
       _persistentSessions = persistentSessions;
@@ -2237,6 +2397,16 @@ class _PracticePageState extends State<PracticePage> {
     if (!session.isComplete) await _openSession(session.id);
   }
 
+  bool _isTopicSession(DailySession session, String topicId) {
+    if (!session.kind.isGrammar) return false;
+    if (session.queueItemIds.isNotEmpty) {
+      return session.queueItemIds.every(
+        (id) => _catalog.exercise(id)?.topicId == topicId,
+      );
+    }
+    return _catalog.exercise(session.lastItemId ?? '')?.topicId == topicId;
+  }
+
   Future<void> _createExtraSession(DailySessionKind kind) async {
     final extra = await widget.sessions.createExtra(
       localDate: localDayKey(DateTime.now()),
@@ -2244,6 +2414,23 @@ class _PracticePageState extends State<PracticePage> {
       kind: kind,
     );
     await _openSession(extra.id);
+  }
+
+  Future<void> _createIrregularVerbSession() async {
+    final exercises = [..._irregularVerbExercises]..shuffle(_random);
+    if (exercises.length != 27) return;
+    setState(() => _loading = true);
+    var session = await widget.sessions.createExtra(
+      localDate: localDayKey(DateTime.now()),
+      now: DateTime.now().toUtc(),
+      kind: DailySessionKind.grammar,
+    );
+    session = await widget.sessions.start(
+      id: session.id,
+      queueItemIds: exercises.map((exercise) => exercise.id).toList(),
+      now: DateTime.now().toUtc(),
+    );
+    await _openSession(session.id);
   }
 
   Future<void> _startRequestedLesson(String topicId) async {
@@ -2266,6 +2453,10 @@ class _PracticePageState extends State<PracticePage> {
     _availableGrammarTopics = availableTopics;
     if (!availableTopics.contains(topicId)) {
       await _load();
+      return;
+    }
+    if (topicId == _irregularVerbTopicId) {
+      await _createIrregularVerbSession();
       return;
     }
     _focusedGrammarTopicId = topicId;
@@ -2550,7 +2741,7 @@ class _PracticePageState extends State<PracticePage> {
     if (length <= 0 || _availableGrammarTopics.isEmpty) return const [];
     final selectedTopicIds = topicIds ??
         (topicId == null
-            ? _availableGrammarTopics
+            ? _standardGrammarTopicIds
             : _availableGrammarTopics.where((id) => id == topicId).toSet());
     if (selectedTopicIds.isEmpty) return const [];
     final outcomes = await widget.grammar.recentOutcomes();
@@ -2944,30 +3135,60 @@ class _PracticePageState extends State<PracticePage> {
       }
     } else {
       final exercise = _catalog.exercise(taskId)!;
-      final answer = switch (exercise.type) {
-        GrammarExerciseType.text => _answerController.text.trim(),
-        GrammarExerciseType.choice ||
-        GrammarExerciseType.yesNo =>
-          _selectedGrammarOption ?? '',
-        GrammarExerciseType.wordOrder => _wordOrderAnswer(exercise),
-      };
-      if (answer.isEmpty && !allowEmpty) return;
-      final correct = isPracticeAnswerCorrect(
-        answer: answer,
-        expected: exercise.answer,
-      );
-      results['answer'] = correct;
-      attempts.add(
-        GrammarAttempt(
-          id: newUuidV4(),
-          topicId: exercise.topicId,
-          exerciseId: exercise.id,
-          sessionId: _session!.id,
-          answerText: answer,
-          correct: correct,
-          attemptedAt: now,
-        ),
-      );
+      if (exercise.type == GrammarExerciseType.forms) {
+        for (final entry in exercise.formAnswers.entries) {
+          if (_isCorrection && !_grammarCorrectionKeys.contains(entry.key)) {
+            results[entry.key] = true;
+            continue;
+          }
+          final answer = _grammarControllers[entry.key]?.text.trim() ?? '';
+          if (answer.isEmpty && !allowEmpty) return;
+          final correct = isAnyPracticeAnswerCorrect(
+            answer: answer,
+            expectedAlternatives: entry.value.join(';'),
+          );
+          results[entry.key] = correct;
+          attempts.add(
+            GrammarAttempt(
+              id: newUuidV4(),
+              topicId: exercise.topicId,
+              exerciseId: '${exercise.id}:${entry.key}',
+              sessionId: _session!.id,
+              answerText: answer,
+              correct: correct,
+              attemptedAt: now,
+            ),
+          );
+        }
+      } else {
+        final answer = switch (exercise.type) {
+          GrammarExerciseType.text => _answerController.text.trim(),
+          GrammarExerciseType.choice ||
+          GrammarExerciseType.yesNo =>
+            _selectedGrammarOption ?? '',
+          GrammarExerciseType.wordOrder => _wordOrderAnswer(exercise),
+          GrammarExerciseType.forms => throw StateError(
+              'Form exercises are handled separately.',
+            ),
+        };
+        if (answer.isEmpty && !allowEmpty) return;
+        final correct = isPracticeAnswerCorrect(
+          answer: answer,
+          expected: exercise.answer,
+        );
+        results['answer'] = correct;
+        attempts.add(
+          GrammarAttempt(
+            id: newUuidV4(),
+            topicId: exercise.topicId,
+            exerciseId: exercise.id,
+            sessionId: _session!.id,
+            answerText: answer,
+            correct: correct,
+            attemptedAt: now,
+          ),
+        );
+      }
     }
 
     final allCorrect = results.values.every((value) => value);
@@ -3026,7 +3247,8 @@ class _PracticePageState extends State<PracticePage> {
   void _nextGrammar() {
     if (_repeatIncorrectImmediately && !_lastCorrect) {
       final paradigm = _paradigm(_currentGrammar!);
-      if (paradigm == null) {
+      final exercise = _catalog.exercise(_currentGrammar!);
+      if (paradigm == null && exercise?.type != GrammarExerciseType.forms) {
         _clearGrammarInput();
       } else {
         for (final key in _grammarCorrectionKeys) {

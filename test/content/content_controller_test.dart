@@ -135,8 +135,8 @@ void main() {
     final remote = ContentBundle(
       manifest: ContentManifest(
         contentVersion: '2026.09.27.2',
-        schemaVersion: 2,
-        minimumAppContentSchema: 2,
+        schemaVersion: 3,
+        minimumAppContentSchema: 3,
         bundlePath: 'content/versions/2026.09.27.2/catalog.json.gz',
         sha256: bundled.manifest.sha256,
         compressedSize: bundled.manifest.compressedSize,

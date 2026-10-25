@@ -9,7 +9,7 @@ final class UiStrings {
 
   String choose(String german, String russian) => isRussian ? russian : german;
 
-  String get today => choose('Heute', 'Сегодня');
+  String get today => choose('Lektionen', 'Уроки');
   String get learn => choose('Lernen', 'Повторение');
   String get material => choose('Wörter', 'Слова');
   String get grammar => choose('Grammatik', 'Грамматика');
@@ -172,7 +172,22 @@ final class UiStrings {
   String get removeGrammarFavorite =>
       choose('Aus Favoriten', 'Убрать из избранного');
   String get switchLanguage => choose('Sprache wechseln', 'Сменить язык');
-  String get dailyPlan => choose('Tagesplan', 'План на сегодня');
+  String get dailyPlan => choose('Lektionen', 'Уроки');
+  String get irregularVerbFormsLesson => choose(
+        '27 unregelmäßige Verben',
+        '27 неправильных глаголов',
+      );
+  String irregularVerbFormsNeedsWords(int available) => choose(
+        'Aktiviere alle 27 Verben im Wörterbuch ($available/27 verfügbar).',
+        'Добавьте в активный словарь все 27 глаголов (доступно $available/27).',
+      );
+  String grammarFormLabel(String key) => switch (key) {
+        'present' => 'Präsens (er/sie/es)',
+        'preterite' => 'Präteritum',
+        'auxiliary' => choose('Hilfsverb', 'Вспомогательный глагол'),
+        'participle' => 'Partizip II',
+        _ => key,
+      };
   String get remindersTitle => choose('Erinnerungen', 'Напоминания');
   String get remindersEnabled => choose(
         'Aktiv: 13:30, 16:30 und 19:30',

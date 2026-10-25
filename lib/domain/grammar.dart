@@ -10,6 +10,7 @@ final class GrammarTopic {
     required this.explanationRu,
     required this.table,
     required this.trainable,
+    this.practiceSection = 'grammar',
   });
 
   final String id;
@@ -22,6 +23,7 @@ final class GrammarTopic {
   final List<String> explanationRu;
   final List<List<String>> table;
   final bool trainable;
+  final String practiceSection;
 }
 
 final class GrammarVerb {
@@ -48,6 +50,7 @@ final class GrammarExercise {
     this.type = GrammarExerciseType.text,
     this.requiredItemType = 'verb',
     this.options = const [],
+    this.formAnswers = const {},
     this.instructionDe = '',
     this.instructionRu = '',
   });
@@ -60,6 +63,7 @@ final class GrammarExercise {
   final GrammarExerciseType type;
   final String requiredItemType;
   final List<String> options;
+  final Map<String, List<String>> formAnswers;
   final String instructionDe;
   final String instructionRu;
 
@@ -70,7 +74,8 @@ enum GrammarExerciseType {
   text('text'),
   choice('choice'),
   yesNo('yes_no'),
-  wordOrder('word_order');
+  wordOrder('word_order'),
+  forms('forms');
 
   const GrammarExerciseType(this.wireName);
 

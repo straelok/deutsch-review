@@ -11,7 +11,7 @@ final class ContentManifest {
   });
 
   static const manifestVersion = 1;
-  static const supportedSchemaVersion = 1;
+  static const supportedSchemaVersion = 2;
   static const maximumCompressedSize = 1024 * 1024;
   static const maximumUncompressedSize = 5 * 1024 * 1024;
 

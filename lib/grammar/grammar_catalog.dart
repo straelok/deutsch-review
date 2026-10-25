@@ -35,7 +35,9 @@ final class GrammarCatalog {
     if (content is! Map<String, Object?> ||
         exerciseData is! Map<String, Object?> ||
         content['version'] != 1 ||
-        (exerciseData['version'] != 1 && exerciseData['version'] != 2) ||
+        (exerciseData['version'] != 1 &&
+            exerciseData['version'] != 2 &&
+            exerciseData['version'] != 3) ||
         content['topics'] is! List ||
         content['verbs'] is! List ||
         exerciseData['exercises'] is! List) {
@@ -56,7 +58,7 @@ final class GrammarCatalog {
   }
 
   factory GrammarCatalog.fromPackageJson(Map<String, Object?> json) {
-    if (json['schema_version'] != 1 ||
+    if ((json['schema_version'] != 1 && json['schema_version'] != 2) ||
         json['content_version'] is! String ||
         json['topics'] is! List ||
         json['verbs'] is! List ||
@@ -163,6 +165,8 @@ final class GrammarCatalog {
             .map((row) => (row as List).cast<String>())
             .toList(growable: false),
         trainable: json['trainable'] == true,
+        practiceSection:
+            _optionalString(json, 'practice_section') ?? 'grammar',
       );
 
   static GrammarVerb _verb(Map<String, Object?> json) {
@@ -178,21 +182,39 @@ final class GrammarCatalog {
     );
   }
 
-  static GrammarExercise _exercise(Map<String, Object?> json) =>
-      GrammarExercise(
+  static GrammarExercise _exercise(Map<String, Object?> json) {
+    final type = GrammarExerciseType.fromWireName(
+      _optionalString(json, 'type') ?? 'text',
+    );
+    final formAnswers = _formAnswers(json['forms']);
+    if (type == GrammarExerciseType.forms && formAnswers.isEmpty) {
+      throw const FormatException('Form exercise must contain forms.');
+    }
+    return GrammarExercise(
         id: _string(json, 'id'),
         topicId: _string(json, 'topic_id'),
         lemma: normalizeLemma(_string(json, 'lemma')),
         prompt: _string(json, 'prompt'),
         answer: _string(json, 'answer'),
-        type: GrammarExerciseType.fromWireName(
-          _optionalString(json, 'type') ?? 'text',
-        ),
+        type: type,
         requiredItemType: _optionalString(json, 'required_item_type') ?? 'verb',
         options: json['options'] == null ? const [] : _strings(json, 'options'),
+        formAnswers: formAnswers,
         instructionDe: _optionalString(json, 'instruction_de') ?? '',
         instructionRu: _optionalString(json, 'instruction_ru') ?? '',
       );
+  }
+
+  static Map<String, List<String>> _formAnswers(Object? value) {
+    if (value == null) return const {};
+    if (value is! Map) throw const FormatException('forms must be an object.');
+    return value.map((key, answers) {
+      if (answers is! List || answers.any((answer) => answer is! String)) {
+        throw FormatException('Invalid answers for form $key.');
+      }
+      return MapEntry(key.toString(), answers.cast<String>());
+    });
+  }
 
   static Map<String, Object?> _map(Object? value) {
     if (value is! Map) throw const FormatException('Expected an object.');

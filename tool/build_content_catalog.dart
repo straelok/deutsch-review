@@ -36,7 +36,7 @@ void main(List<String> arguments) {
   _validate(topics: topics, verbs: verbs, exercises: exercises);
 
   final catalog = <String, Object?>{
-    'schema_version': 1,
+    'schema_version': 2,
     'content_version': version,
     'topics': topics,
     'verbs': verbs,
@@ -68,8 +68,8 @@ void main(List<String> arguments) {
   final manifest = <String, Object?>{
     'manifest_version': 1,
     'content_version': version,
-    'schema_version': 1,
-    'minimum_app_content_schema': 1,
+    'schema_version': 2,
+    'minimum_app_content_schema': 2,
     'bundle_path': 'content/versions/$version/$bundleName',
     'sha256': sha256.convert(compressedBytes).toString(),
     'compressed_size': compressedBytes.length,
@@ -121,7 +121,7 @@ void _validate({
       throw FormatException('Verb $lemma must contain forms.');
     }
   }
-  const types = {'text', 'choice', 'yes_no', 'word_order'};
+  const types = {'text', 'choice', 'yes_no', 'word_order', 'forms'};
   for (final exercise in exercises) {
     final id = _requiredString(exercise, 'id');
     final topicId = _requiredString(exercise, 'topic_id');
@@ -137,6 +137,22 @@ void _validate({
     if ((type == 'choice' || type == 'yes_no' || type == 'word_order') &&
         exercise['options'] is! List) {
       throw FormatException('Exercise $id requires options.');
+    }
+    if (type == 'forms') {
+      final forms = exercise['forms'];
+      if (forms is! Map || forms.isEmpty) {
+        throw FormatException('Exercise $id requires forms.');
+      }
+      for (final entry in forms.entries) {
+        final answers = entry.value;
+        if (answers is! List ||
+            answers.isEmpty ||
+            answers.any((answer) => answer is! String || answer.isEmpty)) {
+          throw FormatException(
+            'Exercise $id has invalid answers for ${entry.key}.',
+          );
+        }
+      }
     }
   }
 }

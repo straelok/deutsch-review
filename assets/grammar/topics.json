@@ -2191,48 +2191,54 @@
     {
       "id": "irregular_verb_forms",
       "order": 32,
-      "title_de": "Unregelmäßige Verben: Präsens und Perfekt",
-      "title_ru": "Неправильные глаголы: Präsens и Perfekt",
-      "summary_de": "Lerne die Form für er/sie/es zusammen mit Hilfsverb und Partizip II.",
-      "summary_ru": "Форма er/sie/es изучается вместе со вспомогательным глаголом и Partizip II.",
+      "title_de": "27 unregelmäßige Verben",
+      "title_ru": "27 неправильных глаголов",
+      "summary_de": "Lerne Präsens, Präteritum und Perfekt als vier zusammengehörige Formen.",
+      "summary_ru": "Изучите Präsens, Präteritum и Perfekt как четыре связанные формы.",
+      "practice_section": "other",
       "explanation_de": [
         "Unregelmäßige Verben können im Präsens den Stammvokal ändern: lesen — er liest, fahren — er fährt.",
-        "Für jede Karte schreibe drei Formen in dieser Reihenfolge: er/sie/es, Hilfsverb und Partizip II.",
-        "Beispiel: bleiben — bleibt ist geblieben. Satzzeichen sind nicht nötig.",
-        "Die meisten Verben bilden das Perfekt mit haben. Verben der Ortsveränderung in dieser Liste verwenden sein.",
-        "Lerne die drei Formen als eine feste Gruppe, weil sich der Stamm im Präsens und im Partizip unterschiedlich ändern kann."
+        "Im Präteritum steht das Verb allein: bleiben — blieb, sehen — sah.",
+        "Für jede Karte schreibe vier Teile: Präsens er/sie/es, Präteritum, Hilfsverb und Partizip II.",
+        "Beispiel: bleiben — bleibt, blieb, ist, geblieben.",
+        "Ohne Satzkontext können fahren, fliegen und schwimmen das Perfekt mit sein oder haben bilden; beide Hilfsverben werden akzeptiert."
       ],
       "explanation_ru": [
         "У неправильных глаголов может меняться корневая гласная в Präsens: lesen — er liest, fahren — er fährt.",
-        "Для каждой карточки введите три формы в таком порядке: er/sie/es, вспомогательный глагол и Partizip II.",
-        "Пример: bleiben — bleibt ist geblieben. Знаки препинания вводить не нужно.",
-        "Большинство глаголов образует Perfekt с haben. Глаголы перемещения из этого списка используются с sein.",
-        "Учите три формы как одну устойчивую группу: основа в Präsens и Partizip II может меняться по-разному."
+        "В Präteritum глагол используется самостоятельно: bleiben — blieb, sehen — sah.",
+        "Для каждой карточки введите четыре части: Präsens er/sie/es, Präteritum, вспомогательный глагол и Partizip II.",
+        "Пример: bleiben — bleibt, blieb, ist, geblieben.",
+        "Без контекста fahren, fliegen и schwimmen могут образовывать Perfekt с sein или haben; принимаются оба варианта."
       ],
       "table": [
         [
           "Infinitiv",
           "er/sie/es",
+          "Präteritum",
           "Perfekt"
         ],
         [
           "bleiben",
           "bleibt",
+          "blieb",
           "ist geblieben"
         ],
         [
           "essen",
           "isst",
+          "aß",
           "hat gegessen"
         ],
         [
           "fahren",
           "fährt",
+          "fuhr",
           "ist gefahren"
         ],
         [
           "schreiben",
           "schreibt",
+          "schrieb",
           "hat geschrieben"
         ]
       ],

@@ -30,7 +30,7 @@ void main() {
     await tester.pumpWidget(_app(database));
     await tester.pumpAndSettle();
 
-    expect(find.text('0 von 8 Sitzungen abgeschlossen'), findsOneWidget);
+    expect(find.textContaining('Sitzungen abgeschlossen'), findsNothing);
     expect(find.text('Wörter auf Deutsch · Übung 1'), findsNothing);
     await _expandCategory(tester, 'vocabulary-to-german');
     expect(find.text('Standardmodus'), findsOneWidget);
@@ -576,14 +576,14 @@ void main() {
     await tester.tap(find.text('Русский'));
     await tester.pumpAndSettle();
 
-    expect(find.text('Сегодня'), findsWidgets);
+    expect(find.text('Уроки'), findsWidgets);
     expect(find.text('Повторение'), findsNothing);
 
     await tester.pumpWidget(const SizedBox.shrink());
     await tester.pumpWidget(_app(database));
     await tester.pumpAndSettle();
 
-    expect(find.text('Сегодня'), findsWidgets);
+    expect(find.text('Уроки'), findsWidgets);
   });
 
   testWidgets('sucht, löscht und stellt Material wieder her', (tester) async {
@@ -721,7 +721,7 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.text('Sitzung abgeschlossen'), findsOneWidget);
-    await tester.tap(find.text('Tagesplan'));
+    await tester.tap(find.text('Lektionen'));
     await tester.pumpAndSettle();
     var storedSession = database.connection
         .select(
@@ -1269,7 +1269,7 @@ void main() {
     await tester.pumpWidget(_app(database));
     await tester.pumpAndSettle();
 
-    expect(find.text('8 von 8 Sitzungen abgeschlossen'), findsOneWidget);
+    expect(find.textContaining('Sitzungen abgeschlossen'), findsNothing);
     await _expandCategory(tester, 'vocabulary-to-german');
     await tester.scrollUntilVisible(
       find.byKey(const Key('create-extra-session')),
@@ -1293,13 +1293,7 @@ void main() {
     await tester.pumpAndSettle();
     await _expandCategory(tester, 'vocabulary-to-german');
 
-    expect(
-      find.byKey(
-        const Key('session-category-progress-vocabulary-to-german'),
-      ),
-      findsOneWidget,
-    );
-    expect(find.text('0/3'), findsWidgets);
+    expect(find.text('0/3'), findsNothing);
     expect(find.text('Wörter auf Deutsch · Übung 1'), findsNothing);
     expect(find.text('Nächste Lektion'), findsWidgets);
     await tester.tap(
@@ -1391,9 +1385,9 @@ void main() {
     );
     await tester.pumpAndSettle();
 
-    await tester.tap(find.text('Heute'));
+    await tester.tap(find.text('Lektionen'));
     await tester.pumpAndSettle();
-    expect(find.text('0 von 10 Sitzungen abgeschlossen'), findsOneWidget);
+    expect(find.textContaining('Sitzungen abgeschlossen'), findsNothing);
     await _expandCategory(tester, 'grammar');
     await tester.tap(
       find.byKey(const Key('session-category-action-grammar')),
@@ -1431,7 +1425,7 @@ void main() {
       isTrue,
     );
 
-    await tester.tap(find.text('Heute'));
+    await tester.tap(find.text('Lektionen'));
     await tester.pumpAndSettle();
     await _expandCategory(tester, 'grammar');
     await tester.scrollUntilVisible(
@@ -1689,7 +1683,7 @@ Future<void> _expandCategory(WidgetTester tester, String category) async {
     _ => null,
   };
   if (group != null) {
-    final content = find.byKey(Key('session-category-progress-$category'));
+    final content = find.byKey(Key('lesson-group-content-$group'));
     if (content.evaluate().isEmpty) {
       final toggle = find.byKey(Key('toggle-lesson-group-$group'));
       await tester.scrollUntilVisible(toggle, 300);

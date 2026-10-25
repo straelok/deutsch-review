@@ -1,3 +1,4 @@
+import 'package:deutsch_review/domain/grammar.dart';
 import 'package:deutsch_review/grammar/grammar_catalog.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -216,11 +217,30 @@ void main() {
     );
     expect(
       catalog.exercise('irregular-forms-bleiben')?.answer,
-      'bleibt ist geblieben',
+      'bleibt blieb ist geblieben',
     );
     expect(
       catalog.exercise('irregular-forms-sitzen')?.answer,
-      'sitzt hat gesessen',
+      'sitzt saß hat gesessen',
+    );
+    expect(
+      irregularForms.map((exercise) => exercise.type).toSet(),
+      {GrammarExerciseType.forms},
+    );
+    expect(
+      catalog.exercise('irregular-forms-fahren')?.formAnswers,
+      {
+        'present': ['fährt'],
+        'preterite': ['fuhr'],
+        'auxiliary': ['ist', 'hat'],
+        'participle': ['gefahren'],
+      },
+    );
+    expect(
+      catalog.topics
+          .singleWhere((topic) => topic.id == 'irregular_verb_forms')
+          .practiceSection,
+      'other',
     );
   });
 
