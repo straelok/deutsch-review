@@ -2,7 +2,8 @@
 param(
   [ValidateSet('Debug', 'Release')]
   [string]$Configuration = 'Debug',
-  [string]$DefinesFile = 'tool/supabase_defines.json'
+  [string]$DefinesFile = 'tool/supabase_defines.json',
+  [switch]$RefreshDependencies
 )
 
 $ErrorActionPreference = 'Stop'
@@ -39,6 +40,13 @@ try {
     'windows',
     "--$($Configuration.ToLowerInvariant())"
   )
+  if (-not $RefreshDependencies) {
+    $packageConfig = Join-Path $projectRoot '.dart_tool\package_config.json'
+    if (-not (Test-Path -LiteralPath $packageConfig)) {
+      throw 'Dependencies are not ready. Run flutter pub get or use -RefreshDependencies.'
+    }
+    $flutterArguments += '--no-pub'
+  }
   $resolvedDefines = Join-Path $projectRoot $DefinesFile
   if (Test-Path -LiteralPath $resolvedDefines) {
     $flutterArguments += "--dart-define-from-file=$resolvedDefines"

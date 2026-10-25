@@ -5,6 +5,7 @@ param(
   [string] $Version,
   [string] $SupabaseUrl = 'https://hjihhrcxkpzglgfmfuzs.supabase.co',
   [string] $InputDirectory = 'assets/content',
+  [switch] $UseExistingPackage,
   [switch] $InteractiveChild
 )
 
@@ -25,6 +26,9 @@ if (-not $hasEnvironmentKey -and -not $InteractiveChild) {
     '-InputDirectory', $InputDirectory,
     '-InteractiveChild'
   )
+  if ($UseExistingPackage) {
+    $arguments += '-UseExistingPackage'
+  }
   $process = Start-Process -FilePath $powershell -ArgumentList $arguments `
     -WorkingDirectory (Get-Location).Path -WindowStyle Normal -Wait -PassThru
   if ($process.ExitCode -ne 0) {
@@ -61,8 +65,23 @@ $env:SUPABASE_URL = $SupabaseUrl.TrimEnd('/')
 $env:SUPABASE_SECRET_KEY = Read-SecretKey
 
 try {
-  dart run tool/build_content_catalog.dart "--version=$Version" "--output=$InputDirectory"
-  if ($LASTEXITCODE -ne 0) { throw 'Content catalog build failed.' }
+  if ($UseExistingPackage) {
+    $manifestPath = Join-Path $InputDirectory 'manifest.json'
+    $catalogPath = Join-Path $InputDirectory 'catalog.json.gz'
+    if (
+      -not (Test-Path -LiteralPath $manifestPath) -or
+      -not (Test-Path -LiteralPath $catalogPath)
+    ) {
+      throw 'Existing content package is incomplete.'
+    }
+    $manifest = Get-Content -LiteralPath $manifestPath -Raw | ConvertFrom-Json
+    if ($manifest.content_version -ne $Version) {
+      throw "Existing package version '$($manifest.content_version)' does not match '$Version'."
+    }
+  } else {
+    dart run tool/build_content_catalog.dart "--version=$Version" "--output=$InputDirectory"
+    if ($LASTEXITCODE -ne 0) { throw 'Content catalog build failed.' }
+  }
 
   dart run tool/publish_content_catalog.dart "--input=$InputDirectory"
   if ($LASTEXITCODE -ne 0) { throw 'Content catalog publication failed.' }
