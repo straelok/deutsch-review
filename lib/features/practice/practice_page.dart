@@ -221,6 +221,7 @@ class _PracticePageState extends State<PracticePage> {
         title: s.sessionComplete,
         message: s.sessionCompleteHint,
         action: FilledButton.icon(
+          key: const Key('completed-session-back-to-plan'),
           onPressed: _load,
           icon: const Icon(Icons.today_outlined),
           label: Text(s.dailyPlan),

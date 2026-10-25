@@ -64,7 +64,7 @@ void main() {
         .where((topic) => topic.trainable)
         .map((topic) => topic.id)
         .toSet();
-    expect(trainableTopics, hasLength(35));
+    expect(trainableTopics, hasLength(38));
     expect(
       catalog.topics.any((topic) => topic.id == 'personal_pronouns'),
       isFalse,
@@ -125,7 +125,7 @@ void main() {
     }
   });
 
-  test('covers the course through lesson 8 and irregular verb forms', () async {
+  test('covers the course through lesson 9 and irregular verb forms', () async {
     final catalog = await GrammarCatalog.load(rootBundle);
     final topicIds = catalog.topics.map((topic) => topic.id).toSet();
 
@@ -166,9 +166,12 @@ void main() {
       'temporal_prepositions_vor_seit_fuer',
       'sein_preterite',
       'haben_preterite',
+      'modal_verbs_muessen_duerfen',
+      'pronoun_man',
+      'imperative',
       'irregular_verb_forms',
     });
-    expect(catalog.exercises, hasLength(2132));
+    expect(catalog.exercises, hasLength(2192));
 
     int exerciseCount(String topicId) => catalog.exercises
         .where((exercise) => exercise.topicId == topicId)

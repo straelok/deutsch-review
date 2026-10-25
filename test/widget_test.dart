@@ -721,7 +721,9 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.text('Sitzung abgeschlossen'), findsOneWidget);
-    await tester.tap(find.text('Lektionen'));
+    await tester.tap(
+      find.byKey(const Key('completed-session-back-to-plan')),
+    );
     await tester.pumpAndSettle();
     var storedSession = database.connection
         .select(

@@ -225,7 +225,10 @@ class _HomeScreenState extends State<HomeScreen> {
     final s = UiStrings(widget.language);
     final destinations = <NavigationDestination>[
       NavigationDestination(
-          icon: const Icon(Icons.today_outlined), label: s.today),
+        key: const Key('navigation-lessons'),
+        icon: const Icon(Icons.today_outlined),
+        label: s.today,
+      ),
       NavigationDestination(
         icon: const Icon(Icons.inventory_2_outlined),
         label: s.material,
