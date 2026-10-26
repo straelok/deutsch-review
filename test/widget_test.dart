@@ -1612,6 +1612,90 @@ void main() {
     expect(find.byKey(const Key('unknown-grammar-answer')), findsOneWidget);
   });
 
+  testWidgets(
+      'restarts a stale irregular verb run with translation and all 27 verbs',
+      (tester) async {
+    final database = AppDatabase.inMemory();
+    addTearDown(database.close);
+    final catalog = _irregularVerbCatalog();
+    final irregularExercises = catalog.exercises
+        .where((exercise) => exercise.topicId == 'irregular_verb_forms')
+        .toList(growable: false);
+    final now = DateTime.now().toUtc();
+    final items = irregularExercises
+        .map(
+          (exercise) => LearningItem(
+            id: 'verb-${exercise.id}',
+            type: LearningItemType.verb,
+            level: '',
+            lesson: '',
+            topic: '',
+            learned: true,
+            createdAt: now,
+            updatedAt: now,
+            sourceRef: 'test',
+            content: {
+              'german': exercise.lemma,
+              'translation_ru': exercise.formAnswers['translation']!.first,
+            },
+          ),
+        )
+        .toList(growable: false);
+    final learningItems = SqliteLearningItemRepository(database);
+    for (final item in items) {
+      await learningItems.save(item);
+    }
+    await SqliteGrammarRepository(database).setLearned(
+      topicId: 'irregular_verb_forms',
+      learned: true,
+      now: now,
+    );
+    await SqliteSettingsRepository(database).saveLanguage(AppLanguage.russian);
+    final exerciseIds =
+        irregularExercises.map((exercise) => exercise.id).toList();
+    final timestamp = now.toIso8601String();
+    database.connection.execute(
+      '''
+      INSERT INTO daily_sessions (
+        id, local_date, slot, kind, status, target_answers, answered_count,
+        queue_json, last_item_id, created_at, updated_at, completed_at,
+        content_version
+      ) VALUES (?, ?, NULL, 'grammar', 'in_progress', 28, 1, ?, ?, ?, ?, NULL,
+        '2026.10.25.2')
+      ''',
+      <Object?>[
+        'stale-irregular-run',
+        localDayKey(DateTime.now()),
+        jsonEncode(exerciseIds),
+        exerciseIds.first,
+        timestamp,
+        timestamp,
+      ],
+    );
+
+    await tester.pumpWidget(_app(database, grammarCatalog: catalog));
+    await tester.pumpAndSettle();
+    await _expandCategory(tester, 'irregular-verb-forms');
+    await tester.tap(
+      find.byKey(
+        const Key('session-category-action-irregular-verb-forms'),
+      ),
+    );
+    await tester.pumpAndSettle();
+
+    expect(find.byKey(const Key('grammar-form-translation')), findsOneWidget);
+    expect(find.byKey(const Key('grammar-form-present')), findsOneWidget);
+    expect(find.byKey(const Key('grammar-form-preterite')), findsOneWidget);
+    expect(find.byKey(const Key('grammar-form-auxiliary')), findsOneWidget);
+    expect(find.byKey(const Key('grammar-form-participle')), findsOneWidget);
+    final restarted = (await SqliteDailySessionRepository(database)
+        .findById('stale-irregular-run'))!;
+    expect(restarted.answeredCount, 0);
+    expect(restarted.targetAnswers, 27);
+    expect(restarted.queueItemIds.toSet(), exerciseIds.toSet());
+    expect(restarted.contentVersion, bundledContentVersion);
+  });
+
   testWidgets('mixes learned foundation topics and supports new answer modes', (
     tester,
   ) async {
@@ -1678,6 +1762,7 @@ Future<void> _expandCategory(WidgetTester tester, String category) async {
     'vocabulary-to-russian' => 'to-russian',
     'grammar' || 'favorite-grammar' => 'grammar',
     'numbers' ||
+    'irregular-verb-forms' ||
     'matching' ||
     'important-matching' ||
     'multiple-choice' =>
@@ -1998,6 +2083,47 @@ GrammarCatalog _russianChoiceCatalog() {
         instructionRu: 'Определите часть речи.',
       ),
     ],
+  );
+}
+
+GrammarCatalog _irregularVerbCatalog() {
+  const topic = GrammarTopic(
+    id: 'irregular_verb_forms',
+    order: 1,
+    titleDe: '27 unregelmäßige Verben',
+    titleRu: '27 неправильных глаголов',
+    summaryDe: 'Alle Formen',
+    summaryRu: 'Все формы',
+    explanationDe: ['Erklärung'],
+    explanationRu: ['Объяснение'],
+    table: [],
+    trainable: true,
+    practiceSection: 'other',
+  );
+  return GrammarCatalog(
+    topics: const [topic],
+    verbs: const [],
+    exercises: List.generate(
+      27,
+      (index) => GrammarExercise(
+        id: 'irregular-$index',
+        topicId: 'irregular_verb_forms',
+        lemma: 'verb-$index',
+        prompt: 'verb-$index',
+        answer: 'form-$index preterite-$index hat participle-$index',
+        type: GrammarExerciseType.forms,
+        formAnswers: {
+          'translation': ['перевод-$index'],
+          'present': ['form-$index'],
+          'preterite': ['preterite-$index'],
+          'auxiliary': ['hat'],
+          'participle': ['participle-$index'],
+        },
+        instructionDe: 'Schreibe Übersetzung und Formen.',
+        instructionRu: 'Введите перевод и формы.',
+      ),
+    ),
+    contentVersion: bundledContentVersion,
   );
 }
 

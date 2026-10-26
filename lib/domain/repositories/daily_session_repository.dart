@@ -31,6 +31,12 @@ abstract interface class DailySessionRepository {
     required DateTime now,
   });
 
+  Future<DailySession> restart({
+    required String id,
+    required List<String> queueItemIds,
+    required DateTime now,
+  });
+
   Future<DailySession> recordAnswer({
     required PracticeAttempt attempt,
     required List<String> remainingQueueItemIds,

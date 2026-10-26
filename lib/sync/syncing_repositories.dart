@@ -180,6 +180,21 @@ final class SyncingDailySessionRepository implements DailySessionRepository {
   }
 
   @override
+  Future<DailySession> restart({
+    required String id,
+    required List<String> queueItemIds,
+    required DateTime now,
+  }) async {
+    final session = await _delegate.restart(
+      id: id,
+      queueItemIds: queueItemIds,
+      now: now,
+    );
+    _onChanged();
+    return session;
+  }
+
+  @override
   Future<DailySession> recordAnswer({
     required PracticeAttempt attempt,
     required List<String> remainingQueueItemIds,

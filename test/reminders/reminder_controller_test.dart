@@ -176,4 +176,12 @@ final class _FakeSessions implements DailySessionRepository {
     required DateTime now,
   }) =>
       throw UnimplementedError();
+
+  @override
+  Future<DailySession> restart({
+    required String id,
+    required List<String> queueItemIds,
+    required DateTime now,
+  }) =>
+      throw UnimplementedError();
 }

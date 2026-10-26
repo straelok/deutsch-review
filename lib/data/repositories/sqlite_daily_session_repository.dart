@@ -254,6 +254,37 @@ final class SqliteDailySessionRepository implements DailySessionRepository {
   }
 
   @override
+  Future<DailySession> restart({
+    required String id,
+    required List<String> queueItemIds,
+    required DateTime now,
+  }) async {
+    final uniqueQueueItemIds = queueItemIds.toSet().toList(growable: false);
+    if (uniqueQueueItemIds.isEmpty) {
+      throw ArgumentError('A restarted session requires a non-empty queue.');
+    }
+    database.connection.execute(
+      '''
+      UPDATE daily_sessions
+      SET status = 'in_progress', target_answers = ?, answered_count = 0,
+          queue_json = ?, last_item_id = NULL, updated_at = ?,
+          completed_at = NULL, content_version = ?
+      WHERE id = ?
+      ''',
+      <Object?>[
+        uniqueQueueItemIds.length,
+        jsonEncode(uniqueQueueItemIds),
+        now.toUtc().toIso8601String(),
+        _contentVersion(),
+        id,
+      ],
+    );
+    final session = await findById(id);
+    if (session == null) throw StateError('Cannot restart a missing session.');
+    return session;
+  }
+
+  @override
   Future<DailySession> recordAnswer({
     required PracticeAttempt attempt,
     required List<String> remainingQueueItemIds,

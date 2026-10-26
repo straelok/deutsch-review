@@ -2398,14 +2398,20 @@ class _PracticePageState extends State<PracticePage> {
     if (!session.isComplete) await _openSession(session.id);
   }
 
-  bool _isTopicSession(DailySession session, String topicId) {
+  bool _isTopicSession(
+    DailySession session,
+    String topicId, {
+    GrammarCatalog? catalog,
+  }) {
     if (!session.kind.isGrammar) return false;
+    final resolvedCatalog = catalog ?? _catalog;
     if (session.queueItemIds.isNotEmpty) {
       return session.queueItemIds.every(
-        (id) => _catalog.exercise(id)?.topicId == topicId,
+        (id) => resolvedCatalog.exercise(id)?.topicId == topicId,
       );
     }
-    return _catalog.exercise(session.lastItemId ?? '')?.topicId == topicId;
+    return resolvedCatalog.exercise(session.lastItemId ?? '')?.topicId ==
+        topicId;
   }
 
   Future<void> _createExtraSession(DailySessionKind kind) async {
@@ -2486,6 +2492,28 @@ class _PracticePageState extends State<PracticePage> {
         now: DateTime.now().toUtc(),
         kind: session.kind,
       );
+    }
+    if (session.status == DailySessionStatus.inProgress &&
+        session.contentVersion != widget.grammarCatalog.contentVersion &&
+        _isTopicSession(
+          session,
+          _irregularVerbTopicId,
+          catalog: widget.grammarCatalog,
+        )) {
+      final exercises = [
+        ...widget.grammarCatalog.exercisesFor(
+          topicId: _irregularVerbTopicId,
+          activeItemKeys: _activeItemKeys(_activeItems),
+        ),
+      ]..shuffle(_random);
+      if (exercises.length == 27) {
+        session = await widget.sessions.restart(
+          id: session.id,
+          queueItemIds:
+              exercises.map((exercise) => exercise.id).toList(growable: false),
+          now: DateTime.now().toUtc(),
+        );
+      }
     }
     if (session.kind.isGrammar) {
       final catalog = await _catalogForSession(session);

@@ -443,6 +443,41 @@ void main() {
       isNotNull,
     );
   });
+
+  test('restarts a session with a fresh queue and content version', () async {
+    final database = AppDatabase.inMemory();
+    addTearDown(database.close);
+    var version = '2026.10.25.2';
+    final repository = SqliteDailySessionRepository(
+      database,
+      contentVersion: () => version,
+    );
+    final now = DateTime.utc(2026, 10, 26, 10);
+    final planned = await repository.createExtra(
+      localDate: '2026-10-26',
+      now: now,
+      kind: DailySessionKind.grammar,
+    );
+    await repository.start(
+      id: planned.id,
+      queueItemIds: const ['old-1', 'old-2'],
+      now: now,
+    );
+
+    version = '2026.10.26.1';
+    final restarted = await repository.restart(
+      id: planned.id,
+      queueItemIds: const ['new-1', 'new-2', 'new-3'],
+      now: now.add(const Duration(minutes: 5)),
+    );
+
+    expect(restarted.id, planned.id);
+    expect(restarted.status, DailySessionStatus.inProgress);
+    expect(restarted.targetAnswers, 3);
+    expect(restarted.answeredCount, 0);
+    expect(restarted.queueItemIds, const ['new-1', 'new-2', 'new-3']);
+    expect(restarted.contentVersion, '2026.10.26.1');
+  });
 }
 
 LearningItem _word(DateTime now) {
