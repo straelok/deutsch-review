@@ -1,7 +1,62 @@
 {
   "format_version": 2,
-  "exported_at": "2026-10-25T10:00:00.000Z",
+  "exported_at": "2026-10-26T10:00:00.000Z",
   "words": [
+    {
+      "id": "f1a64bf4-47dc-4c74-a2f4-56c53e2e0211",
+      "type": "verb",
+      "german": "fliegen",
+      "translation_ru": "летать; лететь",
+      "example": "Der Vogel fliegt über die Stadt.; Wir fliegen morgen nach Wien.",
+      "note": "Präsens: er/sie/es fliegt; Präteritum: flog; Partizip II: geflogen.",
+      "important": false,
+      "created_at": "2026-10-26T10:00:00.000Z",
+      "updated_at": "2026-10-26T10:00:00.000Z"
+    },
+    {
+      "id": "25ce788f-334d-4b51-8fb7-dca3d4f5c4d7",
+      "type": "verb",
+      "german": "liegen",
+      "translation_ru": "лежать; находиться",
+      "example": "Das Buch liegt auf dem Tisch.; Die Praxis liegt neben der Apotheke.",
+      "note": "Präteritum: lag; Partizip II: gelegen.",
+      "important": false,
+      "created_at": "2026-10-26T10:00:00.000Z",
+      "updated_at": "2026-10-26T10:00:00.000Z"
+    },
+    {
+      "id": "719b117a-b7b3-4b57-b616-b5476aa6d408",
+      "type": "verb",
+      "german": "schneiden",
+      "translation_ru": "резать",
+      "example": "Sie schneidet das Brot.; Ich schneide die Zwiebel.",
+      "note": "Präteritum: schnitt; Partizip II: geschnitten.",
+      "important": false,
+      "created_at": "2026-10-26T10:00:00.000Z",
+      "updated_at": "2026-10-26T10:00:00.000Z"
+    },
+    {
+      "id": "0fc0fd1e-a378-45f6-a106-3e98e49642f4",
+      "type": "verb",
+      "german": "sitzen",
+      "translation_ru": "сидеть",
+      "example": "Wir sitzen im Wartezimmer.; Er sitzt am Fenster.",
+      "note": "Präteritum: saß; Partizip II: gesessen.",
+      "important": false,
+      "created_at": "2026-10-26T10:00:00.000Z",
+      "updated_at": "2026-10-26T10:00:00.000Z"
+    },
+    {
+      "id": "fc29dbf5-cb28-44f9-9719-53525b9aab62",
+      "type": "verb",
+      "german": "stehen",
+      "translation_ru": "стоять; находиться",
+      "example": "Das Auto steht vor dem Haus.; Ich stehe an der Haltestelle.",
+      "note": "Präteritum: stand; Partizip II: gestanden.",
+      "important": false,
+      "created_at": "2026-10-26T10:00:00.000Z",
+      "updated_at": "2026-10-26T10:00:00.000Z"
+    },
     {
       "id": "e7000001",
       "type": "word",

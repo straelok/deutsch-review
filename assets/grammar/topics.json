@@ -2193,50 +2193,55 @@
       "order": 32,
       "title_de": "27 unregelmäßige Verben",
       "title_ru": "27 неправильных глаголов",
-      "summary_de": "Lerne Präsens, Präteritum und Perfekt als vier zusammengehörige Formen.",
-      "summary_ru": "Изучите Präsens, Präteritum и Perfekt как четыре связанные формы.",
+      "summary_de": "Lerne die russische Übersetzung, Präsens, Präteritum und Perfekt zusammen.",
+      "summary_ru": "Учите русский перевод, Präsens, Präteritum и Perfekt вместе.",
       "practice_section": "other",
       "explanation_de": [
         "Unregelmäßige Verben können im Präsens den Stammvokal ändern: lesen — er liest, fahren — er fährt.",
         "Im Präteritum steht das Verb allein: bleiben — blieb, sehen — sah.",
-        "Für jede Karte schreibe vier Teile: Präsens er/sie/es, Präteritum, Hilfsverb und Partizip II.",
-        "Beispiel: bleiben — bleibt, blieb, ist, geblieben.",
+        "Für jede Karte schreibe die russische Übersetzung und vier Formen: Präsens er/sie/es, Präteritum, Hilfsverb und Partizip II.",
+        "Beispiel: bleiben — оставаться, bleibt, blieb, ist, geblieben.",
         "Ohne Satzkontext können fahren, fliegen und schwimmen das Perfekt mit sein oder haben bilden; beide Hilfsverben werden akzeptiert."
       ],
       "explanation_ru": [
         "У неправильных глаголов может меняться корневая гласная в Präsens: lesen — er liest, fahren — er fährt.",
         "В Präteritum глагол используется самостоятельно: bleiben — blieb, sehen — sah.",
-        "Для каждой карточки введите четыре части: Präsens er/sie/es, Präteritum, вспомогательный глагол и Partizip II.",
-        "Пример: bleiben — bleibt, blieb, ist, geblieben.",
+        "Для каждой карточки введите русский перевод и четыре формы: Präsens er/sie/es, Präteritum, вспомогательный глагол и Partizip II.",
+        "Пример: bleiben — оставаться, bleibt, blieb, ist, geblieben.",
         "Без контекста fahren, fliegen и schwimmen могут образовывать Perfekt с sein или haben; принимаются оба варианта."
       ],
       "table": [
         [
           "Infinitiv",
+          "Übersetzung (RU)",
           "er/sie/es",
           "Präteritum",
           "Perfekt"
         ],
         [
           "bleiben",
+          "оставаться",
           "bleibt",
           "blieb",
           "ist geblieben"
         ],
         [
           "essen",
+          "есть",
           "isst",
           "aß",
           "hat gegessen"
         ],
         [
           "fahren",
+          "ехать",
           "fährt",
           "fuhr",
           "ist gefahren"
         ],
         [
           "schreiben",
+          "писать",
           "schreibt",
           "schrieb",
           "hat geschrieben"

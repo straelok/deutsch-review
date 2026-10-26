@@ -231,8 +231,17 @@ void main() {
       {GrammarExerciseType.forms},
     );
     expect(
+      irregularForms.every(
+        (exercise) =>
+            exercise.formAnswers.length == 5 &&
+            exercise.formAnswers['translation']?.isNotEmpty == true,
+      ),
+      isTrue,
+    );
+    expect(
       catalog.exercise('irregular-forms-fahren')?.formAnswers,
       {
+        'translation': ['ехать', 'ездить'],
         'present': ['fährt'],
         'preterite': ['fuhr'],
         'auxiliary': ['ist', 'hat'],

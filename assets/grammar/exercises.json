@@ -23283,13 +23283,14 @@
       "prompt": "bleiben",
       "answer": "bleibt blieb ist geblieben",
       "forms": {
+        "translation": ["оставаться", "остаться"],
         "present": ["bleibt"],
         "preterite": ["blieb"],
         "auxiliary": ["ist"],
         "participle": ["geblieben"]
       },
-      "instruction_de": "Schreibe Präsens, Präteritum, Hilfsverb und Partizip II.",
-      "instruction_ru": "Введите Präsens, Präteritum, hat/ist и Partizip II."
+      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Präteritum, Hilfsverb und Partizip II.",
+      "instruction_ru": "Введите перевод, Präsens, Präteritum, hat/ist и Partizip II."
     },
     {
       "id": "irregular-forms-essen",
@@ -23300,13 +23301,14 @@
       "prompt": "essen",
       "answer": "isst aß hat gegessen",
       "forms": {
+        "translation": ["есть", "кушать"],
         "present": ["isst"],
         "preterite": ["aß"],
         "auxiliary": ["hat"],
         "participle": ["gegessen"]
       },
-      "instruction_de": "Schreibe Präsens, Präteritum, Hilfsverb und Partizip II.",
-      "instruction_ru": "Введите Präsens, Präteritum, hat/ist и Partizip II."
+      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Präteritum, Hilfsverb und Partizip II.",
+      "instruction_ru": "Введите перевод, Präsens, Präteritum, hat/ist и Partizip II."
     },
     {
       "id": "irregular-forms-fahren",
@@ -23317,13 +23319,14 @@
       "prompt": "fahren",
       "answer": "fährt fuhr ist gefahren",
       "forms": {
+        "translation": ["ехать", "ездить"],
         "present": ["fährt"],
         "preterite": ["fuhr"],
         "auxiliary": ["ist", "hat"],
         "participle": ["gefahren"]
       },
-      "instruction_de": "Schreibe Präsens, Präteritum, Hilfsverb und Partizip II.",
-      "instruction_ru": "Введите Präsens, Präteritum, hat/ist и Partizip II."
+      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Präteritum, Hilfsverb und Partizip II.",
+      "instruction_ru": "Введите перевод, Präsens, Präteritum, hat/ist и Partizip II."
     },
     {
       "id": "irregular-forms-finden",
@@ -23334,13 +23337,14 @@
       "prompt": "finden",
       "answer": "findet fand hat gefunden",
       "forms": {
+        "translation": ["находить"],
         "present": ["findet"],
         "preterite": ["fand"],
         "auxiliary": ["hat"],
         "participle": ["gefunden"]
       },
-      "instruction_de": "Schreibe Präsens, Präteritum, Hilfsverb und Partizip II.",
-      "instruction_ru": "Введите Präsens, Präteritum, hat/ist и Partizip II."
+      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Präteritum, Hilfsverb und Partizip II.",
+      "instruction_ru": "Введите перевод, Präsens, Präteritum, hat/ist и Partizip II."
     },
     {
       "id": "irregular-forms-fliegen",
@@ -23351,13 +23355,14 @@
       "prompt": "fliegen",
       "answer": "fliegt flog ist geflogen",
       "forms": {
+        "translation": ["летать", "лететь"],
         "present": ["fliegt"],
         "preterite": ["flog"],
         "auxiliary": ["ist", "hat"],
         "participle": ["geflogen"]
       },
-      "instruction_de": "Schreibe Präsens, Präteritum, Hilfsverb und Partizip II.",
-      "instruction_ru": "Введите Präsens, Präteritum, hat/ist и Partizip II."
+      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Präteritum, Hilfsverb und Partizip II.",
+      "instruction_ru": "Введите перевод, Präsens, Präteritum, hat/ist и Partizip II."
     },
     {
       "id": "irregular-forms-geben",
@@ -23368,13 +23373,14 @@
       "prompt": "geben",
       "answer": "gibt gab hat gegeben",
       "forms": {
+        "translation": ["давать", "дать"],
         "present": ["gibt"],
         "preterite": ["gab"],
         "auxiliary": ["hat"],
         "participle": ["gegeben"]
       },
-      "instruction_de": "Schreibe Präsens, Präteritum, Hilfsverb und Partizip II.",
-      "instruction_ru": "Введите Präsens, Präteritum, hat/ist и Partizip II."
+      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Präteritum, Hilfsverb und Partizip II.",
+      "instruction_ru": "Введите перевод, Präsens, Präteritum, hat/ist и Partizip II."
     },
     {
       "id": "irregular-forms-haben",
@@ -23385,13 +23391,14 @@
       "prompt": "haben",
       "answer": "hat hatte hat gehabt",
       "forms": {
+        "translation": ["иметь"],
         "present": ["hat"],
         "preterite": ["hatte"],
         "auxiliary": ["hat"],
         "participle": ["gehabt"]
       },
-      "instruction_de": "Schreibe Präsens, Präteritum, Hilfsverb und Partizip II.",
-      "instruction_ru": "Введите Präsens, Präteritum, hat/ist и Partizip II."
+      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Präteritum, Hilfsverb und Partizip II.",
+      "instruction_ru": "Введите перевод, Präsens, Präteritum, hat/ist и Partizip II."
     },
     {
       "id": "irregular-forms-helfen",
@@ -23402,13 +23409,14 @@
       "prompt": "helfen",
       "answer": "hilft half hat geholfen",
       "forms": {
+        "translation": ["помогать"],
         "present": ["hilft"],
         "preterite": ["half"],
         "auxiliary": ["hat"],
         "participle": ["geholfen"]
       },
-      "instruction_de": "Schreibe Präsens, Präteritum, Hilfsverb und Partizip II.",
-      "instruction_ru": "Введите Präsens, Präteritum, hat/ist и Partizip II."
+      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Präteritum, Hilfsverb und Partizip II.",
+      "instruction_ru": "Введите перевод, Präsens, Präteritum, hat/ist и Partizip II."
     },
     {
       "id": "irregular-forms-kommen",
@@ -23419,13 +23427,14 @@
       "prompt": "kommen",
       "answer": "kommt kam ist gekommen",
       "forms": {
+        "translation": ["приходить", "приезжать", "прибывать"],
         "present": ["kommt"],
         "preterite": ["kam"],
         "auxiliary": ["ist"],
         "participle": ["gekommen"]
       },
-      "instruction_de": "Schreibe Präsens, Präteritum, Hilfsverb und Partizip II.",
-      "instruction_ru": "Введите Präsens, Präteritum, hat/ist и Partizip II."
+      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Präteritum, Hilfsverb und Partizip II.",
+      "instruction_ru": "Введите перевод, Präsens, Präteritum, hat/ist и Partizip II."
     },
     {
       "id": "irregular-forms-laufen",
@@ -23436,13 +23445,14 @@
       "prompt": "laufen",
       "answer": "läuft lief ist gelaufen",
       "forms": {
+        "translation": ["бежать", "ходить пешком"],
         "present": ["läuft"],
         "preterite": ["lief"],
         "auxiliary": ["ist"],
         "participle": ["gelaufen"]
       },
-      "instruction_de": "Schreibe Präsens, Präteritum, Hilfsverb und Partizip II.",
-      "instruction_ru": "Введите Präsens, Präteritum, hat/ist и Partizip II."
+      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Präteritum, Hilfsverb und Partizip II.",
+      "instruction_ru": "Введите перевод, Präsens, Präteritum, hat/ist и Partizip II."
     },
     {
       "id": "irregular-forms-lesen",
@@ -23453,13 +23463,14 @@
       "prompt": "lesen",
       "answer": "liest las hat gelesen",
       "forms": {
+        "translation": ["читать"],
         "present": ["liest"],
         "preterite": ["las"],
         "auxiliary": ["hat"],
         "participle": ["gelesen"]
       },
-      "instruction_de": "Schreibe Präsens, Präteritum, Hilfsverb und Partizip II.",
-      "instruction_ru": "Введите Präsens, Präteritum, hat/ist и Partizip II."
+      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Präteritum, Hilfsverb und Partizip II.",
+      "instruction_ru": "Введите перевод, Präsens, Präteritum, hat/ist и Partizip II."
     },
     {
       "id": "irregular-forms-liegen",
@@ -23470,13 +23481,14 @@
       "prompt": "liegen",
       "answer": "liegt lag hat gelegen",
       "forms": {
+        "translation": ["лежать", "находиться"],
         "present": ["liegt"],
         "preterite": ["lag"],
         "auxiliary": ["hat"],
         "participle": ["gelegen"]
       },
-      "instruction_de": "Schreibe Präsens, Präteritum, Hilfsverb und Partizip II.",
-      "instruction_ru": "Введите Präsens, Präteritum, hat/ist и Partizip II."
+      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Präteritum, Hilfsverb und Partizip II.",
+      "instruction_ru": "Введите перевод, Präsens, Präteritum, hat/ist и Partizip II."
     },
     {
       "id": "irregular-forms-nehmen",
@@ -23487,13 +23499,14 @@
       "prompt": "nehmen",
       "answer": "nimmt nahm hat genommen",
       "forms": {
+        "translation": ["брать", "взять"],
         "present": ["nimmt"],
         "preterite": ["nahm"],
         "auxiliary": ["hat"],
         "participle": ["genommen"]
       },
-      "instruction_de": "Schreibe Präsens, Präteritum, Hilfsverb und Partizip II.",
-      "instruction_ru": "Введите Präsens, Präteritum, hat/ist и Partizip II."
+      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Präteritum, Hilfsverb und Partizip II.",
+      "instruction_ru": "Введите перевод, Präsens, Präteritum, hat/ist и Partizip II."
     },
     {
       "id": "irregular-forms-schlafen",
@@ -23504,13 +23517,14 @@
       "prompt": "schlafen",
       "answer": "schläft schlief hat geschlafen",
       "forms": {
+        "translation": ["спать"],
         "present": ["schläft"],
         "preterite": ["schlief"],
         "auxiliary": ["hat"],
         "participle": ["geschlafen"]
       },
-      "instruction_de": "Schreibe Präsens, Präteritum, Hilfsverb und Partizip II.",
-      "instruction_ru": "Введите Präsens, Präteritum, hat/ist и Partizip II."
+      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Präteritum, Hilfsverb und Partizip II.",
+      "instruction_ru": "Введите перевод, Präsens, Präteritum, hat/ist и Partizip II."
     },
     {
       "id": "irregular-forms-schliessen",
@@ -23521,13 +23535,14 @@
       "prompt": "schließen",
       "answer": "schließt schloss hat geschlossen",
       "forms": {
+        "translation": ["закрывать", "запирать"],
         "present": ["schließt"],
         "preterite": ["schloss"],
         "auxiliary": ["hat"],
         "participle": ["geschlossen"]
       },
-      "instruction_de": "Schreibe Präsens, Präteritum, Hilfsverb und Partizip II.",
-      "instruction_ru": "Введите Präsens, Präteritum, hat/ist и Partizip II."
+      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Präteritum, Hilfsverb und Partizip II.",
+      "instruction_ru": "Введите перевод, Präsens, Präteritum, hat/ist и Partizip II."
     },
     {
       "id": "irregular-forms-schneiden",
@@ -23538,13 +23553,14 @@
       "prompt": "schneiden",
       "answer": "schneidet schnitt hat geschnitten",
       "forms": {
+        "translation": ["резать"],
         "present": ["schneidet"],
         "preterite": ["schnitt"],
         "auxiliary": ["hat"],
         "participle": ["geschnitten"]
       },
-      "instruction_de": "Schreibe Präsens, Präteritum, Hilfsverb und Partizip II.",
-      "instruction_ru": "Введите Präsens, Präteritum, hat/ist и Partizip II."
+      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Präteritum, Hilfsverb und Partizip II.",
+      "instruction_ru": "Введите перевод, Präsens, Präteritum, hat/ist и Partizip II."
     },
     {
       "id": "irregular-forms-schreiben",
@@ -23555,13 +23571,14 @@
       "prompt": "schreiben",
       "answer": "schreibt schrieb hat geschrieben",
       "forms": {
+        "translation": ["писать"],
         "present": ["schreibt"],
         "preterite": ["schrieb"],
         "auxiliary": ["hat"],
         "participle": ["geschrieben"]
       },
-      "instruction_de": "Schreibe Präsens, Präteritum, Hilfsverb und Partizip II.",
-      "instruction_ru": "Введите Präsens, Präteritum, hat/ist и Partizip II."
+      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Präteritum, Hilfsverb und Partizip II.",
+      "instruction_ru": "Введите перевод, Präsens, Präteritum, hat/ist и Partizip II."
     },
     {
       "id": "irregular-forms-schwimmen",
@@ -23572,13 +23589,14 @@
       "prompt": "schwimmen",
       "answer": "schwimmt schwamm ist geschwommen",
       "forms": {
+        "translation": ["плавать"],
         "present": ["schwimmt"],
         "preterite": ["schwamm"],
         "auxiliary": ["ist", "hat"],
         "participle": ["geschwommen"]
       },
-      "instruction_de": "Schreibe Präsens, Präteritum, Hilfsverb und Partizip II.",
-      "instruction_ru": "Введите Präsens, Präteritum, hat/ist и Partizip II."
+      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Präteritum, Hilfsverb und Partizip II.",
+      "instruction_ru": "Введите перевод, Präsens, Präteritum, hat/ist и Partizip II."
     },
     {
       "id": "irregular-forms-sehen",
@@ -23589,13 +23607,14 @@
       "prompt": "sehen",
       "answer": "sieht sah hat gesehen",
       "forms": {
+        "translation": ["видеть", "смотреть"],
         "present": ["sieht"],
         "preterite": ["sah"],
         "auxiliary": ["hat"],
         "participle": ["gesehen"]
       },
-      "instruction_de": "Schreibe Präsens, Präteritum, Hilfsverb und Partizip II.",
-      "instruction_ru": "Введите Präsens, Präteritum, hat/ist и Partizip II."
+      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Präteritum, Hilfsverb und Partizip II.",
+      "instruction_ru": "Введите перевод, Präsens, Präteritum, hat/ist и Partizip II."
     },
     {
       "id": "irregular-forms-sein",
@@ -23606,13 +23625,14 @@
       "prompt": "sein",
       "answer": "ist war ist gewesen",
       "forms": {
+        "translation": ["быть"],
         "present": ["ist"],
         "preterite": ["war"],
         "auxiliary": ["ist"],
         "participle": ["gewesen"]
       },
-      "instruction_de": "Schreibe Präsens, Präteritum, Hilfsverb und Partizip II.",
-      "instruction_ru": "Введите Präsens, Präteritum, hat/ist и Partizip II."
+      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Präteritum, Hilfsverb und Partizip II.",
+      "instruction_ru": "Введите перевод, Präsens, Präteritum, hat/ist и Partizip II."
     },
     {
       "id": "irregular-forms-sitzen",
@@ -23623,13 +23643,14 @@
       "prompt": "sitzen",
       "answer": "sitzt saß hat gesessen",
       "forms": {
+        "translation": ["сидеть"],
         "present": ["sitzt"],
         "preterite": ["saß"],
         "auxiliary": ["hat"],
         "participle": ["gesessen"]
       },
-      "instruction_de": "Schreibe Präsens, Präteritum, Hilfsverb und Partizip II.",
-      "instruction_ru": "Введите Präsens, Präteritum, hat/ist и Partizip II."
+      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Präteritum, Hilfsverb und Partizip II.",
+      "instruction_ru": "Введите перевод, Präsens, Präteritum, hat/ist и Partizip II."
     },
     {
       "id": "irregular-forms-sprechen",
@@ -23640,13 +23661,14 @@
       "prompt": "sprechen",
       "answer": "spricht sprach hat gesprochen",
       "forms": {
+        "translation": ["говорить"],
         "present": ["spricht"],
         "preterite": ["sprach"],
         "auxiliary": ["hat"],
         "participle": ["gesprochen"]
       },
-      "instruction_de": "Schreibe Präsens, Präteritum, Hilfsverb und Partizip II.",
-      "instruction_ru": "Введите Präsens, Präteritum, hat/ist и Partizip II."
+      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Präteritum, Hilfsverb und Partizip II.",
+      "instruction_ru": "Введите перевод, Präsens, Präteritum, hat/ist и Partizip II."
     },
     {
       "id": "irregular-forms-stehen",
@@ -23657,13 +23679,14 @@
       "prompt": "stehen",
       "answer": "steht stand hat gestanden",
       "forms": {
+        "translation": ["стоять", "находиться"],
         "present": ["steht"],
         "preterite": ["stand"],
         "auxiliary": ["hat"],
         "participle": ["gestanden"]
       },
-      "instruction_de": "Schreibe Präsens, Präteritum, Hilfsverb und Partizip II.",
-      "instruction_ru": "Введите Präsens, Präteritum, hat/ist и Partizip II."
+      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Präteritum, Hilfsverb und Partizip II.",
+      "instruction_ru": "Введите перевод, Präsens, Präteritum, hat/ist и Partizip II."
     },
     {
       "id": "irregular-forms-tragen",
@@ -23674,13 +23697,14 @@
       "prompt": "tragen",
       "answer": "trägt trug hat getragen",
       "forms": {
+        "translation": ["нести", "носить"],
         "present": ["trägt"],
         "preterite": ["trug"],
         "auxiliary": ["hat"],
         "participle": ["getragen"]
       },
-      "instruction_de": "Schreibe Präsens, Präteritum, Hilfsverb und Partizip II.",
-      "instruction_ru": "Введите Präsens, Präteritum, hat/ist и Partizip II."
+      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Präteritum, Hilfsverb und Partizip II.",
+      "instruction_ru": "Введите перевод, Präsens, Präteritum, hat/ist и Partizip II."
     },
     {
       "id": "irregular-forms-treffen",
@@ -23691,13 +23715,14 @@
       "prompt": "treffen",
       "answer": "trifft traf hat getroffen",
       "forms": {
+        "translation": ["встречать", "встречаться"],
         "present": ["trifft"],
         "preterite": ["traf"],
         "auxiliary": ["hat"],
         "participle": ["getroffen"]
       },
-      "instruction_de": "Schreibe Präsens, Präteritum, Hilfsverb und Partizip II.",
-      "instruction_ru": "Введите Präsens, Präteritum, hat/ist и Partizip II."
+      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Präteritum, Hilfsverb und Partizip II.",
+      "instruction_ru": "Введите перевод, Präsens, Präteritum, hat/ist и Partizip II."
     },
     {
       "id": "irregular-forms-trinken",
@@ -23708,13 +23733,14 @@
       "prompt": "trinken",
       "answer": "trinkt trank hat getrunken",
       "forms": {
+        "translation": ["пить"],
         "present": ["trinkt"],
         "preterite": ["trank"],
         "auxiliary": ["hat"],
         "participle": ["getrunken"]
       },
-      "instruction_de": "Schreibe Präsens, Präteritum, Hilfsverb und Partizip II.",
-      "instruction_ru": "Введите Präsens, Präteritum, hat/ist и Partizip II."
+      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Präteritum, Hilfsverb und Partizip II.",
+      "instruction_ru": "Введите перевод, Präsens, Präteritum, hat/ist и Partizip II."
     },
     {
       "id": "irregular-forms-waschen",
@@ -23725,13 +23751,14 @@
       "prompt": "waschen",
       "answer": "wäscht wusch hat gewaschen",
       "forms": {
+        "translation": ["мыть", "стирать"],
         "present": ["wäscht"],
         "preterite": ["wusch"],
         "auxiliary": ["hat"],
         "participle": ["gewaschen"]
       },
-      "instruction_de": "Schreibe Präsens, Präteritum, Hilfsverb und Partizip II.",
-      "instruction_ru": "Введите Präsens, Präteritum, hat/ist и Partizip II."
+      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Präteritum, Hilfsverb und Partizip II.",
+      "instruction_ru": "Введите перевод, Präsens, Präteritum, hat/ist и Partizip II."
     },
     {
       "id": "lesson9-modal-1",

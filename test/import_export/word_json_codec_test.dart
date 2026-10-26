@@ -167,10 +167,48 @@ void main() {
         )
         .toSet();
 
-    expect(items, hasLength(991));
+    expect(items, hasLength(996));
     expect(keys, hasLength(items.length));
     expect(
       items.any((item) => item.content['german'] == 'Supermarkt'),
+      isTrue,
+    );
+    expect(
+      {
+        'bleiben',
+        'essen',
+        'fahren',
+        'finden',
+        'fliegen',
+        'geben',
+        'haben',
+        'helfen',
+        'kommen',
+        'laufen',
+        'lesen',
+        'liegen',
+        'nehmen',
+        'schlafen',
+        'schließen',
+        'schneiden',
+        'schreiben',
+        'schwimmen',
+        'sehen',
+        'sein',
+        'sitzen',
+        'sprechen',
+        'stehen',
+        'tragen',
+        'treffen',
+        'trinken',
+        'waschen',
+      }.every(
+        (german) => items.any(
+          (item) =>
+              item.type == LearningItemType.verb &&
+              item.content['german'] == german,
+        ),
+      ),
       isTrue,
     );
     expect(

@@ -182,6 +182,7 @@ final class UiStrings {
         'Добавьте в активный словарь все 27 глаголов (доступно $available/27).',
       );
   String grammarFormLabel(String key) => switch (key) {
+        'translation' => choose('Russische Übersetzung', 'Перевод'),
         'present' => 'Präsens (er/sie/es)',
         'preterite' => 'Präteritum',
         'auxiliary' => choose('Hilfsverb', 'Вспомогательный глагол'),
