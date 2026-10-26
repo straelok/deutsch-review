@@ -48,6 +48,23 @@ void main() {
     );
   });
 
+  test('requires both auxiliary verbs when both are expected', () {
+    expect(
+      isAnyPracticeAnswerCorrect(
+        answer: 'ist',
+        expectedAlternatives: 'ist hat;hat ist',
+      ),
+      isFalse,
+    );
+    expect(
+      isAnyPracticeAnswerCorrect(
+        answer: 'hat ist',
+        expectedAlternatives: 'ist hat;hat ist',
+      ),
+      isTrue,
+    );
+  });
+
   test('appends one normalized Russian answer without duplicates', () {
     expect(
       appendRussianPracticeAnswerAlternative(

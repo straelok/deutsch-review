@@ -1686,7 +1686,7 @@ void main() {
     expect(find.byKey(const Key('grammar-form-translation')), findsOneWidget);
     expect(find.byKey(const Key('grammar-form-present')), findsOneWidget);
     expect(find.byKey(const Key('grammar-form-preterite')), findsOneWidget);
-    expect(find.byKey(const Key('grammar-form-auxiliary')), findsOneWidget);
+    expect(find.byKey(const Key('grammar-form-auxiliaries')), findsOneWidget);
     expect(find.byKey(const Key('grammar-form-participle')), findsOneWidget);
     final restarted = (await SqliteDailySessionRepository(database)
         .findById('stale-irregular-run'))!;
@@ -1694,6 +1694,18 @@ void main() {
     expect(restarted.targetAnswers, 27);
     expect(restarted.queueItemIds.toSet(), exerciseIds.toSet());
     expect(restarted.contentVersion, bundledContentVersion);
+
+    final checkButton = find.byKey(const Key('check-grammar-answer'));
+    await tester.ensureVisible(checkButton);
+    await tester.pumpAndSettle();
+    await tester.tap(checkButton);
+    await tester.pump();
+    expect(find.byKey(const Key('next-grammar-answer')), findsOneWidget);
+    final emptyAttempts = database.connection.select(
+      "SELECT correct FROM grammar_attempts WHERE session_id = 'stale-irregular-run'",
+    );
+    expect(emptyAttempts, hasLength(5));
+    expect(emptyAttempts.every((row) => row['correct'] == 0), isTrue);
   });
 
   testWidgets('mixes learned foundation topics and supports new answer modes', (
@@ -2116,7 +2128,7 @@ GrammarCatalog _irregularVerbCatalog() {
           'translation': ['перевод-$index'],
           'present': ['form-$index'],
           'preterite': ['preterite-$index'],
-          'auxiliary': ['hat'],
+          'auxiliaries': ['ist hat', 'hat ist'],
           'participle': ['participle-$index'],
         },
         instructionDe: 'Schreibe Übersetzung und Formen.',

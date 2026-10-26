@@ -186,6 +186,7 @@ final class UiStrings {
         'present' => 'Präsens (er/sie/es)',
         'preterite' => 'Präteritum',
         'auxiliary' => choose('Hilfsverb', 'Вспомогательный глагол'),
+        'auxiliaries' => choose('Hilfsverben', 'Вспомогательные глаголы'),
         'participle' => 'Partizip II',
         _ => key,
       };

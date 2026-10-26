@@ -2201,14 +2201,14 @@
         "Im Präteritum steht das Verb allein: bleiben — blieb, sehen — sah.",
         "Für jede Karte schreibe die russische Übersetzung und vier Formen: Präsens er/sie/es, Präteritum, Hilfsverb und Partizip II.",
         "Beispiel: bleiben — оставаться, bleibt, blieb, ist, geblieben.",
-        "Ohne Satzkontext können fahren, fliegen und schwimmen das Perfekt mit sein oder haben bilden; beide Hilfsverben werden akzeptiert."
+        "Fahren, fliegen und schwimmen können das Perfekt mit sein und haben bilden. Gib bei diesen drei Verben beide Hilfsverben ein, zum Beispiel: ist hat."
       ],
       "explanation_ru": [
         "У неправильных глаголов может меняться корневая гласная в Präsens: lesen — er liest, fahren — er fährt.",
         "В Präteritum глагол используется самостоятельно: bleiben — blieb, sehen — sah.",
         "Для каждой карточки введите русский перевод и четыре формы: Präsens er/sie/es, Präteritum, вспомогательный глагол и Partizip II.",
         "Пример: bleiben — оставаться, bleibt, blieb, ist, geblieben.",
-        "Без контекста fahren, fliegen и schwimmen могут образовывать Perfekt с sein или haben; принимаются оба варианта."
+        "Fahren, fliegen и schwimmen могут образовывать Perfekt с sein и haben. Для этих трёх глаголов введите оба вспомогательных глагола, например: ist hat."
       ],
       "table": [
         [
@@ -2220,24 +2220,115 @@
         ],
         [
           "bleiben",
-          "оставаться",
+          "оставаться; остаться",
           "bleibt",
           "blieb",
           "ist geblieben"
         ],
         [
           "essen",
-          "есть",
+          "есть; кушать",
           "isst",
           "aß",
           "hat gegessen"
         ],
         [
           "fahren",
-          "ехать",
+          "ехать; ездить",
           "fährt",
           "fuhr",
-          "ist gefahren"
+          "ist/hat gefahren"
+        ],
+        [
+          "finden",
+          "находить",
+          "findet",
+          "fand",
+          "hat gefunden"
+        ],
+        [
+          "fliegen",
+          "летать; лететь",
+          "fliegt",
+          "flog",
+          "ist/hat geflogen"
+        ],
+        [
+          "geben",
+          "давать; дать",
+          "gibt",
+          "gab",
+          "hat gegeben"
+        ],
+        [
+          "haben",
+          "иметь",
+          "hat",
+          "hatte",
+          "hat gehabt"
+        ],
+        [
+          "helfen",
+          "помогать",
+          "hilft",
+          "half",
+          "hat geholfen"
+        ],
+        [
+          "kommen",
+          "приходить; приезжать; прибывать",
+          "kommt",
+          "kam",
+          "ist gekommen"
+        ],
+        [
+          "laufen",
+          "бежать; ходить пешком",
+          "läuft",
+          "lief",
+          "ist gelaufen"
+        ],
+        [
+          "lesen",
+          "читать",
+          "liest",
+          "las",
+          "hat gelesen"
+        ],
+        [
+          "liegen",
+          "лежать; находиться",
+          "liegt",
+          "lag",
+          "hat gelegen"
+        ],
+        [
+          "nehmen",
+          "брать; взять",
+          "nimmt",
+          "nahm",
+          "hat genommen"
+        ],
+        [
+          "schlafen",
+          "спать",
+          "schläft",
+          "schlief",
+          "hat geschlafen"
+        ],
+        [
+          "schließen",
+          "закрывать; запирать",
+          "schließt",
+          "schloss",
+          "hat geschlossen"
+        ],
+        [
+          "schneiden",
+          "резать",
+          "schneidet",
+          "schnitt",
+          "hat geschnitten"
         ],
         [
           "schreiben",
@@ -2245,6 +2336,76 @@
           "schreibt",
           "schrieb",
           "hat geschrieben"
+        ],
+        [
+          "schwimmen",
+          "плавать",
+          "schwimmt",
+          "schwamm",
+          "ist/hat geschwommen"
+        ],
+        [
+          "sehen",
+          "видеть; смотреть",
+          "sieht",
+          "sah",
+          "hat gesehen"
+        ],
+        [
+          "sein",
+          "быть",
+          "ist",
+          "war",
+          "ist gewesen"
+        ],
+        [
+          "sitzen",
+          "сидеть",
+          "sitzt",
+          "saß",
+          "hat gesessen"
+        ],
+        [
+          "sprechen",
+          "говорить",
+          "spricht",
+          "sprach",
+          "hat gesprochen"
+        ],
+        [
+          "stehen",
+          "стоять; находиться",
+          "steht",
+          "stand",
+          "hat gestanden"
+        ],
+        [
+          "tragen",
+          "нести; носить",
+          "trägt",
+          "trug",
+          "hat getragen"
+        ],
+        [
+          "treffen",
+          "встречать; встречаться",
+          "trifft",
+          "traf",
+          "hat getroffen"
+        ],
+        [
+          "trinken",
+          "пить",
+          "trinkt",
+          "trank",
+          "hat getrunken"
+        ],
+        [
+          "waschen",
+          "мыть; стирать",
+          "wäscht",
+          "wusch",
+          "hat gewaschen"
         ]
       ],
       "trainable": true

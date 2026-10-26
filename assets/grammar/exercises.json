@@ -23322,7 +23322,7 @@
         "translation": ["ехать", "ездить"],
         "present": ["fährt"],
         "preterite": ["fuhr"],
-        "auxiliary": ["ist", "hat"],
+        "auxiliaries": ["ist hat", "hat ist"],
         "participle": ["gefahren"]
       },
       "instruction_de": "Schreibe die russische Übersetzung, Präsens, Präteritum, Hilfsverb und Partizip II.",
@@ -23358,7 +23358,7 @@
         "translation": ["летать", "лететь"],
         "present": ["fliegt"],
         "preterite": ["flog"],
-        "auxiliary": ["ist", "hat"],
+        "auxiliaries": ["ist hat", "hat ist"],
         "participle": ["geflogen"]
       },
       "instruction_de": "Schreibe die russische Übersetzung, Präsens, Präteritum, Hilfsverb und Partizip II.",
@@ -23592,7 +23592,7 @@
         "translation": ["плавать"],
         "present": ["schwimmt"],
         "preterite": ["schwamm"],
-        "auxiliary": ["ist", "hat"],
+        "auxiliaries": ["ist hat", "hat ist"],
         "participle": ["geschwommen"]
       },
       "instruction_de": "Schreibe die russische Übersetzung, Präsens, Präteritum, Hilfsverb und Partizip II.",

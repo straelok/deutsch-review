@@ -244,14 +244,20 @@ void main() {
         'translation': ['ехать', 'ездить'],
         'present': ['fährt'],
         'preterite': ['fuhr'],
-        'auxiliary': ['ist', 'hat'],
+        'auxiliaries': ['ist hat', 'hat ist'],
         'participle': ['gefahren'],
       },
     );
+    final irregularTopic = catalog.topics.singleWhere(
+      (topic) => topic.id == 'irregular_verb_forms',
+    );
+    expect(irregularTopic.table, hasLength(28));
     expect(
-      catalog.topics
-          .singleWhere((topic) => topic.id == 'irregular_verb_forms')
-          .practiceSection,
+      irregularTopic.table.skip(1).map((row) => row.first).toSet(),
+      irregularForms.map((exercise) => exercise.lemma).toSet(),
+    );
+    expect(
+      irregularTopic.practiceSection,
       'other',
     );
   });

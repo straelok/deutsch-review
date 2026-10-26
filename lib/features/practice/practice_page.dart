@@ -3122,7 +3122,7 @@ class _PracticePageState extends State<PracticePage> {
     _focusNextButton();
   }
 
-  Future<void> _checkGrammar() => _submitGrammar(allowEmpty: false);
+  Future<void> _checkGrammar() => _submitGrammar(allowEmpty: true);
 
   Future<void> _unknownGrammarAnswer() => _submitGrammar(allowEmpty: true);
 

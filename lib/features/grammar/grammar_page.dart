@@ -455,24 +455,30 @@ class _GrammarTopicDialogState extends State<_GrammarTopicDialog> {
               ),
               if (topic.table.isNotEmpty) ...[
                 const SizedBox(height: 8),
-                Table(
-                  border: TableBorder.all(
-                    color: Theme.of(context).colorScheme.outlineVariant,
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: SizedBox(
+                    width: topic.table.first.length * 136,
+                    child: Table(
+                      border: TableBorder.all(
+                        color: Theme.of(context).colorScheme.outlineVariant,
+                      ),
+                      children: topic.table
+                          .map(
+                            (row) => TableRow(
+                              children: row
+                                  .map(
+                                    (cell) => Padding(
+                                      padding: const EdgeInsets.all(8),
+                                      child: Text(cell),
+                                    ),
+                                  )
+                                  .toList(growable: false),
+                            ),
+                          )
+                          .toList(growable: false),
+                    ),
                   ),
-                  children: topic.table
-                      .map(
-                        (row) => TableRow(
-                          children: row
-                              .map(
-                                (cell) => Padding(
-                                  padding: const EdgeInsets.all(8),
-                                  child: Text(cell),
-                                ),
-                              )
-                              .toList(growable: false),
-                        ),
-                      )
-                      .toList(growable: false),
                 ),
               ],
               if (topic.trainable) ...[
