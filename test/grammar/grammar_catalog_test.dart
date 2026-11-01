@@ -64,7 +64,7 @@ void main() {
         .where((topic) => topic.trainable)
         .map((topic) => topic.id)
         .toSet();
-    expect(trainableTopics, hasLength(38));
+    expect(trainableTopics, hasLength(43));
     expect(
       catalog.topics.any((topic) => topic.id == 'personal_pronouns'),
       isFalse,
@@ -125,7 +125,8 @@ void main() {
     }
   });
 
-  test('covers the course through lesson 9 and irregular verb forms', () async {
+  test('covers the course through lesson 11 and irregular verb forms',
+      () async {
     final catalog = await GrammarCatalog.load(rootBundle);
     final topicIds = catalog.topics.map((topic) => topic.id).toSet();
 
@@ -170,8 +171,13 @@ void main() {
       'pronoun_man',
       'imperative',
       'irregular_verb_forms',
+      'modal_sollen',
+      'dative_mit',
+      'local_prepositions_wo',
+      'direction_prepositions_wohin',
+      'ordinal_numbers',
     });
-    expect(catalog.exercises, hasLength(2192));
+    expect(catalog.exercises, hasLength(2333));
 
     int exerciseCount(String topicId) => catalog.exercises
         .where((exercise) => exercise.topicId == topicId)
@@ -181,7 +187,12 @@ void main() {
     expect(exerciseCount('modal_verbs_koennen_wollen'), 24);
     expect(exerciseCount('perfect_haben'), 32);
     expect(exerciseCount('perfect_sein'), 20);
-    expect(exerciseCount('irregular_verb_forms'), 27);
+    expect(exerciseCount('irregular_verb_forms'), 28);
+    expect(exerciseCount('modal_sollen'), 20);
+    expect(exerciseCount('dative_mit'), 20);
+    expect(exerciseCount('local_prepositions_wo'), 20);
+    expect(exerciseCount('direction_prepositions_wohin'), 20);
+    expect(exerciseCount('ordinal_numbers'), 20);
 
     final irregularForms = catalog.exercises
         .where((exercise) => exercise.topicId == 'irregular_verb_forms')
@@ -195,6 +206,7 @@ void main() {
         'finden',
         'fliegen',
         'geben',
+        'gehen',
         'haben',
         'helfen',
         'kommen',
@@ -220,11 +232,11 @@ void main() {
     );
     expect(
       catalog.exercise('irregular-forms-bleiben')?.answer,
-      'bleibt blieb ist geblieben',
+      'bleibt ist geblieben',
     );
     expect(
       catalog.exercise('irregular-forms-sitzen')?.answer,
-      'sitzt saß hat gesessen',
+      'sitzt hat gesessen',
     );
     expect(
       irregularForms.map((exercise) => exercise.type).toSet(),
@@ -233,7 +245,8 @@ void main() {
     expect(
       irregularForms.every(
         (exercise) =>
-            exercise.formAnswers.length == 5 &&
+            exercise.formAnswers.length == 4 &&
+            !exercise.formAnswers.containsKey('preterite') &&
             exercise.formAnswers['translation']?.isNotEmpty == true,
       ),
       isTrue,
@@ -243,7 +256,6 @@ void main() {
       {
         'translation': ['ехать', 'ездить'],
         'present': ['fährt'],
-        'preterite': ['fuhr'],
         'auxiliaries': ['ist hat', 'hat ist'],
         'participle': ['gefahren'],
       },
@@ -251,7 +263,9 @@ void main() {
     final irregularTopic = catalog.topics.singleWhere(
       (topic) => topic.id == 'irregular_verb_forms',
     );
-    expect(irregularTopic.table, hasLength(28));
+    expect(irregularTopic.table, hasLength(29));
+    expect(irregularTopic.table.every((row) => row.length == 4), isTrue);
+    expect(irregularTopic.table.first, isNot(contains('Präteritum')));
     expect(
       irregularTopic.table.skip(1).map((row) => row.first).toSet(),
       irregularForms.map((exercise) => exercise.lemma).toSet(),

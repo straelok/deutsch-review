@@ -1087,50 +1087,74 @@
     {
       "id": "possessive_articles",
       "order": 10,
-      "title_de": "Possessivartikel: mein, dein und Ihr",
-      "title_ru": "Притяжательные слова: mein, dein и Ihr",
-      "summary_de": "Die Endung richtet sich nach Genus und Zahl des folgenden Nomens.",
-      "summary_ru": "Окончание зависит от рода и числа следующего существительного.",
+      "title_de": "Possessivartikel im Nominativ und Akkusativ",
+      "title_ru": "Притяжательные артикли в Nominativ и Akkusativ",
+      "summary_de": "mein, dein, sein, ihr, unser, euer, Ihr und ihre Endungen.",
+      "summary_ru": "Формы mein, dein, sein, ihr, unser, euer, Ihr и их окончания.",
       "explanation_de": [
-        "Possessivartikel zeigen Zugehörigkeit: mein bedeutet «zu mir», dein «zu dir» und Ihr «zu Ihnen».",
-        "Im Nominativ haben maskuline und neutrale Nomen keine Endung: mein Bruder, mein Kind. Feminine Nomen und der Plural bekommen -e: meine Tochter, meine Kinder.",
-        "Dasselbe Muster gilt für dein/deine und Ihr/Ihre: dein Vater, deine Mutter; Ihr Sohn, Ihre Tochter.",
-        "Ihr und Ihre werden großgeschrieben, wenn sie zur höflichen Anrede Sie gehören. Das kleingeschriebene ihr kann dagegen das Pronomen «вы» oder das Possessivwort «её/их» sein.",
-        "Bestimme zuerst das Nomen: Bruder ist maskulin, Kind neutral, Tochter feminin und Kinder Plural. Wähle danach die Form ohne -e oder mit -e.",
-        "Im Akkusativ bekommt nur die maskuline Form -en: meinen Bruder, deinen Schrank. Neutrum, Femininum und Plural bleiben wie im Nominativ."
+        "Possessivartikel zeigen, wem eine Person oder Sache gehört: mein Auge, deine Hand, sein Bein, ihre Ohren.",
+        "Der Stamm richtet sich nach dem Besitzer: ich – mein, du – dein, er/es – sein, sie – ihr, wir – unser, ihr – euer, sie – ihr, Sie – Ihr.",
+        "Im Nominativ haben maskuline und neutrale Nomen keine Endung. Feminine Nomen und der Plural bekommen -e.",
+        "Im Akkusativ bekommt die maskuline Form -en. Neutrum, Femininum und Plural bleiben wie im Nominativ.",
+        "Bei euer fällt vor einer Endung meist das zweite e weg: eure Mutter, euren Vater.",
+        "Das höfliche Ihr wird großgeschrieben; ihr kann „её“ oder „их“ bedeuten."
       ],
       "explanation_ru": [
-        "Притяжательные слова по-немецки называются Possessivartikel. Они показывают принадлежность: mein — «мой», dein — «твой», Ihr — вежливое «Ваш».",
-        "В Nominativ (именительном падеже) перед мужским и средним родом окончания нет: mein Bruder, mein Kind. Перед женским родом и множественным числом добавляется -e: meine Tochter, meine Kinder.",
-        "Та же модель действует для dein/deine и Ihr/Ihre: dein Vater, deine Mutter; Ihr Sohn, Ihre Tochter.",
-        "Ihr и Ihre пишутся с заглавной буквы, когда относятся к вежливому Sie. Строчное ihr может быть местоимением «вы» или притяжательным словом «её/их».",
-        "Сначала определите существительное: Bruder — мужской род, Kind — средний, Tochter — женский, Kinder — множественное число. Затем выберите форму без -e или с -e.",
-        "В Akkusativ только форма мужского рода получает -en: meinen Bruder, deinen Schrank. Средний, женский род и множественное число выглядят как в Nominativ."
+        "Притяжательный артикль показывает владельца: mein Auge — мой глаз, deine Hand — твоя рука, sein Bein — его нога, ihre Ohren — её уши.",
+        "Основа зависит от владельца: ich – mein, du – dein, er/es – sein, sie – ihr, wir – unser, ihr – euer, sie – ihr, Sie – Ihr.",
+        "В Nominativ перед мужским и средним родом окончания нет. Женский род и множественное число получают -e.",
+        "В Akkusativ только мужской род получает окончание -en. Остальные формы совпадают с Nominativ.",
+        "У euer перед окончанием обычно выпадает второе e: eure Mutter, euren Vater.",
+        "Вежливое Ihr пишется с заглавной буквы; ihr со строчной может означать «её» или «их»."
       ],
       "table": [
         [
-          "Person / Лицо",
-          "Nominativ maskulin/neutrum",
-          "Nominativ feminin/plural",
+          "Person",
+          "maskulin/neutrum",
+          "feminin/plural",
           "Akkusativ maskulin"
         ],
         [
-          "ich — я",
-          "mein Bruder / mein Kind",
-          "meine Tochter / meine Kinder",
-          "meinen Bruder"
+          "ich",
+          "mein",
+          "meine",
+          "meinen"
         ],
         [
-          "du — ты",
-          "dein Bruder / dein Kind",
-          "deine Tochter / deine Kinder",
-          "deinen Bruder"
+          "du",
+          "dein",
+          "deine",
+          "deinen"
         ],
         [
-          "Sie — Вы",
-          "Ihr Bruder / Ihr Kind",
-          "Ihre Tochter / Ihre Kinder",
-          "Ihren Bruder"
+          "er/es",
+          "sein",
+          "seine",
+          "seinen"
+        ],
+        [
+          "sie",
+          "ihr",
+          "ihre",
+          "ihren"
+        ],
+        [
+          "wir",
+          "unser",
+          "unsere",
+          "unseren"
+        ],
+        [
+          "ihr",
+          "euer",
+          "eure",
+          "euren"
+        ],
+        [
+          "sie/Sie",
+          "ihr/Ihr",
+          "ihre/Ihre",
+          "ihren/Ihren"
         ]
       ],
       "trainable": true
@@ -1339,46 +1363,60 @@
       "order": 15,
       "title_de": "W-Fragen",
       "title_ru": "Вопросы с вопросительным словом",
-      "summary_de": "Das Fragewort nennt die gesuchte Information.",
-      "summary_ru": "Вопросительное слово показывает, какую информацию нужно назвать.",
+      "summary_de": "Fragewörter für Personen, Sachen, Ort, Richtung, Zeit, Grund, Art und Menge.",
+      "summary_ru": "Вопросительные слова для людей, предметов, места, направления, времени, причины, способа и количества.",
       "explanation_de": [
-        "Wer fragt nach einer Person, was nach einer Sache, wo nach einem Ort, wann nach einer Zeit und wie nach der Art.",
-        "Nach dem Fragewort steht meist das konjugierte Verb: Wo wohnst du?",
-        "Wo fragt nach einem festen Ort, wohin nach einer Richtung und woher nach einer Herkunft: Wo bist du? Wohin gehst du? Woher kommst du?",
-        "Wer kann selbst das Subjekt sein. Dann folgt direkt das Verb: Wer kommt heute? Bei „wen“ ist die gesuchte Person ein Akkusativobjekt: Wen siehst du?",
-        "Wie verbindet sich oft mit weiteren Wörtern: Wie alt? Wie viel? Wie lange? Das präzisiert die gesuchte Information."
+        "Das Fragewort steht meist an Position 1, direkt danach folgt das konjugierte Verb: Wo wohnst du?",
+        "Wer, wen, wem und wessen fragen nach einer Person in verschiedenen Fällen. Was fragt nach einer Sache.",
+        "Wo fragt nach einem Ort, wohin nach einer Richtung und woher nach einer Herkunft.",
+        "Wann, seit wann und bis wann fragen nach Zeit; warum, wieso und weshalb nach einem Grund.",
+        "Wie kann mit einem Zusatz stehen: wie alt, wie lange, wie oft, wie viel oder wie viele.",
+        "Welcher, welche, welches und welchen richten sich nach Genus und Kasus des Nomens."
       ],
       "explanation_ru": [
-        "Wer спрашивает о человеке, was — о предмете, wo — о месте, wann — о времени, wie — о способе.",
-        "После вопросительного слова обычно стоит спрягаемый глагол: Wo wohnst du?",
-        "Wo спрашивает о месте, wohin — о направлении, woher — о происхождении: Wo bist du? Wohin gehst du? Woher kommst du?",
-        "Wer может быть самим подлежащим (das Subjekt), тогда сразу после него идёт глагол: Wer kommt heute? С wen человек является дополнением в Akkusativ (винительном падеже): Wen siehst du?",
-        "Wie часто соединяется с другими словами: Wie alt? Wie viel? Wie lange? Так вопрос становится точнее."
+        "Вопросительное слово обычно занимает первое место, а сразу после него стоит спрягаемый глагол: Wo wohnst du?",
+        "Wer, wen, wem и wessen спрашивают о человеке в разных падежах. Was спрашивает о предмете.",
+        "Wo означает «где», wohin — «куда», woher — «откуда».",
+        "Wann, seit wann и bis wann спрашивают о времени; warum, wieso и weshalb — о причине.",
+        "Wie образует уточнённые вопросы: wie alt, wie lange, wie oft, wie viel, wie viele.",
+        "Форма welcher, welche, welches или welchen зависит от рода и падежа существительного."
       ],
       "table": [
         [
-          "Fragewort / Вопросительное слово",
-          "Wonach? / О чём спрашивает?"
+          "Fragewort",
+          "Bedeutung"
         ],
         [
-          "Wer? — кто?",
-          "Person / человек"
+          "wer / wen / wem / wessen",
+          "кто / кого / кому / чей"
         ],
         [
-          "Was? — что?",
-          "Sache / предмет"
+          "was",
+          "что"
         ],
         [
-          "Wo? — где?",
-          "Ort / место"
+          "wo / wohin / woher",
+          "где / куда / откуда"
         ],
         [
-          "Wann? — когда?",
-          "Zeit / время"
+          "wann / seit wann / bis wann",
+          "когда / с каких пор / до какого времени"
         ],
         [
-          "Wie? — как?",
-          "Art / способ"
+          "warum / wieso / weshalb",
+          "почему"
+        ],
+        [
+          "wie / wie lange / wie oft",
+          "как / как долго / как часто"
+        ],
+        [
+          "wie viel / wie viele",
+          "сколько"
+        ],
+        [
+          "welcher / welche / welches",
+          "какой / какая / какое"
         ]
       ],
       "trainable": true
@@ -1823,7 +1861,7 @@
           "willst"
         ],
         [
-          "er/sie/es",
+          "Präsens (er/sie/es)",
           "kann",
           "will"
         ],
@@ -2191,220 +2229,196 @@
     {
       "id": "irregular_verb_forms",
       "order": 32,
-      "title_de": "27 unregelmäßige Verben",
-      "title_ru": "27 неправильных глаголов",
-      "summary_de": "Lerne die russische Übersetzung, Präsens, Präteritum und Perfekt zusammen.",
-      "summary_ru": "Учите русский перевод, Präsens, Präteritum и Perfekt вместе.",
+      "title_de": "28 unregelmäßige Verben",
+      "title_ru": "28 неправильных глаголов",
+      "summary_de": "Lerne die russische Übersetzung, Präsens und Perfekt zusammen.",
+      "summary_ru": "Учите русский перевод, Präsens и Perfekt вместе.",
       "practice_section": "other",
       "explanation_de": [
         "Unregelmäßige Verben können im Präsens den Stammvokal ändern: lesen — er liest, fahren — er fährt.",
-        "Im Präteritum steht das Verb allein: bleiben — blieb, sehen — sah.",
-        "Für jede Karte schreibe die russische Übersetzung und vier Formen: Präsens er/sie/es, Präteritum, Hilfsverb und Partizip II.",
-        "Beispiel: bleiben — оставаться, bleibt, blieb, ist, geblieben.",
+        "Für jede Karte schreibe die russische Übersetzung und drei Formen: Präsens er/sie/es, Hilfsverb und Partizip II.",
+        "Beispiel: bleiben — оставаться, bleibt, ist, geblieben.",
         "Fahren, fliegen und schwimmen können das Perfekt mit sein und haben bilden. Gib bei diesen drei Verben beide Hilfsverben ein, zum Beispiel: ist hat."
       ],
       "explanation_ru": [
         "У неправильных глаголов может меняться корневая гласная в Präsens: lesen — er liest, fahren — er fährt.",
-        "В Präteritum глагол используется самостоятельно: bleiben — blieb, sehen — sah.",
-        "Для каждой карточки введите русский перевод и четыре формы: Präsens er/sie/es, Präteritum, вспомогательный глагол и Partizip II.",
-        "Пример: bleiben — оставаться, bleibt, blieb, ist, geblieben.",
+        "Для каждой карточки введите русский перевод и три формы: Präsens er/sie/es, вспомогательный глагол и Partizip II.",
+        "Пример: bleiben — оставаться, bleibt, ist, geblieben.",
         "Fahren, fliegen и schwimmen могут образовывать Perfekt с sein и haben. Для этих трёх глаголов введите оба вспомогательных глагола, например: ist hat."
       ],
       "table": [
         [
           "Infinitiv",
           "Übersetzung (RU)",
-          "er/sie/es",
-          "Präteritum",
+          "Präsens (er/sie/es)",
           "Perfekt"
         ],
         [
           "bleiben",
           "оставаться; остаться",
           "bleibt",
-          "blieb",
           "ist geblieben"
         ],
         [
           "essen",
           "есть; кушать",
           "isst",
-          "aß",
           "hat gegessen"
         ],
         [
           "fahren",
           "ехать; ездить",
           "fährt",
-          "fuhr",
           "ist/hat gefahren"
         ],
         [
           "finden",
           "находить",
           "findet",
-          "fand",
           "hat gefunden"
         ],
         [
           "fliegen",
           "летать; лететь",
           "fliegt",
-          "flog",
           "ist/hat geflogen"
         ],
         [
           "geben",
           "давать; дать",
           "gibt",
-          "gab",
           "hat gegeben"
+        ],
+        [
+          "gehen",
+          "идти; ходить",
+          "geht",
+          "ist gegangen"
         ],
         [
           "haben",
           "иметь",
           "hat",
-          "hatte",
           "hat gehabt"
         ],
         [
           "helfen",
           "помогать",
           "hilft",
-          "half",
           "hat geholfen"
         ],
         [
           "kommen",
           "приходить; приезжать; прибывать",
           "kommt",
-          "kam",
           "ist gekommen"
         ],
         [
           "laufen",
           "бежать; ходить пешком",
           "läuft",
-          "lief",
           "ist gelaufen"
         ],
         [
           "lesen",
           "читать",
           "liest",
-          "las",
           "hat gelesen"
         ],
         [
           "liegen",
           "лежать; находиться",
           "liegt",
-          "lag",
           "hat gelegen"
         ],
         [
           "nehmen",
           "брать; взять",
           "nimmt",
-          "nahm",
           "hat genommen"
         ],
         [
           "schlafen",
           "спать",
           "schläft",
-          "schlief",
           "hat geschlafen"
         ],
         [
           "schließen",
           "закрывать; запирать",
           "schließt",
-          "schloss",
           "hat geschlossen"
         ],
         [
           "schneiden",
           "резать",
           "schneidet",
-          "schnitt",
           "hat geschnitten"
         ],
         [
           "schreiben",
           "писать",
           "schreibt",
-          "schrieb",
           "hat geschrieben"
         ],
         [
           "schwimmen",
           "плавать",
           "schwimmt",
-          "schwamm",
           "ist/hat geschwommen"
         ],
         [
           "sehen",
           "видеть; смотреть",
           "sieht",
-          "sah",
           "hat gesehen"
         ],
         [
           "sein",
           "быть",
           "ist",
-          "war",
           "ist gewesen"
         ],
         [
           "sitzen",
           "сидеть",
           "sitzt",
-          "saß",
           "hat gesessen"
         ],
         [
           "sprechen",
           "говорить",
           "spricht",
-          "sprach",
           "hat gesprochen"
         ],
         [
           "stehen",
           "стоять; находиться",
           "steht",
-          "stand",
           "hat gestanden"
         ],
         [
           "tragen",
           "нести; носить",
           "trägt",
-          "trug",
           "hat getragen"
         ],
         [
           "treffen",
           "встречать; встречаться",
           "trifft",
-          "traf",
           "hat getroffen"
         ],
         [
           "trinken",
           "пить",
           "trinkt",
-          "trank",
           "hat getrunken"
         ],
         [
           "waschen",
           "мыть; стирать",
           "wäscht",
-          "wusch",
           "hat gewaschen"
         ]
       ],
@@ -2558,6 +2572,247 @@
           "Sei!",
           "Seid!",
           "Seien Sie!"
+        ]
+      ],
+      "trainable": true
+    },
+    {
+      "id": "modal_sollen",
+      "order": 36,
+      "title_de": "Das Modalverb sollen",
+      "title_ru": "Модальный глагол sollen",
+      "summary_de": "Empfehlungen, Aufträge und Erwartungen formulieren.",
+      "summary_ru": "Советы, поручения и ожидания с глаголом sollen.",
+      "explanation_de": [
+        "sollen formuliert einen Rat, einen Auftrag oder eine Erwartung: Du sollst viel trinken.",
+        "Die Formen sind: ich soll, du sollst, er/sie/es soll, wir sollen, ihr sollt, sie/Sie sollen.",
+        "Die konjugierte Form steht an Position 2, der zweite Infinitiv am Satzende.",
+        "In einer Ja/Nein-Frage steht sollen am Anfang: Soll ich den Arzt rufen?"
+      ],
+      "explanation_ru": [
+        "sollen выражает совет, поручение или ожидание: Du sollst viel trinken.",
+        "Формы: ich soll, du sollst, er/sie/es soll, wir sollen, ihr sollt, sie/Sie sollen.",
+        "Спрягаемая форма sollen стоит на втором месте, смысловой инфинитив — в конце.",
+        "В вопросе без вопросительного слова sollen стоит первым: Soll ich den Arzt rufen?"
+      ],
+      "table": [
+        [
+          "Person",
+          "Form"
+        ],
+        [
+          "ich",
+          "soll"
+        ],
+        [
+          "du",
+          "sollst"
+        ],
+        [
+          "er/sie/es",
+          "soll"
+        ],
+        [
+          "wir/sie/Sie",
+          "sollen"
+        ],
+        [
+          "ihr",
+          "sollt"
+        ],
+        [
+          "Satz",
+          "Sie soll zu Hause bleiben."
+        ]
+      ],
+      "trainable": true
+    },
+    {
+      "id": "dative_mit",
+      "order": 37,
+      "title_de": "mit + Dativ",
+      "title_ru": "Предлог mit с Dativ",
+      "summary_de": "Verkehrsmittel und Begleitung mit dem Dativ ausdrücken.",
+      "summary_ru": "Транспорт и совместность: предлог mit требует Dativ.",
+      "explanation_de": [
+        "Die Präposition mit verlangt immer den Dativ: mit dem Bus, mit der U-Bahn, mit den Kindern.",
+        "der und das werden zu dem, die wird zu der, der Pluralartikel die wird zu den.",
+        "Im Plural bekommt das Nomen meistens zusätzlich -n: mit den Kindern.",
+        "mit bezeichnet ein Mittel oder eine Begleitung: mit dem Zug, mit meiner Freundin."
+      ],
+      "explanation_ru": [
+        "Предлог mit всегда требует Dativ: mit dem Bus, mit der U-Bahn, mit den Kindern.",
+        "der и das превращаются в dem, die — в der, множественное die — в den.",
+        "Во множественном числе существительное обычно получает -n: mit den Kindern.",
+        "mit обозначает средство или совместность: mit dem Zug, mit meiner Freundin."
+      ],
+      "table": [
+        [
+          "Nominativ",
+          "Dativ mit"
+        ],
+        [
+          "der Bus",
+          "mit dem Bus"
+        ],
+        [
+          "das Auto",
+          "mit dem Auto"
+        ],
+        [
+          "die U-Bahn",
+          "mit der U-Bahn"
+        ],
+        [
+          "die Kinder",
+          "mit den Kindern"
+        ]
+      ],
+      "trainable": true
+    },
+    {
+      "id": "local_prepositions_wo",
+      "order": 38,
+      "title_de": "Wo? Lokale Präpositionen + Dativ",
+      "title_ru": "Wo? Местные предлоги с Dativ",
+      "summary_de": "Eine feste Position mit an, auf, bei, hinter, in, neben, über, unter, vor und zwischen.",
+      "summary_ru": "Местонахождение с an, auf, bei, hinter, in, neben, über, unter, vor и zwischen.",
+      "explanation_de": [
+        "Die Frage Wo? sucht eine feste Position, keine Bewegung zu einem Ziel.",
+        "Nach an, auf, hinter, in, neben, über, unter, vor und zwischen steht bei Wo? der Dativ.",
+        "Kurzformen sind an dem = am und in dem = im. Bei Personen steht oft bei: beim Arzt, bei Walter.",
+        "Beispiele: Die Apotheke ist neben der Post. Das Auto steht vor dem Haus."
+      ],
+      "explanation_ru": [
+        "Вопрос Wo? спрашивает о местонахождении без движения к цели.",
+        "После an, auf, hinter, in, neben, über, unter, vor и zwischen при ответе на Wo? используется Dativ.",
+        "Сокращения: an dem = am, in dem = im. Для людей часто используется bei: beim Arzt, bei Walter.",
+        "Пример: Die Apotheke ist neben der Post. Das Auto steht vor dem Haus."
+      ],
+      "table": [
+        [
+          "Frage",
+          "Wo ist die Person/Sache?"
+        ],
+        [
+          "an",
+          "an der Ampel"
+        ],
+        [
+          "auf",
+          "auf dem Parkplatz"
+        ],
+        [
+          "in",
+          "im Hotel"
+        ],
+        [
+          "neben",
+          "neben der Post"
+        ],
+        [
+          "zwischen",
+          "zwischen den Häusern"
+        ]
+      ],
+      "trainable": true
+    },
+    {
+      "id": "direction_prepositions_wohin",
+      "order": 39,
+      "title_de": "Wohin? Richtung mit Präpositionen",
+      "title_ru": "Wohin? Предлоги направления",
+      "summary_de": "Ziele mit zu, nach und in ausdrücken.",
+      "summary_ru": "Направление к цели с zu, nach и in.",
+      "explanation_de": [
+        "Die Frage Wohin? sucht die Richtung einer Bewegung.",
+        "Bei Personen und vielen Einrichtungen steht zu + Dativ: zum Arzt, zur Apotheke.",
+        "Bei Städten, Ländern ohne Artikel und nach Hause steht nach: nach Berlin, nach Hause.",
+        "Für das Innere eines Raums oder ein Land mit Artikel steht in + Akkusativ: ins Kino, in die Schweiz.",
+        "Kurzformen sind zu dem = zum, zu der = zur und in das = ins."
+      ],
+      "explanation_ru": [
+        "Вопрос Wohin? спрашивает о направлении движения.",
+        "К человеку и большинству учреждений употребляется zu + Dativ: zum Arzt, zur Apotheke.",
+        "С городами, странами без артикля и nach Hause употребляется nach: nach Berlin, nach Hause.",
+        "Внутрь помещения или страны с артиклем употребляется in + Akkusativ: ins Kino, in die Schweiz.",
+        "Сокращения: zu dem = zum, zu der = zur, in das = ins."
+      ],
+      "table": [
+        [
+          "Ziel",
+          "Beispiel"
+        ],
+        [
+          "Person",
+          "zu meiner Freundin"
+        ],
+        [
+          "Geschäft",
+          "zum Supermarkt / zur Apotheke"
+        ],
+        [
+          "Stadt",
+          "nach Hamburg"
+        ],
+        [
+          "Innenraum",
+          "ins Kino"
+        ],
+        [
+          "Land mit Artikel",
+          "in die Schweiz"
+        ]
+      ],
+      "trainable": true
+    },
+    {
+      "id": "ordinal_numbers",
+      "order": 40,
+      "title_de": "Ordinalzahlen",
+      "title_ru": "Порядковые числительные",
+      "summary_de": "Reihenfolgen und Wege mit erste, zweite, dritte usw.",
+      "summary_ru": "Порядок и маршруты: erste, zweite, dritte и т. д.",
+      "explanation_de": [
+        "Ordinalzahlen antworten auf die Frage der/die/das wievielte?",
+        "Von 1 bis 19 steht meistens -te: vierte, fünfte. erste, dritte, siebte und achte sind besonders.",
+        "Ab 20 steht meistens -ste: zwanzigste, einundzwanzigste.",
+        "Nach dem bestimmten Artikel passt sich die Endung an: die erste Straße, das zweite Haus."
+      ],
+      "explanation_ru": [
+        "Порядковые числительные отвечают на вопрос der/die/das wievielte?",
+        "От 1 до 19 обычно добавляется -te: vierte, fünfte. Формы erste, dritte, siebte и achte нужно запомнить.",
+        "Начиная с 20 обычно используется -ste: zwanzigste, einundzwanzigste.",
+        "После определённого артикля окончание согласуется с существительным: die erste Straße, das zweite Haus."
+      ],
+      "table": [
+        [
+          "Zahl",
+          "Ordinalzahl"
+        ],
+        [
+          "1",
+          "erste"
+        ],
+        [
+          "2",
+          "zweite"
+        ],
+        [
+          "3",
+          "dritte"
+        ],
+        [
+          "7",
+          "siebte"
+        ],
+        [
+          "8",
+          "achte"
+        ],
+        [
+          "20",
+          "zwanzigste"
         ]
       ],
       "trainable": true

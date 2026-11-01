@@ -25,6 +25,7 @@ import '../../ui/responsive.dart';
 enum _LessonGroup { toGerman, toRussian, grammar, other }
 
 const _irregularVerbTopicId = 'irregular_verb_forms';
+const _irregularVerbExerciseCount = 28;
 
 EdgeInsets _practiceCardPadding(BuildContext context) {
   return EdgeInsets.all(MediaQuery.sizeOf(context).width < 600 ? 20 : 28);
@@ -753,12 +754,14 @@ class _PracticePageState extends State<PracticePage> {
                   canAdd: true,
                   canStart:
                       _availableGrammarTopics.contains(_irregularVerbTopicId) &&
-                          _irregularVerbExercises.length == 27,
+                          _irregularVerbExercises.length ==
+                              _irregularVerbExerciseCount,
                   addKey: const Key('create-irregular-verbs-session'),
                   categoryKeyOverride: 'irregular-verb-forms',
                   onAdd: _createIrregularVerbSession,
                 ),
-                if (_irregularVerbExercises.length != 27) ...[
+                if (_irregularVerbExercises.length !=
+                    _irregularVerbExerciseCount) ...[
                   const SizedBox(height: 8),
                   Text(
                     s.irregularVerbFormsNeedsWords(
@@ -2425,7 +2428,7 @@ class _PracticePageState extends State<PracticePage> {
 
   Future<void> _createIrregularVerbSession() async {
     final exercises = [..._irregularVerbExercises]..shuffle(_random);
-    if (exercises.length != 27) return;
+    if (exercises.length != _irregularVerbExerciseCount) return;
     setState(() => _loading = true);
     var session = await widget.sessions.createExtra(
       localDate: localDayKey(DateTime.now()),
@@ -2506,7 +2509,7 @@ class _PracticePageState extends State<PracticePage> {
           activeItemKeys: _activeItemKeys(_activeItems),
         ),
       ]..shuffle(_random);
-      if (exercises.length == 27) {
+      if (exercises.length == _irregularVerbExerciseCount) {
         session = await widget.sessions.restart(
           id: session.id,
           queueItemIds:

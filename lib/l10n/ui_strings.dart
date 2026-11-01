@@ -174,12 +174,12 @@ final class UiStrings {
   String get switchLanguage => choose('Sprache wechseln', 'Сменить язык');
   String get dailyPlan => choose('Lektionen', 'Уроки');
   String get irregularVerbFormsLesson => choose(
-        '27 unregelmäßige Verben',
-        '27 неправильных глаголов',
+        '28 unregelmäßige Verben',
+        '28 неправильных глаголов',
       );
   String irregularVerbFormsNeedsWords(int available) => choose(
-        'Aktiviere alle 27 Verben im Wörterbuch ($available/27 verfügbar).',
-        'Добавьте в активный словарь все 27 глаголов (доступно $available/27).',
+        'Aktiviere alle 28 Verben im Wörterbuch ($available/28 verfügbar).',
+        'Добавьте в активный словарь все 28 глаголов (доступно $available/28).',
       );
   String grammarFormLabel(String key) => switch (key) {
         'translation' => choose('Russische Übersetzung', 'Перевод'),

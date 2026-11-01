@@ -23281,16 +23281,24 @@
       "required_item_type": "verb",
       "type": "forms",
       "prompt": "bleiben",
-      "answer": "bleibt blieb ist geblieben",
+      "answer": "bleibt ist geblieben",
       "forms": {
-        "translation": ["оставаться", "остаться"],
-        "present": ["bleibt"],
-        "preterite": ["blieb"],
-        "auxiliary": ["ist"],
-        "participle": ["geblieben"]
+        "translation": [
+          "оставаться",
+          "остаться"
+        ],
+        "present": [
+          "bleibt"
+        ],
+        "auxiliary": [
+          "ist"
+        ],
+        "participle": [
+          "geblieben"
+        ]
       },
-      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Präteritum, Hilfsverb und Partizip II.",
-      "instruction_ru": "Введите перевод, Präsens, Präteritum, hat/ist и Partizip II."
+      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Hilfsverb und Partizip II.",
+      "instruction_ru": "Введите перевод, Präsens, hat/ist и Partizip II."
     },
     {
       "id": "irregular-forms-essen",
@@ -23299,16 +23307,24 @@
       "required_item_type": "verb",
       "type": "forms",
       "prompt": "essen",
-      "answer": "isst aß hat gegessen",
+      "answer": "isst hat gegessen",
       "forms": {
-        "translation": ["есть", "кушать"],
-        "present": ["isst"],
-        "preterite": ["aß"],
-        "auxiliary": ["hat"],
-        "participle": ["gegessen"]
+        "translation": [
+          "есть",
+          "кушать"
+        ],
+        "present": [
+          "isst"
+        ],
+        "auxiliary": [
+          "hat"
+        ],
+        "participle": [
+          "gegessen"
+        ]
       },
-      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Präteritum, Hilfsverb und Partizip II.",
-      "instruction_ru": "Введите перевод, Präsens, Präteritum, hat/ist и Partizip II."
+      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Hilfsverb und Partizip II.",
+      "instruction_ru": "Введите перевод, Präsens, hat/ist и Partizip II."
     },
     {
       "id": "irregular-forms-fahren",
@@ -23317,16 +23333,25 @@
       "required_item_type": "verb",
       "type": "forms",
       "prompt": "fahren",
-      "answer": "fährt fuhr ist gefahren",
+      "answer": "fährt ist hat gefahren",
       "forms": {
-        "translation": ["ехать", "ездить"],
-        "present": ["fährt"],
-        "preterite": ["fuhr"],
-        "auxiliaries": ["ist hat", "hat ist"],
-        "participle": ["gefahren"]
+        "translation": [
+          "ехать",
+          "ездить"
+        ],
+        "present": [
+          "fährt"
+        ],
+        "auxiliaries": [
+          "ist hat",
+          "hat ist"
+        ],
+        "participle": [
+          "gefahren"
+        ]
       },
-      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Präteritum, Hilfsverb und Partizip II.",
-      "instruction_ru": "Введите перевод, Präsens, Präteritum, hat/ist и Partizip II."
+      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Hilfsverb und Partizip II.",
+      "instruction_ru": "Введите перевод, Präsens, hat/ist и Partizip II."
     },
     {
       "id": "irregular-forms-finden",
@@ -23335,16 +23360,23 @@
       "required_item_type": "verb",
       "type": "forms",
       "prompt": "finden",
-      "answer": "findet fand hat gefunden",
+      "answer": "findet hat gefunden",
       "forms": {
-        "translation": ["находить"],
-        "present": ["findet"],
-        "preterite": ["fand"],
-        "auxiliary": ["hat"],
-        "participle": ["gefunden"]
+        "translation": [
+          "находить"
+        ],
+        "present": [
+          "findet"
+        ],
+        "auxiliary": [
+          "hat"
+        ],
+        "participle": [
+          "gefunden"
+        ]
       },
-      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Präteritum, Hilfsverb und Partizip II.",
-      "instruction_ru": "Введите перевод, Präsens, Präteritum, hat/ist и Partizip II."
+      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Hilfsverb und Partizip II.",
+      "instruction_ru": "Введите перевод, Präsens, hat/ist и Partizip II."
     },
     {
       "id": "irregular-forms-fliegen",
@@ -23353,16 +23385,25 @@
       "required_item_type": "verb",
       "type": "forms",
       "prompt": "fliegen",
-      "answer": "fliegt flog ist geflogen",
+      "answer": "fliegt ist hat geflogen",
       "forms": {
-        "translation": ["летать", "лететь"],
-        "present": ["fliegt"],
-        "preterite": ["flog"],
-        "auxiliaries": ["ist hat", "hat ist"],
-        "participle": ["geflogen"]
+        "translation": [
+          "летать",
+          "лететь"
+        ],
+        "present": [
+          "fliegt"
+        ],
+        "auxiliaries": [
+          "ist hat",
+          "hat ist"
+        ],
+        "participle": [
+          "geflogen"
+        ]
       },
-      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Präteritum, Hilfsverb und Partizip II.",
-      "instruction_ru": "Введите перевод, Präsens, Präteritum, hat/ist и Partizip II."
+      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Hilfsverb und Partizip II.",
+      "instruction_ru": "Введите перевод, Präsens, hat/ist и Partizip II."
     },
     {
       "id": "irregular-forms-geben",
@@ -23371,16 +23412,24 @@
       "required_item_type": "verb",
       "type": "forms",
       "prompt": "geben",
-      "answer": "gibt gab hat gegeben",
+      "answer": "gibt hat gegeben",
       "forms": {
-        "translation": ["давать", "дать"],
-        "present": ["gibt"],
-        "preterite": ["gab"],
-        "auxiliary": ["hat"],
-        "participle": ["gegeben"]
+        "translation": [
+          "давать",
+          "дать"
+        ],
+        "present": [
+          "gibt"
+        ],
+        "auxiliary": [
+          "hat"
+        ],
+        "participle": [
+          "gegeben"
+        ]
       },
-      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Präteritum, Hilfsverb und Partizip II.",
-      "instruction_ru": "Введите перевод, Präsens, Präteritum, hat/ist и Partizip II."
+      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Hilfsverb und Partizip II.",
+      "instruction_ru": "Введите перевод, Präsens, hat/ist и Partizip II."
     },
     {
       "id": "irregular-forms-haben",
@@ -23389,16 +23438,49 @@
       "required_item_type": "verb",
       "type": "forms",
       "prompt": "haben",
-      "answer": "hat hatte hat gehabt",
+      "answer": "hat hat gehabt",
       "forms": {
-        "translation": ["иметь"],
-        "present": ["hat"],
-        "preterite": ["hatte"],
-        "auxiliary": ["hat"],
-        "participle": ["gehabt"]
+        "translation": [
+          "иметь"
+        ],
+        "present": [
+          "hat"
+        ],
+        "auxiliary": [
+          "hat"
+        ],
+        "participle": [
+          "gehabt"
+        ]
       },
-      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Präteritum, Hilfsverb und Partizip II.",
-      "instruction_ru": "Введите перевод, Präsens, Präteritum, hat/ist и Partizip II."
+      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Hilfsverb und Partizip II.",
+      "instruction_ru": "Введите перевод, Präsens, hat/ist и Partizip II."
+    },
+    {
+      "id": "irregular-forms-gehen",
+      "topic_id": "irregular_verb_forms",
+      "lemma": "gehen",
+      "required_item_type": "verb",
+      "type": "forms",
+      "prompt": "gehen",
+      "answer": "geht ist gegangen",
+      "forms": {
+        "translation": [
+          "идти",
+          "ходить"
+        ],
+        "present": [
+          "geht"
+        ],
+        "auxiliary": [
+          "ist"
+        ],
+        "participle": [
+          "gegangen"
+        ]
+      },
+      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Hilfsverb und Partizip II.",
+      "instruction_ru": "Введите перевод, Präsens, hat/ist и Partizip II."
     },
     {
       "id": "irregular-forms-helfen",
@@ -23407,16 +23489,23 @@
       "required_item_type": "verb",
       "type": "forms",
       "prompt": "helfen",
-      "answer": "hilft half hat geholfen",
+      "answer": "hilft hat geholfen",
       "forms": {
-        "translation": ["помогать"],
-        "present": ["hilft"],
-        "preterite": ["half"],
-        "auxiliary": ["hat"],
-        "participle": ["geholfen"]
+        "translation": [
+          "помогать"
+        ],
+        "present": [
+          "hilft"
+        ],
+        "auxiliary": [
+          "hat"
+        ],
+        "participle": [
+          "geholfen"
+        ]
       },
-      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Präteritum, Hilfsverb und Partizip II.",
-      "instruction_ru": "Введите перевод, Präsens, Präteritum, hat/ist и Partizip II."
+      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Hilfsverb und Partizip II.",
+      "instruction_ru": "Введите перевод, Präsens, hat/ist и Partizip II."
     },
     {
       "id": "irregular-forms-kommen",
@@ -23425,16 +23514,25 @@
       "required_item_type": "verb",
       "type": "forms",
       "prompt": "kommen",
-      "answer": "kommt kam ist gekommen",
+      "answer": "kommt ist gekommen",
       "forms": {
-        "translation": ["приходить", "приезжать", "прибывать"],
-        "present": ["kommt"],
-        "preterite": ["kam"],
-        "auxiliary": ["ist"],
-        "participle": ["gekommen"]
+        "translation": [
+          "приходить",
+          "приезжать",
+          "прибывать"
+        ],
+        "present": [
+          "kommt"
+        ],
+        "auxiliary": [
+          "ist"
+        ],
+        "participle": [
+          "gekommen"
+        ]
       },
-      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Präteritum, Hilfsverb und Partizip II.",
-      "instruction_ru": "Введите перевод, Präsens, Präteritum, hat/ist и Partizip II."
+      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Hilfsverb und Partizip II.",
+      "instruction_ru": "Введите перевод, Präsens, hat/ist и Partizip II."
     },
     {
       "id": "irregular-forms-laufen",
@@ -23443,16 +23541,24 @@
       "required_item_type": "verb",
       "type": "forms",
       "prompt": "laufen",
-      "answer": "läuft lief ist gelaufen",
+      "answer": "läuft ist gelaufen",
       "forms": {
-        "translation": ["бежать", "ходить пешком"],
-        "present": ["läuft"],
-        "preterite": ["lief"],
-        "auxiliary": ["ist"],
-        "participle": ["gelaufen"]
+        "translation": [
+          "бежать",
+          "ходить пешком"
+        ],
+        "present": [
+          "läuft"
+        ],
+        "auxiliary": [
+          "ist"
+        ],
+        "participle": [
+          "gelaufen"
+        ]
       },
-      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Präteritum, Hilfsverb und Partizip II.",
-      "instruction_ru": "Введите перевод, Präsens, Präteritum, hat/ist и Partizip II."
+      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Hilfsverb und Partizip II.",
+      "instruction_ru": "Введите перевод, Präsens, hat/ist и Partizip II."
     },
     {
       "id": "irregular-forms-lesen",
@@ -23461,16 +23567,23 @@
       "required_item_type": "verb",
       "type": "forms",
       "prompt": "lesen",
-      "answer": "liest las hat gelesen",
+      "answer": "liest hat gelesen",
       "forms": {
-        "translation": ["читать"],
-        "present": ["liest"],
-        "preterite": ["las"],
-        "auxiliary": ["hat"],
-        "participle": ["gelesen"]
+        "translation": [
+          "читать"
+        ],
+        "present": [
+          "liest"
+        ],
+        "auxiliary": [
+          "hat"
+        ],
+        "participle": [
+          "gelesen"
+        ]
       },
-      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Präteritum, Hilfsverb und Partizip II.",
-      "instruction_ru": "Введите перевод, Präsens, Präteritum, hat/ist и Partizip II."
+      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Hilfsverb und Partizip II.",
+      "instruction_ru": "Введите перевод, Präsens, hat/ist и Partizip II."
     },
     {
       "id": "irregular-forms-liegen",
@@ -23479,16 +23592,24 @@
       "required_item_type": "verb",
       "type": "forms",
       "prompt": "liegen",
-      "answer": "liegt lag hat gelegen",
+      "answer": "liegt hat gelegen",
       "forms": {
-        "translation": ["лежать", "находиться"],
-        "present": ["liegt"],
-        "preterite": ["lag"],
-        "auxiliary": ["hat"],
-        "participle": ["gelegen"]
+        "translation": [
+          "лежать",
+          "находиться"
+        ],
+        "present": [
+          "liegt"
+        ],
+        "auxiliary": [
+          "hat"
+        ],
+        "participle": [
+          "gelegen"
+        ]
       },
-      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Präteritum, Hilfsverb und Partizip II.",
-      "instruction_ru": "Введите перевод, Präsens, Präteritum, hat/ist и Partizip II."
+      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Hilfsverb und Partizip II.",
+      "instruction_ru": "Введите перевод, Präsens, hat/ist и Partizip II."
     },
     {
       "id": "irregular-forms-nehmen",
@@ -23497,16 +23618,24 @@
       "required_item_type": "verb",
       "type": "forms",
       "prompt": "nehmen",
-      "answer": "nimmt nahm hat genommen",
+      "answer": "nimmt hat genommen",
       "forms": {
-        "translation": ["брать", "взять"],
-        "present": ["nimmt"],
-        "preterite": ["nahm"],
-        "auxiliary": ["hat"],
-        "participle": ["genommen"]
+        "translation": [
+          "брать",
+          "взять"
+        ],
+        "present": [
+          "nimmt"
+        ],
+        "auxiliary": [
+          "hat"
+        ],
+        "participle": [
+          "genommen"
+        ]
       },
-      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Präteritum, Hilfsverb und Partizip II.",
-      "instruction_ru": "Введите перевод, Präsens, Präteritum, hat/ist и Partizip II."
+      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Hilfsverb und Partizip II.",
+      "instruction_ru": "Введите перевод, Präsens, hat/ist и Partizip II."
     },
     {
       "id": "irregular-forms-schlafen",
@@ -23515,16 +23644,23 @@
       "required_item_type": "verb",
       "type": "forms",
       "prompt": "schlafen",
-      "answer": "schläft schlief hat geschlafen",
+      "answer": "schläft hat geschlafen",
       "forms": {
-        "translation": ["спать"],
-        "present": ["schläft"],
-        "preterite": ["schlief"],
-        "auxiliary": ["hat"],
-        "participle": ["geschlafen"]
+        "translation": [
+          "спать"
+        ],
+        "present": [
+          "schläft"
+        ],
+        "auxiliary": [
+          "hat"
+        ],
+        "participle": [
+          "geschlafen"
+        ]
       },
-      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Präteritum, Hilfsverb und Partizip II.",
-      "instruction_ru": "Введите перевод, Präsens, Präteritum, hat/ist и Partizip II."
+      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Hilfsverb und Partizip II.",
+      "instruction_ru": "Введите перевод, Präsens, hat/ist и Partizip II."
     },
     {
       "id": "irregular-forms-schliessen",
@@ -23533,16 +23669,24 @@
       "required_item_type": "verb",
       "type": "forms",
       "prompt": "schließen",
-      "answer": "schließt schloss hat geschlossen",
+      "answer": "schließt hat geschlossen",
       "forms": {
-        "translation": ["закрывать", "запирать"],
-        "present": ["schließt"],
-        "preterite": ["schloss"],
-        "auxiliary": ["hat"],
-        "participle": ["geschlossen"]
+        "translation": [
+          "закрывать",
+          "запирать"
+        ],
+        "present": [
+          "schließt"
+        ],
+        "auxiliary": [
+          "hat"
+        ],
+        "participle": [
+          "geschlossen"
+        ]
       },
-      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Präteritum, Hilfsverb und Partizip II.",
-      "instruction_ru": "Введите перевод, Präsens, Präteritum, hat/ist и Partizip II."
+      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Hilfsverb und Partizip II.",
+      "instruction_ru": "Введите перевод, Präsens, hat/ist и Partizip II."
     },
     {
       "id": "irregular-forms-schneiden",
@@ -23551,16 +23695,23 @@
       "required_item_type": "verb",
       "type": "forms",
       "prompt": "schneiden",
-      "answer": "schneidet schnitt hat geschnitten",
+      "answer": "schneidet hat geschnitten",
       "forms": {
-        "translation": ["резать"],
-        "present": ["schneidet"],
-        "preterite": ["schnitt"],
-        "auxiliary": ["hat"],
-        "participle": ["geschnitten"]
+        "translation": [
+          "резать"
+        ],
+        "present": [
+          "schneidet"
+        ],
+        "auxiliary": [
+          "hat"
+        ],
+        "participle": [
+          "geschnitten"
+        ]
       },
-      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Präteritum, Hilfsverb und Partizip II.",
-      "instruction_ru": "Введите перевод, Präsens, Präteritum, hat/ist и Partizip II."
+      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Hilfsverb und Partizip II.",
+      "instruction_ru": "Введите перевод, Präsens, hat/ist и Partizip II."
     },
     {
       "id": "irregular-forms-schreiben",
@@ -23569,16 +23720,23 @@
       "required_item_type": "verb",
       "type": "forms",
       "prompt": "schreiben",
-      "answer": "schreibt schrieb hat geschrieben",
+      "answer": "schreibt hat geschrieben",
       "forms": {
-        "translation": ["писать"],
-        "present": ["schreibt"],
-        "preterite": ["schrieb"],
-        "auxiliary": ["hat"],
-        "participle": ["geschrieben"]
+        "translation": [
+          "писать"
+        ],
+        "present": [
+          "schreibt"
+        ],
+        "auxiliary": [
+          "hat"
+        ],
+        "participle": [
+          "geschrieben"
+        ]
       },
-      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Präteritum, Hilfsverb und Partizip II.",
-      "instruction_ru": "Введите перевод, Präsens, Präteritum, hat/ist и Partizip II."
+      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Hilfsverb und Partizip II.",
+      "instruction_ru": "Введите перевод, Präsens, hat/ist и Partizip II."
     },
     {
       "id": "irregular-forms-schwimmen",
@@ -23587,16 +23745,24 @@
       "required_item_type": "verb",
       "type": "forms",
       "prompt": "schwimmen",
-      "answer": "schwimmt schwamm ist geschwommen",
+      "answer": "schwimmt ist hat geschwommen",
       "forms": {
-        "translation": ["плавать"],
-        "present": ["schwimmt"],
-        "preterite": ["schwamm"],
-        "auxiliaries": ["ist hat", "hat ist"],
-        "participle": ["geschwommen"]
+        "translation": [
+          "плавать"
+        ],
+        "present": [
+          "schwimmt"
+        ],
+        "auxiliaries": [
+          "ist hat",
+          "hat ist"
+        ],
+        "participle": [
+          "geschwommen"
+        ]
       },
-      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Präteritum, Hilfsverb und Partizip II.",
-      "instruction_ru": "Введите перевод, Präsens, Präteritum, hat/ist и Partizip II."
+      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Hilfsverb und Partizip II.",
+      "instruction_ru": "Введите перевод, Präsens, hat/ist и Partizip II."
     },
     {
       "id": "irregular-forms-sehen",
@@ -23605,16 +23771,24 @@
       "required_item_type": "verb",
       "type": "forms",
       "prompt": "sehen",
-      "answer": "sieht sah hat gesehen",
+      "answer": "sieht hat gesehen",
       "forms": {
-        "translation": ["видеть", "смотреть"],
-        "present": ["sieht"],
-        "preterite": ["sah"],
-        "auxiliary": ["hat"],
-        "participle": ["gesehen"]
+        "translation": [
+          "видеть",
+          "смотреть"
+        ],
+        "present": [
+          "sieht"
+        ],
+        "auxiliary": [
+          "hat"
+        ],
+        "participle": [
+          "gesehen"
+        ]
       },
-      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Präteritum, Hilfsverb und Partizip II.",
-      "instruction_ru": "Введите перевод, Präsens, Präteritum, hat/ist и Partizip II."
+      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Hilfsverb und Partizip II.",
+      "instruction_ru": "Введите перевод, Präsens, hat/ist и Partizip II."
     },
     {
       "id": "irregular-forms-sein",
@@ -23623,16 +23797,23 @@
       "required_item_type": "verb",
       "type": "forms",
       "prompt": "sein",
-      "answer": "ist war ist gewesen",
+      "answer": "ist ist gewesen",
       "forms": {
-        "translation": ["быть"],
-        "present": ["ist"],
-        "preterite": ["war"],
-        "auxiliary": ["ist"],
-        "participle": ["gewesen"]
+        "translation": [
+          "быть"
+        ],
+        "present": [
+          "ist"
+        ],
+        "auxiliary": [
+          "ist"
+        ],
+        "participle": [
+          "gewesen"
+        ]
       },
-      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Präteritum, Hilfsverb und Partizip II.",
-      "instruction_ru": "Введите перевод, Präsens, Präteritum, hat/ist и Partizip II."
+      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Hilfsverb und Partizip II.",
+      "instruction_ru": "Введите перевод, Präsens, hat/ist и Partizip II."
     },
     {
       "id": "irregular-forms-sitzen",
@@ -23641,16 +23822,23 @@
       "required_item_type": "verb",
       "type": "forms",
       "prompt": "sitzen",
-      "answer": "sitzt saß hat gesessen",
+      "answer": "sitzt hat gesessen",
       "forms": {
-        "translation": ["сидеть"],
-        "present": ["sitzt"],
-        "preterite": ["saß"],
-        "auxiliary": ["hat"],
-        "participle": ["gesessen"]
+        "translation": [
+          "сидеть"
+        ],
+        "present": [
+          "sitzt"
+        ],
+        "auxiliary": [
+          "hat"
+        ],
+        "participle": [
+          "gesessen"
+        ]
       },
-      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Präteritum, Hilfsverb und Partizip II.",
-      "instruction_ru": "Введите перевод, Präsens, Präteritum, hat/ist и Partizip II."
+      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Hilfsverb und Partizip II.",
+      "instruction_ru": "Введите перевод, Präsens, hat/ist и Partizip II."
     },
     {
       "id": "irregular-forms-sprechen",
@@ -23659,16 +23847,23 @@
       "required_item_type": "verb",
       "type": "forms",
       "prompt": "sprechen",
-      "answer": "spricht sprach hat gesprochen",
+      "answer": "spricht hat gesprochen",
       "forms": {
-        "translation": ["говорить"],
-        "present": ["spricht"],
-        "preterite": ["sprach"],
-        "auxiliary": ["hat"],
-        "participle": ["gesprochen"]
+        "translation": [
+          "говорить"
+        ],
+        "present": [
+          "spricht"
+        ],
+        "auxiliary": [
+          "hat"
+        ],
+        "participle": [
+          "gesprochen"
+        ]
       },
-      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Präteritum, Hilfsverb und Partizip II.",
-      "instruction_ru": "Введите перевод, Präsens, Präteritum, hat/ist и Partizip II."
+      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Hilfsverb und Partizip II.",
+      "instruction_ru": "Введите перевод, Präsens, hat/ist и Partizip II."
     },
     {
       "id": "irregular-forms-stehen",
@@ -23677,16 +23872,24 @@
       "required_item_type": "verb",
       "type": "forms",
       "prompt": "stehen",
-      "answer": "steht stand hat gestanden",
+      "answer": "steht hat gestanden",
       "forms": {
-        "translation": ["стоять", "находиться"],
-        "present": ["steht"],
-        "preterite": ["stand"],
-        "auxiliary": ["hat"],
-        "participle": ["gestanden"]
+        "translation": [
+          "стоять",
+          "находиться"
+        ],
+        "present": [
+          "steht"
+        ],
+        "auxiliary": [
+          "hat"
+        ],
+        "participle": [
+          "gestanden"
+        ]
       },
-      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Präteritum, Hilfsverb und Partizip II.",
-      "instruction_ru": "Введите перевод, Präsens, Präteritum, hat/ist и Partizip II."
+      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Hilfsverb und Partizip II.",
+      "instruction_ru": "Введите перевод, Präsens, hat/ist и Partizip II."
     },
     {
       "id": "irregular-forms-tragen",
@@ -23695,16 +23898,24 @@
       "required_item_type": "verb",
       "type": "forms",
       "prompt": "tragen",
-      "answer": "trägt trug hat getragen",
+      "answer": "trägt hat getragen",
       "forms": {
-        "translation": ["нести", "носить"],
-        "present": ["trägt"],
-        "preterite": ["trug"],
-        "auxiliary": ["hat"],
-        "participle": ["getragen"]
+        "translation": [
+          "нести",
+          "носить"
+        ],
+        "present": [
+          "trägt"
+        ],
+        "auxiliary": [
+          "hat"
+        ],
+        "participle": [
+          "getragen"
+        ]
       },
-      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Präteritum, Hilfsverb und Partizip II.",
-      "instruction_ru": "Введите перевод, Präsens, Präteritum, hat/ist и Partizip II."
+      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Hilfsverb und Partizip II.",
+      "instruction_ru": "Введите перевод, Präsens, hat/ist и Partizip II."
     },
     {
       "id": "irregular-forms-treffen",
@@ -23713,16 +23924,24 @@
       "required_item_type": "verb",
       "type": "forms",
       "prompt": "treffen",
-      "answer": "trifft traf hat getroffen",
+      "answer": "trifft hat getroffen",
       "forms": {
-        "translation": ["встречать", "встречаться"],
-        "present": ["trifft"],
-        "preterite": ["traf"],
-        "auxiliary": ["hat"],
-        "participle": ["getroffen"]
+        "translation": [
+          "встречать",
+          "встречаться"
+        ],
+        "present": [
+          "trifft"
+        ],
+        "auxiliary": [
+          "hat"
+        ],
+        "participle": [
+          "getroffen"
+        ]
       },
-      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Präteritum, Hilfsverb und Partizip II.",
-      "instruction_ru": "Введите перевод, Präsens, Präteritum, hat/ist и Partizip II."
+      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Hilfsverb und Partizip II.",
+      "instruction_ru": "Введите перевод, Präsens, hat/ist и Partizip II."
     },
     {
       "id": "irregular-forms-trinken",
@@ -23731,16 +23950,23 @@
       "required_item_type": "verb",
       "type": "forms",
       "prompt": "trinken",
-      "answer": "trinkt trank hat getrunken",
+      "answer": "trinkt hat getrunken",
       "forms": {
-        "translation": ["пить"],
-        "present": ["trinkt"],
-        "preterite": ["trank"],
-        "auxiliary": ["hat"],
-        "participle": ["getrunken"]
+        "translation": [
+          "пить"
+        ],
+        "present": [
+          "trinkt"
+        ],
+        "auxiliary": [
+          "hat"
+        ],
+        "participle": [
+          "getrunken"
+        ]
       },
-      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Präteritum, Hilfsverb und Partizip II.",
-      "instruction_ru": "Введите перевод, Präsens, Präteritum, hat/ist и Partizip II."
+      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Hilfsverb und Partizip II.",
+      "instruction_ru": "Введите перевод, Präsens, hat/ist и Partizip II."
     },
     {
       "id": "irregular-forms-waschen",
@@ -23749,16 +23975,24 @@
       "required_item_type": "verb",
       "type": "forms",
       "prompt": "waschen",
-      "answer": "wäscht wusch hat gewaschen",
+      "answer": "wäscht hat gewaschen",
       "forms": {
-        "translation": ["мыть", "стирать"],
-        "present": ["wäscht"],
-        "preterite": ["wusch"],
-        "auxiliary": ["hat"],
-        "participle": ["gewaschen"]
+        "translation": [
+          "мыть",
+          "стирать"
+        ],
+        "present": [
+          "wäscht"
+        ],
+        "auxiliary": [
+          "hat"
+        ],
+        "participle": [
+          "gewaschen"
+        ]
       },
-      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Präteritum, Hilfsverb und Partizip II.",
-      "instruction_ru": "Введите перевод, Präsens, Präteritum, hat/ist и Partizip II."
+      "instruction_de": "Schreibe die russische Übersetzung, Präsens, Hilfsverb und Partizip II.",
+      "instruction_ru": "Введите перевод, Präsens, hat/ist и Partizip II."
     },
     {
       "id": "lesson9-modal-1",
@@ -24719,6 +24953,2246 @@
       ],
       "instruction_de": "Bilde einen richtigen Satz.",
       "instruction_ru": "Составьте правильное предложение."
+    },
+    {
+      "id": "lesson10-sollen-01",
+      "topic_id": "modal_sollen",
+      "lemma": "sollen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Ich ___ heute zu Hause bleiben.",
+      "answer": "soll",
+      "options": [
+        "soll",
+        "sollst",
+        "sollen"
+      ],
+      "instruction_de": "Ergänze die richtige Form von sollen.",
+      "instruction_ru": "Выберите правильную форму sollen."
+    },
+    {
+      "id": "lesson10-sollen-02",
+      "topic_id": "modal_sollen",
+      "lemma": "sollen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Du ___ viel Wasser trinken.",
+      "answer": "sollst",
+      "options": [
+        "soll",
+        "sollst",
+        "sollt"
+      ],
+      "instruction_de": "Ergänze die richtige Form von sollen.",
+      "instruction_ru": "Выберите правильную форму sollen."
+    },
+    {
+      "id": "lesson10-sollen-03",
+      "topic_id": "modal_sollen",
+      "lemma": "sollen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Er ___ den Arzt anrufen.",
+      "answer": "soll",
+      "options": [
+        "soll",
+        "sollt",
+        "sollen"
+      ],
+      "instruction_de": "Ergänze die richtige Form von sollen.",
+      "instruction_ru": "Выберите правильную форму sollen."
+    },
+    {
+      "id": "lesson10-sollen-04",
+      "topic_id": "modal_sollen",
+      "lemma": "sollen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Wir ___ ruhig warten.",
+      "answer": "sollen",
+      "options": [
+        "soll",
+        "sollen",
+        "sollt"
+      ],
+      "instruction_de": "Ergänze die richtige Form von sollen.",
+      "instruction_ru": "Выберите правильную форму sollen."
+    },
+    {
+      "id": "lesson10-sollen-05",
+      "topic_id": "modal_sollen",
+      "lemma": "sollen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Ihr ___ die Tabletten nehmen.",
+      "answer": "sollt",
+      "options": [
+        "sollst",
+        "sollt",
+        "sollen"
+      ],
+      "instruction_de": "Ergänze die richtige Form von sollen.",
+      "instruction_ru": "Выберите правильную форму sollen."
+    },
+    {
+      "id": "lesson10-sollen-06",
+      "topic_id": "modal_sollen",
+      "lemma": "sollen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Sie ___ morgen wiederkommen.",
+      "answer": "sollen",
+      "options": [
+        "soll",
+        "sollt",
+        "sollen"
+      ],
+      "instruction_de": "Ergänze die richtige Form von sollen.",
+      "instruction_ru": "Выберите правильную форму sollen."
+    },
+    {
+      "id": "lesson10-sollen-07",
+      "topic_id": "modal_sollen",
+      "lemma": "sollen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ ich das Auge kühlen?",
+      "answer": "Soll",
+      "options": [
+        "Soll",
+        "Sollst",
+        "Sollen"
+      ],
+      "instruction_de": "Ergänze die richtige Form von sollen.",
+      "instruction_ru": "Выберите правильную форму sollen."
+    },
+    {
+      "id": "lesson10-sollen-08",
+      "topic_id": "modal_sollen",
+      "lemma": "sollen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Was ___ Lara tun?",
+      "answer": "soll",
+      "options": [
+        "soll",
+        "sollt",
+        "sollen"
+      ],
+      "instruction_de": "Ergänze die richtige Form von sollen.",
+      "instruction_ru": "Выберите правильную форму sollen."
+    },
+    {
+      "id": "lesson10-sollen-09",
+      "topic_id": "modal_sollen",
+      "lemma": "sollen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Der Doktor sagt, ich ___ im Bett bleiben.",
+      "answer": "soll",
+      "options": [
+        "soll",
+        "sollst",
+        "sollen"
+      ],
+      "instruction_de": "Ergänze die richtige Form von sollen.",
+      "instruction_ru": "Выберите правильную форму sollen."
+    },
+    {
+      "id": "lesson10-sollen-10",
+      "topic_id": "modal_sollen",
+      "lemma": "sollen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Die Kinder ___ leise sein.",
+      "answer": "sollen",
+      "options": [
+        "soll",
+        "sollt",
+        "sollen"
+      ],
+      "instruction_de": "Ergänze die richtige Form von sollen.",
+      "instruction_ru": "Выберите правильную форму sollen."
+    },
+    {
+      "id": "lesson10-sollen-11",
+      "topic_id": "modal_sollen",
+      "lemma": "sollen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Du ___ nicht so viel arbeiten.",
+      "answer": "sollst",
+      "options": [
+        "soll",
+        "sollst",
+        "sollt"
+      ],
+      "instruction_de": "Ergänze die richtige Form von sollen.",
+      "instruction_ru": "Выберите правильную форму sollen."
+    },
+    {
+      "id": "lesson10-sollen-12",
+      "topic_id": "modal_sollen",
+      "lemma": "sollen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Peter und Jana ___ das Fenster öffnen.",
+      "answer": "sollen",
+      "options": [
+        "soll",
+        "sollen",
+        "sollt"
+      ],
+      "instruction_de": "Ergänze die richtige Form von sollen.",
+      "instruction_ru": "Выберите правильную форму sollen."
+    },
+    {
+      "id": "lesson10-sollen-13",
+      "topic_id": "modal_sollen",
+      "lemma": "sollen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Meine Tochter ___ die Medizin nehmen.",
+      "answer": "soll",
+      "options": [
+        "soll",
+        "sollst",
+        "sollen"
+      ],
+      "instruction_de": "Ergänze die richtige Form von sollen.",
+      "instruction_ru": "Выберите правильную форму sollen."
+    },
+    {
+      "id": "lesson10-sollen-14",
+      "topic_id": "modal_sollen",
+      "lemma": "sollen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "___ wir einen Notarzt rufen?",
+      "answer": "Sollen",
+      "options": [
+        "Soll",
+        "Sollen",
+        "Sollt"
+      ],
+      "instruction_de": "Ergänze die richtige Form von sollen.",
+      "instruction_ru": "Выберите правильную форму sollen."
+    },
+    {
+      "id": "lesson10-sollen-15",
+      "topic_id": "modal_sollen",
+      "lemma": "sollen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Ihr ___ die Versichertenkarte mitbringen.",
+      "answer": "sollt",
+      "options": [
+        "soll",
+        "sollt",
+        "sollen"
+      ],
+      "instruction_de": "Ergänze die richtige Form von sollen.",
+      "instruction_ru": "Выберите правильную форму sollen."
+    },
+    {
+      "id": "lesson10-sollen-16",
+      "topic_id": "modal_sollen",
+      "lemma": "sollen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Man ___ bei Fieber viel trinken.",
+      "answer": "soll",
+      "options": [
+        "soll",
+        "sollst",
+        "sollen"
+      ],
+      "instruction_de": "Ergänze die richtige Form von sollen.",
+      "instruction_ru": "Выберите правильную форму sollen."
+    },
+    {
+      "id": "lesson10-sollen-17",
+      "topic_id": "modal_sollen",
+      "lemma": "sollen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Der Patient ___ zwanzig Minuten warten.",
+      "answer": "soll",
+      "options": [
+        "soll",
+        "sollt",
+        "sollen"
+      ],
+      "instruction_de": "Ergänze die richtige Form von sollen.",
+      "instruction_ru": "Выберите правильную форму sollen."
+    },
+    {
+      "id": "lesson10-sollen-18",
+      "topic_id": "modal_sollen",
+      "lemma": "sollen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Was ___ ich dem Arzt sagen?",
+      "answer": "soll",
+      "options": [
+        "soll",
+        "sollst",
+        "sollen"
+      ],
+      "instruction_de": "Ergänze die richtige Form von sollen.",
+      "instruction_ru": "Выберите правильную форму sollen."
+    },
+    {
+      "id": "lesson10-sollen-19",
+      "topic_id": "modal_sollen",
+      "lemma": "sollen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Frau Kuhn, Sie ___ sofort kommen.",
+      "answer": "sollen",
+      "options": [
+        "soll",
+        "sollt",
+        "sollen"
+      ],
+      "instruction_de": "Ergänze die richtige Form von sollen.",
+      "instruction_ru": "Выберите правильную форму sollen."
+    },
+    {
+      "id": "lesson10-sollen-20",
+      "topic_id": "modal_sollen",
+      "lemma": "sollen",
+      "required_item_type": "verb",
+      "type": "choice",
+      "prompt": "Die Ärztin sagt: „Sie ___ sich ausruhen.“",
+      "answer": "sollen",
+      "options": [
+        "soll",
+        "sollst",
+        "sollen"
+      ],
+      "instruction_de": "Ergänze die richtige Form von sollen.",
+      "instruction_ru": "Выберите правильную форму sollen."
+    },
+    {
+      "id": "lesson11-mit-01",
+      "topic_id": "dative_mit",
+      "lemma": "bus",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Ich fahre mit ___ Bus.",
+      "answer": "dem",
+      "options": [
+        "dem",
+        "der",
+        "den"
+      ],
+      "instruction_de": "Wähle die richtige Dativform nach mit.",
+      "instruction_ru": "Выберите правильную форму Dativ после mit."
+    },
+    {
+      "id": "lesson11-mit-02",
+      "topic_id": "dative_mit",
+      "lemma": "auto",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Wir fahren mit ___ Auto.",
+      "answer": "dem",
+      "options": [
+        "dem",
+        "der",
+        "den"
+      ],
+      "instruction_de": "Wähle die richtige Dativform nach mit.",
+      "instruction_ru": "Выберите правильную форму Dativ после mit."
+    },
+    {
+      "id": "lesson11-mit-03",
+      "topic_id": "dative_mit",
+      "lemma": "u-bahn",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Sie kommt mit ___ U-Bahn.",
+      "answer": "der",
+      "options": [
+        "dem",
+        "der",
+        "den"
+      ],
+      "instruction_de": "Wähle die richtige Dativform nach mit.",
+      "instruction_ru": "Выберите правильную форму Dativ после mit."
+    },
+    {
+      "id": "lesson11-mit-04",
+      "topic_id": "dative_mit",
+      "lemma": "straßenbahn",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Er fährt mit ___ Straßenbahn.",
+      "answer": "der",
+      "options": [
+        "dem",
+        "der",
+        "den"
+      ],
+      "instruction_de": "Wähle die richtige Dativform nach mit.",
+      "instruction_ru": "Выберите правильную форму Dativ после mit."
+    },
+    {
+      "id": "lesson11-mit-05",
+      "topic_id": "dative_mit",
+      "lemma": "zug",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Fahrt ihr mit ___ Zug?",
+      "answer": "dem",
+      "options": [
+        "dem",
+        "der",
+        "den"
+      ],
+      "instruction_de": "Wähle die richtige Dativform nach mit.",
+      "instruction_ru": "Выберите правильную форму Dativ после mit."
+    },
+    {
+      "id": "lesson11-mit-06",
+      "topic_id": "dative_mit",
+      "lemma": "s-bahn",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Lara fährt mit ___ S-Bahn.",
+      "answer": "der",
+      "options": [
+        "dem",
+        "der",
+        "den"
+      ],
+      "instruction_de": "Wähle die richtige Dativform nach mit.",
+      "instruction_ru": "Выберите правильную форму Dativ после mit."
+    },
+    {
+      "id": "lesson11-mit-07",
+      "topic_id": "dative_mit",
+      "lemma": "fahrrad",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Ich komme mit ___ Fahrrad.",
+      "answer": "dem",
+      "options": [
+        "dem",
+        "der",
+        "den"
+      ],
+      "instruction_de": "Wähle die richtige Dativform nach mit.",
+      "instruction_ru": "Выберите правильную форму Dativ после mit."
+    },
+    {
+      "id": "lesson11-mit-08",
+      "topic_id": "dative_mit",
+      "lemma": "flugzeug",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Wir fliegen mit ___ Flugzeug.",
+      "answer": "dem",
+      "options": [
+        "dem",
+        "der",
+        "den"
+      ],
+      "instruction_de": "Wähle die richtige Dativform nach mit.",
+      "instruction_ru": "Выберите правильную форму Dativ после mit."
+    },
+    {
+      "id": "lesson11-mit-09",
+      "topic_id": "dative_mit",
+      "lemma": "kind",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Sie fährt mit ___ Kindern.",
+      "answer": "den",
+      "options": [
+        "dem",
+        "der",
+        "den"
+      ],
+      "instruction_de": "Wähle die richtige Dativform nach mit.",
+      "instruction_ru": "Выберите правильную форму Dativ после mit."
+    },
+    {
+      "id": "lesson11-mit-10",
+      "topic_id": "dative_mit",
+      "lemma": "freundin",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Ich gehe mit ___ Freundin ins Kino.",
+      "answer": "meiner",
+      "options": [
+        "meinem",
+        "meiner",
+        "meinen"
+      ],
+      "instruction_de": "Wähle die richtige Dativform nach mit.",
+      "instruction_ru": "Выберите правильную форму Dativ после mit."
+    },
+    {
+      "id": "lesson11-mit-11",
+      "topic_id": "dative_mit",
+      "lemma": "bruder",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Er kommt mit ___ Bruder.",
+      "answer": "seinem",
+      "options": [
+        "seinem",
+        "seiner",
+        "seinen"
+      ],
+      "instruction_de": "Wähle die richtige Dativform nach mit.",
+      "instruction_ru": "Выберите правильную форму Dativ после mit."
+    },
+    {
+      "id": "lesson11-mit-12",
+      "topic_id": "dative_mit",
+      "lemma": "eltern",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Du reist mit ___ Eltern.",
+      "answer": "deinen",
+      "options": [
+        "deinem",
+        "deiner",
+        "deinen"
+      ],
+      "instruction_de": "Wähle die richtige Dativform nach mit.",
+      "instruction_ru": "Выберите правильную форму Dativ после mit."
+    },
+    {
+      "id": "lesson11-mit-13",
+      "topic_id": "dative_mit",
+      "lemma": "doktor",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Ich spreche mit ___ Doktor.",
+      "answer": "dem",
+      "options": [
+        "dem",
+        "der",
+        "den"
+      ],
+      "instruction_de": "Wähle die richtige Dativform nach mit.",
+      "instruction_ru": "Выберите правильную форму Dativ после mit."
+    },
+    {
+      "id": "lesson11-mit-14",
+      "topic_id": "dative_mit",
+      "lemma": "kundin",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Die Verkäuferin spricht mit ___ Kundin.",
+      "answer": "der",
+      "options": [
+        "dem",
+        "der",
+        "den"
+      ],
+      "instruction_de": "Wähle die richtige Dativform nach mit.",
+      "instruction_ru": "Выберите правильную форму Dativ после mit."
+    },
+    {
+      "id": "lesson11-mit-15",
+      "topic_id": "dative_mit",
+      "lemma": "auto",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Sie fährt mit ___ Taxi.",
+      "answer": "dem",
+      "options": [
+        "dem",
+        "der",
+        "den"
+      ],
+      "instruction_de": "Wähle die richtige Dativform nach mit.",
+      "instruction_ru": "Выберите правильную форму Dativ после mit."
+    },
+    {
+      "id": "lesson11-mit-16",
+      "topic_id": "dative_mit",
+      "lemma": "lkw",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Der Fahrer kommt mit ___ Lkw.",
+      "answer": "dem",
+      "options": [
+        "dem",
+        "der",
+        "den"
+      ],
+      "instruction_de": "Wähle die richtige Dativform nach mit.",
+      "instruction_ru": "Выберите правильную форму Dativ после mit."
+    },
+    {
+      "id": "lesson11-mit-17",
+      "topic_id": "dative_mit",
+      "lemma": "kollege",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Wir arbeiten mit ___ Kollegen.",
+      "answer": "den",
+      "options": [
+        "dem",
+        "der",
+        "den"
+      ],
+      "instruction_de": "Wähle die richtige Dativform nach mit.",
+      "instruction_ru": "Выберите правильную форму Dativ после mit."
+    },
+    {
+      "id": "lesson11-mit-18",
+      "topic_id": "dative_mit",
+      "lemma": "hand",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Er schreibt mit ___ rechten Hand.",
+      "answer": "der",
+      "options": [
+        "dem",
+        "der",
+        "den"
+      ],
+      "instruction_de": "Wähle die richtige Dativform nach mit.",
+      "instruction_ru": "Выберите правильную форму Dativ после mit."
+    },
+    {
+      "id": "lesson11-mit-19",
+      "topic_id": "dative_mit",
+      "lemma": "bleistift",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Das Kind schreibt mit ___ Bleistift.",
+      "answer": "dem",
+      "options": [
+        "dem",
+        "der",
+        "den"
+      ],
+      "instruction_de": "Wähle die richtige Dativform nach mit.",
+      "instruction_ru": "Выберите правильную форму Dativ после mit."
+    },
+    {
+      "id": "lesson11-mit-20",
+      "topic_id": "dative_mit",
+      "lemma": "person",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Ich spreche gern mit ___ Menschen.",
+      "answer": "den",
+      "options": [
+        "dem",
+        "der",
+        "den"
+      ],
+      "instruction_de": "Wähle die richtige Dativform nach mit.",
+      "instruction_ru": "Выберите правильную форму Dativ после mit."
+    },
+    {
+      "id": "lesson11-wo-01",
+      "topic_id": "local_prepositions_wo",
+      "lemma": "post",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Die Apotheke ist neben ___ Post.",
+      "answer": "der",
+      "options": [
+        "dem",
+        "der",
+        "den"
+      ],
+      "instruction_de": "Ergänze den Dativ nach der lokalen Präposition.",
+      "instruction_ru": "Выберите Dativ после местного предлога."
+    },
+    {
+      "id": "lesson11-wo-02",
+      "topic_id": "local_prepositions_wo",
+      "lemma": "hotel",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Wir sind in ___ Hotel.",
+      "answer": "dem",
+      "options": [
+        "dem",
+        "der",
+        "den"
+      ],
+      "instruction_de": "Ergänze den Dativ nach der lokalen Präposition.",
+      "instruction_ru": "Выберите Dativ после местного предлога."
+    },
+    {
+      "id": "lesson11-wo-03",
+      "topic_id": "local_prepositions_wo",
+      "lemma": "bahnhof",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Lara wartet an ___ Bahnhof.",
+      "answer": "dem",
+      "options": [
+        "dem",
+        "der",
+        "den"
+      ],
+      "instruction_de": "Ergänze den Dativ nach der lokalen Präposition.",
+      "instruction_ru": "Выберите Dativ после местного предлога."
+    },
+    {
+      "id": "lesson11-wo-04",
+      "topic_id": "local_prepositions_wo",
+      "lemma": "ampel",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Das Auto steht an ___ Ampel.",
+      "answer": "der",
+      "options": [
+        "dem",
+        "der",
+        "den"
+      ],
+      "instruction_de": "Ergänze den Dativ nach der lokalen Präposition.",
+      "instruction_ru": "Выберите Dativ после местного предлога."
+    },
+    {
+      "id": "lesson11-wo-05",
+      "topic_id": "local_prepositions_wo",
+      "lemma": "parkplatz",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Der Lkw steht auf ___ Parkplatz.",
+      "answer": "dem",
+      "options": [
+        "dem",
+        "der",
+        "den"
+      ],
+      "instruction_de": "Ergänze den Dativ nach der lokalen Präposition.",
+      "instruction_ru": "Выберите Dativ после местного предлога."
+    },
+    {
+      "id": "lesson11-wo-06",
+      "topic_id": "local_prepositions_wo",
+      "lemma": "haus",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Der Baum steht zwischen ___ Häusern.",
+      "answer": "den",
+      "options": [
+        "dem",
+        "der",
+        "den"
+      ],
+      "instruction_de": "Ergänze den Dativ nach der lokalen Präposition.",
+      "instruction_ru": "Выберите Dativ после местного предлога."
+    },
+    {
+      "id": "lesson11-wo-07",
+      "topic_id": "local_prepositions_wo",
+      "lemma": "brücke",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Die Werkstatt ist hinter ___ Brücke.",
+      "answer": "der",
+      "options": [
+        "dem",
+        "der",
+        "den"
+      ],
+      "instruction_de": "Ergänze den Dativ nach der lokalen Präposition.",
+      "instruction_ru": "Выберите Dativ после местного предлога."
+    },
+    {
+      "id": "lesson11-wo-08",
+      "topic_id": "local_prepositions_wo",
+      "lemma": "bäckerei",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Die Bücherei ist über ___ Bäckerei.",
+      "answer": "der",
+      "options": [
+        "dem",
+        "der",
+        "den"
+      ],
+      "instruction_de": "Ergänze den Dativ nach der lokalen Präposition.",
+      "instruction_ru": "Выберите Dativ после местного предлога."
+    },
+    {
+      "id": "lesson11-wo-09",
+      "topic_id": "local_prepositions_wo",
+      "lemma": "bücherei",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Die Bäckerei ist unter ___ Bücherei.",
+      "answer": "der",
+      "options": [
+        "dem",
+        "der",
+        "den"
+      ],
+      "instruction_de": "Ergänze den Dativ nach der lokalen Präposition.",
+      "instruction_ru": "Выберите Dativ после местного предлога."
+    },
+    {
+      "id": "lesson11-wo-10",
+      "topic_id": "local_prepositions_wo",
+      "lemma": "museum",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Der Kiosk ist vor ___ Museum.",
+      "answer": "dem",
+      "options": [
+        "dem",
+        "der",
+        "den"
+      ],
+      "instruction_de": "Ergänze den Dativ nach der lokalen Präposition.",
+      "instruction_ru": "Выберите Dativ после местного предлога."
+    },
+    {
+      "id": "lesson11-wo-11",
+      "topic_id": "local_prepositions_wo",
+      "lemma": "bank",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Der Baum steht neben ___ Bank.",
+      "answer": "der",
+      "options": [
+        "dem",
+        "der",
+        "den"
+      ],
+      "instruction_de": "Ergänze den Dativ nach der lokalen Präposition.",
+      "instruction_ru": "Выберите Dativ после местного предлога."
+    },
+    {
+      "id": "lesson11-wo-12",
+      "topic_id": "local_prepositions_wo",
+      "lemma": "arzt",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Sofia ist bei ___ Arzt.",
+      "answer": "dem",
+      "options": [
+        "dem",
+        "der",
+        "den"
+      ],
+      "instruction_de": "Ergänze den Dativ nach der lokalen Präposition.",
+      "instruction_ru": "Выберите Dativ после местного предлога."
+    },
+    {
+      "id": "lesson11-wo-13",
+      "topic_id": "local_prepositions_wo",
+      "lemma": "freundin",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Lili ist bei ___ Freundin.",
+      "answer": "ihrer",
+      "options": [
+        "ihrem",
+        "ihrer",
+        "ihren"
+      ],
+      "instruction_de": "Ergänze den Dativ nach der lokalen Präposition.",
+      "instruction_ru": "Выберите Dativ после местного предлога."
+    },
+    {
+      "id": "lesson11-wo-14",
+      "topic_id": "local_prepositions_wo",
+      "lemma": "kindergarten",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Das Kind ist in ___ Kindergarten.",
+      "answer": "dem",
+      "options": [
+        "dem",
+        "der",
+        "den"
+      ],
+      "instruction_de": "Ergänze den Dativ nach der lokalen Präposition.",
+      "instruction_ru": "Выберите Dativ после местного предлога."
+    },
+    {
+      "id": "lesson11-wo-15",
+      "topic_id": "local_prepositions_wo",
+      "lemma": "bett",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Der Patient liegt in ___ Bett.",
+      "answer": "dem",
+      "options": [
+        "dem",
+        "der",
+        "den"
+      ],
+      "instruction_de": "Ergänze den Dativ nach der lokalen Präposition.",
+      "instruction_ru": "Выберите Dativ после местного предлога."
+    },
+    {
+      "id": "lesson11-wo-16",
+      "topic_id": "local_prepositions_wo",
+      "lemma": "apotheke",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Die Kundin ist in ___ Apotheke.",
+      "answer": "der",
+      "options": [
+        "dem",
+        "der",
+        "den"
+      ],
+      "instruction_de": "Ergänze den Dativ nach der lokalen Präposition.",
+      "instruction_ru": "Выберите Dativ после местного предлога."
+    },
+    {
+      "id": "lesson11-wo-17",
+      "topic_id": "local_prepositions_wo",
+      "lemma": "straße",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Die Tankstelle ist an ___ Straße.",
+      "answer": "der",
+      "options": [
+        "dem",
+        "der",
+        "den"
+      ],
+      "instruction_de": "Ergänze den Dativ nach der lokalen Präposition.",
+      "instruction_ru": "Выберите Dativ после местного предлога."
+    },
+    {
+      "id": "lesson11-wo-18",
+      "topic_id": "local_prepositions_wo",
+      "lemma": "ecke",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Der Copyshop ist an ___ Ecke.",
+      "answer": "der",
+      "options": [
+        "dem",
+        "der",
+        "den"
+      ],
+      "instruction_de": "Ergänze den Dativ nach der lokalen Präposition.",
+      "instruction_ru": "Выберите Dativ после местного предлога."
+    },
+    {
+      "id": "lesson11-wo-19",
+      "topic_id": "local_prepositions_wo",
+      "lemma": "fußgängerzone",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Der Parkplatz ist neben ___ Fußgängerzone.",
+      "answer": "der",
+      "options": [
+        "dem",
+        "der",
+        "den"
+      ],
+      "instruction_de": "Ergänze den Dativ nach der lokalen Präposition.",
+      "instruction_ru": "Выберите Dativ после местного предлога."
+    },
+    {
+      "id": "lesson11-wo-20",
+      "topic_id": "local_prepositions_wo",
+      "lemma": "markt",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Viele Menschen sind auf ___ Markt.",
+      "answer": "dem",
+      "options": [
+        "dem",
+        "der",
+        "den"
+      ],
+      "instruction_de": "Ergänze den Dativ nach der lokalen Präposition.",
+      "instruction_ru": "Выберите Dativ после местного предлога."
+    },
+    {
+      "id": "lesson11-wohin-01",
+      "topic_id": "direction_prepositions_wohin",
+      "lemma": "arzt",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Ich gehe ___ Arzt.",
+      "answer": "zum",
+      "options": [
+        "zum",
+        "zur",
+        "ins"
+      ],
+      "instruction_de": "Wähle die passende Form für eine Richtung.",
+      "instruction_ru": "Выберите форму для направления движения."
+    },
+    {
+      "id": "lesson11-wohin-02",
+      "topic_id": "direction_prepositions_wohin",
+      "lemma": "apotheke",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Sie fährt ___ Apotheke.",
+      "answer": "zur",
+      "options": [
+        "zum",
+        "zur",
+        "nach"
+      ],
+      "instruction_de": "Wähle die passende Form für eine Richtung.",
+      "instruction_ru": "Выберите форму для направления движения."
+    },
+    {
+      "id": "lesson11-wohin-03",
+      "topic_id": "direction_prepositions_wohin",
+      "lemma": "kino",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Wir gehen ___ Kino.",
+      "answer": "ins",
+      "options": [
+        "im",
+        "ins",
+        "zum"
+      ],
+      "instruction_de": "Wähle die passende Form für eine Richtung.",
+      "instruction_ru": "Выберите форму для направления движения."
+    },
+    {
+      "id": "lesson11-wohin-04",
+      "topic_id": "direction_prepositions_wohin",
+      "lemma": "berlin",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Der Zug fährt ___ Berlin.",
+      "answer": "nach",
+      "options": [
+        "in",
+        "nach",
+        "zu"
+      ],
+      "instruction_de": "Wähle die passende Form für eine Richtung.",
+      "instruction_ru": "Выберите форму для направления движения."
+    },
+    {
+      "id": "lesson11-wohin-05",
+      "topic_id": "direction_prepositions_wohin",
+      "lemma": "schweiz",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Sie reisen ___ Schweiz.",
+      "answer": "in die",
+      "options": [
+        "in der",
+        "in die",
+        "nach"
+      ],
+      "instruction_de": "Wähle die passende Form für eine Richtung.",
+      "instruction_ru": "Выберите форму для направления движения."
+    },
+    {
+      "id": "lesson11-wohin-06",
+      "topic_id": "direction_prepositions_wohin",
+      "lemma": "haus",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Ich gehe jetzt ___ Hause.",
+      "answer": "nach",
+      "options": [
+        "nach",
+        "zu",
+        "in"
+      ],
+      "instruction_de": "Wähle die passende Form für eine Richtung.",
+      "instruction_ru": "Выберите форму для направления движения."
+    },
+    {
+      "id": "lesson11-wohin-07",
+      "topic_id": "direction_prepositions_wohin",
+      "lemma": "freundin",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Lara fährt ___ Freundin.",
+      "answer": "zu ihrer",
+      "options": [
+        "bei ihrer",
+        "zu ihrer",
+        "in ihre"
+      ],
+      "instruction_de": "Wähle die passende Form für eine Richtung.",
+      "instruction_ru": "Выберите форму для направления движения."
+    },
+    {
+      "id": "lesson11-wohin-08",
+      "topic_id": "direction_prepositions_wohin",
+      "lemma": "supermarkt",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Wir gehen ___ Supermarkt.",
+      "answer": "zum",
+      "options": [
+        "im",
+        "zum",
+        "nach"
+      ],
+      "instruction_de": "Wähle die passende Form für eine Richtung.",
+      "instruction_ru": "Выберите форму для направления движения."
+    },
+    {
+      "id": "lesson11-wohin-09",
+      "topic_id": "direction_prepositions_wohin",
+      "lemma": "post",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Er fährt ___ Post.",
+      "answer": "zur",
+      "options": [
+        "zum",
+        "zur",
+        "nach"
+      ],
+      "instruction_de": "Wähle die passende Form für eine Richtung.",
+      "instruction_ru": "Выберите форму для направления движения."
+    },
+    {
+      "id": "lesson11-wohin-10",
+      "topic_id": "direction_prepositions_wohin",
+      "lemma": "bahnhof",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Gehen Sie ___ Bahnhof.",
+      "answer": "zum",
+      "options": [
+        "am",
+        "zum",
+        "nach"
+      ],
+      "instruction_de": "Wähle die passende Form für eine Richtung.",
+      "instruction_ru": "Выберите форму для направления движения."
+    },
+    {
+      "id": "lesson11-wohin-11",
+      "topic_id": "direction_prepositions_wohin",
+      "lemma": "museum",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Die Kinder gehen ___ Museum.",
+      "answer": "ins",
+      "options": [
+        "im",
+        "ins",
+        "zum"
+      ],
+      "instruction_de": "Wähle die passende Form für eine Richtung.",
+      "instruction_ru": "Выберите форму для направления движения."
+    },
+    {
+      "id": "lesson11-wohin-12",
+      "topic_id": "direction_prepositions_wohin",
+      "lemma": "österreich",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Morgen fahren wir ___ Österreich.",
+      "answer": "nach",
+      "options": [
+        "in",
+        "nach",
+        "zu"
+      ],
+      "instruction_de": "Wähle die passende Form für eine Richtung.",
+      "instruction_ru": "Выберите форму для направления движения."
+    },
+    {
+      "id": "lesson11-wohin-13",
+      "topic_id": "direction_prepositions_wohin",
+      "lemma": "usa",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Sie fliegt ___ USA.",
+      "answer": "in die",
+      "options": [
+        "in den",
+        "in die",
+        "nach"
+      ],
+      "instruction_de": "Wähle die passende Form für eine Richtung.",
+      "instruction_ru": "Выберите форму для направления движения."
+    },
+    {
+      "id": "lesson11-wohin-14",
+      "topic_id": "direction_prepositions_wohin",
+      "lemma": "jemen",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Er fliegt ___ Jemen.",
+      "answer": "in den",
+      "options": [
+        "in dem",
+        "in den",
+        "nach"
+      ],
+      "instruction_de": "Wähle die passende Form für eine Richtung.",
+      "instruction_ru": "Выберите форму для направления движения."
+    },
+    {
+      "id": "lesson11-wohin-15",
+      "topic_id": "direction_prepositions_wohin",
+      "lemma": "restaurant",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Wir gehen ___ Restaurant.",
+      "answer": "ins",
+      "options": [
+        "im",
+        "ins",
+        "zum"
+      ],
+      "instruction_de": "Wähle die passende Form für eine Richtung.",
+      "instruction_ru": "Выберите форму для направления движения."
+    },
+    {
+      "id": "lesson11-wohin-16",
+      "topic_id": "direction_prepositions_wohin",
+      "lemma": "arbeit",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Sie fährt ___ Arbeit.",
+      "answer": "zur",
+      "options": [
+        "bei der",
+        "zur",
+        "nach"
+      ],
+      "instruction_de": "Wähle die passende Form für eine Richtung.",
+      "instruction_ru": "Выберите форму для направления движения."
+    },
+    {
+      "id": "lesson11-wohin-17",
+      "topic_id": "direction_prepositions_wohin",
+      "lemma": "schule",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Das Kind geht ___ Schule.",
+      "answer": "zur",
+      "options": [
+        "in der",
+        "zur",
+        "nach"
+      ],
+      "instruction_de": "Wähle die passende Form für eine Richtung.",
+      "instruction_ru": "Выберите форму для направления движения."
+    },
+    {
+      "id": "lesson11-wohin-18",
+      "topic_id": "direction_prepositions_wohin",
+      "lemma": "werkstatt",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Ich bringe das Auto ___ Werkstatt.",
+      "answer": "in die",
+      "options": [
+        "in der",
+        "in die",
+        "zur"
+      ],
+      "instruction_de": "Wähle die passende Form für eine Richtung.",
+      "instruction_ru": "Выберите форму для направления движения."
+    },
+    {
+      "id": "lesson11-wohin-19",
+      "topic_id": "direction_prepositions_wohin",
+      "lemma": "hamburg",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Der Bus fährt ___ Hamburg.",
+      "answer": "nach",
+      "options": [
+        "in",
+        "nach",
+        "zu"
+      ],
+      "instruction_de": "Wähle die passende Form für eine Richtung.",
+      "instruction_ru": "Выберите форму для направления движения."
+    },
+    {
+      "id": "lesson11-wohin-20",
+      "topic_id": "direction_prepositions_wohin",
+      "lemma": "weg",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Wir gehen ___ Walter.",
+      "answer": "zu",
+      "options": [
+        "bei",
+        "in",
+        "zu"
+      ],
+      "instruction_de": "Wähle die passende Form für eine Richtung.",
+      "instruction_ru": "Выберите форму для направления движения."
+    },
+    {
+      "id": "lesson11-ordinal-01",
+      "topic_id": "ordinal_numbers",
+      "lemma": "straße",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Fahren Sie die ___ Straße rechts. (1)",
+      "answer": "erste",
+      "options": [
+        "erste",
+        "zweite",
+        "dritte"
+      ],
+      "instruction_de": "Wähle die richtige Ordinalzahl.",
+      "instruction_ru": "Выберите правильное порядковое числительное."
+    },
+    {
+      "id": "lesson11-ordinal-02",
+      "topic_id": "ordinal_numbers",
+      "lemma": "straße",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Fahren Sie die ___ Straße links. (2)",
+      "answer": "zweite",
+      "options": [
+        "erste",
+        "zweite",
+        "zwanzigste"
+      ],
+      "instruction_de": "Wähle die richtige Ordinalzahl.",
+      "instruction_ru": "Выберите правильное порядковое числительное."
+    },
+    {
+      "id": "lesson11-ordinal-03",
+      "topic_id": "ordinal_numbers",
+      "lemma": "straße",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Nehmen Sie die ___ Straße. (3)",
+      "answer": "dritte",
+      "options": [
+        "dreite",
+        "dritte",
+        "dreiste"
+      ],
+      "instruction_de": "Wähle die richtige Ordinalzahl.",
+      "instruction_ru": "Выберите правильное порядковое числительное."
+    },
+    {
+      "id": "lesson11-ordinal-04",
+      "topic_id": "ordinal_numbers",
+      "lemma": "haus",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Das ist das ___ Haus. (4)",
+      "answer": "vierte",
+      "options": [
+        "vierte",
+        "vierste",
+        "vierten"
+      ],
+      "instruction_de": "Wähle die richtige Ordinalzahl.",
+      "instruction_ru": "Выберите правильное порядковое числительное."
+    },
+    {
+      "id": "lesson11-ordinal-05",
+      "topic_id": "ordinal_numbers",
+      "lemma": "tag",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Heute ist der ___ Tag. (5)",
+      "answer": "fünfte",
+      "options": [
+        "fünfte",
+        "fünfste",
+        "fünften"
+      ],
+      "instruction_de": "Wähle die richtige Ordinalzahl.",
+      "instruction_ru": "Выберите правильное порядковое числительное."
+    },
+    {
+      "id": "lesson11-ordinal-06",
+      "topic_id": "ordinal_numbers",
+      "lemma": "monat",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Juni ist der ___ Monat. (6)",
+      "answer": "sechste",
+      "options": [
+        "sechste",
+        "sechsste",
+        "sechsten"
+      ],
+      "instruction_de": "Wähle die richtige Ordinalzahl.",
+      "instruction_ru": "Выберите правильное порядковое числительное."
+    },
+    {
+      "id": "lesson11-ordinal-07",
+      "topic_id": "ordinal_numbers",
+      "lemma": "gleis",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Der Zug fährt vom ___ Gleis ab. (7)",
+      "answer": "siebten",
+      "options": [
+        "siebten",
+        "siebsten",
+        "siebte"
+      ],
+      "instruction_de": "Wähle die richtige Ordinalzahl.",
+      "instruction_ru": "Выберите правильное порядковое числительное."
+    },
+    {
+      "id": "lesson11-ordinal-08",
+      "topic_id": "ordinal_numbers",
+      "lemma": "stock",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Das Büro ist im ___ Stock. (8)",
+      "answer": "achten",
+      "options": [
+        "achteten",
+        "achten",
+        "achtsten"
+      ],
+      "instruction_de": "Wähle die richtige Ordinalzahl.",
+      "instruction_ru": "Выберите правильное порядковое числительное."
+    },
+    {
+      "id": "lesson11-ordinal-09",
+      "topic_id": "ordinal_numbers",
+      "lemma": "lektion",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Wir lernen die ___ Lektion. (9)",
+      "answer": "neunte",
+      "options": [
+        "neunte",
+        "neunste",
+        "neunten"
+      ],
+      "instruction_de": "Wähle die richtige Ordinalzahl.",
+      "instruction_ru": "Выберите правильное порядковое числительное."
+    },
+    {
+      "id": "lesson11-ordinal-10",
+      "topic_id": "ordinal_numbers",
+      "lemma": "minute",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "In der ___ Minute kommt der Bus. (10)",
+      "answer": "zehnten",
+      "options": [
+        "zehnte",
+        "zehnten",
+        "zehnste"
+      ],
+      "instruction_de": "Wähle die richtige Ordinalzahl.",
+      "instruction_ru": "Выберите правильное порядковое числительное."
+    },
+    {
+      "id": "lesson11-ordinal-11",
+      "topic_id": "ordinal_numbers",
+      "lemma": "termin",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Das ist mein ___ Termin. (1)",
+      "answer": "erster",
+      "options": [
+        "erste",
+        "erster",
+        "erstes"
+      ],
+      "instruction_de": "Wähle die richtige Ordinalzahl.",
+      "instruction_ru": "Выберите правильное порядковое числительное."
+    },
+    {
+      "id": "lesson11-ordinal-12",
+      "topic_id": "ordinal_numbers",
+      "lemma": "kind",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Das ___ Kind wartet draußen. (2)",
+      "answer": "zweite",
+      "options": [
+        "zweiter",
+        "zweite",
+        "zweites"
+      ],
+      "instruction_de": "Wähle die richtige Ordinalzahl.",
+      "instruction_ru": "Выберите правильное порядковое числительное."
+    },
+    {
+      "id": "lesson11-ordinal-13",
+      "topic_id": "ordinal_numbers",
+      "lemma": "auto",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Das ___ Auto ist rot. (3)",
+      "answer": "dritte",
+      "options": [
+        "dritter",
+        "dritte",
+        "drittes"
+      ],
+      "instruction_de": "Wähle die richtige Ordinalzahl.",
+      "instruction_ru": "Выберите правильное порядковое числительное."
+    },
+    {
+      "id": "lesson11-ordinal-14",
+      "topic_id": "ordinal_numbers",
+      "lemma": "zug",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Der ___ Zug kommt später. (4)",
+      "answer": "vierte",
+      "options": [
+        "vierter",
+        "vierte",
+        "vierten"
+      ],
+      "instruction_de": "Wähle die richtige Ordinalzahl.",
+      "instruction_ru": "Выберите правильное порядковое числительное."
+    },
+    {
+      "id": "lesson11-ordinal-15",
+      "topic_id": "ordinal_numbers",
+      "lemma": "station",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Steigen Sie an der ___ Station aus. (5)",
+      "answer": "fünften",
+      "options": [
+        "fünfte",
+        "fünften",
+        "fünfste"
+      ],
+      "instruction_de": "Wähle die richtige Ordinalzahl.",
+      "instruction_ru": "Выберите правильное порядковое числительное."
+    },
+    {
+      "id": "lesson11-ordinal-16",
+      "topic_id": "ordinal_numbers",
+      "lemma": "datum",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Am ___ Mai habe ich einen Termin. (6)",
+      "answer": "sechsten",
+      "options": [
+        "sechste",
+        "sechsten",
+        "sechsste"
+      ],
+      "instruction_de": "Wähle die richtige Ordinalzahl.",
+      "instruction_ru": "Выберите правильное порядковое числительное."
+    },
+    {
+      "id": "lesson11-ordinal-17",
+      "topic_id": "ordinal_numbers",
+      "lemma": "bus",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Der ___ Bus fährt zum Bahnhof. (7)",
+      "answer": "siebte",
+      "options": [
+        "siebte",
+        "siebste",
+        "siebten"
+      ],
+      "instruction_de": "Wähle die richtige Ordinalzahl.",
+      "instruction_ru": "Выберите правильное порядковое числительное."
+    },
+    {
+      "id": "lesson11-ordinal-18",
+      "topic_id": "ordinal_numbers",
+      "lemma": "buch",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Lesen Sie die ___ Seite. (8)",
+      "answer": "achte",
+      "options": [
+        "achtete",
+        "achte",
+        "achtste"
+      ],
+      "instruction_de": "Wähle die richtige Ordinalzahl.",
+      "instruction_ru": "Выберите правильное порядковое числительное."
+    },
+    {
+      "id": "lesson11-ordinal-19",
+      "topic_id": "ordinal_numbers",
+      "lemma": "tag",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Heute ist sein ___ Geburtstag. (20)",
+      "answer": "zwanzigster",
+      "options": [
+        "zwanzigste",
+        "zwanzigster",
+        "zwanzigter"
+      ],
+      "instruction_de": "Wähle die richtige Ordinalzahl.",
+      "instruction_ru": "Выберите правильное порядковое числительное."
+    },
+    {
+      "id": "lesson11-ordinal-20",
+      "topic_id": "ordinal_numbers",
+      "lemma": "straße",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Die ___ Straße ist gesperrt. (21)",
+      "answer": "einundzwanzigste",
+      "options": [
+        "einundzwanzigte",
+        "einundzwanzigste",
+        "einundzwanzigster"
+      ],
+      "instruction_de": "Wähle die richtige Ordinalzahl.",
+      "instruction_ru": "Выберите правильное порядковое числительное."
+    },
+    {
+      "id": "lesson10-possessive-01",
+      "topic_id": "possessive_articles",
+      "lemma": "hand",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Simon hebt ___ Hand. (er)",
+      "answer": "seine",
+      "options": [
+        "sein",
+        "seine",
+        "seinen"
+      ],
+      "instruction_de": "Wähle den passenden Possessivartikel.",
+      "instruction_ru": "Выберите правильный притяжательный артикль."
+    },
+    {
+      "id": "lesson10-possessive-02",
+      "topic_id": "possessive_articles",
+      "lemma": "ohr",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Sofia tun ___ Ohren weh. (sie)",
+      "answer": "ihre",
+      "options": [
+        "ihr",
+        "ihre",
+        "ihren"
+      ],
+      "instruction_de": "Wähle den passenden Possessivartikel.",
+      "instruction_ru": "Выберите правильный притяжательный артикль."
+    },
+    {
+      "id": "lesson10-possessive-03",
+      "topic_id": "possessive_articles",
+      "lemma": "bein",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Paul kühlt ___ Bein. (er)",
+      "answer": "sein",
+      "options": [
+        "sein",
+        "seine",
+        "seinen"
+      ],
+      "instruction_de": "Wähle den passenden Possessivartikel.",
+      "instruction_ru": "Выберите правильный притяжательный артикль."
+    },
+    {
+      "id": "lesson10-possessive-04",
+      "topic_id": "possessive_articles",
+      "lemma": "nase",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Lara putzt ___ Nase. (sie)",
+      "answer": "ihre",
+      "options": [
+        "ihr",
+        "ihre",
+        "ihren"
+      ],
+      "instruction_de": "Wähle den passenden Possessivartikel.",
+      "instruction_ru": "Выберите правильный притяжательный артикль."
+    },
+    {
+      "id": "lesson10-possessive-05",
+      "topic_id": "possessive_articles",
+      "lemma": "kopf",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Das Kind bewegt ___ Kopf. (es)",
+      "answer": "seinen",
+      "options": [
+        "sein",
+        "seine",
+        "seinen"
+      ],
+      "instruction_de": "Wähle den passenden Possessivartikel.",
+      "instruction_ru": "Выберите правильный притяжательный артикль."
+    },
+    {
+      "id": "lesson10-possessive-06",
+      "topic_id": "possessive_articles",
+      "lemma": "auge",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Wir schließen ___ Augen. (wir)",
+      "answer": "unsere",
+      "options": [
+        "unser",
+        "unsere",
+        "unseren"
+      ],
+      "instruction_de": "Wähle den passenden Possessivartikel.",
+      "instruction_ru": "Выберите правильный притяжательный артикль."
+    },
+    {
+      "id": "lesson10-possessive-07",
+      "topic_id": "possessive_articles",
+      "lemma": "arzt",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Wir rufen ___ Arzt an. (wir)",
+      "answer": "unseren",
+      "options": [
+        "unser",
+        "unsere",
+        "unseren"
+      ],
+      "instruction_de": "Wähle den passenden Possessivartikel.",
+      "instruction_ru": "Выберите правильный притяжательный артикль."
+    },
+    {
+      "id": "lesson10-possessive-08",
+      "topic_id": "possessive_articles",
+      "lemma": "medikament",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Ihr nehmt ___ Medikament. (ihr)",
+      "answer": "euer",
+      "options": [
+        "euer",
+        "eure",
+        "euren"
+      ],
+      "instruction_de": "Wähle den passenden Possessivartikel.",
+      "instruction_ru": "Выберите правильный притяжательный артикль."
+    },
+    {
+      "id": "lesson10-possessive-09",
+      "topic_id": "possessive_articles",
+      "lemma": "tablette",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Ihr nehmt ___ Tabletten. (ihr)",
+      "answer": "eure",
+      "options": [
+        "euer",
+        "eure",
+        "euren"
+      ],
+      "instruction_de": "Wähle den passenden Possessivartikel.",
+      "instruction_ru": "Выберите правильный притяжательный артикль."
+    },
+    {
+      "id": "lesson10-possessive-10",
+      "topic_id": "possessive_articles",
+      "lemma": "doktor",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Sie fragen ___ Doktor. (sie)",
+      "answer": "ihren",
+      "options": [
+        "ihr",
+        "ihre",
+        "ihren"
+      ],
+      "instruction_de": "Wähle den passenden Possessivartikel.",
+      "instruction_ru": "Выберите правильный притяжательный артикль."
+    },
+    {
+      "id": "lesson10-possessive-11",
+      "topic_id": "possessive_articles",
+      "lemma": "tochter",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Die Eltern bringen ___ Tochter zum Arzt.",
+      "answer": "ihre",
+      "options": [
+        "ihr",
+        "ihre",
+        "ihren"
+      ],
+      "instruction_de": "Wähle den passenden Possessivartikel.",
+      "instruction_ru": "Выберите правильный притяжательный артикль."
+    },
+    {
+      "id": "lesson10-possessive-12",
+      "topic_id": "possessive_articles",
+      "lemma": "kind",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Frau Kuhn bringt ___ Kind zur Praxis.",
+      "answer": "ihr",
+      "options": [
+        "ihr",
+        "ihre",
+        "ihren"
+      ],
+      "instruction_de": "Wähle den passenden Possessivartikel.",
+      "instruction_ru": "Выберите правильный притяжательный артикль."
+    },
+    {
+      "id": "lesson10-possessive-13",
+      "topic_id": "possessive_articles",
+      "lemma": "termin",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Herr Meier verschiebt ___ Termin.",
+      "answer": "seinen",
+      "options": [
+        "sein",
+        "seine",
+        "seinen"
+      ],
+      "instruction_de": "Wähle den passenden Possessivartikel.",
+      "instruction_ru": "Выберите правильный притяжательный артикль."
+    },
+    {
+      "id": "lesson10-possessive-14",
+      "topic_id": "possessive_articles",
+      "lemma": "versichertenkarte",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Bringen Sie bitte ___ Versichertenkarte mit.",
+      "answer": "Ihre",
+      "options": [
+        "Ihr",
+        "Ihre",
+        "Ihren"
+      ],
+      "instruction_de": "Wähle den passenden Possessivartikel.",
+      "instruction_ru": "Выберите правильный притяжательный артикль."
+    },
+    {
+      "id": "lesson10-possessive-15",
+      "topic_id": "possessive_articles",
+      "lemma": "name",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Wie ist ___ Name? (Sie)",
+      "answer": "Ihr",
+      "options": [
+        "Ihr",
+        "Ihre",
+        "Ihren"
+      ],
+      "instruction_de": "Wähle den passenden Possessivartikel.",
+      "instruction_ru": "Выберите правильный притяжательный артикль."
+    },
+    {
+      "id": "lesson10-possessive-16",
+      "topic_id": "possessive_articles",
+      "lemma": "freund",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Wir informieren ___ Freunde.",
+      "answer": "unsere",
+      "options": [
+        "unser",
+        "unsere",
+        "unseren"
+      ],
+      "instruction_de": "Wähle den passenden Possessivartikel.",
+      "instruction_ru": "Выберите правильный притяжательный артикль."
+    },
+    {
+      "id": "lesson10-possessive-17",
+      "topic_id": "possessive_articles",
+      "lemma": "mutter",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Du rufst ___ Mutter an.",
+      "answer": "deine",
+      "options": [
+        "dein",
+        "deine",
+        "deinen"
+      ],
+      "instruction_de": "Wähle den passenden Possessivartikel.",
+      "instruction_ru": "Выберите правильный притяжательный артикль."
+    },
+    {
+      "id": "lesson10-possessive-18",
+      "topic_id": "possessive_articles",
+      "lemma": "vater",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Du besuchst ___ Vater.",
+      "answer": "deinen",
+      "options": [
+        "dein",
+        "deine",
+        "deinen"
+      ],
+      "instruction_de": "Wähle den passenden Possessivartikel.",
+      "instruction_ru": "Выберите правильный притяжательный артикль."
+    },
+    {
+      "id": "lesson10-possessive-19",
+      "topic_id": "possessive_articles",
+      "lemma": "adresse",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Ich schreibe ___ Adresse.",
+      "answer": "meine",
+      "options": [
+        "mein",
+        "meine",
+        "meinen"
+      ],
+      "instruction_de": "Wähle den passenden Possessivartikel.",
+      "instruction_ru": "Выберите правильный притяжательный артикль."
+    },
+    {
+      "id": "lesson10-possessive-20",
+      "topic_id": "possessive_articles",
+      "lemma": "brief",
+      "required_item_type": "noun",
+      "type": "choice",
+      "prompt": "Ich schicke ___ Brief heute.",
+      "answer": "meinen",
+      "options": [
+        "mein",
+        "meine",
+        "meinen"
+      ],
+      "instruction_de": "Wähle den passenden Possessivartikel.",
+      "instruction_ru": "Выберите правильный притяжательный артикль."
+    },
+    {
+      "id": "questions-complete-01",
+      "topic_id": "w_questions",
+      "lemma": "wer",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "___ kommt heute zum Arzt?",
+      "answer": "Wer",
+      "options": [
+        "Wer",
+        "Was",
+        "Wen"
+      ],
+      "instruction_de": "Wähle das passende Fragewort.",
+      "instruction_ru": "Выберите подходящее вопросительное слово."
+    },
+    {
+      "id": "questions-complete-02",
+      "topic_id": "w_questions",
+      "lemma": "wen",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "___ rufst du an?",
+      "answer": "Wen",
+      "options": [
+        "Wen",
+        "Wer",
+        "Wem"
+      ],
+      "instruction_de": "Wähle das passende Fragewort.",
+      "instruction_ru": "Выберите подходящее вопросительное слово."
+    },
+    {
+      "id": "questions-complete-03",
+      "topic_id": "w_questions",
+      "lemma": "wem",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "Mit ___ sprichst du?",
+      "answer": "wem",
+      "options": [
+        "wem",
+        "wen",
+        "wer"
+      ],
+      "instruction_de": "Wähle das passende Fragewort.",
+      "instruction_ru": "Выберите подходящее вопросительное слово."
+    },
+    {
+      "id": "questions-complete-04",
+      "topic_id": "w_questions",
+      "lemma": "wessen",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "___ Schlüssel ist das?",
+      "answer": "Wessen",
+      "options": [
+        "Wessen",
+        "Welchen",
+        "Wer"
+      ],
+      "instruction_de": "Wähle das passende Fragewort.",
+      "instruction_ru": "Выберите подходящее вопросительное слово."
+    },
+    {
+      "id": "questions-complete-05",
+      "topic_id": "w_questions",
+      "lemma": "was",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "___ ist passiert?",
+      "answer": "Was",
+      "options": [
+        "Was",
+        "Wer",
+        "Wo"
+      ],
+      "instruction_de": "Wähle das passende Fragewort.",
+      "instruction_ru": "Выберите подходящее вопросительное слово."
+    },
+    {
+      "id": "questions-complete-06",
+      "topic_id": "w_questions",
+      "lemma": "wo",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "___ ist die Apotheke?",
+      "answer": "Wo",
+      "options": [
+        "Wo",
+        "Wohin",
+        "Woher"
+      ],
+      "instruction_de": "Wähle das passende Fragewort.",
+      "instruction_ru": "Выберите подходящее вопросительное слово."
+    },
+    {
+      "id": "questions-complete-07",
+      "topic_id": "w_questions",
+      "lemma": "wohin",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "___ fährt der Bus?",
+      "answer": "Wohin",
+      "options": [
+        "Wohin",
+        "Wo",
+        "Woher"
+      ],
+      "instruction_de": "Wähle das passende Fragewort.",
+      "instruction_ru": "Выберите подходящее вопросительное слово."
+    },
+    {
+      "id": "questions-complete-08",
+      "topic_id": "w_questions",
+      "lemma": "woher",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "___ kommen Sie?",
+      "answer": "Woher",
+      "options": [
+        "Woher",
+        "Wohin",
+        "Warum"
+      ],
+      "instruction_de": "Wähle das passende Fragewort.",
+      "instruction_ru": "Выберите подходящее вопросительное слово."
+    },
+    {
+      "id": "questions-complete-09",
+      "topic_id": "w_questions",
+      "lemma": "wann",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "___ kommt der Zug an?",
+      "answer": "Wann",
+      "options": [
+        "Wann",
+        "Wie",
+        "Wo"
+      ],
+      "instruction_de": "Wähle das passende Fragewort.",
+      "instruction_ru": "Выберите подходящее вопросительное слово."
+    },
+    {
+      "id": "questions-complete-10",
+      "topic_id": "w_questions",
+      "lemma": "seit wann",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "___ wohnen Sie in Berlin?",
+      "answer": "Seit wann",
+      "options": [
+        "Seit wann",
+        "Bis wann",
+        "Warum"
+      ],
+      "instruction_de": "Wähle das passende Fragewort.",
+      "instruction_ru": "Выберите подходящее вопросительное слово."
+    },
+    {
+      "id": "questions-complete-11",
+      "topic_id": "w_questions",
+      "lemma": "bis wann",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "___ ist die Apotheke geöffnet?",
+      "answer": "Bis wann",
+      "options": [
+        "Bis wann",
+        "Seit wann",
+        "Wie oft"
+      ],
+      "instruction_de": "Wähle das passende Fragewort.",
+      "instruction_ru": "Выберите подходящее вопросительное слово."
+    },
+    {
+      "id": "questions-complete-12",
+      "topic_id": "w_questions",
+      "lemma": "warum",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "___ kommst du so spät?",
+      "answer": "Warum",
+      "options": [
+        "Warum",
+        "Wann",
+        "Wo"
+      ],
+      "instruction_de": "Wähle das passende Fragewort.",
+      "instruction_ru": "Выберите подходящее вопросительное слово."
+    },
+    {
+      "id": "questions-complete-13",
+      "topic_id": "w_questions",
+      "lemma": "wieso",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "___ fährst du nicht mit dem Bus?",
+      "answer": "Wieso",
+      "options": [
+        "Wieso",
+        "Wohin",
+        "Wie viele"
+      ],
+      "instruction_de": "Wähle das passende Fragewort.",
+      "instruction_ru": "Выберите подходящее вопросительное слово."
+    },
+    {
+      "id": "questions-complete-14",
+      "topic_id": "w_questions",
+      "lemma": "weshalb",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "___ bleibt sie zu Hause?",
+      "answer": "Weshalb",
+      "options": [
+        "Weshalb",
+        "Woher",
+        "Welche"
+      ],
+      "instruction_de": "Wähle das passende Fragewort.",
+      "instruction_ru": "Выберите подходящее вопросительное слово."
+    },
+    {
+      "id": "questions-complete-15",
+      "topic_id": "w_questions",
+      "lemma": "wie",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "___ geht es Ihnen?",
+      "answer": "Wie",
+      "options": [
+        "Wie",
+        "Was",
+        "Wer"
+      ],
+      "instruction_de": "Wähle das passende Fragewort.",
+      "instruction_ru": "Выберите подходящее вопросительное слово."
+    },
+    {
+      "id": "questions-complete-16",
+      "topic_id": "w_questions",
+      "lemma": "wie lange",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "___ dauert die Fahrt?",
+      "answer": "Wie lange",
+      "options": [
+        "Wie lange",
+        "Wie oft",
+        "Wie viele"
+      ],
+      "instruction_de": "Wähle das passende Fragewort.",
+      "instruction_ru": "Выберите подходящее вопросительное слово."
+    },
+    {
+      "id": "questions-complete-17",
+      "topic_id": "w_questions",
+      "lemma": "wie oft",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "___ fährt die S-Bahn?",
+      "answer": "Wie oft",
+      "options": [
+        "Wie oft",
+        "Wie lange",
+        "Wie viel"
+      ],
+      "instruction_de": "Wähle das passende Fragewort.",
+      "instruction_ru": "Выберите подходящее вопросительное слово."
+    },
+    {
+      "id": "questions-complete-18",
+      "topic_id": "w_questions",
+      "lemma": "wie viel",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "___ kostet die Fahrkarte?",
+      "answer": "Wie viel",
+      "options": [
+        "Wie viel",
+        "Wie viele",
+        "Welcher"
+      ],
+      "instruction_de": "Wähle das passende Fragewort.",
+      "instruction_ru": "Выберите подходящее вопросительное слово."
+    },
+    {
+      "id": "questions-complete-19",
+      "topic_id": "w_questions",
+      "lemma": "wie viele",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "___ Tabletten soll ich nehmen?",
+      "answer": "Wie viele",
+      "options": [
+        "Wie viele",
+        "Wie viel",
+        "Welche"
+      ],
+      "instruction_de": "Wähle das passende Fragewort.",
+      "instruction_ru": "Выберите подходящее вопросительное слово."
+    },
+    {
+      "id": "questions-complete-20",
+      "topic_id": "w_questions",
+      "lemma": "welche",
+      "required_item_type": "word",
+      "type": "choice",
+      "prompt": "___ Verletzung hat der Mann?",
+      "answer": "Welche",
+      "options": [
+        "Welche",
+        "Welcher",
+        "Welches"
+      ],
+      "instruction_de": "Wähle das passende Fragewort.",
+      "instruction_ru": "Выберите подходящее вопросительное слово."
     }
   ]
 }

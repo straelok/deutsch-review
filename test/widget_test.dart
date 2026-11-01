@@ -1613,7 +1613,7 @@ void main() {
   });
 
   testWidgets(
-      'restarts a stale irregular verb run with translation and all 27 verbs',
+      'restarts a stale irregular verb run with translation and all 28 verbs',
       (tester) async {
     final database = AppDatabase.inMemory();
     addTearDown(database.close);
@@ -1685,13 +1685,13 @@ void main() {
 
     expect(find.byKey(const Key('grammar-form-translation')), findsOneWidget);
     expect(find.byKey(const Key('grammar-form-present')), findsOneWidget);
-    expect(find.byKey(const Key('grammar-form-preterite')), findsOneWidget);
+    expect(find.byKey(const Key('grammar-form-preterite')), findsNothing);
     expect(find.byKey(const Key('grammar-form-auxiliaries')), findsOneWidget);
     expect(find.byKey(const Key('grammar-form-participle')), findsOneWidget);
     final restarted = (await SqliteDailySessionRepository(database)
         .findById('stale-irregular-run'))!;
     expect(restarted.answeredCount, 0);
-    expect(restarted.targetAnswers, 27);
+    expect(restarted.targetAnswers, 28);
     expect(restarted.queueItemIds.toSet(), exerciseIds.toSet());
     expect(restarted.contentVersion, bundledContentVersion);
 
@@ -1704,8 +1704,36 @@ void main() {
     final emptyAttempts = database.connection.select(
       "SELECT correct FROM grammar_attempts WHERE session_id = 'stale-irregular-run'",
     );
-    expect(emptyAttempts, hasLength(5));
+    expect(emptyAttempts, hasLength(4));
     expect(emptyAttempts.every((row) => row['correct'] == 0), isTrue);
+  });
+
+  testWidgets('shows irregular verb theory as cards without preterite', (
+    tester,
+  ) async {
+    final database = AppDatabase.inMemory();
+    addTearDown(database.close);
+
+    await tester.pumpWidget(
+      _app(database, grammarCatalog: _irregularVerbCatalog()),
+    );
+    await tester.pumpAndSettle();
+    await _openGrammarPage(tester);
+    await tester.tap(
+      find.byKey(const Key('grammar-topic-irregular_verb_forms')),
+    );
+    await tester.pumpAndSettle();
+
+    expect(
+      find.byKey(const Key('irregular-verb-reference-list')),
+      findsOneWidget,
+    );
+    expect(
+      find.byKey(const Key('irregular-verb-reference-bleiben')),
+      findsOneWidget,
+    );
+    expect(find.text('ist geblieben'), findsOneWidget);
+    expect(find.text('Präteritum'), findsNothing);
   });
 
   testWidgets('mixes learned foundation topics and supports new answer modes', (
@@ -2102,13 +2130,16 @@ GrammarCatalog _irregularVerbCatalog() {
   const topic = GrammarTopic(
     id: 'irregular_verb_forms',
     order: 1,
-    titleDe: '27 unregelmäßige Verben',
-    titleRu: '27 неправильных глаголов',
+    titleDe: '28 unregelmäßige Verben',
+    titleRu: '28 неправильных глаголов',
     summaryDe: 'Alle Formen',
     summaryRu: 'Все формы',
     explanationDe: ['Erklärung'],
     explanationRu: ['Объяснение'],
-    table: [],
+    table: [
+      ['Infinitiv', 'Übersetzung (RU)', 'Präsens (er/sie/es)', 'Perfekt'],
+      ['bleiben', 'оставаться; остаться', 'bleibt', 'ist geblieben'],
+    ],
     trainable: true,
     practiceSection: 'other',
   );
@@ -2116,18 +2147,17 @@ GrammarCatalog _irregularVerbCatalog() {
     topics: const [topic],
     verbs: const [],
     exercises: List.generate(
-      27,
+      28,
       (index) => GrammarExercise(
         id: 'irregular-$index',
         topicId: 'irregular_verb_forms',
         lemma: 'verb-$index',
         prompt: 'verb-$index',
-        answer: 'form-$index preterite-$index hat participle-$index',
+        answer: 'form-$index hat participle-$index',
         type: GrammarExerciseType.forms,
         formAnswers: {
           'translation': ['перевод-$index'],
           'present': ['form-$index'],
-          'preterite': ['preterite-$index'],
           'auxiliaries': ['ist hat', 'hat ist'],
           'participle': ['participle-$index'],
         },

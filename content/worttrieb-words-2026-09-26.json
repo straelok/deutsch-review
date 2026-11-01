@@ -1,28 +1,28 @@
 {
   "format_version": 2,
-  "exported_at": "2026-10-26T10:00:00.000Z",
+  "exported_at": "2026-11-01T20:00:00.000Z",
   "words": [
     {
       "id": "f1a64bf4-47dc-4c74-a2f4-56c53e2e0211",
       "type": "verb",
       "german": "fliegen",
       "translation_ru": "летать; лететь",
-      "example": "Der Vogel fliegt über die Stadt.; Wir fliegen morgen nach Wien.",
-      "note": "Präsens: er/sie/es fliegt; Präteritum: flog; Partizip II: geflogen.",
-      "important": false,
+      "example": "Wir fliegen morgen nach Wien.",
+      "note": "Präteritum: flog; Partizip II: geflogen.",
+      "important": true,
       "created_at": "2026-10-26T10:00:00.000Z",
-      "updated_at": "2026-10-26T10:00:00.000Z"
+      "updated_at": "2026-11-01T20:00:00.000Z"
     },
     {
       "id": "25ce788f-334d-4b51-8fb7-dca3d4f5c4d7",
       "type": "verb",
       "german": "liegen",
       "translation_ru": "лежать; находиться",
-      "example": "Das Buch liegt auf dem Tisch.; Die Praxis liegt neben der Apotheke.",
+      "example": "Der Patient liegt im Bett.",
       "note": "Präteritum: lag; Partizip II: gelegen.",
-      "important": false,
+      "important": true,
       "created_at": "2026-10-26T10:00:00.000Z",
-      "updated_at": "2026-10-26T10:00:00.000Z"
+      "updated_at": "2026-11-01T20:00:00.000Z"
     },
     {
       "id": "719b117a-b7b3-4b57-b616-b5476aa6d408",
@@ -31,7 +31,7 @@
       "translation_ru": "резать",
       "example": "Sie schneidet das Brot.; Ich schneide die Zwiebel.",
       "note": "Präteritum: schnitt; Partizip II: geschnitten.",
-      "important": false,
+      "important": true,
       "created_at": "2026-10-26T10:00:00.000Z",
       "updated_at": "2026-10-26T10:00:00.000Z"
     },
@@ -40,11 +40,11 @@
       "type": "verb",
       "german": "sitzen",
       "translation_ru": "сидеть",
-      "example": "Wir sitzen im Wartezimmer.; Er sitzt am Fenster.",
+      "example": "Ein Paar sitzt im Café.",
       "note": "Präteritum: saß; Partizip II: gesessen.",
-      "important": false,
+      "important": true,
       "created_at": "2026-10-26T10:00:00.000Z",
-      "updated_at": "2026-10-26T10:00:00.000Z"
+      "updated_at": "2026-11-01T20:00:00.000Z"
     },
     {
       "id": "fc29dbf5-cb28-44f9-9719-53525b9aab62",
@@ -53,7 +53,7 @@
       "translation_ru": "стоять; находиться",
       "example": "Das Auto steht vor dem Haus.; Ich stehe an der Haltestelle.",
       "note": "Präteritum: stand; Partizip II: gestanden.",
-      "important": false,
+      "important": true,
       "created_at": "2026-10-26T10:00:00.000Z",
       "updated_at": "2026-10-26T10:00:00.000Z"
     },
@@ -199,7 +199,7 @@
       "plural": "Ärzte",
       "example": "Der Arzt arbeitet im Krankenhaus.; Zwei Ärzte sprechen mit den Patienten.",
       "id": "e7000013",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-14T22:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -1037,10 +1037,10 @@
       "type": "word",
       "german": "warum",
       "translation_ru": "почему",
-      "example": "Warum kommst du heute nicht?; Warum ist das Geschäft geschlossen?",
-      "important": false,
+      "example": "Warum bleibst du zu Hause?",
+      "important": true,
       "created_at": "2026-10-08T22:19:46.926Z",
-      "updated_at": "2026-10-08T22:19:46.926Z"
+      "updated_at": "2026-11-01T20:00:00.000Z"
     },
     {
       "id": "e6000052",
@@ -1593,10 +1593,10 @@
       "type": "word",
       "german": "wann",
       "translation_ru": "когда",
-      "example": "Wann beginnt der Kurs?; Wann kommst du zurück?",
+      "example": "Wann kommt der Zug?",
       "created_at": "2026-10-06T21:30:00.000Z",
-      "updated_at": "2026-10-14T21:58:30.635729Z",
-      "important": false
+      "updated_at": "2026-11-01T20:00:00.000Z",
+      "important": true
     },
     {
       "id": "e5000029",
@@ -1933,7 +1933,7 @@
       "note": "Сильный глагол: du schließt, er/sie/es schließt.",
       "created_at": "2026-10-06T21:30:00.000Z",
       "updated_at": "2026-10-14T21:58:30.635729Z",
-      "important": false
+      "important": true
     },
     {
       "id": "e5000058",
@@ -2044,7 +2044,7 @@
       "example": "Ich habe sofort einen Arbeitsplatz bekommen.; Wann bekommen Sie die Antwort?",
       "note": "Неотделяемая приставка be-; Partizip II: bekommen.",
       "id": "d9000001",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-06T21:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -2185,10 +2185,10 @@
       "type": "verb",
       "german": "aussteigen",
       "translation_ru": "выходить из транспорта",
-      "example": "Wir steigen am Hauptbahnhof aus.; Steigst du hier aus?",
-      "note": "Отделяемый глагол: aus + steigen.",
+      "example": "Steigen Sie an der nächsten Station aus.",
+      "note": "Trennbares Verb; Partizip II: ausgestiegen.",
       "created_at": "2026-10-06T21:00:00.000Z",
-      "updated_at": "2026-10-14T21:58:30.635729Z",
+      "updated_at": "2026-11-01T20:00:00.000Z",
       "important": false
     },
     {
@@ -2297,7 +2297,7 @@
       "translation_ru": "встречать; встречаться",
       "example": "Du triffst deine Freundin.; Wir treffen uns am Bahnhof.",
       "note": "Сильный глагол: du triffst, er/sie/es trifft.",
-      "important": false,
+      "important": true,
       "created_at": "2026-10-05T21:48:18.545709Z",
       "updated_at": "2026-10-08T22:26:36.416523Z"
     },
@@ -2310,7 +2310,7 @@
       "note": "Сильный глагол: du läufst, er/sie/es läuft.",
       "created_at": "2026-10-05T21:48:18.545709Z",
       "updated_at": "2026-10-06T21:23:15.489415Z",
-      "important": false
+      "important": true
     },
     {
       "id": "d8000004",
@@ -2321,7 +2321,7 @@
       "note": "Сильный глагол: du schläfst, er/sie/es schläft.",
       "created_at": "2026-10-05T21:48:18.545709Z",
       "updated_at": "2026-10-14T21:58:30.635729Z",
-      "important": false
+      "important": true
     },
     {
       "id": "d8000005",
@@ -2343,7 +2343,7 @@
       "note": "Сильный глагол: du isst, er/sie/es isst.",
       "created_at": "2026-10-05T21:48:18.545709Z",
       "updated_at": "2026-10-14T21:58:30.635729Z",
-      "important": false
+      "important": true
     },
     {
       "id": "d8000007",
@@ -2354,7 +2354,7 @@
       "note": "Сильный глагол: du wäschst, er/sie/es wäscht.",
       "created_at": "2026-10-05T21:48:18.545709Z",
       "updated_at": "2026-10-06T21:23:15.489415Z",
-      "important": false
+      "important": true
     },
     {
       "id": "d8000008",
@@ -2363,7 +2363,7 @@
       "translation_ru": "ехать; ездить",
       "example": "Du fährst mit dem Bus.; Wir fahren nach Berlin.",
       "note": "Сильный глагол: du fährst, er/sie/es fährt.",
-      "important": false,
+      "important": true,
       "created_at": "2026-10-05T21:48:18.545709Z",
       "updated_at": "2026-10-08T22:26:36.416523Z"
     },
@@ -2407,7 +2407,7 @@
       "example": "Können Sie mir helfen?; Die Mitarbeiterin hat mir geholfen.",
       "note": "Управление с Dativ; du hilfst, er hilft; Partizip II: geholfen.",
       "id": "d8000012",
-      "important": false,
+      "important": true,
       "created_at": "2026-10-05T21:48:18.545709Z",
       "updated_at": "2026-10-25T10:00:00.000Z"
     },
@@ -2431,7 +2431,7 @@
       "note": "Сильный глагол: du trägst, er/sie/es trägt.",
       "created_at": "2026-10-05T21:48:18.545709Z",
       "updated_at": "2026-10-06T21:23:15.489415Z",
-      "important": false
+      "important": true
     },
     {
       "id": "d8000015",
@@ -2492,11 +2492,11 @@
       "id": "d8000020",
       "type": "verb",
       "german": "abfahren",
-      "translation_ru": "отправляться; отъезжать",
-      "example": "Der Zug fährt um acht ab.; Wann fährst du ab?",
-      "note": "Отделяемый сильный глагол: du fährst ab, er/sie/es fährt ab.",
+      "translation_ru": "отправляться",
+      "example": "Der Zug fährt um 9:50 Uhr ab.",
+      "note": "Trennbares Verb; Partizip II: abgefahren.",
       "created_at": "2026-10-05T21:48:18.545709Z",
-      "updated_at": "2026-10-06T21:23:15.489415Z",
+      "updated_at": "2026-11-01T20:00:00.000Z",
       "important": false
     },
     {
@@ -2515,21 +2515,21 @@
       "type": "verb",
       "german": "einsteigen",
       "translation_ru": "садиться в транспорт",
-      "example": "Wir steigen am Bahnhof ein.; Wo steigt ihr ein?",
-      "note": "Отделяемый глагол: ein + steigen.",
+      "example": "Bitte steigen Sie vorne in den Bus ein.",
+      "note": "Trennbares Verb; Partizip II: eingestiegen.",
       "created_at": "2026-10-05T21:48:18.545709Z",
-      "updated_at": "2026-10-06T21:23:15.489415Z",
+      "updated_at": "2026-11-01T20:00:00.000Z",
       "important": false
     },
     {
       "id": "d8000023",
       "type": "verb",
       "german": "ankommen",
-      "translation_ru": "прибывать; приезжать",
-      "example": "Der Bus kommt pünktlich an.; Wir kommen um zehn an.",
-      "note": "Отделяемый глагол: an + kommen.",
+      "translation_ru": "прибывать",
+      "example": "Der Zug kommt um elf Uhr an.",
+      "note": "Trennbares Verb; Partizip II: angekommen.",
       "created_at": "2026-10-05T21:48:18.545709Z",
-      "updated_at": "2026-10-06T21:23:15.489415Z",
+      "updated_at": "2026-11-01T20:00:00.000Z",
       "important": false
     },
     {
@@ -3144,10 +3144,10 @@
       "translation_ru": "место; населённый пункт",
       "article": "der",
       "plural": "Orte",
-      "example": "Ort: Glückstadt.; Dieser Ort liegt im Norden.",
+      "example": "Schreiben Sie Ort und Datum in den Brief.",
       "created_at": "2026-10-04T22:00:00.000Z",
-      "updated_at": "2026-10-06T21:23:15.489415Z",
-      "important": false
+      "updated_at": "2026-11-01T20:00:00.000Z",
+      "important": true
     },
     {
       "id": "d4000016-0000-4000-8000-000000000016",
@@ -3213,12 +3213,12 @@
       "id": "d4000021-0000-4000-8000-000000000021",
       "type": "noun",
       "german": "Hotel",
-      "translation_ru": "отель; гостиница",
+      "translation_ru": "гостиница",
       "article": "das",
       "plural": "Hotels",
-      "example": "Das Hotel ist in Berlin.; Wir wohnen in einem Hotel.",
+      "example": "Ist hier ein Hotel in der Nähe?",
       "created_at": "2026-10-04T22:00:00.000Z",
-      "updated_at": "2026-10-06T21:23:15.489415Z",
+      "updated_at": "2026-11-01T20:00:00.000Z",
       "important": false
     },
     {
@@ -3334,13 +3334,13 @@
       "id": "d4000031-0000-4000-8000-000000000031",
       "type": "noun",
       "german": "Hand",
-      "translation_ru": "рука; кисть",
+      "translation_ru": "кисть; рука",
       "article": "die",
       "plural": "Hände",
-      "example": "Die Hand tut weh.; Die Hände sind kalt.",
+      "example": "Wasche bitte deine Hände.",
       "created_at": "2026-10-04T22:00:00.000Z",
-      "updated_at": "2026-10-06T21:23:15.489415Z",
-      "important": false
+      "updated_at": "2026-11-01T20:00:00.000Z",
+      "important": true
     },
     {
       "id": "d4000032-0000-4000-8000-000000000032",
@@ -3362,7 +3362,7 @@
       "plural": "Ärztinnen",
       "example": "Die Ärztin arbeitet im Krankenhaus.; Zwei Ärztinnen sprechen mit dem Patienten.",
       "id": "d4000033-0000-4000-8000-000000000033",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-04T22:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -3409,9 +3409,9 @@
       "translation_ru": "дерево",
       "article": "der",
       "plural": "Bäume",
-      "example": "Der Baum ist groß.; Im Park stehen viele Bäume.",
+      "example": "Der Baum steht zwischen der Post und der Bank.",
       "created_at": "2026-10-04T22:00:00.000Z",
-      "updated_at": "2026-10-06T21:23:15.489415Z",
+      "updated_at": "2026-11-01T20:00:00.000Z",
       "important": false
     },
     {
@@ -3613,11 +3613,11 @@
       "translation_ru": "дата",
       "article": "das",
       "plural": "Daten",
-      "example": "Welches Datum ist heute?; Bitte schreiben Sie das Datum.",
+      "example": "Vergessen Sie das Datum nicht.",
       "note": "Plural Daten может также означать «данные».",
       "created_at": "2026-10-04T22:00:00.000Z",
-      "updated_at": "2026-10-06T21:23:15.489415Z",
-      "important": false
+      "updated_at": "2026-11-01T20:00:00.000Z",
+      "important": true
     },
     {
       "id": "d4000055-0000-4000-8000-000000000055",
@@ -3626,10 +3626,10 @@
       "translation_ru": "подпись",
       "article": "die",
       "plural": "Unterschriften",
-      "example": "Hier fehlt die Unterschrift.; Das Formular braucht zwei Unterschriften.",
+      "example": "Unter dem Brief fehlt noch Ihre Unterschrift.",
       "created_at": "2026-10-04T22:00:00.000Z",
-      "updated_at": "2026-10-06T21:23:15.489415Z",
-      "important": false
+      "updated_at": "2026-11-01T20:00:00.000Z",
+      "important": true
     },
     {
       "id": "d4000056-0000-4000-8000-000000000056",
@@ -4992,11 +4992,11 @@
       "id": "d6000076",
       "type": "word",
       "german": "welche",
-      "translation_ru": "какой; какая; какие",
-      "example": "Welche Farbe hat das Sofa?; Welche Möbel brauchen Sie?",
+      "translation_ru": "какая; какие",
+      "example": "Welche Verletzung hat er?",
       "created_at": "2026-10-04T19:08:53.226945Z",
-      "updated_at": "2026-10-06T21:23:15.489415Z",
-      "important": false
+      "updated_at": "2026-11-01T20:00:00.000Z",
+      "important": true
     },
     {
       "id": "d6000077",
@@ -5182,13 +5182,13 @@
       "id": "d7000001",
       "type": "noun",
       "german": "Fieber",
-      "translation_ru": "жар; повышенная температура",
+      "translation_ru": "температура; жар",
       "article": "das",
       "plural": "—",
-      "example": "Er hat Fieber.; Das Kind hat kein Fieber.",
+      "example": "Das Kind hat hohes Fieber.",
       "created_at": "2026-10-04T19:08:53.226945Z",
-      "updated_at": "2026-10-06T21:23:15.489415Z",
-      "important": false
+      "updated_at": "2026-11-01T20:00:00.000Z",
+      "important": true
     },
     {
       "id": "d7000002",
@@ -5263,10 +5263,10 @@
       "type": "word",
       "german": "gesund",
       "translation_ru": "здоровый",
-      "example": "Das Kind ist gesund.; Gesundes Essen ist wichtig.",
+      "example": "Nach einer Woche ist er wieder gesund.",
       "created_at": "2026-10-04T19:08:53.226945Z",
-      "updated_at": "2026-10-06T21:23:15.489415Z",
-      "important": false
+      "updated_at": "2026-11-01T20:00:00.000Z",
+      "important": true
     },
     {
       "id": "d7000009",
@@ -5344,7 +5344,7 @@
       "german": "schwimmen",
       "translation_ru": "плавать",
       "example": "Die Kinder schwimmen im Wasser.; Ich schwimme gern.",
-      "important": false,
+      "important": true,
       "created_at": "2026-10-04T19:08:53.226945Z",
       "updated_at": "2026-10-08T22:26:36.416523Z"
     },
@@ -5356,7 +5356,7 @@
       "example": "Du trinkst Milch.; Wir trinken Wasser.",
       "created_at": "2026-10-04T19:08:53.226945Z",
       "updated_at": "2026-10-14T21:58:30.635729Z",
-      "important": false
+      "important": true
     },
     {
       "id": "d7000018",
@@ -5376,7 +5376,7 @@
       "example": "Du gehst nach Hause.; Wir gehen in die Küche.",
       "created_at": "2026-10-04T19:08:53.226945Z",
       "updated_at": "2026-10-14T21:58:30.635729Z",
-      "important": false
+      "important": true
     },
     {
       "id": "d7000020",
@@ -5394,7 +5394,7 @@
       "german": "bleiben",
       "translation_ru": "оставаться; остаться",
       "example": "Er bleibt hier.; Wir bleiben zu Hause.",
-      "important": false,
+      "important": true,
       "created_at": "2026-10-04T19:08:53.226945Z",
       "updated_at": "2026-10-19T11:34:50.656604Z"
     },
@@ -6709,7 +6709,7 @@
       "german": "nehmen",
       "translation_ru": "брать; взять",
       "example": "Ich nehme zwei Brötchen.; Wir nehmen den Bus.",
-      "important": false,
+      "important": true,
       "created_at": "2026-09-26T12:20:00.000Z",
       "updated_at": "2026-10-08T22:26:36.416523Z"
     },
@@ -6717,11 +6717,12 @@
       "id": "b0000043-0000-4000-8000-000000000043",
       "type": "verb",
       "german": "geben",
-      "translation_ru": "давать; дать",
-      "example": "Geben Sie mir bitte eine Tüte.; Kannst du mir das Brot geben?",
+      "translation_ru": "давать",
+      "example": "Der Arzt gibt mir ein Rezept.",
       "created_at": "2026-09-26T12:20:00.000Z",
-      "updated_at": "2026-10-06T21:23:15.489415Z",
-      "important": false
+      "updated_at": "2026-11-01T20:00:00.000Z",
+      "important": true,
+      "note": "Präsens: du gibst, er/sie/es gibt; Partizip II: gegeben."
     },
     {
       "id": "b0000044-0000-4000-8000-000000000044",
@@ -6808,11 +6809,11 @@
       "id": "b0000052-0000-4000-8000-000000000052",
       "type": "word",
       "german": "Wie viel",
-      "translation_ru": "сколько; как много",
-      "example": "Wie viel kostet das?; Wie viel kostet die Milch?",
+      "translation_ru": "сколько (неисчисляемое)",
+      "example": "Wie viel kostet die Fahrkarte?",
       "created_at": "2026-09-26T12:20:00.000Z",
-      "updated_at": "2026-10-04T19:08:53.237470Z",
-      "important": false
+      "updated_at": "2026-11-01T20:00:00.000Z",
+      "important": true
     },
     {
       "id": "b0000053-0000-4000-8000-000000000053",
@@ -6901,10 +6902,10 @@
       "type": "word",
       "german": "wie",
       "translation_ru": "как",
-      "example": "Wie heißen Sie?; Wie geht es dir?",
+      "example": "Wie geht es Ihnen?",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-10-06T21:23:15.489415Z",
-      "important": false
+      "updated_at": "2026-11-01T20:00:00.000Z",
+      "important": true
     },
     {
       "id": "0542ae16-a739-49a3-8c87-bd1094047cec",
@@ -7022,7 +7023,7 @@
       "note": "Неправильный глагол «иметь»; ich habe, du hast, er/sie hat.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-10-04T19:08:53.237470Z",
-      "important": false
+      "important": true
     },
     {
       "id": "16841499-5fc0-4919-a5c8-2a737544ecdc",
@@ -7227,7 +7228,7 @@
       "german": "lesen",
       "translation_ru": "читать",
       "example": "Ich lese die Frage.; Wir lesen einen kurzen Text.",
-      "important": false,
+      "important": true,
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-10-08T22:26:36.416523Z"
     },
@@ -7307,7 +7308,7 @@
       "example": "Wo finde ich Spinat?; Ich finde die Antwort.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-10-04T19:08:53.237470Z",
-      "important": false
+      "important": true
     },
     {
       "id": "2b0eae19-d778-441b-9c8f-a81c73835b90",
@@ -7345,21 +7346,21 @@
       "id": "2fdbced4-5c18-4fa3-99d7-fc718a4806c2",
       "type": "word",
       "german": "was",
-      "translation_ru": "что; какой",
-      "example": "Was sprechen Sie?",
+      "translation_ru": "что",
+      "example": "Was ist passiert?",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-10-06T21:23:15.489415Z",
-      "important": false
+      "updated_at": "2026-11-01T20:00:00.000Z",
+      "important": true
     },
     {
       "id": "34818406-5712-4449-85d5-b0e4cfe69d87",
       "type": "word",
       "german": "woher",
       "translation_ru": "откуда",
-      "example": "Woher kommen Sie?; Woher kommt deine Familie?",
+      "example": "Woher kommen Sie?",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-10-06T21:23:15.489415Z",
-      "important": false
+      "updated_at": "2026-11-01T20:00:00.000Z",
+      "important": true
     },
     {
       "id": "35bcf771-f480-4f72-beb9-1c04b71e6e0a",
@@ -7501,7 +7502,7 @@
       "translation_ru": "показывать",
       "example": "Die Reiseführerin zeigt den Touristen die Stadt.; Zeigen Sie mir bitte Ihren Ausweis.",
       "id": "43746876-33a9-488d-a951-7389c50b5759",
-      "important": true,
+      "important": false,
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -7887,7 +7888,7 @@
       "note": "В выражении kommen aus означает «быть родом из, приехать из».",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-10-06T21:23:15.489415Z",
-      "important": false
+      "important": true
     },
     {
       "id": "70a18093-d315-4b14-8003-2316d197dc41",
@@ -8140,10 +8141,10 @@
       "type": "word",
       "german": "wer",
       "translation_ru": "кто",
-      "example": "Wer ist das?; Wer kommt heute?",
+      "example": "Wer kommt heute?",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-10-06T21:23:15.489415Z",
-      "important": false
+      "updated_at": "2026-11-01T20:00:00.000Z",
+      "important": true
     },
     {
       "id": "900dc97b-12bb-4302-abfb-2f0068ef4412",
@@ -8600,7 +8601,7 @@
       "note": "О языке: sprechen Deutsch, Englisch usw.; форма du spricht без s неверна, правильно sprichst.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-10-06T21:23:15.489415Z",
-      "important": false
+      "important": true
     },
     {
       "id": "c2de6ded-d87e-487a-957f-d93471cabe46",
@@ -8617,10 +8618,10 @@
       "type": "word",
       "german": "wo",
       "translation_ru": "где",
-      "example": "Wo wohnen Sie?; Wo ist der Bahnhof?",
+      "example": "Wo ist die Apotheke?",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-10-04T19:08:53.237470Z",
-      "important": false
+      "updated_at": "2026-11-01T20:00:00.000Z",
+      "important": true
     },
     {
       "id": "c8865661-76a0-4da8-80f5-e1ad2372a5f7",
@@ -8725,7 +8726,7 @@
       "example": "Ich sehe ein Bild.; Wir sehen den Supermarkt.",
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-10-06T21:23:15.489415Z",
-      "important": false
+      "important": true
     },
     {
       "id": "d9dc1f39-e5bd-4282-be80-204cd43e349f",
@@ -8834,7 +8835,7 @@
       "translation_ru": "писать",
       "example": "Ich schreibe heute einen Brief.; Wir haben gestern einen Test geschrieben.",
       "note": "Partizip II: geschrieben.",
-      "important": false,
+      "important": true,
       "created_at": "2026-09-24T22:53:37.149057Z",
       "updated_at": "2026-10-14T21:58:30.635729Z"
     },
@@ -8967,11 +8968,11 @@
       "type": "verb",
       "german": "sein",
       "translation_ru": "быть",
-      "example": "Ich bin aus Deutschland.; Wir sind heute zu Hause.",
-      "note": "Неправильный глагол «быть»; формы ich bin, du bist, er/sie ist, wir/sie/Sie sind.",
+      "example": "Ich bin aus Deutschland.; Sein Bein tut weh.",
+      "note": "Неправильный глагол «быть»; формы ich bin, du bist, er/sie ist, wir/sie/Sie sind. Также притяжательная основа sein-: sein Bein, seine Hand, seinen Arzt.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-10-06T21:23:15.489415Z",
-      "important": false
+      "updated_at": "2026-11-01T20:00:00.000Z",
+      "important": true
     },
     {
       "id": "f0a80483-ca3f-40df-8515-0fcebb408b64",
@@ -8988,12 +8989,12 @@
       "id": "f157a899-096d-4b36-9aeb-c3d64d93100b",
       "type": "word",
       "german": "ihr",
-      "translation_ru": "вы (множественное число); её; их; вы",
+      "translation_ru": "вы (множественное число); её; их",
       "example": "Woher kommt ihr?; Das ist ihr Vater.; Das sind ihre Eltern.",
-      "note": "ihr может быть местоимением «вы», а перед существительным — притяжательным словом «её» или «их».",
+      "note": "ihr может быть местоимением «вы», а перед существительным — притяжательной основой «её» или «их»: ihr Bein, ihre Hand, ihren Arzt.",
       "created_at": "2026-09-24T22:53:37.149057Z",
-      "updated_at": "2026-10-04T19:08:53.237470Z",
-      "important": false
+      "updated_at": "2026-11-01T20:00:00.000Z",
+      "important": true
     },
     {
       "id": "f2923a7e-ba03-4dea-a5f2-f0e861dca195",
@@ -9340,7 +9341,7 @@
       "plural": "Mechatroniker",
       "example": "Der Mechatroniker repariert Maschinen.; Viele Mechatroniker arbeiten in der Industrie.",
       "id": "e8000016",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -9352,7 +9353,7 @@
       "plural": "Mechatronikerinnen",
       "example": "Die Mechatronikerin prüft das Gerät.; Zwei Mechatronikerinnen arbeiten hier.",
       "id": "e8000017",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -9364,7 +9365,7 @@
       "plural": "Hausmänner",
       "example": "Er ist Hausmann und betreut die Kinder.; Viele Hausmänner arbeiten auch in Teilzeit.",
       "id": "e8000018",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -9376,7 +9377,7 @@
       "plural": "Hausfrauen",
       "example": "Sie ist Hausfrau und hat drei Kinder.; Die Hausfrauen treffen sich am Vormittag.",
       "id": "e8000019",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -9389,7 +9390,7 @@
       "example": "Der Polizist hilft dem Touristen.; Zwei Polizisten stehen vor dem Bahnhof.",
       "note": "Слабое существительное: der Polizist, den Polizisten.",
       "id": "e8000020",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -9401,7 +9402,7 @@
       "plural": "Polizistinnen",
       "example": "Die Polizistin beantwortet die Frage.; Zwei Polizistinnen kommen sofort.",
       "id": "e8000021",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -9413,7 +9414,7 @@
       "plural": "Krankenpfleger",
       "example": "Der Krankenpfleger arbeitet nachts.; Im Krankenhaus fehlen Krankenpfleger.",
       "id": "e8000022",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -9425,7 +9426,7 @@
       "plural": "Krankenschwestern",
       "example": "Die Krankenschwester spricht mit der Patientin.; Zwei Krankenschwestern arbeiten am Wochenende.",
       "id": "e8000023",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -9435,7 +9436,7 @@
       "translation_ru": "профессиональный; по работе",
       "example": "Was machen Sie beruflich?; Ich bin beruflich oft im Ausland.",
       "id": "e8000024",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -9447,7 +9448,7 @@
       "plural": "Schüler",
       "example": "Der Schüler lernt Deutsch.; Die Schüler schreiben einen Test.",
       "id": "e8000025",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -9459,7 +9460,7 @@
       "plural": "Schülerinnen",
       "example": "Die Schülerin liest den Text.; Zwei Schülerinnen kommen pünktlich.",
       "id": "e8000026",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -9472,7 +9473,7 @@
       "example": "Der Student studiert Wirtschaft.; Die Studenten arbeiten in der Bibliothek.",
       "note": "Слабое существительное: der Student, den Studenten.",
       "id": "e8000027",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -9484,7 +9485,7 @@
       "plural": "Studentinnen",
       "example": "Die Studentin studiert Medizin.; Viele Studentinnen wohnen hier.",
       "id": "e8000028",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -9495,7 +9496,7 @@
       "example": "Ich studiere Wirtschaft.; Meine Schwester studiert an der Universität.",
       "note": "Partizip II без ge-: studiert.",
       "id": "e8000029",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -9507,7 +9508,7 @@
       "plural": "Jobs",
       "example": "Ich suche einen neuen Job.; Am Wochenende hat er zwei Jobs.",
       "id": "e8000030",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -9519,7 +9520,7 @@
       "plural": "Stellen",
       "example": "Sie sucht eine Stelle als Sekretärin.; Die Firma bietet zwei Stellen an.",
       "id": "e8000031",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -9529,7 +9530,7 @@
       "translation_ru": "самостоятельный; самозанятый",
       "example": "Er ist selbstständig und arbeitet zu Hause.; Meine Chefin arbeitet seit fünf Jahren selbstständig.",
       "id": "e8000032",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -9539,7 +9540,7 @@
       "translation_ru": "работающий; занятый профессиональной деятельностью",
       "example": "Beide Eltern sind berufstätig.; Sie ist seit einem Jahr wieder berufstätig.",
       "id": "e8000033",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -9549,7 +9550,7 @@
       "translation_ru": "безработный",
       "example": "Er ist zurzeit arbeitslos.; Nach der Ausbildung war sie zwei Monate arbeitslos.",
       "id": "e8000034",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -9559,7 +9560,7 @@
       "translation_ru": "в настоящее время; сейчас",
       "example": "Zurzeit arbeite ich in Teilzeit.; Sie ist zurzeit im Ausland.",
       "id": "e8000035",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -9571,7 +9572,7 @@
       "plural": "Taxifahrer",
       "example": "Der Taxifahrer wartet vor dem Bahnhof.; Die Taxifahrer arbeiten oft nachts.",
       "id": "e8000036",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -9583,7 +9584,7 @@
       "plural": "Taxifahrerinnen",
       "example": "Die Taxifahrerin fährt zum Flughafen.; Zwei Taxifahrerinnen arbeiten heute.",
       "id": "e8000037",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -9593,7 +9594,7 @@
       "translation_ru": "длиться; продолжаться",
       "example": "Die Ausbildung dauert drei Jahre.; Wie lange dauert das Praktikum?",
       "id": "e8000038",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -9604,7 +9605,7 @@
       "example": "Ich arbeite seit einem Jahr hier.; Seit Montag ist sie im Büro.",
       "note": "Указывает на начало продолжающегося периода и требует Dativ.",
       "id": "e8000039",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -9616,7 +9617,7 @@
       "plural": "Bewerbungen",
       "example": "Ich schreibe eine Bewerbung.; Die Firma bekommt viele Bewerbungen.",
       "id": "e8000040",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -9628,7 +9629,7 @@
       "plural": "Praktika",
       "example": "Sie macht ein Praktikum im Krankenhaus.; Das Praktikum dauert sechs Wochen.",
       "id": "e8000041",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -9640,7 +9641,7 @@
       "plural": "Abteilungen",
       "example": "Er arbeitet in der technischen Abteilung.; Die Firma hat vier Abteilungen.",
       "id": "e8000042",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -9652,7 +9653,7 @@
       "plural": "Leiter",
       "example": "Herr Brandt ist Leiter der Abteilung.; Die Leiter treffen sich am Montag.",
       "id": "e8000043",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -9664,7 +9665,7 @@
       "plural": "Leiterinnen",
       "example": "Frau Wolf ist Leiterin der Abteilung.; Die Leiterinnen planen das Projekt.",
       "id": "e8000044",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -9675,7 +9676,7 @@
       "example": "Sehr geehrter Herr Klein, vielen Dank.; Sehr geehrte Frau Sommer, ich schreibe Ihnen.",
       "note": "В официальном обращении: Sehr geehrter Herr … / Sehr geehrte Frau …",
       "id": "e8000045",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -9687,7 +9688,7 @@
       "plural": "—",
       "example": "Sie studiert Wirtschaft.; Die Wirtschaft verändert sich schnell.",
       "id": "e8000046",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -9699,7 +9700,7 @@
       "plural": "Diplome",
       "example": "Er hat ein Diplom in Wirtschaft.; Die Diplome liegen im Büro.",
       "id": "e8000047",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -9709,7 +9710,7 @@
       "translation_ru": "как раз; сейчас",
       "example": "Ich schreibe gerade eine Bewerbung.; Sie ist gerade im Praktikum.",
       "id": "e8000048",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -9721,7 +9722,7 @@
       "plural": "Büros",
       "example": "Ich arbeite in einem Büro.; Im Gebäude gibt es viele Büros.",
       "id": "e8000049",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -9733,7 +9734,7 @@
       "plural": "Informationen",
       "example": "Vielen Dank für die Information.; Hier finden Sie weitere Informationen.",
       "id": "e8000050",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -9745,7 +9746,7 @@
       "plural": "Grüße",
       "example": "Viele Grüße aus Berlin!; Bitte bestellen Sie Ihrer Familie schöne Grüße.",
       "id": "e8000051",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -9755,7 +9756,7 @@
       "translation_ru": "жениться; выходить замуж",
       "example": "Wir heiraten im Sommer.; Meine Kollegin hat letztes Jahr geheiratet.",
       "id": "e8000052",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -9765,7 +9766,7 @@
       "translation_ru": "собственно; вообще-то; на самом деле",
       "example": "Was machen Sie eigentlich beruflich?; Eigentlich möchte ich im Ausland arbeiten.",
       "id": "e8000053",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -9775,7 +9776,7 @@
       "translation_ru": "позже",
       "example": "Ich rufe später an.; Später möchte sie studieren.",
       "id": "e8000054",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -9787,7 +9788,7 @@
       "plural": "Reiseführer",
       "example": "Der Reiseführer zeigt uns die Stadt.; Ich kaufe einen Reiseführer für Wien.",
       "id": "e8000055",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -9799,7 +9800,7 @@
       "plural": "Reiseführerinnen",
       "example": "Die Reiseführerin spricht drei Sprachen.; Zwei Reiseführerinnen begleiten die Gruppe.",
       "id": "e8000056",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -9812,7 +9813,7 @@
       "example": "Der Tourist fragt nach dem Bahnhof.; Im Sommer kommen viele Touristen.",
       "note": "Слабое существительное: der Tourist, den Touristen.",
       "id": "e8000057",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -9824,7 +9825,7 @@
       "plural": "Touristinnen",
       "example": "Die Touristin fotografiert das Rathaus.; Zwei Touristinnen suchen ein Hotel.",
       "id": "e8000058",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -10014,7 +10015,7 @@
       "plural": "—",
       "example": "Er arbeitet im Ausland.; Nach dem Studium möchte sie ins Ausland.",
       "id": "e8000074",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -10025,7 +10026,7 @@
       "example": "Ich suche eine andere Stelle.; Wir haben ein anderes Problem.",
       "note": "Окончание зависит от рода и падежа: anderer, andere, anderes и т. д.",
       "id": "e8000075",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -10037,7 +10038,7 @@
       "plural": "Arbeitsplätze",
       "example": "Ich habe einen neuen Arbeitsplatz.; Die Firma schafft neue Arbeitsplätze.",
       "id": "e8000076",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -10049,7 +10050,7 @@
       "plural": "Träume",
       "example": "Mein Traum ist ein eigenes Café.; Sie erzählt einen seltsamen Traum.",
       "id": "e8000077",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -10060,7 +10061,7 @@
       "example": "Das ist mein Traumjob.; Sie wohnt in ihrer Traumstadt.",
       "note": "Первая часть сложного существительного: Traumjob, Traumberuf, Traumwohnung.",
       "id": "e8000078",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -10070,7 +10071,7 @@
       "translation_ru": "днём; в дневное время",
       "example": "Tagsüber arbeite ich im Büro.; Sie hat tagsüber wenig Zeit.",
       "id": "e8000079",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -10080,7 +10081,7 @@
       "translation_ru": "три раза",
       "example": "Ich arbeite dreimal pro Woche abends.; Er ruft dreimal an.",
       "id": "e8000080",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -10092,7 +10093,7 @@
       "plural": "Sekretäre",
       "example": "Der Sekretär beantwortet die E-Mails.; Die Sekretäre arbeiten im Büro.",
       "id": "e8000081",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -10104,7 +10105,7 @@
       "plural": "Sekretärinnen",
       "example": "Sie macht eine Ausbildung als Sekretärin.; Die Sekretärinnen organisieren den Termin.",
       "id": "e8000082",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -10116,7 +10117,7 @@
       "plural": "Universitäten",
       "example": "Sie studiert an der Universität.; In Berlin gibt es mehrere Universitäten.",
       "id": "e8000083",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -10126,7 +10127,7 @@
       "translation_ru": "срочный; ограниченный по времени",
       "example": "Die Stelle ist auf ein Jahr befristet.; Wir suchen eine befristete Aushilfe.",
       "id": "e8000084",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -10138,7 +10139,7 @@
       "plural": "—",
       "example": "Sie arbeitet in Vollzeit.; Die Stelle ist in Vollzeit.",
       "id": "e8000085",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -10150,7 +10151,7 @@
       "plural": "—",
       "example": "Er arbeitet in Teilzeit.; Wir bieten eine Stelle in Teilzeit.",
       "id": "e8000086",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -10160,7 +10161,7 @@
       "translation_ru": "весь день; полный день",
       "example": "Die Betreuung ist ganztags.; Sie arbeitet montags ganztags.",
       "id": "e8000087",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -10170,7 +10171,7 @@
       "translation_ru": "полдня; неполный день",
       "example": "Ich arbeite nur halbtags.; Der Kurs findet halbtags statt.",
       "id": "e8000088",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -10180,7 +10181,7 @@
       "translation_ru": "по утрам; в первой половине дня",
       "example": "Vormittags bin ich im Büro.; Der Kurs ist vormittags.",
       "id": "e8000089",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -10190,7 +10191,7 @@
       "translation_ru": "после обеда; во второй половине дня",
       "example": "Nachmittags gebe ich Nachhilfe.; Sie arbeitet nur nachmittags.",
       "id": "e8000090",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -10202,7 +10203,7 @@
       "plural": "—",
       "example": "Sie gibt Nachhilfe in Englisch.; Mein Sohn braucht Nachhilfe in Mathematik.",
       "id": "e8000091",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -10212,7 +10213,7 @@
       "translation_ru": "по понедельникам",
       "example": "Montags arbeite ich zu Hause.; Der Kurs findet montags statt.",
       "id": "e8000092",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -10222,7 +10223,7 @@
       "translation_ru": "по четвергам",
       "example": "Donnerstags gebe ich Nachhilfe.; Das Café ist donnerstags geschlossen.",
       "id": "e8000093",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -10235,7 +10236,7 @@
       "example": "Wir suchen Hilfe für Senioren.; Viele Senioren reisen gern.",
       "note": "Форма множественного числа; как первая часть сложного слова: Seniorenheim, Seniorenresidenz.",
       "id": "e8000094",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -10247,7 +10248,7 @@
       "plural": "Aushilfen",
       "example": "Das Restaurant sucht eine Aushilfe.; Am Wochenende arbeiten zwei Aushilfen.",
       "id": "e8000095",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -10257,7 +10258,7 @@
       "translation_ru": "срочно; настоятельно",
       "example": "Wir suchen dringend eine Aushilfe.; Ich brauche dringend einen Termin.",
       "id": "e8000096",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -10270,7 +10271,7 @@
       "example": "Der Service im Hotel ist gut.; Sie arbeitet im Service.",
       "note": "В значении обслуживания множественное число употребляется редко.",
       "id": "e8000097",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -10280,7 +10281,7 @@
       "translation_ru": "по вечерам",
       "example": "Abends arbeitet er im Restaurant.; Ich lese abends die Zeitung.",
       "id": "e8000098",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -10290,7 +10291,7 @@
       "translation_ru": "по вторникам",
       "example": "Dienstags habe ich frei.; Der Kurs beginnt dienstags um acht.",
       "id": "e8000099",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -10300,7 +10301,7 @@
       "translation_ru": "по средам",
       "example": "Mittwochs arbeitet sie halbtags.; Wir treffen uns mittwochs.",
       "id": "e8000100",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -10310,7 +10311,7 @@
       "translation_ru": "по пятницам",
       "example": "Freitags endet die Arbeit früher.; Das Büro ist freitags bis vier geöffnet.",
       "id": "e8000101",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -10320,7 +10321,7 @@
       "translation_ru": "по воскресеньям",
       "example": "Sonntags ist das Büro geschlossen.; Wir arbeiten selten sonntags.",
       "id": "e8000102",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -10330,7 +10331,7 @@
       "translation_ru": "платить; оплачивать",
       "example": "Die Firma zahlt zwölf Euro pro Stunde.; Zahlen Sie bar oder mit Karte?",
       "id": "e8000103",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -10340,7 +10341,7 @@
       "translation_ru": "за; на; в расчёте на",
       "example": "Sie verdient fünfzehn Euro pro Stunde.; Ich trainiere dreimal pro Woche.",
       "id": "e8000104",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -10352,7 +10353,7 @@
       "plural": "Stunden",
       "example": "Ich arbeite sechs Stunden am Tag.; Der Kurs dauert zwei Stunden.",
       "id": "e8000105",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -10364,7 +10365,7 @@
       "plural": "Nachfragen",
       "example": "Bei Nachfrage bekommen Sie weitere Informationen.; Es gibt viele Nachfragen zu der Stelle.",
       "id": "e8000106",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -10374,7 +10375,7 @@
       "translation_ru": "свободный; незанятый; выходной",
       "example": "Am Montag habe ich frei.; Ist die Stelle noch frei?",
       "id": "e8000107",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -10384,7 +10385,7 @@
       "translation_ru": "каждый раз; соответственно; по",
       "example": "Wir arbeiten jeweils vier Stunden.; Die Kurse beginnen jeweils um neun.",
       "id": "e8000108",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -10394,7 +10395,7 @@
       "translation_ru": "по субботам",
       "example": "Samstags arbeitet sie im Café.; Das Geschäft ist samstags geöffnet.",
       "id": "e8000109",
-      "important": true,
+      "important": false,
       "created_at": "2026-10-21T20:00:00.000Z",
       "updated_at": "2026-10-21T20:00:00.000Z"
     },
@@ -11206,6 +11207,1557 @@
       "important": false,
       "created_at": "2026-10-25T10:00:00.000Z",
       "updated_at": "2026-10-25T10:00:00.000Z"
+    },
+    {
+      "id": "e1000001",
+      "type": "noun",
+      "german": "Klub",
+      "translation_ru": "клуб",
+      "article": "der",
+      "plural": "Klubs",
+      "example": "Wir tanzen heute Abend im Klub.",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1000002",
+      "type": "noun",
+      "german": "Notaufnahme",
+      "translation_ru": "приёмное отделение; неотложная помощь",
+      "article": "die",
+      "plural": "Notaufnahmen",
+      "example": "Nach dem Unfall fährt sie in die Notaufnahme.",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1000003",
+      "type": "noun",
+      "german": "Bereich",
+      "translation_ru": "область; зона",
+      "article": "der",
+      "plural": "Bereiche",
+      "example": "Bitte warten Sie im grünen Bereich.",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1000004",
+      "type": "noun",
+      "german": "Tablette",
+      "translation_ru": "таблетка",
+      "article": "die",
+      "plural": "Tabletten",
+      "example": "Nehmen Sie morgens eine Tablette.",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1000005",
+      "type": "noun",
+      "german": "Auge",
+      "translation_ru": "глаз",
+      "article": "das",
+      "plural": "Augen",
+      "example": "Mein linkes Auge tut weh.",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1000006",
+      "type": "verb",
+      "german": "wehtun",
+      "translation_ru": "болеть; причинять боль",
+      "example": "Mein Rücken tut heute weh.",
+      "note": "Präsens: tut weh; Präteritum: tat weh; Partizip II: wehgetan.",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1000007",
+      "type": "noun",
+      "german": "Unfall",
+      "translation_ru": "несчастный случай; авария",
+      "article": "der",
+      "plural": "Unfälle",
+      "example": "Auf der Straße ist ein Unfall passiert.",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1000008",
+      "type": "noun",
+      "german": "Doktor",
+      "translation_ru": "доктор",
+      "article": "der",
+      "plural": "Doktoren",
+      "example": "Der Doktor untersucht den Patienten.",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1000009",
+      "type": "noun",
+      "german": "Schmerz",
+      "translation_ru": "боль",
+      "article": "der",
+      "plural": "Schmerzen",
+      "example": "Wo haben Sie Schmerzen?",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1000010",
+      "type": "verb",
+      "german": "sollen",
+      "translation_ru": "следует; должен по совету",
+      "example": "Du sollst viel Wasser trinken.",
+      "note": "Präsens: ich soll, du sollst, er/sie/es soll.",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1000011",
+      "type": "word",
+      "german": "beide",
+      "translation_ru": "оба; обе",
+      "example": "Beide Kinder sind wieder gesund.",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1000012",
+      "type": "word",
+      "german": "lustig",
+      "translation_ru": "весёлый; забавный",
+      "example": "Die Geschichte ist sehr lustig.",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1000013",
+      "type": "word",
+      "german": "schlimm",
+      "translation_ru": "плохой; серьёзный; ужасный",
+      "example": "Zum Glück ist die Verletzung nicht schlimm.",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1000015",
+      "type": "noun",
+      "german": "Idee",
+      "translation_ru": "идея",
+      "article": "die",
+      "plural": "Ideen",
+      "example": "Das ist eine gute Idee.",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1000016",
+      "type": "noun",
+      "german": "Bein",
+      "translation_ru": "нога",
+      "article": "das",
+      "plural": "Beine",
+      "example": "Nach dem Sport tut mein Bein weh.",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1000017",
+      "type": "noun",
+      "german": "Haar",
+      "translation_ru": "волос",
+      "article": "das",
+      "plural": "Haare",
+      "example": "Sie hat kurze braune Haare.",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1000018",
+      "type": "noun",
+      "german": "Ohr",
+      "translation_ru": "ухо",
+      "article": "das",
+      "plural": "Ohren",
+      "example": "Das Kind hat Schmerzen im Ohr.",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1000019",
+      "type": "noun",
+      "german": "Arm",
+      "translation_ru": "рука от плеча до кисти",
+      "article": "der",
+      "plural": "Arme",
+      "example": "Er kann den rechten Arm nicht bewegen.",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1000020",
+      "type": "noun",
+      "german": "Bauch",
+      "translation_ru": "живот",
+      "article": "der",
+      "plural": "Bäuche",
+      "example": "Mein Bauch tut seit gestern weh.",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1000021",
+      "type": "noun",
+      "german": "Finger",
+      "translation_ru": "палец руки",
+      "article": "der",
+      "plural": "Finger",
+      "example": "Ich habe mich am Finger verletzt.",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1000022",
+      "type": "noun",
+      "german": "Fuß",
+      "translation_ru": "ступня; нога",
+      "article": "der",
+      "plural": "Füße",
+      "example": "Der linke Fuß ist verletzt.",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1000023",
+      "type": "noun",
+      "german": "Hals",
+      "translation_ru": "шея; горло",
+      "article": "der",
+      "plural": "Hälse",
+      "example": "Bei einer Erkältung tut oft der Hals weh.",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1000024",
+      "type": "noun",
+      "german": "Kopf",
+      "translation_ru": "голова",
+      "article": "der",
+      "plural": "Köpfe",
+      "example": "Ich habe starke Schmerzen im Kopf.",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1000025",
+      "type": "noun",
+      "german": "Rücken",
+      "translation_ru": "спина",
+      "article": "der",
+      "plural": "Rücken",
+      "example": "Nach der Arbeit tut mir der Rücken weh.",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1000026",
+      "type": "noun",
+      "german": "Brust",
+      "translation_ru": "грудь",
+      "article": "die",
+      "plural": "Brüste",
+      "example": "Der Patient hat Schmerzen in der Brust.",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1000028",
+      "type": "noun",
+      "german": "Nase",
+      "translation_ru": "нос",
+      "article": "die",
+      "plural": "Nasen",
+      "example": "Meine Nase ist ganz rot.",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1000029",
+      "type": "noun",
+      "german": "Mund",
+      "translation_ru": "рот",
+      "article": "der",
+      "plural": "Münder",
+      "example": "Öffnen Sie bitte den Mund.",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1000032",
+      "type": "noun",
+      "german": "Zahn",
+      "translation_ru": "зуб",
+      "article": "der",
+      "plural": "Zähne",
+      "example": "Ich habe einen Termin beim Zahnarzt, denn mein Zahn tut weh.",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1000033",
+      "type": "verb",
+      "german": "informieren",
+      "translation_ru": "информировать; сообщать",
+      "example": "Bitte informieren Sie sofort den Arzt.",
+      "note": "Partizip II: informiert.",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1000034",
+      "type": "word",
+      "german": "unser",
+      "translation_ru": "наш",
+      "example": "Unsere Ärztin ist heute da.",
+      "note": "Формы: unser, unsere, unseren.",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1000035",
+      "type": "verb",
+      "german": "ausfallen",
+      "translation_ru": "отменяться; выпадать",
+      "example": "Der Unterricht fällt heute aus.",
+      "note": "Trennbares Verb; Partizip II: ausgefallen.",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1000036",
+      "type": "noun",
+      "german": "Nachricht",
+      "translation_ru": "сообщение; новость",
+      "article": "die",
+      "plural": "Nachrichten",
+      "example": "Ich schreibe dir eine kurze Nachricht.",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1000037",
+      "type": "noun",
+      "german": "Kuss",
+      "translation_ru": "поцелуй",
+      "article": "der",
+      "plural": "Küsse",
+      "example": "Zum Abschied gibt sie dem Kind einen Kuss.",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1000038",
+      "type": "word",
+      "german": "euer",
+      "translation_ru": "ваш (при обращении к ihr)",
+      "example": "Ist eure Mutter wieder gesund?",
+      "note": "Формы: euer, eure, euren.",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1000040",
+      "type": "word",
+      "german": "hoffentlich",
+      "translation_ru": "надеюсь; будем надеяться",
+      "example": "Hoffentlich geht es dir bald besser.",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1000041",
+      "type": "noun",
+      "german": "Bekannte",
+      "translation_ru": "знакомый; знакомая",
+      "article": "der",
+      "plural": "Bekannten",
+      "example": "Viele Freunde und Bekannte besuchen sie.",
+      "note": "Женская форма: die Bekannte; множественное число: die Bekannten.",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1000042",
+      "type": "noun",
+      "german": "Schritt",
+      "translation_ru": "шаг",
+      "article": "der",
+      "plural": "Schritte",
+      "example": "Gehen Sie jeden Tag ein paar Schritte mehr.",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1000043",
+      "type": "word",
+      "german": "ein paar",
+      "translation_ru": "несколько; пара",
+      "example": "Ich warte noch ein paar Minuten.",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1000044",
+      "type": "noun",
+      "german": "Medizin",
+      "translation_ru": "лекарство; медицина",
+      "article": "die",
+      "plural": "—",
+      "example": "Du sollst die Medizin nach dem Essen nehmen.",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1000045",
+      "type": "word",
+      "german": "ruhig",
+      "translation_ru": "спокойный; спокойно",
+      "example": "Bleiben Sie ruhig und rufen Sie Hilfe.",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1000046",
+      "type": "noun",
+      "german": "Apotheke",
+      "translation_ru": "аптека",
+      "article": "die",
+      "plural": "Apotheken",
+      "example": "Die Apotheke ist neben der Post.",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1000048",
+      "type": "noun",
+      "german": "Husten",
+      "translation_ru": "кашель",
+      "article": "der",
+      "plural": "—",
+      "example": "Seit drei Tagen habe ich Husten.",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1000049",
+      "type": "noun",
+      "german": "Salbe",
+      "translation_ru": "мазь",
+      "article": "die",
+      "plural": "Salben",
+      "example": "Tragen Sie die Salbe zweimal täglich auf.",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1000050",
+      "type": "verb",
+      "german": "verwenden",
+      "translation_ru": "использовать; применять",
+      "example": "Sie soll diese Salbe verwenden.",
+      "note": "Partizip II: verwendet.",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1000051",
+      "type": "noun",
+      "german": "Gesundheit",
+      "translation_ru": "здоровье",
+      "article": "die",
+      "plural": "—",
+      "example": "Bewegung ist gut für die Gesundheit.",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1000052",
+      "type": "noun",
+      "german": "Schnupfen",
+      "translation_ru": "насморк",
+      "article": "der",
+      "plural": "—",
+      "example": "Bei Schnupfen ist meine Nase zu.",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1000053",
+      "type": "verb",
+      "german": "tun",
+      "translation_ru": "делать",
+      "example": "Was kann man bei Husten tun?",
+      "note": "Präteritum: tat; Partizip II: getan.",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1000054",
+      "type": "noun",
+      "german": "Absender",
+      "translation_ru": "отправитель",
+      "article": "der",
+      "plural": "Absender",
+      "example": "Der Absender steht oben auf dem Brief.",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1000056",
+      "type": "noun",
+      "german": "Empfänger",
+      "translation_ru": "получатель",
+      "article": "der",
+      "plural": "Empfänger",
+      "example": "Der Empfänger bekommt den Brief morgen.",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1000057",
+      "type": "noun",
+      "german": "Anrede",
+      "translation_ru": "обращение в письме",
+      "article": "die",
+      "plural": "Anreden",
+      "example": "Die Anrede steht am Anfang des Briefes.",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1000060",
+      "type": "verb",
+      "german": "schicken",
+      "translation_ru": "посылать; отправлять",
+      "example": "Ich schicke die Krankmeldung an die Firma.",
+      "note": "Partizip II: geschickt.",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1000061",
+      "type": "noun",
+      "german": "Sprechstunde",
+      "translation_ru": "приёмные часы",
+      "article": "die",
+      "plural": "Sprechstunden",
+      "example": "Die Sprechstunde beginnt um neun Uhr.",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1000062",
+      "type": "noun",
+      "german": "Notfall",
+      "translation_ru": "экстренный случай",
+      "article": "der",
+      "plural": "Notfälle",
+      "example": "Bei einem Notfall rufen Sie 112 an.",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1000063",
+      "type": "word",
+      "german": "in der Nähe",
+      "translation_ru": "поблизости; рядом",
+      "example": "Gibt es hier eine Apotheke in der Nähe?",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1000064",
+      "type": "noun",
+      "german": "Minute",
+      "translation_ru": "минута",
+      "article": "die",
+      "plural": "Minuten",
+      "example": "Der Notarzt kommt in zehn Minuten.",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1000065",
+      "type": "word",
+      "german": "in Ordnung",
+      "translation_ru": "в порядке; хорошо",
+      "example": "Alles ist in Ordnung.",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1000066",
+      "type": "verb",
+      "german": "vorbeikommen",
+      "translation_ru": "зайти; заехать",
+      "example": "Können Sie heute in der Praxis vorbeikommen?",
+      "note": "Trennbares Verb; Partizip II: vorbeigekommen.",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1000067",
+      "type": "noun",
+      "german": "Versichertenkarte",
+      "translation_ru": "страховая карта",
+      "article": "die",
+      "plural": "Versichertenkarten",
+      "example": "Bringen Sie bitte Ihre Versichertenkarte mit.",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1000068",
+      "type": "noun",
+      "german": "Boden",
+      "translation_ru": "пол; земля",
+      "article": "der",
+      "plural": "Böden",
+      "example": "Ein Mann liegt auf dem Boden.",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1000070",
+      "type": "noun",
+      "german": "Notarzt",
+      "translation_ru": "врач скорой помощи",
+      "article": "der",
+      "plural": "Notärzte",
+      "example": "Der Notarzt ist in wenigen Minuten da.",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1000071",
+      "type": "word",
+      "german": "stark",
+      "translation_ru": "сильный; сильная степень",
+      "example": "Sie hat starke Halsschmerzen.",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1000072",
+      "type": "noun",
+      "german": "Hilfe",
+      "translation_ru": "помощь",
+      "article": "die",
+      "plural": "—",
+      "example": "Rufen Sie schnell Hilfe.",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1000073",
+      "type": "word",
+      "german": "plötzlich",
+      "translation_ru": "внезапно",
+      "example": "Dem Mann wird plötzlich schlecht.",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1000074",
+      "type": "verb",
+      "german": "passieren",
+      "translation_ru": "случаться; происходить",
+      "example": "Was ist hier passiert?",
+      "note": "Perfekt mit sein: ist passiert.",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1000075",
+      "type": "noun",
+      "german": "Medikament",
+      "translation_ru": "лекарство; медикамент",
+      "article": "das",
+      "plural": "Medikamente",
+      "example": "Der Patient braucht dringend ein Medikament.",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1000076",
+      "type": "noun",
+      "german": "Motorrad",
+      "translation_ru": "мотоцикл",
+      "article": "das",
+      "plural": "Motorräder",
+      "example": "Der Unfall ist mit einem Motorrad passiert.",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1000077",
+      "type": "noun",
+      "german": "Verletzung",
+      "translation_ru": "травма; повреждение",
+      "article": "die",
+      "plural": "Verletzungen",
+      "example": "Welche Verletzung hat die Frau?",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1100001",
+      "type": "noun",
+      "german": "Werkstatt",
+      "translation_ru": "мастерская; автосервис",
+      "article": "die",
+      "plural": "Werkstätten",
+      "example": "Ich bringe das Auto zur Werkstatt.",
+      "important": false,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1100002",
+      "type": "noun",
+      "german": "Schlüssel",
+      "translation_ru": "ключ",
+      "article": "der",
+      "plural": "Schlüssel",
+      "example": "Lili hat den Autoschlüssel.",
+      "important": false,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1100003",
+      "type": "noun",
+      "german": "Autobahn",
+      "translation_ru": "автомагистраль",
+      "article": "die",
+      "plural": "Autobahnen",
+      "example": "Auf der Autobahn darf man schnell fahren.",
+      "important": false,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1100004",
+      "type": "noun",
+      "german": "Brücke",
+      "translation_ru": "мост",
+      "article": "die",
+      "plural": "Brücken",
+      "example": "Die Tankstelle ist hinter der Brücke.",
+      "important": false,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1100005",
+      "type": "word",
+      "german": "rechts",
+      "translation_ru": "справа; направо",
+      "example": "Fahren Sie an der Ampel nach rechts.",
+      "important": false,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1100006",
+      "type": "word",
+      "german": "geradeaus",
+      "translation_ru": "прямо",
+      "example": "Gehen Sie immer geradeaus.",
+      "important": false,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1100007",
+      "type": "word",
+      "german": "links",
+      "translation_ru": "слева; налево",
+      "example": "Die Post ist links neben der Bank.",
+      "important": false,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1100008",
+      "type": "noun",
+      "german": "Weg",
+      "translation_ru": "путь; дорога",
+      "article": "der",
+      "plural": "Wege",
+      "example": "Können Sie mir den Weg zum Bahnhof erklären?",
+      "important": false,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1100009",
+      "type": "noun",
+      "german": "Bahnhof",
+      "translation_ru": "вокзал",
+      "article": "der",
+      "plural": "Bahnhöfe",
+      "example": "Der Zug wartet am Bahnhof.",
+      "important": false,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1100010",
+      "type": "noun",
+      "german": "Metzgerei",
+      "translation_ru": "мясная лавка",
+      "article": "die",
+      "plural": "Metzgereien",
+      "example": "Die Metzgerei ist neben dem Hotel.",
+      "important": false,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1100011",
+      "type": "noun",
+      "german": "Post",
+      "translation_ru": "почта",
+      "article": "die",
+      "plural": "—",
+      "example": "Ich bringe den Brief zur Post.",
+      "important": false,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1100013",
+      "type": "noun",
+      "german": "Museum",
+      "translation_ru": "музей",
+      "article": "das",
+      "plural": "Museen",
+      "example": "Das Museum öffnet um zehn Uhr.",
+      "important": false,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1100014",
+      "type": "noun",
+      "german": "Ampel",
+      "translation_ru": "светофор",
+      "article": "die",
+      "plural": "Ampeln",
+      "example": "Biegen Sie an der Ampel links ab.",
+      "important": false,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1100015",
+      "type": "noun",
+      "german": "Tankstelle",
+      "translation_ru": "заправка",
+      "article": "die",
+      "plural": "Tankstellen",
+      "example": "Wir halten kurz an der Tankstelle.",
+      "important": false,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1100016",
+      "type": "noun",
+      "german": "Stadtplan",
+      "translation_ru": "план города",
+      "article": "der",
+      "plural": "Stadtpläne",
+      "example": "Auf dem Stadtplan finden Sie die Apotheke.",
+      "important": false,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1100017",
+      "type": "word",
+      "german": "fremd",
+      "translation_ru": "чужой; незнакомый",
+      "example": "Ich bin fremd hier und suche den Bahnhof.",
+      "important": false,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1100019",
+      "type": "noun",
+      "german": "Flugzeug",
+      "translation_ru": "самолёт",
+      "article": "das",
+      "plural": "Flugzeuge",
+      "example": "Sie fliegen mit dem Flugzeug.",
+      "important": false,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1100020",
+      "type": "noun",
+      "german": "Straßenbahn",
+      "translation_ru": "трамвай",
+      "article": "die",
+      "plural": "Straßenbahnen",
+      "example": "Ich fahre mit der Straßenbahn zur Arbeit.",
+      "important": false,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1100021",
+      "type": "noun",
+      "german": "Zug",
+      "translation_ru": "поезд",
+      "article": "der",
+      "plural": "Züge",
+      "example": "Der Zug fährt von Gleis acht ab.",
+      "important": false,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1100022",
+      "type": "noun",
+      "german": "U-Bahn",
+      "translation_ru": "метро",
+      "article": "die",
+      "plural": "U-Bahnen",
+      "example": "Mit der U-Bahn sind wir schnell am Bahnhof.",
+      "important": false,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1100023",
+      "type": "noun",
+      "german": "Bus",
+      "translation_ru": "автобус",
+      "article": "der",
+      "plural": "Busse",
+      "example": "Der Bus hält an der nächsten Station.",
+      "important": false,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1100024",
+      "type": "noun",
+      "german": "S-Bahn",
+      "translation_ru": "городская электричка",
+      "article": "die",
+      "plural": "S-Bahnen",
+      "example": "Wir fahren mit der S-Bahn nach Potsdam.",
+      "important": false,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1100025",
+      "type": "word",
+      "german": "wohin",
+      "translation_ru": "куда",
+      "example": "Wohin fährt der Bus?",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1100026",
+      "type": "noun",
+      "german": "Station",
+      "translation_ru": "станция; остановка",
+      "article": "die",
+      "plural": "Stationen",
+      "example": "Steigen Sie an der dritten Station aus.",
+      "important": false,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1100027",
+      "type": "noun",
+      "german": "Lkw",
+      "translation_ru": "грузовик",
+      "article": "der",
+      "plural": "Lkws",
+      "example": "Zwei Lkws stehen auf dem Parkplatz.",
+      "important": false,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1100028",
+      "type": "noun",
+      "german": "Kiosk",
+      "translation_ru": "киоск",
+      "article": "der",
+      "plural": "Kioske",
+      "example": "Am Kiosk kaufe ich eine Zeitung.",
+      "important": false,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1100029",
+      "type": "noun",
+      "german": "Haltestelle",
+      "translation_ru": "остановка",
+      "article": "die",
+      "plural": "Haltestellen",
+      "example": "Die Kinder warten an der Bushaltestelle.",
+      "important": false,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1100030",
+      "type": "noun",
+      "german": "Buchhandlung",
+      "translation_ru": "книжный магазин",
+      "article": "die",
+      "plural": "Buchhandlungen",
+      "example": "In der Buchhandlung kauft er ein Wörterbuch.",
+      "important": false,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1100032",
+      "type": "noun",
+      "german": "Bücherei",
+      "translation_ru": "библиотека",
+      "article": "die",
+      "plural": "Büchereien",
+      "example": "In der Bücherei kann man Bücher ausleihen.",
+      "important": false,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1100034",
+      "type": "noun",
+      "german": "Bank",
+      "translation_ru": "скамейка; банк",
+      "article": "die",
+      "plural": "Bänke",
+      "example": "Vor dem Museum steht eine Bank.",
+      "important": false,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1100035",
+      "type": "word",
+      "german": "an",
+      "translation_ru": "у; на (вертикальной поверхности)",
+      "example": "Der Bus hält an der Haltestelle.",
+      "important": false,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1100036",
+      "type": "word",
+      "german": "auf",
+      "translation_ru": "на",
+      "example": "Das Auto steht auf dem Parkplatz.",
+      "important": false,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1100037",
+      "type": "word",
+      "german": "hinter",
+      "translation_ru": "за; позади",
+      "example": "Die Werkstatt ist hinter dem Hotel.",
+      "important": false,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1100038",
+      "type": "word",
+      "german": "neben",
+      "translation_ru": "рядом с",
+      "example": "Die Apotheke ist neben der Post.",
+      "important": false,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1100039",
+      "type": "word",
+      "german": "über",
+      "translation_ru": "над; через",
+      "example": "Die Bücherei ist über der Bäckerei.",
+      "important": false,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1100040",
+      "type": "word",
+      "german": "unter",
+      "translation_ru": "под",
+      "example": "Die Bäckerei ist unter der Bücherei.",
+      "important": false,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1100041",
+      "type": "word",
+      "german": "zwischen",
+      "translation_ru": "между",
+      "example": "Der Kiosk ist zwischen dem Hotel und der Bank.",
+      "important": false,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1100042",
+      "type": "noun",
+      "german": "Fußgängerzone",
+      "translation_ru": "пешеходная зона",
+      "article": "die",
+      "plural": "Fußgängerzonen",
+      "example": "In der Fußgängerzone fahren keine Autos.",
+      "important": false,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1100043",
+      "type": "noun",
+      "german": "Konzert",
+      "translation_ru": "концерт",
+      "article": "das",
+      "plural": "Konzerte",
+      "example": "Am Donnerstag gehen wir ins Konzert.",
+      "important": false,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1100044",
+      "type": "verb",
+      "german": "ausleihen",
+      "translation_ru": "брать напрокат; одалживать",
+      "example": "Wo kann ich ein Fahrrad ausleihen?",
+      "note": "Trennbares Verb; Partizip II: ausgeliehen.",
+      "important": false,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1100045",
+      "type": "verb",
+      "german": "kopieren",
+      "translation_ru": "копировать",
+      "example": "Im Copyshop kann ich das Dokument kopieren.",
+      "note": "Partizip II: kopiert.",
+      "important": false,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1100046",
+      "type": "word",
+      "german": "da vorne",
+      "translation_ru": "там впереди",
+      "example": "Der Copyshop ist gleich da vorne.",
+      "important": false,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1100047",
+      "type": "word",
+      "german": "da drüben",
+      "translation_ru": "там, на другой стороне",
+      "example": "Die Apotheke ist da drüben.",
+      "important": false,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1100048",
+      "type": "noun",
+      "german": "Ecke",
+      "translation_ru": "угол",
+      "article": "die",
+      "plural": "Ecken",
+      "example": "Die Post ist gleich an der Ecke.",
+      "important": false,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1100049",
+      "type": "word",
+      "german": "da hinten",
+      "translation_ru": "там сзади",
+      "example": "Der Bahnhof ist da hinten.",
+      "important": false,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1100051",
+      "type": "noun",
+      "german": "Gleis",
+      "translation_ru": "путь; железнодорожная платформа",
+      "article": "das",
+      "plural": "Gleise",
+      "example": "Der Zug fährt von Gleis acht ab.",
+      "important": false,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1100053",
+      "type": "noun",
+      "german": "Verspätung",
+      "translation_ru": "опоздание; задержка",
+      "article": "die",
+      "plural": "Verspätungen",
+      "example": "Der Zug hat zehn Minuten Verspätung.",
+      "important": false,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1100055",
+      "type": "verb",
+      "german": "umsteigen",
+      "translation_ru": "делать пересадку",
+      "example": "In Mannheim müssen Sie umsteigen.",
+      "note": "Trennbares Verb; Partizip II: umgestiegen.",
+      "important": false,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1100057",
+      "type": "noun",
+      "german": "Abfahrt",
+      "translation_ru": "отправление",
+      "article": "die",
+      "plural": "Abfahrten",
+      "example": "Die Abfahrt ist um 9:50 Uhr.",
+      "important": false,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1100058",
+      "type": "noun",
+      "german": "Ankunft",
+      "translation_ru": "прибытие",
+      "article": "die",
+      "plural": "Ankünfte",
+      "example": "Die Ankunft ist für 11:05 Uhr geplant.",
+      "important": false,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1100059",
+      "type": "noun",
+      "german": "Anschluss",
+      "translation_ru": "пересадка; стыковка",
+      "article": "der",
+      "plural": "Anschlüsse",
+      "example": "In Ulm haben Sie Anschluss nach München.",
+      "important": false,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1100060",
+      "type": "noun",
+      "german": "Bahnsteig",
+      "translation_ru": "платформа",
+      "article": "der",
+      "plural": "Bahnsteige",
+      "example": "Der Zug steht am Bahnsteig gegenüber.",
+      "important": false,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1100061",
+      "type": "word",
+      "german": "direkt",
+      "translation_ru": "прямо; непосредственно",
+      "example": "Von hier fährt ein Bus direkt zum Bahnhof.",
+      "important": false,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "qw000002",
+      "type": "word",
+      "german": "wen",
+      "translation_ru": "кого",
+      "example": "Wen rufst du an?",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "qw000003",
+      "type": "word",
+      "german": "wem",
+      "translation_ru": "кому",
+      "example": "Wem gibst du das Rezept?",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "qw000004",
+      "type": "word",
+      "german": "wessen",
+      "translation_ru": "чей; чья; чьё",
+      "example": "Wessen Schlüssel ist das?",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "qw000010",
+      "type": "word",
+      "german": "seit wann",
+      "translation_ru": "с каких пор",
+      "example": "Seit wann wohnen Sie hier?",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "qw000011",
+      "type": "word",
+      "german": "bis wann",
+      "translation_ru": "до какого времени",
+      "example": "Bis wann ist die Praxis geöffnet?",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "qw000013",
+      "type": "word",
+      "german": "wieso",
+      "translation_ru": "почему",
+      "example": "Wieso kommt der Bus nicht?",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "qw000014",
+      "type": "word",
+      "german": "weshalb",
+      "translation_ru": "почему; по какой причине",
+      "example": "Weshalb rufen Sie an?",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "qw000016",
+      "type": "word",
+      "german": "wie lange",
+      "translation_ru": "как долго",
+      "example": "Wie lange dauert die Fahrt?",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "qw000017",
+      "type": "word",
+      "german": "wie oft",
+      "translation_ru": "как часто",
+      "example": "Wie oft fährt die S-Bahn?",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "qw000019",
+      "type": "word",
+      "german": "wie viele",
+      "translation_ru": "сколько (исчисляемое)",
+      "example": "Wie viele Tabletten soll ich nehmen?",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "qw000020",
+      "type": "word",
+      "german": "welcher",
+      "translation_ru": "какой (мужской род)",
+      "example": "Welcher Bus fährt zum Bahnhof?",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "qw000022",
+      "type": "word",
+      "german": "welches",
+      "translation_ru": "какое",
+      "example": "Welches Medikament brauchen Sie?",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "qw000023",
+      "type": "word",
+      "german": "welchen",
+      "translation_ru": "какой (Akkusativ, мужской род)",
+      "example": "Welchen Zug nehmen wir?",
+      "important": true,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1100062",
+      "type": "noun",
+      "german": "Durchsage",
+      "translation_ru": "объявление по громкой связи",
+      "article": "die",
+      "plural": "Durchsagen",
+      "example": "Bitte achten Sie auf die Durchsage am Bahnhof.",
+      "important": false,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1100063",
+      "type": "noun",
+      "german": "Schalter",
+      "translation_ru": "касса; стойка обслуживания",
+      "article": "der",
+      "plural": "Schalter",
+      "example": "Die Fahrkarte bekommen Sie am Schalter.",
+      "important": false,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1100064",
+      "type": "word",
+      "german": "hin und zurück",
+      "translation_ru": "туда и обратно",
+      "example": "Ich brauche eine Fahrkarte nach Köln, hin und zurück.",
+      "important": false,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
+    },
+    {
+      "id": "e1100065",
+      "type": "noun",
+      "german": "Fahrplan",
+      "translation_ru": "расписание движения",
+      "article": "der",
+      "plural": "Fahrpläne",
+      "example": "Den aktuellen Fahrplan finde ich im Internet.",
+      "important": false,
+      "created_at": "2026-11-01T20:00:00.000Z",
+      "updated_at": "2026-11-01T20:00:00.000Z"
     }
   ]
 }

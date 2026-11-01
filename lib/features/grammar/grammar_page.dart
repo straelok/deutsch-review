@@ -455,31 +455,34 @@ class _GrammarTopicDialogState extends State<_GrammarTopicDialog> {
               ),
               if (topic.table.isNotEmpty) ...[
                 const SizedBox(height: 8),
-                SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: SizedBox(
-                    width: topic.table.first.length * 136,
-                    child: Table(
-                      border: TableBorder.all(
-                        color: Theme.of(context).colorScheme.outlineVariant,
+                if (topic.id == 'irregular_verb_forms')
+                  _IrregularVerbReferenceList(rows: topic.table)
+                else
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: SizedBox(
+                      width: topic.table.first.length * 136,
+                      child: Table(
+                        border: TableBorder.all(
+                          color: Theme.of(context).colorScheme.outlineVariant,
+                        ),
+                        children: topic.table
+                            .map(
+                              (row) => TableRow(
+                                children: row
+                                    .map(
+                                      (cell) => Padding(
+                                        padding: const EdgeInsets.all(8),
+                                        child: Text(cell),
+                                      ),
+                                    )
+                                    .toList(growable: false),
+                              ),
+                            )
+                            .toList(growable: false),
                       ),
-                      children: topic.table
-                          .map(
-                            (row) => TableRow(
-                              children: row
-                                  .map(
-                                    (cell) => Padding(
-                                      padding: const EdgeInsets.all(8),
-                                      child: Text(cell),
-                                    ),
-                                  )
-                                  .toList(growable: false),
-                            ),
-                          )
-                          .toList(growable: false),
                     ),
                   ),
-                ),
               ],
               if (topic.trainable) ...[
                 const SizedBox(height: 18),
@@ -616,5 +619,95 @@ class _GrammarTopicDialogState extends State<_GrammarTopicDialog> {
           ),
         ) ??
         false;
+  }
+}
+
+class _IrregularVerbReferenceList extends StatelessWidget {
+  const _IrregularVerbReferenceList({required this.rows});
+
+  final List<List<String>> rows;
+
+  @override
+  Widget build(BuildContext context) {
+    if (rows.length < 2 || rows.first.length < 4) {
+      return const SizedBox.shrink();
+    }
+    final labels = rows.first;
+    final colors = Theme.of(context).colorScheme;
+    return Column(
+      key: const Key('irregular-verb-reference-list'),
+      children: rows.skip(1).map((row) {
+        if (row.length < 4) return const SizedBox.shrink();
+        return Card(
+          key: Key('irregular-verb-reference-${row.first}'),
+          margin: const EdgeInsets.only(bottom: 10),
+          color: colors.surfaceContainerLow,
+          child: Padding(
+            padding: const EdgeInsets.all(14),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Text(
+                  row[0],
+                  style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                        fontWeight: FontWeight.w700,
+                      ),
+                ),
+                const SizedBox(height: 2),
+                Text(
+                  row[1],
+                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                        color: colors.onSurfaceVariant,
+                      ),
+                ),
+                const SizedBox(height: 12),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Expanded(
+                      child: _VerbFormValue(label: labels[2], value: row[2]),
+                    ),
+                    const SizedBox(width: 16),
+                    Expanded(
+                      child: _VerbFormValue(label: labels[3], value: row[3]),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        );
+      }).toList(growable: false),
+    );
+  }
+}
+
+class _VerbFormValue extends StatelessWidget {
+  const _VerbFormValue({required this.label, required this.value});
+
+  final String label;
+  final String value;
+
+  @override
+  Widget build(BuildContext context) {
+    final colors = Theme.of(context).colorScheme;
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          label,
+          style: Theme.of(context).textTheme.labelMedium?.copyWith(
+                color: colors.onSurfaceVariant,
+              ),
+        ),
+        const SizedBox(height: 3),
+        Text(
+          value,
+          style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                fontWeight: FontWeight.w600,
+              ),
+        ),
+      ],
+    );
   }
 }

@@ -167,7 +167,7 @@ void main() {
         )
         .toSet();
 
-    expect(items, hasLength(996));
+    expect(items, hasLength(1133));
     expect(keys, hasLength(items.length));
     expect(
       items.any((item) => item.content['german'] == 'Supermarkt'),
@@ -181,6 +181,7 @@ void main() {
         'finden',
         'fliegen',
         'geben',
+        'gehen',
         'haben',
         'helfen',
         'kommen',
